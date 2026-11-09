@@ -20,7 +20,9 @@ async def main():
     async def imp(f):
         await pg.evaluate("document.querySelector('#setMsg').textContent=''"); await t('#importFile').set_input_files(f)
         await pg.wait_for_function("document.querySelector('#setMsg').textContent.length>0")
-    async def store(): return await pg.evaluate("JSON.parse(localStorage.getItem('control-daguan:v1')||'{}')")
+    async def store():
+        await pg.wait_for_timeout(150)  # 等待异步写入 IndexedDB
+        return await pg.evaluate("CDGStore.get('rec').then(r=>r||{})")
     await pg.goto(BASE + '?list=complete&question=202301', wait_until='networkidle'); await pg.evaluate('localStorage.clear()'); await pg.reload(wait_until='networkidle')
     iv = {k: await txt(f'button[data-mark="{k}"] .iv') for k in ('unknown', 'shaky', 'mastered')}
     ok('新题: 按钮显示间隔预览', all(re.match(r'\d+天', v) for v in iv.values()), str(iv))
@@ -92,7 +94,7 @@ async def main():
     open('/tmp/v1.json', 'w').write(json.dumps(v1)); await imp('/tmp/v1.json')
     s = await store(); ok('导入旧版 v1 记录: 标记合并、复习进度不受影响', s['marks'].get('202305', {}).get('state') == 'shaky' and len(s['srs']) == 2, await txt('#setMsg'))
     await pg.evaluate("localStorage.setItem('control-daguan:v1', JSON.stringify({favorites:[202301],marks:{'202301':{state:'unknown',at:1}},history:[]}))"); await pg.reload(wait_until='networkidle')
-    ok('旧版 localStorage(无 srs) 正常加载', await t('.card').count() >= 0 and not errs, str(errs))
+    s = await store(); ok('旧版 localStorage 记录并入 IndexedDB 后删除旧键', await pg.evaluate("localStorage.getItem('control-daguan:v1')") is None and len(s['srs']) == 2 and not errs, str(errs))
     await pg.goto(BASE + '?list=complete&question=202301', wait_until='networkidle'); await pg.clock.set_fixed_time(T0)
     await pg.screenshot(path='shots/fsrs-card.png')
     ok('无页面错误', not errs, str(errs))

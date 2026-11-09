@@ -20,15 +20,13 @@ const MARK_IC = { shaky: IC.gauge, unknown: IC.x, mastered: IC.ok };
 const F = window.FSRS;
 const GRADE = { unknown: F.Rating.Again, shaky: F.Rating.Hard, mastered: F.Rating.Good };
 
-// ---------- 存储 ----------
-function loadRec() {
-  try { const r = JSON.parse(localStorage.getItem(STORE) || 'null'); if (r && typeof r === 'object') return normRec(r); } catch {}
-  return normRec({});
-}
+// ---------- 存储：IndexedDB（idb-keyval），首次加载自动从 localStorage 迁移 ----------
+const { CDGStore, CDGSync } = window;
 function normRec(r) {
   const ret = +r.retention;
   return { favorites: Array.isArray(r.favorites) ? r.favorites.map(Number) : [], marks: r.marks && typeof r.marks === 'object' ? r.marks : {},
-    srs: normSrs(r.srs), retention: ret >= 0.8 && ret <= 0.95 ? Math.round(ret * 100) / 100 : 0.9,
+    srs: normSrs(r.srs), retention: ret >= 0.8 && ret <= 0.95 ? Math.round(ret * 100) / 100 : 0.9, retentionAt: +r.retentionAt || 0,
+    updated: r.updated && typeof r.updated === 'object' ? r.updated : {},
     history: Array.isArray(r.history) ? r.history : [], mode: r.mode === 'multiple' ? 'multiple' : 'single',
     fontScale: FONT.includes(r.fontScale) ? r.fontScale : 100, collapsed: !!r.collapsed, open: r.open && typeof r.open === 'object' ? r.open : {} };
 }
@@ -42,8 +40,28 @@ function normSrs(s) {
   }
   return out;
 }
-let rec = loadRec();
-const save = () => { try { localStorage.setItem(STORE, JSON.stringify(rec)); } catch { toast('浏览器未能保存进度，本次更改未保存，请重试。'); } };
+let rec = normRec({}), useLS = false;
+const bc = 'BroadcastChannel' in window ? new BroadcastChannel('control-daguan') : null;
+async function persist() {
+  if (useLS) { localStorage.setItem(STORE, JSON.stringify(rec)); return; }
+  await CDGStore.set('rec', rec);
+}
+// 保存到本地；sync=true 时通知其他标签页并排队云同步
+const save = (sync = true) => persist().then(() => { if (sync) { bc?.postMessage('rec'); gist?.schedule(); } }).catch(() => toast('浏览器未能保存进度，本次更改未保存，请重试。'));
+const touch = id => { rec.updated[id] = Date.now(); };
+async function loadRec() {
+  let stored = null, legacy = null;
+  try { const s = localStorage.getItem(STORE); if (s) legacy = normRec(JSON.parse(s)); } catch {}
+  try { stored = await CDGStore.get('rec'); } catch { useLS = true; return legacy || normRec({}); }
+  if (!legacy) return normRec(stored || {});
+  // 迁移：localStorage 里的旧记录并入 IndexedDB（逐题取较新的一方），写入并读回确认后再删除旧键
+  const merged = stored ? normRec({ ...normRec(stored), ...CDGSync.merge(normRec(stored), legacy) }) : legacy;
+  await CDGStore.set('rec', merged);
+  const back = await CDGStore.get('rec');
+  if (back && CDGSync.canon(CDGSync.syncPart(back)) === CDGSync.canon(CDGSync.syncPart(merged))) { localStorage.removeItem(STORE); migrated = true; }
+  return merged;
+}
+let migrated = false, gist = null;
 // ---------- FSRS ----------
 let sched, schedR;
 const scheduler = () => { if (schedR !== rec.retention) { sched = F.fsrs(F.generatorParameters({ request_retention: rec.retention, enable_fuzz: false, enable_short_term: false })); schedR = rec.retention; } return sched; };
@@ -63,7 +81,7 @@ const dueIds = () => { const lim = endOfToday().getTime(); return Object.entries
 const dayDiff = d => { const a = new Date(); a.setHours(0, 0, 0, 0); const b = new Date(d); b.setHours(0, 0, 0, 0); return Math.round((b - a) / 864e5); };
 const ivl = d => { const n = Math.max(0, Math.round((new Date(d) - new Date()) / 864e5)); return n < 1 ? '今天' : n < 30 ? `${n}天` : n < 365 ? `${Math.round(n / 3) / 10}月` : `${Math.round(n / 36.5) / 10}年`; };
 const fmtDue = d => { const n = dayDiff(d), dt = new Date(d); const md = `${dt.getMonth() + 1}月${dt.getDate()}日`; return n < 0 ? `已到期 ${-n} 天（${md}）` : n === 0 ? `今日待复习（${md}）` : `下次复习：${md}（${n} 天后）`; };
-window.addEventListener('storage', e => { if (e.key === STORE) { rec = loadRec(); render(); } });
+bc && (bc.onmessage = async () => { rec = await loadRec(); render(); });
 
 // ---------- 状态 ----------
 let lib, byId = new Map(), details = new Map();
@@ -300,9 +318,13 @@ function exportJSON() {
 function applyImport(d) {
   if (!d || d.app !== 'control-daguan' || !Array.isArray(d.favorites) || typeof d.marks !== 'object') throw new Error('不是有效的控制大观记录文件，请重新导出 JSON。');
   const known = id => byId.has(Number(id));
+  const before = CDGSync.canon({ f: rec.favorites, m: rec.marks, s: rec.srs });
+  const snap = id => CDGSync.canon([rec.favorites.includes(+id), rec.marks[id] || null, rec.srs[id] || null]);
+  const prevSnap = Object.fromEntries([...byId.keys()].map(id => [id, snap(id)]));
   rec.favorites = [...new Set([...rec.favorites, ...d.favorites.map(Number).filter(known)])];
   for (const [k, v] of Object.entries(d.marks)) if (known(k) && v && MARKS[v.state] && (!rec.marks[k] || (v.at || 0) >= (rec.marks[k].at || 0))) rec.marks[k] = v;
   mergeSrs(rec.srs, normSrs(d.srs), known);
+  if (CDGSync.canon({ f: rec.favorites, m: rec.marks, s: rec.srs }) !== before) for (const id of byId.keys()) if (snap(id) !== prevSnap[id]) touch(id);
   if (Array.isArray(d.history)) { const seen = new Set(rec.history.map(h => h.id + ':' + h.at)); d.history.forEach(h => { if (known(h.id) && !seen.has(h.id + ':' + h.at)) rec.history.push(h); }); rec.history.sort((a, b) => a.at - b.at); }
   save(); render();
 }
@@ -351,6 +373,7 @@ function closePops(except) { document.querySelectorAll('.popover').forEach(p => 
 function setMark(id, state) {
   const prev = rec.marks[id]?.state;
   if (state) { rec.marks[id] = { state, at: Date.now() }; review(id, state); } else delete rec.marks[id];
+  touch(id);
   rec.history.push({ id, state: state || null, at: Date.now() }); save();
   if (st.tab === 'retest' && st.rv === 'due' && state) {
     const sec = sectionIds(tree); const i = sec.indexOf(id);
@@ -378,11 +401,19 @@ function bind() {
     if (b.dataset.font) { rec.fontScale = +b.dataset.font; save(); render(); }
   });
   $('#exportBtn').addEventListener('click', exportJSON);
+  $('#syncConnectBtn').addEventListener('click', async () => {
+    const tok = $('#gistToken').value; $('#syncConnectBtn').disabled = true; setMsg('正在连接 GitHub…');
+    try { await gist.connect(tok); $('#gistToken').value = ''; setMsg('已连接，进度会自动同步到你的私密 Gist。'); }
+    catch (e) { setMsg(e.message || '连接失败。', true); }
+    finally { $('#syncConnectBtn').disabled = false; }
+  });
+  $('#syncNowBtn').addEventListener('click', () => gist.sync().then(r => r && setMsg(r.pulled || r.pushed ? `同步完成：${[r.pulled && '已拉取远端改动', r.pushed && '已上传本地改动'].filter(Boolean).join('，')}。` : '同步完成：两边已一致。'), e => setMsg(e.message, true)));
+  $('#syncOffBtn').addEventListener('click', async () => { await gist.disconnect(); setMsg('已断开同步，本机记录保留；令牌已从本机删除，Gist 仍在你的 GitHub 账号里。'); });
   $('#retention').addEventListener('input', e => { rec.retention = Math.round(+e.target.value * 100) / 100; $('#retentionVal').textContent = rec.retention.toFixed(2); });
-  $('#retention').addEventListener('change', () => { save(); render(); setMsg(`目标记忆率已设为 ${rec.retention.toFixed(2)}。`); });
+  $('#retention').addEventListener('change', () => { rec.retentionAt = Date.now(); save(); render(); setMsg(`目标记忆率已设为 ${rec.retention.toFixed(2)}。`); });
   $('#resetSrsBtn').addEventListener('click', () => { $('#resetConfirm').hidden = false; $('#resetSrsBtn').hidden = true; });
   $('#resetNo').addEventListener('click', () => { $('#resetConfirm').hidden = true; $('#resetSrsBtn').hidden = false; });
-  $('#resetYes').addEventListener('click', () => { rec.srs = {}; save(); $('#resetConfirm').hidden = true; $('#resetSrsBtn').hidden = false; render(); setMsg('已重置复习进度，标记和收藏保留。'); });
+  $('#resetYes').addEventListener('click', () => { Object.keys(rec.srs).forEach(touch); rec.srs = {}; save(); $('#resetConfirm').hidden = true; $('#resetSrsBtn').hidden = false; render(); setMsg('已重置复习进度，标记和收藏保留。'); });
   $('#rvSeg').addEventListener('click', e => { const b = e.target.closest('button[data-rv]'); if (!b) return; st.rv = b.dataset.rv; st.node = null; st.qid = null; render(); });
   $('#genCodeBtn').addEventListener('click', genCode);
   $('#codeInput').addEventListener('input', e => $('#importCodeBtn').disabled = !e.target.value.trim());
@@ -406,7 +437,7 @@ function bind() {
     switch (b.dataset.act) {
       case 'answer': sh.answer = !sh.answer; break;
       case 'exp': sh.exp = !sh.exp; break;
-      case 'fav': { const i = rec.favorites.indexOf(id); i >= 0 ? rec.favorites.splice(i, 1) : rec.favorites.push(id); save(); toast(i >= 0 ? '已取消收藏' : '已收藏'); if (st.tab === 'fav' && i >= 0) { const sec = sectionIds(tree); const k = sec.indexOf(id); st.qid = sec[k + 1] ?? sec[k - 1] ?? null; } break; }
+      case 'fav': { const i = rec.favorites.indexOf(id); i >= 0 ? rec.favorites.splice(i, 1) : rec.favorites.push(id); touch(id); save(); toast(i >= 0 ? '已取消收藏' : '已收藏'); if (st.tab === 'fav' && i >= 0) { const sec = sectionIds(tree); const k = sec.indexOf(id); st.qid = sec[k + 1] ?? sec[k - 1] ?? null; } break; }
       case 'mark': return setMark(id, rec.marks[id]?.state === b.dataset.mark ? rec.marks[id].state : b.dataset.mark);
       case 'unmark': return setMark(id, null);
       case 'cats': { e.stopPropagation(); const p = b.nextElementSibling; const open = p.hidden; closePops(); p.hidden = !open; b.setAttribute('aria-expanded', open); return; }
@@ -428,8 +459,36 @@ function bind() {
 }
 
 // ---------- 启动 ----------
-fetch('data/library.json').then(r => { if (!r.ok) throw 0; return r.json(); }).then(d => {
-  lib = d; d.questions.forEach(q => byId.set(q.id, q));
+Promise.all([fetch('data/library.json').then(r => { if (!r.ok) throw 0; return r.json(); }), loadRec()]).then(async ([d, r]) => {
+  lib = d; d.questions.forEach(q => byId.set(q.id, q)); rec = r;
   readURL(); bind(); render();
+  if (migrated) toast('学习记录已迁移到 IndexedDB');
+  await initSync();
 }).catch(() => { $('#cards').innerHTML = '<div class="empty">静态文件读取失败，请刷新重试。</div>'; });
+
+// ---------- 云同步（GitHub Gist，可选） ----------
+function syncUI(cfg, busy, pending) {
+  const on = !!cfg?.token;
+  $('#syncOff').hidden = on; $('#syncOn').hidden = !on;
+  if (!on) return;
+  const el = $('#syncStatus');
+  const last = cfg.lastSync ? new Date(cfg.lastSync).toLocaleString('zh-CN', { hour12: false }) : '尚未同步';
+  el.classList.toggle('err', !!cfg.lastError);
+  el.textContent = busy ? '正在同步…' : cfg.lastError ? `同步失败：${cfg.lastError}` : `已同步 · ${last}${pending ? '（有改动待同步）' : ''}`;
+  $('#syncMeta').textContent = `最近成功同步：${last}${cfg.gistId ? ` · Gist ${cfg.gistId.slice(0, 7)}…` : ''}`;
+  const extra = cfg.scopes && cfg.scopes.split(',').map(s => s.trim()).filter(s => s && s !== 'gist');
+  $('#syncWarn').hidden = !extra?.length; if (extra?.length) $('#syncWarn').textContent = `提醒：这个令牌还带有 ${extra.join('、')} 权限，建议换成只勾选 gist 的令牌。`;
+  $('#syncNowBtn').disabled = !!busy;
+}
+async function initSync() {
+  gist = new CDGSync.GistSync({
+    getLocal: () => rec,
+    applyMerged: async m => { rec = normRec({ ...rec, ...m }); await save(false); bc?.postMessage('rec'); render(); },
+    onStatus: syncUI,
+  });
+  try { await gist.init(); } catch { return; }
+  if (gist.connected) gist.sync().catch(() => {});
+  addEventListener('online', () => { if (gist.connected) gist.sync().catch(() => {}); });
+  addEventListener('offline', () => { if (gist.connected) gist.saveCfg({ lastError: '当前离线，联网后自动同步。', errorKind: 'offline' }); });
+}
 })();

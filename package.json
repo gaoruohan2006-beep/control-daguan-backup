@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "vendor": "mkdir -p public/vendor/ts-fsrs && cp node_modules/ts-fsrs/dist/index.umd.js public/vendor/ts-fsrs/ts-fsrs.umd.js && cp node_modules/ts-fsrs/LICENSE public/vendor/ts-fsrs/"
+    "vendor": "mkdir -p public/vendor/ts-fsrs && cp node_modules/ts-fsrs/dist/index.umd.js public/vendor/ts-fsrs/ts-fsrs.umd.js && cp node_modules/ts-fsrs/LICENSE public/vendor/ts-fsrs/ && mkdir -p public/vendor/idb-keyval && cp node_modules/idb-keyval/dist/umd.js public/vendor/idb-keyval/idb-keyval.umd.js"
   },
   "keywords": [],
   "author": "",

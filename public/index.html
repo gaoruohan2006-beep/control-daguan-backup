@@ -43,6 +43,21 @@
         <p class="hint">也可导入控制大观导出的学习记录 JSON（最多 10 MB）。</p>
         <button type="button" class="btn soft block" id="importJsonBtn">导入记录 JSON</button>
         <input type="file" id="importFile" accept=".json,application/json" hidden />
+        <hr />
+        <div class="set-title">云同步（GitHub Gist，可选）</div>
+        <div id="syncOff">
+          <p class="hint">在多台设备间同步收藏、标记和复习进度。进度保存在你自己 GitHub 账号下的一个<b>私密 Gist</b>（control-daguan-progress.json）里。</p>
+          <p class="hint">1. 创建一个<b>只有 gist 权限</b>的令牌：<a href="https://github.com/settings/tokens/new?scopes=gist&amp;description=%E6%8E%A7%E5%88%B6%E5%A4%A7%E8%A7%82%E5%90%8C%E6%AD%A5" target="_blank" rel="noopener">经典令牌（只勾选 gist）</a>，或 <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">细粒度令牌</a>（Account permissions → Gists：Read and write，其余不选）。<br>2. 粘贴到下面并连接。</p>
+          <input type="password" id="gistToken" placeholder="ghp_… 或 github_pat_…" autocomplete="off" spellcheck="false" aria-label="GitHub gist 令牌" />
+          <button type="button" class="btn soft block" id="syncConnectBtn">连接并同步</button>
+          <p class="hint">令牌只保存在本浏览器的 IndexedDB 中，只发送给 api.github.com，不会上传到本站或代码仓库。</p>
+        </div>
+        <div id="syncOn" hidden>
+          <p class="sync-status" id="syncStatus" role="status"></p>
+          <p class="hint" id="syncMeta"></p>
+          <p class="hint warn" id="syncWarn" hidden></p>
+          <div class="btn-row"><button type="button" class="btn soft" id="syncNowBtn">立即同步</button><button type="button" class="btn ghost danger" id="syncOffBtn">断开同步</button></div>
+        </div>
         <p class="set-msg" id="setMsg" role="status"></p>
       </div>
     </div>
@@ -72,6 +87,8 @@
 </div>
 <script src="vendor/katex/katex.min.js"></script>
 <script src="vendor/ts-fsrs/ts-fsrs.umd.js"></script>
+<script src="vendor/idb-keyval/idb-keyval.umd.js"></script>
+<script src="sync.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
