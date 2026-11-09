@@ -119,7 +119,7 @@ async def main():
     for q in lib['questions']:
         await pg.goto(BASE + f"?list=complete&question={q['id']}", wait_until='networkidle')
         await t('button[aria-label="答案"]').click(); await t('button[aria-label="解析"]').click(); await pg.wait_for_selector('.orig img')
-        errs_k = await t('.katex-error').count(); imgs_ok = await pg.evaluate("[...document.querySelectorAll('.card img')].every(i=>i.complete&&i.naturalWidth>0)")
+        errs_k = await t('.katex-error').count(); imgs_ok = await pg.evaluate("""async()=>{const ims=[...document.querySelectorAll('.card img')];for(const i of ims){i.loading='eager';i.scrollIntoView();if(!(i.complete&&i.naturalWidth))await new Promise(r=>{i.onload=i.onerror=r;setTimeout(r,8000)});}return ims.every(i=>i.complete&&i.naturalWidth>0)}""")
         if errs_k or not imgs_ok: bad_tex.append((q['id'], errs_k, imgs_ok))
     ok('全部 24 题: 题干/答案/解析 KaTeX 无报错、图片全部加载', not bad_tex, str(bad_tex))
     # 移动端
