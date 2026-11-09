@@ -1,0 +1,149 @@
+{
+ "year": 2022,
+ "contributor": "code Bot",
+ "questionPages": "43–46",
+ "answerPages": "162–169",
+ "questions": [
+  {
+   "no": 1,
+   "score": null,
+   "cats": [
+    "建模 / 电路网络 / 运放电路传递函数"
+   ],
+   "stem": "某电学模型如下所示\n\n1．求该电路图的微分方程；\n\n2．求闭环传递函数。\n\n[[fig:1]]",
+   "figures": [
+    "img/q2022-1-1.png"
+   ],
+   "answerImages": [
+    "img/a2022-1-1.png"
+   ],
+   "answer": "",
+   "explanation": "",
+   "notes": ""
+  },
+  {
+   "no": 2,
+   "score": null,
+   "cats": [
+    "时域分析 / 二阶系统性能指标",
+    "时域分析 / 稳态误差"
+   ],
+   "stem": "已知一个无零点的二阶系统，其单位阶跃下闭环性能：超调量 $30\\%$、上升时间 $1\\,\\mathrm s$、稳态误差 $0.2$，求该二阶系统开环传递函数。",
+   "figures": [],
+   "answerImages": [
+    "img/a2022-2-1.png",
+    "img/a2022-2-2.png"
+   ],
+   "answer": "",
+   "explanation": "",
+   "notes": ""
+  },
+  {
+   "no": 3,
+   "score": null,
+   "cats": [
+    "根轨迹 / 由根轨迹求开环传递函数",
+    "根轨迹 / 增加零点对根轨迹的影响"
+   ],
+   "stem": "已知根轨迹如图，求开环传递函数；如果加一个零点 $z=-3$，作出新的根轨迹；讨论该零点根轨迹对系统的影响。\n\n[[fig:1]]",
+   "figures": [
+    "img/q2022-3-1.png"
+   ],
+   "answerImages": [
+    "img/a2022-3-1.png",
+    "img/a2022-3-2.png"
+   ],
+   "answer": "",
+   "explanation": "",
+   "notes": ""
+  },
+  {
+   "no": 4,
+   "score": null,
+   "cats": [
+    "频域分析 / 由对数幅频特性确定参数",
+    "频域分析 / 奈氏判据",
+    "频域分析 / 三频段理论"
+   ],
+   "stem": "1．对数频率特性图如图，求该开环传递函数；\n\n2．画出对应幅相频率特性曲线，判断系统稳定性；\n\n3．求截止频率、相位裕量；\n\n4．用三频段分析法分析该系统。\n\n[[fig:1]]",
+   "figures": [
+    "img/q2022-4-1.png"
+   ],
+   "answerImages": [
+    "img/a2022-4-1.png",
+    "img/a2022-4-2.png"
+   ],
+   "answer": "",
+   "explanation": "",
+   "notes": ""
+  },
+  {
+   "no": 5,
+   "score": null,
+   "cats": [
+    "非线性系统 / 相平面法"
+   ],
+   "stem": "非线性系统如图，系统输入为 $r=4\\times1(t)$，$c$ 与 $\\dot c$ 初始为 0。求 $e-\\dot e$ 相轨迹；并描述运动特征。\n\n[[fig:1]]",
+   "figures": [
+    "img/q2022-5-1.png"
+   ],
+   "answerImages": [
+    "img/a2022-5-1.png",
+    "img/a2022-5-2.png"
+   ],
+   "answer": "",
+   "explanation": "",
+   "notes": ""
+  },
+  {
+   "no": 6,
+   "score": null,
+   "cats": [
+    "离散系统 / 脉冲传递函数",
+    "离散系统 / 稳定性（朱利判据）"
+   ],
+   "stem": "离散系统如图：\n\n[[fig:1]]\n\n1．求 $\\Phi(z)$；\n\n2．当 $G_1$、$H$ 都为 1，$G_2=\\dfrac{k}{s(s+1)}$，求闭环传递函数，并判断稳定时 $K$ 的取值范围。",
+   "figures": [
+    "img/q2022-6-1.png"
+   ],
+   "answerImages": [
+    "img/a2022-6-1.png",
+    "img/a2022-6-2.png"
+   ],
+   "answer": "",
+   "explanation": "",
+   "notes": ""
+  },
+  {
+   "no": 7,
+   "score": null,
+   "cats": [
+    "状态空间 / 建立状态空间表达式",
+    "状态空间 / 线性变换"
+   ],
+   "stem": "某线性定常系统微分方程为：$\\dddot x+4\\ddot x+6\\dot x+x=3u$\n\n1、求 $x_1=x$，$x_2=\\dot x$，$x_3=\\ddot x$ 的状态空间表达式；\n\n2、求 $x_1=\\bar x_1+\\bar x_2$，$x_2=-2\\bar x_1-\\bar x_2$，$x_3=\\bar x_2+\\bar x_3$ 的状态空间表达式；\n\n3、$\\tilde x_1=\\ddot x+\\dot x+x$，$\\tilde x_2=\\dot x+x$，$\\tilde x_3=x$，求 $\\tilde x$ 的状态空间表达式。",
+   "figures": [],
+   "answerImages": [
+    "img/a2022-7-1.png"
+   ],
+   "answer": "",
+   "explanation": "",
+   "notes": ""
+  },
+  {
+   "no": 8,
+   "score": null,
+   "cats": [
+    "状态空间 / 状态反馈极点配置"
+   ],
+   "stem": "线性定常系统状态方程为：\n$$\\dot x=\\begin{bmatrix}0&1&0\\\\0&0&1\\\\-4&-6&-5\\end{bmatrix}x+\\begin{bmatrix}0\\\\0\\\\1\\end{bmatrix}u$$\n判断系统是否可以状态反馈，如果可以，确定反馈增益阵 $K$，使得系统极点位置在 $-10$、$-2\\pm4j$。",
+   "figures": [],
+   "answerImages": [
+    "img/a2022-8-1.png"
+   ],
+   "answer": "",
+   "explanation": "",
+   "notes": ""
+  }
+ ]
+}

@@ -31,6 +31,35 @@ for src in SOURCES:
         search=' '.join([str(qid),source,*cats,stem])))
     details[qid]=dict(answer=d['answer'],explanation=d['explanation'],
         originalImages=[dict(src=a,w=round(__import__('PIL.Image',fromlist=['x']).open(os.path.join(ROOT,'public',a)).width*0.6)) for a in crops['ans'].get(key,[])],answerPdfPages=src['apages'][d['year']])
+# JSON 数据源：data-src/<年份>/questions.json（格式见 incoming/SPEC.md）
+import glob, shutil
+from PIL import Image
+for qf in sorted(glob.glob(os.path.join(ROOT,'data-src','*','questions.json'))):
+  src=json.load(open(qf)); y=src['year']; base=os.path.dirname(qf)
+  os.makedirs(os.path.join(ROOT,'public','img'),exist_ok=True)
+  def pub(rel):
+    fn=os.path.basename(rel); shutil.copy(os.path.join(base,rel),os.path.join(ROOT,'public','img',fn)); return 'img/'+fn
+  for d in src['questions']:
+    qid=y*100+d['no']; assert qid not in details,(qid,'duplicate')
+    figs=[pub(f) for f in d['figures']]
+    stem=d['stem']; used=set()
+    def rep(mo):
+      i=int(mo.group(1)); used.add(i); w=Image.open(os.path.join(ROOT,'public',figs[i-1])).width
+      return f'![图{i}|{round(w*0.55)}]({figs[i-1]})'
+    stem=re.sub(r'\[\[fig:(\d+)\]\]',rep,stem)
+    assert len(used)==len(figs),(qid,used,figs)
+    # 统一不同录入者的分类命名（不改源数据）
+    ALIAS={'离散系统 / 输出响应':'离散系统 / 时间响应','建模 / 机电系统传递函数':'建模 / 机电系统 / 传递函数','建模 / 机电系统 / 直流电动机':'建模 / 机电系统 / 传递函数'}
+    d['cats']=list(dict.fromkeys(ALIAS.get(c,c) for c in d['cats']))
+    cats=[f"历年真题 / {y}"]+d['cats']
+    source=f"{y}重大844 · 第{CN[d['no']-1]}题"+(f"（{d['score']}分）" if d.get('score') else '')
+    questions.append(dict(id=qid,year=y,number=d['no'],score=d.get('score'),source=source,categories=cats,
+        tags=[c.split(' / ')[0] for c in d['cats']],hasFigure=bool(figs),stem=stem,pdfPage=src.get('questionPages',''),
+        contributor=src.get('contributor',''),search=' '.join([str(qid),source,*cats,stem])))
+    ans=[pub(a) for a in d['answerImages']]
+    details[qid]=dict(answer=d.get('answer',''),explanation=d.get('explanation',''),notes=d.get('notes',''),
+        originalImages=[dict(src=a,w=round(Image.open(os.path.join(ROOT,'public',a)).width*0.6)) for a in ans],
+        answerPdfPages=src.get('answerPages',''))
 questions.sort(key=lambda x:(-x['year'],x['number']))
 years=sorted({q['year'] for q in questions},reverse=True)
 TOPIC_ORDER=['建模','时域分析','根轨迹','频域分析','校正','离散系统','非线性系统','状态空间']
@@ -45,7 +74,7 @@ for y in years: lists.append(lst(f'exam-{y}',f'{y} 真题',[q for q in questions
 for t in TOPIC_ORDER:
   qs=[q for q in questions if t in q['tags']]
   if qs: lists.append(lst(f'topic-{t}',f'专题·{t}',qs,lambda q:[c for c in topic_cats(q)]))
-lib=dict(subject='自动控制原理（重庆大学 844）',source='重庆大学 2023–2025 初试真题',
+lib=dict(subject='自动控制原理（重庆大学 844）',source=f'重庆大学 {min(q["year"] for q in questions)}–{max(q["year"] for q in questions)} 初试真题',
          topicOrder=['历年真题']+TOPIC_ORDER,years=years,lists=lists,questions=questions)
 json.dump(lib,open(os.path.join(OUT,'library.json'),'w'),ensure_ascii=False)
 for k,v in details.items(): json.dump(v,open(os.path.join(OUT,'questions',f'{k}.json'),'w'),ensure_ascii=False)

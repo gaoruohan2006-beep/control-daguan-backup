@@ -1,0 +1,159 @@
+{
+ "year": 2021,
+ "contributor": "code Bot",
+ "questionPages": "39–42",
+ "answerPages": "150–161",
+ "questions": [
+  {
+   "no": 1,
+   "score": 15,
+   "cats": [
+    "建模 / 电路网络 / 运放电路传递函数"
+   ],
+   "stem": "（15 分）已知电路网络输入为 $U_i$ 输出为 $U_y$，框图如下\n\n[[fig:1]]\n\n1．求输入和输出的微分方程；\n\n2．求传递函数 $\\dfrac{U_y(s)}{U_i(s)}$。",
+   "figures": [
+    "img/q2021-1-1.png"
+   ],
+   "answerImages": [
+    "img/a2021-1-1.png",
+    "img/a2021-1-2.png"
+   ],
+   "answer": "",
+   "explanation": "",
+   "notes": ""
+  },
+  {
+   "no": 2,
+   "score": null,
+   "cats": [
+    "时域分析 / 由阶跃响应确定参数",
+    "时域分析 / 二阶系统性能指标"
+   ],
+   "stem": "系统为无零点的二阶系统，如图 a 所示。当 $k_t=0$ 时，$r=t$ 时 $e_{ss}=0.1$；输入为阶跃时的响应曲线如图 b 所示。\n\n1．当 $k_t=0$ 时，求 $G(s)$；\n\n2．求 $k_t$，当阻尼比为 0.6 时，求最大超调量、$t_s$（$\\Delta$ 为 $2\\%$）。\n\n[[fig:1]]\n\n[[fig:2]]",
+   "figures": [
+    "img/q2021-2-1.png",
+    "img/q2021-2-2.png"
+   ],
+   "answerImages": [
+    "img/a2021-2-1.png",
+    "img/a2021-2-2.png",
+    "img/a2021-2-3.png"
+   ],
+   "answer": "",
+   "explanation": "",
+   "notes": ""
+  },
+  {
+   "no": 3,
+   "score": null,
+   "cats": [
+    "根轨迹 / 常规根轨迹绘制",
+    "根轨迹 / 主导极点与降阶"
+   ],
+   "stem": "单位负反馈系统的开环传递函数为：$G(s)=\\dfrac{k^*(s+2)}{s(s+5)(s+10)}$\n\n1．绘制根轨迹图；\n\n2．若 $s=-1.9$，求其余 2 个极点；\n\n3．当 $s=-1.9$ 时，系统是否可以近似为低阶系统，若可以，为什么？并写出近似系统。若不可以说明理由。",
+   "figures": [],
+   "answerImages": [
+    "img/a2021-3-1.png",
+    "img/a2021-3-2.png"
+   ],
+   "answer": "",
+   "explanation": "",
+   "notes": ""
+  },
+  {
+   "no": 4,
+   "score": null,
+   "cats": [
+    "校正 / 由校正后特性求校正装置",
+    "频域分析 / 截止频率与相角裕度"
+   ],
+   "stem": "校正前与校正后幅频特性曲线 $L(\\omega)$ 如下图所示\n\n[[fig:1]]\n\n[[fig:2]]\n\n1．求校正前 $G_0(s)$ 及校正后 $G(s)$；\n\n2．求校正后的相位裕度；\n\n3．求 $G_c(s)$ 并绘制其对数相频特性曲线；\n\n4．说明该种校正方式的优点。",
+   "figures": [
+    "img/q2021-4-1.png",
+    "img/q2021-4-2.png"
+   ],
+   "answerImages": [
+    "img/a2021-4-1.png",
+    "img/a2021-4-2.png",
+    "img/a2021-4-3.png"
+   ],
+   "answer": "",
+   "explanation": "",
+   "notes": ""
+  },
+  {
+   "no": 5,
+   "score": null,
+   "cats": [
+    "离散系统 / 脉冲传递函数",
+    "离散系统 / 时间响应"
+   ],
+   "stem": "$T=0.5\\,\\mathrm s$，框图如下\n\n[[fig:1]]\n\n1．求闭环脉冲传函；\n\n2．求单位阶跃作用下的 $c(nT)$。",
+   "figures": [
+    "img/q2021-5-1.png"
+   ],
+   "answerImages": [
+    "img/a2021-5-1.png",
+    "img/a2021-5-2.png"
+   ],
+   "answer": "",
+   "explanation": "",
+   "notes": ""
+  },
+  {
+   "no": 6,
+   "score": null,
+   "cats": [
+    "非线性系统 / 描述函数法 / 自振分析"
+   ],
+   "stem": "$N(A)=b+\\dfrac{4M}{\\pi A}$，$b=1$，$M=1$\n\n[[fig:1]]\n\n说明是否产生自振，若能自振请说明 $\\omega$ 与幅度 $A$。",
+   "figures": [
+    "img/q2021-6-1.png"
+   ],
+   "answerImages": [
+    "img/a2021-6-1.png",
+    "img/a2021-6-2.png"
+   ],
+   "answer": "",
+   "explanation": "",
+   "notes": ""
+  },
+  {
+   "no": 7,
+   "score": null,
+   "cats": [
+    "状态空间 / 对角标准型",
+    "状态空间 / 状态转移矩阵",
+    "状态空间 / 传递函数矩阵"
+   ],
+   "stem": "状态方程\n$$\\dot x=\\begin{bmatrix}0&1\\\\-6&-5\\end{bmatrix}x+\\begin{bmatrix}0\\\\1\\end{bmatrix}u,\\qquad y=\\begin{bmatrix}2&3\\end{bmatrix}x$$\n\n1．化为对角标准型；\n\n2．在（1）对角标准型基础上，求 $e^{At}$；\n\n3．求传递函数。",
+   "figures": [],
+   "answerImages": [
+    "img/a2021-7-1.png",
+    "img/a2021-7-2.png"
+   ],
+   "answer": "",
+   "explanation": "",
+   "notes": ""
+  },
+  {
+   "no": 8,
+   "score": null,
+   "cats": [
+    "状态空间 / 能控/能观标准型",
+    "状态空间 / 状态反馈极点配置",
+    "状态空间 / 能控性与能观性"
+   ],
+   "stem": "已知单位负反馈系统的开环传递函数为 $G=\\dfrac{4(s+1)}{s^2(s+2)}$\n\n1．求可控标准型；\n\n2．设计状态反馈矩阵 $k$，能否极点配置于 $-1,\\,-2,\\,-3$？若能求出 $k$；\n\n3．在状态反馈前提下，确定系统是否可控可测。",
+   "figures": [],
+   "answerImages": [
+    "img/a2021-8-1.png",
+    "img/a2021-8-2.png",
+    "img/a2021-8-3.png"
+   ],
+   "answer": "",
+   "explanation": "",
+   "notes": ""
+  }
+ ]
+}

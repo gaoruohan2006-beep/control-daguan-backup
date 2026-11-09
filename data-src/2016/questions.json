@@ -1,0 +1,156 @@
+{
+ "year": 2016,
+ "contributor": "workbuddy",
+ "questionPages": "23–25",
+ "answerPages": "105–114",
+ "questions": [
+  {
+   "no": 1,
+   "score": 20,
+   "cats": [
+    "建模 / 电路网络 / 无源网络传递函数",
+    "状态空间 / 建立状态空间表达式"
+   ],
+   "stem": "如图 1 所示电路。其中，$u_1$、$u_2$ 分别为电路的输入电压和输出电压。试求：\n\n[[fig:1]]\n\n1、系统的传递函数；\n\n2、系统的状态空间描述。",
+   "figures": [
+    "img/q2016-1-1.png"
+   ],
+   "answerImages": [
+    "img/a2016-1-1.png",
+    "img/a2016-1-2.png"
+   ],
+   "answer": "",
+   "explanation": "",
+   "notes": ""
+  },
+  {
+   "no": 2,
+   "score": 18,
+   "cats": [
+    "时域分析 / 稳态误差",
+    "时域分析 / 二阶系统性能指标",
+    "建模 / 结构图化简"
+   ],
+   "stem": "系统动态框图如图。试求：\n\n[[fig:1]]\n\n1、系统的误差传递函数（$e=r-y$）；\n\n2、当 $R(s)=1+t$ 时，系统的稳态误差；\n\n3、系统的超调量和调节时间。",
+   "figures": [
+    "img/q2016-2-1.png"
+   ],
+   "answerImages": [
+    "img/a2016-2-1.png",
+    "img/a2016-2-2.png"
+   ],
+   "answer": "",
+   "explanation": "",
+   "notes": "原题写作 R(s)=1+t（应理解为 r(t)=1+t），按原文保留。"
+  },
+  {
+   "no": 3,
+   "score": 22,
+   "cats": [
+    "根轨迹 / 常规根轨迹绘制",
+    "根轨迹 / 由根轨迹分析系统性能"
+   ],
+   "stem": "已知单位负反馈系统开环传递函数为\n$$G(s)=\\frac{k}{s(s+1)(0.1s+1)}$$\n\n1、绘制系统根轨迹草图；\n\n2、分析系统的稳定性和系统的阶跃响应特征。",
+   "figures": [],
+   "answerImages": [
+    "img/a2016-3-1.png",
+    "img/a2016-3-2.png"
+   ],
+   "answer": "",
+   "explanation": "",
+   "notes": ""
+  },
+  {
+   "no": 4,
+   "score": 20,
+   "cats": [
+    "频域分析 / 奈氏判据",
+    "频域分析 / 开环幅相特性曲线"
+   ],
+   "stem": "某反馈控制系统的开环传递函数为\n$$G(s)=\\frac{10(Ts+1)}{s(s-1)}\\quad(T>0)$$\n\n1、画出系统开环幅频率特征曲线的大致形状，并分别标出系统稳定和不稳定时点 $(-1,j0)$ 的位置；\n\n2、由频率特性计算出闭环系统稳定时 $T$ 的临界值。",
+   "figures": [],
+   "answerImages": [
+    "img/a2016-4-1.png",
+    "img/a2016-4-2.png"
+   ],
+   "answer": "",
+   "explanation": "",
+   "notes": ""
+  },
+  {
+   "no": 5,
+   "score": 20,
+   "cats": [
+    "校正 / 由校正后特性求校正装置",
+    "频域分析 / 由对数幅频特性确定参数",
+    "频域分析 / 截止频率与相角裕度"
+   ],
+   "stem": "如图中 $L_1$ 是未加校正环节前系统的对数幅频渐进特性曲线，$L_2$ 是加入某种串联校正环节后的对数幅频渐近特性曲线。\n\n[[fig:1]]\n\n1、写出校正前系统的开环传递函数和校正环节的传递函数；\n\n2、说明该校正方法的优缺点；\n\n3、计算加入串联校正环节后系统的相角裕量。",
+   "figures": [
+    "img/q2016-5-1.png"
+   ],
+   "answerImages": [
+    "img/a2016-5-1.png",
+    "img/a2016-5-2.png"
+   ],
+   "answer": "",
+   "explanation": "",
+   "notes": ""
+  },
+  {
+   "no": 6,
+   "score": 17,
+   "cats": [
+    "非线性系统 / 描述函数法 / 自振分析"
+   ],
+   "stem": "如图所示的非线性系统，继电器特性的描述函数为 $N(A)=\\dfrac{4M}{\\pi A}$。\n\n[[fig:1]]\n\n1、分析该系统的稳定性；\n\n2、确定系统的极限环的振幅和频率。",
+   "figures": [
+    "img/q2016-6-1.png"
+   ],
+   "answerImages": [
+    "img/a2016-6-1.png",
+    "img/a2016-6-2.png"
+   ],
+   "answer": "",
+   "explanation": "",
+   "notes": "原文“继电路特性”，按“继电器特性”录入。"
+  },
+  {
+   "no": 7,
+   "score": 18,
+   "cats": [
+    "离散系统 / 稳定性（朱利判据）",
+    "离散系统 / 脉冲传递函数",
+    "离散系统 / 输出响应"
+   ],
+   "stem": "离散系统如图所示，其中采样周期 $T=0.25$ 秒。\n\n[[fig:1]]\n\n1、试确定使系统稳定的 $K$ 值范围；\n\n2、当 $K=4$ 时，求系统的单位阶跃响应。\n\n附变换表：$\\dfrac1s\\leftrightarrow 1(t)\\leftrightarrow\\dfrac{z}{z-1}$，$\\dfrac{1}{s+a}\\leftrightarrow e^{-at}\\leftrightarrow\\dfrac{z}{z-e^{-aT}}$，$\\dfrac{1}{s-(1/T)\\ln a}\\leftrightarrow a^{t/T}\\leftrightarrow\\dfrac{z}{z-a}$",
+   "figures": [
+    "img/q2016-7-1.png"
+   ],
+   "answerImages": [
+    "img/a2016-7-1.png",
+    "img/a2016-7-2.png"
+   ],
+   "answer": "",
+   "explanation": "",
+   "notes": "附变换表原文第二项分母印作 z−e^{−αT}（α/a 混用），已统一为 e^{-aT}。"
+  },
+  {
+   "no": 8,
+   "score": 15,
+   "cats": [
+    "状态空间 / 李雅普诺夫稳定性",
+    "状态空间 / 状态反馈极点配置"
+   ],
+   "stem": "已知系统：\n$$\\begin{cases}\\dot x=\\begin{bmatrix}0&1&0\\\\-2&-2&0\\\\0&0&1\\end{bmatrix}x+\\begin{bmatrix}0\\\\1\\\\1\\end{bmatrix}u\\\\[2mm] y=\\begin{bmatrix}0&1&0\\end{bmatrix}x\\end{cases}$$\n\n1、分析系统平衡状态的稳定性和系统的 BIBO 稳定性；\n\n2、用极点配置方法将闭环系统极点配置在 $-1+j$、$-1-j$、$-5$ 处。",
+   "figures": [],
+   "answerImages": [
+    "img/a2016-8-1.png",
+    "img/a2016-8-2.png"
+   ],
+   "answer": "",
+   "explanation": "",
+   "notes": "原题状态方程左边印作 x（漏了点），按状态方程录为 \\dot x（与答案一致）。"
+  }
+ ]
+}

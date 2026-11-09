@@ -25,8 +25,8 @@ async def main():
     first = t('.tree > .node').first
     name = await first.locator('.t').inner_text()
     await first.locator('.tw').click(); ok('目录: 展开/收起分类(箭头)', await t('.tree > .node').first.evaluate('n=>n.classList.contains("open")') != None, name)
-    node = t('.node[data-path="状态空间"] .nm'); await node.click()
-    ok('目录: 点击分类切换小节', '状态空间' in await txt('#sectionLabel') and '8 题' in await txt('#sectionLabel'), await txt('#sectionLabel'))
+    node = t('.node[data-path="状态空间"] .nm'); import re as _re; cnt = _re.search(r'/ (\d+)', await t('.node[data-path="状态空间"] .nm .c').first.inner_text()).group(1); await node.click()
+    ok('目录: 点击分类切换小节', '状态空间' in await txt('#sectionLabel') and f'{cnt} 题' in await txt('#sectionLabel'), await txt('#sectionLabel'))
     await t('.node[data-path="状态空间"] > .tw').click(); await t('.node[data-path="状态空间"] > .tw').click()
     sub = t('.node[data-path="状态空间 / 状态反馈极点配置"] .nm')
     if await sub.count() == 0: await t('.node[data-path="状态空间"] > .tw').click()
@@ -121,7 +121,10 @@ async def main():
         await t('button[aria-label="答案"]').click(); await t('button[aria-label="解析"]').click(); await pg.wait_for_selector('.orig img')
         errs_k = await t('.katex-error').count(); imgs_ok = await pg.evaluate("""async()=>{const ims=[...document.querySelectorAll('.card img')];for(const i of ims){i.loading='eager';i.scrollIntoView();if(!(i.complete&&i.naturalWidth))await new Promise(r=>{i.onload=i.onerror=r;setTimeout(r,8000)});}return ims.every(i=>i.complete&&i.naturalWidth>0)}""")
         if errs_k or not imgs_ok: bad_tex.append((q['id'], errs_k, imgs_ok))
-    ok('全部 24 题: 题干/答案/解析 KaTeX 无报错、图片全部加载', not bad_tex, str(bad_tex))
+    ok(f'全部 {len(lib["questions"])} 题: 题干/答案/解析 KaTeX 无报错、图片全部加载', not bad_tex, str(bad_tex))
+    await pg.goto(BASE + '?list=complete&question=201707', wait_until='networkidle'); await t('button[aria-label="答案"]').click(); await pg.wait_for_selector('.box .orig img')
+    ok('仅原图答案题: 答案框显示原图+勘误说明', await t('.box .orig img').count() == 2 and await t('.box .note').count() == 1)
+    await t('button[aria-label="解析"]').click(); ok('仅原图答案题: 同时开解析时答案框指向解析', '见下方' in await t('.box').first.inner_text() and await t('.box .orig img').count() == 2)
     # 移动端
     m = await b.new_page(viewport={'width': 390, 'height': 844}); await m.goto(BASE + '?list=complete&question=202501', wait_until='networkidle')
     ok('移动端: 侧栏默认隐藏', not await m.locator('#sidebar').is_visible())

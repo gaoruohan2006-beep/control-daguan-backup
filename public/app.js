@@ -151,8 +151,14 @@ function cardHTML(id, idx) {
   const sh = st.show[id] || {}; const mk = rec.marks[id]?.state; const fav = rec.favorites.includes(id);
   const hl = st.q && st.q.length > 0 ? st.q : null;
   let ans = '';
-  if (sh.answer) ans += `<section class="box"><h4>答案</h4><div class="body">${d ? md(d.answer) : '加载中'}</div></section>`;
-  if (sh.exp) ans += `<section class="box"><h4>解析</h4><div class="body">${d ? md(d.explanation) : '加载中'}${d && d.originalImages.length ? `<div class="orig"><div class="lab">原图解析（源文件顺序，PDF 第 ${d.answerPdfPages} 页）</div>${d.originalImages.map(o => `<img src="${o.src}" style="width:${o.w}px" alt="原图解析" loading="lazy" data-zoom title="单击放大图片">`).join('')}</div>` : ''}</div></section>`;
+  const origHTML = d && d.originalImages.length ? `<div class="orig"><div class="lab">原图解析（源文件顺序，PDF 第 ${d.answerPdfPages} 页）</div>${d.originalImages.map(o => `<img src="${o.src}" style="width:${o.w}px" alt="原图解析" loading="lazy" data-zoom title="单击放大图片">`).join('')}</div>` : '';
+  const noteHTML = d && d.notes ? `<p class="note">勘误/说明：${inline(d.notes)}</p>` : '';
+  if (sh.answer) {
+    let body = '加载中';
+    if (d) body = d.answer ? md(d.answer) : (sh.exp ? '<p class="muted">本题答案见下方「解析」中的原图。</p>' : origHTML);
+    ans += `<section class="box"><h4>答案</h4><div class="body">${body}${d && !sh.exp ? noteHTML : ''}</div></section>`;
+  }
+  if (sh.exp) ans += `<section class="box"><h4>解析</h4><div class="body">${d ? (d.explanation ? md(d.explanation) : '') + origHTML + noteHTML : '加载中'}</div></section>`;
   const hist = rec.history.filter(h => h.id === id);
   return `<article class="card" data-id="${id}">
     <div class="meta"><span class="qno">第 ${idx + 1} 题</span><span class="src">${esc(q.source)}</span>

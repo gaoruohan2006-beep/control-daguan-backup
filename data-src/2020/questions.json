@@ -1,0 +1,133 @@
+{
+ "year": 2020,
+ "contributor": "code Bot",
+ "questionPages": "36–38",
+ "answerPages": "141–149",
+ "questions": [
+  {
+   "no": 1,
+   "score": null,
+   "cats": [
+    "建模 / 电路网络 / 运放电路传递函数"
+   ],
+   "stem": "已知电路网络如下\n\n[[fig:1]]\n\n1．求系统微分方程；\n\n2．求系统传递函数。",
+   "figures": [
+    "img/q2020-1-1.png"
+   ],
+   "answerImages": [
+    "img/a2020-1-1.png"
+   ],
+   "answer": "",
+   "explanation": "",
+   "notes": ""
+  },
+  {
+   "no": 2,
+   "score": null,
+   "cats": [
+    "时域分析 / 二阶系统性能指标",
+    "时域分析 / 稳态误差"
+   ],
+   "stem": "已知系统框图如下\n\n[[fig:1]]\n\n1．系统结构图如图所示，当输入为单位阶跃时，系统的稳态误差 $e=0.875$，求 $K_d$，并求系统超调量和调节时间（$\\Delta=0.05$）；\n\n2．当引入 $G_c=\\dfrac{K_1}{s+5}$ 时，系统超调量为 $20.5\\%$，求 $K_1$ 和稳态误差。",
+   "figures": [
+    "img/q2020-2-1.png"
+   ],
+   "answerImages": [
+    "img/a2020-2-1.png",
+    "img/a2020-2-2.png"
+   ],
+   "answer": "",
+   "explanation": "",
+   "notes": ""
+  },
+  {
+   "no": 3,
+   "score": null,
+   "cats": [
+    "根轨迹 / 常规根轨迹绘制",
+    "时域分析 / 稳态误差"
+   ],
+   "stem": "设单位负反馈控制系统传函为：$G=\\dfrac{k^*}{s(s+2)(s+4)}$\n\n1．绘制根轨迹；\n\n2．使系统稳定的开环增益 $k$ 的取值范围；\n\n3．当系统含有重根时，求所有的闭环特征根，并计算当输入为单位阶跃时稳态误差。",
+   "figures": [],
+   "answerImages": [
+    "img/a2020-3-1.png",
+    "img/a2020-3-2.png"
+   ],
+   "answer": "",
+   "explanation": "",
+   "notes": ""
+  },
+  {
+   "no": 4,
+   "score": null,
+   "cats": [
+    "离散系统 / 脉冲传递函数",
+    "离散系统 / 稳定性（朱利判据）",
+    "离散系统 / 稳态误差"
+   ],
+   "stem": "已知离散系统结构图如下，采样周期 $T=1\\,\\mathrm s$\n\n[[fig:1]]\n\n1．求出闭环脉冲传递函数；\n\n2．求系统稳定 $k$ 的取值范围；\n\n3．当系统输入分别为单位阶跃、单位斜坡、单位加速度时，系统的稳态误差。",
+   "figures": [
+    "img/q2020-4-1.png"
+   ],
+   "answerImages": [
+    "img/a2020-4-1.png"
+   ],
+   "answer": "",
+   "explanation": "",
+   "notes": ""
+  },
+  {
+   "no": 5,
+   "score": null,
+   "cats": [
+    "非线性系统 / 相平面法"
+   ],
+   "stem": "非线性系统的结构图如下，试绘制系统不加入速度控制环和加入速度控制环的相轨迹图，并分析速度环对系统的影响，这里 $\\beta>0$。\n\n[[fig:1]]",
+   "figures": [
+    "img/q2020-5-1.png"
+   ],
+   "answerImages": [
+    "img/a2020-5-1.png",
+    "img/a2020-5-2.png",
+    "img/a2020-5-3.png"
+   ],
+   "answer": "",
+   "explanation": "",
+   "notes": ""
+  },
+  {
+   "no": 6,
+   "score": null,
+   "cats": [
+    "状态空间 / 能控性与能观性",
+    "状态空间 / 传递函数矩阵",
+    "状态空间 / 状态转移矩阵"
+   ],
+   "stem": "已知：\n$$\\begin{cases}\\dot x=\\begin{bmatrix}-3&-2\\\\1&0\\end{bmatrix}x+\\begin{bmatrix}0\\\\1\\end{bmatrix}u\\\\[4pt] y=\\begin{bmatrix}1&4\\end{bmatrix}x\\end{cases}$$\n\n1．判断系统可控及可测性；\n\n2．求传递函数；\n\n3．求系统的状态转移矩阵。",
+   "figures": [],
+   "answerImages": [
+    "img/a2020-6-1.png",
+    "img/a2020-6-2.png"
+   ],
+   "answer": "",
+   "explanation": "",
+   "notes": ""
+  },
+  {
+   "no": 7,
+   "score": null,
+   "cats": [
+    "状态空间 / 李雅普诺夫稳定性"
+   ],
+   "stem": "判断系统的稳定性\n\n（1）$\\dot x=\\begin{bmatrix}-1&1\\\\2&-3\\end{bmatrix}x$\n\n（2）$\\begin{cases}\\dot x_1=x_2-x_1(x_1^2+x_2^2)\\\\ \\dot x_2=-x_1-x_2(x_1^2+x_2^2)\\end{cases}$",
+   "figures": [],
+   "answerImages": [
+    "img/a2020-7-1.png",
+    "img/a2020-7-2.png"
+   ],
+   "answer": "",
+   "explanation": "",
+   "notes": ""
+  }
+ ]
+}

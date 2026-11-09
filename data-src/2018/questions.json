@@ -1,0 +1,152 @@
+{
+ "year": 2018,
+ "contributor": "workbuddy",
+ "questionPages": "29–32",
+ "answerPages": "123–131",
+ "questions": [
+  {
+   "no": 1,
+   "score": null,
+   "cats": [
+    "建模 / 液位系统 / 非线性模型线性化"
+   ],
+   "stem": "如图所示，输入量为流入量 $Q_1(t)$，输出量为水箱水位 $h(t)$，其中水箱截面积为 $S$，流出量 $Q_2(t)=a\\sqrt{h(t)}$，其中 $a$ 为常数。试求：\n\n[[fig:1]]\n\n1、水箱的动态方程；\n\n2、设水箱稳定工作点为 $A(Q_{20},h_0)$，根据最小偏差法列写系统的线性模型。",
+   "figures": [
+    "img/q2018-1-1.png"
+   ],
+   "answerImages": [
+    "img/a2018-1-1.png"
+   ],
+   "answer": "",
+   "explanation": "",
+   "notes": ""
+  },
+  {
+   "no": 2,
+   "score": null,
+   "cats": [
+    "时域分析 / 二阶系统性能指标",
+    "时域分析 / 稳态误差 / 静态误差系数"
+   ],
+   "stem": "速度反馈控制系统如图所示。\n\n[[fig:1]]\n\n1、试确定使阻尼比为 $0.6$ 时的 $K_L$ 的值，并计算阶跃响应的超调量 $\\sigma\\%$ 和调节时间 $t_s$。\n\n2、计算系统在斜坡输入作用下的系统误差 $E(s)$ 的稳态值 $e_m$。",
+   "figures": [
+    "img/q2018-2-1.png"
+   ],
+   "answerImages": [
+    "img/a2018-2-1.png",
+    "img/a2018-2-2.png"
+   ],
+   "answer": "",
+   "explanation": "",
+   "notes": ""
+  },
+  {
+   "no": 3,
+   "score": null,
+   "cats": [
+    "根轨迹 / 常规根轨迹绘制",
+    "根轨迹 / 由根轨迹分析系统性能"
+   ],
+   "stem": "设系统的开环传递函数为\n$$G(s)H(s)=\\frac{K'}{s(s+1)(s+2)}$$\n\n试绘制系统的根轨迹，并分析系统的性能。",
+   "figures": [],
+   "answerImages": [
+    "img/a2018-3-1.png",
+    "img/a2018-3-2.png"
+   ],
+   "answer": "",
+   "explanation": "",
+   "notes": ""
+  },
+  {
+   "no": 4,
+   "score": null,
+   "cats": [
+    "频域分析 / 截止频率与相角裕度",
+    "频域分析 / 幅值裕度与开环增益调整"
+   ],
+   "stem": "已知单位反馈控制系统的开环频率特性如下：\n\n1、求系统的相位裕量和幅值裕量；\n\n2、欲使系统具有 $20\\,\\mathrm{dB}$ 的幅值裕量，系统的开环增益应变化多少？\n\n3、欲使系统具有 $40^\\circ$ 的相位裕量，系统的开环增益变化多少？\n\n$$\\begin{array}{c|cccccccc}\\omega&2&3&4&5&6&7&8&10\\\\\\hline |G(j\\omega)|&10&8.5&6&4.18&2.7&1.5&1.0&0.6\\\\ \\angle G(j\\omega)&-100^\\circ&-115^\\circ&-130^\\circ&-140^\\circ&-145^\\circ&-150^\\circ&-160^\\circ&-180^\\circ\\end{array}$$",
+   "figures": [],
+   "answerImages": [
+    "img/a2018-4-1.png",
+    "img/a2018-4-2.png"
+   ],
+   "answer": "",
+   "explanation": "",
+   "notes": "原卷频率特性表格已转写为 LaTeX array（网站 Markdown 不支持表格）。"
+  },
+  {
+   "no": 5,
+   "score": null,
+   "cats": [
+    "校正 / 比例积分（PI）调节器",
+    "时域分析 / 稳态误差 / 静态误差系数"
+   ],
+   "stem": "已知单位反馈控制系统如图所示，试确定 PI 调节器 $G_c(s)=\\dfrac{K(1+\\tau s)}{s}$ 的参数，使校正后的系统同时满足下列性能：\n\n[[fig:1]]\n\n1、跟踪输入信号 $r(t)=\\dfrac12t^2$ 时的稳态误差为 $0.1$；\n\n2、相位裕量 $\\gamma=45^\\circ$。",
+   "figures": [
+    "img/q2018-5-1.png"
+   ],
+   "answerImages": [
+    "img/a2018-5-1.png",
+    "img/a2018-5-2.png"
+   ],
+   "answer": "",
+   "explanation": "",
+   "notes": ""
+  },
+  {
+   "no": 6,
+   "score": null,
+   "cats": [
+    "非线性系统 / 描述函数法 / 自振分析"
+   ],
+   "stem": "非线性控制系统的结构图如图所示，继电器特性的描述函数 $N(A)=\\dfrac{4M}{\\pi A}$，其中 $M=1$。\n\n[[fig:1]]\n\n1、当 $\\tau=0$ 时，确定系统产生自持振荡的振幅和频率；\n\n2、要使系统产生振幅 $A=4$，频率 $\\omega=1$ 的自振运动，确定参数 $K$、$\\tau$ 的值；\n\n3、分析参数 $K$、$\\tau$ 变化对自持振荡和频率的影响。",
+   "figures": [
+    "img/q2018-6-1.png"
+   ],
+   "answerImages": [
+    "img/a2018-6-1.png",
+    "img/a2018-6-2.png"
+   ],
+   "answer": "",
+   "explanation": "",
+   "notes": "原文频率写作 w=1，按 \\omega=1 录入。"
+  },
+  {
+   "no": 7,
+   "score": null,
+   "cats": [
+    "离散系统 / 稳定性（朱利判据）",
+    "离散系统 / 脉冲传递函数",
+    "离散系统 / 差分方程"
+   ],
+   "stem": "离散控制系统如图所示，其中采样周期 $T=1$ 秒。\n\n[[fig:1]]\n\n1、试确定闭环系统的稳定性；\n\n2、求系统的闭环脉冲传递函数，写出系统的输入输出差分方程；\n\n3、给定初值 $y(0)=0$、$y(1)=0.368$，求系统单位阶跃响应的第 2、第 3 拍的值。",
+   "figures": [
+    "img/q2018-7-1.png"
+   ],
+   "answerImages": [
+    "img/a2018-7-1.png",
+    "img/a2018-7-2.png"
+   ],
+   "answer": "",
+   "explanation": "",
+   "notes": ""
+  },
+  {
+   "no": 8,
+   "score": null,
+   "cats": [
+    "状态空间 / 能控性与能观性",
+    "状态空间 / 李雅普诺夫稳定性"
+   ],
+   "stem": "已知离散系统的状态空间描述如下\n$$\\begin{cases}\\begin{bmatrix}x_1(k+1)\\\\x_2(k+1)\\end{bmatrix}=\\begin{bmatrix}0.5&0\\\\0&-0.9\\end{bmatrix}\\begin{bmatrix}x_1(k)\\\\x_2(k)\\end{bmatrix}+\\begin{bmatrix}1\\\\1\\end{bmatrix}u(k)\\\\[2mm] y_k=\\begin{bmatrix}1&1\\end{bmatrix}\\begin{bmatrix}x_1(k)\\\\x_2(k)\\end{bmatrix}\\end{cases}$$\n\n1、试求系统的自由运动的平衡状态，并判断其稳定性；\n\n2、判断系统状态能控性，并求取系统由初态 $x(0)=\\begin{bmatrix}1&1\\end{bmatrix}^T$ 驱动到零状态的控制序列 $u(0)$，$u(1)$……？这一过程耗时几个周期？\n\n3、当 $u(k)=0\\ (k=0,1)$，测得系统的输出序列 $\\begin{bmatrix}y(0)&y(1)\\end{bmatrix}^T=\\begin{bmatrix}-0.5&0\\end{bmatrix}^T$，据此可否计算出系统的初始状态 $x(0)$ 的估计值？为什么？\n\n4、附变换表：$\\dfrac1s\\leftrightarrow 1(t)\\leftrightarrow\\dfrac{z}{z-1}$，$\\dfrac{1}{s+a}\\leftrightarrow e^{-at}\\leftrightarrow\\dfrac{z}{z-e^{-aT}}$，$\\dfrac{1}{s^2}\\leftrightarrow t\\leftrightarrow\\dfrac{Tz}{(z-1)^2}$",
+   "figures": [],
+   "answerImages": [
+    "img/a2018-8-1.png",
+    "img/a2018-8-2.png"
+   ],
+   "answer": "",
+   "explanation": "",
+   "notes": "附变换表原文第二项分母印作 z−e^{−at}（小写 t），已按 Z 变换改为 e^{-aT}。"
+  }
+ ]
+}
