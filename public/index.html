@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>控制大观 · 自动控制原理真题</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%23006bea'/><text x='16' y='22' font-size='17' text-anchor='middle' fill='white' font-family='sans-serif'>控</text></svg>" />
+<link rel="stylesheet" href="vendor/katex/katex.min.css" />
+<link rel="stylesheet" href="app.css" />
+</head>
+<body>
+<div id="app">
+  <header class="topbar">
+    <a class="brand" href="./" id="brand" title="回到首页">控制大观</a>
+    <nav class="seg" id="tabs" role="tablist">
+      <button type="button" role="tab" data-tab="bank">题库</button>
+      <button type="button" role="tab" data-tab="fav">收藏</button>
+      <button type="button" role="tab" data-tab="retest">复测</button>
+    </nav>
+    <button type="button" class="btn soft" id="tocBtn" aria-label="章节目录" aria-expanded="true"><svg viewBox="0 0 24 24" class="ic"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>目录</button>
+    <span class="section-label" id="sectionLabel"></span>
+    <div class="pop-wrap">
+      <button type="button" class="icon-btn" id="gearBtn" aria-label="设置" title="设置" aria-expanded="false"><svg viewBox="0 0 24 24" class="ic"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></button>
+      <div class="popover settings" id="settings" hidden>
+        <div class="set-title">阅读模式</div>
+        <div class="seg small" id="modeSeg"><button type="button" data-mode="single">单题</button><button type="button" data-mode="multiple">多题</button></div>
+        <div class="set-title">字号</div>
+        <div class="seg small" id="fontSeg"><button type="button" data-font="85">小</button><button type="button" data-font="100">标准</button><button type="button" data-font="115">大</button><button type="button" data-font="130">特大</button></div>
+        <hr />
+        <div class="set-title">学习记录</div>
+        <button type="button" class="btn soft block" id="exportBtn">导出记录 JSON</button>
+        <p class="hint">记录码可在另一台设备上恢复收藏与标记。先在这里生成，再粘贴到另一台设备。</p>
+        <button type="button" class="btn ghost block" id="genCodeBtn">生成记录码并复制</button>
+        <textarea id="codeInput" rows="4" placeholder="粘贴全部 CG1 分段记录码"></textarea>
+        <button type="button" class="btn soft block" id="importCodeBtn" disabled>校验并导入记录码</button>
+        <p class="hint">也可导入控制大观导出的学习记录 JSON（最多 10 MB）。</p>
+        <button type="button" class="btn soft block" id="importJsonBtn">导入记录 JSON</button>
+        <input type="file" id="importFile" accept=".json,application/json" hidden />
+        <p class="set-msg" id="setMsg" role="status"></p>
+      </div>
+    </div>
+  </header>
+  <div class="layout">
+    <aside class="sidebar" id="sidebar" aria-label="章节目录侧栏">
+      <div class="pop-wrap">
+        <button type="button" class="list-select" id="listBtn" aria-label="选择题单" aria-expanded="false"><span id="listName"></span><svg viewBox="0 0 24 24" class="ic chev"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="popover lists" id="listPop" role="listbox" hidden></div>
+      </div>
+      <div class="search"><svg viewBox="0 0 24 24" class="ic"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="search" type="search" placeholder="搜索题目、分类或年份" aria-label="搜索题目" /></div>
+      <div class="tree" id="tree"></div>
+    </aside>
+    <div class="scrim" id="scrim" hidden></div>
+    <main class="main" id="main">
+      <div class="cards" id="cards"></div>
+    </main>
+  </div>
+  <footer class="pager">
+    <button type="button" class="btn soft" id="prevBtn"><svg viewBox="0 0 24 24" class="ic"><path d="M19 12H5m6-6-6 6 6 6"/></svg><span>上一题</span></button>
+    <span id="pos" class="pos"></span>
+    <button type="button" class="btn soft" id="nextBtn"><span>下一题</span><svg viewBox="0 0 24 24" class="ic"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
+  </footer>
+  <div class="lightbox" id="lightbox" hidden role="dialog" aria-label="图片预览"><img alt="大图" id="lbImg" /><button type="button" class="lb-close" aria-label="关闭">×</button></div>
+  <div class="toast" id="toast" role="status" hidden></div>
+</div>
+<script src="vendor/katex/katex.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
