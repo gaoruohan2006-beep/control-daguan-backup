@@ -4,13 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "vendor": "mkdir -p public/vendor/ts-fsrs && cp node_modules/ts-fsrs/dist/index.umd.js public/vendor/ts-fsrs/ts-fsrs.umd.js && cp node_modules/ts-fsrs/LICENSE public/vendor/ts-fsrs/"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
-    "katex": "^0.16.47"
-  }
+    "idb-keyval": "^6.3.0",
+    "katex": "^0.16.47",
+    "ts-fsrs": "^6.0.0"
+  },
+  "private": true
 }

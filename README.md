@@ -31,6 +31,16 @@
 
 专题：建模、时域分析、根轨迹、频域分析、校正、离散系统、非线性系统、状态空间。
 
+## 间隔复习（FSRS）
+
+复习调度用 [ts-fsrs](https://github.com/open-spaced-repetition/ts-fsrs)（`public/vendor/ts-fsrs/`），全部在浏览器本地计算，没有服务器。
+
+- 三个标记就是评分：**不会 = Again**，**不熟练 = Hard**，**掌握 = Good**（不提供 Easy）。标记仍作为标签显示，下次复习时间由 FSRS 决定。
+- 按钮上显示各评分对应的间隔预览（如「不会 1天 / 不熟练 2天 / 掌握 3天」），题目右上角显示下次复习日期。
+- 「复测」页默认是**今日待复习**：列出今天到期（含已过期）的题，按到期时间排序；标签上的红色角标是到期题数。另有「不熟练 · 不会」视图，按标签筛题。
+- 设置里可调**目标记忆率**（默认 0.90，范围 0.80–0.95；越高间隔越短），也可**重置复习进度**（需确认，标记和收藏保留）。
+- 每题的卡片状态和复习日志与标记一起保存在本地，并包含在导出 JSON（version 2）和记录码里。导入时按题取最近一次复习的卡片，日志按 id 去重合并；旧版（version 1）记录照常导入。
+
 ## 目录结构
 
 ```
@@ -49,6 +59,7 @@ tools/
   crops.py / crops.json     # 从 PDF 页面裁剪题图与解析图
   build_data.py             # 生成 public/data
   verify.py                 # Playwright 全控件点击验收
+  verify_fsrs.py            # FSRS 验收（模拟时间到期、导入导出往返）
 .github/workflows/pages.yml # 推送 main 后自动部署到 GitHub Pages
 ```
 
@@ -57,7 +68,8 @@ tools/
 ```bash
 python3 -m http.server 8765 -d public
 # 打开 http://localhost:8765/
-python3 tools/verify.py http://localhost:8765/   # 可选：自动验收
+python3 tools/verify.py http://localhost:8765/        # 可选：全控件验收
+python3 tools/verify_fsrs.py http://localhost:8765/   # 可选：FSRS 验收
 ```
 
 ## 追加年份

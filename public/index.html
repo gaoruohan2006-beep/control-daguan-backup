@@ -15,7 +15,7 @@
     <nav class="seg" id="tabs" role="tablist">
       <button type="button" role="tab" data-tab="bank">题库</button>
       <button type="button" role="tab" data-tab="fav">收藏</button>
-      <button type="button" role="tab" data-tab="retest">复测</button>
+      <button type="button" role="tab" data-tab="retest">复测<span class="badge" id="dueBadge" hidden></span></button>
     </nav>
     <button type="button" class="btn soft" id="tocBtn" aria-label="章节目录" aria-expanded="true"><svg viewBox="0 0 24 24" class="ic"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>目录</button>
     <span class="section-label" id="sectionLabel"></span>
@@ -27,9 +27,16 @@
         <div class="set-title">字号</div>
         <div class="seg small" id="fontSeg"><button type="button" data-font="85">小</button><button type="button" data-font="100">标准</button><button type="button" data-font="115">大</button><button type="button" data-font="130">特大</button></div>
         <hr />
+        <div class="set-title">复习调度（FSRS）</div>
+        <label class="range-row" for="retention">目标记忆率 <b id="retentionVal">0.90</b></label>
+        <input type="range" id="retention" min="0.80" max="0.95" step="0.01" value="0.9" aria-label="目标记忆率" />
+        <p class="hint">记忆率越高，复习间隔越短。修改只影响之后的评分和预览。</p>
+        <button type="button" class="btn ghost block danger" id="resetSrsBtn">重置复习进度</button>
+        <div class="confirm-row" id="resetConfirm" hidden><span>清空全部复习卡片与评分记录？标记和收藏会保留。</span><button type="button" class="btn danger" id="resetYes">确认重置</button><button type="button" class="btn ghost" id="resetNo">取消</button></div>
+        <hr />
         <div class="set-title">学习记录</div>
         <button type="button" class="btn soft block" id="exportBtn">导出记录 JSON</button>
-        <p class="hint">记录码可在另一台设备上恢复收藏与标记。先在这里生成，再粘贴到另一台设备。</p>
+        <p class="hint">记录码可在另一台设备上恢复收藏、标记和复习进度。先在这里生成，再粘贴到另一台设备。</p>
         <button type="button" class="btn ghost block" id="genCodeBtn">生成记录码并复制</button>
         <textarea id="codeInput" rows="4" placeholder="粘贴全部 CG1 分段记录码"></textarea>
         <button type="button" class="btn soft block" id="importCodeBtn" disabled>校验并导入记录码</button>
@@ -46,6 +53,7 @@
         <button type="button" class="list-select" id="listBtn" aria-label="选择题单" aria-expanded="false"><span id="listName"></span><svg viewBox="0 0 24 24" class="ic chev"><path d="m6 9 6 6 6-6"/></svg></button>
         <div class="popover lists" id="listPop" role="listbox" hidden></div>
       </div>
+      <div class="seg small rv-seg" id="rvSeg" hidden><button type="button" data-rv="due">今日待复习</button><button type="button" data-rv="marked">不熟练 · 不会</button></div>
       <div class="search"><svg viewBox="0 0 24 24" class="ic"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="search" type="search" placeholder="搜索题目、分类或年份" aria-label="搜索题目" /></div>
       <div class="tree" id="tree"></div>
     </aside>
@@ -63,6 +71,7 @@
   <div class="toast" id="toast" role="status" hidden></div>
 </div>
 <script src="vendor/katex/katex.min.js"></script>
+<script src="vendor/ts-fsrs/ts-fsrs.umd.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

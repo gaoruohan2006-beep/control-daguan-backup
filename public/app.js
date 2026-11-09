@@ -16,6 +16,9 @@ const IC = {
   check: '<svg viewBox="0 0 24 24" class="ic" style="width:12px;height:12px"><path d="m5 12 5 5 9-10"/></svg>',
 };
 const MARK_IC = { shaky: IC.gauge, unknown: IC.x, mastered: IC.ok };
+// 标记 → FSRS 评分：不会=Again，不熟练=Hard，掌握=Good（不提供 Easy）
+const F = window.FSRS;
+const GRADE = { unknown: F.Rating.Again, shaky: F.Rating.Hard, mastered: F.Rating.Good };
 
 // ---------- 存储 ----------
 function loadRec() {
@@ -23,17 +26,49 @@ function loadRec() {
   return normRec({});
 }
 function normRec(r) {
+  const ret = +r.retention;
   return { favorites: Array.isArray(r.favorites) ? r.favorites.map(Number) : [], marks: r.marks && typeof r.marks === 'object' ? r.marks : {},
+    srs: normSrs(r.srs), retention: ret >= 0.8 && ret <= 0.95 ? Math.round(ret * 100) / 100 : 0.9,
     history: Array.isArray(r.history) ? r.history : [], mode: r.mode === 'multiple' ? 'multiple' : 'single',
     fontScale: FONT.includes(r.fontScale) ? r.fontScale : 100, collapsed: !!r.collapsed, open: r.open && typeof r.open === 'object' ? r.open : {} };
 }
+// srs: { [题号]: { card: FSRS 卡片（日期存 ISO 字符串）, logs: [复习日志] } }
+function normSrs(s) {
+  const out = {};
+  if (!s || typeof s !== 'object') return out;
+  for (const [k, v] of Object.entries(s)) {
+    if (!v || typeof v !== 'object' || !v.card || isNaN(Date.parse(v.card.due))) continue;
+    out[k] = { card: v.card, logs: Array.isArray(v.logs) ? v.logs.filter(l => l && l.id && l.review) : [] };
+  }
+  return out;
+}
 let rec = loadRec();
 const save = () => { try { localStorage.setItem(STORE, JSON.stringify(rec)); } catch { toast('浏览器未能保存进度，本次更改未保存，请重试。'); } };
+// ---------- FSRS ----------
+let sched, schedR;
+const scheduler = () => { if (schedR !== rec.retention) { sched = F.fsrs(F.generatorParameters({ request_retention: rec.retention, enable_fuzz: false, enable_short_term: false })); schedR = rec.retention; } return sched; };
+const toCard = c => ({ ...c, due: new Date(c.due), last_review: c.last_review ? new Date(c.last_review) : undefined });
+const fromCard = c => ({ ...c, due: c.due.toISOString(), last_review: c.last_review ? new Date(c.last_review).toISOString() : undefined });
+const cardOf = id => rec.srs[id] ? toCard(rec.srs[id].card) : F.createEmptyCard(new Date());
+function preview(id) { const now = new Date(), r = scheduler().repeat(cardOf(id), now); const o = {}; for (const [k, g] of Object.entries(GRADE)) o[k] = r[g].card.due; return o; }
+function review(id, mark) {
+  const now = new Date(), r = scheduler().next(cardOf(id), now, GRADE[mark]);
+  const e = rec.srs[id] || (rec.srs[id] = { card: null, logs: [] });
+  e.card = fromCard(r.card);
+  e.logs.push({ id: `${id}-${now.getTime()}`, rating: r.log.rating, mark, state: r.log.state, due: new Date(r.log.due).toISOString(), stability: r.log.stability,
+    difficulty: r.log.difficulty, scheduled_days: r.log.scheduled_days, review: now.toISOString() });
+}
+const endOfToday = () => { const d = new Date(); d.setHours(23, 59, 59, 999); return d; };
+const dueIds = () => { const lim = endOfToday().getTime(); return Object.entries(rec.srs).filter(([k, v]) => byId.has(+k) && Date.parse(v.card.due) <= lim).sort((a, b) => Date.parse(a[1].card.due) - Date.parse(b[1].card.due) || a[0] - b[0]).map(([k]) => +k); };
+const dayDiff = d => { const a = new Date(); a.setHours(0, 0, 0, 0); const b = new Date(d); b.setHours(0, 0, 0, 0); return Math.round((b - a) / 864e5); };
+const ivl = d => { const n = Math.max(0, Math.round((new Date(d) - new Date()) / 864e5)); return n < 1 ? '今天' : n < 30 ? `${n}天` : n < 365 ? `${Math.round(n / 3) / 10}月` : `${Math.round(n / 36.5) / 10}年`; };
+const fmtDue = d => { const n = dayDiff(d), dt = new Date(d); const md = `${dt.getMonth() + 1}月${dt.getDate()}日`; return n < 0 ? `已到期 ${-n} 天（${md}）` : n === 0 ? `今日待复习（${md}）` : `下次复习：${md}（${n} 天后）`; };
 window.addEventListener('storage', e => { if (e.key === STORE) { rec = loadRec(); render(); } });
 
 // ---------- 状态 ----------
 let lib, byId = new Map(), details = new Map();
-const st = { tab: 'bank', listId: 'complete', node: null, qid: null, q: '', page: 0, show: {} };
+const st = { tab: 'bank', listId: 'complete', node: null, qid: null, q: '', page: 0, show: {}, rv: 'due' };
+const DUE_NODE = '今日待复习';
 
 // ---------- 渲染工具 ----------
 const esc = s => s.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
@@ -66,11 +101,13 @@ const curList = () => lib.lists.find(l => l.id === st.listId) || lib.lists[0];
 function scopeIds() {
   const L = curList(); let ids = L.questionIds;
   if (st.tab === 'fav') ids = ids.filter(id => rec.favorites.includes(id));
-  if (st.tab === 'retest') ids = ids.filter(id => ['shaky', 'unknown'].includes(rec.marks[id]?.state));
+  if (st.tab === 'retest') ids = st.rv === 'due' ? dueIds().filter(id => ids.includes(id)) : ids.filter(id => ['shaky', 'unknown'].includes(rec.marks[id]?.state));
   if (st.q) { const k = st.q.toLowerCase(); ids = ids.filter(id => (byId.get(id).search + ' ' + (L.categoryByQuestion[id] || []).join(' ')).toLowerCase().includes(k)); }
   return ids;
 }
 function buildTree(ids) {
+  // 今日待复习：不分章节，按到期时间排成一个小节
+  if (st.tab === 'retest' && st.rv === 'due') return { list: ids.length ? [{ name: DUE_NODE, path: DUE_NODE, ids, list: [] }] : [] };
   const L = curList(), root = { kids: new Map(), ids: [] };
   for (const id of ids) for (const path of L.categoryByQuestion[id] || []) {
     let n = root; const parts = path.split(' / ');
@@ -118,6 +155,10 @@ function render() {
   $('#app').classList.toggle('app-collapsed', rec.collapsed && !isMobile());
   $('#tocBtn').setAttribute('aria-expanded', isMobile() ? $('#app').classList.contains('drawer-open') : !rec.collapsed);
   $('#listBtn').parentElement.hidden = st.tab !== 'bank';
+  $('#rvSeg').hidden = st.tab !== 'retest';
+  document.querySelectorAll('#rvSeg button').forEach(b => b.classList.toggle('on', b.dataset.rv === st.rv));
+  const nDue = dueIds().length, bd = $('#dueBadge'); bd.hidden = !nDue; bd.textContent = nDue; bd.title = `今日待复习 ${nDue} 题`;
+  $('#retention').value = rec.retention; $('#retentionVal').textContent = rec.retention.toFixed(2);
   const L = curList();
   $('#listName').textContent = `${L.name} · ${L.questionIds.length} 题`;
   const node = st.node ? flatNodes(tree).find(n => n.path === st.node) : null;
@@ -141,7 +182,7 @@ function renderTree() {
       <button type="button" class="nm" data-act="select"><span class="t" title="${esc(n.name)}">${esc(n.name)}</span><span class="c">${selMark}${cnt}</span></button></div>
       ${hasKids && open ? `<div class="kids">${n.list.map(k => nodeHTML(k, depth + 1)).join('')}</div>` : ''}`;
   };
-  el.innerHTML = tree.list.length ? tree.list.map(n => nodeHTML(n, 0)).join('') : `<div class="empty" style="padding:30px 0">${st.q ? '没有匹配的题目' : st.tab === 'fav' ? '暂无收藏题目' : st.tab === 'retest' ? '暂无复测题目' : '暂无章节'}</div>`;
+  el.innerHTML = tree.list.length ? tree.list.map(n => nodeHTML(n, 0)).join('') : `<div class="empty" style="padding:30px 0">${st.q ? '没有匹配的题目' : st.tab === 'fav' ? '暂无收藏题目' : st.tab === 'retest' ? (st.rv === 'due' ? '今日没有待复习的题目' : '暂无复测题目') : '暂无章节'}</div>`;
 }
 
 function cardHTML(id, idx) {
@@ -160,17 +201,19 @@ function cardHTML(id, idx) {
   }
   if (sh.exp) ans += `<section class="box"><h4>解析</h4><div class="body">${d ? (d.explanation ? md(d.explanation) : '') + origHTML + noteHTML : '加载中'}</div></section>`;
   const hist = rec.history.filter(h => h.id === id);
+  const srs = rec.srs[id], pv = preview(id);
+  const dueHTML = srs ? `<span class="due ${dayDiff(srs.card.due) <= 0 ? 'now' : ''}" title="FSRS 调度 · 已复习 ${srs.card.reps} 次">${fmtDue(srs.card.due)}</span>` : '<span class="due">未复习</span>';
   return `<article class="card" data-id="${id}">
     <div class="meta"><span class="qno">第 ${idx + 1} 题</span><span class="src">${esc(q.source)}</span>
       <span class="pop-wrap"><button type="button" class="cat-btn" data-act="cats" aria-expanded="false" aria-label="查看完整分类路径，共 ${paths.length} 处">${esc(leaf)}</button>
-      <div class="popover catpop" hidden><b>分类路径</b>${paths.map(p => `<button type="button" data-act="gocat" data-path="${esc(p)}" title="查看本分类全部题目">${esc(p)}</button>`).join('')}</div></span></div>
+      <div class="popover catpop" hidden><b>分类路径</b>${paths.map(p => `<button type="button" data-act="gocat" data-path="${esc(p)}" title="查看本分类全部题目">${esc(p)}</button>`).join('')}</div></span>${dueHTML}</div>
     <div class="stem">${md(q.stem, hl)}</div>
     <div class="actions">
       <button type="button" class="tog" data-act="answer" aria-pressed="${!!sh.answer}" aria-label="答案">${IC.eye}答案</button>
       <button type="button" class="tog" data-act="exp" aria-pressed="${!!sh.exp}" aria-label="解析">${IC.book}解析</button>
       <div class="marks">
         <button type="button" class="mk fav" data-act="fav" aria-pressed="${fav}" aria-label="${fav ? '取消收藏' : '收藏'}">${IC.star}${fav ? '已收藏' : '收藏'}</button>
-        ${Object.entries(MARKS).map(([k, v]) => `<button type="button" class="mk" data-act="mark" data-mark="${k}" aria-pressed="${mk === k}" title="标记为${v}" aria-label="标记为${v}">${MARK_IC[k]}${v}</button>`).join('')}
+        ${Object.entries(MARKS).map(([k, v]) => `<button type="button" class="mk" data-act="mark" data-mark="${k}" aria-pressed="${mk === k}" title="标记为${v}，下次复习 ${new Date(pv[k]).toLocaleDateString('zh-CN')}" aria-label="标记为${v}">${MARK_IC[k]}${v}<span class="iv">${ivl(pv[k])}</span></button>`).join('')}
       </div></div>
     ${mk ? `<button type="button" class="unmark" data-act="unmark">取消标记</button>` : ''}
     ${st.tab === 'retest' && hist.length ? `<details class="history"><summary>查看复测历史（${hist.length}）</summary><ul>${hist.slice().reverse().map(h => `<li>${new Date(h.at).toLocaleString('zh-CN')} · ${h.state ? MARKS[h.state] : '取消标记'}</li>`).join('')}</ul></details>` : ''}
@@ -178,7 +221,7 @@ function cardHTML(id, idx) {
 }
 function renderCards(sec) {
   const el = $('#cards');
-  if (!sec.length) { el.innerHTML = `<div class="empty">${st.q ? '没有匹配的题目' : st.tab === 'fav' ? '暂无收藏题目。点题目下方的「收藏」即可加入。' : st.tab === 'retest' ? '暂无复测题目。把题目标记为「不熟练」或「不会」后会出现在这里。' : '暂无题目'}</div>`; return; }
+  if (!sec.length) { el.innerHTML = `<div class="empty">${st.q ? '没有匹配的题目' : st.tab === 'fav' ? '暂无收藏题目。点题目下方的「收藏」即可加入。' : st.tab === 'retest' ? (st.rv === 'due' ? '今日没有待复习的题目。评分后的题目会在到期当天出现在这里。' : '暂无复测题目。把题目标记为「不熟练」或「不会」后会出现在这里。') : '暂无题目'}</div>`; return; }
   const ids = rec.mode === 'multiple' ? sec : [st.qid];
   ids.forEach(id => { if ((st.show[id]?.answer || st.show[id]?.exp) && !details.has(id)) loadDetail(id); });
   el.innerHTML = ids.map(id => cardHTML(id, sec.indexOf(id))).join('');
@@ -228,6 +271,7 @@ function syncURL() {
   const u = new URL(location.href); const p = u.searchParams;
   p.set('list', st.listId); st.qid != null ? p.set('question', st.qid) : p.delete('question');
   st.tab !== 'bank' ? p.set('tab', st.tab) : p.delete('tab');
+  st.tab === 'retest' && st.rv !== 'due' ? p.set('rv', st.rv) : p.delete('rv');
   st.q ? p.set('q', st.q) : p.delete('q');
   st.node ? p.set('section', st.node) : p.delete('section');
   if (u.href !== location.href) history.replaceState(null, '', u);
@@ -238,6 +282,7 @@ function readURL() {
   st.tab = ['bank', 'fav', 'retest'].includes(p.get('tab')) ? p.get('tab') : 'bank';
   st.qid = p.get('question') ? Number(p.get('question')) : null;
   st.q = p.get('q') || ''; $('#search').value = st.q;
+  st.rv = p.get('rv') === 'marked' ? 'marked' : 'due';
   st.node = p.get('section') || null;
   if (st.qid != null && !st.node) {
     const paths = curList().categoryByQuestion[st.qid]; if (paths) st.node = paths[0].split(' / ')[0];
@@ -247,7 +292,7 @@ function readURL() {
 // ---------- 记录导入导出 ----------
 function setMsg(t, err) { const m = $('#setMsg'); m.textContent = t; m.classList.toggle('err', !!err); }
 function exportJSON() {
-  const data = { app: 'control-daguan', version: 1, exportedAt: new Date().toISOString(), favorites: rec.favorites, marks: rec.marks, history: rec.history };
+  const data = { app: 'control-daguan', version: 2, exportedAt: new Date().toISOString(), favorites: rec.favorites, marks: rec.marks, history: rec.history, srs: rec.srs, retention: rec.retention };
   const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' }));
   a.download = `control-daguan-records-${data.exportedAt.slice(0, 10)}.json`; $('#settings').appendChild(a); a.click(); a.remove();
   setMsg('已导出学习记录 JSON。');
@@ -257,15 +302,31 @@ function applyImport(d) {
   const known = id => byId.has(Number(id));
   rec.favorites = [...new Set([...rec.favorites, ...d.favorites.map(Number).filter(known)])];
   for (const [k, v] of Object.entries(d.marks)) if (known(k) && v && MARKS[v.state] && (!rec.marks[k] || (v.at || 0) >= (rec.marks[k].at || 0))) rec.marks[k] = v;
+  mergeSrs(rec.srs, normSrs(d.srs), known);
   if (Array.isArray(d.history)) { const seen = new Set(rec.history.map(h => h.id + ':' + h.at)); d.history.forEach(h => { if (known(h.id) && !seen.has(h.id + ':' + h.at)) rec.history.push(h); }); rec.history.sort((a, b) => a.at - b.at); }
   save(); render();
+}
+// 每题取最近一次复习的卡片；复习日志按 id 去重合并（v1 记录没有 srs，原样跳过）
+function mergeSrs(into, from, known = () => true) {
+  for (const [k, v] of Object.entries(from)) {
+    if (!known(k)) continue;
+    const cur = into[k];
+    if (!cur) { into[k] = { card: v.card, logs: [...v.logs] }; continue; }
+    const t = c => Date.parse(c.last_review || 0) || 0;
+    if (t(v.card) > t(cur.card)) cur.card = v.card;
+    const ids = new Set(cur.logs.map(l => l.id)); v.logs.forEach(l => { if (!ids.has(l.id)) cur.logs.push(l); });
+    cur.logs.sort((a, b) => Date.parse(a.review) - Date.parse(b.review));
+  }
+  return into;
 }
 // 记录码：CG1-<分段序号>/<总段数>-<base64url>-<校验>，校验为 FNV-1a 32 位
 const fnv = s => { let h = 0x811c9dc5; for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 0x01000193) >>> 0; } return h.toString(36); };
 const b64 = s => btoa(unescape(encodeURIComponent(s))).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
 const unb64 = s => decodeURIComponent(escape(atob(s.replace(/-/g, '+').replace(/_/g, '/'))));
 function genCode() {
-  const payload = b64(JSON.stringify({ app: 'control-daguan', version: 1, favorites: rec.favorites, marks: rec.marks, history: rec.history.slice(-200) }));
+  // 记录码里每题只保留最近 20 条复习日志，控制长度
+  const srs = Object.fromEntries(Object.entries(rec.srs).map(([k, v]) => [k, { card: v.card, logs: v.logs.slice(-20) }]));
+  const payload = b64(JSON.stringify({ app: 'control-daguan', version: 2, favorites: rec.favorites, marks: rec.marks, history: rec.history.slice(-200), srs, retention: rec.retention }));
   const batch = Date.now().toString(36), size = 400, parts = [];
   for (let i = 0; i < payload.length; i += size) parts.push(payload.slice(i, i + size));
   const code = parts.map((p, i) => `CG1-${batch}-${i + 1}/${parts.length}-${p}-${fnv(batch + i + p)}`).join('\n');
@@ -289,9 +350,12 @@ let toastT; function toast(t) { const el = $('#toast'); el.textContent = t; el.h
 function closePops(except) { document.querySelectorAll('.popover').forEach(p => { if (p !== except && !p.contains(except)) { p.hidden = true; const b = p.previousElementSibling; if (b?.hasAttribute('aria-expanded')) b.setAttribute('aria-expanded', 'false'); } }); }
 function setMark(id, state) {
   const prev = rec.marks[id]?.state;
-  if (state) rec.marks[id] = { state, at: Date.now() }; else delete rec.marks[id];
+  if (state) { rec.marks[id] = { state, at: Date.now() }; review(id, state); } else delete rec.marks[id];
   rec.history.push({ id, state: state || null, at: Date.now() }); save();
-  if (st.tab === 'retest' && !['shaky', 'unknown'].includes(state) && prev) {
+  if (st.tab === 'retest' && st.rv === 'due' && state) {
+    const sec = sectionIds(tree); const i = sec.indexOf(id);
+    if (Date.parse(rec.srs[id].card.due) > endOfToday().getTime()) { st.qid = sec[i + 1] ?? sec[i - 1] ?? null; toast(`已评分「${MARKS[state]}」，${fmtDue(rec.srs[id].card.due)}`); }
+  } else if (st.tab === 'retest' && st.rv === 'marked' && !['shaky', 'unknown'].includes(state) && prev) {
     const sec = sectionIds(tree); const i = sec.indexOf(id); const nxt = sec[i + 1] ?? sec[i - 1] ?? null;
     st.qid = nxt; toast(state === 'mastered' ? '已掌握，已移出复测' : '已取消标记，已移出复测');
   }
@@ -314,6 +378,12 @@ function bind() {
     if (b.dataset.font) { rec.fontScale = +b.dataset.font; save(); render(); }
   });
   $('#exportBtn').addEventListener('click', exportJSON);
+  $('#retention').addEventListener('input', e => { rec.retention = Math.round(+e.target.value * 100) / 100; $('#retentionVal').textContent = rec.retention.toFixed(2); });
+  $('#retention').addEventListener('change', () => { save(); render(); setMsg(`目标记忆率已设为 ${rec.retention.toFixed(2)}。`); });
+  $('#resetSrsBtn').addEventListener('click', () => { $('#resetConfirm').hidden = false; $('#resetSrsBtn').hidden = true; });
+  $('#resetNo').addEventListener('click', () => { $('#resetConfirm').hidden = true; $('#resetSrsBtn').hidden = false; });
+  $('#resetYes').addEventListener('click', () => { rec.srs = {}; save(); $('#resetConfirm').hidden = true; $('#resetSrsBtn').hidden = false; render(); setMsg('已重置复习进度，标记和收藏保留。'); });
+  $('#rvSeg').addEventListener('click', e => { const b = e.target.closest('button[data-rv]'); if (!b) return; st.rv = b.dataset.rv; st.node = null; st.qid = null; render(); });
   $('#genCodeBtn').addEventListener('click', genCode);
   $('#codeInput').addEventListener('input', e => $('#importCodeBtn').disabled = !e.target.value.trim());
   $('#importCodeBtn').addEventListener('click', importCode);

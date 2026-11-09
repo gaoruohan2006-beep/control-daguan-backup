@@ -74,7 +74,8 @@ async def main():
     await t('#tabs button[data-tab="fav"]').click(); ok('收藏 tab: 只显示收藏题', '1 题' in await txt('#sectionLabel') and '第二题' in await txt('.src'), await txt('#sectionLabel'))
     await t('.mk.fav').click(); ok('收藏 tab: 取消收藏后移出', await t('.empty').count() > 0, await txt('#cards'))
     # 复测 tab
-    await t('#tabs button[data-tab="retest"]').click(); ok('复测 tab: 显示不熟练/不会题', await t('.card').count() == 1 and await txt('.src') == shaky_src, await txt('#sectionLabel'))
+    await t('#tabs button[data-tab="retest"]').click(); ok('复测 tab: 默认今日待复习(新评分未到期)', await t('.empty').count() > 0 and await t('#rvSeg button.on').get_attribute('data-rv') == 'due')
+    await t('#rvSeg button[data-rv="marked"]').click(); ok('复测 tab: 不熟练·不会 视图', await t('.card').count() == 1 and await txt('.src') == shaky_src, await txt('#sectionLabel'))
     ok('复测历史', await t('details.history').count() == 1); await t('details.history summary').click(); ok('复测历史展开', await t('details.history li').count() >= 1)
     await t('button[data-mark="mastered"]').click(); ok('复测: 标记掌握后移出复测', await t('.empty').count() > 0)
     await t('#tabs button[data-tab="bank"]').click(); ok('题库 tab 返回', await t('.card').count() == 1)
