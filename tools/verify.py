@@ -134,4 +134,5 @@ async def main():
     await b.close()
   print(f"\n{sum(r[1] for r in R)}/{len(R)} passed")
   json.dump(R, open('shots/verify-results.json', 'w'), ensure_ascii=False, indent=1)
+  sys.exit(0 if all(r[1] for r in R) else 1)
 asyncio.run(main())

@@ -18,6 +18,7 @@ const unionLogs = (...lists) => {
   return [...m.values()].sort((x, y) => Date.parse(x.review) - Date.parse(y.review) || (x.id < y.id ? -1 : 1));
 };
 /** 合并本地与远端记录：逐题取最后更新的一方（收藏、标记、FSRS 卡片），复习日志按 id 取并集；
+ *  笔记有自己的更新时间（notes[id].at），逐题独立取较新的一方，删除（空笔记）同样按时间生效；
  *  胜出方已删除复习卡片（重置）时结果也不含卡片。返回新对象，不修改入参。界面偏好（模式、字号等）沿用 local。 */
 function merge(local, remote) {
   const a = local || {}, b = remote || {};
@@ -34,6 +35,7 @@ function merge(local, remote) {
     if (w.srs?.[id]) out.srs[id] = { card: w.srs[id].card, logs: unionLogs(a.srs?.[id]?.logs || [], b.srs?.[id]?.logs || []) };
     const t = Math.max(ta, tb); if (t) out.updated[id] = t;
   }
+  out.notes = window.CDGNotes ? CDGNotes.merge(a.notes, b.notes) : { ...(b.notes || {}), ...(a.notes || {}) };
   const hk = h => `${h.id}:${h.at}:${h.state}`; const hm = new Map();
   [...(a.history || []), ...(b.history || [])].forEach(h => { if (h && !hm.has(hk(h))) hm.set(hk(h), h); });
   out.history = [...hm.values()].sort((x, y) => x.at - y.at);
@@ -41,7 +43,7 @@ function merge(local, remote) {
   out.retention = rb > ra ? b.retention : (a.retention ?? b.retention); out.retentionAt = Math.max(ra, rb);
   return out;
 }
-const SYNC_KEYS = ['favorites', 'marks', 'srs', 'history', 'updated', 'retention', 'retentionAt'];
+const SYNC_KEYS = ['favorites', 'marks', 'srs', 'history', 'updated', 'retention', 'retentionAt', 'notes'];
 const syncPart = r => Object.fromEntries(SYNC_KEYS.map(k => [k, r[k]]));
 
 // ---------- GitHub Gist ----------

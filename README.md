@@ -1,6 +1,6 @@
 # 控制大观
 
-自动控制原理（重庆大学 844）初试真题的静态刷题网站，界面与交互仿照「数学大观」：题单、章节目录、单题/多题阅读、答案与解析折叠、收藏、不熟练/不会/掌握标记、复测、搜索、字号调节，以及学习记录的导出与导入。
+自动控制原理（重庆大学 844）初试真题的静态刷题网站，界面与交互仿照「数学大观」：题单、章节目录、单题/多题阅读、答案与解析折叠、收藏、不熟练/不会/掌握标记、复测、搜索、字号调节，每题 Markdown 笔记，以及学习记录的导出与导入。
 
 在线访问：<https://mintonight.github.io/control-daguan/>
 
@@ -43,6 +43,14 @@
 
 ## 本地存储与云同步
 
+## 题目笔记
+
+- 每道题有自己的笔记：点题目下方的「笔记」打开，分「编辑」和「预览」。宽屏编辑时右侧实时预览；双击预览可回到编辑。
+- 支持 Markdown（GFM）：标题、粗体/斜体、列表、链接、引用、行内代码、代码块、表格；也支持 `$…$` 行内公式和独占一行的 `$$…$$` 公式（KaTeX）。原始 HTML 不会执行，按文本显示；渲染结果再经 [DOMPurify](https://github.com/cure53/DOMPurify) 清洗。Markdown 解析用 [marked](https://github.com/markedjs/marked)。
+- 输入后约 0.7 秒自动保存，翻题、失焦、关页前也会立即保存；`Ctrl/⌘ + S` 手动保存。有笔记的题在卡片上显示「有笔记」，目录里显示该分类下有笔记的题数。搜索也会匹配笔记内容。
+- 数据：`notes[题号] = { text, at }`，`at` 是这条笔记的最后修改时间。导出 JSON（仍为 version 2，`notes` 为可选字段）、记录码和 Gist 同步都包含笔记；没有 `notes` 的旧文件照常导入，不会清空本机笔记。
+- 合并规则：笔记独立于收藏/标记，逐题取 `at` 较新的一方；清空笔记会保留一个空内容和时间戳，让删除也能同步到其他设备。
+
 **存储。** 学习记录保存在浏览器的 **IndexedDB**（库 `control-daguan`，用 [idb-keyval](https://github.com/jakearchibald/idb-keyval)），包括收藏、标记、FSRS 卡片、复习日志和设置。旧版本存在 localStorage（`control-daguan:v1`）里的记录会在第一次打开时自动迁移：逐题取较新的一方并入 IndexedDB，读回确认后再删除 localStorage 里的旧键。多个标签页之间通过 BroadcastChannel 互相刷新。导出 JSON、记录码照常可用。
 
 **云同步（可选）。** 设置 →「云同步（GitHub Gist）」：
@@ -52,7 +60,7 @@
 3. 之后每次改动约 3 秒后自动同步（防抖），打开页面时也会同步；也可以点「立即同步」。设置里显示最近同步时间和错误信息。「断开同步」会从本机删除令牌，Gist 本身保留在你的账号里。
 
 - **令牌只保存在本浏览器的 IndexedDB**，只发给 `api.github.com`，不会写进本仓库、导出文件或记录码。如果令牌带有 gist 以外的权限，设置里会提示更换。
-- **合并规则**：逐题比较最后更新时间（`updated[题号]`），收藏、标记、FSRS 卡片都取较新的一方（较新的取消标记、重置复习进度也会生效）；复习日志按 id 取并集去重；目标记忆率取较新的设置；阅读模式、字号等界面偏好只保存在本机。
+- **合并规则**：逐题比较最后更新时间（`updated[题号]`），收藏、标记、FSRS 卡片都取较新的一方（较新的取消标记、重置复习进度也会生效）；笔记按各自的修改时间单独比较；复习日志按 id 取并集去重；目标记忆率取较新的设置；阅读模式、字号等界面偏好只保存在本机。
 - **离线与错误**：离线时改动照常存在本地，状态显示「当前离线」，恢复联网后自动补同步。令牌失效（401）、权限不足或限流（403/429）、服务器错误和网络中断都会在设置里显示原因；Gist 被删除时会自动重建。
 
 ## 目录结构
@@ -61,6 +69,7 @@
 public/                 # 静态站点根目录（直接部署）
   index.html app.js app.css
   sync.js               # IndexedDB 存储、合并函数、Gist 同步
+  notes.js              # 笔记：Markdown/公式渲染与清洗、笔记合并
   vendor/katex/         # 本地 KaTeX，离线可用
   data/library.json     # 题单、分类、题干
   data/questions/<id>.json   # 答案、文字解析、原图解析列表
@@ -76,6 +85,7 @@ tools/
   verify.py                 # Playwright 全控件点击验收
   verify_fsrs.py            # FSRS 验收（模拟时间到期、导入导出往返）
   verify_sync.py            # IndexedDB 迁移、合并逻辑、Gist 同步验收（模拟 Gist API）
+  verify_notes.py           # 笔记：自动保存、Markdown/公式渲染、XSS、导入导出、合并与同步
 .github/workflows/pages.yml # 推送 main 后自动部署到 GitHub Pages
 ```
 
@@ -87,6 +97,7 @@ python3 -m http.server 8765 -d public
 python3 tools/verify.py http://localhost:8765/        # 可选：全控件验收
 python3 tools/verify_fsrs.py http://localhost:8765/   # 可选：FSRS 验收
 python3 tools/verify_sync.py http://localhost:8765/   # 可选：存储迁移与同步验收
+python3 tools/verify_notes.py http://localhost:8765/  # 可选：笔记验收
 ```
 
 ## 追加年份

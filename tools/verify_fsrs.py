@@ -100,4 +100,5 @@ async def main():
     ok('无页面错误', not errs, str(errs))
     await b.close()
   print(f'{sum(1 for r in R if r[1])}/{len(R)} passed')
+  sys.exit(0 if all(r[1] for r in R) else 1)
 asyncio.run(main())

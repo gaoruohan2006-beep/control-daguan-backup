@@ -11,7 +11,32 @@ concurrency:
   group: pages
   cancel-in-progress: true
 jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install Playwright (uses the runner's Google Chrome)
+        run: pip install playwright
+      - name: Playwright checks
+        run: |
+          mkdir -p shots
+          python3 -m http.server 8765 -d public > /tmp/http.log 2>&1 &
+          sleep 1
+          for t in verify verify_fsrs verify_sync verify_notes; do
+            echo "::group::$t"; python3 tools/$t.py http://localhost:8765/; echo "::endgroup::"
+          done
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-shots
+          path: shots/
+          if-no-files-found: ignore
   deploy:
+    needs: test
     runs-on: ubuntu-latest
     environment:
       name: github-pages

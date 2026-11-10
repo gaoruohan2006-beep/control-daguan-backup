@@ -4,15 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "vendor": "mkdir -p public/vendor/ts-fsrs && cp node_modules/ts-fsrs/dist/index.umd.js public/vendor/ts-fsrs/ts-fsrs.umd.js && cp node_modules/ts-fsrs/LICENSE public/vendor/ts-fsrs/ && mkdir -p public/vendor/idb-keyval && cp node_modules/idb-keyval/dist/umd.js public/vendor/idb-keyval/idb-keyval.umd.js"
+    "vendor": "mkdir -p public/vendor/ts-fsrs && cp node_modules/ts-fsrs/dist/index.umd.js public/vendor/ts-fsrs/ts-fsrs.umd.js && cp node_modules/ts-fsrs/LICENSE public/vendor/ts-fsrs/ && mkdir -p public/vendor/idb-keyval && cp node_modules/idb-keyval/dist/umd.js public/vendor/idb-keyval/idb-keyval.umd.js && mkdir -p public/vendor/marked public/vendor/dompurify && cp node_modules/marked/lib/marked.umd.js public/vendor/marked/ && cp node_modules/marked/LICENSE.md public/vendor/marked/ && cp node_modules/dompurify/dist/purify.min.js public/vendor/dompurify/ && cp node_modules/dompurify/LICENSE public/vendor/dompurify/"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "dompurify": "^3.4.17",
     "idb-keyval": "^6.3.0",
     "katex": "^0.16.47",
+    "marked": "^15.0.12",
     "ts-fsrs": "^6.0.0"
   },
   "private": true

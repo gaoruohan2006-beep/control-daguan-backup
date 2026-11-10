@@ -13,6 +13,7 @@ const IC = {
   x: '<svg viewBox="0 0 24 24" class="ic"><circle cx="12" cy="12" r="9"/><path d="m9 9 6 6m0-6-6 6"/></svg>',
   ok: '<svg viewBox="0 0 24 24" class="ic"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg>',
   chev: '<svg viewBox="0 0 24 24" class="ic"><path d="m9 6 6 6-6 6"/></svg>',
+  pen: '<svg viewBox="0 0 24 24" class="ic"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>',
   check: '<svg viewBox="0 0 24 24" class="ic" style="width:12px;height:12px"><path d="m5 12 5 5 9-10"/></svg>',
 };
 const MARK_IC = { shaky: IC.gauge, unknown: IC.x, mastered: IC.ok };
@@ -21,14 +22,15 @@ const F = window.FSRS;
 const GRADE = { unknown: F.Rating.Again, shaky: F.Rating.Hard, mastered: F.Rating.Good };
 
 // ---------- 存储：IndexedDB（idb-keyval），首次加载自动从 localStorage 迁移 ----------
-const { CDGStore, CDGSync } = window;
+const { CDGStore, CDGSync, CDGNotes } = window;
 function normRec(r) {
   const ret = +r.retention;
   return { favorites: Array.isArray(r.favorites) ? r.favorites.map(Number) : [], marks: r.marks && typeof r.marks === 'object' ? r.marks : {},
     srs: normSrs(r.srs), retention: ret >= 0.8 && ret <= 0.95 ? Math.round(ret * 100) / 100 : 0.9, retentionAt: +r.retentionAt || 0,
     updated: r.updated && typeof r.updated === 'object' ? r.updated : {},
     history: Array.isArray(r.history) ? r.history : [], mode: r.mode === 'multiple' ? 'multiple' : 'single',
-    fontScale: FONT.includes(r.fontScale) ? r.fontScale : 100, collapsed: !!r.collapsed, open: r.open && typeof r.open === 'object' ? r.open : {} };
+    fontScale: FONT.includes(r.fontScale) ? r.fontScale : 100, collapsed: !!r.collapsed, open: r.open && typeof r.open === 'object' ? r.open : {},
+    notes: CDGNotes.normalize(r.notes) };
 }
 // srs: { [题号]: { card: FSRS 卡片（日期存 ISO 字符串）, logs: [复习日志] } }
 function normSrs(s) {
@@ -85,7 +87,7 @@ bc && (bc.onmessage = async () => { rec = await loadRec(); render(); });
 
 // ---------- 状态 ----------
 let lib, byId = new Map(), details = new Map();
-const st = { tab: 'bank', listId: 'complete', node: null, qid: null, q: '', page: 0, show: {}, rv: 'due' };
+const st = { tab: 'bank', listId: 'complete', node: null, qid: null, q: '', page: 0, show: {}, rv: 'due', noteMode: {} };
 const DUE_NODE = '今日待复习';
 
 // ---------- 渲染工具 ----------
@@ -120,7 +122,7 @@ function scopeIds() {
   const L = curList(); let ids = L.questionIds;
   if (st.tab === 'fav') ids = ids.filter(id => rec.favorites.includes(id));
   if (st.tab === 'retest') ids = st.rv === 'due' ? dueIds().filter(id => ids.includes(id)) : ids.filter(id => ['shaky', 'unknown'].includes(rec.marks[id]?.state));
-  if (st.q) { const k = st.q.toLowerCase(); ids = ids.filter(id => (byId.get(id).search + ' ' + (L.categoryByQuestion[id] || []).join(' ')).toLowerCase().includes(k)); }
+  if (st.q) { const k = st.q.toLowerCase(); ids = ids.filter(id => (byId.get(id).search + ' ' + (L.categoryByQuestion[id] || []).join(' ') + ' ' + (rec.notes[id]?.text || '')).toLowerCase().includes(k)); }
   return ids;
 }
 function buildTree(ids) {
@@ -166,6 +168,7 @@ function ensureSelection() {
   return sec;
 }
 function render() {
+  flushNotes();
   document.documentElement.style.setProperty('--fs', rec.fontScale / 100);
   const sec = ensureSelection();
   // tabs
@@ -195,9 +198,11 @@ function renderTree() {
     const hasKids = n.list.length > 0;
     const cnt = st.tab === 'bank' ? `已标记 ${markedCount(n.ids)} / ${n.ids.length}` : `${n.ids.length} 题`;
     const selMark = n.path === st.node ? IC.check : '';
+    const nn = n.ids.filter(id => CDGNotes.has(rec.notes, id)).length;
+    const noteMark = nn ? `<span class="tn" title="${nn} 题有笔记" aria-label="${nn} 题有笔记">${IC.pen}${nn}</span>` : '';
     return `<div class="node ${depth === 0 ? 'top' : ''} ${open && hasKids ? 'open' : ''} ${n.path === st.node ? 'sel' : ''}" data-path="${esc(n.path)}">
       <button type="button" class="tw ${hasKids ? '' : 'leaf'}" aria-label="${open ? '收起' : '展开'}${esc(n.name)}" data-act="toggle">${IC.chev}</button>
-      <button type="button" class="nm" data-act="select"><span class="t" title="${esc(n.name)}">${esc(n.name)}</span><span class="c">${selMark}${cnt}</span></button></div>
+      <button type="button" class="nm" data-act="select"><span class="t" title="${esc(n.name)}">${esc(n.name)}</span><span class="c">${noteMark}${selMark}${cnt}</span></button></div>
       ${hasKids && open ? `<div class="kids">${n.list.map(k => nodeHTML(k, depth + 1)).join('')}</div>` : ''}`;
   };
   el.innerHTML = tree.list.length ? tree.list.map(n => nodeHTML(n, 0)).join('') : `<div class="empty" style="padding:30px 0">${st.q ? '没有匹配的题目' : st.tab === 'fav' ? '暂无收藏题目' : st.tab === 'retest' ? (st.rv === 'due' ? '今日没有待复习的题目' : '暂无复测题目') : '暂无章节'}</div>`;
@@ -221,28 +226,105 @@ function cardHTML(id, idx) {
   const hist = rec.history.filter(h => h.id === id);
   const srs = rec.srs[id], pv = preview(id);
   const dueHTML = srs ? `<span class="due ${dayDiff(srs.card.due) <= 0 ? 'now' : ''}" title="FSRS 调度 · 已复习 ${srs.card.reps} 次">${fmtDue(srs.card.due)}</span>` : '<span class="due">未复习</span>';
+  const hasNote = CDGNotes.has(rec.notes, id), noteOpen = sh.note ?? hasNote;
   return `<article class="card" data-id="${id}">
     <div class="meta"><span class="qno">第 ${idx + 1} 题</span><span class="src">${esc(q.source)}</span>
       <span class="pop-wrap"><button type="button" class="cat-btn" data-act="cats" aria-expanded="false" aria-label="查看完整分类路径，共 ${paths.length} 处">${esc(leaf)}</button>
-      <div class="popover catpop" hidden><b>分类路径</b>${paths.map(p => `<button type="button" data-act="gocat" data-path="${esc(p)}" title="查看本分类全部题目">${esc(p)}</button>`).join('')}</div></span>${dueHTML}</div>
+      <div class="popover catpop" hidden><b>分类路径</b>${paths.map(p => `<button type="button" data-act="gocat" data-path="${esc(p)}" title="查看本分类全部题目">${esc(p)}</button>`).join('')}</div></span>${hasNote ? `<span class="note-flag" title="本题有笔记">${IC.pen}有笔记</span>` : ''}${dueHTML}</div>
     <div class="stem">${md(q.stem, hl)}</div>
     <div class="actions">
       <button type="button" class="tog" data-act="answer" aria-pressed="${!!sh.answer}" aria-label="答案">${IC.eye}答案</button>
       <button type="button" class="tog" data-act="exp" aria-pressed="${!!sh.exp}" aria-label="解析">${IC.book}解析</button>
+      <button type="button" class="tog" data-act="note" aria-pressed="${noteOpen}" aria-expanded="${noteOpen}" aria-label="${hasNote ? '笔记（已有笔记）' : '笔记'}">${IC.pen}笔记${hasNote ? '<i class="dot" aria-hidden="true"></i>' : ''}</button>
       <div class="marks">
         <button type="button" class="mk fav" data-act="fav" aria-pressed="${fav}" aria-label="${fav ? '取消收藏' : '收藏'}">${IC.star}${fav ? '已收藏' : '收藏'}</button>
         ${Object.entries(MARKS).map(([k, v]) => `<button type="button" class="mk" data-act="mark" data-mark="${k}" aria-pressed="${mk === k}" title="标记为${v}，下次复习 ${new Date(pv[k]).toLocaleDateString('zh-CN')}" aria-label="标记为${v}">${MARK_IC[k]}${v}<span class="iv">${ivl(pv[k])}</span></button>`).join('')}
       </div></div>
     ${mk ? `<button type="button" class="unmark" data-act="unmark">取消标记</button>` : ''}
     ${st.tab === 'retest' && hist.length ? `<details class="history"><summary>查看复测历史（${hist.length}）</summary><ul>${hist.slice().reverse().map(h => `<li>${new Date(h.at).toLocaleString('zh-CN')} · ${h.state ? MARKS[h.state] : '取消标记'}</li>`).join('')}</ul></details>` : ''}
-    ${ans}</article>`;
+    ${ans}${noteOpen ? noteHTMLFor(id) : ''}</article>`;
+}
+
+// ---------- 笔记（每题一份，Markdown + 公式，自动保存） ----------
+const drafts = new Map(); // 题号 → 尚未写入的草稿
+const noteTimers = new Map();
+const noteText = id => drafts.has(id) ? drafts.get(id) : (rec.notes[id]?.text || '');
+const savedLabel = id => { const n = rec.notes[id]; return drafts.has(id) ? '正在保存…' : n?.text ? `已保存 · ${new Date(n.at).toLocaleString('zh-CN', { hour12: false, month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit' })}` : ''; };
+const EMPTY_NOTE = '<div class="nb-empty">还没有笔记。写下解题思路、易错点或公式推导，下次复习时一眼就能看到。</div>';
+function noteHTMLFor(id) {
+  const text = noteText(id), mode = st.noteMode[id] || (text.trim() ? 'preview' : 'edit');
+  const head = `<div class="nb-head"><h4>${IC.pen}我的笔记</h4>
+      <div class="seg small nb-tabs" role="tablist" aria-label="笔记视图"><button type="button" role="tab" data-act="nedit" aria-selected="${mode === 'edit'}" class="${mode === 'edit' ? 'on' : ''}">编辑</button><button type="button" role="tab" data-act="nprev" aria-selected="${mode === 'preview'}" class="${mode === 'preview' ? 'on' : ''}">预览</button></div>
+      <span class="nb-status" role="status">${savedLabel(id)}</span></div>`;
+  if (mode === 'preview') {
+    const html = CDGNotes.render(text);
+    return `<section class="box notebox" data-note="${id}">${head}<div class="md-body nb-view" title="双击编辑">${html || `${EMPTY_NOTE}<button type="button" class="btn soft nb-start" data-act="nedit">${IC.pen}写笔记</button>`}</div></section>`;
+  }
+  return `<section class="box notebox editing" data-note="${id}">${head}
+    <div class="nb-split"><textarea class="note-input" data-note-input="${id}" rows="8" maxlength="${CDGNotes.MAX}" aria-label="第 ${id} 题笔记（Markdown）" placeholder="支持 Markdown：# 标题、**加粗**、- 列表、> 引用、\`代码\`、表格、[链接](https://…)\n公式：$G(s)=\\frac{K}{s(Ts+1)}$ 或独占一行的 $$…$$">${esc(text)}</textarea>
+    <div class="md-body nb-live" aria-label="实时预览">${CDGNotes.render(text) || '<div class="nb-empty">实时预览会显示在这里。</div>'}</div></div>
+    <div class="nb-foot"><span class="hint">支持 Markdown 与 $公式$ · 输入后自动保存</span>${text ? `<button type="button" class="nb-clear" data-act="nclear">清空笔记</button>` : ''}</div></section>`;
+}
+function commitNote(id) {
+  clearTimeout(noteTimers.get(id)); noteTimers.delete(id);
+  if (!drafts.has(id)) return false;
+  const text = drafts.get(id); drafts.delete(id);
+  const cur = rec.notes[id]?.text || '';
+  if (text === cur) return false;
+  if (!text && !rec.notes[id]) return false;
+  // 本机编辑总是晚于它所基于的版本（防止设备间时钟偏差让刚写的内容被同步覆盖）
+  const at = Math.max(Date.now(), (rec.notes[id]?.at || 0) + 1);
+  rec.notes[id] = { text: text.trim() ? text : '', at };
+  save().then(() => { if (rec.notes[id]?.at === at) dropBackup(id); });
+  return true;
+}
+// 草稿同步备份到 localStorage：关页/崩溃时 IndexedDB 异步写入可能来不及完成，下次打开时恢复
+const BK = 'control-daguan:note-draft:';
+const backup = (id, text) => { try { localStorage.setItem(BK + id, JSON.stringify({ text, at: Math.max(Date.now(), (rec.notes[id]?.at || 0) + 1) })); } catch {} };
+const dropBackup = id => { try { localStorage.removeItem(BK + id); } catch {} };
+function restoreBackups() {
+  let n = 0;
+  for (const k of Object.keys(localStorage)) {
+    if (!k.startsWith(BK)) continue;
+    const id = k.slice(BK.length);
+    try {
+      const d = JSON.parse(localStorage.getItem(k)), cur = rec.notes[id];
+      if (byId.has(+id) && typeof d?.text === 'string' && d.at > (cur?.at || 0) && d.text !== (cur?.text || '')) { rec.notes[id] = { text: d.text.trim() ? d.text.slice(0, CDGNotes.MAX) : '', at: d.at }; n++; }
+    } catch {}
+    localStorage.removeItem(k);
+  }
+  return n;
+}
+function flushNotes() { let ch = false; for (const id of [...drafts.keys()]) ch = commitNote(id) || ch; return ch; }
+// 只更新状态文字和题目标识，不重建卡片（避免打断输入）
+function afterNoteSaved(id) {
+  const sec = document.querySelector(`.notebox[data-note="${id}"]`); if (sec) sec.querySelector('.nb-status').textContent = savedLabel(id);
+  const card = sec?.closest('.card'), has = CDGNotes.has(rec.notes, id);
+  if (card) {
+    const flag = card.querySelector('.note-flag');
+    if (has && !flag) card.querySelector('.meta .due')?.insertAdjacentHTML('beforebegin', `<span class="note-flag" title="本题有笔记">${IC.pen}有笔记</span>`);
+    if (!has && flag) flag.remove();
+    const btn = card.querySelector('button[data-act="note"]'), dot = btn?.querySelector('.dot');
+    if (has && btn && !dot) btn.insertAdjacentHTML('beforeend', '<i class="dot" aria-hidden="true"></i>'); if (!has) dot?.remove();
+  }
+  renderTree();
+}
+function onNoteInput(ta) {
+  const id = +ta.dataset.noteInput; drafts.set(id, ta.value); backup(id, ta.value);
+  const sec = ta.closest('.notebox'); sec.querySelector('.nb-status').textContent = '正在保存…';
+  clearTimeout(noteTimers.get(id));
+  noteTimers.set(id, setTimeout(() => { commitNote(id); afterNoteSaved(id); }, 700));
+  clearTimeout(ta._pv); ta._pv = setTimeout(() => { const live = sec.querySelector('.nb-live'); if (live) live.innerHTML = CDGNotes.render(ta.value) || '<div class="nb-empty">实时预览会显示在这里。</div>'; }, 120);
 }
 function renderCards(sec) {
   const el = $('#cards');
   if (!sec.length) { el.innerHTML = `<div class="empty">${st.q ? '没有匹配的题目' : st.tab === 'fav' ? '暂无收藏题目。点题目下方的「收藏」即可加入。' : st.tab === 'retest' ? (st.rv === 'due' ? '今日没有待复习的题目。评分后的题目会在到期当天出现在这里。' : '暂无复测题目。把题目标记为「不熟练」或「不会」后会出现在这里。') : '暂无题目'}</div>`; return; }
   const ids = rec.mode === 'multiple' ? sec : [st.qid];
   ids.forEach(id => { if ((st.show[id]?.answer || st.show[id]?.exp) && !details.has(id)) loadDetail(id); });
+  const a = document.activeElement, keep = a?.matches?.('textarea.note-input') ? { id: a.dataset.noteInput, s: a.selectionStart, e: a.selectionEnd, top: a.scrollTop } : null;
   el.innerHTML = ids.map(id => cardHTML(id, sec.indexOf(id))).join('');
+  const ta = keep && el.querySelector(`textarea[data-note-input="${keep.id}"]`);
+  if (ta) { ta.focus({ preventScroll: true }); ta.setSelectionRange(keep.s, keep.e); ta.scrollTop = keep.top; }
 }
 function renderPager(sec) {
   const prev = $('#prevBtn'), next = $('#nextBtn');
@@ -310,7 +392,7 @@ function readURL() {
 // ---------- 记录导入导出 ----------
 function setMsg(t, err) { const m = $('#setMsg'); m.textContent = t; m.classList.toggle('err', !!err); }
 function exportJSON() {
-  const data = { app: 'control-daguan', version: 2, exportedAt: new Date().toISOString(), favorites: rec.favorites, marks: rec.marks, history: rec.history, srs: rec.srs, retention: rec.retention };
+  const data = { app: 'control-daguan', version: 2, exportedAt: new Date().toISOString(), favorites: rec.favorites, marks: rec.marks, history: rec.history, srs: rec.srs, retention: rec.retention, notes: rec.notes };
   const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' }));
   a.download = `control-daguan-records-${data.exportedAt.slice(0, 10)}.json`; $('#settings').appendChild(a); a.click(); a.remove();
   setMsg('已导出学习记录 JSON。');
@@ -324,6 +406,8 @@ function applyImport(d) {
   rec.favorites = [...new Set([...rec.favorites, ...d.favorites.map(Number).filter(known)])];
   for (const [k, v] of Object.entries(d.marks)) if (known(k) && v && MARKS[v.state] && (!rec.marks[k] || (v.at || 0) >= (rec.marks[k].at || 0))) rec.marks[k] = v;
   mergeSrs(rec.srs, normSrs(d.srs), known);
+  flushNotes();
+  if (d.notes) rec.notes = CDGNotes.merge(rec.notes, Object.fromEntries(Object.entries(CDGNotes.normalize(d.notes)).filter(([k]) => known(k))));
   if (CDGSync.canon({ f: rec.favorites, m: rec.marks, s: rec.srs }) !== before) for (const id of byId.keys()) if (snap(id) !== prevSnap[id]) touch(id);
   if (Array.isArray(d.history)) { const seen = new Set(rec.history.map(h => h.id + ':' + h.at)); d.history.forEach(h => { if (known(h.id) && !seen.has(h.id + ':' + h.at)) rec.history.push(h); }); rec.history.sort((a, b) => a.at - b.at); }
   save(); render();
@@ -348,7 +432,7 @@ const unb64 = s => decodeURIComponent(escape(atob(s.replace(/-/g, '+').replace(/
 function genCode() {
   // 记录码里每题只保留最近 20 条复习日志，控制长度
   const srs = Object.fromEntries(Object.entries(rec.srs).map(([k, v]) => [k, { card: v.card, logs: v.logs.slice(-20) }]));
-  const payload = b64(JSON.stringify({ app: 'control-daguan', version: 2, favorites: rec.favorites, marks: rec.marks, history: rec.history.slice(-200), srs, retention: rec.retention }));
+  const payload = b64(JSON.stringify({ app: 'control-daguan', version: 2, favorites: rec.favorites, marks: rec.marks, history: rec.history.slice(-200), srs, retention: rec.retention, notes: rec.notes }));
   const batch = Date.now().toString(36), size = 400, parts = [];
   for (let i = 0; i < payload.length; i += size) parts.push(payload.slice(i, i + size));
   const code = parts.map((p, i) => `CG1-${batch}-${i + 1}/${parts.length}-${p}-${fnv(batch + i + p)}`).join('\n');
@@ -370,6 +454,7 @@ function importCode() {
 // ---------- 交互 ----------
 let toastT; function toast(t) { const el = $('#toast'); el.textContent = t; el.hidden = false; clearTimeout(toastT); toastT = setTimeout(() => el.hidden = true, 2200); }
 function closePops(except) { document.querySelectorAll('.popover').forEach(p => { if (p !== except && !p.contains(except)) { p.hidden = true; const b = p.previousElementSibling; if (b?.hasAttribute('aria-expanded')) b.setAttribute('aria-expanded', 'false'); } }); }
+function focusNote(id) { const ta = document.querySelector(`textarea[data-note-input="${id}"]`); if (ta) { ta.focus({ preventScroll: true }); ta.setSelectionRange(ta.value.length, ta.value.length); ta.closest('.notebox').scrollIntoView({ block: 'nearest', behavior: 'smooth' }); } }
 function setMark(id, state) {
   const prev = rec.marks[id]?.state;
   if (state) { rec.marks[id] = { state, at: Date.now() }; review(id, state); } else delete rec.marks[id];
@@ -437,6 +522,12 @@ function bind() {
     switch (b.dataset.act) {
       case 'answer': sh.answer = !sh.answer; break;
       case 'exp': sh.exp = !sh.exp; break;
+      case 'note': { const open = sh.note ?? CDGNotes.has(rec.notes, id); sh.note = !open; if (sh.note && !CDGNotes.has(rec.notes, id)) st.noteMode[id] = 'edit'; render(); if (sh.note) focusNote(id); return; }
+      case 'nedit': st.noteMode[id] = 'edit'; render(); focusNote(id); return;
+      case 'nprev': st.noteMode[id] = 'preview'; break;
+      case 'nclear': {
+        if (!b.classList.contains('confirm')) { b.classList.add('confirm'); b.textContent = '再点一次确认清空'; setTimeout(() => { if (b.isConnected) { b.classList.remove('confirm'); b.textContent = '清空笔记'; } }, 3000); return; }
+        drafts.set(id, ''); commitNote(id); st.noteMode[id] = 'edit'; toast('已清空本题笔记'); break; }
       case 'fav': { const i = rec.favorites.indexOf(id); i >= 0 ? rec.favorites.splice(i, 1) : rec.favorites.push(id); touch(id); save(); toast(i >= 0 ? '已取消收藏' : '已收藏'); if (st.tab === 'fav' && i >= 0) { const sec = sectionIds(tree); const k = sec.indexOf(id); st.qid = sec[k + 1] ?? sec[k - 1] ?? null; } break; }
       case 'mark': return setMark(id, rec.marks[id]?.state === b.dataset.mark ? rec.marks[id].state : b.dataset.mark);
       case 'unmark': return setMark(id, null);
@@ -445,6 +536,12 @@ function bind() {
     }
     render();
   });
+  $('#cards').addEventListener('input', e => { if (e.target.matches('textarea.note-input')) onNoteInput(e.target); });
+  $('#cards').addEventListener('focusout', e => { if (e.target.matches('textarea.note-input')) { const id = +e.target.dataset.noteInput; if (commitNote(id)) afterNoteSaved(id); } });
+  $('#cards').addEventListener('dblclick', e => { const v = e.target.closest('.nb-view'); if (!v || e.target.closest('a')) return; const id = +v.closest('.card').dataset.id; st.noteMode[id] = 'edit'; render(); focusNote(id); });
+  $('#cards').addEventListener('keydown', e => { if (e.target.matches('textarea.note-input') && (e.ctrlKey || e.metaKey) && e.key === 's') { e.preventDefault(); const id = +e.target.dataset.noteInput; commitNote(id); afterNoteSaved(id); toast('笔记已保存'); } });
+  addEventListener('pagehide', () => flushNotes());
+  document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'hidden') flushNotes(); });
   $('#prevBtn').addEventListener('click', () => step(-1));
   $('#nextBtn').addEventListener('click', () => step(1));
   $('#lightbox').addEventListener('click', () => $('#lightbox').hidden = true);
@@ -461,6 +558,7 @@ function bind() {
 // ---------- 启动 ----------
 Promise.all([fetch('data/library.json').then(r => { if (!r.ok) throw 0; return r.json(); }), loadRec()]).then(async ([d, r]) => {
   lib = d; d.questions.forEach(q => byId.set(q.id, q)); rec = r;
+  if (restoreBackups()) save();
   readURL(); bind(); render();
   if (migrated) toast('学习记录已迁移到 IndexedDB');
   await initSync();
