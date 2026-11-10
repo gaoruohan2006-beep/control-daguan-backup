@@ -4,6 +4,11 @@ import asyncio, sys, json, re, time
 from playwright.async_api import async_playwright
 BASE = sys.argv[1] if len(sys.argv) > 1 else 'http://localhost:8765/'
 R = []
+async def open_sec(p, key):
+    """设置面板是折叠分组：用到某组控件前先展开它"""
+    b = p.locator(f'#acc-{key}-btn')
+    if await b.get_attribute('aria-expanded') != 'true': await b.click()
+
 def ok(name, cond, detail=''):
     R.append((name, bool(cond), detail)); print(('PASS' if cond else 'FAIL'), name, detail)
 FILE = 'control-daguan-progress.json'
@@ -99,7 +104,7 @@ async def main():
       return CDGSync.merge(L, Rm).srs; }""")
     ok('合并: 本地较新的「重置复习进度」不被远端旧卡片恢复', tomb == {})
     # ---------- 3. Gist 同步 ----------
-    await t('#gearBtn').click()
+    await t('#gearBtn').click(); await open_sec(pg, 'sync')
     ok('设置: 显示令牌说明与创建链接', await t('#syncOff a[href*="settings/tokens/new?scopes=gist"]').count() == 1 and await t('#syncOff a[href*="personal-access-tokens/new"]').count() == 1)
     await t('#gistToken').fill('not-a-token'); await t('#syncConnectBtn').click()
     ok('连接: 拒绝格式错误的令牌（不发请求）', 'ghp_' in await txt('#setMsg') and not gh.log)
@@ -122,7 +127,7 @@ async def main():
     # 远端改动 → 立即同步拉取
     c = gh.content(gid); now = int(time.time() * 1000); c['marks']['202305'] = {'state': 'unknown', 'at': now}; c['updated']['202305'] = now
     gh.gists[gid]['files'][FILE]['content'] = json.dumps(c)
-    await t('#gearBtn').click(); await t('#syncNowBtn').click(); await pg.wait_for_function("document.querySelector('#setMsg').textContent.includes('同步完成')")
+    await t('#gearBtn').click(); await open_sec(pg, 'sync'); await t('#syncNowBtn').click(); await pg.wait_for_function("document.querySelector('#setMsg').textContent.includes('同步完成')")
     r = await rec(); ok('立即同步: 拉取远端改动', r['marks'].get('202305', {}).get('state') == 'unknown', await txt('#setMsg'))
     # 加载时同步
     c = gh.content(gid); c['favorites'].append(202306); c['updated']['202306'] = int(time.time() * 1000); gh.gists[gid]['files'][FILE]['content'] = json.dumps(c)
@@ -130,13 +135,13 @@ async def main():
     ok('打开页面时自动同步', await t('.mk.fav').get_attribute('aria-pressed') == 'true')
     # 第二台设备：找到已有 Gist
     ctx2, pg2 = await newpage(); posts = sum(1 for l in gh.log if l[0] == 'POST')
-    await pg2.goto(BASE + '?list=complete&question=202305', wait_until='networkidle'); await pg2.locator('#gearBtn').click()
+    await pg2.goto(BASE + '?list=complete&question=202305', wait_until='networkidle'); await pg2.locator('#gearBtn').click(); await open_sec(pg2, 'sync')
     await pg2.locator('#gistToken').fill(TOKEN); await pg2.locator('#syncConnectBtn').click(); await pg2.wait_for_function("document.querySelector('#setMsg').textContent.includes('已连接')")
     ok('第二台设备: 找到已有 Gist（不重复创建）并拉取进度', sum(1 for l in gh.log if l[0] == 'POST') == posts and (await pg2.evaluate("CDGStore.get('gist')"))['gistId'] == gid and await pg2.locator('button[data-mark="unknown"]').get_attribute('aria-pressed') == 'true')
     # 两台设备各自改同一题 → 后改的胜出
     await pg2.locator('#syncOffBtn').evaluate('b=>b.closest(".popover").hidden=true')
     await pg2.locator('button[data-mark="mastered"]').click(); await pg2.wait_for_timeout(4000)
-    await t('#gearBtn').click(); await t('#syncNowBtn').click(); await pg.wait_for_function("document.querySelector('#setMsg').textContent.includes('同步完成')")
+    await t('#gearBtn').click(); await open_sec(pg, 'sync'); await t('#syncNowBtn').click(); await pg.wait_for_function("document.querySelector('#setMsg').textContent.includes('同步完成')")
     r = await rec(); ok('两台设备: 同一题后改的一方胜出，复习日志合并', r['marks']['202305']['state'] == 'mastered' and len(r['srs']['202305']['logs']) >= 1)
     await ctx2.close()
     # 错误处理
@@ -148,7 +153,7 @@ async def main():
     # 离线
     await ctx.set_offline(True); await pg.wait_for_timeout(200); n0 = len(gh.log)
     await pg.mouse.click(1300, 700); await t('button[data-mark="unknown"]').click(); await pg.wait_for_timeout(3600)
-    await t('#gearBtn').click()
+    await t('#gearBtn').click(); await open_sec(pg, 'sync')
     ok('离线: 改动保存在本地并提示离线', '离线' in await txt('#syncStatus') and len(gh.log) == n0 and (await rec())['marks']['202306']['state'] == 'unknown', await txt('#syncStatus'))
     await ctx.set_offline(False); await pg.wait_for_timeout(1500)
     ok('恢复联网: 自动补同步', gh.content(gid)['marks']['202306']['state'] == 'unknown' and '已同步' in await txt('#syncStatus'), await txt('#syncStatus'))
@@ -166,7 +171,7 @@ async def main():
     n0 = len(gh.log); await pg.mouse.click(1300, 700); await t('button[data-mark="shaky"]').click(); await pg.wait_for_timeout(3600)
     ok('断开后不再请求 GitHub', len(gh.log) == n0)
     # 导出 / 记录码仍可用
-    await t('#gearBtn').click(); await t('#genCodeBtn').click(); code = await t('#codeInput').input_value()
+    await t('#gearBtn').click(); await open_sec(pg, 'records'); await t('#genCodeBtn').click(); code = await t('#codeInput').input_value()
     ok('IndexedDB 下记录码仍可生成', code.startswith('CG1-'))
     await pg.screenshot(path='shots/sync-settings.png')
     ok('无页面错误', not pg.errs, str(pg.errs))

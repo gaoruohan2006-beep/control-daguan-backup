@@ -3,6 +3,11 @@ import asyncio, sys, json, os
 from playwright.async_api import async_playwright
 BASE = sys.argv[1] if len(sys.argv) > 1 else 'http://localhost:8765/'
 R = []
+async def open_sec(p, key):
+    """设置面板是折叠分组：用到某组控件前先展开它"""
+    b = p.locator(f'#acc-{key}-btn')
+    if await b.get_attribute('aria-expanded') != 'true': await b.click()
+
 def ok(name, cond, detail=''):
     R.append((name, bool(cond), detail)); print(('PASS' if cond else 'FAIL'), name, detail)
 async def main():
@@ -89,15 +94,16 @@ async def main():
     await t('#tocBtn').click(); ok('目录按钮: 收起侧栏', not await t('#sidebar').is_visible())
     await t('#tocBtn').click(); ok('目录按钮: 展开侧栏', await t('#sidebar').is_visible())
     # 设置
-    await t('#gearBtn').click(); ok('设置: 打开面板', await t('#settings').is_visible())
+    await t('#gearBtn').click(); ok('设置: 打开面板', await t('#settings').is_visible()); await open_sec(pg, 'read')
     await t('#modeSeg button[data-mode="multiple"]').click(); await pg.keyboard.press('Escape')
     nc = await t('.card').count(); ok('阅读模式: 多题', nc > 1 and '节' in await txt('#pos'), f'{nc} 张卡片, {await txt("#pos")}')
     await t('#nextBtn').click(); ok('多题: 下一小节', '第 2' in await txt('#pos'), await txt('#pos'))
-    await t('#gearBtn').click(); await t('#modeSeg button[data-mode="single"]').click(); ok('阅读模式: 单题', await t('.card').count() == 1)
+    await t('#gearBtn').click(); await open_sec(pg, 'read'); await t('#modeSeg button[data-mode="single"]').click(); ok('阅读模式: 单题', await t('.card').count() == 1)
     for f, lab in [('85', '小'), ('115', '大'), ('130', '特大'), ('100', '标准')]:
         await t(f'#fontSeg button[data-font="{f}"]').click()
         fs = await pg.evaluate("getComputedStyle(document.querySelector('.cards')).fontSize")
         ok(f'字号: {lab}', abs(float(fs[:-2]) - 15 * int(f) / 100) < 0.6, fs)
+    await open_sec(pg, 'records')
     async with pg.expect_download() as dl: await t('#exportBtn').click()
     d = await dl.value; path = await d.path(); data = json.load(open(path))
     ok('导出记录 JSON', data.get('app') == 'control-daguan' and 'marks' in data, d.suggested_filename)

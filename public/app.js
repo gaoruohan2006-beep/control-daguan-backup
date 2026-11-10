@@ -23,13 +23,15 @@ const GRADE = { unknown: F.Rating.Again, shaky: F.Rating.Hard, mastered: F.Ratin
 
 // ---------- 存储：IndexedDB（idb-keyval），首次加载自动从 localStorage 迁移 ----------
 const { CDGStore, CDGSync, CDGNotes } = window;
+// 设置面板折叠分组；最近展开的一组记在本机偏好（不导出、不同步）
+const SET_SECS = ['read', 'review', 'records', 'sync'];
 function normRec(r) {
   const ret = +r.retention;
   return { favorites: Array.isArray(r.favorites) ? r.favorites.map(Number) : [], marks: r.marks && typeof r.marks === 'object' ? r.marks : {},
     srs: normSrs(r.srs), retention: ret >= 0.8 && ret <= 0.95 ? Math.round(ret * 100) / 100 : 0.9, retentionAt: +r.retentionAt || 0,
     updated: r.updated && typeof r.updated === 'object' ? r.updated : {},
     history: Array.isArray(r.history) ? r.history : [], mode: r.mode === 'multiple' ? 'multiple' : 'single',
-    fontScale: FONT.includes(r.fontScale) ? r.fontScale : 100, collapsed: !!r.collapsed, open: r.open && typeof r.open === 'object' ? r.open : {},
+    fontScale: FONT.includes(r.fontScale) ? r.fontScale : 100, collapsed: !!r.collapsed, setSec: SET_SECS.includes(r.setSec) ? r.setSec : 'read', open: r.open && typeof r.open === 'object' ? r.open : {},
     notes: CDGNotes.normalize(r.notes) };
 }
 // srs: { [题号]: { card: FSRS 卡片（日期存 ISO 字符串）, logs: [复习日志] } }
@@ -187,6 +189,14 @@ function render() {
   renderTree(); renderCards(sec); renderPager(sec); syncURL();
   document.querySelectorAll('#modeSeg button').forEach(b => b.classList.toggle('on', b.dataset.mode === rec.mode));
   document.querySelectorAll('#fontSeg button').forEach(b => b.classList.toggle('on', +b.dataset.font === rec.fontScale));
+  $('#accReadSum').textContent = `${rec.mode === 'multiple' ? '多题' : '单题'} · ${FONT_NAME[rec.fontScale] || '标准'}`;
+  $('#accReviewSum').textContent = `记忆率 ${rec.retention.toFixed(2)}`;
+}
+const FONT_NAME = { 85: '小', 100: '标准', 115: '大', 130: '特大' };
+function openSec(key) {
+  document.querySelectorAll('#setBody .acc-btn').forEach(b => {
+    const on = b.dataset.acc === key; b.setAttribute('aria-expanded', on); $('#' + b.getAttribute('aria-controls')).hidden = !on;
+  });
 }
 const isMobile = () => matchMedia('(max-width:900px)').matches;
 
@@ -474,7 +484,14 @@ function bind() {
   $('#brand').addEventListener('click', e => { e.preventDefault(); Object.assign(st, { tab: 'bank', listId: 'complete', node: null, qid: null, q: '' }); $('#search').value = ''; render(); $('#main').scrollTo(0, 0); });
   $('#tocBtn').addEventListener('click', () => { if (isMobile()) $('#app').classList.toggle('drawer-open'); else { rec.collapsed = !rec.collapsed; save(); } render(); });
   $('#scrim').addEventListener('click', () => { $('#app').classList.remove('drawer-open'); render(); });
-  $('#gearBtn').addEventListener('click', e => { e.stopPropagation(); const p = $('#settings'); const open = p.hidden; closePops(); p.hidden = !open; $('#gearBtn').setAttribute('aria-expanded', open); setMsg(''); });
+  $('#gearBtn').addEventListener('click', e => { e.stopPropagation(); const p = $('#settings'); const open = p.hidden; closePops(); p.hidden = !open; $('#gearBtn').setAttribute('aria-expanded', open); setMsg(''); if (open) openSec(rec.setSec); });
+  // 折叠分组：同一时间只展开一组；再点已展开的标题可收起；↑↓/Home/End 在标题间移动
+  $('#setBody').addEventListener('click', e => { const b = e.target.closest('.acc-btn'); if (!b) return; const on = b.getAttribute('aria-expanded') === 'true'; openSec(on ? null : b.dataset.acc); if (!on) { rec.setSec = b.dataset.acc; save(false); } });
+  $('#setBody').addEventListener('keydown', e => {
+    const b = e.target.closest('.acc-btn'); if (!b) return; const all = [...document.querySelectorAll('.acc-btn')], i = all.indexOf(b);
+    const j = { ArrowDown: i + 1, ArrowUp: i - 1, Home: 0, End: all.length - 1 }[e.key]; if (j === undefined) return;
+    e.preventDefault(); all[(j + all.length) % all.length].focus();
+  });
   $('#listBtn').addEventListener('click', e => {
     e.stopPropagation(); const p = $('#listPop'); const open = p.hidden; closePops(); p.hidden = !open; $('#listBtn').setAttribute('aria-expanded', open);
     p.innerHTML = lib.lists.map(l => `<button type="button" role="option" data-list="${l.id}" aria-selected="${l.id === st.listId}"><span>${esc(l.name)} · ${l.questionIds.length} 题</span>${l.id === st.listId ? IC.check : ''}</button>`).join('');
@@ -568,6 +585,8 @@ Promise.all([fetch('data/library.json').then(r => { if (!r.ok) throw 0; return r
 function syncUI(cfg, busy, pending) {
   const on = !!cfg?.token;
   $('#syncOff').hidden = on; $('#syncOn').hidden = !on;
+  $('#accSyncSum').textContent = !on ? '未连接' : busy ? '同步中…' : cfg.lastError ? '同步失败' : '已连接';
+  $('#accSyncSum').classList.toggle('err', on && !busy && !!cfg.lastError);
   if (!on) return;
   const el = $('#syncStatus');
   const last = cfg.lastSync ? new Date(cfg.lastSync).toLocaleString('zh-CN', { hour12: false }) : '尚未同步';

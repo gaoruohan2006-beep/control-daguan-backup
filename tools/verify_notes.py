@@ -4,6 +4,11 @@ import asyncio, sys, json, re
 from playwright.async_api import async_playwright
 BASE = sys.argv[1] if len(sys.argv) > 1 else 'http://localhost:8765/'
 R = []
+async def open_sec(p, key):
+    """设置面板是折叠分组：用到某组控件前先展开它"""
+    b = p.locator(f'#acc-{key}-btn')
+    if await b.get_attribute('aria-expanded') != 'true': await b.click()
+
 def ok(name, cond, detail=''):
     R.append((name, bool(cond), detail)); print(('PASS' if cond else 'FAIL'), name, (str(detail)[:300] if not cond else ''))
 FILE = 'control-daguan-progress.json'
@@ -135,17 +140,17 @@ async def main():
     ok('搜索能找到笔记内容', await t('.card[data-id="202301"]').count() == 1)
     await t('#search').fill(''); await pg.wait_for_timeout(400)
     # 多题模式
-    await t('#gearBtn').click(); await t('#modeSeg button[data-mode="multiple"]').click(); await pg.mouse.click(1300, 860)
+    await t('#gearBtn').click(); await open_sec(pg, 'read'); await t('#modeSeg button[data-mode="multiple"]').click(); await pg.mouse.click(1300, 860)
     ok('多题模式: 每张卡片各自有笔记按钮，有笔记的题显示标识', await t('.card button[data-act="note"]').count() > 1 and await t('.card[data-id="202301"] .note-flag').count() == 1)
-    await t('#gearBtn').click(); await t('#modeSeg button[data-mode="single"]').click(); await pg.mouse.click(1300, 860)
+    await t('#gearBtn').click(); await open_sec(pg, 'read'); await t('#modeSeg button[data-mode="single"]').click(); await pg.mouse.click(1300, 860)
     # ---------- 导出 / 导入 ----------
-    await t('#gearBtn').click()
+    await t('#gearBtn').click(); await open_sec(pg, 'records')
     async with pg.expect_download() as d: await t('#exportBtn').click()
     exp = json.loads(open(await (await d.value).path()).read())
     ok('导出 JSON 包含 notes，版本保持 v2（向后兼容）', exp['version'] == 2 and exp['notes']['202301']['text'].startswith('# 劳斯') and qid2 in exp['notes'])
     await t('#genCodeBtn').click(); code = await t('#codeInput').input_value()
     ctx2, pg2 = await newpage(); await pg2.goto(QURL, wait_until='networkidle')
-    await pg2.locator('#gearBtn').click(); await pg2.locator('#codeInput').fill(code); await pg2.locator('#importCodeBtn').click(); await pg2.wait_for_timeout(300)
+    await pg2.locator('#gearBtn').click(); await open_sec(pg2, 'records'); await pg2.locator('#codeInput').fill(code); await pg2.locator('#importCodeBtn').click(); await pg2.wait_for_timeout(300)
     r2 = await rec(pg2)
     ok('记录码往返包含笔记', r2.get('notes', {}).get('202301', {}).get('text') == exp['notes']['202301']['text'] and await pg2.locator('.note-flag').count() == 1)
     # 新设备导入 JSON；旧 v2（无 notes）文件导入不清空笔记；较旧的笔记不覆盖较新的
@@ -179,6 +184,7 @@ async def main():
     ok('笔记数据校验：丢弃格式错误的条目', list(res['bad'].keys()) == ['3'], res['bad'])
     # ---------- Gist 同步（模拟 API） ----------
     await t('#gearBtn').click() if await t('#settings').is_hidden() else None
+    await open_sec(pg, 'sync')
     await t('#gistToken').fill(TOKEN); await t('#syncConnectBtn').click()
     await pg.wait_for_function("document.querySelector('#setMsg').textContent.includes('已连接')", timeout=8000)
     gid = next(iter(gh.gists)); remote = gh.content(gid)

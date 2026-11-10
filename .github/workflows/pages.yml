@@ -26,7 +26,7 @@ jobs:
           mkdir -p shots
           python3 -m http.server 8765 -d public > /tmp/http.log 2>&1 &
           sleep 1
-          for t in verify verify_fsrs verify_sync verify_notes; do
+          for t in verify verify_fsrs verify_sync verify_notes verify_settings; do
             echo "::group::$t"; python3 tools/$t.py http://localhost:8765/; echo "::endgroup::"
           done
       - if: always()

@@ -4,6 +4,11 @@ import asyncio, sys, json, re, datetime as dt
 from playwright.async_api import async_playwright
 BASE = sys.argv[1] if len(sys.argv) > 1 else 'http://localhost:8765/'
 R = []
+async def open_sec(p, key):
+    """设置面板是折叠分组：用到某组控件前先展开它"""
+    b = p.locator(f'#acc-{key}-btn')
+    if await b.get_attribute('aria-expanded') != 'true': await b.click()
+
 def ok(name, cond, detail=''):
     R.append((name, bool(cond), detail)); print(('PASS' if cond else 'FAIL'), name, detail)
 T0 = dt.datetime(2026, 11, 10, 10, 0, tzinfo=dt.timezone(dt.timedelta(hours=9)))
@@ -63,7 +68,7 @@ async def main():
     ok('待复习里评分后移出并跳到下一题', (await txt('#dueBadge')) == '1' and 'question=202301' in pg.url, pg.url)
     s = await store(); ok('复习日志累计', len(s['srs'][str(q2)]['logs']) == 2)
     # 设置：目标记忆率
-    await t('#gearBtn').click()
+    await t('#gearBtn').click(); await open_sec(pg, 'review')
     ok('设置: 目标记忆率默认 0.90', (await txt('#retentionVal')) == '0.90')
     before = await txt('button[data-mark="mastered"] .iv')
     await t('#retention').fill('0.8'); await t('#retention').dispatch_event('change')
@@ -71,8 +76,10 @@ async def main():
     after = await txt('button[data-mark="mastered"] .iv'); ok('记忆率降低 → 间隔变长', int(re.sub(r'\D', '', after) or 0) >= int(re.sub(r'\D', '', before) or 0) and after != before, f'{before} -> {after}')
     mn, mx = await t('#retention').get_attribute('min'), await t('#retention').get_attribute('max'); ok('记忆率范围 0.80–0.95', (mn, mx) == ('0.80', '0.95'))
     # 导出 JSON
+    await open_sec(pg, 'records')
     async with pg.expect_download() as d: await t('#exportBtn').click()
     path = await (await d.value).path(); data = json.load(open(path))
+    await open_sec(pg, 'review')
     ok('导出 JSON 含 srs/retention (v2)', data['version'] == 2 and '202301' in data['srs'] and data['retention'] == 0.8)
     # 重置
     await t('#resetSrsBtn').click(); ok('重置: 先出现确认', await t('#resetConfirm').is_visible())
@@ -85,9 +92,9 @@ async def main():
     await imp(path)
     s = await store(); ok('重复导入: 日志按 id 去重', len(s['srs'][str(q2)]['logs']) == 2)
     # 记录码往返
-    await t('#genCodeBtn').click(); code = await t('#codeInput').input_value()
-    await t('#resetSrsBtn').click(); await t('#resetYes').click()
-    await t('#codeInput').fill(code); await t('#importCodeBtn').click()
+    await open_sec(pg, 'records'); await t('#genCodeBtn').click(); code = await t('#codeInput').input_value()
+    await open_sec(pg, 'review'); await t('#resetSrsBtn').click(); await t('#resetYes').click()
+    await open_sec(pg, 'records'); await t('#codeInput').fill(code); await t('#importCodeBtn').click()
     s = await store(); ok('记录码往返: 恢复复习卡片', len(s['srs']) == 2 and s['srs'][str(q2)]['card']['reps'] == 2, await txt('#setMsg'))
     # 旧版 v1 记录兼容
     v1 = {'app': 'control-daguan', 'version': 1, 'favorites': [202305], 'marks': {'202305': {'state': 'shaky', 'at': 1}}, 'history': []}
