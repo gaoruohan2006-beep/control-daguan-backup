@@ -74,6 +74,8 @@ async def main():
     await t('.unmark').click(); ok('取消标记', await t('.unmark').count() == 0)
     await t('button[data-mark="mastered"]').click(); ok('标记 掌握', await t('button[data-mark="mastered"]').get_attribute('aria-pressed') == 'true')
     await t('#nextBtn').click(); await t('button[data-mark="shaky"]').click(); shaky_src = await txt('.src')
+    # 等 IndexedDB 异步写入完成再刷新，避免 CI 上刷新打断写入造成偶发失败
+    await pg.wait_for_function("CDGStore.get('rec').then(r => Object.values(r?.marks || {}).some(m => m.state === 'shaky'))", timeout=5000)
     await pg.reload(wait_until='networkidle'); ok('刷新后记录保留(IndexedDB)', await t('button[data-mark="shaky"]').get_attribute('aria-pressed') == 'true')
     # 收藏 tab
     await t('#tabs button[data-tab="fav"]').click(); ok('收藏 tab: 只显示收藏题', '1 题' in await txt('#sectionLabel') and '第二题' in await txt('.src'), await txt('#sectionLabel'))
