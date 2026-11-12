@@ -1,0 +1,96 @@
+{
+  "year": 2026,
+  "contributor": "code Bot",
+  "questionPages": "3–6",
+  "answerPages": "7–14",
+  "questions": [
+    {
+      "no": 1,
+      "score": null,
+      "cats": ["建模 / 机械系统 / 微分方程与传递函数", "状态空间 / 建立状态空间表达式"],
+      "stem": "现有如图所示机械系统，位移 $u(t)$ 为输入，位移 $y(t)$ 为输出，弹簧的弹性系数为 $k$，阻尼器阻尼系数为 $f_1$，和 $f_2$，求系统的微分方程并进一步给出系统的传递函数以及状态空间表达式\n\n[[fig:1]]",
+      "figures": ["img/q2026-1-1.png"],
+      "answerImages": ["img/a2026-1-1.png"],
+      "answer": "",
+      "explanation": "",
+      "notes": "题图未标注 $k$、$f_1$、$f_2$；源答案用 $K$、$B_1$、$B_2$ 表示。源答案移项式有一处 “$+$ $+$” 错印。"
+    },
+    {
+      "no": 2,
+      "score": null,
+      "cats": ["建模 / 结构图化简", "时域分析 / 二阶系统性能指标", "时域分析 / 稳态误差"],
+      "stem": "已知某系统的结构图如图所示，其中 $G(s)=\\dfrac{K}{(s+2)(s+9)}$\n\n[[fig:1]]\n\n1. 当扰动 $N(s)=0$，$H(s)=1$ 时，$t_s=0.5\\,\\mathrm s$，$\\sigma\\%=4.6\\%$，求 $K$（题目给了 $\\sigma\\%$ 与 $\\xi$ 的对照表）\n\n2. 当 $R(s)=0$，用第一问的 $K$ 值说明。当 $N(s)$ 为单位阶跃输入时，$H(s)$ 为多少满足 $e_{ss}=0$",
+      "figures": ["img/q2026-2-1.png"],
+      "answerImages": ["img/a2026-2-1.png", "img/a2026-2-2.png"],
+      "answer": "",
+      "explanation": "",
+      "notes": "题面提到的 $\\sigma\\%$ 与 $\\xi$ 对照表未印在本册中。"
+    },
+    {
+      "no": 3,
+      "score": null,
+      "cats": ["根轨迹 / 常规根轨迹绘制"],
+      "stem": "已知某系统的开环传递函数为\n$$G(s)=\\dfrac{K^*(s+4)(s+6)}{s(s+2)}$$\n\n1. 绘制根轨迹（写出必要过程）\n\n2. 系统稳定时，求此时 $K$ 的取值范围\n\n3. 若要使系统处于欠阻尼状态，求此时 $k$ 的取值范围",
+      "figures": [],
+      "answerImages": ["img/a2026-3-1.png", "img/a2026-3-2.png"],
+      "answer": "",
+      "explanation": "",
+      "notes": "第 3 问题面写作 $k$，与前面的 $K$/$K^*$ 未统一。"
+    },
+    {
+      "no": 4,
+      "score": null,
+      "cats": ["频域分析 / Bode 图绘制", "校正 / 串联超前校正", "频域分析 / 截止频率与相角裕度"],
+      "stem": "已知某系统的结构图如图所示\n\n[[fig:1]]\n\n1. 绘制系统的对数频率特性曲线，并分析串联积分环节对系统的影响；\n\n2. 采用串联校正，使稳定裕度 $\\gamma\\ge 40^\\circ$，求校正环节（题目里给了超前校正 $\\alpha$ 与 $\\varphi_m$ 的关系表）",
+      "figures": ["img/q2026-4-1.png"],
+      "answerImages": ["img/a2026-4-1.png", "img/a2026-4-2.png", "img/a2026-4-3.png"],
+      "answer": "",
+      "explanation": "",
+      "notes": "题面提到的超前校正 $\\alpha$ 与 $\\varphi_m$ 关系表未印在本册中。"
+    },
+    {
+      "no": 5,
+      "score": null,
+      "cats": ["离散系统 / 脉冲传递函数", "离散系统 / 稳定性（朱利判据）", "离散系统 / 稳态误差"],
+      "stem": "已知某离散系统结构如图所示\n\n[[fig:1]]\n\n1. 求闭环脉冲传递函数；\n\n2. 求系统稳定时 $K$ 的取值范围；\n\n3. 若 $R(t)=t$，求此时系统的稳态误差。",
+      "figures": ["img/q2026-5-1.png"],
+      "answerImages": ["img/a2026-5-1.png"],
+      "answer": "",
+      "explanation": "",
+      "notes": ""
+    },
+    {
+      "no": 6,
+      "score": null,
+      "cats": ["非线性系统 / 描述函数法 / 自振分析"],
+      "stem": "某含有非线性环节的系统结构图如下图所示，其中 $N(A)=\\dfrac{4M}{\\pi A}+2$\n\n[[fig:1]]\n\n1. 画图 $G(j\\omega)$ 和 $N(A)$ 的图；\n\n2. 判断系统是否出现自振，若出现自振，求出此时频率和振幅。",
+      "figures": ["img/q2026-6-1.png"],
+      "answerImages": ["img/a2026-6-1.png", "img/a2026-6-2.png"],
+      "answer": "",
+      "explanation": "",
+      "notes": "题干原文作“非线性节”，按“非线性环节”录入。"
+    },
+    {
+      "no": 7,
+      "score": null,
+      "cats": ["状态空间 / 能控/能观标准型", "状态空间 / 李雅普诺夫稳定性"],
+      "stem": "某系统传递函数为\n$$W(s)=\\dfrac{s+a}{s(s+2)(s+3)}$$\n\n1. 求系统的能控实现、能观实现；\n\n2. 判断系统是否状态稳定；\n\n3. 求系统在 BIBO 稳定时 $a$ 的值，并求最小实现。",
+      "figures": [],
+      "answerImages": ["img/a2026-7-1.png", "img/a2026-7-2.png"],
+      "answer": "",
+      "explanation": "",
+      "notes": ""
+    },
+    {
+      "no": 8,
+      "score": null,
+      "cats": ["状态空间 / 状态反馈极点配置"],
+      "stem": "某系统传递函数为\n$$G(s)=\\dfrac{2}{s^2+2s+3}$$\n\n1. 将系统极点配置到 $-2$，$-1+j$，$-1-j$；\n\n2. 写出配置极点后的状态空间及传递函数。",
+      "figures": [],
+      "answerImages": ["img/a2026-8-1.png", "img/a2026-8-2.png"],
+      "answer": "",
+      "explanation": "",
+      "notes": "题面为二阶系统却要求配置三个极点；源答案先扩展为三阶再配置，并把传递函数单独列为第 3 问。"
+    }
+  ]
+}

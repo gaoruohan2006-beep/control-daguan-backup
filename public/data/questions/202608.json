@@ -1,0 +1,1 @@
+{"answer": "", "explanation": "", "notes": "题面为二阶系统却要求配置三个极点；源答案先扩展为三阶再配置，并把传递函数单独列为第 3 问。", "originalImages": [{"src": "img/a2026-8-1.png", "w": 541}, {"src": "img/a2026-8-2.png", "w": 750}], "answerPdfPages": "7–14"}
