@@ -26,11 +26,23 @@ q(2023, 1, ["建模 / 机械系统 / 微分方程与传递函数", "状态空间
 
 3. 取 $x_1=x_0,\ x_2=\dot x_0$，$y=x_0$：$A=\begin{bmatrix}0&1\\-\frac km&-\frac fm\end{bmatrix},\ B=\begin{bmatrix}0\\\frac1m\end{bmatrix},\ C=\begin{bmatrix}1&0\end{bmatrix}$。
 """, r"""
-由牛顿第二定律 $g(t)-f\dot x_0-kx_0=m\ddot x_0$，整理得二阶微分方程。
+1. 对质量 $m$ 做受力分析：输入力 $g(t)$，弹簧力 $-kx_0$，阻尼力 $-f\dot x_0$（题面弹簧、阻尼器记为 $K$、$C$，此处用 $k$、$f$ 表示相应系数）。由牛顿第二定律
+$$g(t)-kx_0-f\dot x_0=m\ddot x_0,$$
+整理得微分方程 $m\ddot x_0+f\dot x_0+kx_0=g(t)$，或
+$$\ddot x_0+\dfrac{f}{m}\dot x_0+\dfrac{k}{m}x_0=\dfrac1m g(t).$$
 
-零初始条件下做拉氏变换：$X_0(s)\left(s^2+\dfrac fm s+\dfrac km\right)=\dfrac1m G(s)$。
+2. 零初始条件下对上式做拉氏变换：
+$$\left(s^2+\dfrac fm s+\dfrac km\right)X_0(s)=\dfrac1m G(s),$$
+故
+$$\Phi(s)=\dfrac{X_0(s)}{G(s)}=\dfrac{1/m}{s^2+(f/m)s+(k/m)}.$$
 
-令 $x_1=x_0$，$x_2=\dot x_1$，则 $\dot x_1=x_2$，$\dot x_2=-\dfrac km x_1-\dfrac fm x_2+\dfrac1m g(t)$，写成矩阵形式即可。
+3. 取 $x_1=x_0$、$x_2=\dot x_0$，输出 $y=x_0$，则 $\dot x_1=x_2$，且
+$$\dot x_2=-\dfrac km x_1-\dfrac fm x_2+\dfrac1m g(t).$$
+注意 $g(t)$ 前必须带 $1/m$，因此
+$$A=\begin{bmatrix}0&1\\-k/m&-f/m\end{bmatrix},\quad
+B=\begin{bmatrix}0\\1/m\end{bmatrix},\quad
+C=\begin{bmatrix}1&0\end{bmatrix}.$$
+（若把 $1/m$ 放到 $C$ 而 $B=[0\ 1]^\mathrm T$，则 $y\neq x_0$，与传递函数也不一致。）
 """)
 
 q(2023, 2, ["时域分析 / 二阶系统性能指标", "时域分析 / 稳态误差 / 复合控制"], r"""
@@ -70,11 +82,23 @@ $$G(s)=\frac{K(s+4)}{s(s+2)(s+15)}$$
 
 3. $s_1=-9$ 时 $K=75.6$，另两极点 $-4\pm4.195j$；$\left|\dfrac{-9}{-4}\right|<5$，**不能**视为二阶系统。系统为 1 型，$r(t)=2+3t$ 时 $K_v=\dfrac{75.6\times4}{2\times15}=10.08=\dfrac{252}{25}$，$e_{ss}=\dfrac{3}{K_v}=\dfrac{25}{84}\approx0.298$。
 """, r"""
-分离点方程 $2s^3+29s^2+136s+120=0$，解得 $s=-1.136$（另两根为复数，舍）。
+1. 开环极点 $0,-2,-15$，零点 $-4$；$n-m=2$。实轴根轨迹为奇数个极/零点左侧，即 $(-15,-4)\cup(-2,0)$。渐近线
+$$\sigma_a=\dfrac{0-2-15-(-4)}{2}=-6.5,\qquad\varphi_a=\pm\dfrac{\pi}{2}.$$
+分离点由 $\dfrac{\mathrm dK}{\mathrm ds}=0$ 得 $2s^3+29s^2+136s+120=0$，实根 $s\approx-1.136$（另两根为复数，舍去），位于 $(-2,0)$ 上。令 $s=\mathrm j\omega$ 代入特征方程，交点对应 $K<0$，故与正虚轴无交点。
 
-$D(s)=s^3+17s^2+(30+K)s+4K$，劳斯表首列 $1,\ 17,\ \dfrac{17(30+K)-4K}{17},\ 4K$ 在 $K>0$ 时全正。
+2. 闭环特征多项式 $D(s)=s(s+2)(s+15)+K(s+4)=s^3+17s^2+(30+K)s+4K$。劳斯表首列为
+$$1,\quad 17,\quad \dfrac{17(30+K)-4K}{17},\quad 4K.$$
+$K>0$ 时 $17(30+K)-4K=510+13K>0$，首列全正，系统稳定。稳定范围为开环增益 $K>0$。
 
-根之和：另两根实部 $=\dfrac{-15-2+9}{2}=-4$；模值条件 $K=\dfrac{6\cdot7\cdot9}{5}=75.6$。
+3. 将 $s_1=-9$ 代入幅值条件：
+$$K=\dfrac{|-9|\,|-9+2|\,|-9+15|}{|-9+4|}=\dfrac{9\cdot7\cdot6}{5}=75.6.$$
+由根之和，另两根实部为 $(-17+9)/2=-4$，再由根之积 $4K=302.4$ 得这两根满足 $s^2+8s+33.6=0$，即 $-4\pm\sqrt{17.6}\,j=-4\pm4.195j$。$\lvert -9/(-4)\rvert=2.25<5$，实极点不够远，**不能**视为二阶系统。
+
+系统为 1 型，求 $e_{ss}$ 须用原来的开环传函（不能把闭环特征式去掉常数项当作开环）。$r(t)=2+3t$ 时，
+$$K_v=\lim_{s\to0}sG(s)=\dfrac{75.6\cdot4}{2\cdot15}=10.08=\dfrac{252}{25},\qquad
+K_p=\infty,$$
+故阶跃部分误差为 $0$，斜坡部分
+$$e_{ss}=\dfrac{3}{K_v}=\dfrac{3}{10.08}=\dfrac{25}{84}\approx0.298.$$
 """)
 
 q(2023, 4, ["频域分析 / Bode 图绘制", "频域分析 / 截止频率与相角裕度"], r"""
@@ -117,11 +141,30 @@ $\Phi(z)=\dfrac{0.28375kz+0.14875k}{z^2+(0.28375k-1.135)z+0.135+0.14875k}$。
 
 4. $k=2$：$c(k)-0.5675c(k-1)+0.4325c(k-2)=0.5675r(k-1)+0.2975r(k-2)$。由 $c(0)=0$、$c(1)=0.5$ 得 $c(2)=0.28375+0.5675\,r(1)+0.2975\,r(0)$，$c(3)=0.5675\,c(2)-0.21625+0.5675\,r(2)+0.2975\,r(1)$。若再假定单位阶跃 $r(n)=1\ (n\ge0)$，则 $c(2)\approx1.149$，$c(3)\approx1.301$。
 """, r"""
-$G(z)=k\dfrac{z-1}{z}\mathcal Z\!\left[\dfrac{0.5}{s^2}-\dfrac{0.25}{s}+\dfrac{0.25}{s+2}\right]$，$e^{-2}\approx0.135$。
+题图采样周期为 $\tau$ 且未给数值，以下按 $T=1$、$e^{-2}\approx0.135$ 计算。
 
-朱利判据：$|0.135+0.14875k|<1$，$D(1)>0$，$D(-1)>0$，联立得 $0<k<5.82$。
+1. 对象为采样器 + 零阶保持器 $\dfrac{1-e^{-Ts}}{s}$ 与 $k/[s(s+2)]$。先做部分分式
+$$\dfrac{1}{s^2(s+2)}=\dfrac{1/2}{s^2}-\dfrac{1/4}{s}+\dfrac{1/4}{s+2},$$
+于是
+$$G(z)=k\dfrac{z-1}{z}\mathcal Z\!\left[\dfrac{1/2}{s^2}-\dfrac{1/4}{s}+\dfrac{1/4}{s+2}\right].$$
+代入 $T=1$ 的 $Z$ 变换公式并通分，分子为 $0.28375z+0.14875$，故
+$$G(z)=k\dfrac{0.28375z+0.14875}{(z-1)(z-0.135)},$$
+$$\Phi(z)=\dfrac{G(z)}{1+G(z)}=\dfrac{0.28375kz+0.14875k}{z^2+(0.28375k-1.135)z+(0.135+0.14875k)}.$$
 
-把 $\Phi(z)$ 写成 $z^{-1}$ 的有理式即得差分方程，再代入初值递推。
+2. 记 $D(z)=z^2+(0.28375k-1.135)z+(0.135+0.14875k)$。朱利条件：
+$$\lvert 0.135+0.14875k\rvert<1,\quad D(1)>0,\quad D(-1)>0.$$
+$D(1)=0.4325k>0\Rightarrow k>0$；$D(-1)=2.27-0.135k>0\Rightarrow k<16.81$；$\lvert a_0\rvert<1$ 给出 $k<0.865/0.14875\approx5.82$。综合得 $0<k<5.82$。
+
+3. 把 $\Phi(z)$ 写成 $z^{-1}$ 的有理式，交叉相乘即得差分方程
+$$c(k)+(0.28375k-1.135)c(k-1)+(0.135+0.14875k)c(k-2)=0.28375k\,r(k-1)+0.14875k\,r(k-2).$$
+
+4. $k=2$ 时上式化为
+$$c(k)-0.5675c(k-1)+0.4325c(k-2)=0.5675r(k-1)+0.2975r(k-2).$$
+已知 $c(0)=0$、$c(1)=0.5$，令 $k=2$：
+$$c(2)=0.5675\cdot0.5+0.5675\,r(1)+0.2975\,r(0)=0.28375+0.5675\,r(1)+0.2975\,r(0)$$
+（不可漏掉 $0.2975\,r(0)$）。再令 $k=3$：
+$$c(3)=0.5675\,c(2)-0.4325\cdot0.5+0.5675\,r(2)+0.2975\,r(1)=0.5675\,c(2)-0.21625+0.5675\,r(2)+0.2975\,r(1)$$
+（$-0.4325\times0.5$ 应为 $-0.21625$）。题面未给 $r(k)$；若再假定单位阶跃 $r(n)=1\ (n\ge0)$，则 $c(2)\approx1.149$，$c(3)\approx1.301$。
 """)
 
 q(2023, 6, ["非线性系统 / 描述函数法 / 自振分析", "非线性系统 / 非线性环节等效"], r"""
@@ -185,11 +228,21 @@ $$A=\begin{bmatrix}3&-2\\4&3\end{bmatrix},\quad B=\begin{bmatrix}0\\1\end{bmatri
 
 3. $k=[k_1\ k_2]=[-13\ \ 10]$。
 """, r"""
-$|\lambda I-A|=(\lambda-3)^2+8=\lambda^2-6\lambda+17$。
+1. 开环特征多项式（注意二次项系数为正）
+$$\lvert\lambda I-A\rvert=\begin{vmatrix}\lambda-3&2\\-4&\lambda-3\end{vmatrix}=(\lambda-3)^2+8=\lambda^2-6\lambda+17.$$
+判别式 $36-68=-32$，根为 $\lambda=3\pm2\sqrt2\,j$，实部为正，平衡点 $x_e=0$ **不稳定**。
 
-期望多项式 $(\lambda+2)^2+9=\lambda^2+4\lambda+13$；实际 $|\lambda I-A+Bk|=\lambda^2+(k_2-6)\lambda-3(k_2-3)-2(k_1-4)$。
+2. $AB=\begin{bmatrix}3&-2\\4&3\end{bmatrix}\begin{bmatrix}0\\1\end{bmatrix}=\begin{bmatrix}-2\\3\end{bmatrix}$，
+$$Q_c=[B\ AB]=\begin{bmatrix}0&-2\\1&3\end{bmatrix},\quad\operatorname{rank}Q_c=2,$$
+系统完全能控，可以通过状态反馈任意配置极点，从而镇定。
 
-比较系数：$k_2-6=4$，$-3k_2+9-2k_1+8=13$，得 $k_2=10,\ k_1=-13$。
+3. 设 $u=-kx=-k_1x_1-k_2x_2$，则
+$$A-Bk=\begin{bmatrix}3&-2\\4-k_1&3-k_2\end{bmatrix},$$
+$$\lvert\lambda I-A+Bk\rvert=\lambda^2+(k_2-6)\lambda+\bigl[-3(k_2-3)-2(k_1-4)\bigr].$$
+期望多项式 $(\lambda+2)^2+9=\lambda^2+4\lambda+13$。比较系数：
+$$k_2-6=4\Rightarrow k_2=10,$$
+$$-3k_2+9-2k_1+8=13\Rightarrow -30+17-2k_1=13\Rightarrow k_1=-13.$$
+故 $k=[k_1\ k_2]=[-13\ \ 10]$。
 """)
 
 # ───────────────────────── 2024 ─────────────────────────
@@ -208,11 +261,15 @@ q(2024, 1, ["建模 / 电路网络 / 运放电路传递函数", "频域分析 / 
 
 2. 由图 (b)：$\dfrac{U_y(s)}{U_r(s)}=\dfrac{10(s+1)\left(\frac s{10}+1\right)}{s}$，得 $R_1=10\,\mathrm{k\Omega}$，$R_2=100\,\mathrm{k\Omega}$。
 """, r"""
-$\dfrac{U_x(s)}{U_r(s)}=-\dfrac{R_2+\frac1{sC_2}}{R_1\parallel\frac1{sC_1}}=-\dfrac{(1+sR_2C_2)(1+sR_1C_1)}{sR_1C_2}$，$\dfrac{U_y}{U_x}=-\dfrac{R_1}{R_1}=-1$。
+1. 第一级为反相运放，阻抗 $Z_f=R_2+1/(sC_2)$，$Z_{\mathrm{in}}=R_1\parallel 1/(sC_1)$，故
+$$\dfrac{U_x(s)}{U_r(s)}=-\dfrac{Z_f}{Z_{\mathrm{in}}}=-\dfrac{(1+sR_2C_2)(1+sR_1C_1)}{sR_1C_2}.$$
+第二级 $A_2$ 为电阻比 $R_1/R_1$ 的反相器，$\dfrac{U_y}{U_x}=-1$。两级相乘（负号相消）得
+$$\dfrac{U_y(s)}{U_r(s)}=\dfrac{(1+sR_2C_2)(1+sR_1C_1)}{sR_1C_2}.$$
+注意合并后左侧应是 $U_y/U_r$，而不是 $U_x/U_r$。
 
-低频段以 $-20\,\mathrm{dB/dec}$ 过 $(1,20\,\mathrm{dB})$，转折频率 $1$、$10$（均 $+20\,\mathrm{dB/dec}$），得 $K=10$。
-
-$\dfrac1{R_1C_2}=10\Rightarrow R_1=10\,\mathrm{k\Omega}$；$R_1C_1=\dfrac1{10}$ 对应转折 $10$，$R_2C_2=1\Rightarrow R_2=100\,\mathrm{k\Omega}$。
+2. 图 (b) 低频以 $-20\,\mathrm{dB/dec}$ 过点 $(1,20\,\mathrm{dB})$，故 $20\lg K=20$、$K=10$，且为 1 型；转折频率 $1$、$10$ 处各上折 $+20\,\mathrm{dB/dec}$，因此
+$$\dfrac{U_y}{U_r}=\dfrac{10(s+1)\bigl(s/10+1\bigr)}{s}.$$
+与第 1 问比较：$1/(R_1C_2)=10$，代入 $C_2=10\,\mu\mathrm F=10^{-5}\,\mathrm F$，得 $R_1=10\,\mathrm{k\Omega}$。$R_1C_1=1/10$ 对应转折 $10$，故与 $C_1=10\,\mu\mathrm F$ 一致；$R_2C_2=1$ 对应转折 $1$，得 $R_2=100\,\mathrm{k\Omega}$。
 """)
 
 q(2024, 2, ["时域分析 / 由阶跃响应确定参数", "时域分析 / 二阶系统性能指标", "时域分析 / 稳态误差"], r"""
@@ -234,11 +291,21 @@ q(2024, 2, ["时域分析 / 由阶跃响应确定参数", "时域分析 / 二阶
 
 3. 断开、闭合两种情况均有 $c(\infty)\approx1.2$，$e(\infty)=1-1.2=-0.2$。
 """, r"""
-$K=c(\infty)=1.2$；$\zeta=\sqrt{\dfrac{\ln^2\sigma\%}{\pi^2+\ln^2\sigma\%}}$，$\omega_n=\dfrac{\pi}{t_p\sqrt{1-\zeta^2}}$。
+1. 由图，单位阶跃响应 $c(\infty)=1.2$，峰值 $1.7$，峰值时间 $t_p=2\,\mathrm s$。超调
+$$\sigma\%=\dfrac{1.7-1.2}{1.2}=\dfrac{5}{12}\approx41.7\%.$$
+$$\zeta=\sqrt{\dfrac{\ln^2\sigma}{\pi^2+\ln^2\sigma}}\approx0.268,\qquad
+\omega_n=\dfrac{\pi}{t_p\sqrt{1-\zeta^2}}\approx1.63.$$
+比例系数为 $c(\infty)=1.2$，故断开时
+$$\Phi(s)=\dfrac{1.2\,\omega_n^2}{s^2+2\zeta\omega_n s+\omega_n^2}=\dfrac{3.18828}{s^2+0.87368s+2.6569}.$$
 
-前向通道 $G(s)=\dfrac{\Phi}{1-\Phi}\approx\dfrac{3.19}{s^2+0.87s-0.53}$；闭合 $K$ 后内环反馈 $0.5s$，再求闭环。
+2. 断开时已求得 $\sigma\%\approx41.7\%$，$t_s=4.4/(\zeta\omega_n)\approx10.07\,\mathrm s$（$\Delta=2\%$）。单位负反馈下前向通道
+$$G(s)=\dfrac{\Phi}{1-\Phi}\approx\dfrac{3.19}{s^2+0.87s-0.53}.$$
+开关 $K$ 闭合后增加内环反馈 $0.5s$，新闭环为
+$$\Phi'(s)=\dfrac{G}{1+G(1+0.5s)}\approx\dfrac{3.19}{s^2+2.465s+2.66}$$
+（分母一次项为 $2.465s$，不是 $2.645s$）。此时 $2\zeta'\omega_n'=2.465$，$\omega_n'^2=2.66$，得 $\zeta'\approx0.756$，
+$$\sigma\%\approx2.66\%,\qquad t_s=\dfrac{4.4}{\zeta'\omega_n'}\approx3.57\,\mathrm s.$$
 
-劳斯判据确认闭环稳定后用终值定理求 $c(\infty)$。
+3. 两种情形分子、常数项之比相同，由终值定理 $c(\infty)=1.2$，单位阶跃下 $e(\infty)=1-c(\infty)=-0.2$。亦可用劳斯表确认闭合后闭环稳定，再使用终值定理。
 """)
 
 q(2024, 3, ["根轨迹 / 常规根轨迹绘制", "时域分析 / 稳态误差 / 静态误差系数"], r"""
@@ -304,11 +371,23 @@ $G_c(s)=\dfrac{\sqrt{10}\left(\frac s2+1\right)(s+1)\left(\frac s3+1\right)}{s\l
 
 3. 按 Bode 折线法：校正前 $\omega_c=2$，$\angle G(j\omega)=-\arctan\omega-\arctan\dfrac{\omega}{3}-\arctan\dfrac{\omega}{0.4}$，故 $\gamma\approx4.19^\circ$；校正后 $\omega_c=2\sqrt{10}\approx6.32$，$\angle GG_c(j\omega)=\arctan\dfrac{\omega}{2}-90^\circ-\arctan\dfrac{\omega}{0.4}-\arctan\dfrac{\omega}{10}-\arctan\dfrac{\omega}{20}$，故 $\gamma\approx26.21^\circ$。
 """, r"""
-校正后低频段以 $-20\,\mathrm{dB/dec}$ 过 $(0.1,50\,\mathrm{dB})$，$20\lg\left|\dfrac K{0.1}\right|=50\Rightarrow K=10\sqrt{10}$。
+1. 校正后幅频曲线低频以 $-20\,\mathrm{dB/dec}$ 过 $(0.1,50\,\mathrm{dB})$，
+$$20\lg\bigl\lvert K/0.1\bigr\rvert=50\Rightarrow K=10\sqrt{10}.$$
+转折为 $0.4$（下折）、$2$（上折）、$10$ 与 $20$（下折），故
+$$G(s)G_c(s)=\dfrac{10\sqrt{10}\,(s/2+1)}{s\,(s/0.4+1)\,(s/10+1)\,(s/20+1)}.$$
+校正前写成时间常数形式 $G(s)=10/\bigl[(s+1)(s/3+1)(s/0.4+1)\bigr]$，相除得
+$$G_c(s)=\dfrac{G G_c}{G}=\dfrac{\sqrt{10}\,(s/2+1)(s+1)(s/3+1)}{s\,(s/10+1)\,(s/20+1)}.$$
 
-校正前 $G(s)=\dfrac{10}{(s+1)\left(\frac s3+1\right)\left(\frac s{0.4}+1\right)}$，$G_c=\dfrac{G G_c}{G}$。
+2. 低频段抬高并增加一个积分（型别由 0 型变为 1 型），稳态误差减小；中频段以 $-20\,\mathrm{dB/dec}$ 穿越 $0\,\mathrm{dB}$，动态性能改善；高频段被抬高，抗高频干扰能力下降。
 
-校正前 $1<\omega_c<3$：$\dfrac{10}{\frac{\omega_c}{0.4}\omega_c}=1\Rightarrow\omega_c=2$；$\gamma=180^\circ+\angle G(j2)\approx4.19^\circ$。校正后在 $\omega_c=2\sqrt{10}$ 处代入相角公式得 $\gamma\approx26.21^\circ$。
+3. 按 Bode 折线法求截止频率，再在该频率用精确相角公式求裕度。校正前 $1<\omega_c<3$：
+$$\dfrac{10}{(\omega_c/0.4)\,\omega_c}=1\Rightarrow\omega_c=2.$$
+相角应为（各极点均贡献负角，不要写反）
+$$\angle G(j\omega)=-\arctan\omega-\arctan\dfrac{\omega}{3}-\arctan\dfrac{\omega}{0.4},$$
+代入 $\omega=2$ 得 $\gamma=180^\circ+\angle G(j2)\approx4.19^\circ$。校正后在 $2<\omega_c<10$ 段：
+$$\dfrac{10\sqrt{10}\cdot(\omega_c/2)}{\omega_c\cdot(\omega_c/0.4)}=1\Rightarrow\omega_c=2\sqrt{10}\approx6.32,$$
+$$\angle GG_c(j\omega)=\arctan\dfrac{\omega}{2}-90^\circ-\arctan\dfrac{\omega}{0.4}-\arctan\dfrac{\omega}{10}-\arctan\dfrac{\omega}{20},$$
+得 $\gamma\approx26.21^\circ$。
 """)
 
 q(2024, 6, ["离散系统 / 脉冲传递函数", "离散系统 / 稳定性（朱利判据）", "离散系统 / 稳态误差"], r"""
@@ -350,9 +429,27 @@ $$\begin{cases}\dot x=\begin{bmatrix}0&1\\-2&-3\end{bmatrix}x+\begin{bmatrix}0\\
 
 3. 解 $A^TP+PA=-I$ 得 $P=\begin{bmatrix}\frac54&\frac14\\\frac14&\frac14\end{bmatrix}$ 正定，系统在原点**大范围渐近稳定**。
 """, r"""
-$(sI-A)^{-1}=\dfrac{1}{s^2+3s+2}\begin{bmatrix}s+3&1\\-2&s\end{bmatrix}$，部分分式后逐项反变换。
+1. $sI-A=\begin{bmatrix}s&-1\\2&s+3\end{bmatrix}$，$\lvert sI-A\rvert=s^2+3s+2=(s+1)(s+2)$，
+$$(sI-A)^{-1}=\dfrac{1}{s^2+3s+2}\begin{bmatrix}s+3&1\\-2&s\end{bmatrix}.$$
+部分分式后逐项反变换：
+$$\dfrac{s+3}{(s+1)(s+2)}=\dfrac{2}{s+1}-\dfrac{1}{s+2},\quad
+\dfrac{1}{(s+1)(s+2)}=\dfrac{1}{s+1}-\dfrac{1}{s+2},$$
+$$\dfrac{-2}{(s+1)(s+2)}=\dfrac{-2}{s+1}+\dfrac{2}{s+2},\quad
+\dfrac{s}{(s+1)(s+2)}=\dfrac{-1}{s+1}+\dfrac{2}{s+2},$$
+即得
+$$\Phi(t)=\begin{bmatrix}2e^{-t}-e^{-2t}&e^{-t}-e^{-2t}\\-2e^{-t}+2e^{-2t}&-e^{-t}+2e^{-2t}\end{bmatrix}.$$
+$B=[0\ 1]^\mathrm T$，取 $(sI-A)^{-1}$ 的第二列再左乘 $C=[1\ \ a]$，得
+$$G(s)=\dfrac{as+1}{s^2+3s+2}.$$
 
-$P_1=\dfrac54>0$，$|P|=\dfrac{5}{16}-\dfrac1{16}=\dfrac14>0$；$V(x)=\dfrac54x_1^2+\dfrac12x_1x_2+\dfrac14x_2^2$，$\dot V=-x_1^2-x_2^2$ 负定，且 $\|x\|\to\infty$ 时 $V\to\infty$。
+2. 能观判别阵
+$$Q_o=\begin{bmatrix}C\\CA\end{bmatrix}=\begin{bmatrix}1&a\\-2a&1-3a\end{bmatrix},\qquad
+\lvert Q_o\rvert=2a^2-3a+1=(2a-1)(a-1).$$
+$\lvert Q_o\rvert\neq0$ 当且仅当 $a\neq1$ 且 $a\neq1/2$，此时系统完全能观（完全可测）。
+
+3. 取 $Q=I$，解李雅普诺夫方程 $A^\mathrm TP+PA=-I$。设
+$P=\begin{bmatrix}p&q\\q&r\end{bmatrix}$，展开并比较元素得 $q=1/4$、$r=1/4$、$p=5/4$，即
+$$P=\begin{bmatrix}5/4&1/4\\1/4&1/4\end{bmatrix}.$$
+$p=5/4>0$，$\lvert P\rvert=1/4>0$，故 $P$ 正定；$V=x^\mathrm TPx$ 正定且径向无界，$\dot V=-x_1^2-x_2^2$ 负定，原点**大范围渐近稳定**。（$P$ 的元素不要与输出参数 $a$ 混用同一字母。）
 """)
 
 q(2024, 8, ["状态空间 / 建立状态空间表达式", "状态空间 / 状态反馈极点配置"], r"""
@@ -389,9 +486,21 @@ q(2025, 1, ["建模 / 电路网络 / 运放电路传递函数", "状态空间 / 
 
 2. 取 $x_1=u_C$，$x_2=i_L$：$\dot x=\begin{bmatrix}-\frac1{RC}&0\\-\frac1L&-\frac RL\end{bmatrix}x+\begin{bmatrix}\frac1{RC}\\\frac1L\end{bmatrix}u_i$，$u_o=\begin{bmatrix}2&R\end{bmatrix}x-u_i$。
 """, r"""
-虚短虚断 $U_A=U_B=U_C$。B 端：$\dfrac{U_i-U_C}{R}=C\dfrac{du_C}{dt}$；A 端：$\dfrac{U_i-U_C}{R}=i_L+\dfrac{U_C-U_o}{R}$；电感：$u_C=u_o+L\dfrac{di_L}{dt}$。
+1. 虚短虚断给出 $U_A=U_B=U_C$。列写 KCL / KVL：
+$$\dfrac{u_i-u_C}{R}=C\dfrac{\mathrm du_C}{\mathrm dt},\qquad
+\dfrac{u_i-u_C}{R}=i_L+\dfrac{u_C-u_o}{R},\qquad
+u_C-u_o=L\dfrac{\mathrm di_L}{\mathrm dt}.$$
+零初始条件下拉氏变换，由第一式 $U_C=U_i/(1+RCs)$；由第三式 $U_o=U_C-Ls I_L$；代入第二式消去 $I_L$、$U_C$，整理得
+$$\dfrac{U_o(s)}{U_i(s)}=\dfrac{-RLCs^2+Ls+R}{RLCs^2+(L+R^2C)s+R}.$$
 
-拉氏变换后消去 $U_C$、$I_L$ 得传递函数；时域方程整理即得状态方程。
+2. 按题意取状态 $x_1=u_C$、$x_2=i_L$（注意是 $i_L$ 本身，不是 $-i_L$）。由第一式
+$$\dot x_1=-\dfrac{1}{RC}x_1+\dfrac{1}{RC}u_i.$$
+由第二式解出 $u_o=2u_C+Ri_L-u_i$，再代入第三式：
+$$\dot x_2=\dfrac{u_C-u_o}{L}=-\dfrac1L x_1-\dfrac RL x_2+\dfrac1L u_i.$$
+故
+$$\dot x=\begin{bmatrix}-1/(RC)&0\\-1/L&-R/L\end{bmatrix}x+\begin{bmatrix}1/(RC)\\1/L\end{bmatrix}u_i,\qquad
+u_o=\begin{bmatrix}2&R\end{bmatrix}x-u_i.$$
+该 realization 与第 1 问传递函数一致。
 """, score=17)
 
 q(2025, 2, ["时域分析 / 信号流图与梅森公式", "时域分析 / 二阶系统性能指标", "时域分析 / 稳态误差"], r"""
@@ -454,9 +563,21 @@ $$G(s)H(s)=\frac{K}{s(s+2)(s+100)}$$
 2. 超前校正：$\varphi_m=45^\circ-15^\circ+7^\circ=37^\circ$，$a=\dfrac{1+\sin\varphi_m}{1-\sin\varphi_m}=4$，$\omega_c'=6\sqrt2\,\mathrm{rad/s}$，$T=\dfrac1{\omega_c'\sqrt a}=0.06$；
 $G_c(s)=\dfrac{0.24s+1}{0.06s+1}$，校验 $\gamma\approx45^\circ$。
 """, r"""
-$\omega_c\in(2,100)$：$\dfrac{18}{\omega_c\cdot\frac{\omega_c}{2}}=1\Rightarrow\omega_c=6$；$\gamma=180^\circ-90^\circ-\arctan3-\arctan0.06\approx15^\circ$。
+1. $K_v=\lim_{s\to0}sG(s)=K/200=18$，故 $K=3600$，
+$$G(s)=\dfrac{3600}{s(s+2)(s+100)}=\dfrac{18}{s\,(s/2+1)\,(s/100+1)}.$$
+低频斜率 $-20\,\mathrm{dB/dec}$，转折频率 $2$、$100$。按 Bode 折线，在 $2<\omega_c<100$ 段
+$$\dfrac{18}{\omega_c\cdot(\omega_c/2)}=1\Rightarrow\omega_c=6\,\mathrm{rad/s}.$$
+$$\gamma=180^\circ-90^\circ-\arctan\dfrac{6}{2}-\arctan\dfrac{6}{100}=90^\circ-\arctan3-\arctan0.06.$$
+题给 $\arctan3\approx71.57^\circ$，取 $\arctan0.06\approx3.4^\circ$（不宜直接当成 $0^\circ$），得 $\gamma\approx15^\circ$。
 
-新截止频率满足 $-20\lg|G(j\omega_c')|=10\lg a$，即 $\left(\dfrac{\omega_c'}{6}\right)^2=2$，故 $\omega_c'=6\sqrt{2}$。
+2. 超前校正：$\varphi_m=\gamma_{\text{期望}}-\gamma_0+\varepsilon=45^\circ-15^\circ+7^\circ=37^\circ$。由 $\sin37^\circ\approx0.6$，
+$$a=\dfrac{1+\sin\varphi_m}{1-\sin\varphi_m}=\dfrac{1.6}{0.4}=4.$$
+新截止频率应满足 $\lvert G(j\omega_c')\rvert=1/\sqrt{a}=1/2$。折线幅值在该段为 $36/\omega^2$，于 $\omega=6$ 处为 $1$，故
+$$\left(\dfrac{\omega_c'}{6}\right)^2=2\Rightarrow\omega_c'=6\sqrt{2}$$
+（不是等于 $4$；若比为 $4$ 则会得到 $12$，与 $6\sqrt{2}$ 矛盾）。于是
+$$T=\dfrac{1}{\omega_c'\sqrt a}=\dfrac{1}{6\sqrt{2}\cdot2}=\dfrac{1}{12\sqrt{2}}\approx0.06,\qquad
+G_c(s)=\dfrac{aTs+1}{Ts+1}=\dfrac{0.24s+1}{0.06s+1}.$$
+代入校验，校正后相角裕度约 $45^\circ$，满足要求。
 """, score=20)
 
 q(2025, 5, ["离散系统 / 脉冲传递函数", "离散系统 / 稳定性（朱利判据）", "离散系统 / 稳态误差"], r"""
@@ -479,7 +600,22 @@ $\Phi(z)=\dfrac{K\left[(e^{-0.1}-0.9)z+(1-1.1e^{-0.1})\right]}{z^2+(0.005K-1.905
 
 3. I 型系统，单位阶跃稳态误差 $e_{ss}=0$（在稳定范围内）。
 """, r"""
-$G(z)=K\dfrac{z-1}{z}\mathcal Z\!\left[\dfrac1{s^2}-\dfrac1s+\dfrac1{s+1}\right]$，留数法得部分分式系数 $A=1,\ B=-1,\ C=1$。
+1. 结构为采样器 + 零阶保持器与 $K/[s(s+1)]$，采样周期 $T=0.1$。
+$$\dfrac{K}{s^2(s+1)}=K\left(\dfrac{1}{s^2}-\dfrac{1}{s}+\dfrac{1}{s+1}\right),$$
+$$G(z)=K\dfrac{z-1}{z}\mathcal Z\!\left[\dfrac1{s^2}-\dfrac1s+\dfrac1{s+1}\right].$$
+用 $T=0.1$ 的公式整理，得
+$$G(z)=\dfrac{K\bigl[(e^{-0.1}-0.9)z+(1-1.1e^{-0.1})\bigr]}{(z-1)(z-e^{-0.1})}.$$
+代入题给 $e^{-0.1}=0.905$，分子为 $K(0.005z+0.0045)$（$z$ 与后一项之间是加号）。闭环
+$$\Phi(z)=\dfrac{G(z)}{1+G(z)}=\dfrac{K(0.005z+0.0045)}{z^2+(0.005K-1.905)z+(0.0045K+0.905)}.$$
+
+2. 记 $D(z)=z^2+(0.005K-1.905)z+(0.0045K+0.905)$。朱利条件：
+$$D(1)=0.0095K>0\Rightarrow K>0,$$
+$$D(-1)=3.81-0.0005K>0\Rightarrow K<7620,$$
+$$\lvert 0.0045K+0.905\rvert<1\Rightarrow K<21.11.$$
+综合得稳定范围 $0<K<21.11$（应按题给 $0.905$ 计算，不宜改用更精确的 $e^{-0.1}$）。
+
+3. 系统为 1 型，在稳定范围内对单位阶跃有 $e_{ss}=0$。亦可由终值定理：
+$$e_{ss}=\lim_{z\to1}(z-1)\bigl(1-\Phi(z)\bigr)\dfrac{z}{z-1}=0.$$
 """, score=20)
 
 q(2025, 6, ["非线性系统 / 描述函数法 / 自振分析"], r"""
@@ -500,9 +636,17 @@ $0<K<2$ 稳定；$2<K<6$ 产生稳定自振；$K>6$ 不稳定。
 
 3. 振幅 $A=\dfrac{3K-6}{6-K}$，频率 $\omega=\sqrt2\,\mathrm{rad/s}$。
 """, r"""
-线性部分 $G(j\omega)=\dfrac{0.5K}{j\omega(1+j\omega)(1+j0.5\omega)}$，$\varphi(\omega_x)=-180^\circ\Rightarrow\omega_x=\dfrac1{\sqrt{T_1T_2}}=\sqrt2$，$G(j\omega_x)=-\dfrac{K'T_1T_2}{T_1+T_2}=-\dfrac K6$。
+1. $-\dfrac1{N(A)}=-\dfrac{A+1}{A+3}$：当 $A\to0$ 时为 $-1/3$，当 $A\to\infty$ 时为 $-1$，位于负实轴区间 $(-1,-1/3)$。线性部分
+$$G(s)=\dfrac{K}{s(s+1)(s+2)}=\dfrac{0.5K}{s\,(1+s)\,(1+0.5s)}.$$
+令 $\angle G(j\omega_x)=-180^\circ$，由 $T_1=1$、$T_2=1/2$ 得 $\omega_x=1/\sqrt{T_1T_2}=\sqrt2$，且
+$$G(j\sqrt2)=-\dfrac{K}{6}.$$
+因此：$\lvert K/6\rvert<1/3$ 即 $0<K<2$ 时无交点、系统稳定；$1/3<K/6<1$ 即 $2<K<6$ 时与 $-1/N(A)$ 相交并产生**稳定自振**；$K>6$ 时交点在 $-1$ 左侧，系统不稳定。（由 $-1<-K/6<-1/3$ 两边乘 $-6$ 应得 $2<K<6$，不是 $\pi<K<6$。）
 
-令 $N(A)=-\dfrac1{G(j\omega_x)}$：$\dfrac{A+3}{A+1}=\dfrac6K\Rightarrow A=\dfrac{3K-6}{6-K}$。
+2. 在复平面画出 $G(j\omega)$ 的奈氏曲线（从负实轴附近的低频出发，穿越 $(-K/6,0)$ 后进入第三象限），并在负实轴上标出 $-1/N(A)$ 由 $-1/3$ 到 $-1$ 的线段，二者相交即对应自振。具体曲线见原图解析。
+
+3. 自振时 $N(A)=-1/G(j\omega_x)=6/K$，即
+$$\dfrac{A+3}{A+1}=\dfrac6K\Rightarrow A=\dfrac{3K-6}{6-K},$$
+频率 $\omega=\sqrt2\,\mathrm{rad/s}$。
 """, score=20)
 
 q(2025, 7, ["状态空间 / 传递函数矩阵", "状态空间 / 能控性与能观性", "状态空间 / 能控/能观标准型"], r"""
@@ -522,9 +666,24 @@ $$\dot x=\begin{bmatrix}1&2&3\\0&1&1\\0&1&1\end{bmatrix}x+\begin{bmatrix}0\\0\\1
 3. 能控标准型：$\dot x=\begin{bmatrix}0&1&0\\0&0&1\\0&-2&3\end{bmatrix}x+\begin{bmatrix}0\\0\\1\end{bmatrix}u$，$y=\begin{bmatrix}-1&3&0\end{bmatrix}x$；
 能观标准型：$\dot x=\begin{bmatrix}0&0&0\\1&0&-2\\0&1&3\end{bmatrix}x+\begin{bmatrix}-1\\3\\0\end{bmatrix}u$，$y=\begin{bmatrix}0&0&1\end{bmatrix}x$。
 """, r"""
-$sI-A=\begin{bmatrix}s-1&-2&-3\\0&s-1&-1\\0&-1&s-1\end{bmatrix}$，$|sI-A|=(s-1)\left[(s-1)^2-1\right]=s(s-1)(s-2)$；只需 $(sI-A)^*$ 第 1 行第 3 列元素 $3s-1$。
+1. $sI-A=\begin{bmatrix}s-1&-2&-3\\0&s-1&-1\\0&-1&s-1\end{bmatrix}$（注意 $(2,3)$ 元是 $-1$，不是 $+1$）。按第二、三行展开，
+$$\lvert sI-A\rvert=(s-1)\bigl[(s-1)^2-1\bigr]=s(s-1)(s-2)=s^3-3s^2+2s.$$
+$B=[0\ 0\ 1]^\mathrm T$、$C=[1\ 0\ 0]$，故 $G(s)$ 只取决于伴随矩阵第 1 行第 3 列，该元为 $3s-1$，因而
+$$G(s)=\dfrac{3s-1}{s(s-1)(s-2)}=\dfrac{3s-1}{s^3-3s^2+2s}.$$
 
-由传递函数系数 $a_0=0,\ a_1=2,\ a_2=-3$，$b_0=-1,\ b_1=3,\ b_2=0$ 直接写出两种标准型。
+2. 能控、能观判别阵
+$$Q_c=[B\ AB\ A^2B]=\begin{bmatrix}0&3&8\\0&1&2\\1&1&2\end{bmatrix},\quad\det Q_c=-2\neq0,$$
+$$Q_o=\begin{bmatrix}C\\CA\\CA^2\end{bmatrix}=\begin{bmatrix}1&0&0\\1&2&3\\1&7&8\end{bmatrix},\quad\det Q_o=-5\neq0,$$
+故系统**完全能控、完全能观**。
+
+3. 由 $G(s)=(b_0+b_1s+b_2s^2)/(s^3+a_2s^2+a_1s+a_0)$，系数 $a_0=0$、$a_1=2$、$a_2=-3$，$b_0=-1$、$b_1=3$、$b_2=0$。能控标准型
+$$A_c=\begin{bmatrix}0&1&0\\0&0&1\\-a_0&-a_1&-a_2\end{bmatrix}=\begin{bmatrix}0&1&0\\0&0&1\\0&-2&3\end{bmatrix},\ 
+B_c=\begin{bmatrix}0\\0\\1\end{bmatrix},\ 
+C_c=\begin{bmatrix}b_0&b_1&b_2\end{bmatrix}=\begin{bmatrix}-1&3&0\end{bmatrix};$$
+能观标准型为其对偶
+$$A_o=\begin{bmatrix}0&0&-a_0\\1&0&-a_1\\0&1&-a_2\end{bmatrix}=\begin{bmatrix}0&0&0\\1&0&-2\\0&1&3\end{bmatrix},\ 
+B_o=\begin{bmatrix}-1\\3\\0\end{bmatrix},\ 
+C_o=\begin{bmatrix}0&0&1\end{bmatrix}.$$
 """, score=18)
 
 q(2025, 8, ["状态空间 / 状态反馈极点配置"], r"""
