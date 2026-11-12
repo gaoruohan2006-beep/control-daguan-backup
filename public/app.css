@@ -12,6 +12,7 @@ button{font:inherit;color:inherit;cursor:pointer;background:none;border:0}button
 .seg{display:inline-flex;gap:2px;padding:3px;border:1px solid var(--border);border-radius:10px;background:var(--panel)}
 .seg button{padding:6px 12px;border-radius:7px;color:var(--muted);font-size:13px;white-space:nowrap}
 .seg button[aria-selected=true],.seg button.on{background:var(--canvas);color:var(--fg);box-shadow:0 1px 2px rgba(0,0,0,.08);font-weight:600}
+.seg button:focus-visible{outline:2px solid var(--brand);outline-offset:1px}
 .seg.small button{padding:6px 12px}
 .btn{white-space:nowrap;display:inline-flex;align-items:center;justify-content:center;gap:6px;border-radius:9px;padding:7px 12px;font-size:13px;border:1px solid transparent;transition:background .15s}
 .btn.soft{background:var(--brand-soft);color:var(--brand)}.btn.soft:hover:not(:disabled){filter:brightness(.97)}
@@ -96,6 +97,9 @@ textarea{width:100%;font:12px/1.5 ui-monospace,monospace;border:1px solid var(--
 .box{margin-top:14px;border:1px solid #cfe2fb;background:#f2f7fe;border-radius:14px;padding:12px 14px}
 @media (prefers-color-scheme:dark){.box{background:#16243a;border-color:#22406a}}
 .box h4{margin:0 0 4px;font-size:calc(13px * var(--fs));font-weight:600}
+.box-hd{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;margin:0 0 8px}
+.box-hd h4{margin:0}
+.box .src-tabs{flex:none}
 .orig{margin-top:8px}.orig .lab{font-size:12px;color:var(--muted);margin:6px 0}
 .orig img{display:block;max-width:100%;background:#fff;border-radius:6px;margin-bottom:6px;cursor:zoom-in}
 .history{margin-top:10px;font-size:12.5px;color:var(--muted)}.history ul{margin:6px 0;padding-left:18px}

@@ -227,6 +227,30 @@ function errataHTML(d) {
   const sev = lv === 'ok' ? 'ok' : (lv === 'severe' || lv === 'conflict') ? 'severe' : 'warn';
   return `<aside class="note errata" data-sev="${sev}"><div class="errata-hd"><span class="errata-tag">${title}</span>${badge ? `<span class="errata-badge">${badge}</span>` : ''}</div><div class="errata-bd">${md(d.notes)}</div></aside>`;
 }
+function origHTML(d) {
+  if (!d || !d.originalImages.length) return '';
+  return `<div class="orig"><div class="lab">原图解析（源文件顺序，PDF 第 ${d.answerPdfPages} 页）</div>${d.originalImages.map(o => `<img src="${o.src}" style="width:${o.w}px" alt="原图解析" loading="lazy" data-zoom title="单击放大图片">`).join('')}</div>`;
+}
+function srcTabsHTML(kind, view) {
+  const textLab = kind === 'exp' ? '文字解析' : '文字答案';
+  const imgLab = kind === 'exp' ? '原图解析' : '原图答案';
+  const act = kind === 'exp' ? 'expview' : 'ansview';
+  const label = kind === 'exp' ? '解析视图' : '答案视图';
+  const textOn = view !== 'orig';
+  return `<div class="seg small src-tabs" role="tablist" aria-label="${label}" data-kind="${kind}">
+    <button type="button" role="tab" data-act="${act}" data-view="text" aria-selected="${textOn}" tabindex="${textOn ? 0 : -1}" class="${textOn ? 'on' : ''}">${textLab}</button>
+    <button type="button" role="tab" data-act="${act}" data-view="orig" aria-selected="${!textOn}" tabindex="${textOn ? -1 : 0}" class="${textOn ? '' : 'on'}">${imgLab}</button>
+  </div>`;
+}
+function boxHTML(title, kind, id, body, tabs) {
+  const hid = `src-panel-${kind}-${id}`;
+  const hd = tabs ? `<div class="box-hd"><h4>${title}</h4>${tabs}</div>` : `<h4>${title}</h4>`;
+  return `<section class="box" data-kind="${kind}">${hd}<div class="body" role="tabpanel" id="${hid}">${body}</div></section>`;
+}
+function focusSrcTab(id, act, view) {
+  const el = document.querySelector(`.card[data-id="${id}"] button[data-act="${act}"][data-view="${view}"]`);
+  if (el) el.focus();
+}
 function cardHTML(id, idx) {
   const q = byId.get(id), L = curList(), d = details.get(id);
   const paths = (L.categoryByQuestion[id] || q.categories);
@@ -234,14 +258,36 @@ function cardHTML(id, idx) {
   const sh = st.show[id] || {}; const mk = rec.marks[id]?.state; const fav = rec.favorites.includes(id);
   const hl = st.q && st.q.length > 0 ? st.q : null;
   let ans = '';
-  const origHTML = d && d.originalImages.length ? `<div class="orig"><div class="lab">原图解析（源文件顺序，PDF 第 ${d.answerPdfPages} 页）</div>${d.originalImages.map(o => `<img src="${o.src}" style="width:${o.w}px" alt="原图解析" loading="lazy" data-zoom title="单击放大图片">`).join('')}</div>` : '';
   const noteHTML = errataHTML(d);
+  const hasImgs = !!(d && d.originalImages.length);
   if (sh.answer) {
-    let body = '加载中';
-    if (d) body = d.answer ? md(d.answer) : (sh.exp ? '<p class="muted">本题答案见下方「解析」中的原图。</p>' : origHTML);
-    ans += `<section class="box"><h4>答案</h4><div class="body">${body}${d && !sh.exp ? noteHTML : ''}</div></section>`;
+    let body = '加载中', tabs = '';
+    if (d) {
+      if (d.answer && hasImgs) {
+        const view = sh.ansSrc === 'orig' ? 'orig' : 'text';
+        tabs = srcTabsHTML('answer', view);
+        body = view === 'orig' ? origHTML(d) : md(d.answer) + (!sh.exp ? noteHTML : '');
+      } else if (d.answer) {
+        body = md(d.answer) + (!sh.exp ? noteHTML : '');
+      } else {
+        body = (sh.exp ? '<p class="muted">本题答案见下方「解析」中的原图。</p>' : origHTML(d)) + (!sh.exp ? noteHTML : '');
+      }
+    }
+    ans += boxHTML('答案', 'answer', id, body, tabs);
   }
-  if (sh.exp) ans += `<section class="box"><h4>解析</h4><div class="body">${d ? (d.explanation ? md(d.explanation) : '') + origHTML + noteHTML : '加载中'}</div></section>`;
+  if (sh.exp) {
+    let body = '加载中', tabs = '';
+    if (d) {
+      if (d.explanation && hasImgs) {
+        const view = sh.expSrc === 'orig' ? 'orig' : 'text';
+        tabs = srcTabsHTML('exp', view);
+        body = view === 'orig' ? origHTML(d) : md(d.explanation) + noteHTML;
+      } else {
+        body = (d.explanation ? md(d.explanation) : '') + origHTML(d) + noteHTML;
+      }
+    }
+    ans += boxHTML('解析', 'exp', id, body, tabs);
+  }
   const hist = rec.history.filter(h => h.id === id);
   const srs = rec.srs[id], pv = preview(id);
   const dueHTML = srs ? `<span class="due ${dayDiff(srs.card.due) <= 0 ? 'now' : ''}" title="FSRS 调度 · 已复习 ${srs.card.reps} 次">${fmtDue(srs.card.due)}</span>` : '<span class="due">未复习</span>';
@@ -548,6 +594,8 @@ function bind() {
     switch (b.dataset.act) {
       case 'answer': sh.answer = !sh.answer; break;
       case 'exp': sh.exp = !sh.exp; break;
+      case 'ansview': sh.ansSrc = b.dataset.view; render(); focusSrcTab(id, 'ansview', sh.ansSrc); return;
+      case 'expview': sh.expSrc = b.dataset.view; render(); focusSrcTab(id, 'expview', sh.expSrc); return;
       case 'note': { const open = sh.note ?? CDGNotes.has(rec.notes, id); sh.note = !open; if (sh.note && !CDGNotes.has(rec.notes, id)) st.noteMode[id] = 'edit'; render(); if (sh.note) focusNote(id); return; }
       case 'nedit': st.noteMode[id] = 'edit'; render(); focusNote(id); return;
       case 'nprev': st.noteMode[id] = 'preview'; break;
@@ -565,7 +613,17 @@ function bind() {
   $('#cards').addEventListener('input', e => { if (e.target.matches('textarea.note-input')) onNoteInput(e.target); });
   $('#cards').addEventListener('focusout', e => { if (e.target.matches('textarea.note-input')) { const id = +e.target.dataset.noteInput; if (commitNote(id)) afterNoteSaved(id); } });
   $('#cards').addEventListener('dblclick', e => { const v = e.target.closest('.nb-view'); if (!v || e.target.closest('a')) return; const id = +v.closest('.card').dataset.id; st.noteMode[id] = 'edit'; render(); focusNote(id); });
-  $('#cards').addEventListener('keydown', e => { if (e.target.matches('textarea.note-input') && (e.ctrlKey || e.metaKey) && e.key === 's') { e.preventDefault(); const id = +e.target.dataset.noteInput; commitNote(id); afterNoteSaved(id); toast('笔记已保存'); } });
+  $('#cards').addEventListener('keydown', e => {
+    if (e.target.matches('textarea.note-input') && (e.ctrlKey || e.metaKey) && e.key === 's') { e.preventDefault(); const id = +e.target.dataset.noteInput; commitNote(id); afterNoteSaved(id); toast('笔记已保存'); return; }
+    const tab = e.target.closest('.src-tabs button[role="tab"]');
+    if (tab && (e.key === 'ArrowLeft' || e.key === 'ArrowRight' || e.key === 'Home' || e.key === 'End')) {
+      e.preventDefault();
+      const tabs = [...tab.parentElement.querySelectorAll('button[role="tab"]')];
+      const i = tabs.indexOf(tab);
+      const next = e.key === 'Home' ? tabs[0] : e.key === 'End' ? tabs[tabs.length - 1] : tabs[(i + (e.key === 'ArrowRight' ? 1 : -1) + tabs.length) % tabs.length];
+      next.click();
+    }
+  });
   addEventListener('pagehide', () => flushNotes());
   document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'hidden') flushNotes(); });
   $('#prevBtn').addEventListener('click', () => step(-1));
