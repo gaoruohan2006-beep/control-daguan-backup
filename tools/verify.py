@@ -141,11 +141,12 @@ async def main():
     await t('button[aria-label="解析"]').click(); ok('仅原图答案题: 同时开解析时答案框指向解析', '见下方' in await t('.box').first.inner_text() and await t('.box .orig img').count() == 2)
     # 文字+原图题：解析区切换（默认文字，点击后才加载原图）
     await pg.goto(BASE + '?list=complete&question=202501', wait_until='networkidle')
-    await t('button[aria-label="解析"]').click(); await pg.wait_for_selector('.box[data-kind="exp"]')
-    ok('文字+原图题: 解析出现切换且默认文字', await t('.box[data-kind="exp"] .src-tabs').count() == 1 and await t('.src-tabs button[data-view="text"]').get_attribute('aria-selected') == 'true' and '文字解析' in await t('.src-tabs').inner_text())
+    await t('button[aria-label="解析"]').click(); await pg.wait_for_selector('.box[data-kind="exp"] .src-tabs')
+    exp_tabs = t('.box[data-kind="exp"] .src-tabs')
+    ok('文字+原图题: 解析出现切换且默认文字', await exp_tabs.count() == 1 and await exp_tabs.locator('button[data-view="text"]').get_attribute('aria-selected') == 'true' and '文字解析' in await exp_tabs.inner_text())
     ok('文字+原图题: 默认不加载原图', await t('.orig img').count() == 0)
-    await t('.src-tabs button[data-view="orig"]').click(); await pg.wait_for_selector('.orig img')
-    ok('文字+原图题: 点击原图解析后显示图片', await t('.orig img').count() >= 1 and await t('.src-tabs button[data-view="orig"]').get_attribute('aria-selected') == 'true')
+    await exp_tabs.locator('button[data-view="orig"]').click(); await pg.wait_for_selector('.orig img')
+    ok('文字+原图题: 点击原图解析后显示图片', await t('.orig img').count() >= 1 and await exp_tabs.locator('button[data-view="orig"]').get_attribute('aria-selected') == 'true')
     await t('button[aria-label="答案"]').click(); await pg.wait_for_selector('.box[data-kind="answer"] .src-tabs')
     ok('文字+原图题: 答案区同样有切换', '文字答案' in await t('.box[data-kind="answer"] .src-tabs').inner_text() and await t('.box[data-kind="answer"] .orig img').count() == 0)
     # 仅原图题：无切换，直接显示图片
