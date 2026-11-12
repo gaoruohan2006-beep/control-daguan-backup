@@ -21,12 +21,14 @@ jobs:
           python-version: '3.12'
       - name: Install Playwright (uses the runner's Google Chrome)
         run: pip install playwright
+      - name: Build precache list
+        run: python3 tools/build_precache.py
       - name: Playwright checks
         run: |
           mkdir -p shots
           python3 -m http.server 8765 -d public > /tmp/http.log 2>&1 &
           sleep 1
-          for t in verify verify_fsrs verify_sync verify_notes verify_settings; do
+          for t in verify verify_fsrs verify_sync verify_notes verify_settings verify_pwa; do
             echo "::group::$t"; python3 tools/$t.py http://localhost:8765/; echo "::endgroup::"
           done
       - if: always()
@@ -46,6 +48,7 @@ jobs:
       - name: Check data files
         run: |
           python3 -c "import json;d=json.load(open('public/data/library.json'));print(len(d['questions']),'questions')"
+          python3 tools/build_precache.py
           touch public/.nojekyll
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3

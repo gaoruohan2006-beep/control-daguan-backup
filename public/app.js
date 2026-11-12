@@ -24,7 +24,7 @@ const GRADE = { unknown: F.Rating.Again, shaky: F.Rating.Hard, mastered: F.Ratin
 // ---------- 存储：IndexedDB（idb-keyval），首次加载自动从 localStorage 迁移 ----------
 const { CDGStore, CDGSync, CDGNotes } = window;
 // 设置面板折叠分组；最近展开的一组记在本机偏好（不导出、不同步）
-const SET_SECS = ['read', 'review', 'records', 'sync'];
+const SET_SECS = ['read', 'review', 'records', 'sync', 'offline'];
 function normRec(r) {
   const ret = +r.retention;
   return { favorites: Array.isArray(r.favorites) ? r.favorites.map(Number) : [], marks: r.marks && typeof r.marks === 'object' ? r.marks : {},
@@ -579,6 +579,7 @@ Promise.all([fetch('data/library.json').then(r => { if (!r.ok) throw 0; return r
   readURL(); bind(); render();
   if (migrated) toast('学习记录已迁移到 IndexedDB');
   await initSync();
+  window.CDGPWA?.start({ getLib: () => lib, flush: async () => { flushNotes(); await persist(); } });
 }).catch(() => { $('#cards').innerHTML = '<div class="empty">静态文件读取失败，请刷新重试。</div>'; });
 
 // ---------- 云同步（GitHub Gist，可选） ----------
@@ -608,4 +609,5 @@ async function initSync() {
   addEventListener('online', () => { if (gist.connected) gist.sync().catch(() => {}); });
   addEventListener('offline', () => { if (gist.connected) gist.saveCfg({ lastError: '当前离线，联网后自动同步。', errorKind: 'offline' }); });
 }
+
 })();

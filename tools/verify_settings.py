@@ -4,8 +4,8 @@ import asyncio, sys, json
 from playwright.async_api import async_playwright
 BASE = sys.argv[1] if len(sys.argv) > 1 else 'http://localhost:8765/'
 R = []
-SECS = ['read', 'review', 'records', 'sync']
-CTRL = {'read': '#modeSeg', 'review': '#retention', 'records': '#exportBtn', 'sync': '#gistToken'}
+SECS = ['read', 'review', 'records', 'sync', 'offline']
+CTRL = {'read': '#modeSeg', 'review': '#retention', 'records': '#exportBtn', 'sync': '#gistToken', 'offline': '#offlineDlBtn'}
 def ok(name, cond, detail=''):
     R.append((name, bool(cond), detail)); print(('PASS' if cond else 'FAIL'), name, detail)
 
@@ -56,7 +56,7 @@ async def main():
     await pg.keyboard.press('ArrowDown'); ok('键盘: ↓ 移到下一个标题', await pg.evaluate("document.activeElement.id") == 'acc-sync-btn')
     await pg.keyboard.press('Space'); ok('键盘: Space 展开并收起其他组', only(await state(pg), 'sync'))
     await pg.keyboard.press('Home'); ok('键盘: Home 回到第一个标题', await pg.evaluate("document.activeElement.id") == 'acc-read-btn')
-    await pg.keyboard.press('ArrowUp'); ok('键盘: ↑ 从第一个循环到最后一个', await pg.evaluate("document.activeElement.id") == 'acc-sync-btn')
+    await pg.keyboard.press('ArrowUp'); ok('键盘: ↑ 从第一个循环到最后一个', await pg.evaluate("document.activeElement.id") == 'acc-offline-btn')
     # 学习记录 + 提示条
     await t('#acc-records-btn').click()
     L = await layout(pg); ok('学习记录展开: 面板在视口内', L['bottom'] <= L['vh'] and not L['hOverflow'], L)

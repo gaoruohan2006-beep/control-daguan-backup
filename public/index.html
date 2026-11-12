@@ -2,8 +2,17 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#006bea" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-title" content="控制大观" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
 <title>控制大观 · 自动控制原理真题</title>
+<link rel="manifest" href="manifest.webmanifest" />
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png" />
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%23006bea'/><text x='16' y='22' font-size='17' text-anchor='middle' fill='white' font-family='sans-serif'>控</text></svg>" />
 <link rel="stylesheet" href="vendor/katex/katex.min.css" />
 <link rel="stylesheet" href="app.css" />
@@ -19,6 +28,7 @@
     </nav>
     <button type="button" class="btn soft" id="tocBtn" aria-label="章节目录" aria-expanded="true"><svg viewBox="0 0 24 24" class="ic"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>目录</button>
     <span class="section-label" id="sectionLabel"></span>
+    <button type="button" class="btn soft" id="installTopBtn" hidden>安装应用</button>
     <div class="pop-wrap">
       <button type="button" class="icon-btn" id="gearBtn" aria-label="设置" title="设置" aria-expanded="false"><svg viewBox="0 0 24 24" class="ic"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></button>
       <div class="popover settings" id="settings" hidden>
@@ -73,6 +83,23 @@
               </div>
             </div>
           </section>
+          <section class="acc" data-acc="offline">
+            <h3 class="acc-h"><button type="button" class="acc-btn" id="acc-offline-btn" data-acc="offline" aria-expanded="false" aria-controls="acc-offline"><span class="acc-title">离线与安装</span><span class="acc-sum" id="accOfflineSum"></span><svg viewBox="0 0 24 24" class="ic chev" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button></h3>
+            <div class="acc-panel" id="acc-offline" role="region" aria-labelledby="acc-offline-btn" hidden>
+              <button type="button" class="btn soft block" id="installBtn" hidden>安装应用</button>
+              <p class="hint" id="installHint" hidden>在 Safari 中：点分享，再选「添加到主屏幕」。</p>
+              <p class="hint" id="installedHint" hidden>已作为应用运行。</p>
+              <p class="hint">下载全部题库和图片后，没有网络也能刷题。大约 20 MB，需要你主动下载。</p>
+              <button type="button" class="btn soft block" id="offlineDlBtn">下载全部题目以便离线使用</button>
+              <div id="offlineProg" hidden>
+                <div class="prog" aria-hidden="true"><div class="prog-bar" id="offlineBar"></div></div>
+                <p class="hint" id="offlineProgText"></p>
+              </div>
+              <p class="hint" id="offlineSize">离线缓存：未下载</p>
+              <button type="button" class="btn ghost block danger" id="offlineClearBtn" disabled>清除离线缓存</button>
+              <div class="confirm-row" id="offlineClearConfirm" hidden><span>清除后，离线时只能打开已经访问过的题目。</span><button type="button" class="btn danger" id="offlineClearYes">确认清除</button><button type="button" class="btn ghost" id="offlineClearNo">取消</button></div>
+            </div>
+          </section>
         </div>
         <p class="set-msg" id="setMsg" role="status"></p>
       </div>
@@ -100,6 +127,7 @@
   </footer>
   <div class="lightbox" id="lightbox" hidden role="dialog" aria-label="图片预览"><img alt="大图" id="lbImg" /><button type="button" class="lb-close" aria-label="关闭">×</button></div>
   <div class="toast" id="toast" role="status" hidden></div>
+  <button type="button" class="toast update-toast" id="updateToast" hidden>有新版本，点击更新</button>
 </div>
 <script src="vendor/katex/katex.min.js"></script>
 <script src="vendor/ts-fsrs/ts-fsrs.umd.js"></script>
@@ -108,6 +136,7 @@
 <script src="vendor/dompurify/purify.min.js"></script>
 <script src="notes.js"></script>
 <script src="sync.js"></script>
+<script src="pwa.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
