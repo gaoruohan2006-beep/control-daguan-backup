@@ -1,1 +1,1 @@
-{"answer": "", "explanation": "", "notes": "题面提到的 $\\sigma\\%$ 与 $\\xi$ 对照表未印在本册中。", "originalImages": [{"src": "img/a2026-2-1.png", "w": 799}, {"src": "img/a2026-2-2.png", "w": 706}], "answerPdfPages": "7–14"}
+{"answer": "", "explanation": "", "notes": "第 1 问闭环传递函数和 $K\\approx 43.7$ 正确；答案用 $t_s=3/(\\zeta\\omega_n)=0.54\\approx 0.5$ 作近似，若严格按 $t_s=0.5$ 则 $K\\approx 55.5$，题给数据略不自洽。第 2 问取 $H(s)=1/s$ 使 $e_{ss}=0$ 正确，但式中 $K_1+s$ 疑为 $K/s$。题面对照表未印在本册。", "originalImages": [{"src": "img/a2026-2-1.png", "w": 799}, {"src": "img/a2026-2-2.png", "w": 706}], "answerPdfPages": "7–14"}

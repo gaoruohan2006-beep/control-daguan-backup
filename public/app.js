@@ -218,6 +218,15 @@ function renderTree() {
   el.innerHTML = tree.list.length ? tree.list.map(n => nodeHTML(n, 0)).join('') : `<div class="empty" style="padding:30px 0">${st.q ? '没有匹配的题目' : st.tab === 'fav' ? '暂无收藏题目' : st.tab === 'retest' ? (st.rv === 'due' ? '今日没有待复习的题目' : '暂无复测题目') : '暂无章节'}</div>`;
 }
 
+
+function errataHTML(d) {
+  if (!d || !d.notes) return '';
+  const lv = d.errataLevel || '';
+  const title = lv === 'ok' ? '已核对' : '勘误';
+  const badge = lv === 'severe' ? '严重，原答案不可照抄' : lv === 'conflict' ? '题目矛盾，原答案不可照抄' : '';
+  const sev = lv === 'ok' ? 'ok' : (lv === 'severe' || lv === 'conflict') ? 'severe' : 'warn';
+  return `<aside class="note errata" data-sev="${sev}"><div class="errata-hd"><span class="errata-tag">${title}</span>${badge ? `<span class="errata-badge">${badge}</span>` : ''}</div><div class="errata-bd">${md(d.notes)}</div></aside>`;
+}
 function cardHTML(id, idx) {
   const q = byId.get(id), L = curList(), d = details.get(id);
   const paths = (L.categoryByQuestion[id] || q.categories);
@@ -226,7 +235,7 @@ function cardHTML(id, idx) {
   const hl = st.q && st.q.length > 0 ? st.q : null;
   let ans = '';
   const origHTML = d && d.originalImages.length ? `<div class="orig"><div class="lab">原图解析（源文件顺序，PDF 第 ${d.answerPdfPages} 页）</div>${d.originalImages.map(o => `<img src="${o.src}" style="width:${o.w}px" alt="原图解析" loading="lazy" data-zoom title="单击放大图片">`).join('')}</div>` : '';
-  const noteHTML = d && d.notes ? `<p class="note">勘误/说明：${inline(d.notes)}</p>` : '';
+  const noteHTML = errataHTML(d);
   if (sh.answer) {
     let body = '加载中';
     if (d) body = d.answer ? md(d.answer) : (sh.exp ? '<p class="muted">本题答案见下方「解析」中的原图。</p>' : origHTML);

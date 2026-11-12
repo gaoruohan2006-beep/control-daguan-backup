@@ -1,1 +1,1 @@
-{"answer": "", "explanation": "", "notes": "", "originalImages": [{"src": "img/a2026-7-1.png", "w": 470}, {"src": "img/a2026-7-2.png", "w": 571}], "answerPdfPages": "7–14"}
+{"answer": "", "explanation": "", "notes": "能控、能观实现及 $a=0$ 时最小实现正确。答案把 $W(s)$ 写成 $U(s)$。$s=0$ 为简单极点，严格说是临界稳定（非渐近稳定），不宜表述为“状态不稳定”。", "originalImages": [{"src": "img/a2026-7-1.png", "w": 470}, {"src": "img/a2026-7-2.png", "w": 571}], "answerPdfPages": "7–14"}

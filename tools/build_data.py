@@ -57,9 +57,11 @@ for qf in sorted(glob.glob(os.path.join(ROOT,'data-src','*','questions.json'))):
         tags=[c.split(' / ')[0] for c in d['cats']],hasFigure=bool(figs),stem=stem,pdfPage=src.get('questionPages',''),
         contributor=src.get('contributor',''),search=' '.join([str(qid),source,*cats,stem])))
     ans=[pub(a) for a in d['answerImages']]
-    details[qid]=dict(answer=d.get('answer',''),explanation=d.get('explanation',''),notes=d.get('notes',''),
+    det=dict(answer=d.get('answer',''),explanation=d.get('explanation',''),notes=d.get('notes',''),
         originalImages=[dict(src=a,w=round(Image.open(os.path.join(ROOT,'public',a)).width*0.6)) for a in ans],
         answerPdfPages=src.get('answerPages',''))
+    if d.get('errataLevel'): det['errataLevel']=d['errataLevel']
+    details[qid]=det
 questions.sort(key=lambda x:(-x['year'],x['number']))
 years=sorted({q['year'] for q in questions},reverse=True)
 TOPIC_ORDER=['建模','时域分析','根轨迹','频域分析','校正','离散系统','非线性系统','状态空间']
