@@ -136,7 +136,7 @@ async def main():
         errs_k = await t('.katex-error').count(); imgs_ok = await pg.evaluate("""async()=>{const ims=[...document.querySelectorAll('.card img')];for(const i of ims){i.loading='eager';i.scrollIntoView();if(!(i.complete&&i.naturalWidth))await new Promise(r=>{i.onload=i.onerror=r;setTimeout(r,8000)});}return ims.every(i=>i.complete&&i.naturalWidth>0)}""")
         if errs_k or not imgs_ok: bad_tex.append((q['id'], errs_k, imgs_ok))
     ok(f'全部 {len(lib["questions"])} 题: 题干/答案/解析 KaTeX 无报错、图片全部加载', not bad_tex, str(bad_tex))
-    await pg.goto(BASE + '?list=complete&question=201707', wait_until='networkidle'); await t('button[aria-label="答案"]').click(); await pg.wait_for_selector('.box .orig img')
+    await pg.goto(BASE + '?list=complete&question=201602', wait_until='networkidle'); await t('button[aria-label="答案"]').click(); await pg.wait_for_selector('.box .orig img')
     ok('仅原图答案题: 答案框显示原图+勘误说明', await t('.box .orig img').count() == 2 and await t('.box .note').count() == 1)
     await t('button[aria-label="解析"]').click(); ok('仅原图答案题: 同时开解析时答案框指向解析', '见下方' in await t('.box').first.inner_text() and await t('.box .orig img').count() == 2)
     # 文字+原图题：解析区切换（默认文字，点击后才加载原图）
@@ -149,8 +149,13 @@ async def main():
     ok('文字+原图题: 点击原图解析后显示图片', await t('.orig img').count() >= 1 and await exp_tabs.locator('button[data-view="orig"]').get_attribute('aria-selected') == 'true')
     await t('button[aria-label="答案"]').click(); await pg.wait_for_selector('.box[data-kind="answer"] .src-tabs')
     ok('文字+原图题: 答案区同样有切换', '文字答案' in await t('.box[data-kind="answer"] .src-tabs').inner_text() and await t('.box[data-kind="answer"] .orig img').count() == 0)
-    # 仅原图题：无切换，直接显示图片
+    # 本批已改正的文字+原图题（201601）：自动出现切换，默认文字、原图未加载
     await pg.goto(BASE + '?list=complete&question=201601', wait_until='networkidle')
+    await t('button[aria-label="解析"]').click(); await pg.wait_for_selector('.box[data-kind="exp"] .src-tabs')
+    ok('201601 改正后: 解析出现切换且默认文字', await t('.box[data-kind="exp"] .src-tabs').count() == 1 and await t('.box[data-kind="exp"] .src-tabs button[data-view="text"]').get_attribute('aria-selected') == 'true' and '文字解析' in await t('.box[data-kind="exp"] .src-tabs').inner_text())
+    ok('201601 改正后: 默认不加载原图', await t('.orig img').count() == 0)
+    # 仍为仅原图的题目：无切换，直接显示图片（如 201608 严重勘误、文字答案为空）
+    await pg.goto(BASE + '?list=complete&question=201608', wait_until='networkidle')
     await t('button[aria-label="答案"]').click(); await pg.wait_for_selector('.box .orig img')
     ok('仅原图题: 无切换直接显示原图', await t('.src-tabs').count() == 0 and await t('.orig img').count() >= 1)
     # 移动端

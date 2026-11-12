@@ -17,9 +17,9 @@
    "answerImages": [
     "img/a2022-1-1.png"
    ],
-   "answer": "",
-   "explanation": "",
-   "notes": "传函与微分方程正确；第 2 问把 $U_y$ 写成了 $u_p$，属笔误。"
+   "answer": "1. 微分方程：$(R_1R_2C+R_1R_3C)\\dot u_y+R_1 u_y=R_2R_3C\\dot u_r+R_2 u_r$。\n\n2. $\\dfrac{U_y(s)}{U_r(s)}=\\dfrac{R_2R_3Cs+R_2}{R_1R_2Cs+R_1R_3Cs+R_1}$。\n",
+   "explanation": "第一级为反相运放，反馈阻抗是 $R_2$ 与 $R_3$ 串 $C$ 的并联：\n$$Z_1=\\dfrac{R_2(R_3Cs+1)}{(R_2+R_3)Cs+1}.$$\n于是 $u_1/u_r=-Z_1/R_1$。第二级两个电阻均为 $R_4$，是增益为 $-1$ 的反相器，$u_y/u_1=-1$。两级负号相消，\n$$\\dfrac{U_y(s)}{U_r(s)}=\\dfrac{Z_1}{R_1}=\\dfrac{R_2R_3Cs+R_2}{R_1R_2Cs+R_1R_3Cs+R_1}.$$\n同相端的 $R_o$ 不进入传递函数。零初始下交叉相乘，即得微分方程\n$$(R_1R_2C+R_1R_3C)\\dot u_y+R_1 u_y=R_2R_3C\\dot u_r+R_2 u_r.$$\n（第 2 问左侧应是 $U_y(s)/U_r(s)$，不要写成 $u_p/u_r$。）\n",
+   "notes": "文字答案与解析已改正；原图传递函数与微分方程正确，第 2 问把 $U_y$ 写成了 $u_p$，属笔误。"
   },
   {
    "no": 2,
@@ -131,9 +131,9 @@
    "answerImages": [
     "img/a2022-7-1.png"
    ],
-   "answer": "",
-   "explanation": "",
-   "notes": "第 1 问能控标准型正确。第 2 问 $T$ 的第二行写成了 $[-1\\ \\ -2\\ \\ 0]$，应为 $T=\\begin{bmatrix}1&1&0\\\\-2&-1&0\\\\0&1&1\\end{bmatrix}$，从而 $\\bar A=T^{-1}AT=\\begin{bmatrix}2&0&-1\\\\-4&-1&1\\\\15&2&-5\\end{bmatrix}$，$\\bar B=[0\\ \\ 0\\ \\ 3]^\\mathrm{T}$。第 3 问相似变换方向用反，应取 $\\tilde A=PAP^{-1}$、$\\tilde B=PB$，得 $\\tilde A=\\begin{bmatrix}-3&-2&4\\\\1&0&-1\\\\0&1&-1\\end{bmatrix}$，$\\tilde B=[3\\ \\ 0\\ \\ 0]^\\mathrm{T}$。第 2、3 问矩阵不能照抄。"
+   "answer": "1. $A=\\begin{bmatrix}0&1&0\\\\0&0&1\\\\-1&-6&-4\\end{bmatrix}$，$B=\\begin{bmatrix}0\\\\0\\\\3\\end{bmatrix}$。（若输出取 $y=x$，则 $C=\\begin{bmatrix}1&0&0\\end{bmatrix}$。）\n\n2. $x=T\\bar x$，$T=\\begin{bmatrix}1&1&0\\\\-2&-1&0\\\\0&1&1\\end{bmatrix}$，\n$$\\bar A=T^{-1}AT=\\begin{bmatrix}2&0&-1\\\\-4&-1&1\\\\15&2&-5\\end{bmatrix},\\quad\n\\bar B=T^{-1}B=\\begin{bmatrix}0\\\\0\\\\3\\end{bmatrix}.$$\n\n3. $\\tilde x=Px$，$P=\\begin{bmatrix}1&1&1\\\\1&1&0\\\\1&0&0\\end{bmatrix}$，应取 $\\tilde A=PAP^{-1}$、$\\tilde B=PB$，\n$$\\tilde A=\\begin{bmatrix}-3&-2&4\\\\1&0&-1\\\\0&1&-1\\end{bmatrix},\\quad\n\\tilde B=\\begin{bmatrix}3\\\\0\\\\0\\end{bmatrix}.$$\n",
+   "explanation": "微分方程 $\\dddot x+4\\ddot x+6\\dot x+x=3u$。\n\n1. 取 $x_1=x$、$x_2=\\dot x$、$x_3=\\ddot x$，则 $\\dot x_1=x_2$，$\\dot x_2=x_3$，且\n$$\\dot x_3=-x_1-6x_2-4x_3+3u,$$\n即上述能控标准型 $A$、$B$。若输出为 $y=x$，还可写 $C=\\begin{bmatrix}1&0&0\\end{bmatrix}$。\n\n2. 题设 $x_1=\\bar x_1+\\bar x_2$，$x_2=-2\\bar x_1-\\bar x_2$，$x_3=\\bar x_2+\\bar x_3$，即 $x=T\\bar x$，\n$$T=\\begin{bmatrix}1&1&0\\\\-2&-1&0\\\\0&1&1\\end{bmatrix}$$\n（第二行是 $[-2\\ \\ {-}1\\ \\ 0]$，不是 $[-1\\ \\ {-}2\\ \\ 0]$）。于是 $\\bar A=T^{-1}AT$、$\\bar B=T^{-1}B$，直接计算得\n$$\\bar A=\\begin{bmatrix}2&0&-1\\\\-4&-1&1\\\\15&2&-5\\end{bmatrix},\\quad\n\\bar B=\\begin{bmatrix}0\\\\0\\\\3\\end{bmatrix}.$$\n\n3. $\\tilde x_1=\\ddot x+\\dot x+x$，$\\tilde x_2=\\dot x+x$，$\\tilde x_3=x$，即 $\\tilde x=Px$，\n$$P=\\begin{bmatrix}1&1&1\\\\1&1&0\\\\1&0&0\\end{bmatrix}.$$\n新坐标下应是 $\\tilde A=PAP^{-1}$、$\\tilde B=PB$（由 $\\dot{\\tilde x}=P\\dot x=PA P^{-1}\\tilde x+PBu$），而不是 $P^{-1}AP$。计算得\n$$\\tilde A=\\begin{bmatrix}-3&-2&4\\\\1&0&-1\\\\0&1&-1\\end{bmatrix},\\quad\n\\tilde B=\\begin{bmatrix}3\\\\0\\\\0\\end{bmatrix}.$$\n原答图 `a2022-7-2.png` 是第 8 题残片，已有意不挂入本题。\n",
+   "notes": "文字答案与解析已改正；原图第 1 问能控标准型正确。第 2 问 $T$ 的第二行写成了 $[-1\\ \\ -2\\ \\ 0]$；第 3 问相似变换方向用反，矩阵不能照抄。"
   },
   {
    "no": 8,

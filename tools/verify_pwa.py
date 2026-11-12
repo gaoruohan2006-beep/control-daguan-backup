@@ -175,6 +175,11 @@ async def main():
         await pg.wait_for_selector('.card')
         await pg.locator('button[aria-label="答案"]').click()
         await pg.wait_for_selector('.box', timeout=8000)
+        # 201601 现已有文字答案，默认显示文字；点「原图答案」后再核对接力缓存的扫描件
+        await pg.wait_for_selector('.box[data-kind="answer"] .src-tabs, .box .orig img', timeout=8000)
+        tabs = pg.locator('.box[data-kind="answer"] .src-tabs button[data-view="orig"]')
+        if await tabs.count():
+            await tabs.click()
         img_ok = False
         try:
             await pg.wait_for_function("""() => {

@@ -18,9 +18,9 @@
     "img/a2021-1-1.png",
     "img/a2021-1-2.png"
    ],
-   "answer": "",
-   "explanation": "",
-   "notes": "中间式结构正确，最后把分母常数项写成 $R_3$（传递函数与微分方程皆如此），应为 $R_4$：$\\dfrac{U_y}{U_i}=-\\dfrac{R_4}{R_2R_3R_4C_1C_2s^2+R_2R_3C_1s+R_4}$。$s=0$ 增益应变为 $-1$。"
+   "answer": "1. 微分方程：\n$$R_2R_3R_4C_1C_2\\ddot u_y+R_2R_3C_1\\dot u_y+R_4 u_y=-R_4 u_i.$$\n\n2. $\\dfrac{U_y(s)}{U_i(s)}=-\\dfrac{R_4}{R_2R_3R_4C_1C_2s^2+R_2R_3C_1s+R_4}$。\n直流增益为 $-1$。\n",
+   "explanation": "第一级为倒相求和（三个电阻均为 $R_1$）：$u_1=-(u_i+u_y)$。第二级为积分：$u_2=-u_1/(R_2C_1 s)$。第三级反馈为 $R_4\\parallel 1/(sC_2)$，\n$$\\dfrac{u_y}{u_2}=-\\dfrac{R_4}{R_3(1+sC_2 R_4)}.$$\n联立消去 $u_1$、$u_2$（注意 $u_y$ 反馈到第一级），\n$$\\dfrac{U_y}{U_i}=-\\dfrac{R_4}{R_2R_3R_4C_1C_2s^2+R_2R_3C_1s+R_4}.$$\n分母常数项是 $R_4$，不是 $R_3$。令 $s=0$，直流增益为 $-1$（否则第一级在稳态无法把输入抵消）。零初始下交叉相乘即得微分方程\n$$R_2R_3R_4C_1C_2\\ddot u_y+R_2R_3C_1\\dot u_y+R_4 u_y=-R_4 u_i.$$\n",
+   "notes": "文字答案与解析已改正；原图中间关系式结构正确，最后把分母（以及微分方程）的常数项写成了 $R_3$，应为 $R_4$。$s=0$ 增益应为 $-1$。"
   },
   {
    "no": 2,
@@ -79,9 +79,9 @@
     "img/a2021-4-2.png",
     "img/a2021-4-3.png"
    ],
-   "answer": "",
-   "explanation": "",
-   "notes": "$G_0$、$G$、$\\gamma\\approx 88.74^\\circ$ 及第 3 问 $G_c=(50s+1)/(2.5s+1)$ 正确。第 4 问多乘 $0.4$，且把题目要求的对数相频图画成了幅频图；$\\lvert G_c(j0.4)\\rvert=5.67$（$15.07\\,\\mathrm{dB}$）不对，准确值约为 $14.16$（$23.0\\,\\mathrm{dB}$）。引用时以第 3 问的 $G_c$ 为准，相频应按 $\\arctan(50\\omega)-\\arctan(2.5\\omega)$ 另画。"
+   "answer": "1. $G_0(s)=\\dfrac{0.2(2.5s+1)}{s(50s+1)\\bigl(\\frac s{10}+1\\bigr)\\bigl(\\frac s{100}+1\\bigr)}$，\n$G(s)=\\dfrac{0.2}{s\\bigl(\\frac s{10}+1\\bigr)\\bigl(\\frac s{100}+1\\bigr)}$。\n\n2. 校正后 $\\omega_c=0.2$，$\\gamma\\approx 88.74^\\circ$。\n\n3. $G_c(s)=\\dfrac{50s+1}{2.5s+1}$（直流增益为 1，不要再乘 $0.4$）。对数相频为 $\\varphi(\\omega)=\\arctan(50\\omega)-\\arctan(2.5\\omega)$：低频、高频均为 $0^\\circ$，在 $\\omega_m=1/\\sqrt{125}\\approx 0.089$ 处达到最大值约 $64.2^\\circ$。$|G_c(j0.4)|\\approx 14.16$（$23.0\\,\\mathrm{dB}$），高频渐近增益 $26\\,\\mathrm{dB}$。\n\n4. 这是串联超前校正：提高中频相角与相角裕度，并提高剪切频率、加快响应；直流增益为 1，不改变稳态精度。\n",
+   "explanation": "由图读出斜率变化（单位：$\\mathrm{dB/dec}$）。\n\n1. $G_0$：低频 $-20$，转折 $0.02$（惯性）、$0.4$（一阶微分）、$10$ 与 $100$（惯性）。低频 $-20$ 延长线过 $(0.2,0)$，故 $k=0.2$，\n$$G_0(s)=\\dfrac{0.2(2.5s+1)}{s(50s+1)\\bigl(\\frac s{10}+1\\bigr)\\bigl(\\frac s{100}+1\\bigr)}.$$\n校正后 $G$ 取消了 $0.02$ 与 $0.4$ 的转折，在 $\\omega=0.2$ 过 $0\\,\\mathrm{dB}$，\n$$G(s)=\\dfrac{0.2}{s\\bigl(\\frac s{10}+1\\bigr)\\bigl(\\frac s{100}+1\\bigr)}.$$\n\n2. 剪切频率 $\\omega_c=0.2$，\n$$\\gamma=180^\\circ-90^\\circ-\\arctan(0.2/10)-\\arctan(0.2/100)\\approx 88.74^\\circ.$$\n\n3. $G_c=G/G_0=(50s+1)/(2.5s+1)$，这是超前环节，$G_c(0)=1$，不能再乘 $0.4$。题目要求画的是对数**相频**（不是幅频）\n$$\\varphi(\\omega)=\\arctan(50\\omega)-\\arctan(2.5\\omega).$$\n低频、高频 $\\varphi\\to 0^\\circ$，最大值出现在 $\\omega_m=1/\\sqrt{50\\cdot 2.5}=1/\\sqrt{125}\\approx 0.0894$，\n$$\\varphi_m=\\arctan\\sqrt{20}-\\arctan\\sqrt{1/20}\\approx 64.2^\\circ.$$\n幅频上，$|G_c(j0.4)|\\approx 14.16$（约 $23.0\\,\\mathrm{dB}$），高频渐近增益 $20\\lg(50/2.5)=26\\,\\mathrm{dB}$；低频是 $0\\,\\mathrm{dB}$，不是 $-8\\,\\mathrm{dB}$。\n\n4. 该校正为串联超前：抬高中频相角，增大相角裕度与剪切频率，响应变快；又因 $G_c(0)=1$，不影响开环增益和稳态精度。\n",
+   "notes": "文字答案与解析已改正；原图 $G_0$、$G$、$\\gamma\\approx 88.74^\\circ$ 及第 3 问 $G_c=(50s+1)/(2.5s+1)$ 正确。第 4 问多乘了 $0.4$，并把要求的对数相频图画成了幅频；$|G_c(j0.4)|$ 应约为 $14.16$（$23.0\\,\\mathrm{dB}$），不是 $5.67$。"
   },
   {
    "no": 5,
@@ -117,9 +117,9 @@
     "img/a2021-6-1.png",
     "img/a2021-6-2.png"
    ],
-   "answer": "",
-   "explanation": "",
-   "notes": "$\\omega_g=\\sqrt{2}$、$A(\\omega_g)=4/3$、无自振且不稳定均对。把 $\\varphi(0)$ 写成 $0^\\circ$，应为约 $-90^\\circ$（同页已写 $\\omega=0^+$ 时为 $-90^\\circ$）。"
+   "answer": "$\\omega_g=\\sqrt{2}$，该处 $G(j\\omega_g)=-4/3$。$N(A)=1+4/(\\pi A)$ 使 $-1/N$ 只在 $(-1,0]$ 上，与 $G(j\\omega)$ 无交点，系统不自振；又因相位穿越处 $|G|>1$，闭环不稳定。$\\varphi(0^+)=-90^\\circ$（不是 $0^\\circ$）。\n",
+   "explanation": "$N(A)=b+4M/(\\pi A)=1+4/(\\pi A)$，故 $-1/N(A)$ 的轨迹是实轴区间 $(-1,0]$。线性部分 $G(s)=8/[s(s+1)(s+2)]$。\n相角 $\\angle G(j\\omega)=-90^\\circ-\\arctan\\omega-\\arctan(\\omega/2)$，低频 $\\omega\\to 0^+$ 时 $\\varphi=-90^\\circ$（不是 $0^\\circ$）。相位穿越 $\\arctan\\omega+\\arctan(\\omega/2)=90^\\circ$ 给出 $\\omega_g=\\sqrt{2}$，且\n$$G(j\\sqrt{2})=-\\dfrac{4}{3}.$$\n$-4/3$ 在 $-1$ 左侧，与 $(-1,0]$ 上的 $-1/N$ 不相交，故无自振。又因相位穿越处 $|G|=4/3>1$，按奈氏判据系统不稳定。\n",
+   "notes": "文字答案与解析已改正；原图 $\\omega_g=\\sqrt{2}$、$|G|=4/3$、无自振且不稳定均对，但把 $\\varphi(0)$ 写成了 $0^\\circ$，应为约 $-90^\\circ$。"
   },
   {
    "no": 7,

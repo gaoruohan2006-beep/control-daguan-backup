@@ -20,9 +20,9 @@
     "img/a2017-1-1.png",
     "img/a2017-1-2.png"
    ],
-   "answer": "",
-   "explanation": "",
-   "notes": "忽略 $L_a$ 后的微分方程与传函最终正确，但 $k_2$、$k_3$ 定义写反（两次对调后传函碰巧对了）。状态方程手写式符号对，矩阵 $A$、$B$ 丢了负号，输出取成了 $\\omega$ 而不是 $\\theta$，第 2 问不能照抄。保留 $L_a$ 时正确为 $A=\\begin{bmatrix}-R_a/L_a&-C_e/L_a&0\\\\C_m/J_m&-f_m/J_m&0\\\\0&1&0\\end{bmatrix}$，$B=\\begin{bmatrix}1/L_a&0\\\\0&-1/J_m\\\\0&0\\end{bmatrix}$，$C=\\begin{bmatrix}0&0&1\\end{bmatrix}$，输入 $[u_a\\ \\ M_L]^\\mathrm{T}$。"
+   "answer": "1. $L_a$ 很小，忽略后\n$$\\Theta(s)=\\dfrac{k_2}{k_1s^2+s}U_a(s)-\\dfrac{k_3}{k_1s^2+s}M_L(s),$$\n其中 $k_1=\\dfrac{R_a J_m}{R_a f_m+C_m C_e}$，$k_2=\\dfrac{C_m}{R_a f_m+C_m C_e}$，$k_3=\\dfrac{R_a}{R_a f_m+C_m C_e}$。\n（保留 $L_a$ 时：$\\dfrac{\\Theta}{U_a}=\\dfrac{C_m}{s[C_m C_e+R_a f_m+(J_m R_a+L_a f_m)s+J_m L_a s^2]}$，$\\dfrac{\\Theta}{M_L}=\\dfrac{-(L_a s+R_a)}{s[C_m C_e+R_a f_m+(J_m R_a+L_a f_m)s+J_m L_a s^2]}$。）\n\n2. 保留 $L_a$，取状态 $x=[i_a\\ \\ \\omega\\ \\ \\theta]^\\mathrm{T}$、输入 $u=[u_a\\ \\ M_L]^\\mathrm{T}$、输出 $y=\\theta$：\n$$A=\\begin{bmatrix}-R_a/L_a&-C_e/L_a&0\\\\C_m/J_m&-f_m/J_m&0\\\\0&1&0\\end{bmatrix},\\quad\nB=\\begin{bmatrix}1/L_a&0\\\\0&-1/J_m\\\\0&0\\end{bmatrix},\\quad\nC=\\begin{bmatrix}0&0&1\\end{bmatrix}.$$\n",
+   "explanation": "电枢回路与机械侧（励磁为常值，$E_b=C_e\\omega$，$M_m=C_m i_a$，$\\omega=\\dot\\theta$）为\n$$L_a\\dot i_a+R_a i_a+C_e\\dot\\theta=u_a,\\qquad\nC_m i_a=J_m\\ddot\\theta+f_m\\dot\\theta+M_L.$$\n\n1. 题面注明 $L_a$ 很小，令 $L_a=0$，则 $i_a=(u_a-C_e\\dot\\theta)/R_a$，代入机械方程得\n$$R_a J_m\\ddot\\theta+(R_a f_m+C_m C_e)\\dot\\theta=C_m u_a-R_a M_L.$$\n令\n$$k_1=\\dfrac{R_a J_m}{R_a f_m+C_m C_e},\\quad\nk_2=\\dfrac{C_m}{R_a f_m+C_m C_e},\\quad\nk_3=\\dfrac{R_a}{R_a f_m+C_m C_e},$$\n即 $k_1\\ddot\\theta+\\dot\\theta=k_2 u_a-k_3 M_L$（注意 $k_2$ 乘在 $u_a$ 上、$k_3$ 乘在 $M_L$ 上）。零初始下\n$$\\Theta(s)=\\dfrac{k_2}{k_1s^2+s}U_a(s)-\\dfrac{k_3}{k_1s^2+s}M_L(s).$$\n若保留 $L_a$，由下面的状态方程消去状态，亦可得到\n$$\\dfrac{\\Theta}{U_a}=\\dfrac{C_m}{s[C_m C_e+R_a f_m+(J_m R_a+L_a f_m)s+J_m L_a s^2]},\\quad\n\\dfrac{\\Theta}{M_L}=\\dfrac{-(L_a s+R_a)}{s[C_m C_e+R_a f_m+(J_m R_a+L_a f_m)s+J_m L_a s^2]},$$\n令 $L_a\\to 0$ 即回到上式。\n\n2. 输出是转角 $\\theta$，即使保留 $L_a$，状态至少应含 $i_a$、$\\omega$、$\\theta$。由电枢与机械方程\n$$\\dot i_a=-\\dfrac{R_a}{L_a}i_a-\\dfrac{C_e}{L_a}\\omega+\\dfrac{1}{L_a}u_a,$$\n$$\\dot\\omega=\\dfrac{C_m}{J_m}i_a-\\dfrac{f_m}{J_m}\\omega-\\dfrac{1}{J_m}M_L,\\qquad \\dot\\theta=\\omega,$$\n即上述 $A$、$B$、$C$。注意 $A$ 中 $R_a/L_a$、$C_e/L_a$、$f_m/J_m$ 前均有负号，$B$ 中 $M_L$ 通道为 $-1/J_m$，且 $C=[0\\ \\ 0\\ \\ 1]$（不是转速 $\\omega$）。\n",
+   "notes": "文字答案与解析已改正；原图中 $k_2$、$k_3$ 定义写反（两次对调后传函碰巧对了）。状态方程矩阵 $A$、$B$ 丢了负号，输出取成了 $\\omega$ 而不是 $\\theta$。忽略 $L_a$ 后的传递函数终式正确。"
   },
   {
    "no": 2,
@@ -96,9 +96,9 @@
    "answerImages": [
     "img/a2017-5-1.png"
    ],
-   "answer": "",
-   "explanation": "",
-   "notes": "$20\\lg K=24$ 得 $K=16$ 正确，但把期望特性的转折读错。正确期望为 $G_d(s)=16(s+1)/[s^2(s/3+1)(s/20+1)]$，校正 $G_c(s)=(s+1)(0.1s+1)/[(s/3+1)(s/20+1)]$。书写成 $16(0.33s+1)/[s^2(0.1s+1)(0.05s+1)]$，与期望图不符，传递函数不能照抄。题图未印“图 4”字样。"
+   "answer": "1. 期望特性 $G_d(s)=\\dfrac{16(s+1)}{s^2\\bigl(\\frac s3+1\\bigr)\\bigl(\\frac s{20}+1\\bigr)}$，串联校正 $G_c(s)=\\dfrac{(s+1)(0.1s+1)}{\\bigl(\\frac s3+1\\bigr)\\bigl(\\frac s{20}+1\\bigr)}$。\n\n2. 校正前后都是 2 型（斜坡稳态误差为 0）。校正前 $G(s)=16/[s^2(0.1s+1)]$ 特征式缺一次项，$\\omega_c\\approx 3.86$，$\\gamma\\approx -21.1^\\circ$，闭环不稳定。按图读出的期望特性把剪切频率抬到 $\\omega_c\\approx 6.48$，但中频 $-20\\,\\mathrm{dB/dec}$ 段仅在 $1\\sim 3$、并未覆盖剪切频率，精确相角裕度约 $-1.9^\\circ$，闭环仍有一对右半平面极点，并不能把系统校正到稳定。\n",
+   "explanation": "未校正开环 $G(s)=16/[s^2(0.1s+1)]$。\n\n1. 期望对数幅频渐近线：低频斜率为 $-40\\,\\mathrm{dB/dec}$，在 $\\omega=1$ 处 $L=24\\,\\mathrm{dB}$，故 $K=10^{24/20}=16$；$\\omega=1$ 处由 $-40$ 改为 $-20$（零点），$\\omega=3$ 处回到 $-40$（极点），$\\omega=20$ 处改为 $-60$（极点）。图上 $\\omega=10$ 只是坐标刻度，不是转折。因此\n$$G_d(s)=\\dfrac{16(s+1)}{s^2\\bigl(\\frac s3+1\\bigr)\\bigl(\\frac s{20}+1\\bigr)},\\qquad\nG_c(s)=\\dfrac{G_d}{G}=\\dfrac{(s+1)(0.1s+1)}{\\bigl(\\frac s3+1\\bigr)\\bigl(\\frac s{20}+1\\bigr)}.$$\n\n2. 校正前特征式 $0.1s^3+s^2+16=0$，缺 $s$ 一次项；精确 $|G(j\\omega)|=1$ 在 $\\omega_c\\approx 3.86$，相位 $-180^\\circ-\\arctan(0.1\\omega_c)$，故 $\\gamma\\approx -21.1^\\circ$，系统不稳定。校正后仍为 2 型，斜坡 $e_{ss}$ 仍为 0，$\\omega_c$ 提高到约 $6.48$。但题图中频 $-20\\,\\mathrm{dB/dec}$ 段只到 $\\omega=3$，剪切发生在随后的 $-40\\,\\mathrm{dB/dec}$ 段上，精确相角\n$$\\gamma=180^\\circ+\\angle G_d(j\\omega_c)=\\arctan\\omega_c-\\arctan(\\omega_c/3)-\\arctan(\\omega_c/20)\\approx -1.9^\\circ,$$\n闭环特征式 $s^4+23s^3+60s^2+960s+960=0$ 有一对右半平面根 $0.10\\pm j6.45$，按该期望特性串联校正后系统仍不稳定。这是题图本身把剪切频率放在 $-40\\,\\mathrm{dB/dec}$ 段上造成的，不是誊写错误。\n",
+   "notes": "文字答案与解析已改正；原图把期望特性转折读错，写成了 $16(0.33s+1)/[s^2(0.1s+1)(0.05s+1)]$，与期望图不符。另：按图正确读出的期望特性精确相角裕度为负，闭环仍不稳定（题图中频段未覆盖剪切频率）。"
   },
   {
    "no": 6,
@@ -112,9 +112,9 @@
     "img/a2017-6-1.png",
     "img/a2017-6-2.png"
    ],
-   "answer": "",
-   "explanation": "",
-   "notes": "平衡点 $x=0$、$x=1$ 与抛物线 $\\dot x=x-x^2$ 正确。但 $x<0$ 一侧箭头指向原点（应离开 $0$ 走向 $-\\infty$），且未判断 $x=0$ 不稳定，第 3 问不能照抄。"
+   "answer": "1. 平衡状态为 $x=0$ 与 $x=1$。\n\n2. 相轨迹是开口向下的抛物线 $\\dot x=x-x^2$。$x<0$ 时 $\\dot x<0$，箭头背离原点指向 $-\\infty$；$0<x<1$ 时 $\\dot x>0$，向右趋向 $1$；$x>1$ 时 $\\dot x<0$，向左趋向 $1$。\n\n3. $x=0$ 不稳定（其左、右两侧都离开该点），吸引域为空；$x=1$ 渐近稳定，吸引域为 $x>0$。$x<0$ 时 $x\\to-\\infty$。\n",
+   "explanation": "1. $\\dot x=f(x)=x-x^2=x(1-x)$，令 $f(x)=0$，得平衡状态 $x=0$、$x=1$。\n\n2. 在 $x$–$\\dot x$ 平面上，相曲线就是抛物线 $\\dot x=x-x^2$（开口向下，顶点在 $x=1/2$）。运动方向由 $\\dot x$ 的符号决定：$\\dot x>0$ 则 $x$ 增大，$\\dot x<0$ 则 $x$ 减小。因此：\n- $x<0$ 时 $\\dot x<0$，$x$ 继续减小，箭头应背离原点、走向 $-\\infty$（不能画成指向原点）；\n- $0<x<1$ 时 $\\dot x>0$，向右趋向 $x=1$；\n- $x>1$ 时 $\\dot x<0$，向左趋向 $x=1$。\n\n3. 线性化 $f'(x)=1-2x$：$f'(0)=1>0$，故 $x=0$ 不稳定；$f'(1)=-1<0$，故 $x=1$ 渐近稳定。结合相轨迹：$x>0$ 都趋向 $1$，吸引域是 $x>0$；$x<0$ 则 $x\\to-\\infty$，不会回到 $0$。\n",
+   "notes": "文字答案与解析已改正；原图中 $x<0$ 一侧箭头误指向原点（应离开 $0$ 走向 $-\\infty$），且未判断 $x=0$ 不稳定。平衡点与抛物线形状正确。"
   },
   {
    "no": 7,
@@ -131,9 +131,9 @@
     "img/a2017-7-1.png",
     "img/a2017-7-2.png"
    ],
-   "answer": "",
-   "explanation": "",
-   "notes": "$G(z)$、$\\Phi(z)$ 与最终条件 $0<T<\\ln[(K+1)/(K-1)]$（$K>1$）均对；取对数时把 $-T>\\ln[(K-1)/(K+1)]$ 写成了 $<$。原文“$T$ 为采用周期”，按“采样周期”录入。题图把零阶保持印成 $1-e^{-T\\tau}$，应为 $1-e^{-Ts}$。"
+   "answer": "1. $G(z)=\\dfrac{K(1-e^{-T})}{z-e^{-T}}$。（题图零阶保持印作 $1-e^{-T\\tau}$，应按 $(1-e^{-Ts})/s$ 计算。）\n\n2. $\\Phi(z)=\\dfrac{C(z)}{R(z)}=\\dfrac{K(1-e^{-T})}{z-e^{-T}+K(1-e^{-T})}$。\n\n3. 当 $K>1$ 时，闭环稳定的充分必要条件是 $0<T<\\ln\\dfrac{K+1}{K-1}$；$0<K\\le 1$ 时对一切 $T>0$ 都稳定。\n",
+   "explanation": "对象为 $K/(s+1)$，采样周期 $T$，零阶保持器为 $(1-e^{-Ts})/s$（题图误印为 $1-e^{-T\\tau}$）。\n\n1. 开环脉冲传递函数\n$$G(z)=\\mathcal Z\\Bigl[\\dfrac{1-e^{-Ts}}{s}\\cdot\\dfrac{K}{s+1}\\Bigr]\n=\\dfrac{z-1}{z}K\\cdot\\mathcal Z\\Bigl[\\dfrac{1}{s}-\\dfrac{1}{s+1}\\Bigr]\n=\\dfrac{K(1-e^{-T})}{z-e^{-T}}.$$\n\n2. 单位负反馈\n$$\\Phi(z)=\\dfrac{G(z)}{1+G(z)}=\\dfrac{K(1-e^{-T})}{z-e^{-T}+K(1-e^{-T})}.$$\n\n3. 闭环极点为 $z=e^{-T}-K(1-e^{-T})$，稳定要求 $|z|<1$，即\n$$\\dfrac{e^{-T}-1}{1-e^{-T}}<K<\\dfrac{1+e^{-T}}{1-e^{-T}}.$$\n左端恒为 $-1$。对 $K>1$，由右端不等式 $K(1-e^{-T})<1+e^{-T}$ 得 $e^{-T}>(K-1)/(K+1)$。因 $(K-1)/(K+1)\\in(0,1)$，两边取对数（对数为增函数，不等式方向不变）得\n$$-T>\\ln\\dfrac{K-1}{K+1},$$\n即 $0<T<\\ln[(K+1)/(K-1)]$。注意中间这一步是 $-T>\\ln[(K-1)/(K+1)]$，不是小于号。当 $0<K\\le 1$ 时右端不等式对一切 $T>0$ 自动成立，系统恒稳定；题给条件默认 $K>1$。\n",
+   "notes": "文字答案与解析已改正；原图在取对数时把 $-T>\\ln[(K-1)/(K+1)]$ 写成了 $<$，但最终条件 $0<T<\\ln[(K+1)/(K-1)]$（$K>1$）是对的。$G(z)$、$\\Phi(z)$ 正确。"
   },
   {
    "no": 8,
@@ -148,9 +148,9 @@
     "img/a2017-8-1.png",
     "img/a2017-8-2.png"
    ],
-   "answer": "",
-   "explanation": "",
-   "notes": "$\\operatorname{rank}Q_c=2$，$K=[2\\ \\ 4]$ 正确。但 $C=[0\\ \\ 1]$，闭环 $Y(s)/V(s)=s/(s^2+2s+2)$，阶跃响应趋于 $0$，不能套用无零点标准二阶的 $\\sigma\\%\\approx 4.3\\%$、$t_s=3.5/4.4\\,\\mathrm{s}$。若输出取 $x_1$，这些指标才成立。"
+   "answer": "1. 能控性矩阵满秩 2，$K=\\begin{bmatrix}2&4\\end{bmatrix}$。\n\n2. 给定输出 $y=x_2$，闭环 $\\dfrac{Y(s)}{V(s)}=\\dfrac{s}{s^2+2s+2}$。单位阶跃下 $y(t)=e^{-t}\\sin t\\to 0$，超调量和调节时间不能套用无零点标准二阶公式。若问的是 $x_1$，则 $\\dfrac{X_1(s)}{V(s)}=\\dfrac{1}{s^2+2s+2}$，单位阶跃终值为 $1/2$，归一化后 $\\sigma\\%\\approx 4.3\\%$，$t_s(5\\%)=3.5\\,\\mathrm{s}$，$t_s(2\\%)=4.4\\,\\mathrm{s}$。\n",
+   "explanation": "$A=\\begin{bmatrix}0&1\\\\0&2\\end{bmatrix}$，$B=\\begin{bmatrix}0\\\\1\\end{bmatrix}$，$C=\\begin{bmatrix}0&1\\end{bmatrix}$。\n\n1. $Q_c=[B\\ \\ AB]=\\begin{bmatrix}0&1\\\\1&2\\end{bmatrix}$，$\\operatorname{rank}Q_c=2$，能控。取 $u=-Kx+v$、$K=[k_1\\ \\ k_2]$，\n$$\\det\\bigl(sI-(A-BK)\\bigr)=s^2+(k_2-2)s+k_1.$$\n期望极点 $-1\\pm j$ 对应 $s^2+2s+2$，故 $k_1=2$、$k_2=4$，即 $K=\\begin{bmatrix}2&4\\end{bmatrix}$。直接验证 $A-BK$ 特征值为 $-1\\pm j$。\n\n2. 题面输出是 $y=x_2=Cx$，闭环\n$$\\dfrac{Y(s)}{V(s)}=C\\bigl(sI-(A-BK)\\bigr)^{-1}B=\\dfrac{s}{s^2+2s+2}.$$\n单位阶跃 $V=1/s$ 时 $Y(s)=1/(s^2+2s+2)$，$y(t)=e^{-t}\\sin t$，终值为 0，响应在 0 附近振荡后衰减，不能套用无零点标准二阶系统的 $\\sigma\\%=e^{-\\pi}\\times 100\\%\\approx 4.3\\%$ 和 $t_s=3.5/4.4\\,\\mathrm{s}$。\n若改为输出 $x_1$，则 $X_1(s)/V(s)=1/(s^2+2s+2)$，单位阶跃终值为 $1/2$，把输出归一化到终值 1 后才是标准二阶（$\\zeta=\\sqrt{2}/2$，$\\omega_n=\\sqrt{2}$，$\\zeta\\omega_n=1$），上述 $\\sigma\\%$ 与 $t_s$ 才适用。\n",
+   "notes": "文字答案与解析已改正；原图中 $K=[2\\ \\ 4]$ 正确，但把无零点标准二阶的 $\\sigma\\%\\approx 4.3\\%$、$t_s$ 套到了 $y=x_2$ 上。闭环 $Y(s)/V(s)=s/(s^2+2s+2)$，阶跃响应趋于 0，上述指标不适用。"
   }
  ]
 }
