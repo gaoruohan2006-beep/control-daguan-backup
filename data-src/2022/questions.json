@@ -19,7 +19,7 @@
    ],
    "answer": "",
    "explanation": "",
-   "notes": ""
+   "notes": "传函与微分方程正确；第 2 问把 $U_y$ 写成了 $u_p$，属笔误。"
   },
   {
    "no": 2,
@@ -36,7 +36,8 @@
    ],
    "answer": "",
    "explanation": "",
-   "notes": ""
+   "notes": "题给单位阶跃 $e_{ss}=0.2$，但源答案按 1 型系统写出 $G(s)=\\dfrac{4.318}{s(s+1.496)}$，该式单位阶跃误差实为 $0$，不可照抄。$\\zeta\\approx 0.3579$（书取 $0.36$）、$\\omega_n\\approx 2.074$（书 $2.078$）本身可用。正确开环为 $G(s)=\\dfrac{0.8\\omega_n^2}{s^2+2\\zeta\\omega_n s+0.2\\omega_n^2}\\approx\\dfrac{3.4416}{s^2+1.4845s+0.8604}$，此时 $K_p=4$，$e_{ss}=0.2$。",
+   "errataLevel": "severe"
   },
   {
    "no": 3,
@@ -55,7 +56,8 @@
    ],
    "answer": "",
    "explanation": "",
-   "notes": ""
+   "notes": "已核对：正确。$G(s)=k/[s^2(s+5)]$ 及加零点 $z=-3$ 后的轨迹、渐近线均对。多算了 $s=-4$ 处的 $K=16$，题面并未要求，不影响结论。",
+   "errataLevel": "ok"
   },
   {
    "no": 4,
@@ -75,7 +77,8 @@
    ],
    "answer": "",
    "explanation": "",
-   "notes": ""
+   "notes": "已核对：正确。渐近线法 $G(s)=\\dfrac{10(10s+1)}{s(s+1)(0.02s+1)}$、$\\omega_c=50\\sqrt{2}$、$\\gamma\\approx 35.99^\\circ$ 与考场方法一致；精确值为 $\\omega_c\\approx 62.48\\,\\mathrm{rad/s}$，$\\gamma\\approx 39.50^\\circ$。",
+   "errataLevel": "ok"
   },
   {
    "no": 5,
@@ -93,7 +96,8 @@
    ],
    "answer": "",
    "explanation": "",
-   "notes": ""
+   "notes": "已核对：正确。分区方程与由 $(4,0)$ 出发的封闭振荡轨迹均对。更准确地说这是一条周期轨道，而不是孤立极限环；给定初值下的运动描述是对的。",
+   "errataLevel": "ok"
   },
   {
    "no": 6,
@@ -112,7 +116,8 @@
    ],
    "answer": "",
    "explanation": "",
-   "notes": ""
+   "notes": "已核对：正确。$C(z)$ 公式与朱利范围 $0<k<(2+2e^{-T})/(1-e^{-T})$ 均对。第 1 问把 $\\Phi=C/R$ 写成与 $R$ 可约的形式，在 $G_1\\neq 1$ 时一般不成立，但不影响 $C(z)$。",
+   "errataLevel": "ok"
   },
   {
    "no": 7,
@@ -128,7 +133,7 @@
    ],
    "answer": "",
    "explanation": "",
-   "notes": ""
+   "notes": "第 1 问能控标准型正确。第 2 问 $T$ 的第二行写成了 $[-1\\ \\ -2\\ \\ 0]$，应为 $T=\\begin{bmatrix}1&1&0\\\\-2&-1&0\\\\0&1&1\\end{bmatrix}$，从而 $\\bar A=T^{-1}AT=\\begin{bmatrix}2&0&-1\\\\-4&-1&1\\\\15&2&-5\\end{bmatrix}$，$\\bar B=[0\\ \\ 0\\ \\ 3]^\\mathrm{T}$。第 3 问相似变换方向用反，应取 $\\tilde A=PAP^{-1}$、$\\tilde B=PB$，得 $\\tilde A=\\begin{bmatrix}-3&-2&4\\\\1&0&-1\\\\0&1&-1\\end{bmatrix}$，$\\tilde B=[3\\ \\ 0\\ \\ 0]^\\mathrm{T}$。第 2、3 问矩阵不能照抄。"
   },
   {
    "no": 8,
@@ -143,7 +148,8 @@
    ],
    "answer": "",
    "explanation": "",
-   "notes": ""
+   "notes": "已核对：正确。$\\operatorname{rank}Q_c=3$，$K=[196\\ \\ 54\\ \\ 9]$，闭环极点为 $-10$、$-2\\pm 4j$。",
+   "errataLevel": "ok"
   }
  ]
 }

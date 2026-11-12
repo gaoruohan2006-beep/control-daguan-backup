@@ -1,1 +1,1 @@
-{"answer": "", "explanation": "", "notes": "", "originalImages": [{"src": "img/a2022-4-1.png", "w": 463}, {"src": "img/a2022-4-2.png", "w": 702}], "answerPdfPages": "162–169"}
+{"answer": "", "explanation": "", "notes": "已核对：正确。渐近线法 $G(s)=\\dfrac{10(10s+1)}{s(s+1)(0.02s+1)}$、$\\omega_c=50\\sqrt{2}$、$\\gamma\\approx 35.99^\\circ$ 与考场方法一致；精确值为 $\\omega_c\\approx 62.48\\,\\mathrm{rad/s}$，$\\gamma\\approx 39.50^\\circ$。", "originalImages": [{"src": "img/a2022-4-1.png", "w": 463}, {"src": "img/a2022-4-2.png", "w": 702}], "answerPdfPages": "162–169", "errataLevel": "ok"}

@@ -1,1 +1,1 @@
-{"answer": "", "explanation": "", "notes": "", "originalImages": [{"src": "img/a2022-3-1.png", "w": 457}, {"src": "img/a2022-3-2.png", "w": 490}], "answerPdfPages": "162–169"}
+{"answer": "", "explanation": "", "notes": "已核对：正确。$G(s)=k/[s^2(s+5)]$ 及加零点 $z=-3$ 后的轨迹、渐近线均对。多算了 $s=-4$ 处的 $K=16$，题面并未要求，不影响结论。", "originalImages": [{"src": "img/a2022-3-1.png", "w": 457}, {"src": "img/a2022-3-2.png", "w": 490}], "answerPdfPages": "162–169", "errataLevel": "ok"}

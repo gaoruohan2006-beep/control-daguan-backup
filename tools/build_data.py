@@ -29,8 +29,11 @@ for src in SOURCES:
         categories=cats,tags=[c.split(' / ')[0] for c in d['cats']],hasFigure=bool(figs),
         stem=stem,pdfPage=src['qpages'][d['year']],
         search=' '.join([str(qid),source,*cats,stem])))
-    details[qid]=dict(answer=d['answer'],explanation=d['explanation'],
+    det=dict(answer=d['answer'],explanation=d['explanation'],
         originalImages=[dict(src=a,w=round(__import__('PIL.Image',fromlist=['x']).open(os.path.join(ROOT,'public',a)).width*0.6)) for a in crops['ans'].get(key,[])],answerPdfPages=src['apages'][d['year']])
+    if d.get('notes'): det['notes']=d['notes']
+    if d.get('errataLevel'): det['errataLevel']=d['errataLevel']
+    details[qid]=det
 # JSON 数据源：data-src/<年份>/questions.json（格式见 incoming/SPEC.md）
 import glob, shutil
 from PIL import Image
