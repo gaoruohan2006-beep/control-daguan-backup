@@ -24,13 +24,13 @@ q(2023, 1, ["建模 / 机械系统 / 微分方程与传递函数", "状态空间
 
 2. 传递函数：$\Phi(s)=\dfrac{X_0(s)}{G(s)}=\dfrac{\frac1m}{s^2+\frac fm s+\frac km}$。
 
-3. 取 $x_1=x_0,\ x_2=\dot x_0$：$A=\begin{bmatrix}0&1\\-\frac km&-\frac fm\end{bmatrix},\ B=\begin{bmatrix}0\\1\end{bmatrix},\ C=\begin{bmatrix}\frac1m&0\end{bmatrix}$（源答案取 $y=\frac1m x_1$）。
+3. 取 $x_1=x_0,\ x_2=\dot x_0$，$y=x_0$：$A=\begin{bmatrix}0&1\\-\frac km&-\frac fm\end{bmatrix},\ B=\begin{bmatrix}0\\\frac1m\end{bmatrix},\ C=\begin{bmatrix}1&0\end{bmatrix}$。
 """, r"""
 由牛顿第二定律 $g(t)-f\dot x_0-kx_0=m\ddot x_0$，整理得二阶微分方程。
 
 零初始条件下做拉氏变换：$X_0(s)\left(s^2+\dfrac fm s+\dfrac km\right)=\dfrac1m G(s)$。
 
-令 $x_1=x_0$，$x_2=\dot x_1$，则 $\dot x_1=x_2$，$\dot x_2=-\dfrac km x_1-\dfrac fm x_2+g(t)$，写成矩阵形式即可。
+令 $x_1=x_0$，$x_2=\dot x_1$，则 $\dot x_1=x_2$，$\dot x_2=-\dfrac km x_1-\dfrac fm x_2+\dfrac1m g(t)$，写成矩阵形式即可。
 """)
 
 q(2023, 2, ["时域分析 / 二阶系统性能指标", "时域分析 / 稳态误差 / 复合控制"], r"""
@@ -68,7 +68,7 @@ $$G(s)=\frac{K(s+4)}{s(s+2)(s+15)}$$
 
 2. $K>0$ 时系统均稳定。
 
-3. $s_1=-9$ 时 $K=75.6$，另两极点 $-4\pm4.195j$；$\left|\dfrac{-9}{-4}\right|<5$，**不能**视为二阶系统。$r(t)=2+3t$ 时 $K_v=2.864$，$e_{ss}=\dfrac{3}{K_v}\approx1.05$。
+3. $s_1=-9$ 时 $K=75.6$，另两极点 $-4\pm4.195j$；$\left|\dfrac{-9}{-4}\right|<5$，**不能**视为二阶系统。系统为 1 型，$r(t)=2+3t$ 时 $K_v=\dfrac{75.6\times4}{2\times15}=10.08=\dfrac{252}{25}$，$e_{ss}=\dfrac{3}{K_v}=\dfrac{25}{84}\approx0.298$。
 """, r"""
 分离点方程 $2s^3+29s^2+136s+120=0$，解得 $s=-1.136$（另两根为复数，舍）。
 
@@ -108,14 +108,14 @@ q(2023, 5, ["离散系统 / 脉冲传递函数", "离散系统 / 稳定性（朱
 
 4、$k=2$ 时，若 $c(0)=0$、$c(1)=0.5$，求 $c(2)$ 及 $c(3)$ 的值。
 """, r"""
-1. （源答案按 $T=1$）$G(z)=k\dfrac{0.28375z+0.14875}{(z-1)(z-0.135)}$，
+1. （按 $T=1$）$G(z)=k\dfrac{0.28375z+0.14875}{(z-1)(z-0.135)}$，
 $\Phi(z)=\dfrac{0.28375kz+0.14875k}{z^2+(0.28375k-1.135)z+0.135+0.14875k}$。
 
 2. $0<k<5.82$。
 
 3. $c(k)+(0.28375k-1.135)c(k-1)+(0.135+0.14875k)c(k-2)=0.28375k\,r(k-1)+0.14875k\,r(k-2)$。
 
-4. $k=2$：$c(k)-0.5675c(k-1)+0.4325c(k-2)=0.5675r(k-1)+0.2975r(k-2)$，递推得 $c(2)=0.28375+0.5675r(1)$，$c(3)=0.5675c(2)+0.21625+0.5675r(2)+0.2975r(1)$（单位阶跃输入时 $c(2)\approx0.851$）。
+4. $k=2$：$c(k)-0.5675c(k-1)+0.4325c(k-2)=0.5675r(k-1)+0.2975r(k-2)$。由 $c(0)=0$、$c(1)=0.5$ 得 $c(2)=0.28375+0.5675\,r(1)+0.2975\,r(0)$，$c(3)=0.5675\,c(2)-0.21625+0.5675\,r(2)+0.2975\,r(1)$。若再假定单位阶跃 $r(n)=1\ (n\ge0)$，则 $c(2)\approx1.149$，$c(3)\approx1.301$。
 """, r"""
 $G(z)=k\dfrac{z-1}{z}\mathcal Z\!\left[\dfrac{0.5}{s^2}-\dfrac{0.25}{s}+\dfrac{0.25}{s+2}\right]$，$e^{-2}\approx0.135$。
 
@@ -179,7 +179,7 @@ $$A=\begin{bmatrix}3&-2\\4&3\end{bmatrix},\quad B=\begin{bmatrix}0\\1\end{bmatri
 
 3、若 2 成立的条件下，求该系统的极点要为 $-2\pm3j$ 时的对应状态反馈矩阵。
 """, r"""
-1. 特征根 $\lambda=3\pm2\sqrt2\,j$，实部为正，**不稳定**。
+1. $|\lambda I-A|=\lambda^2-6\lambda+17=0$，特征根 $\lambda=3\pm2\sqrt2\,j$，实部为正，**不稳定**。
 
 2. $\operatorname{rank}[B\ AB]=2$，完全能控，可以通过状态反馈镇定。
 
@@ -302,13 +302,13 @@ $G_c(s)=\dfrac{\sqrt{10}\left(\frac s2+1\right)(s+1)\left(\frac s3+1\right)}{s\l
 
 2. 低频段抬高并增加一个积分（型别 +1），稳态误差减小；中频段以 $-20\,\mathrm{dB/dec}$ 穿越 0 dB，动态性能改善；高频段被抬高，抗高频干扰能力下降。
 
-3. 校正前 $\omega_c\approx2$，$\gamma\approx4.19^\circ$；校正后 $\omega_c=2\sqrt{10}\approx6.32$，$\gamma\approx26.21^\circ$。
+3. 按 Bode 折线法：校正前 $\omega_c=2$，$\angle G(j\omega)=-\arctan\omega-\arctan\dfrac{\omega}{3}-\arctan\dfrac{\omega}{0.4}$，故 $\gamma\approx4.19^\circ$；校正后 $\omega_c=2\sqrt{10}\approx6.32$，$\angle GG_c(j\omega)=\arctan\dfrac{\omega}{2}-90^\circ-\arctan\dfrac{\omega}{0.4}-\arctan\dfrac{\omega}{10}-\arctan\dfrac{\omega}{20}$，故 $\gamma\approx26.21^\circ$。
 """, r"""
 校正后低频段以 $-20\,\mathrm{dB/dec}$ 过 $(0.1,50\,\mathrm{dB})$，$20\lg\left|\dfrac K{0.1}\right|=50\Rightarrow K=10\sqrt{10}$。
 
 校正前 $G(s)=\dfrac{10}{(s+1)\left(\frac s3+1\right)\left(\frac s{0.4}+1\right)}$，$G_c=\dfrac{G G_c}{G}$。
 
-校正前 $1<\omega_c<3$：$\dfrac{10}{\frac{\omega_c}{0.4}\omega_c}=1\Rightarrow\omega_c=2$。
+校正前 $1<\omega_c<3$：$\dfrac{10}{\frac{\omega_c}{0.4}\omega_c}=1\Rightarrow\omega_c=2$；$\gamma=180^\circ+\angle G(j2)\approx4.19^\circ$。校正后在 $\omega_c=2\sqrt{10}$ 处代入相角公式得 $\gamma\approx26.21^\circ$。
 """)
 
 q(2024, 6, ["离散系统 / 脉冲传递函数", "离散系统 / 稳定性（朱利判据）", "离散系统 / 稳态误差"], r"""
@@ -346,7 +346,7 @@ $$\begin{cases}\dot x=\begin{bmatrix}0&1\\-2&-3\end{bmatrix}x+\begin{bmatrix}0\\
 """, r"""
 1. $\Phi(t)=\begin{bmatrix}2e^{-t}-e^{-2t}&e^{-t}-e^{-2t}\\-2e^{-t}+2e^{-2t}&-e^{-t}+2e^{-2t}\end{bmatrix}$，$G(s)=\dfrac{as+1}{s^2+3s+2}$。
 
-2. $Q_o=\begin{bmatrix}1&a\\-2a&1-3a\end{bmatrix}$，$|Q_o|=2a^2-3a+1\ne0$，即 $a\ne1$ 且 $a\ne\dfrac12$ 时完全能观（源答案此处未写出结论，按判别阵补全）。
+2. $Q_o=\begin{bmatrix}1&a\\-2a&1-3a\end{bmatrix}$，$|Q_o|=2a^2-3a+1=(2a-1)(a-1)\ne0$，即 $a\ne1$ 且 $a\ne\dfrac12$ 时完全能观。
 
 3. 解 $A^TP+PA=-I$ 得 $P=\begin{bmatrix}\frac54&\frac14\\\frac14&\frac14\end{bmatrix}$ 正定，系统在原点**大范围渐近稳定**。
 """, r"""
@@ -387,7 +387,7 @@ q(2025, 1, ["建模 / 电路网络 / 运放电路传递函数", "状态空间 / 
 """, r"""
 1. $\dfrac{U_o(s)}{U_i(s)}=\dfrac{-RLCs^2+Ls+R}{RLCs^2+(L+R^2C)s+R}$。
 
-2. 取 $x_1=u_C$，$x_2=-i_L$：$\dot x=\begin{bmatrix}-\frac1{RC}&0\\-\frac1L&-\frac RL\end{bmatrix}x+\begin{bmatrix}\frac1{RC}\\\frac1L\end{bmatrix}u_i$，$u_o=\begin{bmatrix}2&R\end{bmatrix}x-u_i$。
+2. 取 $x_1=u_C$，$x_2=i_L$：$\dot x=\begin{bmatrix}-\frac1{RC}&0\\-\frac1L&-\frac RL\end{bmatrix}x+\begin{bmatrix}\frac1{RC}\\\frac1L\end{bmatrix}u_i$，$u_o=\begin{bmatrix}2&R\end{bmatrix}x-u_i$。
 """, r"""
 虚短虚断 $U_A=U_B=U_C$。B 端：$\dfrac{U_i-U_C}{R}=C\dfrac{du_C}{dt}$；A 端：$\dfrac{U_i-U_C}{R}=i_L+\dfrac{U_C-U_o}{R}$；电感：$u_C=u_o+L\dfrac{di_L}{dt}$。
 
@@ -456,7 +456,7 @@ $G_c(s)=\dfrac{0.24s+1}{0.06s+1}$，校验 $\gamma\approx45^\circ$。
 """, r"""
 $\omega_c\in(2,100)$：$\dfrac{18}{\omega_c\cdot\frac{\omega_c}{2}}=1\Rightarrow\omega_c=6$；$\gamma=180^\circ-90^\circ-\arctan3-\arctan0.06\approx15^\circ$。
 
-新截止频率满足 $-20\lg|G(j\omega_c')|=10\lg a$，即 $\left(\dfrac{\omega_c'}{6}\right)^2=4$。
+新截止频率满足 $-20\lg|G(j\omega_c')|=10\lg a$，即 $\left(\dfrac{\omega_c'}{6}\right)^2=2$，故 $\omega_c'=6\sqrt{2}$。
 """, score=20)
 
 q(2025, 5, ["离散系统 / 脉冲传递函数", "离散系统 / 稳定性（朱利判据）", "离散系统 / 稳态误差"], r"""
@@ -472,7 +472,8 @@ q(2025, 5, ["离散系统 / 脉冲传递函数", "离散系统 / 稳定性（朱
 
 [[fig:1]]
 """, r"""
-1. $G(z)=\dfrac{K\left[(e^{-0.1}-0.9)z+(1-1.1e^{-0.1})\right]}{(z-1)(z-e^{-0.1})}$，$\Phi(z)=\dfrac{G(z)}{1+G(z)}$，特征方程 $D(z)=z^2+(0.005K-1.905)z+0.0045K+0.905=0$。
+1. $G(z)=\dfrac{K\left[(e^{-0.1}-0.9)z+(1-1.1e^{-0.1})\right]}{(z-1)(z-e^{-0.1})}$，
+$\Phi(z)=\dfrac{K\left[(e^{-0.1}-0.9)z+(1-1.1e^{-0.1})\right]}{z^2+(0.005K-1.905)z+(0.0045K+0.905)}$（已代入 $e^{-0.1}=0.905$）。
 
 2. 朱利判据：$D(1)=0.0095K>0$，$D(-1)=3.81-0.0005K>0$，$|0.0045K+0.905|<1$，综合得 $0<K<21.11$ 时稳定。
 
@@ -493,7 +494,7 @@ q(2025, 6, ["非线性系统 / 描述函数法 / 自振分析"], r"""
 3. 计算发生自振时系统输出信号的振幅和频率。
 """, r"""
 1. $-\dfrac1{N(A)}=-\dfrac{A+1}{A+3}$ 由 $-\dfrac13$（$A\to0$）到 $-1$（$A\to\infty$）；$G(j\omega_x)=-\dfrac K6$，$\omega_x=\sqrt2$。
-$0<K<2$ 稳定；$2<K<6$ 产生稳定自振；$K>6$ 不稳定。（源答案此处误印为 “$\pi<K<6$”，按推导应为 $2<K<6$。）
+$0<K<2$ 稳定；$2<K<6$ 产生稳定自振；$K>6$ 不稳定。
 
 2. 见原图解析中的 $G(j\omega)$ 与 $-1/N(A)$ 曲线。
 
@@ -521,7 +522,7 @@ $$\dot x=\begin{bmatrix}1&2&3\\0&1&1\\0&1&1\end{bmatrix}x+\begin{bmatrix}0\\0\\1
 3. 能控标准型：$\dot x=\begin{bmatrix}0&1&0\\0&0&1\\0&-2&3\end{bmatrix}x+\begin{bmatrix}0\\0\\1\end{bmatrix}u$，$y=\begin{bmatrix}-1&3&0\end{bmatrix}x$；
 能观标准型：$\dot x=\begin{bmatrix}0&0&0\\1&0&-2\\0&1&3\end{bmatrix}x+\begin{bmatrix}-1\\3\\0\end{bmatrix}u$，$y=\begin{bmatrix}0&0&1\end{bmatrix}x$。
 """, r"""
-$|sI-A|=(s-1)\left[(s-1)^2-1\right]=s(s-1)(s-2)$；只需 $(sI-A)^*$ 第 1 行第 3 列元素 $3s-1$。
+$sI-A=\begin{bmatrix}s-1&-2&-3\\0&s-1&-1\\0&-1&s-1\end{bmatrix}$，$|sI-A|=(s-1)\left[(s-1)^2-1\right]=s(s-1)(s-2)$；只需 $(sI-A)^*$ 第 1 行第 3 列元素 $3s-1$。
 
 由传递函数系数 $a_0=0,\ a_1=2,\ a_2=-3$，$b_0=-1,\ b_1=3,\ b_2=0$ 直接写出两种标准型。
 """, score=18)
@@ -546,31 +547,31 @@ $f(s)=\det(sI-A+bK)=s^3+(3+k_3)s^2+(2+k_2)s+1+k_1$。
 
 # 勘误（独立核对）。errataLevel: 'severe' / 'conflict' / 'ok'；省略则为普通勘误。
 ERRATA = {
-(2023, 1): (None, r"""微分方程与 $\Phi(s)$ 正确。源答案状态矩阵 $A_{12}$ 写成了 $0$，且 $B$、$C$ 与 $1/m$ 的安置不一致；正确为 $A=\begin{bmatrix}0&1\\-k/m&-f/m\end{bmatrix}$，$B=\begin{bmatrix}0\\1/m\end{bmatrix}$，$C=\begin{bmatrix}1&0\end{bmatrix}$。第 3 问不能照抄。网站文本已把 $A_{12}$ 改为 $1$，但仍把 $1/m$ 放在 $C$ 而非 $B$。"""),
+(2023, 1): (None, r"""上方文字答案已改正；原答案图中状态矩阵 $A_{12}$ 写成了 $0$，且把 $1/m$ 放在 $C$ 而非 $B$，按该书状态方程算出的传递函数为 $0$。微分方程与 $\Phi(s)$ 正确。"""),
 (2023, 2): ('severe', r"""题干亦有矛盾：无阻尼振荡频率 $\omega_n=2$、图中 $1.2s+1$ 与 $e_{ss}=0.4$ 三者不能同时成立（若 $\omega_n=2$ 则 $k_a=3.8$，此时 $e_{ss}\neq 0.4$ 且 $\zeta>1$）。源答案未使用 $\omega_n=2$。
 
 另，系统为 0 型，$e_{ss}=k_a/(1+k_a)$，源答案写成 $e_{ss}=1/K_p=k_a=0.4$，因而 $k_a$、$\zeta$、$\sigma\%$、$t_s$ 及 $G_c=s+0.4$ 均不可照抄。按 $e_{ss}=0.4$ 与结构图（忽略矛盾的 $\omega_n=2$）：$k_a=2/3$，$\omega_n=\sqrt{25/18}\approx 1.179$，$\zeta\approx 0.636$，$\sigma\%\approx 7.49\%$，$t_s(5\%)\approx 4.667\,\mathrm{s}$，全补偿 $G_c(s)=s+2/3$。"""),
-(2023, 3): (None, r"""根轨迹、稳定性、$s=-9$ 时 $K=75.6$ 与另两极点均对。求 $e_{ss}$ 时用错开环传函，源答案 $K_v=2.864$、$e_{ss}=1.05$ 不能照抄。正确为 $K_v=10.08=252/25$，$e_{ss}=3/K_v=25/84\approx 0.298$。"""),
+(2023, 3): (None, r"""上方文字答案已改正；原答案图中求 $e_{ss}$ 时用错开环传函，把 $K_v$ 写成了 $2.864$、$e_{ss}$ 写成了 $1.05$。根轨迹、稳定性、$s=-9$ 时的 $K$ 与另两极点均对。"""),
 (2023, 4): ('ok', r"""已核对：正确。拆大放小得 $\omega_C=12.5$、$\gamma\approx 103.35^\circ$ 与考场算法一致；精确值为 $\omega_C\approx 8.20\,\mathrm{rad/s}$，$\gamma\approx 114.49^\circ$。"""),
-(2023, 5): (None, r"""题图采样周期为 $\tau$ 且未给数值，源答案默认 $T=1$。该假定下 $\Phi(z)$ 与 $0<k<5.82$ 正确，但 $G(z)$ 分子曾写为 $0.26375$（应为 $0.28375$），特征式出现 $-11.135$ 笔误。$c(2)$ 漏了 $0.2975\,r(0)$，$c(3)$ 把 $-0.21625$ 写成了 $+0.21625$。第 4 问不能直接照抄。网站文本已注明按 $T=1$。"""),
+(2023, 5): (None, r"""上方文字答案已改正（按 $T=1$）。原答案图中 $G(z)$ 分子曾写为 $0.26375$（应为 $0.28375$），特征式出现 $-11.135$ 笔误；$c(2)$ 漏了 $0.2975\,r(0)$，$c(3)$ 把 $-0.21625$ 写成了 $+0.21625$。题图采样周期为 $\tau$ 且未给数值与 $r(k)$；该假定下 $\Phi(z)$ 与 $0<k<5.82$ 正确。"""),
 (2023, 6): ('ok', r"""已核对：正确。等效为死区 $h=0.5$、幅值 $M=2$ 的继电器；$k=10$ 时 $\omega=1$、$A\approx 12.723$；不自振范围为 $0<k<\pi/4$。"""),
 (2023, 7): ('ok', r"""已核对：正确。$e^{At}$、$G(s)=1/(s+2)$、完全能控、不完全能观均对。"""),
-(2023, 8): (None, r"""特征根、能控性、$k=[-13\ \ 10]$ 全部正确。开环特征方程被写成 $-\lambda^2-6\lambda+17=0$（少了正的 $\lambda^2$），随后的根是按正确方程 $\lambda^2-6\lambda+17=0$ 解的。"""),
-(2024, 1): (None, r"""总传递函数表达式与 $R_1$、$R_2$ 正确；合并两级时左侧误写成 $U_x/U_r$，右式其实是 $U_y/U_r$。"""),
-(2024, 2): (None, r"""超调、$\zeta$、$\omega_n$、闭环与稳态值正确（存在常规四舍五入）。第 3 问叙述中有一处把 $2.465s$ 写成了 $2.645s$，劳斯表仍用 $2.465$，属笔误。"""),
+(2023, 8): (None, r"""上方文字答案已改正；原答案图中开环特征方程被写成 $-\lambda^2-6\lambda+17=0$（少了正的 $\lambda^2$），随后的根是按正确方程 $\lambda^2-6\lambda+17=0$ 解的。特征根、能控性、$k=[-13\ \ 10]$ 全部正确。"""),
+(2024, 1): (None, r"""上方文字答案已改正；原答案图中合并两级时左侧误写成 $U_x/U_r$，右式其实是 $U_y/U_r$。总传递函数表达式与 $R_1$、$R_2$ 正确。"""),
+(2024, 2): (None, r"""上方文字答案已改正；原答案图第 3 问叙述中有一处把 $2.465s$ 写成了 $2.645s$，劳斯表仍用 $2.465$，属笔误。超调、$\zeta$、$\omega_n$、闭环与稳态值正确。"""),
 (2024, 3): ('ok', r"""已核对：正确。稳定范围 $0<K^*<1020$（开环增益 $0<K<17$）；不存在同时满足 $K_v\ge 20$ 的稳定 $K^*$。"""),
 (2024, 4): ('ok', r"""已核对：正确。稳定自振振幅 $A=2/(3\pi)\approx 0.2122$，输出振幅 $A_c\approx 0.52$，频率 $\omega=\sqrt{2}$。"""),
-(2024, 5): (None, r"""校正前后 $\omega_c$、$\gamma$ 的数值（渐近 $\omega_c=2$、$\gamma\approx 4.185^\circ$；校正后 $\omega_c=2\sqrt{10}$、$\gamma\approx 26.21^\circ$）按正确公式在渐近截止频率处计算，可以照抄。相位公式书写有误（符号写反），属笔误而非算错。补充精确值（对照用，不是对折线法的否定）：校正前 $\omega_c\approx 1.709$、$\gamma\approx 13.84^\circ$；校正后 $\omega_c\approx 5.620$、$\gamma\approx 29.45^\circ$。"""),
+(2024, 5): (None, r"""上方文字答案已改正；原答案图中相位公式符号写反，但 $\omega_c$、$\gamma$ 的数值是按正确公式在渐近截止频率处算的，可以照抄。补充精确值（对照用，不是对折线法的否定）：校正前 $\omega_c\approx 1.709$、$\gamma\approx 13.84^\circ$；校正后 $\omega_c\approx 5.620$、$\gamma\approx 29.45^\circ$。"""),
 (2024, 6): ('ok', r"""已核对：正确。$G(z)$、闭环、朱利稳定与单位阶跃 $e_{ss}=0$ 均对。"""),
-(2024, 7): (None, r"""$\Phi(t)$、$G(s)$ 与李雅普诺夫结论正确。源答案列出能观判别阵后未解出 $a\neq 1$ 且 $a\neq 1/2$；网站文本已按判别阵补全。随后把 $P$ 的元素写成 $a,b,c,d$，与输出参数 $a$ 混用。"""),
+(2024, 7): (None, r"""上方文字答案已补全；原答案图列出能观判别阵后未解出 $a\neq 1$ 且 $a\neq 1/2$，随后把 $P$ 的元素写成 $a,b,c,d$，与输出参数 $a$ 混用。$\Phi(t)$、$G(s)$ 与李雅普诺夫结论正确。"""),
 (2024, 8): ('ok', r"""已核对：正确。"""),
-(2025, 1): (None, r"""传递函数与状态方程矩阵正确。源答案把 $x_2=i_L$ 写成了 $x_2=-i_L$，与所写矩阵及题面不符；改成 $x_2=i_L$ 即可。中间 $du_i$、$1+RC$ 等笔误未传入终式。"""),
+(2025, 1): (None, r"""上方文字答案已改正；原答案图把 $x_2=i_L$ 写成了 $x_2=-i_L$，与所写矩阵及题面不符。传递函数与状态方程矩阵正确；中间 $du_i$、$1+RC$ 等笔误未传入终式。"""),
 (2025, 2): ('severe', r"""按真题原图（前向 $K\to\dfrac1s\to\dfrac1{s+1}$，$T_d$ 从 $\dfrac1{s+1}$ 的输入端引出、负反馈到 $\dfrac1s$ 前，外环也从该点引回），经过 $K$ 的回路是 $-\dfrac Ks$，前向通路是 $\dfrac Ks\cdot\dfrac1{s+1}$；源答案写成 $-\dfrac{KT_d}s$ 和 $K\dfrac{T_d}s\dfrac1{s+1}$，第 1 问传函和第 2 问的 $K$ 不可照抄。正确为 $\dfrac{C}{R}=\dfrac{K}{s^2+(2+K+T_d)s+K+T_d}$，$\dfrac{E}{R}=\dfrac{s^2+(T_d+2)s+T_d}{s^2+(2+K+T_d)s+K+T_d}$（分子源答案是对的）。第 2 问 $e_{ss}=\dfrac{T_d}{K+T_d}=0.5\Rightarrow K=T_d$，$\omega_n^2=K+T_d=4\Rightarrow K=T_d=2$（源答案 $K=1$ 错），$\xi=1.5$ 正确。特征多项式仍为 $s^2+6s+4$，第 3 问 $t_s=\dfrac{3(3+\sqrt5)}4\approx3.93\,\mathrm s$、$\sigma\%=0$ 正确。"""),
 (2025, 3): ('ok', r"""已核对：正确。等效开环、根轨迹（圆）、稳定性及 $s=-4.1$ 时 $K=86.1$ 均对。"""),
-(2025, 4): (None, r"""$G_c(s)=\dfrac{0.24s+1}{0.06s+1}$ 与 $\gamma\approx 45^\circ$ 的校验正确，可以照抄。中间式写成 $(\omega_c^{\prime 2}/6^2)=4\Rightarrow\omega_c'=6\sqrt{2}$，前半与后半矛盾（应为 $(\omega_c'/6)^2=2$）。校正前渐近 $\omega_c=6$、$\gamma\approx 15^\circ$；精确值为 $\omega_c\approx 5.830$、$\gamma\approx 15.60^\circ$。"""),
-(2025, 5): (None, r"""开环 $G(z)$、朱利范围 $0<K<21.11$ 与 $e_{ss}=0$ 正确。闭环 $\Phi(z)$ 分子中 $z$ 与后一项之间漏写加号，特征多项式仍按正确 $G(z)$ 展开。"""),
-(2025, 6): (None, r"""源答案第 1 问把稳定自振范围误印为 $\pi<K<6$，应为 $2<K<6$（网站文本已注明）。另有一条与本题无关的幅频式 $A(\omega)=15/\cdots$，后文未使用。第 3 问振幅 $A=(3K-6)/(6-K)$、频率 $\omega=\sqrt{2}$ 正确。"""),
-(2025, 7): (None, r"""$G(s)$、能控能观与两种标准型均正确。源答案把 $sI-A$ 的 $(2,3)$ 元写成了 $+1$，应为 $-1$；行列式和伴随矩阵用的是正确的 $-1$，终式未受影响。"""),
+(2025, 4): (None, r"""上方文字答案已改正；原答案图中间式写成 $(\omega_c^{\prime 2}/6^2)=4\Rightarrow\omega_c'=6\sqrt{2}$，前半与后半矛盾（应为 $(\omega_c'/6)^2=2$）。$G_c(s)=\dfrac{0.24s+1}{0.06s+1}$ 与 $\gamma\approx 45^\circ$ 的校验正确。校正前渐近 $\omega_c=6$、$\gamma\approx 15^\circ$（精确值 $\omega_c\approx 5.830$、$\gamma\approx 15.60^\circ$）。"""),
+(2025, 5): (None, r"""上方文字答案已改正；原答案图闭环 $\Phi(z)$ 分子中 $z$ 与后一项之间漏写加号，特征多项式仍按正确 $G(z)$ 展开。开环 $G(z)$、朱利范围 $0<K<21.11$ 与 $e_{ss}=0$ 正确。"""),
+(2025, 6): (None, r"""上方文字答案已改正；原答案图第 1 问把稳定自振范围误印为 $\pi<K<6$，应为 $2<K<6$。另有一条与本题无关的幅频式 $A(\omega)=15/\cdots$，后文未使用。第 3 问振幅 $A=(3K-6)/(6-K)$、频率 $\omega=\sqrt{2}$ 正确。"""),
+(2025, 7): (None, r"""上方文字答案与终式正确。原答案图把 $sI-A$ 的 $(2,3)$ 元写成了 $+1$，应为 $-1$；行列式和伴随矩阵用的是正确的 $-1$，$G(s)$、能控能观与两种标准型均正确。"""),
 (2025, 8): ('ok', r"""已核对：正确。$K=\begin{bmatrix}5&6&2\end{bmatrix}$，闭环极点为 $-3$、$-1\pm j$。"""),
 }
 for d in Q:

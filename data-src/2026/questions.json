@@ -18,9 +18,9 @@
       "answerImages": [
         "img/a2026-1-1.png"
       ],
-      "answer": "",
-      "explanation": "",
-      "notes": "基本正确。题图未标 $k$、$f_1$、$f_2$，答案改用 $K$、$B_1$、$B_2$，符号不一致；移项式有一处 “$+$ $+$” 错印。"
+      "answer": "对 $m$ 受力分析（弹性系数、阻尼系数按题面记为 $k$、$f_1$、$f_2$）：\n$$m\\ddot y=-k(y-u)-f_1(\\dot y-\\dot u)-f_2\\dot y$$\n即\n$$m\\ddot y+k(y-u)+f_1(\\dot y-\\dot u)+f_2\\dot y=0.$$\n零初始条件下拉氏变换并整理，得传递函数\n$$\\frac{Y(s)}{U(s)}=\\frac{f_1 s+k}{ms^2+(f_1+f_2)s+k}.$$\n按能控标准型：\n$$\\dot x=\\begin{bmatrix}0&1\\\\-\\dfrac{k}{m}&-\\dfrac{f_1+f_2}{m}\\end{bmatrix}x+\\begin{bmatrix}0\\\\1\\end{bmatrix}u,\\qquad\ny=\\begin{bmatrix}\\dfrac{k}{m}&\\dfrac{f_1}{m}\\end{bmatrix}x.$$",
+      "explanation": "弹簧力 $-k(y-u)$，上端阻尼力 $-f_1(\\dot y-\\dot u)$，下端阻尼力 $-f_2\\dot y$。移项后做拉氏变换，左边系数为 $ms^2+k+(f_1+f_2)s$，右边为 $k+f_1 s$。分母化为首一形式后按能控标准型写出 $A$、$B$、$C$ 即可。",
+      "notes": "上方文字答案已改正；原答案图符号改用了 $K$、$B_1$、$B_2$，与题面 $k$、$f_1$、$f_2$ 不一致；移项式有一处 “$+$ $+$” 错印。传递函数与能控标准型本身正确。"
     },
     {
       "no": 2,
@@ -38,9 +38,9 @@
         "img/a2026-2-1.png",
         "img/a2026-2-2.png"
       ],
-      "answer": "",
-      "explanation": "",
-      "notes": "第 1 问闭环传递函数和 $K\\approx 43.7$ 正确；答案用 $t_s=3/(\\zeta\\omega_n)=0.54\\approx 0.5$ 作近似，若严格按 $t_s=0.5$ 则 $K\\approx 55.5$，题给数据略不自洽。第 2 问取 $H(s)=1/s$ 使 $e_{ss}=0$ 正确，但式中 $K_1+s$ 疑为 $K/s$。题面对照表未印在本册。"
+      "answer": "1. $N(s)=0$、$H(s)=1$ 时，由梅森公式：前向通路 $P_1=G(s)$、$P_2=5G(s)$，回路 $\\Delta=1+G(s)$，故\n$$\\frac{C(s)}{R(s)}=\\frac{G(s)+5G(s)}{1+G(s)}=\\frac{6K}{s^2+11s+18+K}.$$\n由 $\\sigma\\%=4.6\\%$ 查表得 $\\xi\\approx0.7$，又 $2\\xi\\omega_n=11$，故 $\\omega_n=11/1.4\\approx7.86$，$K=\\omega_n^2-18\\approx43.7$。此时 $\\xi\\omega_n=5.5$ 与 $K$ 无关，$t_s=3/(\\xi\\omega_n)\\approx0.545\\,\\mathrm s$，与题给 $0.5\\,\\mathrm s$ 接近。\n\n2. $R(s)=0$、$N(s)$ 为单位阶跃时，\n$$\\frac{C(s)}{N(s)}=\\frac{G(s)}{1+G(s)H(s)}=\\frac{K}{s^2+11s+18+KH(s)}.$$\n因 $r=0$，有 $e=-c$。取 $H(s)=1/s$，则\n$$e_{ss}=\\lim_{s\\to0}\\frac{-K}{s^2+11s+18+K/s}=0.$$",
+      "explanation": "$H=1$ 时闭环分子为 $6K$，分母 $s^2+11s+(18+K)$，故 $2\\xi\\omega_n=11$ 不随 $K$ 改变；$\\sigma\\%$ 用来定 $\\xi$，再由 $2\\xi\\omega_n=11$ 定 $\\omega_n$ 与 $K$。扰动通道为 $G/(1+GH)$，在 $H$ 中引入积分极点即可使阶跃扰动下 $e_{ss}=0$.",
+      "notes": "上方文字答案已整理。第 1 问闭环传递函数和 $K\\approx43.7$ 正确；因 $2\\xi\\omega_n=11$ 与 $K$ 无关，$t_s$ 实为 $3/5.5\\approx0.545\\,\\mathrm s$，原答案用 $0.54\\approx0.5$ 作近似，题给 $t_s=0.5$ 与 $\\sigma\\%=4.6\\%$ 略不自洽。第 2 问取 $H(s)=1/s$ 使 $e_{ss}=0$ 正确，但原答案图分母写成了 $K_1+s$，应为 $K/s$。题面对照表未印在本册。"
     },
     {
       "no": 3,
@@ -115,9 +115,9 @@
         "img/a2026-6-1.png",
         "img/a2026-6-2.png"
       ],
-      "answer": "",
-      "explanation": "",
-      "notes": "方法和最终结果正确（$N(A)=4$，$A=\\dfrac{2M}{\\pi}$）。$|G(j\\sqrt{11})|=\\dfrac{15}{\\sqrt{12}\\cdot\\sqrt{15}\\cdot\\sqrt{20}}=0.25$，答案误写为 $2.5$。题干原文作“非线性节”，已按“非线性环节”录入。"
+      "answer": "1. $G(s)=\\dfrac{15}{(s+1)(s+2)(s+3)}$，\n$|G(j\\omega)|=\\dfrac{15}{\\sqrt{1+\\omega^2}\\,\\sqrt{4+\\omega^2}\\,\\sqrt{9+\\omega^2}}$，\n$\\angle G(j\\omega)=-\\arctan\\omega-\\arctan\\dfrac{\\omega}{2}-\\arctan\\dfrac{\\omega}{3}$。\n$\\omega\\to0$ 时 $G(j\\omega)=2.5\\angle0^\\circ$；$\\omega\\to\\infty$ 时 $G(j\\omega)=0\\angle-270^\\circ$。\n令相角为 $-180^\\circ$，得 $\\omega=\\sqrt{11}$，此时 $|G(j\\sqrt{11})|=\\dfrac{15}{\\sqrt{12}\\cdot\\sqrt{15}\\cdot\\sqrt{20}}=0.25$。\n$N(A)=\\dfrac{4M}{\\pi A}+2$，$-\\dfrac{1}{N(A)}$ 由 $0$（$A\\to0$）到 $-\\dfrac12$（$A\\to\\infty$）。$G(j\\omega)$ 与 $-\\dfrac1{N(A)}$ 在负实轴相交，曲线见原图解析。\n\n2. 交点由不稳定区进入稳定区，**存在稳定自振**。频率 $\\omega=\\sqrt{11}$，$-1/N(A)=-0.25$，故 $N(A)=4$，$A=\\dfrac{2M}{\\pi}$。",
+      "explanation": "穿越频率由 $-\\arctan\\omega-\\arctan(\\omega/2)-\\arctan(\\omega/3)=-180^\\circ$ 解得 $\\omega=\\sqrt{11}$。代入模值公式 $15/\\sqrt{(1+11)(4+11)(9+11)}=15/\\sqrt{3600}=0.25$。由 $N(A)=4M/(\\pi A)+2=4$ 得 $4M/(\\pi A)=2$，故 $A=2M/\\pi$。",
+      "notes": "上方文字答案已改正；方法和最终结果正确（$N(A)=4$，$A=\\dfrac{2M}{\\pi}$）。原答案图把 $|G(j\\sqrt{11})|$ 误写为 $2.5$，应为 $0.25$（后文按 $0.25$ 计算，终式未错）。"
     },
     {
       "no": 7,
@@ -132,9 +132,9 @@
         "img/a2026-7-1.png",
         "img/a2026-7-2.png"
       ],
-      "answer": "",
-      "explanation": "",
-      "notes": "能控、能观实现及 $a=0$ 时最小实现正确。答案把 $W(s)$ 写成 $U(s)$。$s=0$ 为简单极点，严格说是临界稳定（非渐近稳定），不宜表述为“状态不稳定”。"
+      "answer": "1. $W(s)=\\dfrac{s+a}{s(s+2)(s+3)}=\\dfrac{s+a}{s^3+5s^2+6s}$。\n能控标准型：\n$\\dot x=\\begin{bmatrix}0&1&0\\\\0&0&1\\\\0&-6&-5\\end{bmatrix}x+\\begin{bmatrix}0\\\\0\\\\1\\end{bmatrix}u$，$y=\\begin{bmatrix}a&1&0\\end{bmatrix}x$。\n能观标准型：\n$\\dot x=\\begin{bmatrix}0&0&0\\\\1&0&-6\\\\0&1&-5\\end{bmatrix}x+\\begin{bmatrix}a\\\\1\\\\0\\end{bmatrix}u$，$y=\\begin{bmatrix}0&0&1\\end{bmatrix}x$。\n\n2. 特征值含简单极点 $s=0$，系统为**临界稳定**（李雅普诺夫意义下稳定，但非渐近稳定）。\n\n3. BIBO 稳定须对消 $s=0$，故 $a=0$，此时 $W(s)=\\dfrac{1}{(s+2)(s+3)}=\\dfrac{1}{s^2+5s+6}$，最小实现为\n$\\dot x=\\begin{bmatrix}0&1\\\\-6&-5\\end{bmatrix}x+\\begin{bmatrix}0\\\\1\\end{bmatrix}u$，$y=\\begin{bmatrix}1&0\\end{bmatrix}x$。",
+      "explanation": "分母系数 $a_2=5$、$a_1=6$、$a_0=0$，分子 $b_2=0$、$b_1=1$、$b_0=a$，直接写出能控、能观标准型。特征根为 $0,-2,-3$，单根在虚轴上故临界稳定。只有 $a=0$ 时零点对消 $s=0$，传递函数的极点均在左半平面，才是 BIBO 稳定，并可降为二阶最小实现。",
+      "notes": "上方文字答案已改正。能控、能观实现及 $a=0$ 时最小实现正确。原答案图把 $W(s)$ 写成了 $U(s)$；并把含简单极点 $s=0$ 表述为“状态不稳定”，严格说是临界稳定（非渐近稳定）。"
     },
     {
       "no": 8,
@@ -148,9 +148,9 @@
         "img/a2026-8-1.png",
         "img/a2026-8-2.png"
       ],
-      "answer": "",
-      "explanation": "",
-      "notes": "计算正确。题给 $G(s)=\\dfrac{2}{s^2+2s+3}$ 是二阶，却要求配置 $-2$、$-1\\pm j$ 三个极点，所以答案乘 $s/s$ 升为三阶 $\\dfrac{2s}{s^3+2s^2+3s}$：$s=0$ 处零极点对消，这个实现能控、不能观，状态反馈仍可配置全部三个极点。$K=[4,\\ 3,\\ 2]$ 与配置后 $\\varphi(s)=\\dfrac{2s}{s^3+4s^2+6s+4}$ 均正确。注意升阶是题目本身的问题，答题时最好写一句说明；答案里的“第 3 问”对应题面第 2 问。"
+      "answer": "题给 $G(s)=\\dfrac{2}{s^2+2s+3}$ 为二阶，却要求配置三个极点，故将对象乘 $s/s$ 升为三阶（$s=0$ 处零极点对消；该实现能控、不能观，状态反馈仍可配置全部三个极点）：\n$$G(s)=\\dfrac{2s}{s^3+2s^2+3s}.$$\n能控标准型：\n$\\dot x=\\begin{bmatrix}0&1&0\\\\0&0&1\\\\0&-3&-2\\end{bmatrix}x+\\begin{bmatrix}0\\\\0\\\\1\\end{bmatrix}u$，$y=\\begin{bmatrix}0&2&0\\end{bmatrix}x$。\n\n取 $u=-Kx+v$，则\n$$A-bK=\\begin{bmatrix}0&1&0\\\\0&0&1\\\\-k_1&-3-k_2&-2-k_3\\end{bmatrix},\\quad\nD(s)=s^3+(2+k_3)s^2+(3+k_2)s+k_1.$$\n期望多项式 $(s+2)(s+1-j)(s+1+j)=s^3+4s^2+6s+4$，比较系数得 $K=\\begin{bmatrix}4&3&2\\end{bmatrix}$。\n\n配置后\n$$\\varphi(s)=C\\bigl(sI-(A-bK)\\bigr)^{-1}B=\\dfrac{2s}{s^3+4s^2+6s+4}.$$",
+      "explanation": "升阶后系统为能控标准型，$A-bK$ 只改变最后一行。由闭环特征多项式与 $(s+2)(s^2+2s+2)$ 比较系数：$2+k_3=4$、$3+k_2=6$、$k_1=4$，即 $K=[4\\ \\ 3\\ \\ 2]$。传递函数分子仍为 $2s$（零点 $s=0$ 未被状态反馈改变）。",
+      "notes": "上方文字答案已整理，计算正确。题给二阶对象却要求配置三个极点，原答案乘 $s/s$ 升阶是有效做法（$s=0$ 处零极点对消，实现能控、不能观）。$K=[4,\\ 3,\\ 2]$ 与配置后 $\\varphi(s)=\\dfrac{2s}{s^3+4s^2+6s+4}$ 均正确。原答案里的“第 3 问”对应题面第 2 问。"
     }
   ]
 }
