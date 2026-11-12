@@ -291,7 +291,7 @@ function cardHTML(id, idx) {
   const hist = rec.history.filter(h => h.id === id);
   const srs = rec.srs[id], pv = preview(id);
   const dueHTML = srs ? `<span class="due ${dayDiff(srs.card.due) <= 0 ? 'now' : ''}" title="FSRS 调度 · 已复习 ${srs.card.reps} 次">${fmtDue(srs.card.due)}</span>` : '<span class="due">未复习</span>';
-  const hasNote = CDGNotes.has(rec.notes, id), noteOpen = sh.note ?? hasNote;
+  const hasNote = CDGNotes.has(rec.notes, id), noteOpen = !!sh.note;
   return `<article class="card" data-id="${id}">
     <div class="meta"><span class="qno">第 ${idx + 1} 题</span><span class="src">${esc(q.source)}</span>
       <span class="pop-wrap"><button type="button" class="cat-btn" data-act="cats" aria-expanded="false" aria-label="查看完整分类路径，共 ${paths.length} 处">${esc(leaf)}</button>
@@ -596,7 +596,7 @@ function bind() {
       case 'exp': sh.exp = !sh.exp; break;
       case 'ansview': sh.ansSrc = b.dataset.view; render(); focusSrcTab(id, 'ansview', sh.ansSrc); return;
       case 'expview': sh.expSrc = b.dataset.view; render(); focusSrcTab(id, 'expview', sh.expSrc); return;
-      case 'note': { const open = sh.note ?? CDGNotes.has(rec.notes, id); sh.note = !open; if (sh.note && !CDGNotes.has(rec.notes, id)) st.noteMode[id] = 'edit'; render(); if (sh.note) focusNote(id); return; }
+      case 'note': { const open = !!sh.note; sh.note = !open; if (sh.note && !CDGNotes.has(rec.notes, id)) st.noteMode[id] = 'edit'; render(); if (sh.note) focusNote(id); return; }
       case 'nedit': st.noteMode[id] = 'edit'; render(); focusNote(id); return;
       case 'nprev': st.noteMode[id] = 'preview'; break;
       case 'nclear': {

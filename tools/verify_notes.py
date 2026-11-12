@@ -122,9 +122,11 @@ async def main():
     ok('输入后立即刷新（pagehide 时写入）也不丢字', r['notes'][qid2]['text'].endswith('X'), r['notes'][qid2]['text'])
     # 刷新后持久化与默认预览
     await pg.goto(QURL, wait_until='networkidle')
-    ok('刷新后笔记仍在，并默认以预览展开', await t('.nb-view h1').count() == 1 and await t('textarea.note-input').count() == 0 and await t('.nb-tabs button[data-act="nprev"]').get_attribute('aria-selected') == 'true')
+    ok('刷新后已有笔记默认收起、按钮有标识', await t('.notebox').count() == 0 and await t('.card button[data-act="note"] .dot').count() == 1)
     ok('刷新后列表标识仍在（目录树笔记数 ≥2）', sum([int((await x.inner_text()).strip()) for x in await t('.node.top .tn').all()]) >= 2)
-    # 收起 / 展开
+    # 展开 / 收起
+    await t('.card button[data-act="note"]').click()
+    ok('点「笔记」展开已有笔记，默认为预览', await t('.nb-view h1').count() == 1 and await t('textarea.note-input').count() == 0 and await t('.nb-tabs button[data-act="nprev"]').get_attribute('aria-selected') == 'true')
     await t('.card button[data-act="note"]').click()
     ok('「笔记」按钮可收起已有笔记', await t('.notebox').count() == 0 and await t('.note-flag').count() == 1)
     await t('.card button[data-act="note"]').click(); ok('再次点击展开', await t('.nb-view h1').count() == 1)
@@ -158,7 +160,7 @@ async def main():
     imp = '/tmp/cdg-notes-import.json'
     json.dump(exp, open(imp, 'w'), ensure_ascii=False)
     await pg3.locator('#gearBtn').click(); await pg3.locator('#importFile').set_input_files(imp); await pg3.wait_for_timeout(300)
-    ok('导入 JSON 恢复笔记并显示预览', (await rec(pg3))['notes']['202301']['text'] == exp['notes']['202301']['text'] and await pg3.locator('.nb-view h1').count() == 1)
+    ok('导入 JSON 恢复笔记并标识、默认收起', (await rec(pg3))['notes']['202301']['text'] == exp['notes']['202301']['text'] and await pg3.locator('.note-flag').count() == 1 and await pg3.locator('.notebox').count() == 0)
     old = {k: v for k, v in exp.items() if k != 'notes'}; json.dump(old, open(imp, 'w'))
     await pg3.locator('#importFile').set_input_files(imp); await pg3.wait_for_timeout(300)
     ok('导入不含 notes 的旧 v2 文件：成功且不清空笔记', '已导入' in await pg3.locator('#setMsg').inner_text() and (await rec(pg3))['notes']['202301']['text'] == exp['notes']['202301']['text'])
