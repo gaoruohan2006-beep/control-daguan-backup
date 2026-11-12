@@ -4,10 +4,9 @@
 本用例把 public/ 复制到临时目录，并挂到 /control-daguan/ 下提供服务（模拟 GitHub Pages 子路径）。
 传入的 base_url 只作提示，不会复用共享端口，以免 Service Worker 干扰其它用例。
 """
-import asyncio, io, json, os, re, shutil, subprocess, sys, tempfile, threading, time
+import asyncio, io, json, os, re, shutil, struct, subprocess, sys, tempfile, threading, time
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
-from PIL import Image
 from playwright.async_api import async_playwright
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -17,6 +16,13 @@ SHOT = ROOT / 'shots'
 
 def ok(name, cond, detail=''):
     R.append((name, bool(cond), detail)); print(('PASS' if cond else 'FAIL'), name, detail)
+
+def png_size(data):
+    if data[:8] != b"\x89PNG\r\n\x1a\n":
+        return None
+    w, h = struct.unpack(">II", data[16:24])
+    return (w, h)
+
 
 class Handler(SimpleHTTPRequestHandler):
     def log_message(self, *args):
@@ -123,15 +129,15 @@ async def main():
             resp = await pg.request.get(BASE + ic['src'])
             if resp.status != 200:
                 icon_ok = False; icon_detail.append(f"{ic['src']} HTTP {resp.status}"); continue
-            im = Image.open(io.BytesIO(await resp.body()))
+            im_size = png_size(await resp.body())
             want = tuple(int(x) for x in ic['sizes'].split('x'))
-            icon_detail.append(f"{ic['src']} {im.size} purpose={ic.get('purpose')}")
-            if im.size != want:
+            icon_detail.append(f"{ic['src']} {im_size} purpose={ic.get('purpose')}")
+            if im_size != want:
                 icon_ok = False
         ok('manifest 图标可下载且尺寸正确', icon_ok and len(man.get('icons') or []) >= 3, icon_detail)
         apple_resp = await pg.request.get(BASE + 'icons/apple-touch-icon.png')
-        apple_im = Image.open(io.BytesIO(await apple_resp.body())) if apple_resp.ok else None
-        ok('apple-touch-icon 180×180', apple_im and apple_im.size == (180, 180), apple_im.size if apple_im else apple_resp.status)
+        apple_im = png_size(await apple_resp.body()) if apple_resp.ok else None
+        ok('apple-touch-icon 180×180', apple_im == (180, 180), apple_im if apple_im else apple_resp.status)
 
         # --- SW ---
         sw = await pg.evaluate("""() => navigator.serviceWorker.getRegistration().then(r => r && ({scope: r.scope, script: (navigator.serviceWorker.controller||{}).scriptURL, active: !!(r.active)}))""")
