@@ -1,1 +1,1 @@
-{"answer": "", "explanation": "", "notes": "", "originalImages": [{"src": "img/a2021-1-1.png", "w": 692}, {"src": "img/a2021-1-2.png", "w": 499}], "answerPdfPages": "150–161"}
+{"answer": "", "explanation": "", "notes": "中间式结构正确，最后把分母常数项写成 $R_3$（传递函数与微分方程皆如此），应为 $R_4$：$\\dfrac{U_y}{U_i}=-\\dfrac{R_4}{R_2R_3R_4C_1C_2s^2+R_2R_3C_1s+R_4}$。$s=0$ 增益应变为 $-1$。", "originalImages": [{"src": "img/a2021-1-1.png", "w": 692}, {"src": "img/a2021-1-2.png", "w": 499}], "answerPdfPages": "150–161"}

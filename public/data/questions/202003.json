@@ -1,1 +1,1 @@
-{"answer": "", "explanation": "", "notes": "", "originalImages": [{"src": "img/a2020-3-1.png", "w": 704}, {"src": "img/a2020-3-2.png", "w": 541}], "answerPdfPages": "141–149"}
+{"answer": "", "explanation": "", "notes": "已核对：正确。分离点 $s\\approx-0.845$，稳定域 $0<k^*<48$，重根与 $e_{ss}=0$ 均对。答案用 $k$ 表示 $k^*$（若按时间常数形式 $k=k^*/8$，则 $0<k<6$）。", "originalImages": [{"src": "img/a2020-3-1.png", "w": 704}, {"src": "img/a2020-3-2.png", "w": 541}], "answerPdfPages": "141–149", "errataLevel": "ok"}

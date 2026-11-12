@@ -1,1 +1,1 @@
-{"answer": "", "explanation": "", "notes": "", "originalImages": [{"src": "img/a2020-2-1.png", "w": 638}, {"src": "img/a2020-2-2.png", "w": 487}], "answerPdfPages": "141–149"}
+{"answer": "", "explanation": "", "notes": "已核对：正确。$K_d=35$，答案 $K_1=658.89$ 由 $\\zeta=0.45$、$\\omega_n=83.3$ 取整而来，精确值约 $658.27$，$e_{ss}\\approx 0.0504$。", "originalImages": [{"src": "img/a2020-2-1.png", "w": 638}, {"src": "img/a2020-2-2.png", "w": 487}], "answerPdfPages": "141–149", "errataLevel": "ok"}

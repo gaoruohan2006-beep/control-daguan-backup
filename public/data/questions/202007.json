@@ -1,1 +1,1 @@
-{"answer": "", "explanation": "", "notes": "", "originalImages": [{"src": "img/a2020-7-1.png", "w": 427}, {"src": "img/a2020-7-2.png", "w": 481}], "answerPdfPages": "141–149"}
+{"answer": "", "explanation": "", "notes": "$V=x_1^2+x_2^2$ 正确，但 $\\dot V$ 写成 $-2x_1^4-2x_2^4$，漏掉 $-4x_1^2x_2^2$。准确式为 $\\dot V=-2(x_1^2+x_2^2)^2=-2x_1^4-4x_1^2x_2^2-2x_2^4$。漏项后的表达式仍负定，大范围渐近稳定结论成立。", "originalImages": [{"src": "img/a2020-7-1.png", "w": 427}, {"src": "img/a2020-7-2.png", "w": 481}], "answerPdfPages": "141–149"}

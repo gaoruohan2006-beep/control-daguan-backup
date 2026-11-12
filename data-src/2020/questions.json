@@ -19,7 +19,8 @@
    ],
    "answer": "",
    "explanation": "",
-   "notes": ""
+   "notes": "已核对：正确。微分方程与传递函数均与电路一致。",
+   "errataLevel": "ok"
   },
   {
    "no": 2,
@@ -38,7 +39,8 @@
    ],
    "answer": "",
    "explanation": "",
-   "notes": ""
+   "notes": "已核对：正确。$K_d=35$，答案 $K_1=658.89$ 由 $\\zeta=0.45$、$\\omega_n=83.3$ 取整而来，精确值约 $658.27$，$e_{ss}\\approx 0.0504$。",
+   "errataLevel": "ok"
   },
   {
    "no": 3,
@@ -55,7 +57,8 @@
    ],
    "answer": "",
    "explanation": "",
-   "notes": ""
+   "notes": "已核对：正确。分离点 $s\\approx-0.845$，稳定域 $0<k^*<48$，重根与 $e_{ss}=0$ 均对。答案用 $k$ 表示 $k^*$（若按时间常数形式 $k=k^*/8$，则 $0<k<6$）。",
+   "errataLevel": "ok"
   },
   {
    "no": 4,
@@ -74,7 +77,8 @@
    ],
    "answer": "",
    "explanation": "",
-   "notes": ""
+   "notes": "已核对：正确。$\\Phi(z)$、$0<k<2.394$，阶跃/斜坡/加速度稳态误差分别为 $0$、$1/k$、$\\infty$。",
+   "errataLevel": "ok"
   },
   {
    "no": 5,
@@ -93,7 +97,8 @@
    ],
    "answer": "",
    "explanation": "",
-   "notes": ""
+   "notes": "已核对：正确。源答案已写 $u=\\dot y$，开关线 $e+\\beta\\dot e=0$ 与相轨迹正确。不加反馈时的一族周期轨道称作“极限环”，用语略松（不是孤立极限环），但不改变定性结论。",
+   "errataLevel": "ok"
   },
   {
    "no": 6,
@@ -111,7 +116,8 @@
    ],
    "answer": "",
    "explanation": "",
-   "notes": ""
+   "notes": "已核对：正确。能控能观，$G=(4s+10)/(s^2+3s+2)$，$e^{At}$ 已复核。",
+   "errataLevel": "ok"
   },
   {
    "no": 7,
@@ -127,7 +133,7 @@
    ],
    "answer": "",
    "explanation": "",
-   "notes": ""
+   "notes": "$V=x_1^2+x_2^2$ 正确，但 $\\dot V$ 写成 $-2x_1^4-2x_2^4$，漏掉 $-4x_1^2x_2^2$。准确式为 $\\dot V=-2(x_1^2+x_2^2)^2=-2x_1^4-4x_1^2x_2^2-2x_2^4$。漏项后的表达式仍负定，大范围渐近稳定结论成立。"
   }
  ]
 }
