@@ -565,7 +565,7 @@ ERRATA = {
 (2024, 7): (None, r"""$\Phi(t)$、$G(s)$ 与李雅普诺夫结论正确。源答案列出能观判别阵后未解出 $a\neq 1$ 且 $a\neq 1/2$；网站文本已按判别阵补全。随后把 $P$ 的元素写成 $a,b,c,d$，与输出参数 $a$ 混用。"""),
 (2024, 8): ('ok', r"""已核对：正确。"""),
 (2025, 1): (None, r"""传递函数与状态方程矩阵正确。源答案把 $x_2=i_L$ 写成了 $x_2=-i_L$，与所写矩阵及题面不符；改成 $x_2=i_L$ 即可。中间 $du_i$、$1+RC$ 等笔误未传入终式。"""),
-(2025, 2): ('severe', r"""梅森公式把 $K/s$ 当成 $K$，漏掉一个积分，把三阶系统写成二阶，所得 $C/R$、$E/R$ 及 $K=1$、$T_d=2$、$t_s\approx 3.93$ 均不可照抄。正确为 $\dfrac{U}{R}=\dfrac{KT_d}{s^2+T_d s+KT_d}$，$\dfrac{E}{R}=\dfrac{s(s+T_d)}{s^2+T_d s+KT_d}$，$\dfrac{C}{R}=\dfrac{KT_d}{(s+2)(s^2+T_d s+KT_d)}$。按正确结构，输出误差稳态恒为 $1/2$，与 $K$、$T_d$ 无关，题给 $e_{ss}=0.5$ 不能用来定 $K$；$\omega_n=2$ 对三阶系统也没有唯一含义。"""),
+(2025, 2): ('severe', r"""按真题原图（前向 $K\to\dfrac1s\to\dfrac1{s+1}$，$T_d$ 从 $\dfrac1{s+1}$ 的输入端引出、负反馈到 $\dfrac1s$ 前，外环也从该点引回），经过 $K$ 的回路是 $-\dfrac Ks$，前向通路是 $\dfrac Ks\cdot\dfrac1{s+1}$；源答案写成 $-\dfrac{KT_d}s$ 和 $K\dfrac{T_d}s\dfrac1{s+1}$，第 1 问传函和第 2 问的 $K$ 不可照抄。正确为 $\dfrac{C}{R}=\dfrac{K}{s^2+(2+K+T_d)s+K+T_d}$，$\dfrac{E}{R}=\dfrac{s^2+(T_d+2)s+T_d}{s^2+(2+K+T_d)s+K+T_d}$（分子源答案是对的）。第 2 问 $e_{ss}=\dfrac{T_d}{K+T_d}=0.5\Rightarrow K=T_d$，$\omega_n^2=K+T_d=4\Rightarrow K=T_d=2$（源答案 $K=1$ 错），$\xi=1.5$ 正确。特征多项式仍为 $s^2+6s+4$，第 3 问 $t_s=\dfrac{3(3+\sqrt5)}4\approx3.93\,\mathrm s$、$\sigma\%=0$ 正确。"""),
 (2025, 3): ('ok', r"""已核对：正确。等效开环、根轨迹（圆）、稳定性及 $s=-4.1$ 时 $K=86.1$ 均对。"""),
 (2025, 4): (None, r"""$G_c(s)=\dfrac{0.24s+1}{0.06s+1}$ 与 $\gamma\approx 45^\circ$ 的校验正确，可以照抄。中间式写成 $(\omega_c^{\prime 2}/6^2)=4\Rightarrow\omega_c'=6\sqrt{2}$，前半与后半矛盾（应为 $(\omega_c'/6)^2=2$）。校正前渐近 $\omega_c=6$、$\gamma\approx 15^\circ$；精确值为 $\omega_c\approx 5.830$、$\gamma\approx 15.60^\circ$。"""),
 (2025, 5): (None, r"""开环 $G(z)$、朱利范围 $0<K<21.11$ 与 $e_{ss}=0$ 正确。闭环 $\Phi(z)$ 分子中 $z$ 与后一项之间漏写加号，特征多项式仍按正确 $G(z)$ 展开。"""),
