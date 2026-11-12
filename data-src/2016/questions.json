@@ -21,7 +21,7 @@
    ],
    "answer": "",
    "explanation": "",
-   "notes": ""
+   "notes": "传函 $\\Phi=1/[R_1R_2C_1C_2s^2+(R_2C_2+R_1C_2+R_1C_1)s+1]$ 正确。写 $I_1$ 时误用了输出电压，状态矩阵 $A$ 错误，第 2 问不能照抄。正确为 $A=\\begin{bmatrix}-(R_1+R_2)/(R_1R_2C_1)&1/(R_2C_1)\\\\1/(R_2C_2)&-1/(R_2C_2)\\end{bmatrix}$，$B=\\begin{bmatrix}1/(R_1C_1)\\\\0\\end{bmatrix}$，$C=\\begin{bmatrix}0&1\\end{bmatrix}$。"
   },
   {
    "no": 2,
@@ -41,7 +41,8 @@
    ],
    "answer": "",
    "explanation": "",
-   "notes": "原题写作 R(s)=1+t（应理解为 r(t)=1+t），按原文保留。"
+   "notes": "已核对：正确。$\\Phi=20/(s^2+6s+20)$，$r(t)=1+t$ 时 $e_{ss}=0.3$，$\\zeta\\approx 0.67$，$\\sigma\\%\\approx 5.9\\%$，$t_s=1\\,\\mathrm{s}$（5%）及 $4/3\\,\\mathrm{s}$（2%）。原题写作 $R(s)=1+t$（应理解为 $r(t)=1+t$），按原文保留。",
+   "errataLevel": "ok"
   },
   {
    "no": 3,
@@ -58,7 +59,7 @@
    ],
    "answer": "",
    "explanation": "",
-   "notes": ""
+   "notes": "极点、实轴、$\\sigma_a=-11/3$、分离点、虚轴交点与稳定范围均对。辐角公式写成了 $2(k+1)\\pi/(n-m)$，但列出的 $\\pm 60^\\circ$、$180^\\circ$ 是对的，属笔误。"
   },
   {
    "no": 4,
@@ -75,7 +76,8 @@
    ],
    "answer": "",
    "explanation": "",
-   "notes": ""
+   "notes": "穿越点 $\\omega=1/\\sqrt{T}$、$|G|=10T$、$T_{\\mathrm{crit}}=0.1$ 及劳斯结论（稳定当且仅当 $T>0.1$）都对，但奈氏草图把 $T<0.1$ 标成稳定、$T>0.1$ 标成不稳定，与计算相反，图不能照抄。",
+   "errataLevel": "severe"
   },
   {
    "no": 5,
@@ -95,7 +97,8 @@
    ],
    "answer": "",
    "explanation": "",
-   "notes": ""
+   "notes": "已核对：正确。滞后校正 $G_c=(s+1)/(s/0.1+1)$，考场算法 $\\omega_c=4$、$\\gamma\\approx 49.6^\\circ$；精确值为 $\\omega_c\\approx 3.846$、$\\gamma\\approx 49.99^\\circ$。",
+   "errataLevel": "ok"
   },
   {
    "no": 6,
@@ -113,7 +116,8 @@
    ],
    "answer": "",
    "explanation": "",
-   "notes": "原文“继电路特性”，按“继电器特性”录入。"
+   "notes": "已核对：正确。稳定极限环 $A=20M/(3\\pi)$，穿越 $\\omega_x=\\sqrt{2}$。原文“继电路特性”，按“继电器特性”录入。",
+   "errataLevel": "ok"
   },
   {
    "no": 7,
@@ -133,7 +137,8 @@
    ],
    "answer": "",
    "explanation": "",
-   "notes": "附变换表原文第二项分母印作 z−e^{−αT}（α/a 混用），已统一为 e^{-aT}。"
+   "notes": "已核对：正确。$G(z)=0.158K/(z-0.368)$，$0<K<8.66$；$K=4$ 时 $c(k)=0.5-0.5(-0.264)^k$。附变换表原文第二项分母印作 $z-e^{-\\alpha T}$（$\\alpha/a$ 混用），已统一为 $e^{-aT}$。",
+   "errataLevel": "ok"
   },
   {
    "no": 8,
@@ -150,7 +155,8 @@
    ],
    "answer": "",
    "explanation": "",
-   "notes": "原题状态方程左边印作 x（漏了点），按状态方程录为 \\dot x（与答案一致）。"
+   "notes": "开环有 $\\lambda=1$ 与 $-1\\pm j$，内部不稳定判断对。传递函数消去 $(s-1)$ 后为 $G(s)=s/(s^2+2s+2)$，BIBO 稳定，书却判不稳定。能控且期望极点 $-1\\pm j$、$-5$ 时，唯一正确反馈为 $K=[0\\ \\ 0\\ \\ 6]$；书中特征多项式展开多出 $k_2k_3$ 项，又多给的 $K=[-2\\ \\ 1\\ \\ 5]$ 闭环极点并非所求，不能照抄。原题状态方程左边印作 $x$（漏了点），按 $\\dot x$ 录入。",
+   "errataLevel": "severe"
   }
  ]
 }

@@ -1,1 +1,1 @@
-{"answer": "", "explanation": "", "notes": "", "originalImages": [{"src": "img/a2019-5-1.png", "w": 472}, {"src": "img/a2019-5-2.png", "w": 327}], "answerPdfPages": "132–140"}
+{"answer": "", "explanation": "", "notes": "$K=100$、$G_c=(0.612s+1)/(0.044s+1)$、校验 $\\omega\\approx 5.36$、$\\gamma\\approx 42^\\circ$ 可用。$\\alpha$ 公式写成了倒数（数值 $13.93$ 是对的）；$\\omega_c'=\\sqrt{10}$ 与 $\\gamma'=1.52^\\circ$ 不是同一频率上的结果。", "originalImages": [{"src": "img/a2019-5-1.png", "w": 472}, {"src": "img/a2019-5-2.png", "w": 327}], "answerPdfPages": "132–140"}

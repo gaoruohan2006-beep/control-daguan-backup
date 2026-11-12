@@ -1,1 +1,1 @@
-{"answer": "", "explanation": "", "notes": "", "originalImages": [{"src": "img/a2017-6-1.png", "w": 545}, {"src": "img/a2017-6-2.png", "w": 467}], "answerPdfPages": "115–122"}
+{"answer": "", "explanation": "", "notes": "平衡点 $x=0$、$x=1$ 与抛物线 $\\dot x=x-x^2$ 正确。但 $x<0$ 一侧箭头指向原点（应离开 $0$ 走向 $-\\infty$），且未判断 $x=0$ 不稳定，第 3 问不能照抄。", "originalImages": [{"src": "img/a2017-6-1.png", "w": 545}, {"src": "img/a2017-6-2.png", "w": 467}], "answerPdfPages": "115–122"}

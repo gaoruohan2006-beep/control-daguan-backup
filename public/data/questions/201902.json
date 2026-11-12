@@ -1,1 +1,1 @@
-{"answer": "", "explanation": "", "notes": "原题把输入写成 γ(t)=t，应为 r(t)=t。", "originalImages": [{"src": "img/a2019-2-1.png", "w": 527}, {"src": "img/a2019-2-2.png", "w": 245}], "answerPdfPages": "132–140"}
+{"answer": "", "explanation": "", "notes": "$a\\approx 9.74$、$b\\approx 2.26$ 及 $\\sigma\\%\\approx 4.3\\%$、$t_s=3.5\\,\\mathrm{s}$ 正确，但求开环传函时漏写 $K=20$，完整应为 $G(s)=20/[s(s+9.74)(s+2.26)]$。原题把输入写成 $\\gamma(t)=t$，应为 $r(t)=t$。", "originalImages": [{"src": "img/a2019-2-1.png", "w": 527}, {"src": "img/a2019-2-2.png", "w": 245}], "answerPdfPages": "132–140"}

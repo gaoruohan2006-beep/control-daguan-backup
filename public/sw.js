@@ -3,7 +3,7 @@
 
 // PRECACHE 由 tools/build_precache.py 在构建时写入，请勿手改
 const PRECACHE = {
-  "version": "32d835283117",
+  "version": "64dc884ca7d9",
   "files": [
     "./",
     "./index.html",

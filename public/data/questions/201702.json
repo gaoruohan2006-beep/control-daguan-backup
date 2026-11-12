@@ -1,1 +1,1 @@
-{"answer": "", "explanation": "", "notes": "", "originalImages": [{"src": "img/a2017-2-1.png", "w": 667}], "answerPdfPages": "115–122"}
+{"answer": "", "explanation": "", "notes": "$Y(s)$ 与约去 $(s-1)$ 后的 $G(s)=1/(s+2)$ 正确。被约去的是右半平面极点，零状态/BIBO 稳定但内部不稳定。题面要求判断稳定性及类型，书只写“系统稳定”，不能照抄。", "originalImages": [{"src": "img/a2017-2-1.png", "w": 667}], "answerPdfPages": "115–122", "errataLevel": "severe"}

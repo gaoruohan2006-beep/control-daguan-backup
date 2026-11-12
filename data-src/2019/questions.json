@@ -20,7 +20,7 @@
    ],
    "answer": "",
    "explanation": "",
-   "notes": ""
+   "notes": "结构图与 $\\Theta_y/\\Theta_r$ 正确；列写方程时把误差检测系数 $K$ 写成了 $L$，结构图已改回 $K$。"
   },
   {
    "no": 2,
@@ -37,7 +37,7 @@
    ],
    "answer": "",
    "explanation": "",
-   "notes": "原题把输入写成 γ(t)=t，应为 r(t)=t。"
+   "notes": "$a\\approx 9.74$、$b\\approx 2.26$ 及 $\\sigma\\%\\approx 4.3\\%$、$t_s=3.5\\,\\mathrm{s}$ 正确，但求开环传函时漏写 $K=20$，完整应为 $G(s)=20/[s(s+9.74)(s+2.26)]$。原题把输入写成 $\\gamma(t)=t$，应为 $r(t)=t$。"
   },
   {
    "no": 3,
@@ -54,7 +54,8 @@
    ],
    "answer": "",
    "explanation": "",
-   "notes": "原题输入写作 γ(t)=t；“e_ss≥15”照录原文。"
+   "notes": "已核对：正确。按原卷印刷的 $e_{ss}\\ge 15$ 得到 $0<K^*\\le 3$，与稳定范围 $K^*<607.5$ 合取即可。若按常见题意理解为 $e_{ss}\\le 15$，则应为 $3\\le K^*<607.5$。原题输入写作 $\\gamma(t)=t$；“$e_{ss}\\ge 15$”照录原文。",
+   "errataLevel": "ok"
   },
   {
    "no": 4,
@@ -71,7 +72,8 @@
    ],
    "answer": "",
    "explanation": "",
-   "notes": ""
+   "notes": "已核对：正确。$L(\\omega)=20\\lg(K/\\omega)$；$0<K<1$ 稳定，$K=1$ 临界，$K>1$ 不稳定。",
+   "errataLevel": "ok"
   },
   {
    "no": 5,
@@ -88,7 +90,7 @@
    ],
    "answer": "",
    "explanation": "",
-   "notes": ""
+   "notes": "$K=100$、$G_c=(0.612s+1)/(0.044s+1)$、校验 $\\omega\\approx 5.36$、$\\gamma\\approx 42^\\circ$ 可用。$\\alpha$ 公式写成了倒数（数值 $13.93$ 是对的）；$\\omega_c'=\\sqrt{10}$ 与 $\\gamma'=1.52^\\circ$ 不是同一频率上的结果。"
   },
   {
    "no": 6,
@@ -106,7 +108,7 @@
    ],
    "answer": "",
    "explanation": "",
-   "notes": ""
+   "notes": "临界值 $a/b=4/(3\\pi)$ 正确。可选的 $N(A)$ 极值推导里符号有误，未传入终值。"
   },
   {
    "no": 7,
@@ -125,7 +127,7 @@
    ],
    "answer": "",
    "explanation": "",
-   "notes": "原题第 1 问写作 G(z)/R(z)，按题意应为 C(z)/R(z)。"
+   "notes": "中间把 $-0.1$ 写成 $-0.1z$，但 $G(z)\\approx(0.02z+0.016)/[(z-1)(z-0.497)]$ 及 $c(0)$–$c(3T)$ 与该四舍五入一致、可用。原题第 1 问写作 $G(z)/R(z)$，按题意应为 $C(z)/R(z)$。"
   },
   {
    "no": 8,
@@ -142,7 +144,7 @@
    ],
    "answer": "",
    "explanation": "",
-   "notes": ""
+   "notes": "对角标准型 $\\tilde A,\\tilde B,\\tilde C$ 完全正确，但原书未写出传递函数 $G(s)=1/[(s+2)(s+3)]$。"
   },
   {
    "no": 9,
@@ -159,7 +161,8 @@
    ],
    "answer": "",
    "explanation": "",
-   "notes": ""
+   "notes": "已核对：正确。$-1$ 不可控；（1）组 $\\{-2,-2,-1\\}$ 可配，$k_3=5$、$k_2=1$、$k_1$ 任意；（2）组不可配。",
+   "errataLevel": "ok"
   }
  ]
 }

@@ -1,1 +1,1 @@
-{"answer": "", "explanation": "", "notes": "原题输入写作 γ(t)=t；“e_ss≥15”照录原文。", "originalImages": [{"src": "img/a2019-3-1.png", "w": 550}, {"src": "img/a2019-3-2.png", "w": 503}], "answerPdfPages": "132–140"}
+{"answer": "", "explanation": "", "notes": "已核对：正确。按原卷印刷的 $e_{ss}\\ge 15$ 得到 $0<K^*\\le 3$，与稳定范围 $K^*<607.5$ 合取即可。若按常见题意理解为 $e_{ss}\\le 15$，则应为 $3\\le K^*<607.5$。原题输入写作 $\\gamma(t)=t$；“$e_{ss}\\ge 15$”照录原文。", "originalImages": [{"src": "img/a2019-3-1.png", "w": 550}, {"src": "img/a2019-3-2.png", "w": 503}], "answerPdfPages": "132–140", "errataLevel": "ok"}

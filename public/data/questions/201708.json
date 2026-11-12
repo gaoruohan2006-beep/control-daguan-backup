@@ -1,1 +1,1 @@
-{"answer": "", "explanation": "", "notes": "", "originalImages": [{"src": "img/a2017-8-1.png", "w": 562}, {"src": "img/a2017-8-2.png", "w": 308}], "answerPdfPages": "115–122"}
+{"answer": "", "explanation": "", "notes": "$\\operatorname{rank}Q_c=2$，$K=[2\\ \\ 4]$ 正确。但 $C=[0\\ \\ 1]$，闭环 $Y(s)/V(s)=s/(s^2+2s+2)$，阶跃响应趋于 $0$，不能套用无零点标准二阶的 $\\sigma\\%\\approx 4.3\\%$、$t_s=3.5/4.4\\,\\mathrm{s}$。若输出取 $x_1$，这些指标才成立。", "originalImages": [{"src": "img/a2017-8-1.png", "w": 562}, {"src": "img/a2017-8-2.png", "w": 308}], "answerPdfPages": "115–122"}

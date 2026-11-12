@@ -1,1 +1,1 @@
-{"answer": "", "explanation": "", "notes": "", "originalImages": [{"src": "img/a2016-5-1.png", "w": 424}, {"src": "img/a2016-5-2.png", "w": 452}], "answerPdfPages": "105–114"}
+{"answer": "", "explanation": "", "notes": "已核对：正确。滞后校正 $G_c=(s+1)/(s/0.1+1)$，考场算法 $\\omega_c=4$、$\\gamma\\approx 49.6^\\circ$；精确值为 $\\omega_c\\approx 3.846$、$\\gamma\\approx 49.99^\\circ$。", "originalImages": [{"src": "img/a2016-5-1.png", "w": 424}, {"src": "img/a2016-5-2.png", "w": 452}], "answerPdfPages": "105–114", "errataLevel": "ok"}

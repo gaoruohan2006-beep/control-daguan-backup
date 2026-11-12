@@ -1,1 +1,1 @@
-{"answer": "", "explanation": "", "notes": "", "originalImages": [{"src": "img/a2016-4-1.png", "w": 499}, {"src": "img/a2016-4-2.png", "w": 498}], "answerPdfPages": "105–114"}
+{"answer": "", "explanation": "", "notes": "穿越点 $\\omega=1/\\sqrt{T}$、$|G|=10T$、$T_{\\mathrm{crit}}=0.1$ 及劳斯结论（稳定当且仅当 $T>0.1$）都对，但奈氏草图把 $T<0.1$ 标成稳定、$T>0.1$ 标成不稳定，与计算相反，图不能照抄。", "originalImages": [{"src": "img/a2016-4-1.png", "w": 499}, {"src": "img/a2016-4-2.png", "w": 498}], "answerPdfPages": "105–114", "errataLevel": "severe"}

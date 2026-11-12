@@ -1,1 +1,1 @@
-{"answer": "", "explanation": "", "notes": "原文“T为采用周期”，按“采样周期”录入。", "originalImages": [{"src": "img/a2017-7-1.png", "w": 556}, {"src": "img/a2017-7-2.png", "w": 433}], "answerPdfPages": "115–122"}
+{"answer": "", "explanation": "", "notes": "$G(z)$、$\\Phi(z)$ 与最终条件 $0<T<\\ln[(K+1)/(K-1)]$（$K>1$）均对；取对数时把 $-T>\\ln[(K-1)/(K+1)]$ 写成了 $<$。原文“$T$ 为采用周期”，按“采样周期”录入。题图把零阶保持印成 $1-e^{-T\\tau}$，应为 $1-e^{-Ts}$。", "originalImages": [{"src": "img/a2017-7-1.png", "w": 556}, {"src": "img/a2017-7-2.png", "w": 433}], "answerPdfPages": "115–122"}

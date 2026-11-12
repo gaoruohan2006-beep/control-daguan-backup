@@ -1,1 +1,1 @@
-{"answer": "", "explanation": "", "notes": "", "originalImages": [{"src": "img/a2019-4-1.png", "w": 520}, {"src": "img/a2019-4-2.png", "w": 227}], "answerPdfPages": "132–140"}
+{"answer": "", "explanation": "", "notes": "已核对：正确。$L(\\omega)=20\\lg(K/\\omega)$；$0<K<1$ 稳定，$K=1$ 临界，$K>1$ 不稳定。", "originalImages": [{"src": "img/a2019-4-1.png", "w": 520}, {"src": "img/a2019-4-2.png", "w": 227}], "answerPdfPages": "132–140", "errataLevel": "ok"}

@@ -1,1 +1,1 @@
-{"answer": "", "explanation": "", "notes": "附变换表原文第二项分母印作 z−e^{−at}（小写 t），已按 Z 变换改为 e^{-aT}。", "originalImages": [{"src": "img/a2018-8-1.png", "w": 569}, {"src": "img/a2018-8-2.png", "w": 448}], "answerPdfPages": "123–131"}
+{"answer": "", "explanation": "", "notes": "能控、驱动序列 $u(0)=0.4$、$u(1)=-0.45$ 与能观反求 $x(0)$ 正确。平衡点依据误写成“$G$ 非奇异”（应为 $I-G$ 非奇异）；$k=0$ 时状态方程右侧把 $x(0)$ 写成了 $x(1)$，数值仍对。附变换表原文第二项分母印作 $z-e^{-at}$（小写 $t$），已按 Z 变换改为 $e^{-aT}$。", "originalImages": [{"src": "img/a2018-8-1.png", "w": 569}, {"src": "img/a2018-8-2.png", "w": 448}], "answerPdfPages": "123–131"}

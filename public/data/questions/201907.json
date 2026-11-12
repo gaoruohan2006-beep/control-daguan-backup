@@ -1,1 +1,1 @@
-{"answer": "", "explanation": "", "notes": "原题第 1 问写作 G(z)/R(z)，按题意应为 C(z)/R(z)。", "originalImages": [{"src": "img/a2019-7-1.png", "w": 395}, {"src": "img/a2019-7-2.png", "w": 634}], "answerPdfPages": "132–140"}
+{"answer": "", "explanation": "", "notes": "中间把 $-0.1$ 写成 $-0.1z$，但 $G(z)\\approx(0.02z+0.016)/[(z-1)(z-0.497)]$ 及 $c(0)$–$c(3T)$ 与该四舍五入一致、可用。原题第 1 问写作 $G(z)/R(z)$，按题意应为 $C(z)/R(z)$。", "originalImages": [{"src": "img/a2019-7-1.png", "w": 395}, {"src": "img/a2019-7-2.png", "w": 634}], "answerPdfPages": "132–140"}
