@@ -1,0 +1,8 @@
+{
+  "answer": "（1）$\\omega_n=\\sqrt8$、$\\zeta=1/\\sqrt8$、$e_{\\rm ss}=1/4$。（2）$e_{\\rm ss}=0.7/\\sqrt2\\approx0.4950$。（3）$k=31.36$、$a=73/392\\approx0.1862$。",
+  "explanation": "**合并两条反馈。** 由图，外比较点的跟踪误差是 $E=R-Y$，进入被控对象的信号为 $E-asY$。因此\n$$\\Phi(s)=\\frac{k}{s^2+(2+ak)s+k},\\qquad\n\\frac{E(s)}{R(s)}=1-\\Phi(s)=\\frac{s(s+2+ak)}{s^2+(2+ak)s+k}.$$\n和标准二阶式比较，$\\omega_n=\\sqrt{k}$、$2\\zeta\\omega_n=2+ak$。当闭环稳定时，斜坡输入 $R(s)=1/s^2$，由终值定理得\n$$e_{\\rm ss}=\\frac{2+ak}{k}=\\frac{2\\zeta}{\\sqrt{k}}.$$\n\n（1）代入 $k=8,a=0$，得 $2\\zeta\\sqrt8=2$，且 $e_{\\rm ss}=2/8$。（2）代入 $k=8,\\zeta=0.7$，得 $1.4/\\sqrt8$。（3）令 $1.4/\\sqrt{k}=1/4$，得 $\\sqrt{k}=5.6$、$k=31.36$。再由 $2+ak=2(0.7)(5.6)=7.84$，得 $a=(7.84-2)/31.36$。三种条件下 $k$ 与一次项系数都为正，满足闭环稳定要求。",
+  "originalImages": [],
+  "answerPdfPages": "693–695",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}
