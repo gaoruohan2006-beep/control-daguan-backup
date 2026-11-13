@@ -11,13 +11,13 @@
 <circle cx="104.1" cy="175.0" r="3.5" fill="#242831"/>
 <text x="87.1" y="193.0" font-size="16">−2</text>
 <circle cx="399.5" cy="175.0" r="3.5" fill="#242831"/>
-<text x="408.5" y="191.0" font-size="16">0</text>
+<text x="401.5" y="200" font-size="16">0</text>
 <circle cx="251.8" cy="67.2" r="3.5" fill="#242831"/>
 <text x="169.8" y="72.2" font-size="16">−1+j√3</text>
 <circle cx="251.8" cy="282.8" r="3.5" fill="#242831"/>
 <text x="169.8" y="287.8" font-size="16">−1−j√3</text>
 <circle cx="399.5" cy="87.0" r="3.5" fill="#242831"/>
-<text x="409.5" y="95.0" font-size="16">j√2</text>
+<text x="414.5" y="90" font-size="16">j√2</text>
 <circle cx="399.5" cy="263.0" r="3.5" fill="#242831"/>
 <text x="409.5" y="271.0" font-size="16">−j√2</text>
 <text x="505" y="164.0">Re</text>

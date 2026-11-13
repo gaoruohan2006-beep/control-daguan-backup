@@ -161,7 +161,7 @@
 			<v:textRect cx="27.7849" cy="234.28" width="55.57" height="29.44"/>
 			<rect x="0" y="219.56" width="55.5699" height="29.44" class="st4"/>
 			<text x="11.94" y="239.8" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>C(s)</text>		</g>
-		<g id="shape34-84" v:mID="34" v:groupContext="shape" transform="translate(127.114,-149.28)">
+		<g id="shape34-84" v:mID="34" v:groupContext="shape" transform="translate(127.114,-158.28)">
 			<title>工作表.34</title>
 			<desc>E(s)</desc>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>

@@ -447,7 +447,7 @@
 			<v:textRect cx="22.1828" cy="300.4" width="44.37" height="27.2"/>
 			<rect x="0" y="286.8" width="44.3656" height="27.2" class="st4"/>
 			<text x="12.58" y="305.58" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>H<tspan class="st6">₄</tspan></text>		</g>
-		<g id="shape97-261" v:mID="97" v:groupContext="shape" transform="translate(7.9584,-178.9)">
+		<g id="shape97-261" v:mID="97" v:groupContext="shape" transform="translate(1.9584,-184.9)">
 			<title>工作表.97</title>
 			<desc>R(s)</desc>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>

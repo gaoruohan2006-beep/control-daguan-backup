@@ -77,6 +77,9 @@ async def verify():
         await page.goto(f"{BASE}?question={q['id']}")
         await page.locator(".stem img").first.click()
         assert await page.locator("#lightbox").is_visible()
+        await page.get_by_role("button", name="放大", exact=True).click()
+        assert await page.get_by_role("button", name="适应屏幕", exact=True).get_attribute("aria-pressed") == "true"
+        assert await page.locator("#lbImg").evaluate("img => img.offsetWidth >= 880")
         await page.keyboard.press("Escape")
         await page.locator('button[data-act="fav"]').click()
         await page.locator('button[data-mark="shaky"]').click()

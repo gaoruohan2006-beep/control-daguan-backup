@@ -247,7 +247,7 @@
 			<v:textRect cx="18.0919" cy="287.13" width="36.19" height="25.7391"/>
 			<rect x="0" y="274.261" width="36.1838" height="25.7391" class="st3"/>
 			<text x="10.79" y="292.03" class="st7" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>x<tspan class="st9">₁</tspan></text>		</g>
-		<g id="shape49-125" v:mID="49" v:groupContext="shape" transform="translate(456.282,-120.63)">
+		<g id="shape49-125" v:mID="49" v:groupContext="shape" transform="translate(464.282,-122.63)">
 			<title>工作表.49</title>
 			<desc>x₂</desc>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>

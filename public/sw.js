@@ -3,17 +3,17 @@
 
 // PRECACHE 由 tools/build_precache.py 在构建时写入，请勿手改
 const PRECACHE = {
-  "version": "bbb6253a1401",
+  "version": "3b6ae8088ffe",
   "files": [
     "./",
     "./index.html",
-    "./app.js?v=bbb6253a1401",
-    "./app.css?v=bbb6253a1401",
+    "./app.js?v=3b6ae8088ffe",
+    "./app.css?v=3b6ae8088ffe",
     "./notes.js",
     "./sync.js",
     "./pwa.js",
     "./manifest.webmanifest",
-    "./data/library.json?v=bbb6253a1401",
+    "./data/library.json?v=3b6ae8088ffe",
     "./icons/apple-touch-icon.png",
     "./icons/favicon-32.png",
     "./icons/icon-192.png",

@@ -264,7 +264,7 @@
 			<v:textRect cx="25.8101" cy="250.08" width="51.63" height="27.84"/>
 			<rect x="0" y="236.16" width="51.6202" height="27.84" class="st4"/>
 			<text x="11.32" y="255.3" class="st8" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>E(s)</text>		</g>
-		<g id="shape52-134" v:mID="52" v:groupContext="shape" transform="translate(248.546,-142.08)">
+		<g id="shape52-134" v:mID="52" v:groupContext="shape" transform="translate(255.546,-153.08)">
 			<title>工作表.52</title>
 			<desc>E*(s)</desc>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>

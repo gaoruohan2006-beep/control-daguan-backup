@@ -215,7 +215,7 @@
 			<v:textRect cx="21.6445" cy="234.435" width="43.29" height="27.1304"/>
 			<rect x="0" y="220.87" width="43.2891" height="27.1304" class="st4"/>
 			<text x="11.07" y="239.6" class="st9" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>−<tspan class="st10">2</tspan></text>		</g>
-		<g id="shape38-101" v:mID="38" v:groupContext="shape" transform="translate(419.629,-103.935)">
+		<g id="shape38-101" v:mID="38" v:groupContext="shape" transform="translate(407.629,-103.935)">
 			<title>工作表.38</title>
 			<desc>−1</desc>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>

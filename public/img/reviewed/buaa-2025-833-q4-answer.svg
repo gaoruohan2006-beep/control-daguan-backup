@@ -12,9 +12,9 @@
 <circle cx="125.0" cy="175.0" r="3.5" fill="#242831"/>
 <text x="68.0" y="166.0" font-size="16">(−2, 0)</text>
 <circle cx="285.0" cy="59.5" r="3.5" fill="#242831"/>
-<text x="293.0" y="63.5" font-size="16">2√3</text>
+<text x="295" y="54.5" font-size="16">2√3</text>
 <circle cx="285.0" cy="290.5" r="3.5" fill="#242831"/>
-<text x="293.0" y="294.5" font-size="16">−2√3</text>
+<text x="296" y="304.5" font-size="16">−2√3</text>
 <text x="505" y="164.0">Re</text>
 <text x="256.0" y="29">Im</text>
 <text x="45" y="339" font-size="16">相轨迹沿顺时针方向运行，在 c=0 处切换。</text>

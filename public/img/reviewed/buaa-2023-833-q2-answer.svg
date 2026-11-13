@@ -13,6 +13,6 @@
 <circle cx="446.0" cy="254.0" r="3" fill="#1a202c"/>
 <text x="464.0" y="259.0">−j√2</text>
 <path d="M441 161l10 10m0-10l-10 10" stroke="#4f887f" stroke-width="2"/>
-<text x="453" y="185">0</text>
+<text x="462" y="187">0</text>
 <text x="510" y="156">Re</text><text x="455" y="35">Im</text>
 </svg>

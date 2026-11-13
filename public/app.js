@@ -628,7 +628,15 @@ function bind() {
     st.node = path; st.qid = null; rec.open[path] = true; save(); if (isMobile()) $('#app').classList.remove('drawer-open'); render(); $('#main').scrollTo(0, 0);
   });
   $('#cards').addEventListener('click', e => {
-    const img = e.target.closest('img[data-zoom]'); if (img) { $('#lbImg').src = img.src; $('#lightbox').hidden = false; return; }
+    const img = e.target.closest('img[data-zoom]');
+    if (img) {
+      $('#lbImg').src = img.src;
+      $('#lbImg').alt = img.alt;
+      $('#lightbox').hidden = false;
+      setFigureZoom(false);
+      $('.lb-close').focus();
+      return;
+    }
     const b = e.target.closest('button[data-act]'); if (!b) return; const id = Number(b.closest('.card').dataset.id);
     const sh = st.show[id] = st.show[id] || {};
     switch (b.dataset.act) {
@@ -668,7 +676,19 @@ function bind() {
   document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'hidden') flushNotes(); });
   $('#prevBtn').addEventListener('click', () => step(-1));
   $('#nextBtn').addEventListener('click', () => step(1));
-  $('#lightbox').addEventListener('click', () => $('#lightbox').hidden = true);
+  const figureView = $('.lb-view');
+  const figureZoom = $('.lb-toggle');
+  function setFigureZoom(zoomed) {
+    figureView.classList.toggle('is-zoomed', zoomed);
+    figureZoom.setAttribute('aria-pressed', zoomed);
+    figureZoom.textContent = zoomed ? '适应屏幕' : '放大';
+    figureView.scrollTo(0, 0);
+  }
+  figureZoom.addEventListener('click', () => setFigureZoom(!figureView.classList.contains('is-zoomed')));
+  $('.lb-close').addEventListener('click', () => $('#lightbox').hidden = true);
+  figureView.addEventListener('click', e => {
+    if (e.target === figureView && !figureView.classList.contains('is-zoomed')) $('#lightbox').hidden = true;
+  });
   document.addEventListener('click', e => { if (!e.target.closest('.popover')) closePops(); });
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape') { $('#lightbox').hidden = true; closePops(); return; }

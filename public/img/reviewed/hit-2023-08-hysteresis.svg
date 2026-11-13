@@ -140,14 +140,14 @@
 			<v:textRect cx="25.4929" cy="295.08" width="50.99" height="27.84"/>
 			<rect x="0" y="281.16" width="50.9858" height="27.84" class="st3"/>
 			<text x="11.75" y="300.38" class="st6" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>−<tspan class="st7">M</tspan></text>		</g>
-		<g id="shape25-66" v:mID="25" v:groupContext="shape" transform="translate(103.778,-137.08)">
+		<g id="shape25-66" v:mID="25" v:groupContext="shape" transform="translate(88.7781,-136.08)">
 			<title>工作表.25</title>
 			<desc>−h</desc>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
 			<v:textRect cx="21.2219" cy="295.08" width="42.45" height="27.84"/>
 			<rect x="0" y="281.16" width="42.4437" height="27.84" class="st3"/>
 			<text x="10.37" y="300.38" class="st6" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>−<tspan class="st7">h</tspan></text>		</g>
-		<g id="shape26-70" v:mID="26" v:groupContext="shape" transform="translate(225.651,-137.08)">
+		<g id="shape26-70" v:mID="26" v:groupContext="shape" transform="translate(235.651,-136.08)">
 			<title>工作表.26</title>
 			<desc>h</desc>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
@@ -245,7 +245,7 @@
 			<rect x="0" y="281.16" width="56.2076" height="27.84" class="st3"/>
 			<text x="6.14" y="300.8" class="st6" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>−<tspan class="st13">π</tspan><tspan
 						class="st7">/4</tspan></text>		</g>
-		<g id="shape41-115" v:mID="41" v:groupContext="shape" transform="translate(536.574,-129.08)">
+		<g id="shape41-115" v:mID="41" v:groupContext="shape" transform="translate(513.574,-150.08)">
 			<title>工作表.41</title>
 			<desc>−135°</desc>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>

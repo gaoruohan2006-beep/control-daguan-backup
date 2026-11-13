@@ -211,7 +211,7 @@
 			<v:textRect cx="32.0655" cy="281.48" width="64.14" height="31.04"/>
 			<rect x="0" y="265.96" width="64.131" height="31.04" class="st4"/>
 			<text x="10.88" y="287.39" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>X<tspan class="st8">₃</tspan>(s)</text>		</g>
-		<g id="shape41-106" v:mID="41" v:groupContext="shape" transform="translate(468.934,-91.8374)">
+		<g id="shape41-106" v:mID="41" v:groupContext="shape" transform="translate(468.934,-99.8374)">
 			<title>工作表.41</title>
 			<desc>X₂(s)</desc>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>

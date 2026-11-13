@@ -15,7 +15,7 @@
 <circle cx="141.0" cy="175.0" r="3.5" fill="#242831"/>
 <text x="149.0" y="192.0" font-size="16">−6</text>
 <circle cx="368.1" cy="175.0" r="3.5" fill="#242831"/>
-<text x="353.1" y="163.0" font-size="16">分离点</text>
+<text x="311" y="151" font-size="16">分离点</text>
 <circle cx="429.0" cy="76.0" r="3.5" fill="#242831"/>
 <text x="438.0" y="78.0" font-size="16">j√18</text>
 <circle cx="429.0" cy="274.0" r="3.5" fill="#242831"/>

@@ -16,7 +16,7 @@
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%23006bea'/><text x='16' y='22' font-size='17' text-anchor='middle' fill='white' font-family='sans-serif'>控</text></svg>" />
 <link rel="stylesheet" href="vendor/katex/katex.min.css" />
-<link rel="stylesheet" href="app.css?v=bbb6253a1401" />
+<link rel="stylesheet" href="app.css?v=3b6ae8088ffe" />
 </head>
 <body>
 <div id="app">
@@ -126,7 +126,13 @@
     <span id="pos" class="pos"></span>
     <button type="button" class="btn soft" id="nextBtn"><span>下一题</span><svg viewBox="0 0 24 24" class="ic"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
   </footer>
-  <div class="lightbox" id="lightbox" hidden role="dialog" aria-label="图片预览"><img alt="大图" id="lbImg" /><button type="button" class="lb-close" aria-label="关闭">×</button></div>
+  <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="图片预览">
+    <div class="lb-view"><img alt="" id="lbImg" /></div>
+    <div class="lb-controls">
+      <button type="button" class="lb-toggle" aria-pressed="false">放大</button>
+      <button type="button" class="lb-close" aria-label="关闭图片预览">×</button>
+    </div>
+  </div>
   <div class="toast" id="toast" role="status" hidden></div>
   <button type="button" class="toast update-toast" id="updateToast" hidden>有新版本，点击更新</button>
 </div>
@@ -138,6 +144,6 @@
 <script src="notes.js"></script>
 <script src="sync.js"></script>
 <script src="pwa.js"></script>
-<script src="app.js?v=bbb6253a1401"></script>
+<script src="app.js?v=3b6ae8088ffe"></script>
 </body>
 </html>
