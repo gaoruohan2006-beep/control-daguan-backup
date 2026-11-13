@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 610 178" role="img" aria-label="单位负反馈采样系统">
+<defs><marker id="arrow" viewBox="0 0 11 10" refX="10" refY="5" markerWidth="7" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#1c2735"/></marker></defs>
+<rect width="100%" height="100%" fill="white"/>
+<style>text {font-family:"Times New Roman", "Noto Serif SC", SimSun, serif; fill:#1c2735; stroke:none; text-anchor:middle; dominant-baseline:central;}</style>
+<g fill="white" stroke="#1c2735" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+<path d="M31 61 L78 61" fill="none" stroke="#1c2735" marker-end="url(#arrow)"/>
+<circle cx="89" cy="61" r="11" fill="white"/>
+<text x="89" y="61" font-size="14" font-style="normal">Σ</text>
+<path d="M100 61 L140 61" fill="none" stroke="#1c2735"/>
+<circle cx="142" cy="61" r="2.3" fill="white"/>
+<circle cx="166" cy="61" r="2.3" fill="white"/>
+<path d="M142 61 L162 48" fill="none" stroke="#1c2735"/>
+<text x="154" y="32" font-size="16" font-style="italic">T</text>
+<path d="M168 61 L211 61" fill="none" stroke="#1c2735" marker-end="url(#arrow)"/>
+<rect x="211" y="33.5" width="111" height="55"/>
+<text x="266.5" y="54" font-size="17" font-style="italic">1−e⁻ˢ</text>
+<path d="M221 61 L312 61" fill="none" stroke="#1c2735"/>
+<text x="266.5" y="74" font-size="16" font-style="italic">s</text>
+<path d="M322 61 L369 61" fill="none" stroke="#1c2735" marker-end="url(#arrow)"/>
+<rect x="369" y="33.5" width="113" height="55"/>
+<text x="425.5" y="54" font-size="17" font-style="italic">K</text>
+<path d="M379 61 L472 61" fill="none" stroke="#1c2735"/>
+<text x="425.5" y="74" font-size="16" font-style="italic">s(s+1)</text>
+<path d="M482 61 L578 61" fill="none" stroke="#1c2735" marker-end="url(#arrow)"/>
+<circle cx="526" cy="61" r="2" fill="#1c2735"/>
+<path d="M526 61 L526 133 L89 133 L89 72" fill="none" stroke="#1c2735" marker-end="url(#arrow)"/>
+<text x="35" y="42" font-size="17" font-style="italic">R(s)</text>
+<text x="117" y="41" font-size="17" font-style="italic">E(s)</text>
+<text x="578" y="41" font-size="17" font-style="italic">C(s)</text>
+<text x="103" y="83" font-size="17" font-style="italic">−</text>
+</g></svg>

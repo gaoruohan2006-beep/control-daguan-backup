@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 240" role="img" aria-label="离散控制系统的输入前馈与输出采样">
+<defs><marker id="arrow" viewBox="0 0 11 10" refX="10" refY="5" markerWidth="7" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#1c2735"/></marker></defs>
+<rect width="100%" height="100%" fill="white"/>
+<style>text {font-family:"Times New Roman", "Noto Serif SC", SimSun, serif; fill:#1c2735; stroke:none; text-anchor:middle; dominant-baseline:central;}</style>
+<g fill="white" stroke="#1c2735" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+<path d="M29 122 L70 122" fill="none" stroke="#1c2735" marker-end="url(#arrow)"/>
+<rect x="70" y="99.0" width="64" height="46"/>
+<text x="102.0" y="122" font-size="19" font-style="italic">G₃(s)</text>
+<path d="M134 122 L164 122" fill="none" stroke="#1c2735" marker-end="url(#arrow)"/>
+<circle cx="175" cy="122" r="11" fill="white"/>
+<text x="175" y="122" font-size="14" font-style="normal">Σ</text>
+<path d="M186 122 L226 122" fill="none" stroke="#1c2735"/>
+<circle cx="228" cy="122" r="2.3" fill="white"/>
+<circle cx="252" cy="122" r="2.3" fill="white"/>
+<path d="M228 122 L248 109" fill="none" stroke="#1c2735"/>
+<text x="240" y="93" font-size="16" font-style="italic">T</text>
+<path d="M254 122 L281 122" fill="none" stroke="#1c2735" marker-end="url(#arrow)"/>
+<rect x="281" y="99.0" width="71" height="46"/>
+<text x="316.5" y="122" font-size="19" font-style="italic">Gₕ(s)</text>
+<path d="M352 122 L377 122" fill="none" stroke="#1c2735" marker-end="url(#arrow)"/>
+<rect x="377" y="99.0" width="65" height="46"/>
+<text x="409.5" y="122" font-size="19" font-style="italic">G₁(s)</text>
+<path d="M442 122 L474 122" fill="none" stroke="#1c2735" marker-end="url(#arrow)"/>
+<circle cx="485" cy="122" r="11" fill="white"/>
+<text x="485" y="122" font-size="14" font-style="normal">Σ</text>
+<path d="M496 122 L522 122" fill="none" stroke="#1c2735" marker-end="url(#arrow)"/>
+<rect x="522" y="99.0" width="66" height="46"/>
+<text x="555.0" y="122" font-size="19" font-style="italic">G₂(s)</text>
+<path d="M588 122 L703 122" fill="none" stroke="#1c2735" marker-end="url(#arrow)"/>
+<path d="M51 122 L51 45 L233 45" fill="none" stroke="#1c2735" marker-end="url(#arrow)"/>
+<rect x="233" y="27.0" width="75" height="36"/>
+<text x="270.5" y="45" font-size="19" font-style="italic">G₄(s)</text>
+<path d="M308 45 L485 45 L485 111" fill="none" stroke="#1c2735" marker-end="url(#arrow)"/>
+<path d="M610 122 L610 199 L175 199 L175 133" fill="none" stroke="#1c2735" marker-end="url(#arrow)"/>
+<path d="M657 122 L657 74 L675 74" fill="none" stroke="#1c2735"/>
+<circle cx="677" cy="74" r="2.3" fill="white"/>
+<circle cx="701" cy="74" r="2.3" fill="white"/>
+<path d="M677 74 L697 61" fill="none" stroke="#1c2735"/>
+<text x="689" y="45" font-size="16" font-style="italic">T</text>
+<path d="M703 74 L726 74" fill="none" stroke="#1c2735" marker-end="url(#arrow)"/>
+<circle cx="51" cy="122" r="2" fill="#1c2735"/>
+<circle cx="610" cy="122" r="2" fill="#1c2735"/>
+<circle cx="657" cy="122" r="2" fill="#1c2735"/>
+<text x="29" y="104" font-size="16" font-style="italic">R(s)</text>
+<text x="201" y="104" font-size="16" font-style="italic">E(s)</text>
+<text x="267" y="105" font-size="16" font-style="italic">E*(s)</text>
+<text x="708" y="104" font-size="16" font-style="italic">Y(s)</text>
+<text x="725" y="53" font-size="16" font-style="italic">Y*(s)</text>
+<text x="192" y="145" font-size="16" font-style="italic">−</text>
+<text x="497" y="100" font-size="16" font-style="italic">+</text>
+</g></svg>

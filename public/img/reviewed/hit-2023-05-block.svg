@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 405 173" role="img" aria-label="单位负反馈系统">
+<defs><marker id="arrow" viewBox="0 0 11 10" refX="10" refY="5" markerWidth="7" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#1c2735"/></marker></defs>
+<rect width="100%" height="100%" fill="white"/>
+<style>text {font-family:"Times New Roman", "Noto Serif SC", SimSun, serif; fill:#1c2735; stroke:none; text-anchor:middle; dominant-baseline:central;}</style>
+<g fill="white" stroke="#1c2735" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+<path d="M37 60 L80 60" fill="none" stroke="#1c2735" marker-end="url(#arrow)"/>
+<circle cx="91" cy="60" r="11" fill="white"/>
+<text x="91" y="60" font-size="14" font-style="normal">Σ</text>
+<path d="M102 60 L145 60" fill="none" stroke="#1c2735" marker-end="url(#arrow)"/>
+<rect x="145" y="32.0" width="111" height="56"/>
+<text x="200.5" y="53" font-size="17" font-style="italic">k</text>
+<path d="M155 60 L246 60" fill="none" stroke="#1c2735"/>
+<text x="200.5" y="73" font-size="16" font-style="italic">s(s+a)</text>
+<path d="M256 60 L366 60" fill="none" stroke="#1c2735" marker-end="url(#arrow)"/>
+<path d="M308 60 L308 130 L91 130 L91 71" fill="none" stroke="#1c2735" marker-end="url(#arrow)"/>
+<circle cx="308" cy="60" r="2" fill="#1c2735"/>
+<text x="41" y="40" font-size="19" font-style="italic">R(s)</text>
+<text x="366" y="40" font-size="19" font-style="italic">C(s)</text>
+<text x="106" y="82" font-size="16" font-style="italic">−</text>
+</g></svg>

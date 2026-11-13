@@ -1,0 +1,8 @@
+{
+  "answer": "系统的能观秩为 2。取 $z_1=x_1+x_2,\\ z_2=x_2+x_3$，则 $\\dot z_1=z_2$，$\\dot z_2=-2z_1-2z_2+u$，$y=z_1$。",
+  "explanation": "依次计算 $C=[1,1,0]$、$CA=[0,1,1]$ 和 $CA^2=[-2,-4,-2]=-2C-2CA$。前两行独立，第三行是前两行的线性组合，故三维系统不完全能观。\n\n取 $z_1=Cx,\\ z_2=CAx$。由 $CB=0$，有 $\\dot z_1=z_2$。由 $CAB=1$，有 $\\dot z_2=CA^2x+u=-2z_1-2z_2+u$。该二阶模型的能观矩阵为 $I_2$，因此完全能观。",
+  "originalImages": [],
+  "answerPdfPages": "162",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

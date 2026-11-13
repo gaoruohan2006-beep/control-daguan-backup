@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 735 276" role="img" aria-label="参考输入前馈与输出扰动">
+<defs><marker id="arrow" viewBox="0 0 11 10" refX="10" refY="5" markerWidth="7" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#1c2735"/></marker></defs>
+<rect width="100%" height="100%" fill="white"/>
+<style>text {font-family:"Times New Roman", "Noto Serif SC", SimSun, serif; fill:#1c2735; stroke:none; text-anchor:middle; dominant-baseline:central;}</style>
+<g fill="white" stroke="#1c2735" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+<path d="M31 145 L118 145" fill="none" stroke="#1c2735" marker-end="url(#arrow)"/>
+<circle cx="129" cy="145" r="11" fill="white"/>
+<text x="129" y="145" font-size="14" font-style="normal">Σ</text>
+<path d="M140 145 L184 145" fill="none" stroke="#1c2735" marker-end="url(#arrow)"/>
+<rect x="184" y="122.0" width="67" height="46"/>
+<text x="217.5" y="145" font-size="19" font-style="italic">Kₑ</text>
+<path d="M251 145 L308 145" fill="none" stroke="#1c2735" marker-end="url(#arrow)"/>
+<circle cx="319" cy="145" r="11" fill="white"/>
+<text x="319" y="145" font-size="14" font-style="normal">Σ</text>
+<path d="M330 145 L368 145" fill="none" stroke="#1c2735" marker-end="url(#arrow)"/>
+<rect x="368" y="117.0" width="100" height="56"/>
+<text x="418.0" y="138" font-size="17" font-style="italic">K₁</text>
+<path d="M378 145 L458 145" fill="none" stroke="#1c2735"/>
+<text x="418.0" y="158" font-size="16" font-style="italic">s(T₁s+1)</text>
+<path d="M468 145 L556 145" fill="none" stroke="#1c2735" marker-end="url(#arrow)"/>
+<circle cx="567" cy="145" r="11" fill="white"/>
+<text x="567" y="145" font-size="14" font-style="normal">Σ</text>
+<path d="M578 145 L693 145" fill="none" stroke="#1c2735" marker-end="url(#arrow)"/>
+<path d="M76 145 L76 66 L195 66" fill="none" stroke="#1c2735" marker-end="url(#arrow)"/>
+<circle cx="76" cy="145" r="2" fill="#1c2735"/>
+<rect x="195" y="42.0" width="104" height="48"/>
+<text x="247.0" y="59" font-size="17" font-style="italic">K_d s</text>
+<path d="M205 66 L289 66" fill="none" stroke="#1c2735"/>
+<text x="247.0" y="79" font-size="16" font-style="italic">τs+1</text>
+<path d="M299 66 L319 66 L319 134" fill="none" stroke="#1c2735" marker-end="url(#arrow)"/>
+<path d="M567 23 L567 42" fill="none" stroke="#1c2735" marker-end="url(#arrow)"/>
+<rect x="520" y="42.0" width="94" height="48"/>
+<text x="567.0" y="59" font-size="17" font-style="italic">K₂</text>
+<path d="M530 66 L604 66" fill="none" stroke="#1c2735"/>
+<text x="567.0" y="79" font-size="16" font-style="italic">T₂s+1</text>
+<path d="M567 90 L567 134" fill="none" stroke="#1c2735" marker-end="url(#arrow)"/>
+<path d="M653 145 L653 230 L129 230 L129 156" fill="none" stroke="#1c2735" marker-end="url(#arrow)"/>
+<circle cx="653" cy="145" r="2" fill="#1c2735"/>
+<text x="31" y="126" font-size="17" font-style="italic">R(s)</text>
+<text x="162" y="125" font-size="17" font-style="italic">E(s)</text>
+<text x="597" y="21" font-size="17" font-style="italic">N(s)</text>
+<text x="690" y="127" font-size="17" font-style="italic">Y(s)</text>
+<text x="144" y="171" font-size="17" font-style="italic">−</text>
+<text x="335" y="122" font-size="17" font-style="italic">+</text>
+<text x="582" y="122" font-size="17" font-style="italic">+</text>
+</g></svg>

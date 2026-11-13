@@ -1,0 +1,8 @@
+{
+  "answer": "若闭环稳定，取 $K_d=(1-K_2)/K_1$。",
+  "explanation": "记 $P=K_1/[s(T_1s+1)]$，$D=K_ds/(\\tau s+1)$，$Q=K_2/(T_2s+1)$。由图写出 $Y=P(K_eE+DR)+QN$，而 $E=R-Y$，所以\n$$E=\\frac{(1-PD)R-QN}{1+K_eP}.$$\n由于 $R=N=B/s^2$，有 $PD\\to K_1K_d$、$Q\\to K_2$，且 $s(1+K_eP)\\to K_eK_1$。在闭环稳定、$K_eK_1\\ne0$ 时，应用终值定理得 $e_{\\mathrm{ss}}=B(1-K_1K_d-K_2)/(K_eK_1)$。因此 $K_d=(1-K_2)/K_1$。",
+  "originalImages": [],
+  "answerPdfPages": "157",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

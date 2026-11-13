@@ -1,0 +1,8 @@
+{
+  "answer": "$G=(s^3+7s^2+4s+5)/(s^3+5s^2+3s+2)$。可取\n$$\nA=\\begin{bmatrix}0&1&0\\\\0&0&1\\\\-2&-3&-5\\end{bmatrix},\\ \nB=\\begin{bmatrix}0\\\\0\\\\1\\end{bmatrix},\\quad C=[3,1,2],\\quad D=1.\n$$\n对 $u=v-Kx$，取 $K=[23,22,4]$。",
+  "explanation": "零初态拉氏变换得 $G$。分子、分母同阶，先做除法，得到 $G=1+(2s^2+s+3)/(s^3+5s^2+3s+2)$，所以直通项为 1。对所用的伴随矩阵，$(sI-A)^{-1}B=[1,s,s^2]^{\\mathsf T}/(s^3+5s^2+3s+2)$，由此读出 $C$。\n\n反馈改变 $A$ 的最后一行，使特征式系数变为 $s^3+(5+k_3)s^2+(3+k_2)s+2+k_1$。目标式为 $(s+5)(s^2+4s+5)=s^3+9s^2+25s+25$。逐项对照得到 $K$。\n\n![能控标准型与状态反馈](img/reviewed/hust-2023-10-state.svg)\n\n图中三积分器依次输出 $x_3,x_2,x_1$。状态反馈在输入端形成 $u$。输出求和仍包含直通信号 $u$。",
+  "originalImages": [],
+  "answerPdfPages": "190–191",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

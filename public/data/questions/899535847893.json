@@ -1,0 +1,8 @@
+{
+  "answer": "错。",
+  "explanation": "以稳定的单位负反馈Ⅰ型系统为例，单位斜坡误差为 $1/K_v$，其中 $K_v=\\lim_{s\\to0}sG(s)$。若仅把环路增益减半，$K_v$ 也减半，误差增大一倍。相对稳定性如何变化取决于交越频率和系统相频曲线。",
+  "originalImages": [],
+  "answerPdfPages": "327",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

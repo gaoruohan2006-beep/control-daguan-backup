@@ -1,0 +1,8 @@
+{
+  "answer": "稳定范围 $0<K_r<1$。振荡且 $\\zeta\\ge0.707$ 时，$3-2\\sqrt2<K_r\\le(\\sqrt{1+0.707^2}-0.707)^2\\approx0.2680$。",
+  "explanation": "特征方程为 $s^2+(1-K_r)s+K_r=0$。实轴上 $K_r=s(s+1)/(s-1)\\ge0$，故实轴分支在 $[-1,0]$ 与 $(1,\\infty)$。对 $K_r(s)$ 求导得驻点 $s=1\\pm\\sqrt2$。两支从 $-1,0$ 相向，到 $1-\\sqrt2$ 后离开实轴。在非实区，令 $s=x+jy$，则 $2x=K_r-1$、$x^2+y^2=K_r$，于是 $(x-1)^2+y^2=2$。两支沿圆到 $1+\\sqrt2$ 汇合，然后分别趋向 $1$ 与 $+\\infty$。\n\n![非最小相位系统的根轨迹](img/reviewed/hust-2023-03-locus.svg)\n\n由二阶特征式系数得 $0<K_r<1$ 时稳定。判别式 $(1-K_r)^2-4K_r<0$ 给出 $3-2\\sqrt2<K_r<3+2\\sqrt2$。在稳定的复根区，$\\zeta=(1-K_r)/(2\\sqrt{K_r})$；令 $u=\\sqrt{K_r}$，不等式化为 $u^2+2(0.707)u-1\\le0$，给出上界。",
+  "originalImages": [],
+  "answerPdfPages": "186",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

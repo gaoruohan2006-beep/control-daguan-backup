@@ -1,0 +1,8 @@
+{
+  "answer": "错。",
+  "explanation": "描述函数只保留非线性输出的基波。在线性部分充分衰减高次谐波时，可用 $G(j\\omega)N(A)=-1$ 估计极限环的幅值和频率。被舍去的高次谐波仍会影响波形，因此该方法不能给出精确时间响应。",
+  "originalImages": [],
+  "answerPdfPages": "327",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

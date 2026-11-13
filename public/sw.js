@@ -131,7 +131,11 @@ self.addEventListener('fetch', event => {
   }
 
   const path = url.pathname;
-  if (path.includes('/data/questions/') || path.includes('/img/')) {
+  if (path.includes('/data/questions/') || path.includes('/img/reviewed/')) {
+    event.respondWith(networkFirstRuntime(req));
+    return;
+  }
+  if (path.includes('/img/')) {
     event.respondWith(staleWhileRevalidate(req));
     return;
   }
@@ -148,6 +152,18 @@ async function networkFirstNav(req) {
       await caches.match('./');
     return hit || new Response('离线不可用', { status: 503, headers: { 'Content-Type': 'text/plain; charset=utf-8' } });
   }
+}
+
+async function networkFirstRuntime(req) {
+  const cache = await caches.open(RUNTIME);
+  try {
+    const fresh = await fetch(req, { cache: 'no-cache' });
+    if (fresh.ok) {
+      await cache.put(req, fresh.clone());
+      return fresh;
+    }
+  } catch {}
+  return await cache.match(req) || new Response('', { status: 503, statusText: 'offline' });
 }
 
 async function staleWhileRevalidate(req) {

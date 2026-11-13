@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 830 426" role="img" aria-label="三阶能控标准型与状态反馈">
+<defs><marker id="arrow" viewBox="0 0 11 10" refX="10" refY="5" markerWidth="7" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#1c2735"/></marker></defs>
+<rect width="100%" height="100%" fill="white"/>
+<style>text {font-family:"Times New Roman", "Noto Serif SC", SimSun, serif; fill:#1c2735; stroke:none; text-anchor:middle; dominant-baseline:central;}</style>
+<g fill="white" stroke="#1c2735" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+<path d="M28 190 L64 190" fill="none" stroke="#1c2735" marker-end="url(#arrow)"/>
+<circle cx="75" cy="190" r="11" fill="white"/>
+<text x="75" y="190" font-size="14" font-style="normal">Σ</text>
+<path d="M86 190 L151 190" fill="none" stroke="#1c2735" marker-end="url(#arrow)"/>
+<circle cx="162" cy="190" r="11" fill="white"/>
+<text x="162" y="190" font-size="14" font-style="normal">Σ</text>
+<path d="M173 190 L202 190" fill="none" stroke="#1c2735" marker-end="url(#arrow)"/>
+<rect x="202" y="167.0" width="63" height="46"/>
+<text x="233.5" y="183" font-size="17" font-style="italic">1</text>
+<path d="M212 190 L255 190" fill="none" stroke="#1c2735"/>
+<text x="233.5" y="203" font-size="16" font-style="italic">s</text>
+<path d="M265 190 L332 190" fill="none" stroke="#1c2735" marker-end="url(#arrow)"/>
+<rect x="332" y="167.0" width="63" height="46"/>
+<text x="363.5" y="183" font-size="17" font-style="italic">1</text>
+<path d="M342 190 L385 190" fill="none" stroke="#1c2735"/>
+<text x="363.5" y="203" font-size="16" font-style="italic">s</text>
+<path d="M395 190 L462 190" fill="none" stroke="#1c2735" marker-end="url(#arrow)"/>
+<rect x="462" y="167.0" width="63" height="46"/>
+<text x="493.5" y="183" font-size="17" font-style="italic">1</text>
+<path d="M472 190 L515 190" fill="none" stroke="#1c2735"/>
+<text x="493.5" y="203" font-size="16" font-style="italic">s</text>
+<path d="M525 190 L578 190" fill="none" stroke="#1c2735"/>
+<path d="M728 84 L792 84" fill="none" stroke="#1c2735" marker-end="url(#arrow)"/>
+<circle cx="717" cy="84" r="11" fill="white"/>
+<text x="717" y="84" font-size="14" font-style="normal">Σ</text>
+<path d="M114 190 L114 25 L717 25 L717 73" fill="none" stroke="#1c2735" marker-end="url(#arrow)"/>
+<circle cx="114" cy="190" r="2" fill="#1c2735"/>
+<text x="29" y="170" font-size="19" font-style="italic">v</text>
+<text x="116" y="169" font-size="19" font-style="italic">u</text>
+<text x="791" y="62" font-size="19" font-style="italic">y</text>
+<circle cx="290" cy="190" r="2" fill="#1c2735"/>
+<text x="290" y="169" font-size="17" font-style="italic">x₃</text>
+<path d="M290 190 L290 81 L603 81" fill="none" stroke="#1c2735" marker-end="url(#arrow)"/>
+<rect x="603" y="69.0" width="48" height="24"/>
+<text x="627.0" y="81" font-size="19" font-style="italic">2</text>
+<path d="M651 81 L706 84" fill="none" stroke="#1c2735" marker-end="url(#arrow)"/>
+<path d="M290 190 L290 230 L230 230" fill="none" stroke="#1c2735" marker-end="url(#arrow)"/>
+<rect x="190" y="218.5" width="40" height="23"/>
+<text x="210.0" y="230" font-size="19" font-style="italic">5</text>
+<path d="M190 230 L129 230 L129 212 L162 212 L162 201" fill="none" stroke="#1c2735" marker-end="url(#arrow)"/>
+<path d="M305 190 L305 335 L220 335" fill="none" stroke="#1c2735" marker-end="url(#arrow)"/>
+<circle cx="305" cy="190" r="2" fill="#1c2735"/>
+<rect x="174" y="323.5" width="46" height="23"/>
+<text x="197.0" y="335" font-size="19" font-style="italic">4</text>
+<path d="M174 335 L46 335 L46 212 L75 212 L75 201" fill="none" stroke="#1c2735" marker-end="url(#arrow)"/>
+<circle cx="420" cy="190" r="2" fill="#1c2735"/>
+<text x="420" y="169" font-size="17" font-style="italic">x₂</text>
+<path d="M420 190 L420 115 L603 115" fill="none" stroke="#1c2735" marker-end="url(#arrow)"/>
+<rect x="603" y="103.0" width="48" height="24"/>
+<text x="627.0" y="115" font-size="19" font-style="italic">1</text>
+<path d="M651 115 L693 115 L693 84" fill="none" stroke="#1c2735" marker-end="url(#arrow)"/>
+<circle cx="693" cy="84" r="2" fill="#1c2735"/>
+<path d="M420 190 L420 264 L230 264" fill="none" stroke="#1c2735" marker-end="url(#arrow)"/>
+<rect x="190" y="252.5" width="40" height="23"/>
+<text x="210.0" y="264" font-size="19" font-style="italic">3</text>
+<path d="M190 264 L140 264 L140 212 L162 212 L162 201" fill="none" stroke="#1c2735" marker-end="url(#arrow)"/>
+<path d="M435 190 L435 367 L220 367" fill="none" stroke="#1c2735" marker-end="url(#arrow)"/>
+<circle cx="435" cy="190" r="2" fill="#1c2735"/>
+<rect x="174" y="355.5" width="46" height="23"/>
+<text x="197.0" y="367" font-size="19" font-style="italic">22</text>
+<path d="M174 367 L56 367 L56 212 L75 212 L75 201" fill="none" stroke="#1c2735" marker-end="url(#arrow)"/>
+<circle cx="558" cy="190" r="2" fill="#1c2735"/>
+<text x="558" y="169" font-size="17" font-style="italic">x₁</text>
+<path d="M558 190 L558 149 L603 149" fill="none" stroke="#1c2735" marker-end="url(#arrow)"/>
+<rect x="603" y="137.0" width="48" height="24"/>
+<text x="627.0" y="149" font-size="19" font-style="italic">3</text>
+<path d="M651 149 L703 149 L703 84" fill="none" stroke="#1c2735" marker-end="url(#arrow)"/>
+<circle cx="703" cy="84" r="2" fill="#1c2735"/>
+<path d="M558 190 L558 298 L230 298" fill="none" stroke="#1c2735" marker-end="url(#arrow)"/>
+<rect x="190" y="286.5" width="40" height="23"/>
+<text x="210.0" y="298" font-size="19" font-style="italic">2</text>
+<path d="M190 298 L151 298 L151 212 L162 212 L162 201" fill="none" stroke="#1c2735" marker-end="url(#arrow)"/>
+<path d="M573 190 L573 399 L220 399" fill="none" stroke="#1c2735" marker-end="url(#arrow)"/>
+<circle cx="573" cy="190" r="2" fill="#1c2735"/>
+<rect x="174" y="387.5" width="46" height="23"/>
+<text x="197.0" y="399" font-size="19" font-style="italic">23</text>
+<path d="M174 399 L66 399 L66 212 L75 212 L75 201" fill="none" stroke="#1c2735" marker-end="url(#arrow)"/>
+<text x="91" y="210" font-size="16" font-style="italic">−</text>
+<text x="178" y="209" font-size="16" font-style="italic">−</text>
+</g></svg>

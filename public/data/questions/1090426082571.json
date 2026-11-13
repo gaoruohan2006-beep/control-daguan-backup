@@ -1,0 +1,8 @@
+{
+  "answer": "对。",
+  "explanation": "若这对极点的实部绝对值比其他闭环极点小得多，且相应模态没有被邻近零点明显削弱，其暂态分量衰减最慢。保留这对极点形成二阶近似，可用阻尼比和自然频率估算超调量、峰值时间等。",
+  "originalImages": [],
+  "answerPdfPages": "327",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

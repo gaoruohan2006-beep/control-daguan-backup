@@ -1,0 +1,8 @@
+{
+  "answer": "闭环不稳定，有 2 个严格右半平面极点。",
+  "explanation": "取顺时针右半平面奈奎斯特围线，在 $s=0,\\pm j\\sqrt7$ 用向右的小半圆避开开环极点，因此围线内部开环极点数为零。\n\n正频率轴上，$\\operatorname{Re}G=-8/[(1+\\omega^2)(7-\\omega^2)]$，$\\operatorname{Im}G=\\operatorname{Re}G/\\omega$。$0<\\omega<\\sqrt7$ 的轨迹在第三象限，$\\omega>\\sqrt7$ 的轨迹在第一象限。频率反号得到共轭轨迹。沿各小半圆接续时，原点极点的留数为 $8/7>0$，其映射经过正实无穷远。$j\\sqrt7$ 处的留数为 $-4/[7(1+j\\sqrt7)]$，辐角在第二象限；$-j\\sqrt7$ 处取共轭。这两处映射各从留数辐角加 $90^\\circ$ 转到减 $90^\\circ$，各向上跨过从 $-1$ 向左的射线一次。正、负频率段没有穿过该射线，合计顺时针绕 $-1$ 两圈。\n\n劳斯复核可用 $s^4+s^3+7s^2+7s+8$。第三行首项为零，取 $\\varepsilon>0$ 后首列为 $1,1,\\varepsilon,7-8/\\varepsilon,8$，有两次符号变化。",
+  "originalImages": [],
+  "answerPdfPages": "158–159",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

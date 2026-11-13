@@ -1,0 +1,8 @@
+{
+  "answer": "对。",
+  "explanation": "定值系统的参考输入通常保持恒定，输出偏离设定值往往由扰动造成。随动系统的参考输入随时间变化，评价重点包括跟踪误差和跟踪速度。",
+  "originalImages": [],
+  "answerPdfPages": "327",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

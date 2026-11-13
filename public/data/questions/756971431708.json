@@ -1,0 +1,8 @@
+{
+  "answer": "零阻尼为等幅振荡，欠阻尼为衰减振荡，临界阻尼及过阻尼均单调趋近稳态值。欠阻尼时增大阻尼比会降低超调量。",
+  "explanation": "从 $s^2+2\\zeta\\omega_ns+\\omega_n^2=0$ 得 $s_{1,2}=-\\zeta\\omega_n\\pm\\omega_n\\sqrt{\\zeta^2-1}$。\n\n- $\\zeta=0$ 时极点为 $\\pm j\\omega_n$，阶跃响应为 $1-\\cos\\omega_nt$。\n- $0<\\zeta<1$ 时极点为左半平面共轭复根，振荡包络按 $e^{-\\zeta\\omega_nt}$ 衰减。\n- $\\zeta=1$ 时极点为二重根 $-\\omega_n$，阶跃响应为 $1-(1+\\omega_nt)e^{-\\omega_nt}$。\n- $\\zeta>1$ 时为两个不同的负实根，标准无零点模型的阶跃响应单调收敛。\n\n欠阻尼时相对超调量为 $\\exp[-\\pi\\zeta/\\sqrt{1-\\zeta^2}]$。由于 $\\zeta/\\sqrt{1-\\zeta^2}$ 在 $(0,1)$ 上递增，超调量随之减小。",
+  "originalImages": [],
+  "answerPdfPages": "327",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

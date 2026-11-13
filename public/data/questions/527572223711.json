@@ -1,0 +1,8 @@
+{
+  "answer": "不稳定，严格右半平面内有两个闭环极点。",
+  "explanation": "采用顺时针右半平面围线，向右绕开 $0,\\pm j$，使开环右半平面极点数为零。沿正频率轴有 $\\operatorname{Re}G=1/(1-\\omega^2)$、$\\operatorname{Im}G=-2/[\\omega(1-\\omega^2)]$。$0<\\omega<1$ 时轨迹位于第四象限，$\\omega>1$ 时在第二象限；负频率段取共轭。\n\n三个极点的留数分别为 $2,\\ -(2+j)/2,\\ -(2-j)/2$。小半圆经过极点右侧时，映射的大圆弧按顺时针转过约 $180^\\circ$。原点对应的圆弧经正实无穷远，另两条各向上穿过从 $-1$ 向左的实轴射线一次。虚轴上的有限频率段没有穿过该射线，故合计顺时针绕 $-1$ 两圈。\n\n也可列特征式 $s^3+2s+2$ 的劳斯表复核。令 $s^2$ 行首项为 $\\varepsilon>0$，首列为 $1,\\varepsilon,2-2/\\varepsilon,2$，有两次符号变化。",
+  "originalImages": [],
+  "answerPdfPages": "186–187",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

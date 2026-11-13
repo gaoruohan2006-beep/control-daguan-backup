@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 173" role="img" aria-label="单位负反馈数字控制系统">
+<defs><marker id="arrow" viewBox="0 0 11 10" refX="10" refY="5" markerWidth="7" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#1c2735"/></marker></defs>
+<rect width="100%" height="100%" fill="white"/>
+<style>text {font-family:"Times New Roman", "Noto Serif SC", SimSun, serif; fill:#1c2735; stroke:none; text-anchor:middle; dominant-baseline:central;}</style>
+<g fill="white" stroke="#1c2735" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+<path d="M37 60 L80 60" fill="none" stroke="#1c2735" marker-end="url(#arrow)"/>
+<circle cx="91" cy="60" r="11" fill="white"/>
+<text x="91" y="60" font-size="14" font-style="normal">Σ</text>
+<path d="M102 60 L126 60" fill="none" stroke="#1c2735"/>
+<circle cx="128" cy="60" r="2.3" fill="white"/>
+<circle cx="152" cy="60" r="2.3" fill="white"/>
+<path d="M128 60 L148 47" fill="none" stroke="#1c2735"/>
+<text x="140" y="31" font-size="16" font-style="italic">T</text>
+<path d="M154 60 L182 60" fill="none" stroke="#1c2735" marker-end="url(#arrow)"/>
+<rect x="182" y="37.0" width="75" height="46"/>
+<text x="219.5" y="60" font-size="19" font-style="italic">D(z)</text>
+<path d="M257 60 L280 60" fill="none" stroke="#1c2735"/>
+<circle cx="282" cy="60" r="2.3" fill="white"/>
+<circle cx="306" cy="60" r="2.3" fill="white"/>
+<path d="M282 60 L302 47" fill="none" stroke="#1c2735"/>
+<text x="294" y="31" font-size="16" font-style="italic">T</text>
+<path d="M308 60 L338 60" fill="none" stroke="#1c2735" marker-end="url(#arrow)"/>
+<rect x="338" y="37.0" width="86" height="46"/>
+<text x="381.0" y="60" font-size="19" font-style="italic">Gd(z)</text>
+<path d="M424 60 L509 60" fill="none" stroke="#1c2735" marker-end="url(#arrow)"/>
+<text x="169" y="99" font-size="16" font-style="italic">E(z)</text>
+<text x="273" y="42" font-size="16" font-style="italic">U(z)</text>
+<path d="M465 60 L465 130 L91 130 L91 71" fill="none" stroke="#1c2735" marker-end="url(#arrow)"/>
+<circle cx="465" cy="60" r="2" fill="#1c2735"/>
+<text x="41" y="40" font-size="19" font-style="italic">R(z)</text>
+<text x="509" y="40" font-size="19" font-style="italic">C(z)</text>
+<text x="106" y="82" font-size="16" font-style="italic">−</text>
+</g></svg>

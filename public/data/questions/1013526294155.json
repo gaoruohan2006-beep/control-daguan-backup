@@ -1,0 +1,8 @@
+{
+  "answer": "圆半径为 $\\sqrt{(z-p_1)(z-p_2)}$。第（2）问的范围为 $3-2\\sqrt2<K<3+2\\sqrt2$。",
+  "explanation": "闭环方程为 $s^2+(p_1+p_2+K)s+p_1p_2+Kz=0$。若 $s=x+jy$ 且 $y\\ne0$，虚部给出 $2x=-(p_1+p_2+K)$。代入实部得到 $x^2+y^2=p_1p_2+Kz$，消去 $K$ 可得 $(x+z)^2+y^2=(z-p_1)(z-p_2)$。\n\n第（2）问的判别式为 $(K+3)^2-4(2+3K)=K^2-6K+1$，小于零即得上述区间。两条实轴分支从 $-1,-2$ 出发，在 $-3+\\sqrt2$ 相遇，沿圆的上下半部到达 $-3-\\sqrt2$，然后分别趋向 $-3$ 与 $-\\infty$。\n\n![圆形根轨迹](img/reviewed/bit-2023-03-locus.svg)",
+  "originalImages": [],
+  "answerPdfPages": "121",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

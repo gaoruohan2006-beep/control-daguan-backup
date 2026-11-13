@@ -1,0 +1,8 @@
+{
+  "answer": "临界稳定增益为 $k=52$，对应虚轴交点 $\\pm j\\sqrt{10}$，第三个极点为 $-6$。",
+  "explanation": "开环极点为 $-4,-1\\pm j$，无有限零点。实轴分支为 $(-\\infty,-4)$，渐近线交点为 $(-4-1-1)/3=-2$，倾角为 $60^\\circ,180^\\circ,300^\\circ$。由相角条件，上方复极点的出射角为 $90^\\circ-\\arctan(1/3)\\approx71.565^\\circ$，下支共轭对称。\n\n![三阶系统的根轨迹](img/reviewed/hit-2023-03-locus.svg)\n\n闭环特征式为 $s^3+6s^2+10s+8+k$。代 $s=j\\omega$ 后，虚部给出 $\\omega^2=10$，实部给出 $8+k=6\\omega^2=60$。此时特征式为 $(s+6)(s^2+10)$。劳斯表首列为 $1,6,(52-k)/6,8+k$，所以 $0<k<52$ 时稳定。",
+  "originalImages": [],
+  "answerPdfPages": "158",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

@@ -1,0 +1,8 @@
+{
+  "answer": "错。",
+  "explanation": "理想微分环节 $K_ds$ 的直流增益为零，恒定误差下微分作用为零。在 PID 中加入微分项不提高系统型别。其增益随频率升高而增大，会放大高频噪声，因此常与比例或积分配合，并给微分通道加滤波。",
+  "originalImages": [],
+  "answerPdfPages": "327",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

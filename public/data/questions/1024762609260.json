@@ -1,0 +1,8 @@
+{
+  "answer": "预测存在稳定自振。$\\omega=1\\,\\mathrm{rad/s}$，$k=\\pi/2$，继电器输入幅值为 $\\sqrt2h$。",
+  "explanation": "令 $c=\\pi/(4M)$，对描述函数取负倒数可得 $-1/N(A)=-c\\sqrt{A^2-h^2}-jch$。由题图 $ch=\\pi/4$，所以 $h=M$。线性部分相角为 $-90^\\circ-\\arctan\\omega$，等于 $-135^\\circ$ 时 $\\omega=1$。此时 $G(j)=-k(1+j)/2$，与水平线虚部相等给出 $k/2=\\pi/4$。实部相等则给出 $\\sqrt{A^2-h^2}=h$。\n\n为判断交点两侧的变化，将描述函数暂视为复常数。特征式 $s^2+s+kN(A)=0$ 在交点处有根 $s=j$，对 $A$ 求导得 $ds/dA=-kN'(A)/(1+2j)$。在 $A=\\sqrt2h$，$N'(A)=j\\,4M/(\\pi\\sqrt2h^2)$，故 $ds/dA$ 的实部为负。小于该幅值时等效模态增长，大于该幅值时衰减，因此描述函数近似下交点对应稳定自振。",
+  "originalImages": [],
+  "answerPdfPages": "161–162",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}
