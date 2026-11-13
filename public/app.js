@@ -233,7 +233,7 @@ function errataHTML(d) {
 function origHTML(d) {
   if (!d?.originalImages.length) return '';
   const title = '原图解析';
-  return `<div class="orig"><div class="lab">${title}（答案本 PDF 第 ${esc(d.answerPdfPages)} 页）</div>${d.originalImages.map(o => `<img src="${esc(o.src)}" style="width:${+o.w}px" alt="${title}" loading="lazy" data-zoom title="单击放大图片">`).join('')}</div>`;
+  return `<div class="orig">${d.originalImages.map(o => `<img src="${esc(o.src)}" style="width:${+o.w}px" alt="${title}" loading="lazy" data-zoom title="单击放大图片">`).join('')}</div>`;
 }
 function srcTabsHTML(kind, view) {
   const textLab = kind === 'exp' ? '文字解析' : '文字答案';

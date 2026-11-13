@@ -53,7 +53,7 @@ async def verify():
             }""")
             assert not bad, (q["source"], bad)
             body = await card.inner_text()
-            assert not any(ad in body for ad in ("公众号", "二维码", "真橙", "考研群", "讲义", "题本 PDF", "参考答案 PDF")), q["source"]
+            assert not any(ad in body for ad in ("公众号", "二维码", "真橙", "考研群", "讲义", "题本 PDF", "参考答案 PDF", "答案本 PDF")), q["source"]
 
         q = next(q for q in questions if q["hasFigure"])
         await page.goto(f"{BASE}?question={q['id']}")
