@@ -1,0 +1,8 @@
+{
+  "answer": "令 $\\lambda_\\pm=(1\\pm\\sqrt5)/2$，则 $y[n]=(\\lambda_+^{n+1}-\\lambda_-^{n+1})/\\sqrt5$。",
+  "explanation": "**单边 $z$ 变换。** 令 $Y(z)=\\sum_{n\\ge0} y[n]z^{-n}$。先把递推式写成 $y[n+2]=y[n+1]+y[n]$，逐项变换得到\n$$z^2Y-z^2y[0]-zy[1]=zY-zy[0]+Y.$$\n代入两个初值，得 $Y=z^2/(z^2-z-1)$。\n\n**分解与反变换。** 分母的两个根为 $\\lambda_+,\\lambda_-$。利用 $\\lambda_+-\\lambda_-=\\sqrt5$，\n$$Y(z)=\\frac{1}{\\sqrt5}\\left(\\frac{\\lambda_+z}{z-\\lambda_+}-\\frac{\\lambda_-z}{z-\\lambda_-}\\right).$$\n按 $z/(z-\\lambda)\\leftrightarrow\\lambda^n$ 逐项反变换。代入 $n=0,1$ 分别得到 1 和 1，核对了初值。",
+  "originalImages": [],
+  "answerPdfPages": "491",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

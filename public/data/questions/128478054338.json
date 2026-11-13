@@ -1,0 +1,8 @@
+{
+  "answer": "令 $a=\\zeta-\\sqrt{\\zeta^2-1}$、$b=\\zeta+\\sqrt{\\zeta^2-1}$。响应为\n$$y_A=1-(1+t)e^{-t},\\qquad y_B=1-\\frac{be^{-at}-ae^{-bt}}{b-a}.$$\n对任意 $t>0$ 都有 $y_A(t)>y_B(t)$，二者均单调趋于 1，因此 $t_{s,A}<t_{s,B}$。",
+  "explanation": "**求响应。** A 的阶跃输出为 $1/[s(s+1)^2]=1/s-1/(s+1)-1/(s+1)^2$，反变换得 $y_A$。B 的分母为 $(s+a)(s+b)$，$ab=1$，分解\n$$\\frac1{s(s+a)(s+b)}=\\frac1s-\\frac{b}{(b-a)(s+a)}+\\frac{a}{(b-a)(s+b)}$$\n即得 $y_B$。A 的导数为 $te^{-t}>0$，B 的导数为 $(e^{-at}-e^{-bt})/(b-a)>0$，所以两者只需比较第一次达到 $0.98$ 的时刻。\n\n**作严格比较。** 令 $v=y_A-y_B$。根据两个阶跃响应满足的微分方程，相减后得到\n$$\\ddot v+2\\dot v+v=2(\\zeta-1)\\dot y_B,\\qquad v(0)=\\dot v(0)=0.$$\n左侧对应的零初值冲激响应为 $te^{-t}$。因此\n$$v(t)=2(\\zeta-1)\\int_0^t(t-\\tau)e^{-(t-\\tau)}\\dot y_B(\\tau)\\,\\mathrm d\\tau>0\\qquad(t>0).$$\n当 A 首次达到 $0.98$ 时，B 仍小于 $0.98$。由单调性，B 的调节时间严格更长。",
+  "originalImages": [],
+  "answerPdfPages": "493",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

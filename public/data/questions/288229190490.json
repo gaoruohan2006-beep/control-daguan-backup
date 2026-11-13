@@ -1,0 +1,8 @@
+{
+  "answer": "$W(s)=\\begin{bmatrix}2/(s+2)&2/(s+2)\\end{bmatrix}$。",
+  "explanation": "**从状态转移矩阵恢复系统矩阵。** $\\dot\\Phi(t)=A\\Phi(t)$ 且 $\\Phi(0)=I$，所以 $A=\\dot\\Phi(0)$。对四个元素求导并代入 $t=0$，得到\n$$A=\\begin{bmatrix}0&1\\\\-2&-3\\end{bmatrix}.$$\n于是\n$$(sI-A)^{-1}=\\frac{1}{(s+1)(s+2)}\\begin{bmatrix}s+3&1\\\\-2&s\\end{bmatrix}.$$\n左乘 $C$ 得到行向量 $(s+1,s+1)/[(s+1)(s+2)]$，右乘 $B$ 得到上述两个相同的分量。也可以直接利用 $W(s)=\\mathcal L\\{C\\Phi(t)B\\}$，此时 $C\\Phi(t)B=(2e^{-2t},2e^{-2t})$。",
+  "originalImages": [],
+  "answerPdfPages": "491",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

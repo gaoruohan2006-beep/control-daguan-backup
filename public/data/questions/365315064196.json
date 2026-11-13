@@ -1,0 +1,8 @@
+{
+  "answer": "不存在。闭环稳定要求 $\\alpha>(\\sqrt5-1)/2$，而在这个范围内 $|e_{\\rm ss}|>\\sqrt5-2>0.05$。",
+  "explanation": "闭环特征多项式是开环分母与分子之和，即 $p(s)=s^3+(1+\\alpha)s^2+\\alpha s+1$。劳斯表首列为\n$$1,\\quad1+\\alpha,\\quad\\frac{\\alpha(1+\\alpha)-1}{1+\\alpha},\\quad1.$$\n因此需要 $\\alpha>-1$ 且 $\\alpha^2+\\alpha-1>0$，交集为 $\\alpha>(\\sqrt5-1)/2$。\n\n稳定时可用终值定理。单位阶跃误差满足 $e_{\\rm ss}=\\lim_{s\\to0}1/(1+G(s))=1-2\\alpha$。如果要求 $|e_{\\rm ss}|<0.05$，必须有 $0.475<\\alpha<0.525$。这个区间与稳定区间无交集。",
+  "originalImages": [],
+  "answerPdfPages": "491–492",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

@@ -1,0 +1,105 @@
+[
+  {
+    "school": "浙江大学",
+    "year": 2023,
+    "variant": "845",
+    "number": 1,
+    "topics": [
+      "状态空间 / 状态转移矩阵",
+      "状态空间 / 传递函数矩阵"
+    ],
+    "stem": "线性定常系统满足 $\\dot x=Ax+Bu$、$y=Cx$。已知\n$$B=\\begin{bmatrix}1&1\\\\1&1\\end{bmatrix},\\qquad C=\\begin{bmatrix}1&1\\end{bmatrix},$$\n状态转移矩阵为\n$$\\Phi(t)=\\begin{bmatrix}\n2e^{-t}-e^{-2t}&e^{-t}-e^{-2t}\\\\\n-2e^{-t}+2e^{-2t}&-e^{-t}+2e^{-2t}\n\\end{bmatrix}.$$\n求系统的传递函数矩阵。",
+    "answer": "$W(s)=\\begin{bmatrix}2/(s+2)&2/(s+2)\\end{bmatrix}$。",
+    "explanation": "**从状态转移矩阵恢复系统矩阵。** $\\dot\\Phi(t)=A\\Phi(t)$ 且 $\\Phi(0)=I$，所以 $A=\\dot\\Phi(0)$。对四个元素求导并代入 $t=0$，得到\n$$A=\\begin{bmatrix}0&1\\\\-2&-3\\end{bmatrix}.$$\n于是\n$$(sI-A)^{-1}=\\frac{1}{(s+1)(s+2)}\\begin{bmatrix}s+3&1\\\\-2&s\\end{bmatrix}.$$\n左乘 $C$ 得到行向量 $(s+1,s+1)/[(s+1)(s+2)]$，右乘 $B$ 得到上述两个相同的分量。也可以直接利用 $W(s)=\\mathcal L\\{C\\Phi(t)B\\}$，此时 $C\\Phi(t)B=(2e^{-2t},2e^{-2t})$。",
+    "questionPages": "206",
+    "answerPages": "491"
+  },
+  {
+    "school": "浙江大学",
+    "year": 2023,
+    "variant": "845",
+    "number": 2,
+    "topics": [
+      "离散系统 / 差分方程",
+      "数学基础 / 拉普拉斯变换与求响应"
+    ],
+    "stem": "已知 $y[n]=y[n-1]+y[n-2]$，$n\\ge2$，且 $y[0]=y[1]=1$。求 $y[n]$ 的解析式。",
+    "answer": "令 $\\lambda_\\pm=(1\\pm\\sqrt5)/2$，则 $y[n]=(\\lambda_+^{n+1}-\\lambda_-^{n+1})/\\sqrt5$。",
+    "explanation": "**单边 $z$ 变换。** 令 $Y(z)=\\sum_{n\\ge0} y[n]z^{-n}$。先把递推式写成 $y[n+2]=y[n+1]+y[n]$，逐项变换得到\n$$z^2Y-z^2y[0]-zy[1]=zY-zy[0]+Y.$$\n代入两个初值，得 $Y=z^2/(z^2-z-1)$。\n\n**分解与反变换。** 分母的两个根为 $\\lambda_+,\\lambda_-$。利用 $\\lambda_+-\\lambda_-=\\sqrt5$，\n$$Y(z)=\\frac{1}{\\sqrt5}\\left(\\frac{\\lambda_+z}{z-\\lambda_+}-\\frac{\\lambda_-z}{z-\\lambda_-}\\right).$$\n按 $z/(z-\\lambda)\\leftrightarrow\\lambda^n$ 逐项反变换。代入 $n=0,1$ 分别得到 1 和 1，核对了初值。",
+    "questionPages": "206",
+    "answerPages": "491"
+  },
+  {
+    "school": "浙江大学",
+    "year": 2023,
+    "variant": "845",
+    "number": 3,
+    "topics": [
+      "时域分析 / 稳定性与劳斯判据",
+      "时域分析 / 稳态误差"
+    ],
+    "stem": "单位负反馈开环传递函数为\n$$G(s)=\\frac{2(s+\\alpha)}{s^3+(1+\\alpha)s^2+(\\alpha-2)s+1-2\\alpha}.$$\n是否存在实参数 $\\alpha$，使闭环渐近稳定且单位阶跃输入的稳态误差绝对值小于 $0.05$？若存在，给出范围。",
+    "answer": "不存在。闭环稳定要求 $\\alpha>(\\sqrt5-1)/2$，而在这个范围内 $|e_{\\rm ss}|>\\sqrt5-2>0.05$。",
+    "explanation": "闭环特征多项式是开环分母与分子之和，即 $p(s)=s^3+(1+\\alpha)s^2+\\alpha s+1$。劳斯表首列为\n$$1,\\quad1+\\alpha,\\quad\\frac{\\alpha(1+\\alpha)-1}{1+\\alpha},\\quad1.$$\n因此需要 $\\alpha>-1$ 且 $\\alpha^2+\\alpha-1>0$，交集为 $\\alpha>(\\sqrt5-1)/2$。\n\n稳定时可用终值定理。单位阶跃误差满足 $e_{\\rm ss}=\\lim_{s\\to0}1/(1+G(s))=1-2\\alpha$。如果要求 $|e_{\\rm ss}|<0.05$，必须有 $0.475<\\alpha<0.525$。这个区间与稳定区间无交集。",
+    "questionPages": "206",
+    "answerPages": "491–492"
+  },
+  {
+    "school": "浙江大学",
+    "year": 2023,
+    "variant": "845",
+    "number": 5,
+    "topics": [
+      "时域分析 / 稳定性与劳斯判据",
+      "根轨迹 / 稳定性与参数"
+    ],
+    "stem": "单位负反馈开环传递函数为 $G(s)=K/[(s+1)(s+1.5)(s+2)]$。求使所有闭环极点实部严格小于 $-1$ 的 $K$ 范围及其上确界。",
+    "answer": "$0<K<0.75$。上确界为 $0.75$，由于要求严格小于 $-1$，这个上界不能取到。",
+    "explanation": "**移轴。** 闭环特征方程为 $(s+1)(s+1.5)(s+2)+K=0$。令 $s=w-1$，则 $\\operatorname{Re}s<-1$ 等价于 $\\operatorname{Re}w<0$。变换后的多项式是\n$$w(w+0.5)(w+1)+K=w^3+1.5w^2+0.5w+K.$$\n**判稳。** 劳斯首列为 $1,1.5,(0.75-K)/1.5,K$，全正当且仅当 $0<K<0.75$。令 $K=0.75$，多项式恰为 $(w+1.5)(w^2+0.5)$，有两个根落在 $w$ 的虚轴上，也就是原平面的 $\\operatorname{Re}s=-1$。",
+    "questionPages": "207",
+    "answerPages": "493"
+  },
+  {
+    "school": "浙江大学",
+    "year": 2023,
+    "variant": "845",
+    "number": 6,
+    "topics": [
+      "时域分析 / 动态性能 / 二阶系统性能指标"
+    ],
+    "stem": "系统 A、B 的传递函数分别为 $1/(s+1)^2$ 和 $1/(s^2+2\\zeta s+1)$，其中 $\\zeta>1$。求零初值单位阶跃响应，并证明按最终进入稳态值 $\\pm2\\%$ 误差带定义的调节时间满足 $t_{s,A}<t_{s,B}$。",
+    "answer": "令 $a=\\zeta-\\sqrt{\\zeta^2-1}$、$b=\\zeta+\\sqrt{\\zeta^2-1}$。响应为\n$$y_A=1-(1+t)e^{-t},\\qquad y_B=1-\\frac{be^{-at}-ae^{-bt}}{b-a}.$$\n对任意 $t>0$ 都有 $y_A(t)>y_B(t)$，二者均单调趋于 1，因此 $t_{s,A}<t_{s,B}$。",
+    "explanation": "**求响应。** A 的阶跃输出为 $1/[s(s+1)^2]=1/s-1/(s+1)-1/(s+1)^2$，反变换得 $y_A$。B 的分母为 $(s+a)(s+b)$，$ab=1$，分解\n$$\\frac1{s(s+a)(s+b)}=\\frac1s-\\frac{b}{(b-a)(s+a)}+\\frac{a}{(b-a)(s+b)}$$\n即得 $y_B$。A 的导数为 $te^{-t}>0$，B 的导数为 $(e^{-at}-e^{-bt})/(b-a)>0$，所以两者只需比较第一次达到 $0.98$ 的时刻。\n\n**作严格比较。** 令 $v=y_A-y_B$。根据两个阶跃响应满足的微分方程，相减后得到\n$$\\ddot v+2\\dot v+v=2(\\zeta-1)\\dot y_B,\\qquad v(0)=\\dot v(0)=0.$$\n左侧对应的零初值冲激响应为 $te^{-t}$。因此\n$$v(t)=2(\\zeta-1)\\int_0^t(t-\\tau)e^{-(t-\\tau)}\\dot y_B(\\tau)\\,\\mathrm d\\tau>0\\qquad(t>0).$$\n当 A 首次达到 $0.98$ 时，B 仍小于 $0.98$。由单调性，B 的调节时间严格更长。",
+    "questionPages": "207",
+    "answerPages": "493"
+  },
+  {
+    "school": "浙江大学",
+    "year": 2023,
+    "variant": "845",
+    "number": 9,
+    "topics": [
+      "离散系统 / 状态方程",
+      "状态空间 / 传递函数矩阵"
+    ],
+    "stem": "图中 $x_1[k]$、$x_2[k]$ 为两个单位延迟的输出。写出状态方程和输出方程，并在零初始条件下求 $Y(z)/U(z)$。\n\n![含两条延迟支路和外反馈的离散系统|780](img/reviewed/zju-2023-discrete.svg)",
+    "answer": "$$x[k+1]=\\begin{bmatrix}0&-1\\\\0.632&1\\end{bmatrix}x[k]+\\begin{bmatrix}1\\\\-0.632\\end{bmatrix}u[k],\\qquad y[k]=x_1[k]+x_2[k].$$\n$$\\frac{Y(z)}{U(z)}=\\frac{0.368z+0.264}{z^2-z+0.632}.$$",
+    "explanation": "外环误差为 $e[k]=u[k]-y[k]$。从两条支路分别读出\n$$x_1[k+1]=x_1[k]+e[k],\\qquad x_2[k+1]=0.368x_2[k]-0.632e[k].$$\n代入 $y=x_1+x_2$，便得到状态方程。再按零初值取 $z$ 变换，\n$$\\begin{bmatrix}z&1\\\\-0.632&z-1\\end{bmatrix}X=\\begin{bmatrix}1\\\\-0.632\\end{bmatrix}U.$$\n系数矩阵的行列式为 $z^2-z+0.632$。用二阶逆矩阵求 $X_1+X_2$，其分子为 $(z-1)+0.632+0.632-0.632z=0.368z+0.264$。",
+    "questionPages": "208",
+    "answerPages": "496"
+  },
+  {
+    "school": "浙江大学",
+    "year": 2023,
+    "variant": "845",
+    "number": 11,
+    "topics": [
+      "非线性系统 / 描述函数法"
+    ],
+    "stem": "如下图，非线性支路为理想对称继电器，输出电平为 $\\pm A$，$A>0$。另一支路为比例环节 $K$，两路输出相加。求整个环节对输入 $u=M\\sin\\omega t$（$M>0$）的描述函数。\n\n![理想继电器与比例支路并联|680](img/reviewed/zju-2023-relay-parallel.svg)",
+    "answer": "$N(M)=K+4A/(\\pi M)$。",
+    "explanation": "设 $\\theta=\\omega t$。继电器输出在 $0<\\theta<\\pi$ 为 $A$，在 $\\pi<\\theta<2\\pi$ 为 $-A$。因为输出是奇对称方波，基波余弦系数为零；正弦系数是\n$$b_1=\\frac1\\pi\\int_0^{2\\pi}A\\operatorname{sgn}(\\sin\\theta)\\sin\\theta\\,\\mathrm d\\theta=\\frac{2A}{\\pi}\\int_0^\\pi\\sin\\theta\\,\\mathrm d\\theta=\\frac{4A}{\\pi}.$$\n比例支路的基波为 $KM\\sin\\theta$。两路同相相加，总基波幅值系数为 $KM+4A/\\pi$。除以输入幅值 $M$ 就得到实数描述函数。",
+    "questionPages": "209",
+    "answerPages": "498–499"
+  }
+]

@@ -1,0 +1,8 @@
+{
+  "answer": "$N(M)=K+4A/(\\pi M)$。",
+  "explanation": "设 $\\theta=\\omega t$。继电器输出在 $0<\\theta<\\pi$ 为 $A$，在 $\\pi<\\theta<2\\pi$ 为 $-A$。因为输出是奇对称方波，基波余弦系数为零；正弦系数是\n$$b_1=\\frac1\\pi\\int_0^{2\\pi}A\\operatorname{sgn}(\\sin\\theta)\\sin\\theta\\,\\mathrm d\\theta=\\frac{2A}{\\pi}\\int_0^\\pi\\sin\\theta\\,\\mathrm d\\theta=\\frac{4A}{\\pi}.$$\n比例支路的基波为 $KM\\sin\\theta$。两路同相相加，总基波幅值系数为 $KM+4A/\\pi$。除以输入幅值 $M$ 就得到实数描述函数。",
+  "originalImages": [],
+  "answerPdfPages": "498–499",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

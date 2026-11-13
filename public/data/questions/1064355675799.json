@@ -1,0 +1,8 @@
+{
+  "answer": "$$x[k+1]=\\begin{bmatrix}0&-1\\\\0.632&1\\end{bmatrix}x[k]+\\begin{bmatrix}1\\\\-0.632\\end{bmatrix}u[k],\\qquad y[k]=x_1[k]+x_2[k].$$\n$$\\frac{Y(z)}{U(z)}=\\frac{0.368z+0.264}{z^2-z+0.632}.$$",
+  "explanation": "外环误差为 $e[k]=u[k]-y[k]$。从两条支路分别读出\n$$x_1[k+1]=x_1[k]+e[k],\\qquad x_2[k+1]=0.368x_2[k]-0.632e[k].$$\n代入 $y=x_1+x_2$，便得到状态方程。再按零初值取 $z$ 变换，\n$$\\begin{bmatrix}z&1\\\\-0.632&z-1\\end{bmatrix}X=\\begin{bmatrix}1\\\\-0.632\\end{bmatrix}U.$$\n系数矩阵的行列式为 $z^2-z+0.632$。用二阶逆矩阵求 $X_1+X_2$，其分子为 $(z-1)+0.632+0.632-0.632z=0.368z+0.264$。",
+  "originalImages": [],
+  "answerPdfPages": "496",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

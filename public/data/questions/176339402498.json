@@ -1,0 +1,8 @@
+{
+  "answer": "$0<K<0.75$。上确界为 $0.75$，由于要求严格小于 $-1$，这个上界不能取到。",
+  "explanation": "**移轴。** 闭环特征方程为 $(s+1)(s+1.5)(s+2)+K=0$。令 $s=w-1$，则 $\\operatorname{Re}s<-1$ 等价于 $\\operatorname{Re}w<0$。变换后的多项式是\n$$w(w+0.5)(w+1)+K=w^3+1.5w^2+0.5w+K.$$\n**判稳。** 劳斯首列为 $1,1.5,(0.75-K)/1.5,K$，全正当且仅当 $0<K<0.75$。令 $K=0.75$，多项式恰为 $(w+1.5)(w^2+0.5)$，有两个根落在 $w$ 的虚轴上，也就是原平面的 $\\operatorname{Re}s=-1$。",
+  "originalImages": [],
+  "answerPdfPages": "493",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}
