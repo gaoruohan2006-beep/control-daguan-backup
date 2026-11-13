@@ -1,0 +1,8 @@
+{
+  "answer": "$M_p\\approx44.4\\%$，按 $5\\%$ 误差带的常用近似有 $t_s\\approx1.5\\,\\mathrm s$；可用测速负反馈，系数取 $h=1/8$。",
+  "explanation": "闭环为 $64/(s^2+4s+64)$，故 $\\omega_n=8$，$\\zeta=1/4$。代入 $M_p=e^{-\\pi\\zeta/\\sqrt{1-\\zeta^2}}$ 得 $44.4\\%$。$5\\%$ 调节时间的常用近似为 $3/(\\zeta\\omega_n)=1.5\\,\\mathrm s$。若按 $2\\%$ 口径，则常用近似为 $2\\,\\mathrm s$。\n\n令负反馈通道从 $1$ 改为 $1+hs$，以引入输出速度负反馈。闭环变为 $64/[s^2+(4+64h)s+64]$，自然频率仍为 $8$。取 $h=1/8$，则 $\\zeta=3/4$，超调约 $2.84\\%$，满足指标。",
+  "originalImages": [],
+  "answerPdfPages": "441–442",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

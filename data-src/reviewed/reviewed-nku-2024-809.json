@@ -1,0 +1,17 @@
+[
+  {
+    "school": "南开大学",
+    "year": 2024,
+    "variant": "809",
+    "number": "五",
+    "topics": [
+      "状态空间 / 状态转移"
+    ],
+    "questionPages": "184",
+    "answerPages": "430",
+    "stem": "已知 $A=\\left[\\begin{smallmatrix}0&3\\\\-1&-4\\end{smallmatrix}\\right]$。用拉氏反变换求 $e^{At}$。",
+    "answer": "$$e^{At}=\\frac12\\begin{bmatrix}3e^{-t}-e^{-3t}&3(e^{-t}-e^{-3t})\\\\-e^{-t}+e^{-3t}&-e^{-t}+3e^{-3t}\\end{bmatrix}.$$",
+    "explanation": "$\\mathcal L\\{e^{At}\\}=(sI-A)^{-1}=\\left[\\begin{smallmatrix}s+4&3\\\\-1&s\\end{smallmatrix}\\right]/[(s+1)(s+3)]$。公共分母可拆成简单极点，例如 $(s+4)/[(s+1)(s+3)]=3/[2(s+1)]-1/[2(s+3)]$。其余三项同样拆分并逐项反变换。代入 $t=0$ 可验得 $e^{A0}=I$。",
+    "notes": ""
+  }
+]

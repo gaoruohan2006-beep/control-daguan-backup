@@ -1,0 +1,8 @@
+{
+  "answer": "$X(s)/U(s)=1/(ms^2+k_1k_2/(k_1+k_2))$。",
+  "explanation": "设中间连接点的位移为 $z$。该点无质量，所以两弹簧的拉力相同，即 $k_1z=k_2(x-z)$。求得 $z=k_2x/(k_1+k_2)$，于是弹簧对车的作用力为 $-k_1k_2x/(k_1+k_2)$。用牛顿第二定律写 $m\\ddot x=u-k_1k_2x/(k_1+k_2)$，再在零初始条件下作拉氏变换。",
+  "originalImages": [],
+  "answerPdfPages": "301–302",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

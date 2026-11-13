@@ -1,8 +1,0 @@
-{
-  "answer": "$$\\dot x=\\frac1L\\begin{bmatrix}-(R+R_0)&R_0\\\\R_0&-(R+R_0)\\end{bmatrix}x+\\frac1L\\begin{bmatrix}1\\\\0\\end{bmatrix}u,\\qquad y=R_0\\begin{bmatrix}1&-1\\end{bmatrix}x.$$\n系统不能完全能观。",
-  "explanation": "节点电流方程给出 $y=R_0(i_1-i_2)$。两条电感支路的电压方程分别为\n$$u=Ri_1+L\\dot i_1+y,\\qquad y=Ri_2+L\\dot i_2.$$\n把节点电压代入两式，逐项整理得到状态矩阵。设输出矩阵为 $C$，可算得 $CA=-(R+2R_0)C/L$，故 $[C;CA]$ 的秩为 1。进一步看，两个电感电流的同向分量 $i_1=i_2$ 在输出端相抵，正是不可观模态。",
-  "originalImages": [],
-  "answerPdfPages": "536",
-  "referenceNote": "",
-  "sourceType": "reviewed"
-}

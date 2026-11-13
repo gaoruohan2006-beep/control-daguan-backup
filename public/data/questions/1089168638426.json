@@ -1,0 +1,8 @@
+{
+  "answer": "正确。相角裕度需要在校正后的增益交越频率重新计算。",
+  "explanation": "滞后环节可写为 $G_c(s)=(1+Ts)/(1+\\beta Ts)$，$\\beta>1$。其低频增益为 $1$，高频增益为 $1/\\beta$。适当降低交越频率后，原对象在新交越点处通常有更少的相位滞后。选择两个拐点低于新交越频率，可减小校正环节自身的负相角，最后用 $180^\\circ+\\arg[G_c(j\\omega_c)G(j\\omega_c)]$ 验算。",
+  "originalImages": [],
+  "answerPdfPages": "344",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

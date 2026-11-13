@@ -3,7 +3,7 @@
 <!-- 由 Microsoft Visio, SVG Export 生成 tianjin-2025-03-mechanical.svg tianjin-2025-03-mechanical -->
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
 		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="6.63889in" height="3.11111in" viewBox="0 0 478 224"
-		xml:space="preserve" color-interpolation-filters="sRGB" class="st8">
+		xml:space="preserve" color-interpolation-filters="sRGB" class="st9">
 	<v:documentProperties v:langID="2052" v:metric="true" v:viewMarkup="false"/>
 
 	<style type="text/css">
@@ -12,14 +12,15 @@
 		.st2 {stroke:#1c2735;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.05}
 		.st3 {fill:none;stroke:#1c2735;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.6}
 		.st4 {fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
-		.st5 {fill:#1c2735;font-family:Times New Roman;font-size:1.75001em;font-style:italic}
-		.st6 {fill:#1c2735;font-family:Times New Roman;font-size:1.16666em}
-		.st7 {fill:#1c2735;font-family:Times New Roman;font-size:1.41666em;font-style:italic}
-		.st8 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+		.st5 {fill:#1c2735;font-family:"Times New Roman", "Liberation Serif", SimSun, "宋体", "Noto Serif CJK SC", serif;font-size:1.75001em;font-style:italic}
+		.st6 {fill:#1c2735;font-family:"Times New Roman", "Liberation Serif", SimSun, "宋体", "Noto Serif CJK SC", serif;font-size:1.16666em}
+		.st7 {fill:#1c2735;font-family:"Times New Roman", "Liberation Serif", SimSun, "宋体", "Noto Serif CJK SC", serif;font-size:1.58668em;font-style:italic}
+		.st8 {fill:#1c2735;font-family:"Times New Roman", "Liberation Serif", SimSun, "宋体", "Noto Serif CJK SC", serif;font-size:1.41666em;font-style:italic}
+		.st9 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
 	]]>
 	</style>
 
-	<g v:mID="4" v:index="2" v:groupContext="foregroundPage">
+	<g v:mID="4" v:index="1" v:groupContext="foregroundPage">
 		<title>tianjin-2025-03-mechanical</title>
 		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
 				v:shadowOffsetY="-8.50394"/>
@@ -107,7 +108,7 @@
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
 			<v:textRect cx="45" cy="210" width="90" height="28"/>
 			<rect x="0" y="196" width="90" height="28" class="st4"/>
-			<text x="33.2" y="215.1" class="st7" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>y(t)</text>		</g>
+			<text x="31.79" y="215.71" class="st7" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>y(t)</text>		</g>
 		<g id="shape20-57" v:mID="20" v:groupContext="shape" transform="translate(233,-142)">
 			<title>工作表.20</title>
 			<path d="M-0 224 L61 224" class="st1"/>
@@ -122,7 +123,7 @@
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
 			<v:textRect cx="45" cy="210" width="90" height="28"/>
 			<rect x="0" y="196" width="90" height="28" class="st4"/>
-			<text x="31.79" y="215.1" class="st7" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>F(t)</text>		</g>
+			<text x="30.2" y="215.71" class="st7" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>F(t)</text>		</g>
 		<g id="shape23-66" v:mID="23" v:groupContext="shape" transform="translate(48,-110)">
 			<title>工作表.23</title>
 			<path d="M0 224 L65 224" class="st1"/>
@@ -141,7 +142,7 @@
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
 			<v:textRect cx="45" cy="210" width="90" height="28"/>
 			<rect x="0" y="196" width="90" height="28" class="st4"/>
-			<text x="41.23" y="215.1" class="st7" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>k</text>		</g>
+			<text x="41.23" y="215.1" class="st8" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>k</text>		</g>
 		<g id="shape27-78" v:mID="27" v:groupContext="shape" transform="translate(48,-63)">
 			<title>工作表.27</title>
 			<path d="M0 224 L119 224" class="st1"/>
@@ -164,6 +165,6 @@
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
 			<v:textRect cx="45" cy="210" width="90" height="28"/>
 			<rect x="0" y="196" width="90" height="28" class="st4"/>
-			<text x="42.64" y="215.1" class="st7" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>f</text>		</g>
+			<text x="42.64" y="215.1" class="st8" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>f</text>		</g>
 	</g>
 </svg>

@@ -1,0 +1,8 @@
+{
+  "answer": "$x_1=e^{-2t}x_1(0)$，$x_2=e^{-4t}x_2(0)-\\tfrac12(e^{-2t}-e^{-4t})x_1(0)$。原点大范围渐近稳定。",
+  "explanation": "第一式可直接积分。对第二式乘积分因子 $e^{4t}$，代入第一式并积分，得到所列解。取 $V=x_1^2+x_2^2$，则 $\\dot V=-4x_1^2-2x_1x_2-8x_2^2$。对应负号内二次型的矩阵为 $\\left[\\begin{smallmatrix}4&1\\\\1&8\\end{smallmatrix}\\right]$，顺序主子式 $4,31$ 均正，所以 $\\dot V$ 负定。$V$ 径向无界，故为大范围渐近稳定。",
+  "originalImages": [],
+  "answerPdfPages": "233",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

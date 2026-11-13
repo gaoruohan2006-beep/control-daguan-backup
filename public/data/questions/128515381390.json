@@ -1,0 +1,8 @@
+{
+  "answer": "$L=[20,25,12]^\\mathsf T$，观测器为 $\\dot{\\hat x}=A\\hat x+Bu+L(y-C\\hat x)$。",
+  "explanation": "能观性矩阵的三行是 $[0,0,1]$、$[0,2,0]$ 和 $[6,-2,2]$，行列式为 $-12$，所以可任意配置观测器极点。设 $L=[l_1,l_2,l_3]^\\mathsf T$，\n$$\\det(sI-A+LC)=(s-1)\\{(s+1)(s+l_3)+2(l_2-1)\\}+6l_1.$$\n期望多项式为 $s^3+12s^2+47s+60$，比较系数得 $l_3=12,\\ l_2=25,\\ l_1=20$。将所得列向量代入 $\\dot{\\hat x}=(A-LC)\\hat x+Bu+Ly$ 即得状态方程。",
+  "originalImages": [],
+  "answerPdfPages": "631",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

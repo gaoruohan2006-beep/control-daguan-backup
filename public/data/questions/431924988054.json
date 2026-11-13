@@ -1,0 +1,8 @@
+{
+  "answer": "右半平面一根、左半平面一根、虚轴两根 $\\pm j$。",
+  "explanation": "在虚轴上 $P(j\\omega)=\\omega^4+5\\omega^2-6+j\\omega(1-\\omega^2)$，令实、虚部为零，得到 $\\omega=\\pm1$。因此先从特征多项式中除去 $s^2+1$，避免原点落在剩余曲线的映射上。所得 $Q(s)=s^2+s-6$。\n\n对 $Q$ 使用奈奎斯特论证原理：沿右半平面的顺时针闭合轮廓，先沿 $j\\omega$ 从 $-jR$ 到 $jR$，再沿右半圆返回。$Q(j\\omega)=-6-\\omega^2+j\\omega$ 始终位于左半平面，连续辐角的净变化趋于 $0$；半圆上 $Q(s)\\sim s^2$，辐角净变化趋于 $-2\\pi$。因此曲线绕原点顺时针一圈，$Q$ 在右半平面有一个零点。它是二次式且无虚轴零点，另一个零点在左半平面。加回 $\\pm j$ 即得分布。",
+  "originalImages": [],
+  "answerPdfPages": "645–646",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

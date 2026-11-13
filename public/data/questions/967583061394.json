@@ -1,0 +1,8 @@
+{
+  "answer": "$m\\ddot s+b\\dot s=u$，$m\\dot v+bv=u$；$v(\\infty)=u_0/b$（$b>0$）。",
+  "explanation": "取牵引方向为正，牛顿第二定律给出 $m\\dot v=u-bv$，再用 $\\dot s=v$ 得位移方程。状态方程为\n$$\\dot x=\\begin{bmatrix}0&1\\\\0&-b/m\\end{bmatrix}x+\\begin{bmatrix}0\\\\1/m\\end{bmatrix}u,\\quad y=\\begin{bmatrix}1&0\\end{bmatrix}x.$$\n常值牵引时 $v(t)=u_0/b+[v(0)-u_0/b]e^{-bt/m}$。当 $b>0$ 时，指数项衰减，速度收敛。",
+  "originalImages": [],
+  "answerPdfPages": "213",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

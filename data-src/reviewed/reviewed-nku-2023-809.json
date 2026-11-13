@@ -1,0 +1,72 @@
+[
+  {
+    "school": "南开大学",
+    "year": 2023,
+    "variant": "809",
+    "number": "一",
+    "topics": [
+      "时域分析 / 劳斯"
+    ],
+    "questionPages": "181",
+    "answerPages": "419",
+    "stem": "单位负反馈系统的开环传递函数为 $$G(s)=\\frac{Ks+\\lambda}{s(s+1)(s+2)}.$$\n求闭环传递函数以及使闭环系统稳定的 $K,\\lambda$ 的取值范围。",
+    "answer": "$T(s)=(Ks+\\lambda)/[s^3+3s^2+(K+2)s+\\lambda]$，稳定域为 $K>-2,\\ 0<\\lambda<3(K+2)$。",
+    "explanation": "由 $T=G/(1+G)$ 可得分母 $D=s^3+3s^2+(2+K)s+\\lambda$。劳斯表首列为 $1,3,[3(2+K)-\\lambda]/3,\\lambda$。严格稳定要求后两项大于零，于是 $0<\\lambda<3(K+2)$，同时蕴含 $K>-2$。这里以闭环特征方程判内部稳定性。",
+    "notes": ""
+  },
+  {
+    "school": "南开大学",
+    "year": 2023,
+    "variant": "809",
+    "number": "八",
+    "topics": [
+      "状态空间 / 能控能观"
+    ],
+    "questionPages": "182",
+    "answerPages": "423–424",
+    "stem": "对 $\\dot x=Ax+Bu,\\ y=Cx$ 证明下列结论。\n\n（1）采用 $u=Kx+v$ 时，系统相对于 $v$ 的能控性保持不变。\n\n（2）采用 $u=Fy+v$ 时，系统相对于 $v$ 的能控性和能观性保持不变。",
+    "answer": "两项结论均成立。可用 PBH 矩阵的可逆初等块变换证明。",
+    "explanation": "令 $A_K=A+BK$。对任意复数 $\\lambda$，\n$$[\\lambda I-A_K\\ \\ B]=[\\lambda I-A\\ \\ B]\\begin{bmatrix}I&0\\\\-K&I\\end{bmatrix}.$$\n右端的块三角矩阵可逆，所以两 PBH 矩阵的秩相同，得到（1）。取 $K=FC$ 就得到输出反馈下的能控性。\n\n对能观性，将 $A_F=A+BFC$ 代入\n$$\\begin{bmatrix}\\lambda I-A_F\\\\ C\\end{bmatrix}\n=\\begin{bmatrix}I&-BF\\\\0&I\\end{bmatrix}\\begin{bmatrix}\\lambda I-A\\\\C\\end{bmatrix}.$$\n左乘矩阵也可逆，故能观性的 PBH 秩条件保持不变。",
+    "notes": "",
+    "alsoAppearedIn": [
+      {
+        "school": "中国海洋大学",
+        "year": 2023,
+        "variant": "842",
+        "number": "四",
+        "questionPages": "262",
+        "answerPages": "654–655"
+      }
+    ]
+  },
+  {
+    "school": "南开大学",
+    "year": 2023,
+    "variant": "809",
+    "number": "九",
+    "topics": [
+      "状态空间 / 状态反馈"
+    ],
+    "questionPages": "182",
+    "answerPages": "424–425",
+    "stem": "离散系统 $x(k+1)=2x(k)+u(k)$，$x(0)=1$。状态和控制量均无约束。求使\n  $$J=x^2(3)+\\sum_{k=0}^{2}[x^2(k)+u^2(k)]$$\n最小的控制序列。",
+    "answer": "$(u^*(0),u^*(1),u^*(2))=(-8/5,-3/5,-1/5)$，$J_{\\min}=21/5$。",
+    "explanation": "设从第 $k$ 拍起的最优代价为 $P_kx(k)^2$，终端 $P_3=1$。最小化 $x^2+u^2+P_{k+1}(2x+u)^2$，得 $u^*(k)=-2P_{k+1}x(k)/(1+P_{k+1})$，代回得到 $P_k=1+4P_{k+1}/(1+P_{k+1})$。\n倒推得 $P_2=3,P_1=4,P_0=21/5$。于是 $u_0=-8/5$、$x_1=2/5$；$u_1=-3/5$、$x_2=1/5$；$u_2=-1/5$、$x_3=1/5$。最优代价为 $21/5$。",
+    "notes": ""
+  },
+  {
+    "school": "南开大学",
+    "year": 2023,
+    "variant": "809",
+    "number": "二",
+    "topics": [
+      "根轨迹 / 稳定性"
+    ],
+    "questionPages": "181",
+    "answerPages": "419–420",
+    "stem": "单位负反馈系统的开环传递函数为 $G(s)=K/[s(s+4)(s+2)]$，$K\\ge0$。绘制根轨迹并确定闭环稳定时 $K$ 的范围。",
+    "answer": "闭环渐近稳定当且仅当 $0<K<48$。实轴段为 $(-\\infty,-4)$、$(-2,0)$，分离点为 $-2+2/\\sqrt3$，虚轴交点为 $\\pm j\\sqrt8$。",
+    "explanation": "开环极点为 $0,-2,-4$，无有限零点。实轴上满足右侧零极点数为奇数的两段为 $(-\\infty,-4)$ 和 $(-2,0)$。渐近线交点为 $-2$，方向为 $60^\\circ,180^\\circ,300^\\circ$。令 $\\mathrm d[-s(s+2)(s+4)]/\\mathrm ds=0$，只有 $s=-2+2/\\sqrt3$ 落在实轴根轨迹段。\n\n闭环特征式为 $s^3+6s^2+8s+K$。令 $s=j\\omega$，由虚部得 $\\omega^2=8$，实部得 $K=48$。劳斯表首列为 $1,6,(48-K)/6,K$，得到所求稳定区间。\n\n![三个实开环极点的根轨迹](img/reviewed/nku-2023-809-02-locus.svg)",
+    "notes": ""
+  }
+]

@@ -1,0 +1,8 @@
+{
+  "answer": "$Y(s)=1/(s^2+1)$；$y[k]=\\sin(0.1k)$；\n  $Y(z)=z\\sin(0.1)/[z^2-2z\\cos(0.1)+1]$（$|z|>1$）；\n  $y^*(t)=\\sum_{k=0}^\\infty \\sin(0.1k)\\delta(t-0.1k)$。",
+  "explanation": "$\\sin t$ 的拉氏变换为 $1/(s^2+1)$。在 $t=kT$ 取样得到 $y[k]=\\sin(kT)$。用 $\\sin(kT)=(e^{jkT}-e^{-jkT})/(2j)$ 拆分级数\n$$Y(z)=\\frac{1}{2j}\\left(\\frac{1}{1-e^{jT}z^{-1}}-\\frac{1}{1-e^{-jT}z^{-1}}\\right).$$\n合并分母并代入 $T=0.1$ 得所列结果。冲激采样在每个采样时刻保留一枚强度为 $y[k]$ 的冲激。",
+  "originalImages": [],
+  "answerPdfPages": "507",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

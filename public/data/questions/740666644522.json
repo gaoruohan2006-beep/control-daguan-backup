@@ -1,0 +1,8 @@
+{
+  "answer": "$A^{20}=2^{20}I+20\\cdot2^{19}(A-2I)$。",
+  "explanation": "令 $N=A-2I$。由最小多项式知 $N^2=0$。展开 $(2I+N)^{20}$，由于 $2I$ 与 $N$ 可交换，二项式公式成立，且所有 $N^k$（$k\\ge2$）均为零，因此只保留常数项和一次项。",
+  "originalImages": [],
+  "answerPdfPages": "128",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

@@ -1,1 +1,266 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="780" height="224" viewBox="0 0 780 224" role="img"><defs><marker id="arrow" viewBox="0 0 10 10" markerWidth="6" markerHeight="6" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#182d49"/></marker></defs><rect width="100%" height="100%" fill="#fff"/><g font-family="Segoe UI, sans-serif" font-size="14" fill="#182d49"><path d="M16 108H78" fill="none" stroke="#182d49" stroke-width="1.7" marker-end="url(#arrow)" /><circle cx="88" cy="108" r="9" fill="white" stroke="#182d49" stroke-width="1.7"/><text x="43" y="91" text-anchor="middle">r(t)=0</text><text x="71" y="100" text-anchor="middle">+</text><text x="75" y="135" text-anchor="middle">−</text><path d="M98 108H169" fill="none" stroke="#182d49" stroke-width="1.7" marker-end="url(#arrow)" /><text x="131" y="95" text-anchor="middle">e(t)</text><path d="M298 108H389" fill="none" stroke="#182d49" stroke-width="1.7" marker-end="url(#arrow)" /><text x="343" y="95" text-anchor="middle">x</text><path d="M518 108H618" fill="none" stroke="#182d49" stroke-width="1.7" marker-end="url(#arrow)" /><text x="565" y="95" text-anchor="middle">u</text><path d="M720 108H765" fill="none" stroke="#182d49" stroke-width="1.7" marker-end="url(#arrow)" /><text x="750" y="91" text-anchor="middle">C(t)</text><path d="M739 108V194H88V118" fill="none" stroke="#182d49" stroke-width="1.7" marker-end="url(#arrow)" /><circle cx="739" cy="108" r="2.5" fill="#182d49"/><rect x="170" y="48" width="128" height="120" fill="#f6f9fd" stroke="#182d49" stroke-width="1.6"/><path d="M182 109H285" fill="none" stroke="#182d49" stroke-width="1.7" marker-end="url(#arrow)" /><path d="M234 158V57" fill="none" stroke="#182d49" stroke-width="1.7" marker-end="url(#arrow)" /><text x="225" y="77" text-anchor="middle">2</text><text x="224" y="151" text-anchor="middle">−2</text><text x="209" y="124" text-anchor="middle">−1</text><text x="260" y="124" text-anchor="middle">1</text><rect x="390" y="48" width="128" height="120" fill="#f6f9fd" stroke="#182d49" stroke-width="1.6"/><path d="M402 109H505" fill="none" stroke="#182d49" stroke-width="1.7" marker-end="url(#arrow)" /><path d="M454 158V57" fill="none" stroke="#182d49" stroke-width="1.7" marker-end="url(#arrow)" /><text x="445" y="77" text-anchor="middle">2</text><text x="444" y="151" text-anchor="middle">−2</text><text x="429" y="124" text-anchor="middle">−1</text><text x="480" y="124" text-anchor="middle">1</text><path d="M183 143H207L259 73H285" fill="none" stroke="#1858a5" stroke-width="1.7" /><path d="M404 143H429V109H480V73H506" fill="none" stroke="#1858a5" stroke-width="1.7" /><text x="234" y="184" text-anchor="middle">N₁</text><text x="454" y="184" text-anchor="middle">N₂</text><rect x="619" y="83" width="101" height="50" fill="#f6f9fd" stroke="#182d49" stroke-width="1.6"/><text x="669.5" y="113.0" text-anchor="middle">2/[s(s+1)²]</text></g></svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- 由 Microsoft Visio, SVG Export 生成 uestc-2023-7.svg uestc-2023-7 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="11.1667in" height="3.44444in" viewBox="0 0 804 248"
+		xml:space="preserve" color-interpolation-filters="sRGB" class="st13">
+	<v:documentProperties v:langID="2052" v:metric="true" v:viewMarkup="false"/>
+
+	<style type="text/css">
+	<![CDATA[
+		.st1 {stroke:#182d49;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.7}
+		.st2 {fill:#182d49;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st3 {fill:#ffffff;stroke:#182d49;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.7}
+		.st4 {fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st5 {fill:#182d49;font-family:"Times New Roman", "Liberation Serif", SimSun, "宋体", "Noto Serif CJK SC", serif;font-size:1.41305em}
+		.st6 {fill:#182d49;font-family:"Times New Roman", "Liberation Serif", SimSun, "宋体", "Noto Serif CJK SC", serif;font-size:1.16666em}
+		.st7 {fill:#182d49;font-family:"Times New Roman", "Liberation Serif", SimSun, "宋体", "Noto Serif CJK SC", serif;font-size:1.16666em}
+		.st8 {fill:#f6f9fd;stroke:#182d49;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.6}
+		.st9 {fill:#182d49;font-family:"Times New Roman", "Liberation Serif", SimSun, "宋体", "Noto Serif CJK SC", serif;font-size:1.41305em}
+		.st10 {font-family:"Times New Roman", "Liberation Serif", SimSun, "宋体", "Noto Serif CJK SC", serif;font-size:1em}
+		.st11 {stroke:#1858a5;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.7}
+		.st12 {font-family:"Times New Roman", "Liberation Serif", SimSun, "宋体", "Noto Serif CJK SC", serif;font-size:1em}
+		.st13 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+	<g v:mID="45" v:index="43" v:groupContext="foregroundPage">
+		<title>uestc-2023-7</title>
+		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
+				v:shadowOffsetY="-8.50394"/>
+		<g id="shape1-1" v:mID="1" v:groupContext="shape" transform="translate(28,-128)">
+			<title>工作表.1</title>
+			<path d="M0 248 L62 248" class="st1"/>
+		</g>
+		<g id="shape2-4" v:mID="2" v:groupContext="shape" transform="translate(83.2,-124.855)">
+			<title>工作表.2</title>
+			<path d="M6.8 244.86 L0 248 L0 241.71 L6.8 244.86 Z" class="st2"/>
+		</g>
+		<g id="shape3-6" v:mID="3" v:groupContext="shape" transform="translate(91,-119)">
+			<title>工作表.3</title>
+			<ellipse cx="9" cy="239" rx="9" ry="9" class="st3"/>
+		</g>
+		<g id="shape4-8" v:mID="4" v:groupContext="shape" transform="translate(22.6433,-136.935)">
+			<title>工作表.4</title>
+			<desc>r(t)=0</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="32.5818" cy="234.435" width="65.17" height="27.1304"/>
+			<rect x="0" y="220.87" width="65.1637" height="27.1304" class="st4"/>
+			<text x="12.74" y="239.52" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>r(t)=0</text>		</g>
+		<g id="shape5-11" v:mID="5" v:groupContext="shape" transform="translate(67.2109,-130.3)">
+			<title>工作表.5</title>
+			<desc>+</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="15.7891" cy="236.8" width="31.58" height="22.4"/>
+			<rect x="0" y="225.6" width="31.5781" height="22.4" class="st4"/>
+			<text x="11.84" y="241" class="st6" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>+</text>		</g>
+		<g id="shape6-14" v:mID="6" v:groupContext="shape" transform="translate(71.2109,-95.3)">
+			<title>工作表.6</title>
+			<desc>−</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="15.7891" cy="236.8" width="31.58" height="22.4"/>
+			<rect x="0" y="225.6" width="31.5781" height="22.4" class="st4"/>
+			<text x="10.56" y="241.06" class="st7" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>−</text>		</g>
+		<g id="shape7-17" v:mID="7" v:groupContext="shape" transform="translate(110,-128)">
+			<title>工作表.7</title>
+			<path d="M0 248 L71 248" class="st1"/>
+		</g>
+		<g id="shape8-20" v:mID="8" v:groupContext="shape" transform="translate(174.2,-124.855)">
+			<title>工作表.8</title>
+			<path d="M6.8 244.86 L0 248 L0 241.71 L6.8 244.86 Z" class="st2"/>
+		</g>
+		<g id="shape9-22" v:mID="9" v:groupContext="shape" transform="translate(119.576,-132.935)">
+			<title>工作表.9</title>
+			<desc>e(t)</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="23.4241" cy="234.435" width="46.85" height="27.1304"/>
+			<rect x="0" y="220.87" width="46.8481" height="27.1304" class="st4"/>
+			<text x="11.66" y="239.52" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>e(t)</text>		</g>
+		<g id="shape10-25" v:mID="10" v:groupContext="shape" transform="translate(310,-128)">
+			<title>工作表.10</title>
+			<path d="M0 248 L91 248" class="st1"/>
+		</g>
+		<g id="shape11-28" v:mID="11" v:groupContext="shape" transform="translate(394.2,-124.855)">
+			<title>工作表.11</title>
+			<path d="M6.8 244.86 L0 248 L0 241.71 L6.8 244.86 Z" class="st2"/>
+		</g>
+		<g id="shape12-30" v:mID="12" v:groupContext="shape" transform="translate(338.937,-132.935)">
+			<title>工作表.12</title>
+			<desc>x</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="15.8447" cy="234.435" width="31.69" height="27.1304"/>
+			<rect x="0" y="220.87" width="31.6894" height="27.1304" class="st4"/>
+			<text x="11.61" y="239.52" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>x</text>		</g>
+		<g id="shape13-33" v:mID="13" v:groupContext="shape" transform="translate(530,-128)">
+			<title>工作表.13</title>
+			<path d="M0 248 L100 248" class="st1"/>
+		</g>
+		<g id="shape14-36" v:mID="14" v:groupContext="shape" transform="translate(623.2,-124.855)">
+			<title>工作表.14</title>
+			<path d="M6.8 244.86 L0 248 L0 241.71 L6.8 244.86 Z" class="st2"/>
+		</g>
+		<g id="shape15-38" v:mID="15" v:groupContext="shape" transform="translate(561.187,-132.935)">
+			<title>工作表.15</title>
+			<desc>u</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="15.8447" cy="234.435" width="31.69" height="27.1304"/>
+			<rect x="0" y="220.87" width="31.6894" height="27.1304" class="st4"/>
+			<text x="11.61" y="239.52" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>u</text>		</g>
+		<g id="shape16-41" v:mID="16" v:groupContext="shape" transform="translate(732,-128)">
+			<title>工作表.16</title>
+			<path d="M0 248 L45 248" class="st1"/>
+		</g>
+		<g id="shape17-44" v:mID="17" v:groupContext="shape" transform="translate(770.2,-124.855)">
+			<title>工作表.17</title>
+			<path d="M6.8 244.86 L0 248 L0 241.71 L6.8 244.86 Z" class="st2"/>
+		</g>
+		<g id="shape18-46" v:mID="18" v:groupContext="shape" transform="translate(737.753,-136.935)">
+			<title>工作表.18</title>
+			<desc>C(t)</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="24.2473" cy="234.435" width="48.5" height="27.1304"/>
+			<rect x="0" y="220.87" width="48.4946" height="27.1304" class="st4"/>
+			<text x="10.59" y="239.52" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>C(t)</text>		</g>
+		<g id="shape19-49" v:mID="19" v:groupContext="shape" transform="translate(100,-42)">
+			<title>工作表.19</title>
+			<path d="M651 162 L651 248 L0 248 L0 172" class="st1"/>
+		</g>
+		<g id="shape20-52" v:mID="20" v:groupContext="shape" transform="translate(96.855,-111.2)">
+			<title>工作表.20</title>
+			<path d="M3.14 241.2 L6.29 248 L0 248 L3.14 241.2 Z" class="st2"/>
+		</g>
+		<g id="shape21-54" v:mID="21" v:groupContext="shape" transform="translate(748.5,-125.5)">
+			<title>工作表.21</title>
+			<ellipse cx="2.5" cy="245.5" rx="2.5" ry="2.5" class="st2"/>
+		</g>
+		<g id="shape22-56" v:mID="22" v:groupContext="shape" transform="translate(182,-68)">
+			<title>工作表.22</title>
+			<rect x="0" y="128" width="128" height="120" class="st8"/>
+		</g>
+		<g id="shape23-58" v:mID="23" v:groupContext="shape" transform="translate(194,-127)">
+			<title>工作表.23</title>
+			<path d="M0 248 L103 248" class="st1"/>
+		</g>
+		<g id="shape24-61" v:mID="24" v:groupContext="shape" transform="translate(290.2,-123.855)">
+			<title>工作表.24</title>
+			<path d="M6.8 244.86 L0 248 L0 241.71 L6.8 244.86 Z" class="st2"/>
+		</g>
+		<g id="shape25-63" v:mID="25" v:groupContext="shape" transform="translate(-2,170) rotate(-90)">
+			<title>工作表.25</title>
+			<path d="M0 248 L101 248" class="st1"/>
+		</g>
+		<g id="shape26-66" v:mID="26" v:groupContext="shape" transform="translate(242.855,-172.2)">
+			<title>工作表.26</title>
+			<path d="M3.14 241.2 L6.29 248 L0 248 L3.14 241.2 Z" class="st2"/>
+		</g>
+		<g id="shape27-68" v:mID="27" v:groupContext="shape" transform="translate(221.382,-150.935)">
+			<title>工作表.27</title>
+			<desc>2</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="15.8447" cy="234.435" width="31.69" height="27.1304"/>
+			<rect x="0" y="220.87" width="31.6894" height="27.1304" class="st4"/>
+			<text x="11.61" y="239.52" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>2</text>		</g>
+		<g id="shape28-71" v:mID="28" v:groupContext="shape" transform="translate(214.582,-76.9348)">
+			<title>工作表.28</title>
+			<desc>−2</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="21.6445" cy="234.435" width="43.29" height="27.1304"/>
+			<rect x="0" y="220.87" width="43.2891" height="27.1304" class="st4"/>
+			<text x="11.07" y="239.6" class="st9" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>−<tspan class="st10">2</tspan></text>		</g>
+		<g id="shape29-75" v:mID="29" v:groupContext="shape" transform="translate(199.629,-103.935)">
+			<title>工作表.29</title>
+			<desc>−1</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="21.3707" cy="234.435" width="42.75" height="27.1304"/>
+			<rect x="0" y="220.87" width="42.7415" height="27.1304" class="st4"/>
+			<text x="10.8" y="239.6" class="st9" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>−<tspan class="st10">1</tspan></text>		</g>
+		<g id="shape30-79" v:mID="30" v:groupContext="shape" transform="translate(256.43,-103.935)">
+			<title>工作表.30</title>
+			<desc>1</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="15.5703" cy="234.435" width="31.15" height="27.1304"/>
+			<rect x="0" y="220.87" width="31.1406" height="27.1304" class="st4"/>
+			<text x="11.33" y="239.52" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>1</text>		</g>
+		<g id="shape31-82" v:mID="31" v:groupContext="shape" transform="translate(402,-68)">
+			<title>工作表.31</title>
+			<rect x="0" y="128" width="128" height="120" class="st8"/>
+		</g>
+		<g id="shape32-84" v:mID="32" v:groupContext="shape" transform="translate(414,-127)">
+			<title>工作表.32</title>
+			<path d="M0 248 L103 248" class="st1"/>
+		</g>
+		<g id="shape33-87" v:mID="33" v:groupContext="shape" transform="translate(510.2,-123.855)">
+			<title>工作表.33</title>
+			<path d="M6.8 244.86 L0 248 L0 241.71 L6.8 244.86 Z" class="st2"/>
+		</g>
+		<g id="shape34-89" v:mID="34" v:groupContext="shape" transform="translate(218,170) rotate(-90)">
+			<title>工作表.34</title>
+			<path d="M0 248 L101 248" class="st1"/>
+		</g>
+		<g id="shape35-92" v:mID="35" v:groupContext="shape" transform="translate(462.855,-172.2)">
+			<title>工作表.35</title>
+			<path d="M3.14 241.2 L6.29 248 L0 248 L3.14 241.2 Z" class="st2"/>
+		</g>
+		<g id="shape36-94" v:mID="36" v:groupContext="shape" transform="translate(441.382,-150.935)">
+			<title>工作表.36</title>
+			<desc>2</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="15.8447" cy="234.435" width="31.69" height="27.1304"/>
+			<rect x="0" y="220.87" width="31.6894" height="27.1304" class="st4"/>
+			<text x="11.61" y="239.52" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>2</text>		</g>
+		<g id="shape37-97" v:mID="37" v:groupContext="shape" transform="translate(434.582,-76.9348)">
+			<title>工作表.37</title>
+			<desc>−2</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="21.6445" cy="234.435" width="43.29" height="27.1304"/>
+			<rect x="0" y="220.87" width="43.2891" height="27.1304" class="st4"/>
+			<text x="11.07" y="239.6" class="st9" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>−<tspan class="st10">2</tspan></text>		</g>
+		<g id="shape38-101" v:mID="38" v:groupContext="shape" transform="translate(419.629,-103.935)">
+			<title>工作表.38</title>
+			<desc>−1</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="21.3707" cy="234.435" width="42.75" height="27.1304"/>
+			<rect x="0" y="220.87" width="42.7415" height="27.1304" class="st4"/>
+			<text x="10.8" y="239.6" class="st9" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>−<tspan class="st10">1</tspan></text>		</g>
+		<g id="shape39-105" v:mID="39" v:groupContext="shape" transform="translate(476.43,-103.935)">
+			<title>工作表.39</title>
+			<desc>1</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="15.5703" cy="234.435" width="31.15" height="27.1304"/>
+			<rect x="0" y="220.87" width="31.1406" height="27.1304" class="st4"/>
+			<text x="11.33" y="239.52" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>1</text>		</g>
+		<g id="shape40-108" v:mID="40" v:groupContext="shape" transform="translate(195,-93)">
+			<title>工作表.40</title>
+			<path d="M0 248 L24 248 L76 178 L102 178" class="st11"/>
+		</g>
+		<g id="shape41-111" v:mID="41" v:groupContext="shape" transform="translate(416,-93)">
+			<title>工作表.41</title>
+			<path d="M0 248 L25 248 L25 214 L76 214 L76 178 L102 178" class="st11"/>
+		</g>
+		<g id="shape42-114" v:mID="42" v:groupContext="shape" transform="translate(225.68,-43.9348)">
+			<title>工作表.42</title>
+			<desc>N₁</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="20.3204" cy="234.435" width="40.65" height="27.1304"/>
+			<rect x="0" y="220.87" width="40.6408" height="27.1304" class="st4"/>
+			<text x="10.75" y="239.6" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>N<tspan class="st12">₁</tspan></text>		</g>
+		<g id="shape43-118" v:mID="43" v:groupContext="shape" transform="translate(445.547,-43.9348)">
+			<title>工作表.43</title>
+			<desc>N₂</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="20.4529" cy="234.435" width="40.91" height="27.1304"/>
+			<rect x="0" y="220.87" width="40.9058" height="27.1304" class="st4"/>
+			<text x="10.88" y="239.6" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>N<tspan class="st12">₂</tspan></text>		</g>
+		<g id="shape44-122" v:mID="44" v:groupContext="shape" transform="translate(631,-103)">
+			<title>工作表.44</title>
+			<rect x="0" y="198" width="101" height="50" class="st8"/>
+		</g>
+		<g id="shape45-124" v:mID="45" v:groupContext="shape" transform="translate(631.714,-114.935)">
+			<title>工作表.45</title>
+			<desc>2/[s(s+1)²]</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="49.7862" cy="234.435" width="99.58" height="27.1304"/>
+			<rect x="0" y="220.87" width="99.5723" height="27.1304" class="st4"/>
+			<text x="13.74" y="239.52" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>2/[s(s+1)²]</text>		</g>
+	</g>
+</svg>

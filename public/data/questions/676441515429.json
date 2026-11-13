@@ -1,0 +1,8 @@
+{
+  "answer": "两个结论均成立。",
+  "explanation": "对（1），两个最小实现均能控、能观，阶数等于约分后传递函数的分母阶数。将两组 $(A,B)$ 分别化为同一能控标准形 $(A_c,B_c)$。同一传递函数意味着直接项 $D$ 与各马尔可夫参数 $C_cA_c^kB_c$ 相同。因为 $[B_c,A_cB_c,\\ldots,A_c^{n-1}B_c]$ 可逆，两组 $C_c$ 相同。合成两次标准形变换得到所求的可逆变换。\n\n对（2），在上超对角线为 $1$、$B_c=e_n$ 的能控标准形中取 $C_c=e_1^\\mathsf T$。观测矩阵依次为 $e_1^\\mathsf T,\\ldots,e_n^\\mathsf T$，故满秩。若标准形坐标满足 $x=T x_c$，原坐标中的输出矩阵可取 $C=C_cT^{-1}$。",
+  "originalImages": [],
+  "answerPdfPages": "原册未附对应解析",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

@@ -1,0 +1,8 @@
+{
+  "answer": "两项结论均成立。可用 PBH 矩阵的可逆初等块变换证明。",
+  "explanation": "令 $A_K=A+BK$。对任意复数 $\\lambda$，\n$$[\\lambda I-A_K\\ \\ B]=[\\lambda I-A\\ \\ B]\\begin{bmatrix}I&0\\\\-K&I\\end{bmatrix}.$$\n右端的块三角矩阵可逆，所以两 PBH 矩阵的秩相同，得到（1）。取 $K=FC$ 就得到输出反馈下的能控性。\n\n对能观性，将 $A_F=A+BFC$ 代入\n$$\\begin{bmatrix}\\lambda I-A_F\\\\ C\\end{bmatrix}\n=\\begin{bmatrix}I&-BF\\\\0&I\\end{bmatrix}\\begin{bmatrix}\\lambda I-A\\\\C\\end{bmatrix}.$$\n左乘矩阵也可逆，故能观性的 PBH 秩条件保持不变。",
+  "originalImages": [],
+  "answerPdfPages": "423–424",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

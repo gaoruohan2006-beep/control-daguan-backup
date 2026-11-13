@@ -1,0 +1,8 @@
+{
+  "answer": "这是 PBH 能控性判据的左特征向量形式。",
+  "explanation": "若 $v^\\mathsf TA=\\lambda v^\\mathsf T$ 且 $v^\\mathsf T b=0$，则 $v^\\mathsf TA^k b=\\lambda^kv^\\mathsf T b=0$，能控矩阵的列空间不能为全空间。\n\n反之，若不可控，令 $\\mathcal R=\\operatorname{span}\\{b,Ab,\\ldots,A^{n-1}b\\}$。由凯莱–哈密顿定理，$\\mathcal R$ 对 $A$ 不变，所以其非零左零化空间在右乘 $A$ 下不变。在该空间上取一个复特征向量 $v^\\mathsf T$，便有 $v^\\mathsf T A=\\lambda v^\\mathsf T$ 且 $v^\\mathsf T b=0$。",
+  "originalImages": [],
+  "answerPdfPages": "504–505",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

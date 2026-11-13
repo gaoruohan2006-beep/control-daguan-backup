@@ -1,0 +1,8 @@
+{
+  "answer": "$\\tau=1/K$。",
+  "explanation": "由图得 $C=G[(1+\\tau s)R-C]$，故\n$$\\frac C R=\\frac{K(1+\\tau s)}{\\tau s^2+s+K},\\qquad\n\\frac E R=\\frac{\\tau s^2+(1-K\\tau)s}{\\tau s^2+s+K}.$$\n单位斜坡对应 $R=1/s^2$。对 $\\tau>0,K>0$，二阶闭环特征式严格稳定。由终值定理得到 $e_{ss}=(1-K\\tau)/K$，令其为零即得 $\\tau=1/K$。",
+  "originalImages": [],
+  "answerPdfPages": "586",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

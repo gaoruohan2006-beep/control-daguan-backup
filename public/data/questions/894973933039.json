@@ -1,0 +1,8 @@
+{
+  "answer": "$K>0$，$e_{ss}=5/K$。",
+  "explanation": "闭环特征式为 $s^3+6s^2+(10+K)s+2K$。劳斯表首列为 $1,6,(60+4K)/6,2K$，故 $K>0$ 是闭环渐近稳定的充要条件。稳定时系统为Ⅰ型，$K_v=\\lim_{s\\to0}sG(s)=K/5$，因此单位斜坡误差是 $1/K_v=5/K$。",
+  "originalImages": [],
+  "answerPdfPages": "319–320",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

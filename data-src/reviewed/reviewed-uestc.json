@@ -3,22 +3,6 @@
     "school": "电子科技大学",
     "year": 2023,
     "variant": "839",
-    "number": 1,
-    "topics": [
-      "建模 / 电路系统 / 传递函数",
-      "时域分析 / 时间响应"
-    ],
-    "stem": "某控制系统如图所示，求当 $u_r(t)=t+1(t)$ 时的输出响应 $u_c(t)$。\n\n![运算放大器电路](img/reviewed/uestc-2023-1.svg)",
-    "answer": "按理想运算放大器、零初始条件，$u_c(t)=-2t-5-3e^{-2t}$（$t\\geq 0$）。",
-    "explanation": "记两只电容所在节点电压为 $u_1,u_2$。运放同相端接地，反相端为虚地且输入电流为零。对 $u_1$、反相端与 $u_2$ 分别写节点方程，可得\n$$(s+2)U_1=U_r,\\qquad U_2=-2U_1,\\qquad U_c=(2+4s)U_2.$$\n电阻为 $1000\\,\\Omega$ 的输入支路中 $RC=1\\,\\mathrm{s}$，电阻为 $2000\\,\\Omega$ 的反馈支路中 $RC=4\\,\\mathrm{s}$。因此\n$$U_c=-\\frac{4+8s}{s+2}\\frac{s+1}{s^2}=-\\frac{2}{s^2}-\\frac5s-\\frac3{s+2}.$$\n反变换即得答案。",
-    "questionPages": "49",
-    "answerPages": "88",
-    "notes": ""
-  },
-  {
-    "school": "电子科技大学",
-    "year": 2023,
-    "variant": "839",
     "number": 2,
     "topics": [
       "时域分析 / 稳定性 / 劳斯判据"

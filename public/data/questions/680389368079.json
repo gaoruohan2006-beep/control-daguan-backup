@@ -1,0 +1,8 @@
+{
+  "answer": "$G_0(s)=4/[s(1+s/5)^2(1+s/20)]$。精确增益交越频率约为 $2.9405,mathrm{rad/s}$，相位裕度约为 $20.72^circ$，闭环稳定。按参考解析以渐近交越频率 $4,mathrm{rad/s}$ 估算，得约 $1.37^circ$。",
+  "explanation": "低频斜率为 $-20,mathrm{dB/dec}$，故有一个积分环节。斜率在 $omega=5$ 处降低 $40$，在 $omega=20$ 处再降低 $20$，分别对应二重极点和单极点。由低频渐近式 $20log_{10}(K/omega)$ 在 $omega=4$ 等于零，得 $K=4$。\n\n精确求解 $|G_0(jomega_c)|=1$，即 $omega_c[1+(omega_c/5)^2]sqrt{1+(omega_c/20)^2}=4$，得 $omega_capprox2.9405$。相位裕度为 $90^circ-2arctan(omega_c/5)-arctan(omega_c/20)$，其中反正切取角度制。幅值和相位均随正频率单调下降，开环无右半平面极点。按奈奎斯特判据，正相位裕度对应闭环稳定。",
+  "originalImages": [],
+  "answerPdfPages": "370",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

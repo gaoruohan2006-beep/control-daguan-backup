@@ -1,0 +1,8 @@
+{
+  "answer": "取 $A$ 的前三阶能控标准形末行为 $[0,-10,-4]$，$B=[0,0,1]^\\mathsf T$，$C=[1,0,0]$。$K=[6,-2,1]$。",
+  "explanation": "取 $\\dot x_1=x_2,\\dot x_2=x_3,\\dot x_3=-10x_2-4x_3+u,y=x_1$。采用状态反馈后，特征式变为 $s^3+(4+k_3)s^2+(10+k_2)s+k_1$。期望多项式为 $(s+3)(s^2+2s+2)=s^3+5s^2+8s+6$，比较系数即得。",
+  "originalImages": [],
+  "answerPdfPages": "233",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

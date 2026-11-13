@@ -1,0 +1,8 @@
+{
+  "answer": "$K=40\\,\\mathrm{N/m}$，$m\\approx53.43\\,\\mathrm{kg}$，$f\\approx38.80\\,\\mathrm{N\\,s/m}$。",
+  "explanation": "增量运动方程为 $m\\ddot x+f\\dot x+Kx=F$。稳态有 $Kx_\\infty=40$，得 $K=40$。相对超调 $M_p=0.234$，由 $M_p=e^{-\\pi\\zeta/\\sqrt{1-\\zeta^2}}$ 得 $\\zeta=-\\ln M_p/\\sqrt{\\pi^2+\\ln^2M_p}\\approx0.41965$。\n\n峰值时间满足 $4=\\pi/\\omega_d$，因此 $\\omega_n=\\pi/[4\\sqrt{1-\\zeta^2}]\\approx0.86527\\,\\mathrm{rad/s}$。由 $\\omega_n^2=K/m$、$2\\zeta\\omega_n=f/m$ 得上述 $m,f$。",
+  "originalImages": [],
+  "answerPdfPages": "538",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

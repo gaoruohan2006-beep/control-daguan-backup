@@ -1,0 +1,17 @@
+[
+  {
+    "school": "上海交通大学",
+    "year": 2025,
+    "variant": "816",
+    "number": 11,
+    "topics": [
+      "状态空间 / 稳定"
+    ],
+    "questionPages": "236",
+    "answerPages": "567–568",
+    "stem": "已知\n$$\\dot x=\\begin{bmatrix}1&0&0\\\\0&0&-2\\\\0&-2&0\\end{bmatrix}x+\\begin{bmatrix}-5\\\\0\\\\2\\end{bmatrix}u,\\quad\ny=\\begin{bmatrix}0&m&1\\end{bmatrix}x.$$\n（1）判断渐近稳定性。（2）求使输入—输出关系 BIBO 稳定的 $m$。",
+    "answer": "状态系统不渐近稳定。$m=1$ 时输入—输出关系 BIBO 稳定。",
+    "explanation": "$A$ 的特征值为 $1,2,-2$。由于含正实特征值，零输入下存在发散状态模态。输出不含 $x_1$，故该分量不出现在传递函数中。\n\n对其余两个状态，在零初值下有 $sX_2=-2X_3,\\ sX_3=-2X_2+2U$，所以\n$$\\frac{Y}{U}=\\frac{2(s-2m)}{(s-2)(s+2)}.$$\n只有 $m=1$ 才能约去右半平面极点 $2$，得到 $2/(s+2)$。约消只影响该输入—输出通道的 BIBO 稳定性，状态矩阵仍有正实特征值。",
+    "notes": ""
+  }
+]

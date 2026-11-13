@@ -1,0 +1,32 @@
+[
+  {
+    "school": "浙江大学",
+    "year": 2025,
+    "variant": "845",
+    "number": 1,
+    "topics": [
+      "离散系统 / 采样"
+    ],
+    "questionPages": "213",
+    "answerPages": "507",
+    "stem": "已知 $y(t)=\\sin t$（$t\\ge0$）。求其拉氏变换。按 $T=0.1\\,\\mathrm s$ 采样，写出采样序列、$Z$ 变换以及冲激采样信号的表达式。",
+    "answer": "$Y(s)=1/(s^2+1)$；$y[k]=\\sin(0.1k)$；\n  $Y(z)=z\\sin(0.1)/[z^2-2z\\cos(0.1)+1]$（$|z|>1$）；\n  $y^*(t)=\\sum_{k=0}^\\infty \\sin(0.1k)\\delta(t-0.1k)$。",
+    "explanation": "$\\sin t$ 的拉氏变换为 $1/(s^2+1)$。在 $t=kT$ 取样得到 $y[k]=\\sin(kT)$。用 $\\sin(kT)=(e^{jkT}-e^{-jkT})/(2j)$ 拆分级数\n$$Y(z)=\\frac{1}{2j}\\left(\\frac{1}{1-e^{jT}z^{-1}}-\\frac{1}{1-e^{-jT}z^{-1}}\\right).$$\n合并分母并代入 $T=0.1$ 得所列结果。冲激采样在每个采样时刻保留一枚强度为 $y[k]$ 的冲激。",
+    "notes": ""
+  },
+  {
+    "school": "浙江大学",
+    "year": 2025,
+    "variant": "845",
+    "number": 7,
+    "topics": [
+      "状态空间 / 能控能观"
+    ],
+    "questionPages": "215",
+    "answerPages": "511–512",
+    "stem": "给定系统 $\\Sigma_1:(A,B,C)$，$\\Sigma_2:(A^\\mathsf T,C^\\mathsf T,B^\\mathsf T)$，均为单输入单输出，直接项为零。证明 $\\Sigma_1$ 能控等价于 $\\Sigma_2$ 能观、$\\Sigma_1$ 能观等价于 $\\Sigma_2$ 能控，并比较两系统的传递函数。",
+    "answer": "两组等价关系均成立，且两系统的传递函数相同。",
+    "explanation": "将 $\\Sigma_1$ 的能控矩阵转置，恰好得到 $\\Sigma_2$ 的能观矩阵；将 $\\Sigma_1$ 的能观矩阵转置，则得到 $\\Sigma_2$ 的能控矩阵。转置保持秩，所以分别得到两组等价关系。\n\n对偶系统的传递函数为 $B^\\mathsf T(sI-A^\\mathsf T)^{-1}C^\\mathsf T=[C(sI-A)^{-1}B]^\\mathsf T$。由于这里的传递函数是标量，其转置等于自身。",
+    "notes": ""
+  }
+]

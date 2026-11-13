@@ -1,0 +1,8 @@
+{
+  "answer": "完全能控不保证开环稳定。完全能控的线性定常系统可以用状态反馈实现渐近稳定。",
+  "explanation": "以标量系统 $\\dot x=x+u$ 为例，$B=1$，完全能控，但零输入时 $x(t)=e^tx(0)$。取 $u=-2x$，闭环为 $\\dot x=-x$，任意初值都收敛到零。\n\n一般地，完全能控使闭环矩阵 $A-BK$ 的极点可任意配置。连续系统可把全部极点配置在开左半平面，由此得到渐近稳定的闭环。",
+  "originalImages": [],
+  "answerPdfPages": "303–304",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

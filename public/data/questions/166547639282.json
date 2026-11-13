@@ -1,8 +1,0 @@
-{
-  "answer": "令 $B=fs+k_1$，$A=m_1s^2+B$，$D=m_2s^2+B+k_2$。则\n$$\\frac{X(s)}{U(s)}=\\frac{k_3D}{(R+Ls)(AD-B^2)+k_3(k_4sD+k_5B)}.$$\n若可测 $N$，在电路输入端叠加 $F(s)N(s)$，其中 $F(s)=(R+Ls)/k_3$，可在理想模型中消除该扰动对位移的影响。",
-  "explanation": "电路与两质量的方程在零初值下写成\n$$\\begin{aligned}\n(R+Ls)I &= U-k_4sX-k_5Y,\\\\\nAX &=k_3I+BY-N,\\\\\nDY &=BX .\n\\end{aligned}$$\n令 $N=0$，代入 $Y=BX/D$，整理得上述传递函数。加入可测扰动的前馈后，电路输入额外增加 $FN$，因而在 $m_1$ 受力节点产生 $k_3FN/(R+Ls)$。取 $F=(R+Ls)/k_3$（$k_3\\ne0$）时恰好抵消 $-N$。这个理想前馈含微分，实际可在有效频段用带滤波的环节近似实现。令图中 $N=0$ 即得到无扰动的框图。\n\n![含摩擦扰动及前馈补偿的系统框图|820](img/reviewed/seu-2023-mech-blocks.svg)",
-  "originalImages": [],
-  "answerPdfPages": "271–273",
-  "referenceNote": "参考解推导的是 $Y(s)/U(s)$，题目指定的输出为 $x(t)$。已按 $X(s)/U(s)$ 更正。",
-  "sourceType": "reviewed"
-}

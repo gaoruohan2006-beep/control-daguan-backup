@@ -1,0 +1,8 @@
+{
+  "answer": "开环不稳定，系统完全能控。$K=[3.414,\\ 0.414]$。",
+  "explanation": "$A$ 的特征值为 $1,-2$，故零平衡点不稳定。$[B,AB]=\\left[\\begin{smallmatrix}0&1\\\\1&-2\\end{smallmatrix}\\right]$ 的行列式为 $-1$，所以完全能控。\n\n写 $K=[k_1,k_2]$，则 $\\det(sI-A+BK)=(s-1)(s+2+k_2)+k_1=s^2+(1+k_2)s+k_1-k_2-2$。和 $s^2+1.414s+1$ 对比，得 $k_2=0.414$、$k_1=k_2+3=3.414$。因此 $K=[3.414,\\ 0.414]$。",
+  "originalImages": [],
+  "answerPdfPages": "218",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

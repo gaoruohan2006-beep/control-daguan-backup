@@ -1,0 +1,8 @@
+{
+  "answer": "$u_h(t)=u[k]$，$kT\\le t<(k+1)T$；$G_h(s)=(1-e^{-sT})/s$。",
+  "explanation": "零阶保持器在每个采样时刻更新一次输出，其余时间保持该采样值。若把采样器输出表示成加权冲激列 $\\sum_k u[k]\\delta(t-kT)$，保持器对单个单位冲激的响应为 $1(t)-1(t-T)$，因此其拉氏变换为 $(1-e^{-sT})/s$。冲激列通过保持器后即得到分段常值信号。",
+  "originalImages": [],
+  "answerPdfPages": "569",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

@@ -61,6 +61,16 @@
     "explanation": "电路与两质量的方程在零初值下写成\n$$\\begin{aligned}\n(R+Ls)I &= U-k_4sX-k_5Y,\\\\\nAX &=k_3I+BY-N,\\\\\nDY &=BX .\n\\end{aligned}$$\n令 $N=0$，代入 $Y=BX/D$，整理得上述传递函数。加入可测扰动的前馈后，电路输入额外增加 $FN$，因而在 $m_1$ 受力节点产生 $k_3FN/(R+Ls)$。取 $F=(R+Ls)/k_3$（$k_3\\ne0$）时恰好抵消 $-N$。这个理想前馈含微分，实际可在有效频段用带滤波的环节近似实现。令图中 $N=0$ 即得到无扰动的框图。\n\n![含摩擦扰动及前馈补偿的系统框图|820](img/reviewed/seu-2023-mech-blocks.svg)",
     "questionPages": "119",
     "answerPages": "263–265",
-    "notes": ""
+    "notes": "",
+    "alsoAppearedIn": [
+      {
+        "school": "东南大学",
+        "year": 2025,
+        "variant": "5C5",
+        "number": "二.1",
+        "questionPages": "122",
+        "answerPages": "271–273"
+      }
+    ]
   }
 ]

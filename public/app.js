@@ -90,12 +90,37 @@ const dueIds = () => { const lim = endOfToday().getTime(); return Object.entries
 const dayDiff = d => Math.round((dayStart(d) - dayStart(new Date())) / 864e5);
 const ivl = d => { const n = Math.max(0, Math.round((new Date(d) - new Date()) / 864e5)); return n < 1 ? '今天' : n < 30 ? `${n}天` : n < 365 ? `${Math.round(n / 3) / 10}月` : `${Math.round(n / 36.5) / 10}年`; };
 const fmtDue = d => { const n = dayDiff(d), dt = dayStart(d); const md = `${dt.getMonth() + 1}月${dt.getDate()}日`; return n < 0 ? `已到期 ${-n} 天（${md}）` : n === 0 ? `今日待复习（${md}）` : `下次复习：${md}（${n} 天后）`; };
-bc && (bc.onmessage = async () => { rec = await loadRec(); render(); });
+bc && (bc.onmessage = async () => { rec = remapRecords(await loadRec()); render(); });
 
 // ---------- 状态 ----------
 let lib, byId = new Map(), details = new Map();
 const st = { tab: 'bank', listId: 'complete', node: null, qid: null, q: '', page: 0, show: {}, rv: 'due', noteMode: {} };
 const DUE_NODE = '今日待复习';
+const canonicalId = id => lib?.questionAliases?.[id] ?? Number(id);
+
+function remapRecords(record) {
+  for (const [oldId, id] of Object.entries(lib?.questionAliases || {})) {
+    const old = Number(oldId);
+    const moved = { favorites: [], marks: {}, srs: {}, updated: {}, notes: {} };
+    let changed = record.favorites.includes(old);
+    if (changed) moved.favorites.push(id);
+    for (const field of ['marks', 'srs', 'updated', 'notes']) {
+      if (record[field]?.[oldId] == null) continue;
+      moved[field][id] = record[field][oldId];
+      delete record[field][oldId];
+      changed = true;
+    }
+    for (const entry of record.history) {
+      if (Number(entry?.id) !== old) continue;
+      entry.id = id;
+      changed = true;
+    }
+    if (!changed) continue;
+    const favorites = new Set([...record.favorites.filter(value => value !== old), ...moved.favorites]);
+    Object.assign(record, CDGSync.merge(record, moved), { favorites: [...favorites] });
+  }
+  return record;
+}
 
 // ---------- 渲染工具 ----------
 const esc = s => s.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
@@ -262,6 +287,8 @@ function cardHTML(id, idx) {
   const paths = (L.categoryByQuestion[id] || q.categories);
   const leaf = paths[0].split(' / ').pop();
   const number = q.sourceType === 'reviewed' ? `原卷 ${q.number}` : `第 ${idx + 1} 题`;
+  const otherSources = q.alsoAppearedIn?.map(s =>
+    [s.school, s.year, s.variant, `原卷 ${s.number}`].filter(Boolean).join(' · ')) || [];
   const sh = st.show[id] || {}; const mk = rec.marks[id]?.state; const fav = rec.favorites.includes(id);
   const hl = st.q && st.q.length > 0 ? st.q : null;
   let ans = '';
@@ -303,6 +330,7 @@ function cardHTML(id, idx) {
     <header class="meta"><span class="qno">${esc(number)}</span><h2 class="src">${esc(q.source)}</h2>
       <span class="pop-wrap"><button type="button" class="cat-btn" data-act="cats" aria-expanded="false" aria-label="查看完整分类路径，共 ${paths.length} 处">${esc(leaf)}</button>
       <div class="popover catpop" hidden><b>分类路径</b>${paths.map(p => `<button type="button" data-act="gocat" data-path="${esc(p)}" title="查看本分类全部题目">${esc(p)}</button>`).join('')}</div></span>${hasNote ? `<span class="note-flag" title="本题有笔记">${IC.pen}有笔记</span>` : ''}${dueHTML}</header>
+    ${otherSources.length ? `<p class="other-sources">另见 ${otherSources.map(esc).join('；')}</p>` : ''}
     <div class="stem">${md(q.stem, hl)}</div>
     <div class="actions">
       <button type="button" class="tog" data-act="answer" aria-pressed="${!!sh.answer}" aria-label="答案">${IC.eye}答案</button>
@@ -358,7 +386,7 @@ function restoreBackups() {
   let n = 0;
   for (const k of Object.keys(localStorage)) {
     if (!k.startsWith(BK)) continue;
-    const id = k.slice(BK.length);
+    const id = canonicalId(k.slice(BK.length));
     try {
       const d = JSON.parse(localStorage.getItem(k)), cur = rec.notes[id];
       if (byId.has(+id) && typeof d?.text === 'string' && d.at > (cur?.at || 0) && d.text !== (cur?.text || '')) { rec.notes[id] = { text: d.text.trim() ? d.text.slice(0, CDGNotes.MAX) : '', at: d.at }; n++; }
@@ -452,7 +480,7 @@ function readURL() {
   const p = new URLSearchParams(location.search);
   st.listId = lib.lists.some(l => l.id === p.get('list')) ? p.get('list') : 'complete';
   st.tab = ['bank', 'fav', 'retest'].includes(p.get('tab')) ? p.get('tab') : 'bank';
-  st.qid = p.get('question') ? Number(p.get('question')) : null;
+  st.qid = p.get('question') ? canonicalId(p.get('question')) : null;
   if (st.qid != null && !curList().questionIds.includes(st.qid)) {
     const containing = lib.lists.find(l => l.questionIds.includes(st.qid));
     if (containing) st.listId = containing.id;
@@ -475,6 +503,7 @@ function exportJSON() {
 }
 function applyImport(d) {
   if (!d || d.app !== 'control-daguan' || !Array.isArray(d.favorites) || typeof d.marks !== 'object') throw new Error('不是有效的控制大观记录文件，请重新导出 JSON。');
+  d = remapRecords(normRec(d));
   const known = id => byId.has(Number(id));
   const before = CDGSync.canon({ f: rec.favorites, m: rec.marks, s: rec.srs });
   const snap = id => CDGSync.canon([rec.favorites.includes(+id), rec.marks[id] || null, rec.srs[id] || null]);
@@ -652,7 +681,10 @@ function bind() {
 
 // ---------- 启动 ----------
 Promise.all([fetch(libraryUrl).then(r => { if (!r.ok) throw 0; return r.json(); }), loadRec()]).then(async ([d, r]) => {
-  lib = d; d.questions.forEach(q => byId.set(q.id, q)); rec = r;
+  lib = d; d.questions.forEach(q => byId.set(q.id, q));
+  const original = CDGSync.canon(CDGSync.syncPart(r));
+  rec = remapRecords(r);
+  if (original !== CDGSync.canon(CDGSync.syncPart(rec))) await save(false);
   if (restoreBackups()) save();
   readURL(); bind(); render();
   if (migrated) toast('学习记录已迁移到 IndexedDB');
@@ -679,7 +711,7 @@ function syncUI(cfg, busy, pending) {
 async function initSync() {
   gist = new CDGSync.GistSync({
     getLocal: () => rec,
-    applyMerged: async m => { rec = normRec({ ...rec, ...m }); await save(false); bc?.postMessage('rec'); render(); },
+    applyMerged: async m => { rec = remapRecords(normRec({ ...rec, ...m })); await save(false); bc?.postMessage('rec'); render(); },
     onStatus: syncUI,
   });
   try { await gist.init(); } catch { return; }

@@ -1,0 +1,8 @@
+{
+  "answer": "$|L(j\\omega_c)|=1$；$\\arg L(j\\omega_g)=-180^\\circ$（模 $360^\\circ$）；低通闭环的带宽由 $|T(j\\omega_b)|=|T(0)|/\\sqrt2$ 定义。",
+  "explanation": "令 $L$ 为环路传递函数，$T$ 为闭环传递函数。开环截止频率 $\\omega_c$ 对应伯德图幅值的 $0\\,\\mathrm{dB}$ 穿越点。相位穿越频率 $\\omega_g$ 对应奈奎斯特曲线穿过负实轴的频率。对常见低通闭环，带宽指 $0$ 到 $\\omega_b$ 的频段，其中 $\\omega_b$ 是闭环幅值首次降到低频幅值的 $1/\\sqrt2$ 处。实际环路可能有多个穿越点，计算稳定裕度时应检查各相关交点。",
+  "originalImages": [],
+  "answerPdfPages": "401",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

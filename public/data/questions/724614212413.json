@@ -1,8 +1,8 @@
 {
   "answer": "$$\\frac{I(s)}{U_r(s)}=\\frac{30(R_1s+1/C_1)}{s^2+(100+0.3R_1)s+0.3/C_1}.$$\n$R_1=138\\,\\Omega$，$C_1=30\\,\\mu\\mathrm F$。",
-  "explanation": "第一反相放大器的反馈阻抗为 $Z_f=R_1+1/(C_1s)$。由虚地条件，输出为 $-\\dfrac{Z_f}{1000}(U_r+\\alpha I)$。第二反相放大器的增益为 $-1$，其后增益为 $30$。电路负载关系为 $I/U=1/(0.1+0.001s)=1000/(s+100)$。\n\n![电流闭环方框图|680](img/reviewed/tianjin-2023-03-block.svg)\n\n前向传递函数为 $G(s)=30(R_1+1/(C_1s))/(s+100)$。$\\alpha=-0.01$，故 $I/U_r=G/(1+0.01G)$。对比分母与 $s^2+2\\zeta\\omega_n s+\\omega_n^2$，得 $0.3/C_1=10000$，$100+0.3R_1=141.4$。",
+  "explanation": "由图中三个前向环节相乘得到 $G(s)=30(R_1+1/(C_1s))/(s+100)$，反馈系数为 $0.01$。因此 $I/U_r=G/(1+0.01G)$，归一化分母为 $s^2+(100+0.3R_1)s+0.3/C_1$。\n\n和 $s^2+2\\zeta\\omega_ns+\\omega_n^2$ 比较，得到 $0.3/C_1=10000$、$100+0.3R_1=141.4$。解得 $R_1=138\\,\\Omega$、$C_1=30\\,\\mu\\mathrm F$。",
   "originalImages": [],
   "answerPdfPages": "68–69",
-  "referenceNote": "",
+  "referenceNote": "按原题的等效反馈模型保留控制计算部分。",
   "sourceType": "reviewed"
 }

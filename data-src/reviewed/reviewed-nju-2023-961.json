@@ -1,0 +1,32 @@
+[
+  {
+    "school": "南京大学",
+    "year": 2023,
+    "variant": "961",
+    "number": "八",
+    "topics": [
+      "状态空间 / 李雅普诺夫"
+    ],
+    "questionPages": "255",
+    "answerPages": "630–631",
+    "stem": "系统满足 $\\dot x_1=x_2,\\ \\dot x_2=-x_1-(1-|x_1|)x_2$。判断其平衡状态的稳定性。",
+    "answer": "唯一平衡点为原点，且局部渐近稳定。",
+    "explanation": "由 $\\dot x_1=0$ 得 $x_2=0$，再由 $\\dot x_2=0$ 得 $x_1=0$。取 $V=(x_1^2+x_2^2)/2$，沿轨迹有 $\\dot V=-(1-|x_1|)x_2^2$。任选 $0<\\rho<1$，在闭圆盘 $x_1^2+x_2^2\\le\\rho^2$ 内 $\\dot V\\le0$，所以轨迹留在圆盘内。\n\n盘内 $\\dot V=0$ 只可能有 $x_2=0$。若还满足 $x_1\\ne0$，则 $\\dot x_2=-x_1\\ne0$，轨迹会离开该集合。最大不变集只有原点，由 LaSalle 原理得到局部渐近稳定。",
+    "notes": ""
+  },
+  {
+    "school": "南京大学",
+    "year": 2023,
+    "variant": "961",
+    "number": "九",
+    "topics": [
+      "状态空间 / 状态观测器"
+    ],
+    "questionPages": "255",
+    "answerPages": "631",
+    "stem": "系统为\n$$\\dot x=\\begin{bmatrix}1&0&0\\\\3&-1&1\\\\0&2&0\\end{bmatrix}x+\\begin{bmatrix}2\\\\1\\\\1\\end{bmatrix}u,\\quad y=\\begin{bmatrix}0&0&1\\end{bmatrix}x.$$\n设计极点为 $-3,-4,-5$ 的全维状态观测器，并写出其状态方程。",
+    "answer": "$L=[20,25,12]^\\mathsf T$，观测器为 $\\dot{\\hat x}=A\\hat x+Bu+L(y-C\\hat x)$。",
+    "explanation": "能观性矩阵的三行是 $[0,0,1]$、$[0,2,0]$ 和 $[6,-2,2]$，行列式为 $-12$，所以可任意配置观测器极点。设 $L=[l_1,l_2,l_3]^\\mathsf T$，\n$$\\det(sI-A+LC)=(s-1)\\{(s+1)(s+l_3)+2(l_2-1)\\}+6l_1.$$\n期望多项式为 $s^3+12s^2+47s+60$，比较系数得 $l_3=12,\\ l_2=25,\\ l_1=20$。将所得列向量代入 $\\dot{\\hat x}=(A-LC)\\hat x+Bu+Ly$ 即得状态方程。",
+    "notes": ""
+  }
+]

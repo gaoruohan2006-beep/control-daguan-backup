@@ -1,0 +1,8 @@
+{
+  "answer": "奈奎斯特下界为 $8\\,\\mathrm{rad/s}$，即 $4/\\pi\\,\\mathrm{Hz}$。为保证一般相位下无混叠，应取采样频率严格大于下界。",
+  "explanation": "利用 $\\sin^2(2t)=[1-\\cos(4t)]/2$，得 $f=5.5-0.5\\cos(4t)+\\cos(3t)$。最高角频率为 $4\\,\\mathrm{rad/s}$。采样后频谱每隔 $\\omega_s$ 平移复制，两个相邻副本要留出间隔，须有 $\\omega_s>2\\times4$。换算为赫兹得到 $f_s>4/\\pi$。",
+  "originalImages": [],
+  "answerPdfPages": "415",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

@@ -3,20 +3,6 @@
     "school": "厦门大学",
     "year": 2024,
     "variant": "844",
-    "number": 1,
-    "topics": [
-      "建模 / 电路系统 / 无源网络传递函数"
-    ],
-    "stem": "画出下图电路的系统框图，求 $U_o(s)/U_i(s)$。取两端电压的上端为正，电容初值为零。\n\n![并联 RC 与负载电阻组成的网络|580](img/reviewed/xmu-2024-rc.svg)",
-    "answer": "$$\\frac{U_o(s)}{U_i(s)}=\\frac{R_2(1+R_1C_1s)}{R_1+R_2+R_1R_2C_1s}.$$",
-    "explanation": "设串联支路压降为 $V=U_i-U_o$。并联支路导纳是 $1/R_1+C_1s$，故总电流 $I=(1/R_1+C_1s)(U_i-U_o)$，而 $U_o=R_2I$。相应的单位负反馈框图可表示为\n$$U_i\\ \\longrightarrow\\ \\boxed{V=U_i-U_o}\\ \\longrightarrow\\ \\boxed{1/R_1+C_1s}\\ \\longrightarrow\\ \\boxed{R_2}\\ \\longrightarrow\\ U_o.$$\n化简即得传递函数。直流时退化为电阻分压，高频时趋近 1。",
-    "questionPages": "220",
-    "answerPages": "523"
-  },
-  {
-    "school": "厦门大学",
-    "year": 2024,
-    "variant": "844",
     "number": 2,
     "topics": [
       "时域分析 / 动态性能 / 由阶跃响应确定参数",

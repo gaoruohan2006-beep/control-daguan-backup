@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="500" height="440" viewBox="0 0 500 440" role="img" aria-label="相轨迹沿顺时针绕行，依次穿过负一负根号十与一正根号十四">
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="440" viewBox="0 0 500 440" role="img" aria-label="相轨迹沿顺时针绕行，依次穿过负一负根号十与一正根号十四"><style>text {font-family:"Times New Roman", "Liberation Serif", SimSun, "宋体", "Noto Serif CJK SC", serif;font-size:17px} text[font-size] {font-size:16px}</style>
 <defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7Z" fill="#4f887f"/></marker></defs>
 <rect width="500" height="440" rx="10" fill="#fff"/>
 <path d="M32 220h435M250 28v384" fill="none" stroke="#718096"/>

@@ -1,0 +1,8 @@
+{
+  "answer": "$F=[12,12]^\\mathsf T$，$\\tilde x(1)=[-13e^{-5}+28e^{-10},\\ -52e^{-5}+42e^{-10}]^\\mathsf T/5$。",
+  "explanation": "$C=[1,0]$，$CA=[-1,2]$，故完全能观。令 $F=[f_1,f_2]^\\mathsf T$。误差系统的特征多项式为 $(s+1+f_1)(s+2)+2f_2$。比较 $(s+5)(s+10)=s^2+15s+50$，得 $f_1=12,f_2=12$。\n\n于是 $\\dot{\\tilde x}=\\left[\\begin{smallmatrix}-13&2\\\\-12&-2\\end{smallmatrix}\\right]\\tilde x$，初值为 $[3,-2]^\\mathsf T$。对应 $-5,-10$ 的特征向量可取 $[1,4]^\\mathsf T$、$[2,3]^\\mathsf T$。将初值写成 $a[1,4]^\\mathsf T+b[2,3]^\\mathsf T$，得到 $a+2b=3,4a+3b=-2$，由此 $a=-13/5,b=14/5$，因此\n$$\\tilde x(t)=\\frac15\\begin{bmatrix}-13e^{-5t}+28e^{-10t}\\\\-52e^{-5t}+42e^{-10t}\\end{bmatrix}.$$",
+  "originalImages": [],
+  "answerPdfPages": "218–219",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

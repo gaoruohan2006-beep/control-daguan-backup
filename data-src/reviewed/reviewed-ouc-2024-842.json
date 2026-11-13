@@ -1,0 +1,17 @@
+[
+  {
+    "school": "中国海洋大学",
+    "year": 2024,
+    "variant": "842",
+    "number": "一.6",
+    "topics": [
+      "状态空间 / 状态观测器"
+    ],
+    "questionPages": "264",
+    "answerPages": "661",
+    "stem": "能否分别设计一个系统的状态反馈控制器和状态观测器？说明理由和适用条件。",
+    "answer": "在能控、能观条件下，两组极点可以独立配置。若只要求闭环稳定，则可稳定、可检测即可。",
+    "explanation": "采用 $u=-K\\hat x$、$\\dot{\\hat x}=A\\hat x+Bu+L(y-C\\hat x)$。令 $e=x-\\hat x$，则 $\\dot e=(A-LC)e$，同时 $\\dot x=(A-BK)x+BKe$。因此增广系统矩阵为块上三角：\n$$\\begin{bmatrix}A-BK&BK\\\\0&A-LC\\end{bmatrix}.$$\n其极点是两个对角块的特征值的并集。设计 $K$ 时只配置 $A-BK$，设计 $L$ 时只配置 $A-LC$，即分离原理。",
+    "notes": ""
+  }
+]

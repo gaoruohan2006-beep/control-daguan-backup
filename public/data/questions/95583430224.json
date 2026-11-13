@@ -1,0 +1,8 @@
+{
+  "answer": "记 $B=b_1s+k_1$，$D=(m_vs^2+B)(m_ts^2+B+k_2)-B^2$。则 $Y_1/X=k_2B/D$，$Y_2/X=k_2(m_vs^2+B)/D$。",
+  "explanation": "全部位移取同一向上正方向，并以静平衡位置为原点，重力常项已由预载平衡。悬挂弹簧和减振器取相对位移、相对速度；轮胎弹簧取相对路面位移。于是\n$$m_v\\ddot y_1=k_1(y_2-y_1)+b_1(\\dot y_2-\\dot y_1),$$\n$$m_t\\ddot y_2=k_1(y_1-y_2)+b_1(\\dot y_1-\\dot y_2)+k_2(x-y_2).$$\n取零初值拉氏变换，第一式给出 $(m_vs^2+B)Y_1=BY_2$，第二式给出 $(m_ts^2+B+k_2)Y_2-BY_1=k_2X$。联立消元即得两个比值。取 $s=0$ 时两比值均为 $1$，与静态路面位移一致。",
+  "originalImages": [],
+  "answerPdfPages": "385",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

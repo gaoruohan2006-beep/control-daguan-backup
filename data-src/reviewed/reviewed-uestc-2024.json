@@ -132,23 +132,6 @@
     "school": "电子科技大学",
     "year": 2024,
     "variant": "839",
-    "number": 9,
-    "topics": [
-      "建模 / 电路系统 / 状态空间",
-      "状态空间 / 能控性",
-      "状态空间 / 能观性"
-    ],
-    "stem": "已知电路网络如图 8 所示，$L_1=L_2=0.1\\,\\mathrm H$，$R_1=R_2=R_3=2\\,\\Omega$。设 $x_1,x_2$ 分别为 $L_1,L_2$ 上的电流，$y$ 为系统输出（$R_2$ 两端电压），求系统的状态空间表达式并判断系统的能控性和能观性。\n\n![图 8 双电感网络及电流参考方向](img/reviewed/uestc-2024-9.svg)",
-    "answer": "$$\\dot{x}=\\begin{bmatrix}-40&-20\\\\-20&-40\\end{bmatrix}x+\\begin{bmatrix}20\\\\0\\end{bmatrix}u,\\qquad y=\\begin{bmatrix}2&2\\end{bmatrix}x.$$\n系统完全能控，不能完全能观。",
-    "explanation": "左、中、右三节点电压分别为 $v_l=R_1(u-x_1)$、$y=R_2(x_1+x_2)$、$v_r=-R_3 x_2$。电感上的电压满足 $L_1\\dot x_1=v_l-y$、$L_2\\dot x_2=v_r-y$。代入元件参数得到上述模型。\n\n能控性矩阵和能观性矩阵分别为\n$$[B\\ AB]=\\begin{bmatrix}20&-800\\\\0&-400\\end{bmatrix},\\qquad\n\\begin{bmatrix}C\\\\CA\\end{bmatrix}=\\begin{bmatrix}2&2\\\\-120&-120\\end{bmatrix}.$$\n其秩分别为 2 和 1。",
-    "questionPages": "55",
-    "answerPages": "103–104",
-    "notes": ""
-  },
-  {
-    "school": "电子科技大学",
-    "year": 2024,
-    "variant": "839",
     "number": 10,
     "topics": [
       "离散系统 / 稳定性",

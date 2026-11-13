@@ -1,8 +1,0 @@
-{
-  "answer": "令 $S=R_1+R_2$、$P=R_1R_2$，则\n$$\\frac{U_o(s)}{U_i(s)}=\\frac{1+C_1Ss+C_1C_2Ps^2}{1+(C_1S+C_2R_1)s+C_1C_2Ps^2}.$$",
-  "explanation": "记两电阻之间的节点电压为 $V$。对中间节点和输出节点分别列电流方程\n$$\\begin{aligned}\n\\frac{V-U_i}{R_1}+\\frac{V-U_o}{R_2}+sC_2V&=0,\\\\\n\\frac{U_o-V}{R_2}+sC_1(U_o-U_i)&=0 .\n\\end{aligned}$$\n由第二式有 $V=(1+sR_2C_1)U_o-sR_2C_1U_i$。将其代入第一式并乘以 $R_1R_2$，归并 $U_o,U_i$ 的同次项即可得到上述结果。$s=0$ 时两电容相当于开路，输出无负载电流，故直流增益应为 1，与结果一致。",
-  "originalImages": [],
-  "answerPdfPages": "530–531",
-  "referenceNote": "",
-  "sourceType": "reviewed"
-}

@@ -243,3 +243,7 @@ mark{background:#fff3b0;color:inherit;border-radius:3px}
 @media (prefers-color-scheme:dark){
  :root{--directory-blue:#8cbcff;--directory-ink:#f0f2f5}
 }
+.other-sources {
+  margin: 0.35rem 0 0.75rem;
+  color: var(--muted, #54616d);
+}

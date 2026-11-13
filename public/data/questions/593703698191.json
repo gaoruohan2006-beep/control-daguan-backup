@@ -1,8 +1,8 @@
 {
-  "answer": "在理想运放条件下，若两只电容分别记为 $C_1,C_2$，\n$$G_4(s)=-\\frac{R_2(2+C_2R_2s)}{R_1(2+C_1R_1s)}.$$\n令 $\\Delta=1+G_2H_1-G_1G_2H_1+G_2G_3H_2$，则\n$$\\frac{U_o}{U_i}=\\frac{G_1G_2G_3+(1+G_2H_1-G_1G_2H_1)G_4}{\\Delta}.$$",
-  "explanation": "对图 2，令输入侧和反馈侧电容节点电压分别为 $V_1,V_2$，运放反相端为虚地。节点方程给出\n$$U_i=(2+C_1R_1s)V_1,\\quad V_2=-\\frac{R_2}{R_1}V_1,\\quad U_o=(2+C_2R_2s)V_2.$$\n三式联立即得 $G_4$。\n\n图 1 中，设 $X$ 为 $G_2$ 的输出，则两处反馈与前馈关系给出\n$$X=G_2[G_1(U_i+H_1X)-H_1X-H_2U_o],\\qquad U_o=G_3X+G_4U_i.$$\n代入消元即得闭环传递函数。",
+  "answer": "令 $\\Delta=1+G_2H_1-G_1G_2H_1+G_2G_3H_2$，则\n$$\\frac{U_o}{U_i}=\\frac{G_1G_2G_3+(1+G_2H_1-G_1G_2H_1)G_4}{\\Delta}.$$",
+  "explanation": "设 $X$ 为 $G_2$ 的输出，则两处反馈与前馈关系给出\n$$X=G_2[G_1(U_i+H_1X)-H_1X-H_2U_o],\\qquad U_o=G_3X+G_4U_i.$$\n代入消元即得闭环传递函数。",
   "originalImages": [],
   "answerPdfPages": "105–106",
-  "referenceNote": "图 2 未标出足以推出 G₄=-2 的元件数值。图 1 中，H₂ 回路与 G₄ 通道接触，参考答案把 G₄ 直接放在整个闭环外，遗漏了 H₂ 对前馈通道的作用。",
+  "referenceNote": "保留原题第（2）问，直接给出各环节的符号模型。",
   "sourceType": "reviewed"
 }

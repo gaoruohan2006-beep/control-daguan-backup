@@ -1,0 +1,8 @@
+{
+  "answer": "可取 $A=\\left[\\begin{smallmatrix}0&1&0\\\\0&0&1\\\\-6&-11&-6\\end{smallmatrix}\\right]$、$B=[0,0,1]^\\mathsf T$、$C=[5,4,0]$、$D=0$。系统渐近稳定。",
+  "explanation": "分母展开为 $s^3+6s^2+11s+6$。取 $\\dot x_3=u-6x_1-11x_2-6x_3$，三个积分器依次从 $\\dot x_3$ 得到 $x_3,x_2,x_1$。输出为 $5x_1+4x_2$，相应结构见图。三个闭环极点 $-1,-2,-3$ 均在开左半平面，故该实现渐近稳定。\n\n![三阶能控标准形](img/reviewed/buaa-2025-873-10-state.svg)",
+  "originalImages": [],
+  "answerPdfPages": "64–65",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

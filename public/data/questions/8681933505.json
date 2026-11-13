@@ -1,0 +1,8 @@
+{
+  "answer": "唯一平衡点为原点，且局部渐近稳定。",
+  "explanation": "由 $\\dot x_1=0$ 得 $x_2=0$，再由 $\\dot x_2=0$ 得 $x_1=0$。取 $V=(x_1^2+x_2^2)/2$，沿轨迹有 $\\dot V=-(1-|x_1|)x_2^2$。任选 $0<\\rho<1$，在闭圆盘 $x_1^2+x_2^2\\le\\rho^2$ 内 $\\dot V\\le0$，所以轨迹留在圆盘内。\n\n盘内 $\\dot V=0$ 只可能有 $x_2=0$。若还满足 $x_1\\ne0$，则 $\\dot x_2=-x_1\\ne0$，轨迹会离开该集合。最大不变集只有原点，由 LaSalle 原理得到局部渐近稳定。",
+  "originalImages": [],
+  "answerPdfPages": "630–631",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

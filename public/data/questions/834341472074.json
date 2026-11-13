@@ -1,0 +1,8 @@
+{
+  "answer": "任意有限 $T>0$ 下，离散化后的极点均位于单位圆内。",
+  "explanation": "取连续系统的最小状态空间实现。连续传递函数稳定意味着其实现矩阵 $A$ 的特征值均有 $\\operatorname{Re}\\lambda<0$。零阶保持离散化给出 $A_d=e^{AT}$、$B_d=\\int_0^T e^{A\\tau}B\\,\\mathrm d\\tau$。由矩阵指数的谱映射，$A_d$ 的特征值是 $e^{\\lambda T}$，模为 $e^{T\\operatorname{Re}\\lambda}<1$。离散传递函数的极点是这些特征值的子集，所以严格位于单位圆内。",
+  "originalImages": [],
+  "answerPdfPages": "225",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

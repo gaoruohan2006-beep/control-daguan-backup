@@ -1,0 +1,8 @@
+{
+  "answer": "稳定性描述指定系统的响应性质，鲁棒性描述系统在模型或参数发生规定变化时保持稳定或满足性能要求的能力。",
+  "explanation": "以 $\\dot x=-ax$ 为例，给定 $a=2$ 时，$x(t)=x(0)e^{-2t}$，原点渐近稳定。若只知道 $a=2+\\Delta a$，对所有 $|\\Delta a|\\le1$ 都有 $a\\ge1$，系统在该不确定范围内仍稳定，这是鲁棒稳定性。若再要求衰减速率至少为 $1.5$，还要检查所有允许的 $a$ 是否均达到这个性能指标。",
+  "originalImages": [],
+  "answerPdfPages": "651",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

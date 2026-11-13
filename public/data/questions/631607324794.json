@@ -1,8 +1,8 @@
 {
-  "answer": "令 $D(s)=LC_1C_2R_1s^3+(R_1R_2C_1C_2+LC_1)s^2+(R_1C_2+R_1C_1+R_2C_1)s+1$。则 $G(s)=[D(s)-R_1C_2s]/D(s)$。PI 增益要求 $K\\ge10$。\n\n$$\nA=\\begin{bmatrix}0&0&-1\\\\0&-1&-1\\\\1&1&-1\\end{bmatrix},\\quad\nB=\\begin{bmatrix}0\\\\1\\\\-1\\end{bmatrix},\\quad C=[-1,0,0],\\quad D=1.\n$$",
-  "explanation": "按电流方向列节点和支路方程。\n$$\n\\begin{aligned}\nC_1\\dot u_{c1}&=-i_L,\\\\\nC_2\\dot u_{c2}&=(u_i-u_{c2})/R_1-i_L,\\\\\nL\\dot i_L&=u_i-u_{c1}-u_{c2}-R_2i_L,\\\\\nu_o&=u_i-u_{c1}.\n\\end{aligned}\n$$\n这组微分方程在参数取 1 时直接给出状态矩阵。零初态下，由第一式有 $I_L=-C_1sU_{c1}$。代入第三式得 $U_{c2}=U_i+[C_1s(Ls+R_2)-1]U_{c1}$。再代入第二式并整理得到 $U_{c1}/U_i=R_1C_2s/D(s)$。\n\n参数取 1 后，闭环特征多项式为 $(K+1)s^4+(3K+2)s^3+(4K+3)s^2+(3K+1)s+K$。对 $K>0$，劳斯表前两项正，第三项为 $(9K^2+13K+5)/(3K+2)>0$，第四项的分子为 $18K^3+36K^2+24K+5>0$，末项为 $K$，故闭环稳定。又 $G(0)=1$，故速度误差系数为 $K_v=K$。单位斜坡误差为 $1/K$，解得 $K\\ge10$。",
+  "answer": "$K\\ge10$。",
+  "explanation": "闭环特征多项式为\n$$P(s)=(K+1)s^4+(3K+2)s^3+(4K+3)s^2+(3K+1)s+K.$$\n当 $K>0$ 时，劳斯表首列的第三项为 $(9K^2+13K+5)/(3K+2)>0$，第四项的分子为 $18K^3+36K^2+24K+5>0$，分母也为正；其他首列项 $K+1,3K+2,K$ 均为正。因此正增益下闭环稳定。\n\n环路为Ⅰ型，$K_v=\\lim_{s\\to0}sK(1+1/s)G(s)=K$。单位斜坡误差为 $1/K$，所以要求 $K\\ge10$。",
   "originalImages": [],
   "answerPdfPages": "118–119",
-  "referenceNote": "",
+  "referenceNote": "据原题第（2）问整理，题干直接给出被控对象的传递函数。",
   "sourceType": "reviewed"
 }

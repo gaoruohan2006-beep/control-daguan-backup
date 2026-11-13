@@ -1,0 +1,8 @@
+{
+  "answer": "两组等价关系均成立，且两系统的传递函数相同。",
+  "explanation": "将 $\\Sigma_1$ 的能控矩阵转置，恰好得到 $\\Sigma_2$ 的能观矩阵；将 $\\Sigma_1$ 的能观矩阵转置，则得到 $\\Sigma_2$ 的能控矩阵。转置保持秩，所以分别得到两组等价关系。\n\n对偶系统的传递函数为 $B^\\mathsf T(sI-A^\\mathsf T)^{-1}C^\\mathsf T=[C(sI-A)^{-1}B]^\\mathsf T$。由于这里的传递函数是标量，其转置等于自身。",
+  "originalImages": [],
+  "answerPdfPages": "511–512",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

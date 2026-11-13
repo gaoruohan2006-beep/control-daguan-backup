@@ -1,0 +1,8 @@
+{
+  "answer": "$k_p=40/3,\\ k_i=10,\\ k_d=10/3$。",
+  "explanation": "由斜率变化可写 $G_c=K(1+s)(1+s/3)/s$。由于 $G_0(0)=1$，速度误差系数为 $K$。要求 $1/K=0.1$，故 $K=10$。展开即可识别三个 PID 系数。校正后环路可化为 $\\tfrac{400}3(s+3)/[s(s+4)(s+10)]$，由三阶劳斯判据可验证闭环稳定。",
+  "originalImages": [],
+  "answerPdfPages": "363",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

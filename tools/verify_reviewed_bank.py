@@ -26,15 +26,33 @@ async def verify():
         assert all(q["sourceType"] == "reviewed" for q in questions)
         assert [entry["id"] for entry in library["lists"]] == ["complete", "by-school"]
         assert all(set(entry["questionIds"]) == ids for entry in library["lists"])
+        schools = {path.split(" / ")[0] for paths in library["lists"][1]["categoryByQuestion"].values() for path in paths}
         assert await page.locator('.node[data-path="历年真题"]').count() == 0
         await page.locator("#listBtn").click()
         await page.locator('[data-list="by-school"]').click()
-        assert len(await page.locator("#tree .node.top").all()) == len({q["school"] for q in questions})
+        assert len(await page.locator("#tree .node.top").all()) == len(schools)
         await page.locator("#search").fill(questions[0]["school"])
         await page.wait_for_function("(school) => document.querySelectorAll('#tree .node.top').length === 1 && document.querySelector('.card .src').textContent.includes(school)", arg=questions[0]["school"])
         await page.locator("#search").fill("")
         await page.locator("#listBtn").click()
         await page.locator('[data-list="complete"]').click()
+
+        if aliases := library.get("questionAliases"):
+            old_id, current_id = next(iter(aliases.items()))
+            assert set(map(int, aliases)).isdisjoint(ids)
+            assert set(aliases.values()) <= ids
+            await page.evaluate("""async oldId => {
+                await CDGStore.set('rec', { favorites: [Number(oldId)], notes: {
+                    [oldId]: { text: '重复题迁移测试', at: Date.now() }
+                }});
+            }""", old_id)
+            await page.goto(f"{BASE}?question={old_id}")
+            alias_card = page.locator(f'.card[data-id="{current_id}"]')
+            await alias_card.locator(".other-sources").wait_for()
+            assert await alias_card.locator('[data-act="fav"]').get_attribute("aria-pressed") == "true"
+            await page.wait_for_function("""([oldId, currentId]) => CDGStore.get('rec').then(r =>
+                !r.notes[oldId] && r.notes[currentId]?.text === '重复题迁移测试')""", arg=[old_id, current_id])
+            await page.evaluate("CDGStore.del('rec')")
 
         for q in questions:
             identifier = q["id"]

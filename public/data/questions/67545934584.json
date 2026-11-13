@@ -1,0 +1,8 @@
+{
+  "answer": "$A=\\left[\\begin{smallmatrix}0&-2\\\\1&-3\\end{smallmatrix}\\right]$，$L=[98,17]^\\mathsf T$。",
+  "explanation": "因 $\\Phi^{-1}(t)=e^{-At}$，故 $A=-[\\mathrm d\\Phi^{-1}/\\mathrm dt]_{t=0}$，得到所列矩阵。能观矩阵由 $[0,1]$ 与 $[1,-3]$ 组成，满秩。\n\n设 $L=[l_1,l_2]^\\mathsf T$，则 $\\det(sI-A+Lc)=s^2+(3+l_2)s+2+l_1$。与 $(s+10)^2$ 比较得 $l_2=17,l_1=98$。观测器为 $\\dot{\\hat x}=(A-Lc)\\hat x+bu+Ly$。",
+  "originalImages": [],
+  "answerPdfPages": "200",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

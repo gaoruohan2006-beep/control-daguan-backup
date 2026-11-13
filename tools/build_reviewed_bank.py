@@ -9,7 +9,7 @@ ROOT = Path(__file__).resolve().parents[1]
 PUBLIC = ROOT / "public"
 TOPICS = [
     "数学基础", "建模", "时域分析", "根轨迹", "频域分析", "离散系统",
-    "校正", "非线性系统", "状态空间", "选择与填空", "专业综合",
+    "校正", "非线性系统", "状态空间", "选择与填空", "最优控制",
 ]
 # Ordered rules select a single primary path for each question.
 TOPIC_GROUPS = {
@@ -18,7 +18,6 @@ TOPIC_GROUPS = {
         ("差分|Z 变换", "离散系统求解 / Z 变换"),
     ),
     "建模": (
-        ("电路|运放|运算放大器", "物理建模 / 电路系统"),
         ("机电|电动机", "物理建模 / 机电系统"),
         ("机械", "物理建模 / 机械系统"),
         ("液位|热", "物理建模 / 液位与热过程"),
@@ -84,7 +83,7 @@ TOPIC_GROUPS = {
         ("选择", "选择题"),
         ("填空", "填空题"),
     ),
-    "专业综合": (),
+    "最优控制": (),
 }
 
 # These mixed questions are grouped by the task that determines their solution.
@@ -92,7 +91,9 @@ PRIMARY_TOPICS = {
     ("北京航空航天大学", 2025, "833", "5"): "状态空间 / 状态观测器",
     ("厦门大学", 2024, "844", "6"): "校正 / 超前",
     ("四川大学", 2025, "871", "2"): "根轨迹 / 绘制",
-    ("天津大学", 2023, "812", "1"): "专业综合",
+    ("天津大学", 2023, "812", "1"): "时域分析 / 劳斯",
+    ("北京理工大学", 2023, "810", "8"): "最优控制",
+    ("南开大学", 2023, "809", "九"): "最优控制",
 }
 
 
@@ -121,10 +122,21 @@ def validate_topic_tree(questions):
 
 
 FIGURE = re.compile(r"!\[[^\]]*\]\(([^)]+)\)")
+SOURCE_FIELDS = ("school", "year", "variant", "number")
 
 
 def write_json(path, data):
-    path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
+
+
+def source_id(source):
+    school, year, variant, number = (source[k] for k in SOURCE_FIELDS)
+    identity = json.dumps([school, year, variant, str(number)], ensure_ascii=False)
+    return int.from_bytes(hashlib.blake2s(identity.encode(), digest_size=5).digest(), "big") + 1_000_000
+
+
+def source_entry(source):
+    return {key: source[key] for key in SOURCE_FIELDS}
 
 
 def build():
@@ -133,11 +145,13 @@ def build():
     detail_dir = PUBLIC / "data" / "questions"
     detail_dir.mkdir(parents=True, exist_ok=True)
     ids = set()
+    aliases = {}
+    detail_rows = {}
+    stems = {}
     for path in sorted(source.glob("*.json")):
         for card in json.loads(path.read_text(encoding="utf-8-sig")):
-            school, year, variant, number = (card[k] for k in ("school", "year", "variant", "number"))
-            identity = json.dumps([school, year, variant, str(number)], ensure_ascii=False)
-            identifier = int.from_bytes(hashlib.blake2s(identity.encode(), digest_size=5).digest(), "big") + 1_000_000
+            school, year, variant, number = identity = tuple(card[k] for k in SOURCE_FIELDS)
+            identifier = source_id(card)
             assert identifier not in ids, identity
             ids.add(identifier)
             topic_paths = [primary_topic(card)]
@@ -145,20 +159,38 @@ def build():
             for field in ("stem", "answer", "explanation", "questionPages", "answerPages"):
                 assert str(card[field]).strip(), (identity, field)
             stem, answer, explanation = [card[k].strip() for k in ("stem", "answer", "explanation")]
+            normalized_stem = re.sub(r"\s+", "", stem)
+            assert normalized_stem not in stems, (identity, stems.get(normalized_stem))
+            stems[normalized_stem] = identity
             for location in FIGURE.findall("\n".join((stem, answer, explanation))):
                 assert location.startswith("img/reviewed/") and location.endswith(".svg")
                 assert (PUBLIC / location).is_file(), (identity, location)
             label = f"{school} · {year}" + (f" · {variant}" if variant else "")
+            other_sources = card.get("alsoAppearedIn", [])
+            for entry in other_sources:
+                alias = source_id(entry)
+                assert alias != identifier and alias not in aliases, (identity, entry)
+                aliases[alias] = identifier
+            source_search = " ".join(" ".join(str(entry[key]) for key in SOURCE_FIELDS) for entry in other_sources)
             questions.append(dict(
                 id=identifier, school=school, year=year, number=number, source=label, sourceType="reviewed",
                 categories=topic_paths, tags=tags, hasFigure=bool(FIGURE.search(stem)),
                 stem=stem, pdfPage=str(card["questionPages"]),
-                search=" ".join([school, "985", str(year), str(variant), str(number), *topic_paths, *card["topics"], stem]),
+                **({"alsoAppearedIn": [source_entry(entry) for entry in other_sources]} if other_sources else {}),
+                search=" ".join(filter(None, [school, "985", str(year), str(variant), str(number), source_search,
+                                               *topic_paths, *card["topics"], stem])),
             ))
-            write_json(detail_dir / f"{identifier}.json", dict(
+            detail_rows[identifier] = dict(
                 answer=answer, explanation=explanation, originalImages=[], answerPdfPages=str(card["answerPages"]),
                 referenceNote=card.get("notes", ""), sourceType="reviewed",
-            ))
+            )
+
+    assert not ids.intersection(aliases), "A merged question is still present as its own card"
+    for identifier, detail in detail_rows.items():
+        write_json(detail_dir / f"{identifier}.json", detail)
+    for path in detail_dir.glob("*.json"):
+        if path.stem.isdigit() and int(path.stem) not in ids:
+            path.unlink()
 
     def question_list(key, name, rows, paths):
         return dict(id=key, name=name, questionIds=[q["id"] for q in rows],
@@ -168,11 +200,14 @@ def build():
     validate_topic_tree(questions)
     lists = [
         question_list("complete", "专题分类", questions, lambda q: q["categories"]),
-        question_list("by-school", "按院校", questions, lambda q: [f'{q["school"]} / {q["year"]}']),
+        question_list("by-school", "按院校", questions, lambda q: list(dict.fromkeys(
+            f'{entry["school"]} / {entry["year"]}' for entry in [q, *q.get("alsoAppearedIn", [])]
+        ))),
     ]
     write_json(PUBLIC / "data" / "library.json", dict(
         subject="自动控制原理", source="985 高校初试题库", topicOrder=TOPICS,
-        years=sorted({q["year"] for q in questions}, reverse=True), lists=lists, questions=questions,
+        years=sorted({entry["year"] for q in questions for entry in [q, *q.get("alsoAppearedIn", [])]}, reverse=True),
+        questionAliases=aliases, lists=lists, questions=questions,
     ))
     print(f"{len(questions)} 道重排核对题，{len({q['school'] for q in questions})} 所 985 院校")
     print(dict(Counter(tag for q in questions for tag in q["tags"])))

@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="560" height="355" viewBox="0 0 560 355" role="img" aria-label="两支轨迹先在 −4 汇合，再于 −5.25 分离。">
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="355" viewBox="0 0 560 355" role="img" aria-label="两支轨迹先在 −4 汇合，再于 −5.25 分离。"><style>text {font-family:"Times New Roman", "Liberation Serif", SimSun, "宋体", "Noto Serif CJK SC", serif;font-size:17px} text[font-size] {font-size:16px}</style>
 <defs><marker id="arr" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7Z" fill="#242831"/></marker></defs>
 <rect width="560" height="355" rx="10" fill="white"/>
 <path d="M45 175.0h480M493.8 35v280" stroke="#718096" fill="none"/>
@@ -12,18 +12,18 @@
 <polyline points="299.0,315.0 299.0,35.0" fill="none" stroke="#b16e67" stroke-width="2" stroke-dasharray="5 5"/>
 </g>
 <circle cx="57.5" cy="175.0" r="3.5" fill="#242831"/>
-<text x="65.5" y="190.0" font-size="14">−14</text>
+<text x="65.5" y="190.0" font-size="16">−14</text>
 <circle cx="299.0" cy="175.0" r="3.5" fill="#242831"/>
-<text x="259.0" y="165.0" font-size="14">−6.25</text>
+<text x="259.0" y="165.0" font-size="16">−6.25</text>
 <circle cx="330.2" cy="175.0" r="3.5" fill="#242831"/>
-<text x="288.2" y="193.0" font-size="14">−5.25</text>
+<text x="288.2" y="193.0" font-size="16">−5.25</text>
 <circle cx="369.2" cy="175.0" r="3.5" fill="#242831"/>
-<text x="377.2" y="163.0" font-size="14">−4</text>
+<text x="377.2" y="163.0" font-size="16">−4</text>
 <circle cx="447.1" cy="175.0" r="3.5" fill="#242831"/>
-<text x="455.1" y="192.0" font-size="14">−1.5</text>
+<text x="455.1" y="192.0" font-size="16">−1.5</text>
 <circle cx="493.8" cy="175.0" r="3.5" fill="#242831"/>
-<text x="500.8" y="191.0" font-size="14">0</text>
+<text x="500.8" y="191.0" font-size="16">0</text>
 <text x="505" y="164.0">Re</text>
 <text x="464.8" y="29">Im</text>
-<text x="45" y="339" font-size="14">两支轨迹先在 −4 汇合，再于 −5.25 分离。</text>
+<text x="45" y="339" font-size="16">两支轨迹先在 −4 汇合，再于 −5.25 分离。</text>
 </svg>

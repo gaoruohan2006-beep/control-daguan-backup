@@ -1,0 +1,8 @@
+{
+  "answer": "$0<k<1/T_1+1/T_2$。给定参数下幅值裕度为 $6$，即约 $15.56\\,\\mathrm{dB}$。",
+  "explanation": "当 $\\omega>0$，相位为 $-90^\\circ-\\arctan(T_1\\omega)-\\arctan(T_2\\omega)$，单调从 $-90^\\circ$ 降至 $-270^\\circ$，故负实轴只有一个正频穿越。相位等于 $-180^\\circ$ 时 $T_1T_2\\omega_g^2=1$，且 $L(j\\omega_g)=-k/(1/T_1+1/T_2)$。\n\n计入对原点极点的右侧小半圆绕行，开环在轮廓内部没有右半平面极点。负实轴交点在 $-1$ 右侧时，完整奈奎斯特曲线对 $-1$ 的环绕数为零；等于 $-1$ 时临界稳定；再增大 $k$ 时出现一对右半平面闭环根。代入数值得到 $1/|L(j\\omega_g)|=3/0.5=6$。",
+  "originalImages": [],
+  "answerPdfPages": "204–205",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

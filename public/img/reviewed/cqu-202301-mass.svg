@@ -3,7 +3,7 @@
 <!-- 由 Microsoft Visio, SVG Export 生成 cqu-202301-mass.svg cqu-202301-mass -->
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
 		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="4.86111in" height="3.66667in" viewBox="0 0 350 264"
-		xml:space="preserve" color-interpolation-filters="sRGB" class="st7">
+		xml:space="preserve" color-interpolation-filters="sRGB" class="st8">
 	<v:documentProperties v:langID="2052" v:metric="true" v:viewMarkup="false"/>
 
 	<style type="text/css">
@@ -12,13 +12,14 @@
 		.st2 {stroke:#1c2735;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.05}
 		.st3 {fill:none;stroke:#1c2735;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.6}
 		.st4 {fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
-		.st5 {fill:#1c2735;font-family:Times New Roman;font-size:1.66667em;font-style:italic}
-		.st6 {fill:#1c2735;font-family:Times New Roman;font-size:1.41666em;font-style:italic}
-		.st7 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+		.st5 {fill:#1c2735;font-family:"Times New Roman", "Liberation Serif", SimSun, "宋体", "Noto Serif CJK SC", serif;font-size:1.66667em;font-style:italic}
+		.st6 {fill:#1c2735;font-family:"Times New Roman", "Liberation Serif", SimSun, "宋体", "Noto Serif CJK SC", serif;font-size:1.41666em;font-style:italic}
+		.st7 {fill:#1c2735;font-family:"Times New Roman", "Liberation Serif", SimSun, "宋体", "Noto Serif CJK SC", serif;font-size:1.58668em;font-style:italic}
+		.st8 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
 	]]>
 	</style>
 
-	<g v:mID="5" v:index="3" v:groupContext="foregroundPage">
+	<g v:mID="5" v:index="2" v:groupContext="foregroundPage">
 		<title>cqu-202301-mass</title>
 		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
 				v:shadowOffsetY="-8.50394"/>
@@ -133,7 +134,7 @@
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
 			<v:textRect cx="45" cy="250" width="90" height="28"/>
 			<rect x="0" y="236" width="90" height="28" class="st4"/>
-			<text x="34.62" y="255.1" class="st6" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>f(t)</text>		</g>
+			<text x="33.37" y="255.71" class="st7" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>f(t)</text>		</g>
 		<g id="shape26-75" v:mID="26" v:groupContext="shape" transform="translate(246,-22)">
 			<title>工作表.26</title>
 			<path d="M0 223 L23 223 L23 264" class="st1"/>
@@ -148,6 +149,6 @@
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
 			<v:textRect cx="45" cy="250" width="90" height="28"/>
 			<rect x="0" y="236" width="90" height="28" class="st4"/>
-			<text x="33.2" y="255.1" class="st6" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>y(t)</text>		</g>
+			<text x="31.79" y="255.71" class="st7" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>y(t)</text>		</g>
 	</g>
 </svg>
