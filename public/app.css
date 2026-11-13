@@ -206,9 +206,13 @@ mark{background:#fff3b0;color:inherit;border-radius:3px}
 @font-face{font-family:BankSong;src:url("vendor/bank-fonts/song.woff2") format("woff2");font-display:swap}
 :root{
   --heading:"LXGW WenKai","霞鹜文楷",BankWenKai,"Kaiti SC",serif;
+  --directory-kai:KaiTi,"楷体","Kaiti SC",STKaiti,BankWenKai,serif;
+  --directory-song:SimSun,"宋体","Songti SC",BankSong,serif;
+  --directory-blue:#174f9b;
+  --directory-ink:#151515;
   --reading:"Times New Roman",Times,SimSun,"宋体","Songti SC",BankSong,serif;
 }
-.brand,.qno,.src,.box h4,.node.top>.nm .t,.md-body :is(h1,h2,h3,h4,h5,h6){font-family:var(--heading)}
+.brand,.qno,.src,.box h4,.md-body :is(h1,h2,h3,h4,h5,h6){font-family:var(--heading)}
 .brand{font-size:21px}
 .cards{max-width:940px;font-size:calc(17px * var(--fs))}
 .card{padding:clamp(18px,3vw,40px);border-radius:14px}
@@ -229,4 +233,13 @@ mark{background:#fff3b0;color:inherit;border-radius:3px}
  .meta{margin-bottom:15px;padding-bottom:10px}
  .due{display:none}
  .fig{margin:16px auto}
+}
+
+/* Directory typography follows the three levels of the topic tree. */
+.tree .node:is([data-depth="0"],[data-depth="1"]) > .nm .t{font-family:var(--directory-kai)}
+.tree .node[data-depth="0"] > .nm .t{color:var(--directory-blue);font-size:16px;font-weight:700}
+.tree .node[data-depth="1"] > .nm .t{color:var(--directory-ink);font-size:15px}
+.tree .node[data-depth="2"] > .nm .t{font-family:var(--directory-song);color:var(--directory-ink);font-size:14px}
+@media (prefers-color-scheme:dark){
+ :root{--directory-blue:#8cbcff;--directory-ink:#f0f2f5}
 }

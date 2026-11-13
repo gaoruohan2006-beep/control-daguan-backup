@@ -213,7 +213,7 @@ function renderTree() {
     const selMark = n.path === st.node ? IC.check : '';
     const nn = n.ids.filter(id => CDGNotes.has(rec.notes, id)).length;
     const noteMark = nn ? `<span class="tn" title="${nn} 题有笔记" aria-label="${nn} 题有笔记">${IC.pen}${nn}</span>` : '';
-    return `<div class="node ${depth === 0 ? 'top' : ''} ${open && hasKids ? 'open' : ''} ${n.path === st.node ? 'sel' : ''}" data-path="${esc(n.path)}">
+    return `<div class="node ${depth === 0 ? 'top' : ''} ${open && hasKids ? 'open' : ''} ${n.path === st.node ? 'sel' : ''}" data-path="${esc(n.path)}" data-depth="${depth}">
       <button type="button" class="tw ${hasKids ? '' : 'leaf'}" aria-label="${open ? '收起' : '展开'}${esc(n.name)}" data-act="toggle">${IC.chev}</button>
       <button type="button" class="nm" data-act="select"><span class="t" title="${esc(n.name)}">${esc(n.name)}</span><span class="c">${noteMark}${selMark}${cnt}</span></button></div>
       ${hasKids && open ? `<div class="kids">${n.list.map(k => nodeHTML(k, depth + 1)).join('')}</div>` : ''}`;
