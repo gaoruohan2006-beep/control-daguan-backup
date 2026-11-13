@@ -1,0 +1,8 @@
+{
+  "answer": "在能控子空间的左零空间中取 $A$ 的一个左特征向量 $w$，则 $w(\\lambda I-A)=0$ 且 $wb=0$，故拼接矩阵的秩小于 $n$。",
+  "explanation": "令 $\\mathcal C=[b,Ab,\\ldots,A^{n-1}b]$。不完全能控意味着其复数域上的左零空间 $W=\\{w:w\\mathcal C=0\\}$ 非零。对任意 $w\\in W$，有 $(wA)A^jb=0$，其中 $0\\le j\\le n-2$。由凯莱–哈密顿定理，$A^nb$ 为 $b,Ab,\\ldots,A^{n-1}b$ 的线性组合，故 $(wA)A^{n-1}b=0$。于是 $w\\mapsto wA$ 在 $W$ 上封闭。\n\n该非零复线性空间上的线性算子至少有一个特征向量 $w\\ne0$，记 $wA=\\lambda w$。此时 $\\lambda$ 是 $A$ 的特征值，且 $wb=0$，所以 $w[\\lambda I-A\\;\\; b]=0$。该矩阵有非零左零向量，行秩必小于 $n$。",
+  "originalImages": [],
+  "answerPdfPages": "24",
+  "referenceNote": "汇编目录和答案标题标为 833，卷面考试科目一栏写作 933 控制工程综合。 参考答案只论证了另一方向；这里补全了题目要求的方向。",
+  "sourceType": "reviewed"
+}

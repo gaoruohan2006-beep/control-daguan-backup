@@ -1,0 +1,8 @@
+{
+  "answer": "（1）$K>0$，$\\tau>2\\zeta_{10}\\sqrt K$，其中 $\\zeta_{10}=\\ln10/\\sqrt{\\pi^2+\\ln^210}\\approx0.5912$。\n\n（2）在欠阻尼区提高 $\\zeta$，同时提高 $\\sqrt K$，使 $\\sqrt{K-\\tau^2/4}$ 也增大。\n\n（3）在闭环稳定、$B>0$ 时，$\\tau/K<0.1$。",
+  "explanation": "内环化简后闭环传递函数为 $\\Phi(s)=K/(s^2+\\tau s+K)$，所以 $\\zeta=\\tau/(2\\sqrt K)$、$\\omega_n=\\sqrt K$。欠阻尼时超调量为 $\\exp[-\\pi\\zeta/\\sqrt{1-\\zeta^2}]$，解得 $\\zeta>\\zeta_{10}$；临界阻尼或过阻尼时超调为零，已含在上述条件中。\n\n如果以峰值时间 $t_p=\\pi/\\sqrt{K-\\tau^2/4}$ 衡量速度，先选更大的 $\\zeta<1$ 降低超调，再将 $K$ 提高到使 $K(1-\\zeta^2)$ 增大，最后按 $\\tau=2\\zeta\\sqrt K$ 选取 $\\tau$。如果衡量的是调节时间，欠阻尼包络以 $e^{-\\tau t/2}$ 衰减，提高 $\\tau$ 也加快包络衰减。\n\n斜坡输入时，\n$$E(s)=\\frac{s^2+\\tau s}{s^2+\\tau s+K}\\frac B{s^2},\\qquad e_{ss}=\\frac{B\\tau}{K}.$$",
+  "originalImages": [],
+  "answerPdfPages": "98",
+  "referenceNote": "参考答案第（2）问中途把阻尼比里的 τ 写成 τ+1，第（3）问末尾另列 τ>20，均不能由本题框图推出。",
+  "sourceType": "reviewed"
+}

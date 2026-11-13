@@ -1,0 +1,8 @@
+{
+  "answer": "（1）渐近近似 $\\omega_c\\approx1\\,\\mathrm{rad/s}$，$\\gamma\\approx83.1^\\circ$。精确计算分别为 $0.99489\\,\\mathrm{rad/s}$ 和 $83.178^\\circ$。\n\n（2）允许调整校正增益时，一级超前校正即可。",
+  "explanation": "渐近幅频斜率依次为 $-20,-40,-60\\,\\mathrm{dB/dec}$，转折频率为 $10,50\\,\\mathrm{rad/s}$。渐近幅频线在 $\\omega=1$ 穿越 $0\\,\\mathrm{dB}$，代入 $\\angle G(j\\omega)=-90^\\circ-\\arctan(0.1\\omega)-\\arctan(0.02\\omega)$ 求相角裕度。\n\n![对数幅频渐近图](img/reviewed/uestc-2024-6-bode.svg)\n\n在目标频率 $10\\,\\mathrm{rad/s}$，原系统的相角裕度约为 $33.69^\\circ$，故需补相角 $6.31^\\circ$，同时补幅值约 $14.42$ 倍。取 $C(s)=(1+12.2179s)/(1+0.84126s)$，零点位于极点右侧，属于超前校正，并在目标频率同时满足幅值与相角约束。若希望采用通常将最大相移放在目标频率附近的设计，也可另选整体增益。",
+  "originalImages": [],
+  "answerPdfPages": "101–102",
+  "referenceNote": "参考解直接比较新旧截止点的相角裕度，给出滞后–超前校正。所需相位补偿应在目标频率计算，此时为正，单级超前已有可行解。",
+  "sourceType": "reviewed"
+}

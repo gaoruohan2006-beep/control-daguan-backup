@@ -1,0 +1,8 @@
+{
+  "answer": "可取 $K=100$，校正器\n$$G_c(s)=\\frac{1+0.0412311s}{1+0.0151585s}.$$\n此时 $K_v=100$，$\\omega_c=40\\,\\mathrm{rad/s}$，$\\gamma\\approx41.58^\\circ$，幅值裕度为 $+\\infty$。",
+  "explanation": "令 $G_c(s)=(1+\\alpha Ts)/(1+Ts)$，直流增益为 1，故 $K_v=K=100$。在 $\\omega_c=40$ 处，未经校正的开环幅值是 $100/[40\\sqrt{17}]$，需要超前环节在该频率提供幅值 $M=40\\sqrt{17}/100$。令最大超前频率 $1/(T\\sqrt\\alpha)=40$，此频率的环节幅值为 $\\sqrt\\alpha$，得 $\\alpha=M^2=2.72$，$T=1/(40\\sqrt\\alpha)$。\n\n相角裕度为\n$$\\gamma=90^\\circ-\\arctan4+\\arctan\\sqrt\\alpha-\\arctan(1/\\sqrt\\alpha)\\approx41.58^\\circ.$$\n在任意有限正频率处，原开环相位大于 $-180^\\circ$，超前校正还增加正相位，故不存在有限的相位穿越频率，幅值裕度为 $+\\infty$。\n\n校正后的开环幅值从无穷大单调降到零。其对数幅值对 $\\log\\omega$ 的导数由积分环节的 $-1$、一个零点的正项及两个极点的负项相加，其中零点项严格小于 1，因此 $40$ 是唯一的增益穿越频率。",
+  "originalImages": [],
+  "answerPdfPages": "77–78",
+  "referenceNote": "原解选择的校正参数基本相同，但相角裕度算作 $52.36^\\circ$。用实际极点、零点代入得约 $41.58^\\circ$。",
+  "sourceType": "reviewed"
+}

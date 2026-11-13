@@ -1,0 +1,8 @@
+{
+  "answer": "$$\\dot{x}=\\begin{bmatrix}-40&-20\\\\-20&-40\\end{bmatrix}x+\\begin{bmatrix}20\\\\0\\end{bmatrix}u,\\qquad y=\\begin{bmatrix}2&2\\end{bmatrix}x.$$\n系统完全能控，不能完全能观。",
+  "explanation": "左、中、右三节点电压分别为 $v_l=R_1(u-x_1)$、$y=R_2(x_1+x_2)$、$v_r=-R_3 x_2$。电感上的电压满足 $L_1\\dot x_1=v_l-y$、$L_2\\dot x_2=v_r-y$。代入元件参数得到上述模型。\n\n能控性矩阵和能观性矩阵分别为\n$$[B\\ AB]=\\begin{bmatrix}20&-800\\\\0&-400\\end{bmatrix},\\qquad\n\\begin{bmatrix}C\\\\CA\\end{bmatrix}=\\begin{bmatrix}2&2\\\\-120&-120\\end{bmatrix}.$$\n其秩分别为 2 和 1。",
+  "originalImages": [],
+  "answerPdfPages": "103–104",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

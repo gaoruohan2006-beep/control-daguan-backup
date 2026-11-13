@@ -1,0 +1,8 @@
+{
+  "answer": "$e_{\\rm ss}=0$。",
+  "explanation": "闭环特征多项式为\n$$D(z)=(z-1)(z-0.368)+0.4(z-0.27)=z^2-0.968z+0.260.$$\n根为 $0.484\\pm0.1592j$，模为 $\\sqrt{0.260}<1$。对于单位阶跃 $R(z)=z/(z-1)$，有\n$$E(z)=\\frac{(z-1)(z-0.368)}{D(z)}\\frac{z}{z-1}=\\frac{z(z-0.368)}{D(z)}.$$\n由 $z$ 变换终值定理，$e_{\\rm ss}=\\lim_{z\\to1}(1-z^{-1})E(z)=0$。",
+  "originalImages": [],
+  "answerPdfPages": "268",
+  "referenceNote": "原解析误差传递式中的常数项一处误写为 0.476 或 0.467。",
+  "sourceType": "reviewed"
+}

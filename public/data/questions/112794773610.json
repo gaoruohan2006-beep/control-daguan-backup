@@ -1,0 +1,8 @@
+{
+  "answer": "（1）在闭环渐近稳定时，误差无有限稳态值，$K>0$ 时 $e(t)\\to-\\infty$。\n\n（2）$G_n(s)=-1/K$（$K\\ne0$）。",
+  "explanation": "记 $D(s)=Ts^2+(\\tau+1)s+K$，未补偿时 $C=(KR+N)/D$。代入 $R(s)=1/s^2$、$N(s)=1/s^2+2/s$ 得\n$$E(s)=\\frac{Ts^2+(\\tau-1)s-1}{s^2D(s)}.$$\n若 $T>0$，渐近稳定的条件是 $\\tau>-1,K>0$。在此条件下，原点的二重极点产生斜率 $-1/K$ 的误差项，因此发散方向为负。\n\n图 (b) 中，扰动对应的输出为 $C_n=(1+KG_n)N/D$，取 $G_n=-1/K$ 后消去其影响。",
+  "originalImages": [],
+  "answerPdfPages": "100–101",
+  "referenceNote": "参考解将稳定条件写成 τ>1，且漏掉了误差发散的负号。",
+  "sourceType": "reviewed"
+}

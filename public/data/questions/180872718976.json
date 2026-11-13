@@ -1,0 +1,8 @@
+{
+  "answer": "（1）$-36<a<0$ 或 $a=16$。（2）$a=16$，可观标准形可取\n$$\nA_o=\\begin{bmatrix}0&-16\\\\1&-4\\end{bmatrix},\\qquad\nb_o=\\begin{bmatrix}2\\\\1\\end{bmatrix},\\qquad\nc_o=\\begin{bmatrix}0&1\\end{bmatrix}.\n$$\n（3）取 $k=\\begin{bmatrix}1&0\\end{bmatrix}$。",
+  "explanation": "零初值下 $G(s)=(s+2)(s-1)/(s^3+3s^2+12s-a)$。无约消时，劳斯条件给出 $-36<a<0$。分母在 $s=-2$、$s=1$ 分别为 $-20-a$ 和 $16-a$。当 $a=-20$，约去 $s+2$ 后为 $(s-1)/(s^2+s+10)$，稳定但非最小相位。当 $a=16$，约去 $s-1$ 后为 $(s+2)/(s^2+4s+16)$，输入输出 BIBO 稳定且为最小相位，尽管原三阶实现内部仍有不稳定模态。其余 $a$ 无约消。\n\n由 $c_o(sI-A_o)^{-1}b_o$ 可直接核对（2）的实现。状态反馈后分子仍为 $s+2$，取 $k=[1,0]$ 有\n$$\nA_o-b_ok=\\begin{bmatrix}-2&-16\\\\0&-4\\end{bmatrix},\n$$\n因此闭环传递函数为 $(s+2)/[(s+2)(s+4)]=1/(s+4)$，且反馈后两极点均稳定。",
+  "originalImages": [],
+  "answerPdfPages": "23–24",
+  "referenceNote": "汇编目录和答案标题标为 833，卷面考试科目一栏写作 933 控制工程综合。 题面第（3）问把 $u=v-kx$ 称作状态观测器，已改为状态反馈。参考解误写分母常数项的符号，并漏掉右半平面约消的 BIBO 例外，已按题面矩阵纠正。",
+  "sourceType": "reviewed"
+}

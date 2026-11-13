@@ -11,6 +11,18 @@ TOPICS = [
     "数学基础", "建模", "时域分析", "根轨迹", "频域分析", "离散系统",
     "校正", "非线性系统", "状态空间", "选择与填空", "专业综合",
 ]
+TOPIC_ALIASES = {
+    "时域分析 / 稳定性": "时域分析 / 稳定性与劳斯判据",
+    "时域分析 / 稳定性判别": "时域分析 / 稳定性与劳斯判据",
+    "时域分析 / 劳斯判据与稳定性": "时域分析 / 稳定性与劳斯判据",
+    "时域分析 / 二阶系统性能指标": "时域分析 / 动态性能 / 二阶系统性能指标",
+    "时域分析 / 主导极点与性能估算": "时域分析 / 动态性能 / 主导极点与性能估算",
+    "频域分析 / Bode 图": "频域分析 / 伯德图",
+    "频域分析 / Bode 图绘制": "频域分析 / 伯德图 / 绘制",
+    "频域分析 / 奈氏判据": "频域分析 / 奈奎斯特图 / 稳定判据",
+    "校正 / 超前校正": "校正 / 超前",
+    "校正 / 滞后校正": "校正 / 滞后",
+}
 FIGURE = re.compile(r"!\[[^\]]*\]\(([^)]+)\)")
 
 
@@ -31,7 +43,7 @@ def build():
             identifier = int.from_bytes(hashlib.blake2s(identity.encode(), digest_size=5).digest(), "big") + 1_000_000
             assert identifier not in ids, identity
             ids.add(identifier)
-            topic_paths = card["topics"]
+            topic_paths = list(dict.fromkeys(TOPIC_ALIASES.get(p, p) for p in card["topics"]))
             tags = list(dict.fromkeys(p.split(" / ")[0] for p in topic_paths))
             assert tags and set(tags) <= set(TOPICS), (identity, tags)
             for field in ("stem", "answer", "explanation", "questionPages", "answerPages"):
@@ -56,6 +68,7 @@ def build():
         return dict(id=key, name=name, questionIds=[q["id"] for q in rows],
                     categoryByQuestion={str(q["id"]): paths(q) for q in rows})
 
+    questions.sort(key=lambda q: (q["school"], -q["year"], q["source"], str(q["number"]).zfill(4)))
     lists = [
         question_list("complete", "专题分类", questions, lambda q: q["categories"]),
         question_list("by-school", "按院校", questions, lambda q: [f'{q["school"]} / {q["year"]}']),

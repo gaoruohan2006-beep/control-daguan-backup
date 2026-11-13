@@ -1,0 +1,8 @@
+{
+  "answer": "首列符号变化次数等于右半平面根数。孤立零首项可用 $\\varepsilon$ 代入后继续列阵，再按 $\\varepsilon\\to0$ 的单侧极限判号。正、负小量给出不同判定时，应另行查验虚轴根或采用移轴法。",
+  "explanation": "以正首项开始构造劳斯表。在没有虚轴根时，首列无符号变化等价于所有根位于开左半平面。对孤立零首项，先令 $\\varepsilon\\ne0$，将随后各首项写成 $\\varepsilon$ 的有理式，用最低阶非零项判定其在 $\\varepsilon\\to0^+$ 与 $\\varepsilon\\to0^-$ 时的符号。\n\n若出现整行零，应对该行上一行构成的辅助多项式求导，继续列阵并检查对称根。若孤立零首项使左右极限判定不同，可直接检查 $P(j\\omega)=0$，或令 $\\delta>0$ 足够小，比较 $P(s+\\delta)$ 和 $P(s-\\delta)$ 的右半平面根数。前者给出原多项式严格右半平面根数，后者计入原虚轴上的根。",
+  "originalImages": [],
+  "answerPdfPages": "267",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

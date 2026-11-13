@@ -1,0 +1,8 @@
+{
+  "answer": "（1）$\\dot x=(A+BK)x+Bv$，$y=Cx$。\n\n（2）取 $\\dot{\\hat x}=A\\hat x+Bu+L(y-C\\hat x)$。则\n$$\\begin{bmatrix}\\dot x\\\\\\dot e\\end{bmatrix}\n=\\begin{bmatrix}A+BK&-BK\\\\0&A-LC\\end{bmatrix}\\begin{bmatrix}x\\\\e\\end{bmatrix}+\\begin{bmatrix}B\\\\0\\end{bmatrix}v,\\qquad y=\\begin{bmatrix}C&0\\end{bmatrix}\\begin{bmatrix}x\\\\e\\end{bmatrix}.$$\n\n（3）在零初始条件下，两者从 $v$ 到 $y$ 的传递函数矩阵都为 $C(sI-A-BK)^{-1}B$。",
+  "explanation": "由观测器方程相减得 $\\dot e=(A-LC)e$。将 $\\hat x=x-e$ 代入反馈律 $u=K\\hat x+v$，即有 $\\dot x=(A+BK)x-BKe+Bv$。传递函数按零初始条件定义，因此 $e(0)=0$ 时有 $e(t)=0$，两系统的输入输出方程相同。",
+  "originalImages": [],
+  "answerPdfPages": "80",
+  "referenceNote": "原解使用 $e=x-\\hat x$，但将增广状态矩阵的右上块写成 $+BK$。按题设定义应为 $-BK$。",
+  "sourceType": "reviewed"
+}

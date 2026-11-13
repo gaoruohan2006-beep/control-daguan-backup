@@ -1,0 +1,8 @@
+{
+  "answer": "轨迹从 $-2,0$ 出发，在 $1-\\sqrt3$ 分离，沿圆 $|s-1|=\\sqrt3$ 在 $1+\\sqrt3$ 汇合，之后分别趋于 $1$ 和 $+\\infty$。重实根对应 $K^*=4\\pm2\\sqrt3$，非零纯虚根对应 $K^*=2$，此时 $s=\\pm j\\sqrt2$。",
+  "explanation": "闭环特征方程为 $s^2+(2-K^*)s+K^*=0$。重根由判别式 $(K^*)^2-8K^*+4=0$ 给出。复根满足 $\\operatorname{Re}s=K^*/2-1$、$|s|^2=K^*$，故 $|s-1|^2=3$。在有复根的区间内，实部随 $K^*$ 单调增加。令特征方程的一次项系数为零可得非零纯虚根条件。\n\n![K* 非负时的根轨迹|560](img/reviewed/seu-2024-locus.svg)",
+  "originalImages": [],
+  "answerPdfPages": "269–270",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

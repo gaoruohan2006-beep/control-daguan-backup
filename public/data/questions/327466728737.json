@@ -1,0 +1,8 @@
+{
+  "answer": "$G(s)\\simeq 100s/(s^2+5.72s+100)$。单位负反馈下系统渐近稳定。",
+  "explanation": "低频斜率为 $+20\\,\\mathrm{dB/dec}$、高频为 $-20\\,\\mathrm{dB/dec}$，拐点在约 $10\\,\\mathrm{rad/s}$，对应一个原点零点与一对二阶极点。低频曲线约过 $(1,0\\,\\mathrm{dB})$，故 $G(s)=100s/(s^2+20\\zeta s+100)$。在 $\\omega_n=10$ 处，低频渐近线幅值为 $20\\,\\mathrm{dB}$，给定幅值比它高 $4.85\\,\\mathrm{dB}$，即 $-20\\log_{10}(2\\zeta)=4.85$，解得 $\\zeta\\simeq0.286$。\n\n开环极点均在左半平面。曲线相角始终在 $-90^\\circ$ 到 $90^\\circ$，奈奎斯特曲线无对 $-1$ 的环绕。也可用闭环特征多项式 $s^2+105.72s+100$ 核对。",
+  "originalImages": [],
+  "answerPdfPages": "100",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

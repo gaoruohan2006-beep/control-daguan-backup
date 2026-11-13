@@ -1,0 +1,8 @@
+{
+  "answer": "令 $\\Delta=(1+G_1H_1)(1+G_2H_2)+G_1G_2H_3$，则\n$$\\frac{C}{R}=\\frac{G_2[G_1+G_3(1+G_1H_1)]}{\\Delta},\\qquad\n\\frac{C}{N}=\\frac{G_2(1+G_1H_1)}{\\Delta}.$$",
+  "explanation": "令 $X$ 为 $G_1$ 的输出，$C$ 为 $G_2$ 的输出。两个局部回路给出\n$$X=G_1(R-H_1X-H_3C),\\qquad C=G_2(X+G_3R+N-H_2C).$$\n消去 $X$ 得 $\\Delta C=G_2[G_1+G_3(1+G_1H_1)]R+G_2(1+G_1H_1)N$。分别把另一输入置零即得两条传递函数。",
+  "originalImages": [],
+  "answerPdfPages": "75–76",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

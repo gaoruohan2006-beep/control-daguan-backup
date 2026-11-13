@@ -1,0 +1,8 @@
+{
+  "answer": "零平衡点全局指数稳定，因而全局渐近稳定。",
+  "explanation": "由 $X(k)=G^kX(0)$，令 $\\rho=\\max(|a_1|,|a_2|)<1$，则 $\\|X(k)\\|_2\\le \\rho^k\\|X(0)\\|_2$，故状态指数收敛到零。\n\n也可以取 $P=\\operatorname{diag}\\big((1-a_1^2)^{-1},(1-a_2^2)^{-1}\\big)\\succ0$。此时 $G^{\\mathsf T}PG-P=-I$，二次型 $V(X)=X^{\\mathsf T}PX$ 每步减少 $\\|X\\|_2^2$，同样给出渐近稳定。",
+  "originalImages": [],
+  "answerPdfPages": "104",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

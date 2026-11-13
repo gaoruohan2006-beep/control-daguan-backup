@@ -262,7 +262,7 @@ function cardHTML(id, idx) {
   const number = q.sourceType === 'reviewed' ? `原卷 ${q.number}` : `第 ${idx + 1} 题`;
   const sourceInfo = q.sourceType === 'reviewed'
     ? `<div class="source-pages">题本 PDF 第 ${esc(q.pdfPage)} 页</div>` : '';
-  const referenceNote = d?.referenceNote ? `<p class="muted">${esc(d.referenceNote)}</p>` : '';
+  const referenceNote = d?.referenceNote ? `<p class="muted">${inline(d.referenceNote)}</p>` : '';
   const answerSource = d?.sourceType === 'reviewed'
     ? `<p class="source-pages">参考答案 PDF 第 ${esc(d.answerPdfPages)} 页</p>` : '';
   const sh = st.show[id] || {}; const mk = rec.marks[id]?.state; const fav = rec.favorites.includes(id);

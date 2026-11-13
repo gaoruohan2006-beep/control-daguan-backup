@@ -1,0 +1,8 @@
+{
+  "answer": "$\\dfrac54<K<2(\\sqrt5-1)\\approx2.47214$。",
+  "explanation": "零阶保持后的积分环节为 $KT/(z-1)$，$0.5\\,\\mathrm{s}$ 的延迟恰为两拍，故\n$$G(z)=\\frac{K/4}{z^2(z-1)},\\qquad D(z)=z^3-z^2+K/4.$$\n令 $b=K/4$。三阶 Schur 降阶可将多项式化为 $(1-b^2)z^2-z+b$，还要求 $|b|<1$。在 $b>0$ 下，二阶 Jury 条件中最紧约束为 $b<1-b^2$，即 $0<b<(\\sqrt5-1)/2$。\n\n闭环稳定时阶跃误差为零。单位斜坡的误差为 $T/\\lim_{z\\to1}(z-1)G(z)=1/K$，因此 $K>5/4$。",
+  "originalImages": [],
+  "answerPdfPages": "103",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

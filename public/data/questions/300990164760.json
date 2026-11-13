@@ -1,0 +1,8 @@
+{
+  "answer": "$$G(s)=\\frac{R_2(1+R_1C_1s)}{R_1R_2C_1C_2s^2+(R_1C_1+R_2C_1+R_2C_2)s+1}.$$\n以并联 RC 阻抗为反相运放的输入与反馈阻抗，选 $R_iC_i>R_fC_f$，再串接单位增益反相器使总增益为正。",
+  "explanation": "有 $q_1=(h_2-h_1)/R_1$、$q_2=h_2/R_2$。质量守恒给出 $C_1\\dot h_1=q_1$、$C_2\\dot h_2=q-q_1-q_2$。零初值下\n$$\\begin{aligned}(R_1C_1s+1)H_1 &= H_2,\\\\ (C_2s+1/R_1+1/R_2)H_2-H_1/R_1 &= Q .\\end{aligned}$$\n消去 $H_1$ 可得 $G(s)$。\n\n反相运放满足 $V_o/V_i=-Z_f/Z_i$。取 $Z_i=R_i/(1+R_i C_i s)$、$Z_f=R_f/(1+R_f C_f s)$，反相两次后得到\n$$G_c(s)=\\frac{R_f}{R_i}\\frac{1+R_iC_i s}{1+R_fC_f s},\\qquad R_iC_i>R_fC_f.$$\n\n![并联 RC 阻抗构成的反相超前网络|720](img/reviewed/seu-2024-opamp.svg)",
+  "originalImages": [],
+  "answerPdfPages": "268–269",
+  "referenceNote": "根据题图，进水口位于容器 2 上方，容器间流量的正方向指向容器 1。",
+  "sourceType": "reviewed"
+}
