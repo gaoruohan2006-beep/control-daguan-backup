@@ -1,0 +1,187 @@
+[
+  {
+    "school": "重庆大学",
+    "year": 2023,
+    "variant": "844",
+    "number": 1,
+    "topics": [
+      "建模 / 机械系统 / 微分方程与传递函数",
+      "状态空间 / 建立状态空间表达式"
+    ],
+    "stem": "如图，质量为 $m$ 的物体由刚度为 $k$ 的弹簧和阻尼系数为 $c$ 的黏性阻尼器支承。外力 $f(t)$ 与输出位移 $y(t)$ 均以下向为正，位移从静平衡位置起算。列写运动微分方程，求传递函数，并给出状态空间模型。\n\n![单自由度弹簧、质量与阻尼器模型|360](img/reviewed/cqu-202301-mass.svg)",
+    "answer": "$m\\ddot y+c\\dot y+ky=f$，$Y/F=1/(ms^2+cs+k)$。选 $x_1=y$、$x_2=\\dot y$，则\n$$\\dot x=\\begin{bmatrix}0&1\\\\-k/m&-c/m\\end{bmatrix}x+\\begin{bmatrix}0\\\\1/m\\end{bmatrix}f,\\qquad y=\\begin{bmatrix}1&0\\end{bmatrix}x.$$",
+    "explanation": "**列运动方程。** 由于以静平衡位置为原点，重力与弹簧的静态预载互相抵消。相对静平衡位置的回复力为 $-ky$，阻尼力为 $-c\\dot y$。由牛顿第二定律，$m\\ddot y=f-c\\dot y-ky$。\n\n**转入复频域。** 在零初始条件下，$\\dot y$、$\\ddot y$ 分别对应 $sY$、$s^2Y$。因此 $(ms^2+cs+k)Y=F$，两端除以 $F$ 即得所求传递函数。\n\n**选取状态。** 取位移、速度为状态，故 $\\dot x_1=x_2$。将运动方程除以 $m$，得到 $\\dot x_2=-(k/m)x_1-(c/m)x_2+f/m$。输出等于位移 $x_1$，直接通道为零。令 $s=0$，静态柔度为 $1/k$，与静力平衡一致。",
+    "questionPages": "108",
+    "answerPages": "235"
+  },
+  {
+    "school": "重庆大学",
+    "year": 2023,
+    "variant": "844",
+    "number": 3,
+    "topics": [
+      "根轨迹 / 绘制",
+      "时域分析 / 稳态误差 / 静态误差系数",
+      "根轨迹 / 主导极点与降阶"
+    ],
+    "stem": "$$G(s)=\\frac{K(s+4)}{s(s+2)(s+15)}$$\n\n1、绘制其根轨迹；\n\n2、若要求系统稳定，求 $K$ 的开环增益范围；\n\n3、$s_1=-9$ 时，系统是否可视为二阶系统？当 $r(t)=2+3t$ 时，求此时对应的稳态误差？",
+    "answer": "1. 开环极点 $0,-2,-15$，零点 $-4$；实轴根轨迹 $(-15,-4)\\cup(-2,0)$；渐近线 $\\sigma_a=-6.5$，$\\varphi_a=\\pm\\dfrac\\pi2$；分离点 $s=-1.136$；与虚轴无交点。\n\n2. $K>0$ 时系统均稳定。\n\n3. $s_1=-9$ 时 $K=75.6$，另两极点 $-4\\pm4.195j$；$\\left|\\dfrac{-9}{-4}\\right|<5$，**不能**视为二阶系统。系统为 1 型，$r(t)=2+3t$ 时 $K_v=\\dfrac{75.6\\times4}{2\\times15}=10.08=\\dfrac{252}{25}$，$e_{ss}=\\dfrac{3}{K_v}=\\dfrac{25}{84}\\approx0.298$。",
+    "explanation": "1. 开环极点 $0,-2,-15$，零点 $-4$；$n-m=2$。实轴根轨迹为奇数个极/零点左侧，即 $(-15,-4)\\cup(-2,0)$。渐近线\n$$\\sigma_a=\\dfrac{0-2-15-(-4)}{2}=-6.5,\\qquad\\varphi_a=\\pm\\dfrac{\\pi}{2}.$$\n分离点由 $\\dfrac{\\mathrm dK}{\\mathrm ds}=0$ 得 $2s^3+29s^2+136s+120=0$，实根 $s\\approx-1.136$（另两根为复数，舍去），位于 $(-2,0)$ 上。令 $s=\\mathrm j\\omega$ 代入特征方程，交点对应 $K<0$，故与正虚轴无交点。\n\n2. 闭环特征多项式 $D(s)=s(s+2)(s+15)+K(s+4)=s^3+17s^2+(30+K)s+4K$。劳斯表首列为\n$$1,\\quad 17,\\quad \\dfrac{17(30+K)-4K}{17},\\quad 4K.$$\n$K>0$ 时 $17(30+K)-4K=510+13K>0$，首列全正，系统稳定。稳定范围为开环增益 $K>0$。\n\n3. 将 $s_1=-9$ 代入幅值条件：\n$$K=\\dfrac{|-9|\\,|-9+2|\\,|-9+15|}{|-9+4|}=\\dfrac{9\\cdot7\\cdot6}{5}=75.6.$$\n由根之和，另两根实部为 $(-17+9)/2=-4$，再由根之积 $4K=302.4$ 得这两根满足 $s^2+8s+33.6=0$，即 $-4\\pm\\sqrt{17.6}\\,j=-4\\pm4.195j$。$\\lvert -9/(-4)\\rvert=2.25<5$，实极点不够远，**不能**视为二阶系统。\n\n系统为 1 型，求 $e_{ss}$ 须用原来的开环传函（不能把闭环特征式去掉常数项当作开环）。$r(t)=2+3t$ 时，\n$$K_v=\\lim_{s\\to0}sG(s)=\\dfrac{75.6\\cdot4}{2\\cdot15}=10.08=\\dfrac{252}{25},\\qquad\nK_p=\\infty,$$\n故阶跃部分误差为 $0$，斜坡部分\n$$e_{ss}=\\dfrac{3}{K_v}=\\dfrac{3}{10.08}=\\dfrac{25}{84}\\approx0.298.$$\n\n![按闭环特征方程重绘的根轨迹|650](img/reviewed/cqu-202303-locus.svg)",
+    "questionPages": "108–110",
+    "answerPages": "235–242"
+  },
+  {
+    "school": "重庆大学",
+    "year": 2023,
+    "variant": "844",
+    "number": 5,
+    "topics": [
+      "离散系统 / 脉冲传递函数",
+      "离散系统 / 稳定性（朱利判据）",
+      "离散系统 / 差分方程"
+    ],
+    "stem": "图示为单位负反馈离散系统。采样周期为 $T=1\\,\\mathrm s$，$G_h(s)=(1-e^{-sT})/s$ 为零阶保持器。求闭环脉冲传递函数、稳定时的 $K$ 范围及输入输出差分方程。当 $K=2$、输入为单位阶跃，且已知 $c[0]=0$、$c[1]=0.56$ 时，求 $c[2],c[3]$。\n\n![带零阶保持器的离散控制系统|700](img/reviewed/cqu-202305-sampling.svg)",
+    "answer": "令 $a=e^{-2}$、$b_1=(1+a)/4$、$b_0=(1-3a)/4$，则\n$$\\Phi(z)=\\frac{K(b_1z+b_0)}{z^2+[Kb_1-(1+a)]z+(a+Kb_0)}.$$\n稳定范围为 $0<K<(1-a)/b_0\\approx5.8227$。按给定初值递推，$c[2]\\approx1.1826$、$c[3]\\approx1.2939$。",
+    "explanation": "**求开环脉冲传递函数。** 连续对象的单位阶跃响应由 $K/[s^2(s+2)]$ 反变换得到 $K(t/2-1/4+e^{-2t}/4)$。按 $T=1$ 取样后再乘以 $1-z^{-1}$，等价于对单位阶跃响应作一阶后向差分，因此\n$$G(z)=\\frac{K(b_1 z+b_0)}{(z-1)(z-a)},\\qquad a=e^{-2},\\quad b_1=\\frac{1+a}{4},\\quad b_0=\\frac{1-3a}{4}.$$\n代入 $\\Phi=G/(1+G)$ 可得闭环传递函数。\n\n**判稳。** 写 $D(z)=z^2+A_1z+A_0$，其中 $A_1=Kb_1-(1+a)$、$A_0=a+Kb_0$。二阶朱利条件为 $D(1)>0$、$D(-1)>0$ 及 $|A_0|<1$。这三项分别给出 $K>0$、$K<2(1+a)/a$ 和 $K<(1-a)/b_0$（在 $K>0$ 下）。最后一项上界更紧。\n\n**递推。** 把闭环分子、分母同时乘以 $z^{-2}$，得到\n$$c[n]=-A_1c[n-1]-A_0c[n-2]+Kb_1r[n-1]+Kb_0r[n-2].$$\n单位阶跃在 $n=2,3$ 的两项输入均为 1，且 $K(b_1+b_0)=1-a$。先算\n$$c[2]=(1+a-2b_1)\\cdot0.56+(1-a),$$\n再算\n$$c[3]=(1+a-2b_1)c[2]-(a+2b_0)\\cdot0.56+(1-a).$$",
+    "questionPages": "109",
+    "answerPages": "239–240"
+  },
+  {
+    "school": "重庆大学",
+    "year": 2023,
+    "variant": "844",
+    "number": 7,
+    "topics": [
+      "状态空间 / 状态转移矩阵",
+      "状态空间 / 传递函数矩阵",
+      "状态空间 / 能控性与能观性"
+    ],
+    "stem": "$$A=\\begin{bmatrix}-2&1&0\\\\0&-2&0\\\\0&0&-1\\end{bmatrix},\\quad B=\\begin{bmatrix}0\\\\1\\\\1\\end{bmatrix},\\quad C=\\begin{bmatrix}0&1&0\\end{bmatrix}$$\n\n1、求 $e^{At}$ 状态转移矩阵；\n\n2、求该系统的 $G(s)$ 传递函数；\n\n3、求该系统的能控能观性。 进一步说明哪些单独的状态分量可以由输出恢复。",
+    "answer": "1. $e^{At}=\\begin{bmatrix}e^{-2t}&te^{-2t}&0\\\\0&e^{-2t}&0\\\\0&0&e^{-t}\\end{bmatrix}$。\n\n2. $G(s)=C(sI-A)^{-1}B=\\dfrac1{s+2}$。\n\n3. 约旦标准型判据：**完全能控**；**不完全能观**。",
+    "explanation": "$(sI-A)^{-1}=\\begin{bmatrix}\\frac1{s+2}&\\frac1{(s+2)^2}&0\\\\0&\\frac1{s+2}&0\\\\0&0&\\frac1{s+1}\\end{bmatrix}$，逐项拉氏反变换。\n\n能控：$B$ 中与每个约旦块最后一行对应的元素（1、1）不为 0。能观：$C$ 中与每个约旦块第一列对应的元素存在 0。\n\n**用秩判据核对。** 逐列计算 $B$、$AB$、$A^2B$，得到\n$$\\mathcal C=\\begin{bmatrix}0&1&-4\\\\1&-2&4\\\\1&-1&1\\end{bmatrix},\\qquad \\det\\mathcal C=-1.$$\n故三维状态可联合任意配置。由 $C=(0,1,0)$ 可知 $CA=-2C$、$CA^2=4C$，能观矩阵秩为 1。输出直接等于 $x_2$。改变 $x_1$ 或 $x_3$ 的初值不会影响输出，因此这两个状态分量不能由输出恢复。",
+    "questionPages": "108–110",
+    "answerPages": "235–242"
+  },
+  {
+    "school": "重庆大学",
+    "year": 2024,
+    "variant": "844",
+    "number": 3,
+    "topics": [
+      "根轨迹 / 绘制",
+      "时域分析 / 稳态误差 / 静态误差系数"
+    ],
+    "stem": "单位负反馈条件下，开环传递函数\n$$G(s)=\\frac{K^*}{s(s+5)(s+12)}$$\n\n1. 绘制 $K^*:0\\to+\\infty$ 变化时的根轨迹，给出必要步骤；\n\n2. 系统稳定时，开环增益 $K$ 的范围；\n\n3. 是否存在 $K^*$，使得静态速度误差系数 $K_v\\ge20$。",
+    "answer": "1. 极点 $0,-5,-12$，实轴根轨迹 $(-\\infty,-12)\\cup(-5,0)$；渐近线 $\\sigma_a=-\\dfrac{17}3\\approx-5.67$，$\\varphi_a=\\dfrac\\pi3,\\pi,\\dfrac{5\\pi}3$；分离点 $d=\\dfrac{-17+\\sqrt{109}}3\\approx-2.19$；$K^*=1020$ 时与虚轴交于 $\\pm j2\\sqrt{15}\\approx\\pm j7.75$。\n\n2. $0<K^*<1020$，即开环增益 $0<K<17$。\n\n3. $K_v=\\dfrac{K^*}{60}\\ge20\\Rightarrow K^*\\ge1200>1020$，系统不稳定，**不存在**。",
+    "explanation": "**根轨迹。** 极点为 $0,-5,-12$，无有限零点。实轴上右侧零极点数为奇数的区间为 $(-\\infty,-12)$ 与 $(-5,0)$。三条渐近线的交点为 $-17/3$，倾角为 $60^\\circ,180^\\circ,300^\\circ$。由 $K^*=-s(s+5)(s+12)$ 求导，得到 $3s^2+34s+60=0$，其中仅 $s\\approx-2.187$ 位于 $(-5,0)$，所以这是实际分离点。\n\n**判稳。** 闭环特征多项式为 $s^3+17s^2+60s+K^*$。劳斯表首列为 $1,17,(1020-K^*)/17,K^*$，全正当且仅当 $0<K^*<1020$。以时间常数形式归一化开环传递函数后，开环增益 $K=K^*/60$，故 $0<K<17$。\n\n**检查稳态精度。** 速度误差系数为 $K_v=\\lim_{s\\to0}sG(s)=K^*/60$。稳定区间内 $K_v<17$，所以没有满足 $K_v\\ge20$ 的稳定取值。\n\n![按闭环特征方程重绘的根轨迹|650](img/reviewed/cqu-202403-locus.svg)",
+    "questionPages": "111–114",
+    "answerPages": "243–252"
+  },
+  {
+    "school": "重庆大学",
+    "year": 2024,
+    "variant": "844",
+    "number": 7,
+    "topics": [
+      "状态空间 / 状态转移矩阵",
+      "状态空间 / 能控性与能观性",
+      "状态空间 / 李雅普诺夫稳定性"
+    ],
+    "stem": "状态空间表达式为\n$$\\begin{cases}\\dot x=\\begin{bmatrix}0&1\\\\-2&-3\\end{bmatrix}x+\\begin{bmatrix}0\\\\1\\end{bmatrix}u\\\\[4pt] y=\\begin{bmatrix}1&a\\end{bmatrix}x\\end{cases}$$\n\n1. 试求状态转移矩阵 $\\phi(t)$，以及传递函数 $G(s)$；\n\n2. $a$ 为何值时，系统完全可测；\n\n3. 试用李雅普诺夫第二法判断系统稳定性。",
+    "answer": "1. $\\Phi(t)=\\begin{bmatrix}2e^{-t}-e^{-2t}&e^{-t}-e^{-2t}\\\\-2e^{-t}+2e^{-2t}&-e^{-t}+2e^{-2t}\\end{bmatrix}$，$G(s)=\\dfrac{as+1}{s^2+3s+2}$。\n\n2. $Q_o=\\begin{bmatrix}1&a\\\\-2a&1-3a\\end{bmatrix}$，$|Q_o|=2a^2-3a+1=(2a-1)(a-1)\\ne0$，即 $a\\ne1$ 且 $a\\ne\\dfrac12$ 时完全能观。\n\n3. 解 $A^TP+PA=-I$ 得 $P=\\begin{bmatrix}\\frac54&\\frac14\\\\\\frac14&\\frac14\\end{bmatrix}$ 正定，系统在原点**大范围渐近稳定**。",
+    "explanation": "1. $sI-A=\\begin{bmatrix}s&-1\\\\2&s+3\\end{bmatrix}$，$\\lvert sI-A\\rvert=s^2+3s+2=(s+1)(s+2)$，\n$$(sI-A)^{-1}=\\dfrac{1}{s^2+3s+2}\\begin{bmatrix}s+3&1\\\\-2&s\\end{bmatrix}.$$\n部分分式后逐项反变换：\n$$\\dfrac{s+3}{(s+1)(s+2)}=\\dfrac{2}{s+1}-\\dfrac{1}{s+2},\\quad\n\\dfrac{1}{(s+1)(s+2)}=\\dfrac{1}{s+1}-\\dfrac{1}{s+2},$$\n$$\\dfrac{-2}{(s+1)(s+2)}=\\dfrac{-2}{s+1}+\\dfrac{2}{s+2},\\quad\n\\dfrac{s}{(s+1)(s+2)}=\\dfrac{-1}{s+1}+\\dfrac{2}{s+2},$$\n即得\n$$\\Phi(t)=\\begin{bmatrix}2e^{-t}-e^{-2t}&e^{-t}-e^{-2t}\\\\-2e^{-t}+2e^{-2t}&-e^{-t}+2e^{-2t}\\end{bmatrix}.$$\n$B=[0\\ 1]^\\mathrm T$，取 $(sI-A)^{-1}$ 的第二列再左乘 $C=[1\\ \\ a]$，得\n$$G(s)=\\dfrac{as+1}{s^2+3s+2}.$$\n\n2. 能观判别阵\n$$Q_o=\\begin{bmatrix}C\\\\CA\\end{bmatrix}=\\begin{bmatrix}1&a\\\\-2a&1-3a\\end{bmatrix},\\qquad\n\\lvert Q_o\\rvert=2a^2-3a+1=(2a-1)(a-1).$$\n$\\lvert Q_o\\rvert\\neq0$ 当且仅当 $a\\neq1$ 且 $a\\neq1/2$，此时系统完全能观（完全可测）。\n\n3. 取 $Q=I$，解李雅普诺夫方程 $A^\\mathrm TP+PA=-I$。设\n$P=\\begin{bmatrix}p&q\\\\q&r\\end{bmatrix}$，展开并比较元素得 $q=1/4$、$r=1/4$、$p=5/4$，即\n$$P=\\begin{bmatrix}5/4&1/4\\\\1/4&1/4\\end{bmatrix}.$$\n$p=5/4>0$，$\\lvert P\\rvert=1/4>0$，故 $P$ 正定；$V=x^\\mathrm TPx$ 正定且径向无界，$\\dot V=-x_1^2-x_2^2$ 负定，原点**大范围渐近稳定**。（$P$ 的元素不要与输出参数 $a$ 混用同一字母。）",
+    "questionPages": "111–114",
+    "answerPages": "243–252"
+  },
+  {
+    "school": "重庆大学",
+    "year": 2025,
+    "variant": "844",
+    "number": 3,
+    "topics": [
+      "根轨迹 / 参数根轨迹与圆",
+      "根轨迹 / 绘制"
+    ],
+    "stem": "单位负反馈控制系统的闭环特征方程（18 分）\n$$D(s)=K(s+4)+s(s+2)=0$$\n\n1. 试绘制 $K$ 从 $0\\to\\infty$ 变化的根轨迹图（要有简略的步骤）；\n\n2. 确定系统稳定时的 $K$ 的取值范围；\n\n3. 已知闭环极点 $s=-4.1$，求 $K$ 值。",
+    "answer": "1. 等效开环 $G_{eq}(s)=\\dfrac{K(s+4)}{s(s+2)}$；实轴根轨迹 $(-\\infty,-4]\\cup[-2,0]$；分离/会合点 $-4\\pm2\\sqrt2$；复平面部分是以 $(-4,0)$ 为圆心、$2\\sqrt2$ 为半径的圆；与虚轴无交点（$K>0$）。\n\n2. $K>0$ 时系统稳定。\n\n3. $K=86.1$。",
+    "explanation": "分离点：$M'(s)N(s)-M(s)N'(s)=0\\Rightarrow s^2+8s+8=0\\Rightarrow s=-4\\pm2\\sqrt2$。\n\n设 $s=\\alpha\\pm\\beta j$，由韦达定理 $2\\alpha=-(K+2)$，$\\alpha^2+\\beta^2=4K$，消去 $K$ 得 $(\\alpha+4)^2+\\beta^2=8$。\n\n代入 $s=-4.1$：$D(-4.1)=-0.1K+(-4.1)(-2.1)=-0.1K+8.61=0\\Rightarrow K=86.1$。\n\n![按闭环特征方程重绘的根轨迹|650](img/reviewed/cqu-202503-locus.svg)",
+    "questionPages": "115–117",
+    "answerPages": "253–260"
+  },
+  {
+    "school": "重庆大学",
+    "year": 2025,
+    "variant": "844",
+    "number": 7,
+    "topics": [
+      "状态空间 / 传递函数矩阵",
+      "状态空间 / 能控性与能观性",
+      "状态空间 / 能控/能观标准型"
+    ],
+    "stem": "已知系统状态空间表达式（18 分）\n$$\\dot x=\\begin{bmatrix}1&2&3\\\\0&1&1\\\\0&1&1\\end{bmatrix}x+\\begin{bmatrix}0\\\\0\\\\1\\end{bmatrix}u,\\quad y=\\begin{bmatrix}1&0&0\\end{bmatrix}x$$\n\n1. 求传递函数；\n\n2. 判断能控能观；\n\n3. 求可控标准型，可观标准型。",
+    "answer": "1. $G(s)=\\dfrac{3s-1}{s(s-1)(s-2)}=\\dfrac{3s-1}{s^3-3s^2+2s}$。\n\n2. $Q_c=\\begin{bmatrix}0&3&8\\\\0&1&2\\\\1&1&2\\end{bmatrix}$，$\\det Q_c=-2$，**完全能控**；$Q_o=\\begin{bmatrix}1&0&0\\\\1&2&3\\\\1&7&8\\end{bmatrix}$，$\\det Q_o=-5$，**完全能观**。\n\n3. 能控标准型：$\\dot x=\\begin{bmatrix}0&1&0\\\\0&0&1\\\\0&-2&3\\end{bmatrix}x+\\begin{bmatrix}0\\\\0\\\\1\\end{bmatrix}u$，$y=\\begin{bmatrix}-1&3&0\\end{bmatrix}x$；\n能观标准型：$\\dot x=\\begin{bmatrix}0&0&0\\\\1&0&-2\\\\0&1&3\\end{bmatrix}x+\\begin{bmatrix}-1\\\\3\\\\0\\end{bmatrix}u$，$y=\\begin{bmatrix}0&0&1\\end{bmatrix}x$。",
+    "explanation": "1. $sI-A=\\begin{bmatrix}s-1&-2&-3\\\\0&s-1&-1\\\\0&-1&s-1\\end{bmatrix}$。按第二、三行展开，\n$$\\lvert sI-A\\rvert=(s-1)\\bigl[(s-1)^2-1\\bigr]=s(s-1)(s-2)=s^3-3s^2+2s.$$\n$B=[0\\ 0\\ 1]^\\mathrm T$、$C=[1\\ 0\\ 0]$，故 $G(s)$ 只取决于伴随矩阵第 1 行第 3 列，该元为 $3s-1$，因而\n$$G(s)=\\dfrac{3s-1}{s(s-1)(s-2)}=\\dfrac{3s-1}{s^3-3s^2+2s}.$$\n\n2. 能控、能观判别阵\n$$Q_c=[B\\ AB\\ A^2B]=\\begin{bmatrix}0&3&8\\\\0&1&2\\\\1&1&2\\end{bmatrix},\\quad\\det Q_c=-2\\neq0,$$\n$$Q_o=\\begin{bmatrix}C\\\\CA\\\\CA^2\\end{bmatrix}=\\begin{bmatrix}1&0&0\\\\1&2&3\\\\1&7&8\\end{bmatrix},\\quad\\det Q_o=-5\\neq0,$$\n故系统**完全能控、完全能观**。\n\n3. 由 $G(s)=(b_0+b_1s+b_2s^2)/(s^3+a_2s^2+a_1s+a_0)$，系数 $a_0=0$、$a_1=2$、$a_2=-3$，$b_0=-1$、$b_1=3$、$b_2=0$。能控标准型\n$$A_c=\\begin{bmatrix}0&1&0\\\\0&0&1\\\\-a_0&-a_1&-a_2\\end{bmatrix}=\\begin{bmatrix}0&1&0\\\\0&0&1\\\\0&-2&3\\end{bmatrix},\\ \nB_c=\\begin{bmatrix}0\\\\0\\\\1\\end{bmatrix},\\ \nC_c=\\begin{bmatrix}b_0&b_1&b_2\\end{bmatrix}=\\begin{bmatrix}-1&3&0\\end{bmatrix};$$\n能观标准型为其对偶\n$$A_o=\\begin{bmatrix}0&0&-a_0\\\\1&0&-a_1\\\\0&1&-a_2\\end{bmatrix}=\\begin{bmatrix}0&0&0\\\\1&0&-2\\\\0&1&3\\end{bmatrix},\\ \nB_o=\\begin{bmatrix}-1\\\\3\\\\0\\end{bmatrix},\\ \nC_o=\\begin{bmatrix}0&0&1\\end{bmatrix}.$$",
+    "questionPages": "115–117",
+    "answerPages": "253–260"
+  },
+  {
+    "school": "重庆大学",
+    "year": 2025,
+    "variant": "844",
+    "number": 8,
+    "topics": [
+      "状态空间 / 状态反馈极点配置"
+    ],
+    "stem": "已知系统的状态方程为（17 分）\n$$\\dot x=\\begin{bmatrix}0&1&0\\\\0&0&1\\\\-1&-2&-3\\end{bmatrix}x+\\begin{bmatrix}0\\\\0\\\\1\\end{bmatrix}u$$\n\n1. 说明上述系统是否可以用状态反馈任意配置闭环极点；\n\n2. 设计状态反馈矩阵 $K$ 使极点位于 $-3$，$-1+j$，$-1-j$。",
+    "answer": "1. 系统为能控标准型，一定完全能控，**可以**任意配置闭环极点。\n\n2. $K=\\begin{bmatrix}5&6&2\\end{bmatrix}$（$u=-Kx+v$）。",
+    "explanation": "**确认可配置性。** 此系统已写成单输入可控标准型。将 $B=(0,0,1)^\\mathsf T$ 左乘 $A$，得到 $AB=(0,1,-3)^\\mathsf T$，继续计算得 $A^2B=(1,-3,7)^\\mathsf T$。三列线性无关，所以可以通过状态反馈任意配置闭环极点。\n\n**按目标系数求增益。** 取 $u=-Kx$、$K=(k_1,k_2,k_3)$，则 $A-BK$ 的末行为 $(-1-k_1,-2-k_2,-3-k_3)$。所以闭环特征多项式为\n$$s^3+(3+k_3)s^2+(2+k_2)s+1+k_1.$$\n目标极点对应\n$$(s+3)\\bigl[(s+1)^2+1\\bigr]=s^3+5s^2+8s+6.$$\n比较 $s^2$、$s$ 与常数项，得到 $k_3=2,k_2=6,k_1=5$。",
+    "questionPages": "115–117",
+    "answerPages": "253–260"
+  },
+  {
+    "school": "重庆大学",
+    "year": 2023,
+    "variant": "844",
+    "number": 4,
+    "topics": [
+      "频域分析 / 伯德图 / 绘制",
+      "频域分析 / 稳定裕度"
+    ],
+    "stem": "单位负反馈系统的开环传递函数为\n$$G(s)=\\frac{500(0.5s+1)(s+3)}{s(0.8s+2)(s+10)(s+50)}.$$\n概略绘制对数幅频特性，求增益交越频率和相角裕度。",
+    "answer": "转折频率依次为 $2,2.5,3,10,50\\,\\mathrm{rad/s}$。精确增益交越频率约为 $1.9222\\,\\mathrm{rad/s}$，相角裕度约为 $115.87^\\circ$。",
+    "explanation": "先写成时间常数形式\n$$G(s)=\\frac{1.5(1+s/2)(1+s/3)}{s(1+s/2.5)(1+s/10)(1+s/50)}.$$\n低频渐近线为 $20\\log_{10}(1.5/\\omega)$，初始斜率为 $-20\\,\\mathrm{dB/dec}$。经过两个零点时各增加 $20\\,\\mathrm{dB/dec}$，经过三个极点时各减少 $20\\,\\mathrm{dB/dec}$。依频率从低到高，斜率依次为 $-20,0,-20,0,-20,-40\\,\\mathrm{dB/dec}$。\n\n计算精确交越频率时，用\n$$\\frac{1.5\\sqrt{1+(\\omega/2)^2}\\sqrt{1+(\\omega/3)^2}}{\\omega\\sqrt{1+(\\omega/2.5)^2}\\sqrt{1+(\\omega/10)^2}\\sqrt{1+(\\omega/50)^2}}=1.$$\n数值求根得到 $\\omega_c\\approx1.9222$。相位是各零点相角之和减去各极点相角之和，并计入积分环节的 $-90^\\circ$。代入 $\\omega_c$ 得 $\\arg G(j\\omega_c)\\approx-64.13^\\circ$，故 $\\gamma=180^\\circ+\\arg G(j\\omega_c)\\approx115.87^\\circ$。\n\n![开环对数幅频曲线|630](img/reviewed/cqu-202304-bode.svg)",
+    "questionPages": "109",
+    "answerPages": "238–239"
+  },
+  {
+    "school": "重庆大学",
+    "year": 2025,
+    "variant": "844",
+    "number": 4,
+    "topics": [
+      "频域分析 / 伯德图 / 绘制",
+      "频域分析 / 稳定裕度",
+      "校正 / 超前"
+    ],
+    "stem": "单位负反馈系统的开环传递函数为 $G(s)=K/[s(s+2)(s+100)]$。令速度误差系数 $K_v=18$，绘制对数幅频特性并求交越频率与相角裕度。再设计一串联校正网络，在保持 $K_v=18$ 的同时使相角裕度达到 $45^\\circ$。",
+    "answer": "$K=3600$，校正前 $\\omega_c\\approx5.8305\\,\\mathrm{rad/s}$、$\\gamma\\approx15.60^\\circ$。可选 $C(s)=(1+0.220351s)/(1+0.0580154s)$。",
+    "explanation": "**确定开环增益。** $K_v=\\lim_{s\\to0}sG(s)=K/(2\\cdot100)$，故 $K=3600$。用 $G(s)=18/[s(1+s/2)(1+s/100)]$ 作图，转折频率为 $2$ 和 $100\\,\\mathrm{rad/s}$，斜率依次为 $-20,-40,-60\\,\\mathrm{dB/dec}$。\n\n![校正前开环对数幅频曲线|630](img/reviewed/cqu-202504-bode.svg)\n\n**求原系统的裕度。** 解 $\\omega\\sqrt{\\omega^2+4}\\sqrt{\\omega^2+10^4}=3600$ 得 $\\omega_c\\approx5.8305$。相角裕度为 $90^\\circ-\\arctan(\\omega_c/2)-\\arctan(\\omega_c/100)$，代入得约 $15.60^\\circ$。\n\n**构造超前网络。** 令 $C(s)=(1+T_zs)/(1+T_ps)$，其直流增益为 1，因此不改变 $K_v$。选设计交越频率 $8\\,\\mathrm{rad/s}$，令 $C(j8)G(j8)=e^{-j135^\\circ}$。由原开环式计算 $C(j8)=a+jb\\approx1.495924+j1.068517$。记 $u=8T_z$、$v=8T_p$，整理 $(1+ju)=(a+jb)(1+jv)$，得 $v=(a-1)/b$、$u=b+av$，所以 $T_z\\approx0.220351$、$T_p\\approx0.0580154$。\n\n**验算。** $T_z>T_p>0$，为超前网络。因 $\\sqrt{1+(\\omega T_z)^2}/\\omega$ 以及其余三个极点幅值因子都随正频率减小，校正后交越频率唯一。将 $\\omega=8$ 代回校正后的环路传递函数，得到幅值 1、相位 $-135^\\circ$。",
+    "questionPages": "116",
+    "answerPages": "256–257"
+  },
+  {
+    "school": "重庆大学",
+    "year": 2023,
+    "variant": "844",
+    "number": 8,
+    "topics": [
+      "状态空间 / 稳定性分析",
+      "状态空间 / 状态反馈极点配置"
+    ],
+    "questionPages": "110",
+    "answerPages": "242",
+    "stem": "线性系统的状态方程为\n$$\\dot x=\\begin{bmatrix}3&-4\\\\2&-3\\end{bmatrix}x+\\begin{bmatrix}3\\\\2\\end{bmatrix}u.$$\n判断零输入平衡点 $x=0$ 的稳定性。判断能否通过状态反馈使系统稳定，若能，求将闭环极点配置为 $-2\\pm3j$ 的反馈增益。",
+    "answer": "零输入平衡点不稳定，系统可用状态反馈镇定。若取 $u=-Kx$，可选 $K=(14,-19)$。",
+    "explanation": "**判定开环稳定性。** 特征多项式为\n$$\\det(sI-A)=(s-3)(s+3)+8=s^2-1.$$\n因此开环有一个右半平面极点 $+1$，零输入平衡点不稳定。\n\n**判定能控性。** 先求 $AB=(1,0)^\\mathsf T$，再组成能控矩阵 $[B,AB]=\\begin{bmatrix}3&1\\\\2&0\\end{bmatrix}$。其行列式为 $-2$，故系统完全能控，可以任意配置两个闭环极点。\n\n**求反馈增益。** 设 $K=(k_1,k_2)$。将 $A-BK$ 代入行列式并展开，得到\n$$\\det(sI-A+BK)=s^2+(3k_1+2k_2)s+k_1-1.$$\n目标多项式为 $(s+2)^2+9=s^2+4s+13$。比较常数项得 $k_1=14$，比较一次项得 $42+2k_2=4$，所以 $k_2=-19$。代回后得到 $s^2+4s+13$，与目标一致。"
+  }
+]

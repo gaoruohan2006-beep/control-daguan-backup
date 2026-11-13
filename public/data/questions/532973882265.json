@@ -1,0 +1,8 @@
+{
+  "answer": "$m\\ddot y+c\\dot y+ky=f$，$Y/F=1/(ms^2+cs+k)$。选 $x_1=y$、$x_2=\\dot y$，则\n$$\\dot x=\\begin{bmatrix}0&1\\\\-k/m&-c/m\\end{bmatrix}x+\\begin{bmatrix}0\\\\1/m\\end{bmatrix}f,\\qquad y=\\begin{bmatrix}1&0\\end{bmatrix}x.$$",
+  "explanation": "**列运动方程。** 由于以静平衡位置为原点，重力与弹簧的静态预载互相抵消。相对静平衡位置的回复力为 $-ky$，阻尼力为 $-c\\dot y$。由牛顿第二定律，$m\\ddot y=f-c\\dot y-ky$。\n\n**转入复频域。** 在零初始条件下，$\\dot y$、$\\ddot y$ 分别对应 $sY$、$s^2Y$。因此 $(ms^2+cs+k)Y=F$，两端除以 $F$ 即得所求传递函数。\n\n**选取状态。** 取位移、速度为状态，故 $\\dot x_1=x_2$。将运动方程除以 $m$，得到 $\\dot x_2=-(k/m)x_1-(c/m)x_2+f/m$。输出等于位移 $x_1$，直接通道为零。令 $s=0$，静态柔度为 $1/k$，与静力平衡一致。",
+  "originalImages": [],
+  "answerPdfPages": "235",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}
