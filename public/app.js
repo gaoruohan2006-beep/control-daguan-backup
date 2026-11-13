@@ -1,6 +1,8 @@
 /* 控制大观 · 静态版 */
 (() => {
 'use strict';
+const buildVersion = new URL(document.currentScript.src).searchParams.get('v');
+const libraryUrl = buildVersion ? `data/library.json?v=${buildVersion}` : 'data/library.json';
 const $ = (s, r = document) => r.querySelector(s);
 const STORE = 'control-daguan:v1';
 const MARKS = { shaky: '不熟练', unknown: '不会', mastered: '掌握' };
@@ -649,7 +651,7 @@ function bind() {
 }
 
 // ---------- 启动 ----------
-Promise.all([fetch('data/library.json').then(r => { if (!r.ok) throw 0; return r.json(); }), loadRec()]).then(async ([d, r]) => {
+Promise.all([fetch(libraryUrl).then(r => { if (!r.ok) throw 0; return r.json(); }), loadRec()]).then(async ([d, r]) => {
   lib = d; d.questions.forEach(q => byId.set(q.id, q)); rec = r;
   if (restoreBackups()) save();
   readURL(); bind(); render();

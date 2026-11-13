@@ -5,6 +5,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1] / "public"
 SW = ROOT / "sw.js"
+INDEX = ROOT / "index.html"
+STAMPED_ASSET = re.compile(r'(app\.(?:css|js))(?:\?v=[a-f0-9]{12})?(?=")')
 SHELL = [
     "index.html",
     "app.js",
@@ -46,7 +48,10 @@ def version_for(files):
     for rel in files:
         h.update(rel.encode())
         h.update(b"\0")
-        h.update((ROOT / rel).read_bytes())
+        content = (ROOT / rel).read_bytes()
+        if rel == "index.html":
+            content = STAMPED_ASSET.sub(r"\1", content.decode("utf-8")).encode("utf-8")
+        h.update(content)
         h.update(b"\0")
     return h.hexdigest()[:12]
 
@@ -56,7 +61,12 @@ def main():
     if not files:
         sys.exit("no shell files found under public/")
     ver = version_for(files)
-    urls = ["./"] + ["./" + f for f in files]
+    index = INDEX.read_text(encoding="utf-8")
+    stamped = STAMPED_ASSET.sub(lambda m: f"{m[1]}?v={ver}", index)
+    if index != stamped:
+        INDEX.write_text(stamped, encoding="utf-8")
+    versioned = {"app.css", "app.js", "data/library.json"}
+    urls = ["./"] + [f"./{f}?v={ver}" if f in versioned else f"./{f}" for f in files]
     block = "const PRECACHE = " + json.dumps({"version": ver, "files": urls}, ensure_ascii=False, indent=2) + ";"
     text = SW.read_text(encoding="utf-8")
     new, n = re.subn(r"const PRECACHE = \{.*?\};", block, text, count=1, flags=re.S)

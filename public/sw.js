@@ -99,7 +99,7 @@ const RUNTIME = 'cdg-runtime';
 self.addEventListener('install', event => {
   event.waitUntil((async () => {
     const cache = await caches.open(SHELL);
-    await cache.addAll(PRECACHE.files);
+    await cache.addAll(PRECACHE.files.map(url => new Request(url, { cache: 'reload' })));
   })());
 });
 
