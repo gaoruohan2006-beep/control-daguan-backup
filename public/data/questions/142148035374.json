@@ -1,0 +1,8 @@
+{
+  "answer": "$$\\frac{U_o(s)}{U_i(s)}=\\frac{R_2(1+R_1C_1s)}{R_1+R_2+R_1R_2C_1s}.$$",
+  "explanation": "设串联支路压降为 $V=U_i-U_o$。并联支路导纳是 $1/R_1+C_1s$，故总电流 $I=(1/R_1+C_1s)(U_i-U_o)$，而 $U_o=R_2I$。相应的单位负反馈框图可表示为\n$$U_i\\ \\longrightarrow\\ \\boxed{V=U_i-U_o}\\ \\longrightarrow\\ \\boxed{1/R_1+C_1s}\\ \\longrightarrow\\ \\boxed{R_2}\\ \\longrightarrow\\ U_o.$$\n化简即得传递函数。直流时退化为电阻分压，高频时趋近 1。",
+  "originalImages": [],
+  "answerPdfPages": "523",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

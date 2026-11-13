@@ -1,0 +1,8 @@
+{
+  "answer": "可取 $A=\\operatorname{diag}(1,0.368)$，$B=(1,1)^\\mathsf T$，$C=(1,-0.632)$，$D=0$。",
+  "explanation": "分母为 $(z-1)(z-0.368)$。部分分式展开为 $W(z)=1/(z-1)-0.632/(z-0.368)$。因此令 $x_1(k+1)=x_1(k)+u(k)$、$x_2(k+1)=0.368x_2(k)+u(k)$，取输出 $y(k)=x_1(k)-0.632x_2(k)$ 即可。\n\n![离散系统两条模态支路|650](img/reviewed/xmu-2024-discrete-modal.svg)",
+  "originalImages": [],
+  "answerPdfPages": "528–529",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

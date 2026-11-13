@@ -1,0 +1,8 @@
+{
+  "answer": "对共轭复根 $s=x+jy$，有 $(x+2)^2+y^2=2$。",
+  "explanation": "闭环方程为 $s^2+(1+K^*)s+2K^*=0$。由韦达定理，$2x=-(1+K^*)$，$x^2+y^2=2K^*$。消去 $K^*$ 即得结论。复根存在于 $3-2\\sqrt2<K^*<3+2\\sqrt2$，端点为实轴上的两个重根。",
+  "originalImages": [],
+  "answerPdfPages": "527",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

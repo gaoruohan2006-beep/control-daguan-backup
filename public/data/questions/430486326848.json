@@ -1,0 +1,8 @@
+{
+  "answer": "两支从 $-5,-2$ 出发，在 $-3.5$ 相遇，沿 $\\operatorname{Re}s=-3.5$ 分别向上、向下延伸。",
+  "explanation": "特征方程为 $s^2+7s+10(1+K)=0$，闭环根为 $s=-3.5\\pm\\sqrt{2.25-10K}$。当 $K=0.225$ 时两根重合，此后形成共轭复根。\n\n![实轴分支与垂直渐近线|570](img/reviewed/xmu-2024-real-locus.svg)",
+  "originalImages": [],
+  "answerPdfPages": "525",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}
