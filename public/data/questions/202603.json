@@ -1,1 +1,0 @@
-{"answer": "", "explanation": "", "notes": "已核对：实轴区间、分离点、稳定范围 $K>0$、欠阻尼区间 $7-4\\sqrt{3}<K<7+4\\sqrt{3}$ 均正确。对应关系经核算与源答案一致：$s=-3+\\sqrt{3}$ 时 $K=7-4\\sqrt{3}\\approx 0.0718$，$s=-3-\\sqrt{3}$ 时 $K=7+4\\sqrt{3}\\approx 13.93$（并非写反）。", "originalImages": [{"src": "img/a2026-3-1.png", "w": 561}, {"src": "img/a2026-3-2.png", "w": 686}], "answerPdfPages": "7–14", "errataLevel": "ok"}

@@ -231,8 +231,9 @@ function errataHTML(d) {
   return `<aside class="note errata" data-sev="${sev}"><div class="errata-hd"><span class="errata-tag">${title}</span>${badge ? `<span class="errata-badge">${badge}</span>` : ''}</div><div class="errata-bd">${md(d.notes)}</div></aside>`;
 }
 function origHTML(d) {
-  if (!d || !d.originalImages.length) return '';
-  return `<div class="orig"><div class="lab">原图解析（源文件顺序，PDF 第 ${d.answerPdfPages} 页）</div>${d.originalImages.map(o => `<img src="${o.src}" style="width:${o.w}px" alt="原图解析" loading="lazy" data-zoom title="单击放大图片">`).join('')}</div>`;
+  if (!d?.originalImages.length) return '';
+  const title = '原图解析';
+  return `<div class="orig"><div class="lab">${title}（答案本 PDF 第 ${esc(d.answerPdfPages)} 页）</div>${d.originalImages.map(o => `<img src="${esc(o.src)}" style="width:${+o.w}px" alt="${title}" loading="lazy" data-zoom title="单击放大图片">`).join('')}</div>`;
 }
 function srcTabsHTML(kind, view) {
   const textLab = kind === 'exp' ? '文字解析' : '文字答案';
@@ -257,7 +258,13 @@ function focusSrcTab(id, act, view) {
 function cardHTML(id, idx) {
   const q = byId.get(id), L = curList(), d = details.get(id);
   const paths = (L.categoryByQuestion[id] || q.categories);
-  const leaf = (paths.find(p => !p.startsWith('历年真题')) || paths[0]).split(' / ').pop();
+  const leaf = paths[0].split(' / ').pop();
+  const number = q.sourceType === 'reviewed' ? `原卷 ${q.number}` : `第 ${idx + 1} 题`;
+  const sourceInfo = q.sourceType === 'reviewed'
+    ? `<div class="source-pages">题本 PDF 第 ${esc(q.pdfPage)} 页</div>` : '';
+  const referenceNote = d?.referenceNote ? `<p class="muted">${esc(d.referenceNote)}</p>` : '';
+  const answerSource = d?.sourceType === 'reviewed'
+    ? `<p class="source-pages">参考答案 PDF 第 ${esc(d.answerPdfPages)} 页</p>` : '';
   const sh = st.show[id] || {}; const mk = rec.marks[id]?.state; const fav = rec.favorites.includes(id);
   const hl = st.q && st.q.length > 0 ? st.q : null;
   let ans = '';
@@ -271,9 +278,9 @@ function cardHTML(id, idx) {
         tabs = srcTabsHTML('answer', view);
         body = view === 'orig' ? origHTML(d) : md(d.answer) + (!sh.exp ? noteHTML : '');
       } else if (d.answer) {
-        body = md(d.answer) + (!sh.exp ? noteHTML : '');
+        body = md(d.answer) + (!sh.exp ? noteHTML : '') + answerSource;
       } else {
-        body = (sh.exp ? '<p class="muted">本题答案见下方「解析」中的原图。</p>' : origHTML(d)) + (!sh.exp ? noteHTML : '');
+        body = (sh.exp ? '<p class="muted">参考答案见下方「解析」中的原图。</p>' : origHTML(d)) + (!sh.exp ? noteHTML : '');
       }
     }
     ans += boxHTML('答案', 'answer', id, body, tabs);
@@ -286,7 +293,7 @@ function cardHTML(id, idx) {
         tabs = srcTabsHTML('exp', view);
         body = view === 'orig' ? origHTML(d) : md(d.explanation) + noteHTML;
       } else {
-        body = (d.explanation ? md(d.explanation) : '') + origHTML(d) + noteHTML;
+        body = (d.explanation ? md(d.explanation) : '') + origHTML(d) + referenceNote + noteHTML + answerSource;
       }
     }
     ans += boxHTML('解析', 'exp', id, body, tabs);
@@ -296,10 +303,10 @@ function cardHTML(id, idx) {
   const dueHTML = srs ? `<span class="due ${dayDiff(srs.card.due) <= 0 ? 'now' : ''}" title="FSRS 调度 · 已复习 ${srs.card.reps} 次">${fmtDue(srs.card.due)}</span>` : '<span class="due">未复习</span>';
   const hasNote = CDGNotes.has(rec.notes, id), noteOpen = !!sh.note;
   return `<article class="card" data-id="${id}">
-    <div class="meta"><span class="qno">第 ${idx + 1} 题</span><span class="src">${esc(q.source)}</span>
+    <div class="meta"><span class="qno">${esc(number)}</span><span class="src">${esc(q.source)}</span>
       <span class="pop-wrap"><button type="button" class="cat-btn" data-act="cats" aria-expanded="false" aria-label="查看完整分类路径，共 ${paths.length} 处">${esc(leaf)}</button>
       <div class="popover catpop" hidden><b>分类路径</b>${paths.map(p => `<button type="button" data-act="gocat" data-path="${esc(p)}" title="查看本分类全部题目">${esc(p)}</button>`).join('')}</div></span>${hasNote ? `<span class="note-flag" title="本题有笔记">${IC.pen}有笔记</span>` : ''}${dueHTML}</div>
-    <div class="stem">${md(q.stem, hl)}</div>
+    ${sourceInfo}<div class="stem">${md(q.stem, hl)}</div>
     <div class="actions">
       <button type="button" class="tog" data-act="answer" aria-pressed="${!!sh.answer}" aria-label="答案">${IC.eye}答案</button>
       <button type="button" class="tog" data-act="exp" aria-pressed="${!!sh.exp}" aria-label="解析">${IC.book}解析</button>
@@ -449,6 +456,10 @@ function readURL() {
   st.listId = lib.lists.some(l => l.id === p.get('list')) ? p.get('list') : 'complete';
   st.tab = ['bank', 'fav', 'retest'].includes(p.get('tab')) ? p.get('tab') : 'bank';
   st.qid = p.get('question') ? Number(p.get('question')) : null;
+  if (st.qid != null && !curList().questionIds.includes(st.qid)) {
+    const containing = lib.lists.find(l => l.questionIds.includes(st.qid));
+    if (containing) st.listId = containing.id;
+  }
   st.q = p.get('q') || ''; $('#search').value = st.q;
   st.rv = p.get('rv') === 'marked' ? 'marked' : 'due';
   st.node = p.get('section') || null;

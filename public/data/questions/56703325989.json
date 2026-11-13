@@ -1,0 +1,8 @@
+{
+  "answer": "$(0,0)$ 不稳定；$(0,1)$ 与 $(0,-1)$ 均局部渐近稳定。",
+  "explanation": "令 $\\dot x_1=\\dot x_2=0$，得 $x_1=0$，$x_2(1-x_2^2)=0$。系统的雅可比矩阵为\n$$J=\\begin{bmatrix}-1&0\\\\1&1-3x_2^2\\end{bmatrix}.$$\n在原点的特征值为 $-1,1$；在其余两点的特征值为 $-1,-2$。据李雅普诺夫间接法得结论。",
+  "originalImages": [],
+  "answerPdfPages": "73",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

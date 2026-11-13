@@ -1,0 +1,8 @@
+{
+  "answer": "取 $\\dot{\\hat x}=A\\hat x+Bu+L(y-C\\hat x)$，$L=[18,62]^\\mathsf T$。取 $u=K\\hat x$，$K=[-2,1]$。以 $[x^\\mathsf T,\\hat x^\\mathsf T]^\\mathsf T$ 为原状态时，可用\n$$S=\\begin{bmatrix}I&0\\\\ I&-I\\end{bmatrix}$$\n变换到新状态 $[x^\\mathsf T,(x-\\hat x)^\\mathsf T]^\\mathsf T$。",
+  "explanation": "可观矩阵为 $[C^\\mathsf T,(CA)^\\mathsf T]^\\mathsf T=I$。令 $L=[l_1,l_2]^\\mathsf T$，则 $A-LC$ 的特征多项式为 $s^2+(2+l_1)s+2l_1+2+l_2$。与 $(s+10)^2$ 比较可得 $l_1=18,l_2=62$。\n\n能控矩阵为 $[B,AB]=\\begin{bmatrix}1&0\\\\0&-2\\end{bmatrix}$。在正号反馈约定 $u=K\\hat x$ 下，$A+BK$ 的特征多项式为 $s^2+(2-k_1)s+2(1+k_2-k_1)$。令它等于 $s^2+4s+8$，得 $K=[-2,1]$。\n\n令 $e=x-\\hat x$，增广方程为 $\\dot x=(A+BK)x-BKe$、$\\dot e=(A-LC)e$。因其状态矩阵为块上三角矩阵，整体四个极点为指定的两组极点。若用 $u=-K\\hat x$ 的约定，反馈矩阵整体变号。",
+  "originalImages": [],
+  "answerPdfPages": "72–73",
+  "referenceNote": "原解两处特征行列式均把题面矩阵左下角的 $-2$ 写作 $-1$，导致观测器和反馈增益错误。",
+  "sourceType": "reviewed"
+}

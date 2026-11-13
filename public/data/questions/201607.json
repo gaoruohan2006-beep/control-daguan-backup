@@ -1,1 +1,0 @@
-{"answer": "", "explanation": "", "notes": "已核对：正确。$G(z)=0.158K/(z-0.368)$，$0<K<8.66$；$K=4$ 时 $c(k)=0.5-0.5(-0.264)^k$。附变换表原文第二项分母印作 $z-e^{-\\alpha T}$（$\\alpha/a$ 混用），已统一为 $e^{-aT}$。", "originalImages": [{"src": "img/a2016-7-1.png", "w": 571}, {"src": "img/a2016-7-2.png", "w": 473}], "answerPdfPages": "105–114", "errataLevel": "ok"}

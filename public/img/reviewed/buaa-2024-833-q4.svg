@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="630" height="167" viewBox="0 0 630 167" role="img" aria-label="理想继电器串联线性环节并施加单位负反馈">
+<defs><marker id="arr" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7Z" fill="#242831"/></marker></defs>
+<rect width="630" height="167" rx="10" fill="white"/>
+
+<g fill="none" stroke="#242831" stroke-width="1.8">
+<circle cx="112" cy="82" r="14"/><path d="M106 82h12m-6-6v12"/>
+<path d="M24 82h73" marker-end="url(#arr)"/><path d="M126 82h82" marker-end="url(#arr)"/>
+<path d="M356 82h55" marker-end="url(#arr)"/><path d="M550 82h56" marker-end="url(#arr)"/>
+<path d="M571 82v58H112V97" marker-end="url(#arr)"/>
+<rect x="209" y="31" width="147" height="102"/><rect x="412" y="47" width="138" height="70"/>
+<path d="M227 82h108" marker-end="url(#arr)"/><path d="M279 118V44" marker-end="url(#arr)"/>
+<path d="M236 104h43V61h44M421 81h120"/>
+</g>
+<g fill="#242831" font-family="Georgia, serif" font-size="17" text-anchor="middle">
+<text x="54" y="70">r(t)=0</text><text x="172" y="69">e(t)</text><text x="384" y="69">u(t)</text><text x="581" y="68">c(t)</text>
+<text x="90" y="106">−</text><text x="259" y="65">1</text><text x="302" y="109">−1</text>
+<text x="481" y="74">12(0.05s+1)</text><text x="481" y="102">s(s+4)</text>
+</g>
+
+</svg>

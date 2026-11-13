@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="530" height="152" viewBox="0 0 530 152" role="img" aria-label="单位负反馈系统，前向通道为9除以s乘s加1.2">
+<defs><marker id="arr" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7Z" fill="#242831"/></marker></defs>
+<rect width="530" height="152" rx="10" fill="#fff"/>
+<g fill="none" stroke="#242831" stroke-width="1.8">
+<circle cx="120" cy="57" r="14"/><path d="M114 57h12m-6-6v12"/>
+<path d="M430 57v61H120V72" marker-end="url(#arr)"/>
+<path d="M26 57h79" marker-end="url(#arr)"/><path d="M134 57h77" marker-end="url(#arr)"/><path d="M341 57h148" marker-end="url(#arr)"/>
+<rect x="212" y="26" width="129" height="62"/><path d="M224 55h105"/>
+</g>
+<g fill="#242831" font-family="Georgia, serif" font-size="18" text-anchor="middle">
+<text x="61" y="45">R(s)</text><text x="463" y="45">C(s)</text><text x="98" y="89">−</text><text x="276" y="48">9</text><text x="276" y="76">s(s+1.2)</text>
+</g>
+</svg>
+

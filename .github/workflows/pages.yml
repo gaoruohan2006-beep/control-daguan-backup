@@ -23,14 +23,14 @@ jobs:
         run: pip install playwright
       - name: Build precache list
         run: python3 tools/build_precache.py
-      - name: Playwright checks
+      - name: Verify reviewed bank in Chromium
+        env:
+          BANK_SCREENSHOT: shots/reviewed-bank.png
         run: |
           mkdir -p shots
           python3 -m http.server 8765 -d public > /tmp/http.log 2>&1 &
           sleep 1
-          for t in verify verify_fsrs verify_sync verify_notes verify_settings verify_pwa; do
-            echo "::group::$t"; python3 tools/$t.py http://localhost:8765/; echo "::endgroup::"
-          done
+          python3 tools/verify_reviewed_bank.py http://localhost:8765/
       - if: always()
         uses: actions/upload-artifact@v4
         with:

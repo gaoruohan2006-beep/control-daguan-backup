@@ -1,0 +1,8 @@
+{
+  "answer": "（1）$K=\\sqrt3$，截止频率 $\\omega_c=\\sqrt3$，最大相位裕度为 $30^\\circ$。\n\n（2）可采用增益放大与滞后网络串联。一个设计是\n$$\nG_c(s)=\\frac{10}{\\sqrt3}\\frac{1+(50/\\sqrt3)s}{1+b(50/\\sqrt3)s},\n\\qquad b=\\frac{\\sqrt{(100/3)(1+50^2)-1}}{50}\\approx5.77462.\n$$\n此时 $e_{ss}=-0.1$，截止频率保持 $\\sqrt3$，相位裕度约为 $29.05^\\circ$。",
+  "explanation": "开环传递函数为 $L(s)=K(s+1)/[s^2(1+s/3)]$。在增益交越点，相位裕度\n$$\n\\gamma(\\omega_c)=\\arctan\\omega_c-\\arctan(\\omega_c/3).\n$$\n令导数为零，得 $\\omega_c=\\sqrt3$，此处相位裕度为 $60^\\circ-30^\\circ=30^\\circ$；两端极限均为零，故该值为最大值。由于 $1<\\omega_c<3$，对数幅频渐近线给出 $|L(j\\omega_c)|\\simeq K/\\omega_c$，得 $K=\\sqrt3$。代回精确幅值也有 $|L(j\\sqrt3)|=K/\\sqrt3=1$。\n\n串联环节装在扰动注入点之前。令 $R=0$，则\n$$\nE(s)=-\\frac{N(s)}{s[1+G_c(s)L(s)]},\n\\qquad\ne_{ss}=-\\lim_{s\\to0}\\frac{1}{s^2[1+G_c(s)L(s)]}\n=-\\frac{1}{K G_c(0)}.\n$$\n要使 $e_{ss}=-0.1$，必须令 $K_c=G_c(0)=10/\\sqrt3$。取 $G_c(s)=K_c(1+Ts)/(1+bTs)$，取 $T\\omega_c=50$ 使滞后零、极点远低于截止频率。令 $|G_c(j\\omega_c)|=1$ 得到上述 $b$。校正只引入 $\\arctan50-\\arctan(50b)\\approx-0.95^\\circ$ 的附加相位。开环幅值随频率严格下降，截止频率唯一；校正后闭环分母的劳斯表首列均为正，终值定理适用。",
+  "originalImages": [],
+  "answerPdfPages": "14–15",
+  "referenceNote": "汇编目录和答案标题标为 833，卷面考试科目一栏写作 933 控制工程综合。 汇编的滞后网络分子、分母方向与其文字要求不一致。这里用扰动误差、交越频率和闭环稳定性复核所给设计。",
+  "sourceType": "reviewed"
+}

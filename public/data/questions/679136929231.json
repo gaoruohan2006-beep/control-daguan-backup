@@ -1,0 +1,8 @@
+{
+  "answer": "$\\alpha=0$，$0<K<(T_1+T_2)/(T_1T_2)$，$\\tau$ 不受此条件限制。",
+  "explanation": "令 $D(s)=(T_1s+1)(T_2s+1)$。比较点误差满足\n$$\\frac{E(s)}{R(s)}=\\frac{(1+\\tau s)(s+\\alpha)D(s)}{(s+\\alpha)D(s)+K}.$$\n闭环内部稳定要求特征多项式的常数项 $\\alpha+K>0$。由终值定理，单位阶跃误差为 $e_{\\rm ss}=\\alpha/(\\alpha+K)$，故 $\\alpha=0$。此时特征多项式为\n$$T_1T_2s^3+(T_1+T_2)s^2+s+K.$$\n劳斯判据给出 $K>0$ 与 $T_1+T_2>T_1T_2K$。前置环节参数 $\\tau$ 不进入特征多项式且其直流增益恒为 1。",
+  "originalImages": [],
+  "answerPdfPages": "262",
+  "referenceNote": "明确稳态误差取比较点的 E(s)，并修正原解析终值式中的因子笔误。",
+  "sourceType": "reviewed"
+}

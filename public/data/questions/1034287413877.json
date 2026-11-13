@@ -1,0 +1,8 @@
+{
+  "answer": "（1）令 $v=\\dot e$。$e>0$ 时 $4\\dot v+v=-2K$，$e<0$ 时 $4\\dot v+v=2K$。两侧轨线分别沿 $v=-2K$、$v=2K$ 的趋势运动，切换线为 $e=0$。\n\n（2）$T=\\dfrac14$，$K=\\dfrac{17\\pi}{16}$。",
+  "explanation": "（1）$r=0$ 时 $e=-c$。$T=0$ 时线性部分满足 $4\\ddot c+\\dot c=Km$。继电器输出为 $m=2\\operatorname{sgn}(e)$，代入可得分区方程。在一侧保持不变的时间段内，若 $v_\\infty=\\mp2K$，则\n$$v(t)=v_\\infty+(v_0-v_\\infty)e^{-t/4},\\qquad e(t)=e_0+v_\\infty t+4(v_0-v_\\infty)(1-e^{-t/4}).$$\n每次穿过 $e=0$ 后按另一区继续画轨迹。由 $V=2v^2+2K|e|$ 有 $\\dot V=-v^2$（在各半平面内），表明无输入响应能量逐渐衰减。\n\n![相平面示意图|640](img/reviewed/tianjin-2023-06-phase.svg)\n\n（2）线性环节为 $G(s)=K/[s(1+4s)(1+Ts)]$。由 $\\operatorname{Im}G(j\\omega)=0$ 得 $4T\\omega^2=1$。在 $\\omega=1$ 处，$G(j)=-K/(4+T)$。由图可知继电器 $M=2$，所以 $-1/N(2)=-\\pi/4$。由描述函数近似的谐波平衡条件 $G(j)=-1/N(2)$ 得 $K=17\\pi/16$。\n\n将 $N(A)$ 看成随振幅而变的等效增益，等效闭环特征多项式为 $4Ts^3+(4+T)s^2+s+KN(A)$。劳斯判据给出 $KN(A)<(4+T)/(4T)$ 时稳定。在所求参数下，振幅大于 $2$ 时等效增益降低，振幅小于 $2$ 时等效增益升高，因此描述函数法预测该振荡为稳定极限环。",
+  "originalImages": [],
+  "answerPdfPages": "71–72",
+  "referenceNote": "原解相平面方程遗漏 $K$，且在描述函数中把图中的继电器幅值 $M=2$ 当成了 $1$。以上按题面与图重算。",
+  "sourceType": "reviewed"
+}

@@ -1,1 +1,0 @@
-{"answer": "", "explanation": "", "notes": "已核对：正确。$\\gamma_{\\max}$ 在 $\\omega_c=1/\\sqrt{\\tau T_a}$，$K_c=T_i/(K_s\\sqrt{\\tau T_a})$。原文截止频率写作 $w_c$，按 $\\omega_c$ 录入；题图未印“图 3”字样。", "originalImages": [{"src": "img/a2017-4-1.png", "w": 534}, {"src": "img/a2017-4-2.png", "w": 299}], "answerPdfPages": "115–122", "errataLevel": "ok"}

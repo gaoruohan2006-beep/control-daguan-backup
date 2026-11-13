@@ -1,0 +1,8 @@
+{
+  "answer": "系统 A 的百分比超调量更大，调节时间更长，峰值时间也更长。",
+  "explanation": "设极点为 $-a\\pm jb$，$a,b>0$。峰值时间为 $t_p=\\pi/b$，调节时间采用 $t_s\\approx c/a$，$c$ 由误差带决定。图示 $a_A<a_B$、$b_A<b_B$，故 $t_{p,A}>t_{p,B}$、$t_{s,A}>t_{s,B}$。\n\n标准二阶系统的百分比超调量为 $100e^{-\\pi a/b}\\%$。A 的极点连线与负实轴的夹角更大，因而 $b_A/a_A>b_B/a_B$，即 $a_A/b_A<a_B/b_B$，所以 A 的百分比超调量更大。",
+  "originalImages": [],
+  "answerPdfPages": "261–262",
+  "referenceNote": "原解析将阻尼比误写为反余弦，现用正确关系及极点公式推导。",
+  "sourceType": "reviewed"
+}

@@ -1,0 +1,8 @@
+{
+  "answer": "满足精确截止频率与相角裕度的校正器为\n$$G_c(s)=10\\frac{1+1.3142s}{1+0.08586s}.$$\n两个折点约为 $0.761$、$11.65\\,\\mathrm{rad/s}$。用中频段作二阶近似，按 $5\\%$ 误差带常用工程式估得 $t_s\\approx0.60\\,\\mathrm s$。",
+  "explanation": "速度为单位斜坡的单位加速度输入对应 $R(s)=1/s^3$。由 $K_a=\\lim_{s\\to0}s^2L(s)=k$ 得 $k=10$。\n\n设 $Z=\\alpha T$。在 $\\omega=10$ 处，$10/(j10)^2$ 的幅值为 $0.1$、相角为 $-180^\\circ$，故\n$$\\frac{1+j10Z}{1+j10T}=10e^{j45^\\circ}.$$\n比较实部、虚部得 $T=(1-1/(5\\sqrt 2))/10$、$Z=(10\\sqrt 2-1)/10$。因 $Z>T>0$，幅频渐近线依次为 $-40,-20,-40\\,\\mathrm{dB/dec}$。\n\n![校正后开环 Bode 图|690](img/reviewed/tianjin-2023-05-bode.svg)\n\n估算时将零点附近的中频渐近线向低频延伸，取 $L_m(s)=10Z/[s(1+Ts)]$。单位反馈后有 $2\\zeta\\omega_n=1/T$，故 $t_s\\approx3.5/(\\zeta\\omega_n)=7T\\approx0.60\\,\\mathrm s$。",
+  "originalImages": [],
+  "answerPdfPages": "70–71",
+  "referenceNote": "原解用渐近线设定截止频率，得 $Z=1$、$T=9/110$。代入精确幅频特性，$10\\,\\mathrm{rad/s}$ 处幅值约为 $-2.18\\,\\mathrm{dB}$。以上按题设的精确频域指标重算。",
+  "sourceType": "reviewed"
+}

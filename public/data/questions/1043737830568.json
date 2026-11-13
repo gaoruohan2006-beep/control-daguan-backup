@@ -1,0 +1,8 @@
+{
+  "answer": "特征方程为 $s^2+(a+\\tau)s+1=0$。$a>2$ 时两支始终在负实轴；$a=2$ 时从二重极点 $-1$ 分出；$0<a<2$ 时共轭极点沿单位圆弧在 $-1$ 汇合，再沿负实轴分别趋于 $0$ 和 $-\\infty$。\n\n振荡且收敛的条件是 $0<a+\\tau<2$，在本题中等价于 $0<a<2$ 且 $0\\le\\tau<2-a$。",
+  "explanation": "等效参数根轨迹方程为 $1+\\tau\\dfrac{s}{s^2+as+1}=0$。直接求根\n$$s_\\pm=-\\frac{a+\\tau}{2}\\pm\\frac{\\sqrt{(a+\\tau)^2-4}}2.$$\n若根为共轭复根，其模长为 $1$，实部为 $-(a+\\tau)/2$。随 $\\tau$ 增大到 $2-a$，两根汇于 $-1$。超过这一点后，二根均为负实数。对于从实根出发的情形，两个起点分别为 $(-a\\pm\\sqrt{a^2-4})/2$。\n\n![三种参数根轨迹|740](img/reviewed/tianjin-2023-04-locus.svg)",
+  "originalImages": [],
+  "answerPdfPages": "69–70",
+  "referenceNote": "原解只列出 $0<a<2$。这保证存在使响应振荡的 $\tau$，但给定 $\tau$ 时还须满足 $a+\tau<2$。",
+  "sourceType": "reviewed"
+}

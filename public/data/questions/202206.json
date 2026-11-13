@@ -1,1 +1,0 @@
-{"answer": "", "explanation": "", "notes": "已核对：正确。$C(z)$ 公式与朱利范围 $0<k<(2+2e^{-T})/(1-e^{-T})$ 均对。第 1 问把 $\\Phi=C/R$ 写成与 $R$ 可约的形式，在 $G_1\\neq 1$ 时一般不成立，但不影响 $C(z)$。", "originalImages": [{"src": "img/a2022-6-1.png", "w": 401}, {"src": "img/a2022-6-2.png", "w": 295}], "answerPdfPages": "162–169", "errataLevel": "ok"}

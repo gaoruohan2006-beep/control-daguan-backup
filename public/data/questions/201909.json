@@ -1,1 +1,0 @@
-{"answer": "", "explanation": "", "notes": "已核对：正确。$-1$ 不可控；（1）组 $\\{-2,-2,-1\\}$ 可配，$k_3=5$、$k_2=1$、$k_1$ 任意；（2）组不可配。", "originalImages": [{"src": "img/a2019-9-1.png", "w": 702}, {"src": "img/a2019-9-2.png", "w": 325}], "answerPdfPages": "132–140", "errataLevel": "ok"}

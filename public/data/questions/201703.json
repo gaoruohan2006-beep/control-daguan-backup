@@ -1,1 +1,0 @@
-{"answer": "", "explanation": "", "notes": "已核对：正确。$T_a\\ge 0$ 均稳定，$0<T_a<1.8$ 欠阻尼，$T_a=1.8$ 响应最快。", "originalImages": [{"src": "img/a2017-3-1.png", "w": 420}, {"src": "img/a2017-3-2.png", "w": 596}, {"src": "img/a2017-3-3.png", "w": 501}], "answerPdfPages": "115–122", "errataLevel": "ok"}

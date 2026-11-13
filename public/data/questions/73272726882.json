@@ -1,0 +1,8 @@
+{
+  "answer": "图中分子系数 $K>\\frac32$。若把开环传递函数写成尾一标准型，开环增益 $K_{\\mathrm{OL}}=\\frac38K$，故 $K_{\\mathrm{OL}}>\\frac9{16}$。",
+  "explanation": "特征多项式为 $D(s)=s^3+6s^2+(8+K)s+3K$。令 $s=z-1$，原条件等价于 $D(z-1)$ 的根均位于左半平面。\n$$D(z-1)=z^3+3z^2+(K-1)z+2K-3.$$\n劳斯首列为 $1,3,K/3,2K-3$，故充要条件为 $K>3/2$。又\n$$\\frac{K(s+3)}{s(s+2)(s+4)}\n=\\frac{(3K/8)(1+s/3)}{s(1+s/2)(1+s/4)}.$$\n故尾一标准型的增益阈值为 $9/16$。",
+  "originalImages": [],
+  "answerPdfPages": "88",
+  "referenceNote": "参考答案把图中分子系数改记为小写 k，又用 K 表示尾一增益。需区分两个量。",
+  "sourceType": "reviewed"
+}

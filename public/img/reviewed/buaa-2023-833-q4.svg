@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="650" height="276" viewBox="0 0 650 276" role="img" aria-label="继电器与惯性环节串联，输出经间隙环节作负反馈">
+<defs><marker id="arr" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7Z" fill="#242831"/></marker></defs>
+<rect width="650" height="276" rx="10" fill="#fff"/>
+<g fill="none" stroke="#242831" stroke-width="1.7">
+<circle cx="102" cy="78" r="14"/><path d="M96 78h12m-6-6v12"/>
+<path d="M24 78h63" marker-end="url(#arr)"/><path d="M116 78h65" marker-end="url(#arr)"/><path d="M338 78h77" marker-end="url(#arr)"/><path d="M529 78h96" marker-end="url(#arr)"/>
+<path d="M583 78v126H466" marker-end="url(#arr)"/><path d="M195 204h-93V93" marker-end="url(#arr)"/>
+<rect x="182" y="26" width="156" height="106"/>
+<path d="M203 79h111" marker-end="url(#arr)"/><path d="M260 115V40" marker-end="url(#arr)"/>
+<path d="M215 100h45V58h45"/>
+<rect x="416" y="48" width="113" height="60"/><path d="M432 76h80"/>
+<rect x="195" y="148" width="271" height="104"/>
+<path d="M218 201h219" marker-end="url(#arr)"/><path d="M327 238v-75" marker-end="url(#arr)"/>
+<path d="M263 232l106-67m-64 73 106-67M277 224h50m-34-10h50m-34-10h50m-34-10h50m-34-10h50"/>
+</g>
+<g fill="#242831" font-family="Georgia, serif" font-size="17" text-anchor="middle">
+<text x="50" y="64">r = 0</text><text x="147" y="64">e</text><text x="372" y="64">u</text><text x="594" y="64">c</text><text x="83" y="117">−</text>
+<text x="245" y="62">1</text><text x="279" y="113">−1</text><text x="472" y="69">1</text><text x="472" y="96">s²+1</text>
+<text x="297" y="190">−1</text><text x="370" y="223">1</text><text x="419" y="177">k</text>
+</g>
+</svg>
+

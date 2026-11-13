@@ -1,0 +1,8 @@
+{
+  "answer": "$$\\Phi(t)=\\begin{bmatrix}2e^{-t}-e^{-2t}&e^{-t}-e^{-2t}\\\\-2e^{-t}+2e^{-2t}&-e^{-t}+2e^{-2t}\\end{bmatrix}.$$\n\n令 $h_1(t)=\\dfrac{\\sin t-\\cos t+e^{-t}}2$，$h_2(t)=\\dfrac{2\\sin t-\\cos t+e^{-2t}}5$。则\n$$x(t)=\\begin{bmatrix}2e^{-t}-e^{-2t}\\\\-2e^{-t}+2e^{-2t}\\end{bmatrix}+(2+b)h_1(t)\\begin{bmatrix}1\\\\-1\\end{bmatrix}+(1+b)h_2(t)\\begin{bmatrix}-1\\\\2\\end{bmatrix}.$$",
+  "explanation": "$A$ 的特征根为 $-1,-2$，对 $(sI-A)^{-1}=\\dfrac{1}{(s+1)(s+2)}\\begin{bmatrix}s+3&1\\\\-2&s\\end{bmatrix}$ 作拉氏反变换得到 $\\Phi$。\n\n代入常数变易公式\n$$x(t)=\\Phi(t)x(0)+\\int_0^t\\Phi(t-\\tau)B\\sin\\tau\\,\\mathrm d\\tau.$$\n其中 $\\Phi(t)B=(2+b)e^{-t}[1,-1]^\\mathsf T+(1+b)e^{-2t}[-1,2]^\\mathsf T$，而 $\\int_0^t e^{-\\lambda(t-\\tau)}\\sin\\tau\\,\\mathrm d\\tau=(\\lambda\\sin t-\\cos t+e^{-\\lambda t})/(\\lambda^2+1)$。合并即可。",
+  "originalImages": [],
+  "answerPdfPages": "67–68",
+  "referenceNote": "题面保留参数 $b$，原解积分时省略了 $b$，且个别积分项符号有误。以上按题面重算。",
+  "sourceType": "reviewed"
+}

@@ -200,3 +200,5 @@ mark{background:#fff3b0;color:inherit;border-radius:3px}
 ::-webkit-scrollbar-thumb{background:#c4ccd7;border-radius:8px;border:2px solid transparent;background-clip:padding-box}
 ::-webkit-scrollbar-thumb:hover{background-color:#a6b1c1}
 @media (prefers-color-scheme:dark){::-webkit-scrollbar-thumb{background-color:#3d4757}::-webkit-scrollbar-thumb:hover{background-color:#55627a}}
+
+.source-pages{color:var(--muted);font-size:12px;margin:0 0 8px}
