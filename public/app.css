@@ -201,4 +201,32 @@ mark{background:#fff3b0;color:inherit;border-radius:3px}
 ::-webkit-scrollbar-thumb:hover{background-color:#a6b1c1}
 @media (prefers-color-scheme:dark){::-webkit-scrollbar-thumb{background-color:#3d4757}::-webkit-scrollbar-thumb:hover{background-color:#55627a}}
 
-.source-pages{color:var(--muted);font-size:12px;margin:0 0 8px}
+/* Question typography uses local print faces first and bundled fallbacks. */
+@font-face{font-family:BankWenKai;src:url("vendor/bank-fonts/wenkai.woff2") format("woff2");font-display:swap}
+@font-face{font-family:BankSong;src:url("vendor/bank-fonts/song.woff2") format("woff2");font-display:swap}
+:root{
+  --heading:"LXGW WenKai","霞鹜文楷",BankWenKai,"Kaiti SC",serif;
+  --reading:"Times New Roman",Times,SimSun,"宋体","Songti SC",BankSong,serif;
+}
+.brand,.qno,.src,.box h4,.node.top>.nm .t,.md-body :is(h1,h2,h3,h4,h5,h6){font-family:var(--heading)}
+.brand{font-size:21px}
+.cards{max-width:940px;font-size:calc(17px * var(--fs))}
+.card{padding:clamp(18px,3vw,40px);border-radius:14px}
+.meta{gap:8px 12px;margin:0 0 22px;padding:0 0 14px;border-bottom:1px solid var(--border-subtle)}
+.qno{padding:2px 8px;border-radius:5px;font-size:1em}
+.src{font-size:1.15em;font-weight:600;margin:0;color:var(--fg)}
+.cat-btn{font-size:14px}
+.stem,.box .body,.md-body{font-family:var(--reading);line-height:1.9}
+.stem p,.box .body p{margin:.6em 0}
+.box{background:var(--panel);border-color:var(--border);padding:16px clamp(12px,2.5vw,26px)}
+.box h4{font-size:calc(20px * var(--fs));margin-bottom:6px}
+.fig{margin:20px auto;text-align:center}
+.fig img{display:block;margin:0 auto;max-width:100%;max-height:540px;object-fit:contain;background:#fff}
+@media (prefers-color-scheme:dark){.fig img{filter:none}}
+@media (max-width:600px){
+ .card{padding:16px}
+ .cards{font-size:calc(16px * var(--fs))}
+ .meta{margin-bottom:15px;padding-bottom:10px}
+ .due{display:none}
+ .fig{margin:16px auto}
+}

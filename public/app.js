@@ -260,11 +260,6 @@ function cardHTML(id, idx) {
   const paths = (L.categoryByQuestion[id] || q.categories);
   const leaf = paths[0].split(' / ').pop();
   const number = q.sourceType === 'reviewed' ? `原卷 ${q.number}` : `第 ${idx + 1} 题`;
-  const sourceInfo = q.sourceType === 'reviewed'
-    ? `<div class="source-pages">题本 PDF 第 ${esc(q.pdfPage)} 页</div>` : '';
-  const referenceNote = d?.referenceNote ? `<p class="muted">${inline(d.referenceNote)}</p>` : '';
-  const answerSource = d?.sourceType === 'reviewed'
-    ? `<p class="source-pages">参考答案 PDF 第 ${esc(d.answerPdfPages)} 页</p>` : '';
   const sh = st.show[id] || {}; const mk = rec.marks[id]?.state; const fav = rec.favorites.includes(id);
   const hl = st.q && st.q.length > 0 ? st.q : null;
   let ans = '';
@@ -278,7 +273,7 @@ function cardHTML(id, idx) {
         tabs = srcTabsHTML('answer', view);
         body = view === 'orig' ? origHTML(d) : md(d.answer) + (!sh.exp ? noteHTML : '');
       } else if (d.answer) {
-        body = md(d.answer) + (!sh.exp ? noteHTML : '') + answerSource;
+        body = md(d.answer) + (!sh.exp ? noteHTML : '');
       } else {
         body = (sh.exp ? '<p class="muted">参考答案见下方「解析」中的原图。</p>' : origHTML(d)) + (!sh.exp ? noteHTML : '');
       }
@@ -293,7 +288,7 @@ function cardHTML(id, idx) {
         tabs = srcTabsHTML('exp', view);
         body = view === 'orig' ? origHTML(d) : md(d.explanation) + noteHTML;
       } else {
-        body = (d.explanation ? md(d.explanation) : '') + origHTML(d) + referenceNote + noteHTML + answerSource;
+        body = (d.explanation ? md(d.explanation) : '') + origHTML(d) + noteHTML;
       }
     }
     ans += boxHTML('解析', 'exp', id, body, tabs);
@@ -303,10 +298,10 @@ function cardHTML(id, idx) {
   const dueHTML = srs ? `<span class="due ${dayDiff(srs.card.due) <= 0 ? 'now' : ''}" title="FSRS 调度 · 已复习 ${srs.card.reps} 次">${fmtDue(srs.card.due)}</span>` : '<span class="due">未复习</span>';
   const hasNote = CDGNotes.has(rec.notes, id), noteOpen = !!sh.note;
   return `<article class="card" data-id="${id}">
-    <div class="meta"><span class="qno">${esc(number)}</span><span class="src">${esc(q.source)}</span>
+    <header class="meta"><span class="qno">${esc(number)}</span><h2 class="src">${esc(q.source)}</h2>
       <span class="pop-wrap"><button type="button" class="cat-btn" data-act="cats" aria-expanded="false" aria-label="查看完整分类路径，共 ${paths.length} 处">${esc(leaf)}</button>
-      <div class="popover catpop" hidden><b>分类路径</b>${paths.map(p => `<button type="button" data-act="gocat" data-path="${esc(p)}" title="查看本分类全部题目">${esc(p)}</button>`).join('')}</div></span>${hasNote ? `<span class="note-flag" title="本题有笔记">${IC.pen}有笔记</span>` : ''}${dueHTML}</div>
-    ${sourceInfo}<div class="stem">${md(q.stem, hl)}</div>
+      <div class="popover catpop" hidden><b>分类路径</b>${paths.map(p => `<button type="button" data-act="gocat" data-path="${esc(p)}" title="查看本分类全部题目">${esc(p)}</button>`).join('')}</div></span>${hasNote ? `<span class="note-flag" title="本题有笔记">${IC.pen}有笔记</span>` : ''}${dueHTML}</header>
+    <div class="stem">${md(q.stem, hl)}</div>
     <div class="actions">
       <button type="button" class="tog" data-act="answer" aria-pressed="${!!sh.answer}" aria-label="答案">${IC.eye}答案</button>
       <button type="button" class="tog" data-act="exp" aria-pressed="${!!sh.exp}" aria-label="解析">${IC.book}解析</button>

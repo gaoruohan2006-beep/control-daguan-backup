@@ -1,0 +1,8 @@
+{
+  "answer": "令 $\\alpha=e^{-1}$，则\n$$C(z)=\\frac{2(1-\\alpha)(z-1)(z-\\alpha)}{z^3-(1+2\\alpha)z^2+(2-2\\alpha+3\\alpha^2)z-\\alpha^2}R(z).$$\n闭环不稳定。",
+  "explanation": "采样器隔开的两块分别化为脉冲传递函数。带零阶保持器的 $G_2$ 由阶跃采样差分得到 $G_2(z)=(1-\\alpha)/(z-\\alpha)$。$G_3$ 的冲激响应为 $1-e^{-t}$，采样后\n$$G_3(z)=\\frac z{z-1}-\\frac z{z-\\alpha}=\\frac{z(1-\\alpha)}{(z-1)(z-\\alpha)}.$$\n按负反馈关系，$C/R=2G_2/(1+2G_2G_3)$，整理得上式。分母有一对极点约为 $0.82348\\pm0.91972j$，模约 $1.234$，大于 1。",
+  "originalImages": [],
+  "answerPdfPages": "114",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

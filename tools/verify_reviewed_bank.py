@@ -43,7 +43,7 @@ async def verify():
             await card.wait_for()
             await card.get_by_role("button", name="答案", exact=True).click()
             await card.get_by_role("button", name="解析", exact=True).click()
-            await card.locator('.box[data-kind="exp"] .source-pages').wait_for()
+            await card.locator('.box[data-kind="exp"] .body > :first-child').wait_for()
             assert await card.locator(".katex-error").count() == 0, q["source"]
             bad = await card.evaluate("""async card => {
                 const images = [...card.querySelectorAll('img')];
@@ -53,7 +53,7 @@ async def verify():
             }""")
             assert not bad, (q["source"], bad)
             body = await card.inner_text()
-            assert not any(ad in body for ad in ("公众号", "二维码", "真橙", "考研群")), q["source"]
+            assert not any(ad in body for ad in ("公众号", "二维码", "真橙", "考研群", "讲义", "题本 PDF", "参考答案 PDF")), q["source"]
 
         q = next(q for q in questions if q["hasFigure"])
         await page.goto(f"{BASE}?question={q['id']}")

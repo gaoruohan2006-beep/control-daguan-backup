@@ -1,0 +1,8 @@
+{
+  "answer": "按图中数字，$h=1/3$、$a\\approx3.95$、$K\\approx2.97$。按实际响应最后进入 $\\pm2\\%$ 带计算，$t_s\\approx28.13\\,\\mathrm{s}$；按指数包络保守估计，$t_s\\le31.14\\,\\mathrm{s}$。",
+  "explanation": "闭环传递函数为 $K/(as^2+s+Kh)$。单位阶跃的终值 $3$ 给出 $h=1/3$。超调比例为 $M_p=(4.32-3)/3=0.44$，故\n$$\\zeta=\\frac{-\\ln M_p}{\\sqrt{\\pi^2+\\ln^2M_p}}\\simeq0.25284.$$\n相邻峰与谷间隔为半周期 $6.48\\,\\mathrm{s}$，得 $\\omega_d=\\pi/6.48$、$\\omega_n=\\omega_d/\\sqrt{1-\\zeta^2}\\simeq0.50109\\,\\mathrm{rad/s}$。由 $2\\zeta\\omega_n=1/a$ 和 $\\omega_n^2=Kh/a$ 求得参数。\n\n归一化偏差为\n$$\\delta(t)=\\frac{e^{-\\zeta\\omega_nt}}{\\sqrt{1-\\zeta^2}}\\sin(\\omega_dt+\\arccos\\zeta).$$\n数值求解 $|\\delta(t)|=0.02$ 的最后一个交点得到 $28.13\\,\\mathrm{s}$。也可令其指数包络等于 $0.02$，得到充分界 $31.14\\,\\mathrm{s}$。",
+  "originalImages": [],
+  "answerPdfPages": "106–107",
+  "referenceNote": "参考解一处把峰值 4.32 写成 4.23。其调节时间按经验式取值，本文给出图中参数下按响应进入误差带定义的数值和包络界。",
+  "sourceType": "reviewed"
+}
