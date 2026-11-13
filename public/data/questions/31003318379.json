@@ -1,0 +1,8 @@
+{
+  "answer": "描述函数法判定无有限振幅的自振。按图示对称理想继电器和零输入模型，原点可取稳定平衡点。",
+  "explanation": "以继电器为界，两个负反馈支路可并为\n$$G(s)=\\frac1{s+1}\\left(\\frac1s+\\frac1{s+2}\\right)=\\frac2{s(s+2)}.$$\n设继电器输出幅值为 $M>0$，则其描述函数 $N(A)=4M/(\\pi A)$ 为正实数。对 $\\omega>0$，$\\operatorname{Im}G(j\\omega)<0$，其曲线没有与 $-1/N(A)$ 的有限振幅交点。对任意固定 $N>0$，等效特征式 $s^2+2s+2N$ 亦为 Hurwitz。\n\n按理想继电器零输入模型，取继电器误差信号的相反数为 $x$，最小实现满足 $\\ddot x+2\\dot x+2M\\operatorname{sgn}(x)=0$。能量函数 $V=\\dot x^2/2+2M|x|$ 沿轨迹以 $\\dot V=-2\\dot x^2$ 衰减；零速度上除原点外均有非零恢复加速度。被约去的线性模态 $-1$ 稳定。",
+  "originalImages": [],
+  "answerPdfPages": "112–113",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

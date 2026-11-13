@@ -1,0 +1,8 @@
+{
+  "answer": "$G(s)\\simeq\\dfrac{10}{(s+1)^2(0.1s+1)}$，$\\omega_c\\approx\\sqrt{10}\\,\\mathrm{rad/s}$。相角裕度近似为 $\\gamma=180^\\circ-2\\arctan\\sqrt{10}-\\arctan(\\sqrt{10}/10)>0$，闭环稳定。",
+  "explanation": "低频为 $20\\,\\mathrm{dB}$，故增益为 $10$。在 $1$、$10\\,\\mathrm{rad/s}$ 处，斜率分别减少 $40$、$20\\,\\mathrm{dB/dec}$，故设\n$$G(s)=\\frac{10}{(s^2+2\\zeta s+1)(0.1s+1)}.$$\n$\\omega=1$ 处实线与低频渐近线相差约 $-6\\,\\mathrm{dB}$，按二阶环节的转折频率修正近似有 $-20\\log_{10}(2\\zeta)\\simeq-6$，所以 $\\zeta\\simeq1$。\n\n在 $1<\\omega<10$，渐近幅值为 $20-40\\log_{10}\\omega$，令其为零得 $\\sqrt{10}$。在这一频率，$\\gamma$ 也可写为 $\\arctan(2\\sqrt{10}/9)-\\arctan(\\sqrt{10}/10)>0$。由近似模型精确计算的交越频率更低，相角裕度更大。亦可由闭环特征多项式 $0.1s^3+1.2s^2+2.1s+11$ 的劳斯首列交叉核对。",
+  "originalImages": [],
+  "answerPdfPages": "111–112",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

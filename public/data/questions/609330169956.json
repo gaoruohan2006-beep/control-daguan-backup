@@ -1,0 +1,8 @@
+{
+  "answer": "可取 PI 控制器 $C(s)=5(s+2)/s=5+10/s$。",
+  "explanation": "正常对象下，环路传递函数为 $L_1(s)=5/s$，闭环稳定，增益交越频率为 $5\\,\\mathrm{rad/s}$、相角裕度为 $90^\\circ$。被消去的对象极点 $-2$ 是稳定极点。\n\n虚焊对象下，$L_2(s)=5(s+2)/s^2$。闭环多项式 $s^2+5s+10$ 是 Hurwitz 多项式。在 $\\omega=5$ 时，$|L_2(j5)|=\\sqrt{29}/5>1$。幅值在正频率上严格下降，故交越频率大于 5。其相角裕度为 $\\arctan(\\omega_c/2)>\\arctan(5/2)>45^\\circ$。两种稳定闭环的开环均至少为 I 型，故阶跃稳态误差为零。",
+  "originalImages": [],
+  "answerPdfPages": "518–519",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

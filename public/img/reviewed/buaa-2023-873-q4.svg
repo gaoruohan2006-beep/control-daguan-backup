@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="225" viewBox="0 0 680 225" role="img" aria-label="前馈校正与局部反馈校正系统">
+<defs><marker id="arr" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7Z" fill="#242831"/></marker></defs>
+<rect width="680" height="225" rx="10" fill="white"/>
+
+<g fill="none" stroke="#242831" stroke-width="1.8">
+<circle cx="120" cy="89" r="14"/><path d="M114 89h12m-6-6v12"/>
+<circle cx="346" cy="89" r="14"/><path d="M340 89h12m-6-6v12"/>
+<path d="M22 89h83" marker-end="url(#arr)"/><path d="M134 89h58" marker-end="url(#arr)"/><path d="M258 89h73" marker-end="url(#arr)"/>
+<path d="M360 89h55" marker-end="url(#arr)"/><path d="M535 89h124" marker-end="url(#arr)"/>
+<path d="M60 89V36H192" marker-end="url(#arr)"/><path d="M258 36h88v38" marker-end="url(#arr)"/>
+<path d="M574 89v67H509" marker-end="url(#arr)"/><path d="M432 156h-86v-52" marker-end="url(#arr)"/>
+<path d="M617 89v113H120V104" marker-end="url(#arr)"/>
+<rect x="193" y="67" width="65" height="45"/><rect x="193" y="15" width="65" height="41"/>
+<rect x="416" y="58" width="119" height="62"/><path d="M427 88h98"/><rect x="432" y="136" width="77" height="40"/>
+</g>
+<g text-anchor="middle" font-family="Georgia, serif" font-size="17">
+<text x="37" y="79">R(s)</text><text x="644" y="77">C(s)</text>
+<text x="143" y="79">E(s)</text><text x="226" y="95">10</text><text x="226" y="41">5s</text>
+<text x="476" y="83">10</text><text x="476" y="110">s(s+1)</text><text x="470" y="162">Ks</text>
+<text x="103" y="119">−</text><text x="329" y="119">−</text><text x="328" y="62">+</text>
+</g>
+
+</svg>

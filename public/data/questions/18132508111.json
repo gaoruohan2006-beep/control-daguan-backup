@@ -1,0 +1,8 @@
+{
+  "answer": "取 $u=-y-2y\\sin y+k(r-y)$，其中 $k>0$。",
+  "explanation": "控制律仅使用给定 $r$ 和可测输出 $y$。代入原方程恰得\n$$\\ddot y+2\\dot y+ky=kr.$$\n$k>0$ 时闭环二阶多项式稳定，给定到输出的直流增益为 1，因此对单位阶跃有 $y(\\infty)=1$。取 $k=1$ 可得到双极点 $-1$。",
+  "originalImages": [],
+  "answerPdfPages": "521",
+  "referenceNote": "原解在原点线性化并采用纯反馈，未建立单位阶跃给定到输出的跟踪关系。",
+  "sourceType": "reviewed"
+}

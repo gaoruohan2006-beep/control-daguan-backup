@@ -1,0 +1,8 @@
+{
+  "answer": "$k=400\\,^\\circ\\mathrm C/\\mathrm{kW}$，$\\tau=4/\\ln 4\\approx2.885\\,\\mathrm{min}$。",
+  "explanation": "增量输入为 $0.5\\,\\mathrm{kW}$，稳态温升为 $200\\,^\\circ\\mathrm C$，故 $k=200/0.5=400\\,^\\circ\\mathrm C/\\mathrm{kW}$。一阶模型给出\n$$T(t)=80+200(1-e^{-t/\\tau}).$$\n由 $T(4)=230$ 可得 $e^{-4/\\tau}=1/4$，从而 $\\tau=4/\\ln4$。",
+  "originalImages": [],
+  "answerPdfPages": "522",
+  "referenceNote": "原解误将绝对功率 1.5 kW 当作阶跃增量，导致静态增益计算错误。",
+  "sourceType": "reviewed"
+}

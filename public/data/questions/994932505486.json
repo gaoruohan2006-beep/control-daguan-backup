@@ -1,0 +1,8 @@
+{
+  "answer": "把 $v$ 作为单位阶跃参考输入，按题面约定 $u=v+kx$，可取 $k=[-1,\\,-0.6]$。",
+  "explanation": "令 $k=[k_1,k_2]$，从 $v$ 到 $y$ 的闭环传递函数为\n$$\\frac{Y}{V}=\\frac{2}{s^2+(1-2k_2)s-2k_1}.$$\n闭环稳定时，单位阶跃稳态增益为 $-1/k_1$，因此取 $k_1=-1$。选择 $k_2=-0.6$，可得 $\\omega_n=\\sqrt2$、$\\zeta=2.2/(2\\sqrt2)\\simeq0.7778$。计算超调量 $100\\exp[-\\pi\\zeta/\\sqrt{1-\\zeta^2}]\\simeq2.04\\%<\\mathrm e\\%$。",
+  "originalImages": [],
+  "answerPdfPages": "116–117",
+  "referenceNote": "题本是回忆稿，未明说参考输入为单位阶跃。这里按参考解的输入解释；参考解的 k₂≈−0.51 舍入后不能满足严格超调上限。",
+  "sourceType": "reviewed"
+}

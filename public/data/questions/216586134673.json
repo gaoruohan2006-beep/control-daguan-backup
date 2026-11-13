@@ -1,0 +1,8 @@
+{
+  "answer": "$K_1=1$，$K_2=0.16$。最后进入 $2\\%$ 误差带的时间约为 $1.6153\\,\\mathrm s$。按常用估算式 $t_s\\approx4.4/(\\zeta\\omega_n)$ 则为 $1.76\\,\\mathrm s$。超调量为 $100e^{-\\pi/\\sqrt3}\\%\\approx16.30\\%$。",
+  "explanation": "两处相减给出 $C=K_1G[R-C-K_2sC]$，故\n$$\n\\frac{C}{R}=\\frac{25K_1}{s^2+(1+25K_1K_2)s+25K_1}.\n$$\n配系数 $25K_1=\\omega_n^2=25$、$1+25K_1K_2=2\\zeta\\omega_n=5$，即得参数。\n\n令 $\\omega_d=5\\sqrt3/2$。单位阶跃误差\n$$\ne(t)=e^{-2.5t}\\left(\\cos\\omega_dt+\\frac{1}{\\sqrt3}\\sin\\omega_dt\\right).\n$$\n最后一次满足 $|e(t)|=0.02$ 的时刻在 $1.6152$ 与 $1.6154$ s 之间，数值求根为 $1.61527$ s。该点之后且下一个极值之前误差绝对值减小，其后的极值依次减小，故不会再次越界。以指数包络约束误差还可得 $t_s\\le \\ln[1/(0.02\\sqrt{1-\\zeta^2})]/(\\zeta\\omega_n)\\approx1.6223$ s。标准二阶系统的首峰超调量为 $100\\exp[-\\pi\\zeta/\\sqrt{1-\\zeta^2}]\\%$。",
+  "originalImages": [],
+  "answerPdfPages": "29",
+  "referenceNote": "题干在误差带前误夹入状态空间维数条件，已删去。参考解分母的中间系数印错，给出的增益与正确分母相符。",
+  "sourceType": "reviewed"
+}

@@ -1,0 +1,8 @@
+{
+  "answer": "原点全局指数稳定。",
+  "explanation": "方法一：特征多项式为 $(\\lambda+1)^2+2$，特征值为 $-1\\pm\\sqrt2j$，均在左半平面。\n\n方法二：取 $V=x_1^2+2x_2^2$，则\n$$\\dot V=2x_1(-x_1-2x_2)+4x_2(x_1-x_2)=-2x_1^2-4x_2^2=-2V.$$\n$V$ 正定且径向无界，结论成立。",
+  "originalImages": [],
+  "answerPdfPages": "85–86",
+  "referenceNote": "原解计算 $\\dot V$ 时误抄 $\\dot x_1$，导致交叉项错误。",
+  "sourceType": "reviewed"
+}

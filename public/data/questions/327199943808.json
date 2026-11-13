@@ -1,0 +1,8 @@
+{
+  "answer": "系统不完全能控，能控子空间为 $\\operatorname{span}\\{(1,1,0)^\\mathsf T\\}$。不可控模态为 $-1,-3$，故系统可镇定。",
+  "explanation": "$AB=B$，所以 $[B,AB,A^2B]$ 的秩为 $1$。取 $T=[(1,1,0)^\\mathsf T,(1,-1,0)^\\mathsf T,(0,0,1)^\\mathsf T]$，有\n$$T^{-1}AT=\\begin{bmatrix}1&0&-2\\\\0&-1&1\\\\0&0&-3\\end{bmatrix},\\quad T^{-1}B=\\begin{bmatrix}1\\\\0\\\\0\\end{bmatrix},\\quad CT=\\begin{bmatrix}1&-1&2\\end{bmatrix}.$$\n左上 $1\\times1$ 块为能控部分，右下不可控块为赫尔维茨矩阵。令 $z=T^{-1}x$，取 $u=-2z_1$ 可把能控极点从 $1$ 移到 $-1$。",
+  "originalImages": [],
+  "answerPdfPages": "84–85",
+  "referenceNote": "原解使用了与题面不同的 $A$、$C$，因此能控秩及分解结果不同。按题面计算，秩为 $1$。",
+  "sourceType": "reviewed"
+}

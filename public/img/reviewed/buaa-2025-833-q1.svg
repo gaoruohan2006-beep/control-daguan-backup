@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="620" height="192" viewBox="0 0 620 192" role="img" aria-label="单位位置负反馈及速度负反馈">
+<defs><marker id="arr" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7Z" fill="#242831"/></marker></defs>
+<rect width="620" height="192" rx="10" fill="white"/>
+
+<g fill="none" stroke="#242831" stroke-width="1.8">
+<circle cx="111" cy="70" r="13"/><path d="M105 70h12m-6-6v12"/>
+<circle cx="185" cy="70" r="13"/><path d="M179 70h12m-6-6v12"/>
+<path d="M26 70h71" marker-end="url(#arr)"/><path d="M124 70h47" marker-end="url(#arr)"/><path d="M198 70h56" marker-end="url(#arr)"/>
+<rect x="255" y="48" width="70" height="45"/><path d="M325 70h64" marker-end="url(#arr)"/>
+<rect x="390" y="40" width="98" height="60"/><path d="M402 69h74M488 70h110" marker-end="url(#arr)"/>
+<rect x="390" y="112" width="98" height="41"/>
+<path d="M520 70v63h-31" marker-end="url(#arr)"/><path d="M390 133H185V84" marker-end="url(#arr)"/>
+<path d="M559 70v105H111V84" marker-end="url(#arr)"/>
+</g><g text-anchor="middle" font-family="Georgia, serif" font-size="17">
+<text x="62" y="59">R(s)</text><text x="571" y="57">C(s)</text><text x="96" y="99">−</text><text x="170" y="99">−</text><text x="290" y="77">K₁</text>
+<text x="439" y="63">25</text><text x="439" y="91">s(s+1)</text><text x="439" y="138">K₂s</text>
+</g>
+</svg>

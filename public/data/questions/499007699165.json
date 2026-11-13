@@ -1,0 +1,8 @@
+{
+  "answer": "$$m\\ddot y+f\\dot y+ky=F(t),\\quad \\frac{Y(s)}{F(s)}=\\frac1{ms^2+fs+k},\\quad\n\\zeta=\\frac f{2\\sqrt{mk}},\\quad \\omega_n=\\sqrt{\\frac km},\\quad y(\\infty)=\\frac3k.$$",
+  "explanation": "以位移正方向列牛顿第二定律，弹簧力与阻尼力分别为 $-ky$、$-f\\dot y$。在零初始条件下取拉氏变换，并把归一化分母与 $s^2+2\\zeta\\omega_ns+\\omega_n^2$ 对照。由终值定理，$y(\\infty)=\\lim_{s\\to0}s[3/(s(ms^2+fs+k))]=3/k$。",
+  "originalImages": [],
+  "answerPdfPages": "83",
+  "referenceNote": "原解第（3）问停在 $Y(s)$，未给出题目所求的稳态位移。",
+  "sourceType": "reviewed"
+}

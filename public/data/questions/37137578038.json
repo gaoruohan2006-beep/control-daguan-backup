@@ -1,0 +1,8 @@
+{
+  "answer": "$$G(s)=\\frac{100(1+0.125s)}{s^2(1+0.01s)},\\qquad\nG_c(s)=\\frac{8(1+0.125s)}s=1+\\frac8s.$$\n\n![校正装置及原系统的渐近曲线|680](img/reviewed/tianjin-2025-07-bode.svg)",
+  "explanation": "校正后低频斜率 $-40\\,\\mathrm{dB/dec}$ 表明有两个原点极点，$\\omega=8$ 处斜率增加 $20$ 表明有一个零点，$\\omega=100$ 处斜率减少 $20$ 表明有一个极点。低频线在 $\\omega=1$ 处为 $40\\,\\mathrm{dB}$，故低频系数为 $100$。用 $G/G_0$ 即得校正环节。$G_c$ 在 $8$ 处从斜率 $-20$ 转为 $0$，$G_0$ 在 $100$ 处从斜率 $-20$ 转为 $-40\\,\\mathrm{dB/dec}$。",
+  "originalImages": [],
+  "answerPdfPages": "86",
+  "referenceNote": "按原解采用低频渐近线在 $\\omega=1$ 处为 $40\\,\\mathrm{dB}$ 的读图口径。",
+  "sourceType": "reviewed"
+}

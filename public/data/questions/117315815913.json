@@ -1,0 +1,8 @@
+{
+  "answer": "$\\zeta=1/\\sqrt2$，$\\omega_n=2\\sqrt2$。超调量为 $100e^{-\\pi}\\%\\approx4.32\\%$，精确 $5\\%$ 调节时间约为 $1.03585\\,\\mathrm s$。按常用估算式 $3.5/(\\zeta\\omega_n)$ 则为 $1.75\\,\\mathrm s$。闭环带宽频率为 $\\omega_b=2\\sqrt2\\,\\mathrm{rad/s}$，固定阻尼比时 $t_s$ 与 $\\omega_b$ 成反比。",
+  "explanation": "闭环为标准二阶系统。由 $t_p=\\pi/\\omega_d$ 得 $\\omega_d=2$，由超调量 $e^{-\\zeta\\omega_n t_p}=e^{-\\pi}$ 得 $\\zeta\\omega_n=2$，从而 $\\omega_n=2\\sqrt2$。单位阶跃误差为 $e(t)=e^{-2t}(\\cos2t+\\sin2t)$。首峰对应的误差绝对值只有 $e^{-\\pi}<0.05$，以后各峰更小，因此误差第一次降到 $0.05$ 时就已经进入误差带且不再越界。数值求根给出 $1.03585\\,\\mathrm s$。\n\n闭环传递函数为 $8/(s^2+4s+8)$，其平方幅值为 $64/(64+\\omega^4)$。取平方幅值 $1/2$，得 $\\omega_b=2\\sqrt2$。若保持 $\\zeta=1/\\sqrt2$、只改变 $\\omega_n$，则 $\\omega_b=\\omega_n$，归一化阶跃响应只依赖 $\\omega_n t$，所以 $t_s$ 随 $\\omega_b$ 增大而反比例减小。",
+  "originalImages": [],
+  "answerPdfPages": "41",
+  "referenceNote": "题本自动控制部分从第一题开始，答案本因先排数电部分，此题编为第六题。参考解的 1.75 s 是保守估算，补充了按误差带定义求得的实际值。",
+  "sourceType": "reviewed"
+}

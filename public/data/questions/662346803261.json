@@ -1,0 +1,8 @@
+{
+  "answer": "取\n$$\nA=\\begin{bmatrix}0&1\\\\0&-2\\end{bmatrix},\\quad\nb=\\begin{bmatrix}0\\\\1\\end{bmatrix},\\quad\nc=\\begin{bmatrix}3&1\\end{bmatrix}.\n$$\n状态反馈增益 $k=[9,4]$，观测器增益 $L=[-1/3,9]^{\\mathsf T}$。单位阶跃响应为 $y(t)=(1-e^{-3t})/3$，$t\\ge0$。",
+  "explanation": "直接核对 $c(sI-A)^{-1}b=G(s)$。设 $k=[k_1,k_2]$，闭环特征多项式是 $s^2+(2+k_2)s+k_1$。与 $(s+3)^2$ 配系数即得 $k$。\n\n采用全阶观测器 $\\dot{\\hat x}=A\\hat x+bu+L(y-c\\hat x)$。设 $L=[l_1,l_2]^{\\mathsf T}$，则\n$$\n\\det(sI-A+Lc)=s^2+(2+3l_1+l_2)s+6l_1+3l_2.\n$$\n与 $(s+5)^2$ 配系数得 $3l_1+l_2=8$、$6l_1+3l_2=25$，解得 $l_1=-1/3,l_2=9$。当系统与观测器初值均为零，估计误差始终为零。参考通道 $Y/V=(s+3)/(s+3)^2=1/(s+3)$，乘 $1/s$ 后作逆变换即得单位阶跃响应。",
+  "originalImages": [],
+  "answerPdfPages": "33",
+  "referenceNote": "扫描题干写作 3,3，参考解及其稳定响应采用 −3,−3，已补负号。若按 +3,+3，反馈为 [9,−8] 且系统不稳定。参考解的观测器增益也已按实际特征式纠正。",
+  "sourceType": "reviewed"
+}

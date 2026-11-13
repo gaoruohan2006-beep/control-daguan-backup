@@ -1,0 +1,8 @@
+{
+  "answer": "系统完全能控，\n$$\\Phi(t)=\\begin{bmatrix}\n-e^{-t}+2e^{-2t}&-2e^{-t}+2e^{-2t}\\\\\ne^{-t}-e^{-2t}&2e^{-t}-e^{-2t}\n\\end{bmatrix}.$$",
+  "explanation": "按图取积分器输出为 $x_1,x_2$，有 $\\dot x_1=-3x_1-2x_2+u$、$\\dot x_2=x_1+u$、$y=x_1$。因此\n$$A=\\begin{bmatrix}-3&-2\\\\1&0\\end{bmatrix},\\quad B=\\begin{bmatrix}1\\\\1\\end{bmatrix},\\quad [B\\ AB]=\\begin{bmatrix}1&-5\\\\1&1\\end{bmatrix}.$$\n该矩阵满秩。由于 $A$ 的特征值为 $-1,-2$，矩阵指数可写成 $e^{At}=(A+2I)e^{-t}-(A+I)e^{-2t}$，展开得到所求矩阵。",
+  "originalImages": [],
+  "answerPdfPages": "115–116",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

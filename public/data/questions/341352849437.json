@@ -1,0 +1,8 @@
+{
+  "answer": "一种实现为\n$$A=\\begin{bmatrix}-1&0&0\\\\0&-2&1\\\\0&0&-2\\end{bmatrix},\\quad\nB=\\begin{bmatrix}1\\\\0\\\\1\\end{bmatrix},\\quad C=\\begin{bmatrix}-1&-1&5\\end{bmatrix},\\quad D=0.$$",
+  "explanation": "分母为 $(s+1)(s+2)^2$。部分分式展开为\n$$W(s)=-\\frac{1}{s+1}+\\frac{5}{s+2}-\\frac{1}{(s+2)^2}.$$\n令 $X_1=U/(s+1)$，$X_3=U/(s+2)$，$X_2=X_3/(s+2)$，输出为 $Y=-X_1-X_2+5X_3$。将各状态的一阶方程并列即可得到上述实现。\n\n![传递函数的并联状态变量图|740](img/reviewed/xmu-2023-parallel.svg)",
+  "originalImages": [],
+  "answerPdfPages": "520–521",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

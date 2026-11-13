@@ -1,0 +1,8 @@
+{
+  "answer": "$$A=\\operatorname{diag}(0,-2-\\sqrt3,-2+\\sqrt3),\\quad B=\\begin{bmatrix}1\\\\1\\\\1\\end{bmatrix},\\quad C=\\begin{bmatrix}2&-1+\\sqrt3/2&-1-\\sqrt3/2\\end{bmatrix},\\quad D=0.$$\n\n![对角型并联模拟结构|680](img/reviewed/tianjin-2025-02-parallel.svg)",
+  "explanation": "因三个极点互异，可将 $G(s)$ 分解为\n$$\\frac2s+\\frac{-1+\\sqrt3/2}{s+2+\\sqrt3}+\\frac{-1-\\sqrt3/2}{s+2-\\sqrt3}.$$\n令 $x_i$ 为第 $i$ 个单位分子并联支路的输出，分别得到 $\\dot x_i=\\lambda_ix_i+u$，再以对应的留数对三个支路的输出加权求和。",
+  "originalImages": [],
+  "answerPdfPages": "82–83",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

@@ -1,0 +1,8 @@
+{
+  "answer": "$-1<K<K_c$，其中 $K_c=\\sqrt{1+\\omega_c^2}\\approx2.64457$，$\\omega_c$ 是 $0.8\\omega+\\arctan\\omega=\\pi$ 的唯一正解。若按常用增益约定取 $K>0$，则为 $0<K<K_c$。",
+  "explanation": "对 $K>0$，有 $|G(j\\omega)|=K/\\sqrt{1+\\omega^2}$、$\\arg G(j\\omega)=-0.8\\omega-\\arctan\\omega$。正频率上幅值严格下降，相位严格递减，故第一次负实轴交点离原点最远。开环无右半平面极点。当该交点在 $-1$ 右侧时没有对 $-1$ 的环绕。临界时 $\\omega_c\\approx2.44822$，且交点为 $(-1,0)$。超过临界增益后，先出现一次顺时针环绕，后续越过 $-1$ 的负实轴交点方向相同。\n\n当 $-1<K\\le0$ 时，奈奎斯特曲线处在开单位圆内。$K=-1$ 时闭环有原点根。$K<-1$ 时特征函数 $s+1+Ke^{-0.8s}$ 在实轴上从 $s=0$ 的负值变为正值，故存在正实根。\n\n![正增益达到临界值时的奈奎斯特图，实线为正频率|460](img/reviewed/xmu-2023-nyquist-delay.svg)",
+  "originalImages": [],
+  "answerPdfPages": "519",
+  "referenceNote": "原解只讨论正增益，并将临界增益近似为 2.67。此处按题干实增益求范围。",
+  "sourceType": "reviewed"
+}

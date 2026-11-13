@@ -1,0 +1,8 @@
+{
+  "answer": "实部为负的有理传递函数极点对应的冲激响应绝对可积，因而零初值下的任意有界输入均产生有界输出。",
+  "explanation": "$G(s)$ 为严格真有理函数。对约消后的传递函数作部分分式展开，重数为 $m$ 的极点 $p$ 对应的时域项为常系数乘 $t^{k-1}e^{pt}$，$1\\le k\\le m$。若 $\\operatorname{Re}p<0$，每一项在 $[0,\\infty)$ 上都绝对可积，有限和仍绝对可积，因此冲激响应满足 $\\int_0^\\infty|g(t)|\\,\\mathrm dt<\\infty$。\n\n若 $|u(t)|\\le M$，则零初值输出满足\n$$\n|y(t)|\\le\\int_0^t|g(\\tau)u(t-\\tau)|\\,\\mathrm d\\tau\n\\le M\\int_0^\\infty|g(\\tau)|\\,\\mathrm d\\tau.\n$$\n右边为与 $t$ 无关的有限量，故 BIBO 稳定。",
+  "originalImages": [],
+  "answerPdfPages": "33–34",
+  "referenceNote": "证明纳入重极点，并明确 BIBO 的零初值口径。",
+  "sourceType": "reviewed"
+}

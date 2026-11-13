@@ -1,0 +1,8 @@
+{
+  "answer": "描述函数法预测一个稳定极限环。输出振幅约为 $0.161$，角频率约为 $3.909\\,\\mathrm{rad/s}$。",
+  "explanation": "将增益 $5$ 并入线性部分，令 $A$ 为继电器输入幅值，继电器跳变阈值为 $h=0.2$、输出幅值为 $1$。对 $A>h$，\n$$-\\frac1{N(A)}=-\\frac\\pi4\\sqrt{A^2-h^2}-j\\frac{\\pi h}4,\\qquad\nG(j\\omega)=-\\frac{10}{1+\\omega^2}-j\\frac{10}{\\omega(1+\\omega^2)}.$$\n令两者相等，先由虚部解出唯一正根 $\\omega\\approx3.90948$，再由实部得 $A\\approx0.80707$。由于 $r=0$，继电器输入为 $-5c$，故输出振幅为 $A/5$。\n\n在固定振幅 $A$ 的描述函数近似中，特征方程为 $s^2+s+10N(A)=0$。沿 $G(j\\omega)=-1/N(A)$ 的交点对 $A$ 微扰，右半平面根的实部导数可由 $\\mathrm ds/\\mathrm dA=-10N'(A)/(2s+1)$ 得到。代入 $s=j\\omega$ 和 $N(A)=\\frac4{\\pi A}\\left(\\sqrt{1-(h/A)^2}-jh/A\\right)$，其在交点的实部为负。因此振幅偏大时衰减、偏小时增长，描述函数法判为稳定周期运动。",
+  "originalImages": [],
+  "answerPdfPages": "87",
+  "referenceNote": "原解计算了频率和振幅，但未说明周期运动的稳定性。",
+  "sourceType": "reviewed"
+}

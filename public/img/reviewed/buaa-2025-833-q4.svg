@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="168" viewBox="0 0 600 168" role="img" aria-label="输出为正负二的理想继电器与线性环节">
+<defs><marker id="arr" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7Z" fill="#242831"/></marker></defs>
+<rect width="600" height="168" rx="10" fill="white"/>
+
+<g fill="none" stroke="#242831" stroke-width="1.8">
+<circle cx="112" cy="82" r="14"/><path d="M106 82h12m-6-6v12"/>
+<path d="M24 82h73" marker-end="url(#arr)"/><path d="M126 82h82" marker-end="url(#arr)"/>
+<path d="M356 82h55" marker-end="url(#arr)"/><path d="M519 82h61" marker-end="url(#arr)"/>
+<path d="M548 82v58H112V97" marker-end="url(#arr)"/>
+<rect x="209" y="31" width="147" height="102"/><rect x="412" y="47" width="107" height="70"/>
+<path d="M227 82h108" marker-end="url(#arr)"/><path d="M279 118V44" marker-end="url(#arr)"/>
+<path d="M236 104h43V61h44M422 81h87"/>
+</g><g text-anchor="middle" font-family="Georgia, serif" font-size="17">
+<text x="54" y="70">R(s)</text><text x="567" y="69">C(s)</text><text x="90" y="106">−</text>
+<text x="259" y="65">2</text><text x="303" y="109">−2</text><text x="465" y="74">1</text><text x="465" y="102">s²+1</text>
+</g>
+</svg>
