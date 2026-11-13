@@ -1,0 +1,8 @@
+{
+  "answer": "可观测标准型可取\n$$A_o=\\begin{bmatrix}0&-3\\\\1&-4\\end{bmatrix},\\quad B_o=\\begin{bmatrix}2\\\\1\\end{bmatrix},\\quad C_o=\\begin{bmatrix}0&1\\end{bmatrix}.$$\n对角标准型可取 $A_d=\\operatorname{diag}(-1,-3)$、$B_d=(1,1)^\\mathsf T$、$C_d=(1/2,1/2)$。两种实现的直接通道均为 0。",
+  "explanation": "可观测标准型可由可控标准型作对偶变换。用状态方程直接验证，设 $Y=X_2$，有 $sX_1=-3X_2+2U$、$sX_2=X_1-4X_2+U$。消去 $X_1$ 得 $(s^2+4s+3)Y=(s+2)U$。\n\n对角型先分解为\n$$\\frac{s+2}{(s+1)(s+3)}=\\frac{1}{2(s+1)}+\\frac{1}{2(s+3)}.$$\n令两个状态分别为 $X_1=U/(s+1)$ 和 $X_2=U/(s+3)$，输出为 $(X_1+X_2)/2$。\n\n![可观测标准型积分器结构与对角型并联结构|730](img/reviewed/xmu-2025-modal.svg)",
+  "originalImages": [],
+  "answerPdfPages": "535–536",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

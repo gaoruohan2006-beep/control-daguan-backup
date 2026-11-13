@@ -1,0 +1,8 @@
+{
+  "answer": "$y(t)=e^t/6+3e^{-t}/2-2e^{-2t}/3$。",
+  "explanation": "齐次特征多项式为 $(s+1)(s+2)$，故齐次解为 $Ae^{-t}+Be^{-2t}$。取特解 $ce^t$，代入得 $(1+3+2)c=1$，即 $c=1/6$。由两项初始条件得到\n$$A+B=5/6,\\qquad -A-2B=-1/6.$$\n相加得 $-B=2/3$，再代回得 $A=3/2$。在 $t=0$ 验算，函数值为 1、导数为 0。",
+  "originalImages": [],
+  "answerPdfPages": "531",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

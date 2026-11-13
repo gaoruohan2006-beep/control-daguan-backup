@@ -1,0 +1,8 @@
+{
+  "answer": "$\\omega_n=\\pi/[0.5\\sqrt{1-0.309^2}]\\approx6.6065\\,\\mathrm{rad/s}$。$G(s)=\\omega_n^2/[s(s+2\\zeta\\omega_n)]$。$5\\%$ 和 $2\\%$ 调节时间分别约为 $1.71\\,\\mathrm s$ 和 $1.96\\,\\mathrm s$。",
+  "explanation": "令 $\\omega_d=\\omega_n\\sqrt{1-\\zeta^2}$。标准二阶阶跃响应的首峰满足 $\\omega_dt_p=\\pi$，由 $t_p=0.5$ 得 $\\omega_d=2\\pi$。闭环为 $\\Phi(s)=\\omega_n^2/(s^2+2\\zeta\\omega_ns+\\omega_n^2)$，由单位负反馈关系 $G=\\Phi/(1-\\Phi)$ 得开环表达式。\n\n指数衰减速率为 $\\zeta\\omega_n\\approx2.0414\\,\\mathrm{s}^{-1}$。分别按 $t_{s,5\\%}\\approx3.5/(\\zeta\\omega_n)$、$t_{s,2\\%}\\approx4/(\\zeta\\omega_n)$ 计算。超调校验给出 $e^{-\\pi\\zeta/\\sqrt{1-\\zeta^2}}\\approx0.36$，与图示峰值约 1.36 一致。",
+  "originalImages": [],
+  "answerPdfPages": "531–532",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

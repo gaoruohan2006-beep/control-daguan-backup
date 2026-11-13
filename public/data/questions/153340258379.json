@@ -1,0 +1,8 @@
+{
+  "answer": "令 $a=e^{-T}$，则\n$$\\Phi(z)=\\frac{k(1-a)z}{z^2+[k(1-a)-(1+a)]z+a}.$$\n闭环稳定当且仅当 $0<k<2(1+a)/(1-a)$。",
+  "explanation": "图中采样器后没有零阶保持器，故对连续对象的冲激响应取样。由 $k/[s(s+1)]=k/s-k/(s+1)$ 得 $g[n]=k(1-a^n)$，从而\n$$G(z)=k\\left(\\frac{z}{z-1}-\\frac{z}{z-a}\\right)=\\frac{k(1-a)z}{(z-1)(z-a)}.$$\n使用单位负反馈公式 $\\Phi=G/(1+G)$，展开分母即得特征多项式。令 $b=k(1-a)$，代入 $z=(1+w)/(1-w)$ 并乘以 $(1-w)^2$，得到\n$$[2(1+a)-b]w^2+2(1-a)w+b=0.$$\n双线性变换把单位圆内部映到 $\\operatorname{Re}w<0$。因为 $0<a<1$，二阶劳斯条件要求 $b>0$ 且 $2(1+a)-b>0$。化回 $k$ 即得所求范围。若取 $T=1$，上限约为 $4.3279$。",
+  "originalImages": [],
+  "answerPdfPages": "534–535",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}
