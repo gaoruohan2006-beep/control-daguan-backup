@@ -130,16 +130,17 @@ function tex(src, display) {
 }
 function inline(s, hl) {
   const out = []; let i = 0;
-  const re = /\$\$([\s\S]+?)\$\$|\$([^$]+?)\$|!\[([^\]]*)\]\(([^)]+)\)|\*\*(.+?)\*\*/g; let m;
+  const re = /\$\$(?<display>[\s\S]+?)\$\$|(?<before>[（「『【《〈“‘(]|\b[A-D][.．、] *)?\$(?!\$)(?<formula>[^$]+?)\$(?<after>[，。、；：？！）】」』》〉”’％…,.!?;:%)\]]*)|!\[(?<image>[^\]]*)\]\((?<url>[^)]+)\)|\*\*(?<bold>.+?)\*\*/g; let m;
   const txt = t => { let h = esc(t); if (hl) h = h.replace(new RegExp(hl.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi'), x => `<mark>${x}</mark>`); return h; };
   while ((m = re.exec(s))) {
     out.push(txt(s.slice(i, m.index)));
-    if (m[1] != null) out.push(tex(m[1], true));
-    else if (m[2] != null) out.push(tex(m[2], false));
-    else if (m[4] != null) { const [alt, w] = m[3].split('|'); out.push(`<span class="fig"><img src="${esc(m[4])}" alt="${esc(alt)}" ${w ? `style="width:${+w}px"` : ''} loading="lazy" data-zoom title="单击放大图片"></span>`); }
+    const { display, before, formula, after, image, url, bold } = m.groups;
+    if (display != null) out.push(tex(display, true));
+    else if (formula != null) out.push(`<span class="inline-math"><span class="math-content">${txt(before || '')}${tex(formula, false)}${txt(after)}</span></span>`);
+    else if (url != null) { const [alt, w] = image.split('|'); out.push(`<span class="fig"><img src="${esc(url)}" alt="${esc(alt)}" ${w ? `style="width:${+w}px"` : ''} loading="lazy" data-zoom title="单击放大图片"></span>`); }
     else {
-      const plan = m[5] === '解题思路' ? ' class="solution-plan"' : '';
-      out.push('<strong' + plan + '>' + inline(m[5], hl) + '</strong>');
+      const plan = bold === '解题思路' ? ' class="solution-plan"' : '';
+      out.push('<strong' + plan + '>' + inline(bold, hl) + '</strong>');
     }
     i = re.lastIndex;
   }
@@ -236,6 +237,7 @@ function openSec(key) {
   });
 }
 const isMobile = () => matchMedia('(max-width:900px)').matches;
+const narrowReading = matchMedia('(max-width:600px)');
 
 function renderTree() {
   const el = $('#tree');
@@ -418,6 +420,20 @@ function renderCards(sec) {
   ids.forEach(id => { if ((st.show[id]?.answer || st.show[id]?.exp) && !details.has(id)) loadDetail(id); });
   const a = document.activeElement, keep = a?.matches?.('textarea.note-input') ? { id: a.dataset.noteInput, s: a.selectionStart, e: a.selectionEnd, top: a.scrollTop } : null;
   el.innerHTML = ids.map(id => cardHTML(id, sec.indexOf(id))).join('');
+  if (narrowReading.matches) {
+    const firstCard = el.firstElementChild;
+    // Measure after both the body and KaTeX fonts load, since fallback widths differ.
+    document.fonts.ready.then(() => {
+      if (firstCard !== el.firstElementChild || !narrowReading.matches) return;
+      const widths = new Map();
+      const wide = [...el.querySelectorAll('.inline-math')].filter(math => {
+        const paragraph = math.closest('p');
+        if (!widths.has(paragraph)) widths.set(paragraph, paragraph.clientWidth);
+        return math.firstElementChild.getBoundingClientRect().width > .85 * widths.get(paragraph);
+      });
+      wide.forEach(math => math.classList.add('math-wide'));
+    });
+  }
   const ta = keep && el.querySelector(`textarea[data-note-input="${keep.id}"]`);
   if (ta) { ta.focus({ preventScroll: true }); ta.setSelectionRange(keep.s, keep.e); ta.scrollTop = keep.top; }
 }

@@ -1,6 +1,6 @@
 {
   "answer": "完全能控、能观。$K=[-3,-5]$，$L=[-3,1]^\\mathsf T$。",
-  "explanation": "能控矩阵为 $\\left[\\begin{smallmatrix}0&1\\\\1&-9\\end{smallmatrix}\\right]$，能观矩阵为 $\\left[\\begin{smallmatrix}1&2\\\\-12&-17\\end{smallmatrix}\\right]$，行列式分别为 $-1,7$。闭环特征式 $s^2+(9+k_2)s+6+k_1$ 与 $(s+1)(s+3)$ 比较即得 $K$。\n\n令 $L=[l_1,l_2]^\\mathsf T$，则误差特征式为 $s^2+(9+l_1+2l_2)s+6-3l_1+l_2$。与 $(s+4)^2$ 比较，解得 $l_1=-3,l_2=1$。观测器方程为 $\\dot{\\hat x}=A\\hat x+Bu+L(y-C\\hat x)$。",
+  "explanation": "能控矩阵为 $\\begin{bmatrix}0&1\\\\1&-9\\end{bmatrix}$，能观矩阵为 $\\begin{bmatrix}1&2\\\\-12&-17\\end{bmatrix}$，行列式分别为 $-1,7$。闭环特征式 $s^2+(9+k_2)s+6+k_1$ 与 $(s+1)(s+3)$ 比较即得 $K$。\n\n令 $L=[l_1,l_2]^\\mathsf T$，则误差特征式为 $s^2+(9+l_1+2l_2)s+6-3l_1+l_2$。与 $(s+4)^2$ 比较，解得 $l_1=-3,l_2=1$。观测器方程为 $\\dot{\\hat x}=A\\hat x+Bu+L(y-C\\hat x)$。",
   "originalImages": [],
   "answerPdfPages": "437–438",
   "referenceNote": "",

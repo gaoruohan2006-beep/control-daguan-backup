@@ -114,6 +114,28 @@ async def verify():
         assert await mobile.locator("#sidebar").is_visible()
         await mobile.locator("#tree .node.top .nm").first.click()
         assert not await mobile.locator("#app").evaluate("node => node.classList.contains('drawer-open')")
+        await mobile.goto(f"{BASE}?question=531055892748")
+        condition = mobile.locator('.stem .inline-math').filter(has_text=re.compile(r"t\\ge0"))
+        await condition.wait_for()
+        await mobile.evaluate("document.fonts.ready.then(() => true)")
+        assert await condition.evaluate("""formula => {
+            const content = formula.firstElementChild;
+            return content.textContent.startsWith('（') && content.textContent.endsWith('），') &&
+                content.getClientRects().length === 1 && getComputedStyle(content).whiteSpace === 'nowrap';
+        }""")
+
+        await mobile.goto(f"{BASE}?question=86138982135")
+        await mobile.locator('[data-act="exp"]').click()
+        integral = mobile.locator('.box[data-kind="exp"] .katex-display').first
+        await integral.wait_for()
+        await mobile.evaluate("document.fonts.ready.then(() => true)")
+        assert "\\begin{aligned}" in await integral.locator('annotation').text_content()
+        assert await integral.evaluate("formula => formula.scrollWidth <= formula.clientWidth + 1")
+
+        await mobile.goto(f"{BASE}?question=740666644522")
+        matrix = mobile.locator('.stem .katex-display annotation')
+        await matrix.wait_for(state="attached")
+        assert "\\begin{bmatrix}" in await matrix.text_content()
         if target := os.environ.get("BANK_SCREENSHOT"):
             await page.goto(f"{BASE}?question={q['id']}")
             await page.locator(".stem img").first.evaluate("img => img.decode()")

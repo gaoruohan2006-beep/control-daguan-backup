@@ -26,7 +26,7 @@
     "answerPages": "218",
     "stem": "系统为 $$\\dot x=\\begin{bmatrix}1&1\\\\0&-2\\end{bmatrix}x+\\begin{bmatrix}0\\\\1\\end{bmatrix}u.$$\n（1）判断稳定性与能控性。（2）采用 $u=-Kx$，使闭环阻尼比 $\\zeta=0.707$、无阻尼自然频率 $\\omega_n=1$，求 $K$。",
     "answer": "开环不稳定，系统完全能控。$K=[3.414,\\ 0.414]$。",
-    "explanation": "$A$ 的特征值为 $1,-2$，故零平衡点不稳定。$[B,AB]=\\left[\\begin{smallmatrix}0&1\\\\1&-2\\end{smallmatrix}\\right]$ 的行列式为 $-1$，所以完全能控。\n\n写 $K=[k_1,k_2]$，则 $\\det(sI-A+BK)=(s-1)(s+2+k_2)+k_1=s^2+(1+k_2)s+k_1-k_2-2$。和 $s^2+1.414s+1$ 对比，得 $k_2=0.414$、$k_1=k_2+3=3.414$。因此 $K=[3.414,\\ 0.414]$。",
+    "explanation": "$A$ 的特征值为 $1,-2$，故零平衡点不稳定。$[B,AB]=\\begin{bmatrix}0&1\\\\1&-2\\end{bmatrix}$ 的行列式为 $-1$，所以完全能控。\n\n写 $K=[k_1,k_2]$，则 $\\det(sI-A+BK)=(s-1)(s+2+k_2)+k_1=s^2+(1+k_2)s+k_1-k_2-2$。和 $s^2+1.414s+1$ 对比，得 $k_2=0.414$、$k_1=k_2+3=3.414$。因此 $K=[3.414,\\ 0.414]$。",
     "notes": ""
   },
   {
@@ -41,7 +41,7 @@
     "answerPages": "218–219",
     "stem": "已知 $$\\dot x=\\begin{bmatrix}-1&2\\\\0&-2\\end{bmatrix}x+\\begin{bmatrix}0\\\\1\\end{bmatrix}u,\\quad y=\\begin{bmatrix}1&0\\end{bmatrix}x.$$\n用 $\\dot{\\hat x}=A\\hat x+Bu+F(y-C\\hat x)$ 构造极点为 $-10,-5$ 的全维状态观测器。若 $x(0)=[10,8]^\\mathsf T$、$\\hat x(0)=[7,10]^\\mathsf T$，求 $t=1\\,\\mathrm s$ 时的 $\\tilde x=x-\\hat x$。",
     "answer": "$F=[12,12]^\\mathsf T$，$\\tilde x(1)=[-13e^{-5}+28e^{-10},\\ -52e^{-5}+42e^{-10}]^\\mathsf T/5$。",
-    "explanation": "$C=[1,0]$，$CA=[-1,2]$，故完全能观。令 $F=[f_1,f_2]^\\mathsf T$。误差系统的特征多项式为 $(s+1+f_1)(s+2)+2f_2$。比较 $(s+5)(s+10)=s^2+15s+50$，得 $f_1=12,f_2=12$。\n\n于是 $\\dot{\\tilde x}=\\left[\\begin{smallmatrix}-13&2\\\\-12&-2\\end{smallmatrix}\\right]\\tilde x$，初值为 $[3,-2]^\\mathsf T$。对应 $-5,-10$ 的特征向量可取 $[1,4]^\\mathsf T$、$[2,3]^\\mathsf T$。将初值写成 $a[1,4]^\\mathsf T+b[2,3]^\\mathsf T$，得到 $a+2b=3,4a+3b=-2$，由此 $a=-13/5,b=14/5$，因此\n$$\\tilde x(t)=\\frac15\\begin{bmatrix}-13e^{-5t}+28e^{-10t}\\\\-52e^{-5t}+42e^{-10t}\\end{bmatrix}.$$",
+    "explanation": "$C=[1,0]$，$CA=[-1,2]$，故完全能观。令 $F=[f_1,f_2]^\\mathsf T$。误差系统的特征多项式为 $(s+1+f_1)(s+2)+2f_2$。比较 $(s+5)(s+10)=s^2+15s+50$，得 $f_1=12,f_2=12$。\n\n于是 $\\dot{\\tilde x}=\\begin{bmatrix}-13&2\\\\-12&-2\\end{bmatrix}\\tilde x$，初值为 $[3,-2]^\\mathsf T$。对应 $-5,-10$ 的特征向量可取 $[1,4]^\\mathsf T$、$[2,3]^\\mathsf T$。将初值写成 $a[1,4]^\\mathsf T+b[2,3]^\\mathsf T$，得到 $a+2b=3,4a+3b=-2$，由此 $a=-13/5,b=14/5$，因此\n$$\\tilde x(t)=\\frac15\\begin{bmatrix}-13e^{-5t}+28e^{-10t}\\\\-52e^{-5t}+42e^{-10t}\\end{bmatrix}.$$",
     "notes": ""
   },
   {

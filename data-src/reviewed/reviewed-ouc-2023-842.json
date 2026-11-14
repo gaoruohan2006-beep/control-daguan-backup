@@ -40,7 +40,7 @@
     "questionPages": "262",
     "answerPages": "655–656",
     "stem": "已知 $\\ddot y+2\\dot y+by=\\dot u+u$。取 $x_1=y,\\ x_2=\\dot y-u$。\n（1）求状态方程。（2）求使系统能控且能观的 $b$。（3）$b=0$ 时，设计 $u=v-Kx$，使闭环极点为 $-1\\pm j$。",
-    "answer": "$A=\\left[\\begin{smallmatrix}0&1\\\\-b&-2\\end{smallmatrix}\\right]$，$B=[1,-1]^\\mathsf T$，$C=[1,0]$；$b\\ne1$；$K=[1,1]$。",
+    "answer": "$A=\\begin{bmatrix}0&1\\\\-b&-2\\end{bmatrix}$，$B=[1,-1]^\\mathsf T$，$C=[1,0]$；$b\\ne1$；$K=[1,1]$。",
     "explanation": "由定义 $\\dot x_1=x_2+u$，$\\dot x_2=-2(x_2+u)-bx_1+u=-bx_1-2x_2-u$。能观性矩阵为 $I_2$；能控性矩阵的第二列为 $[-1,2-b]^\\mathsf T$，行列式为 $1-b$。\n\n当 $b=0$ 时，$A-BK$ 的特征多项式为 $s^2+(2+k_1-k_2)s+(k_1+k_2)$。比较期望多项式 $s^2+2s+2$ 得 $k_1=k_2=1$。",
     "notes": ""
   }

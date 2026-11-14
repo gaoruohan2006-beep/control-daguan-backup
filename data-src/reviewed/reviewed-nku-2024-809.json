@@ -9,7 +9,7 @@
     ],
     "questionPages": "184",
     "answerPages": "430",
-    "stem": "已知 $A=\\left[\\begin{smallmatrix}0&3\\\\-1&-4\\end{smallmatrix}\\right]$。用拉氏反变换求 $e^{At}$。",
+    "stem": "已知 $A=\\begin{bmatrix}0&3\\\\-1&-4\\end{bmatrix}$。用拉氏反变换求 $e^{At}$。",
     "answer": "$$e^{At}=\\frac12\\begin{bmatrix}3e^{-t}-e^{-3t}&3(e^{-t}-e^{-3t})\\\\-e^{-t}+e^{-3t}&-e^{-t}+3e^{-3t}\\end{bmatrix}.$$",
     "explanation": "**解题思路** 把矩阵指数换成拉氏域中的逆矩阵后，按两个特征根拆部分分式。每个分母都只对应一个指数，矩阵只需分别在两个极点代值。\n\n**Step 1 · 先求拉氏域矩阵** $e^{At}$ 的拉氏变换是 $(sI-A)^{-1}$。这里\n$$sI-A=\\begin{bmatrix}s&-3\\\\1&s+4\\end{bmatrix},\\qquad \\det(sI-A)=s^2+4s+3.$$\n对二阶矩阵交换对角线、反号非对角线，得到分子矩阵 $\\begin{bmatrix}s+4&3\\\\-1&s\\end{bmatrix}$，分母是 $(s+1)(s+3)$。\n\n**Step 2 · 直接拆成两个矩阵部分分式** 乘 $s+1$ 并代入 $s=-1$，得到第一项分子 $\\frac12\\begin{bmatrix}3&3\\\\-1&-1\\end{bmatrix}$。乘 $s+3$ 并代入 $s=-3$，得到第二项分子 $\\frac12\\begin{bmatrix}-1&-3\\\\1&3\\end{bmatrix}$。\n\n**Step 3 · 对两个分母分别反变换**\n$$e^{At}=\\frac{e^{-t}}2\\begin{bmatrix}3&3\\\\-1&-1\\end{bmatrix}\n+\\frac{e^{-3t}}2\\begin{bmatrix}-1&-3\\\\1&3\\end{bmatrix}.$$\n例如左上角就是 $(3e^{-t}-e^{-3t})/2$。将 $t=0$ 代入，两个矩阵相加得到单位阵。",
     "notes": ""
