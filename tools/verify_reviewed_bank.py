@@ -59,29 +59,6 @@ async def verify():
                 !r.notes[oldId] && r.notes[currentId]?.text === '重复题迁移测试')""", arg=[old_id, current_id])
             await page.evaluate("CDGStore.del('rec')")
 
-        guides = library["topicGuides"]
-        expected_topics = {
-            " / ".join(path.split(" / ")[:depth])
-            for q in questions for path in q["categories"]
-            for depth in range(2, len(path.split(" / ")) + 1)
-        }
-        assert set(guides) == expected_topics
-        topic, child = next(
-            (topic, child) for topic in guides for child in guides
-            if child.rsplit(" / ", 1)[0] == topic
-        )
-        await page.locator(f'.node[data-path="{topic.split(" / ")[0]}"] > .tw').click()
-        await page.locator(f'.node[data-path="{topic}"] > .nm').click()
-        guide = page.locator("#topicGuide")
-        assert await guide.get_by_text("知识点精讲", exact=True).is_visible()
-        await guide.locator(f'button[data-guide-path="{child}"]').click()
-        assert await guide.get_by_role("heading", name=child.rsplit(" / ", 1)[1]).is_visible()
-        assert not await guide.locator(".katex-error").count()
-        await guide.get_by_role("button", name="开始做题").click()
-        assert await page.locator("#cards .card").evaluate("card => card === document.activeElement")
-        await guide.locator("summary").click()
-        assert not await guide.locator(".guide-content").is_visible()
-
         for q in questions:
             identifier = q["id"]
             await page.goto(f"{BASE}?question={identifier}", wait_until="domcontentloaded")

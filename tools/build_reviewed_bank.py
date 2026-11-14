@@ -203,16 +203,6 @@ def build():
 
     questions.sort(key=lambda q: (q["school"], -q["year"], q["source"], str(q["number"]).zfill(4)))
     validate_topic_tree(questions)
-    topic_paths = {
-        " / ".join(levels[:depth])
-        for question in questions
-        for path in question["categories"]
-        for levels in [path.split(" / ")]
-        for depth in range(2, len(levels) + 1)
-    }
-    guides = json.loads((ROOT / "data-src" / "topic-guides.json").read_text(encoding="utf-8"))
-    missing = topic_paths.difference(guides)
-    assert not missing, f"Missing topic guides: {sorted(missing)}"
     lists = [
         question_list("complete", "专题分类", questions, lambda q: q["categories"]),
         question_list("by-school", "按院校", questions, lambda q: list(dict.fromkeys(
@@ -223,7 +213,6 @@ def build():
         subject="自动控制原理", source="985 与 211 高校初试题库", topicOrder=TOPICS,
         years=sorted({entry["year"] for q in questions for entry in [q, *q.get("alsoAppearedIn", [])]}, reverse=True),
         questionAliases=aliases, lists=lists, questions=questions,
-        topicGuides={path: guides[path] for path in sorted(topic_paths)},
     ))
     print(f"{len(questions)} 道重排核对题，{len({q['school'] for q in questions})} 所院校")
     print(dict(Counter(tag for q in questions for tag in q["tags"])))
