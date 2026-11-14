@@ -1,0 +1,8 @@
+{
+  "answer": "（1）$K_g>0$。（2）$K_g>2.5$。",
+  "explanation": "闭环特征多项式为 $s^2+(1.5+K_g)s+2K_g$，由二阶稳定条件得 $K_g>0$。第（2）问令 $s=z-2$，移位多项式是 $z^2+(K_g-2.5)z+1$，由此得移位稳定当且仅当 $K_g>2.5$。",
+  "originalImages": [],
+  "answerPdfPages": "780",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

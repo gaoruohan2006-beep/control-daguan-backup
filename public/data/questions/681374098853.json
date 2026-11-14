@@ -1,0 +1,8 @@
+{
+  "answer": "$k=10$，$T=0.1\\,\\mathrm s$。",
+  "explanation": "闭环传函为 $\\Phi(s)=k/(Ts^2+s+k)$。题意给出 $\\Phi(j10)=-j$。因此 $k=-j(k-100T+j10)=10-j(k-100T)$。对比实、虚部得 $k=10,\\ k=100T$。所得闭环分母系数均为正，满足二阶稳定条件。",
+  "originalImages": [],
+  "answerPdfPages": "884",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

@@ -1,0 +1,8 @@
+{
+  "answer": "原点全局渐近稳定。",
+  "explanation": "取 $V=x_1^2/2+x_2^4/4$，它正定且径向无界。沿轨迹 $\\dot V=x_1x_2^3+x_2^3(-x_1-x_2x_1^2)=-x_1^2x_2^4\\le0$。在 $x_1=0,x_2\\ne0$ 时有 $\\dot x_1=x_2^3\\ne0$，轨迹离开该轴；在 $x_2=0,x_1\\ne0$ 时有 $\\dot x_2=-x_1\\ne0$，轨迹也离开该轴。因此 $\\dot V=0$ 的集合中最大不变集仅为原点。由 LaSalle 不变性原理得结论。",
+  "originalImages": [],
+  "answerPdfPages": "904–905",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

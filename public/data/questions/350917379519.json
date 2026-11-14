@@ -1,0 +1,8 @@
+{
+  "answer": "原点是不稳定焦点。",
+  "explanation": "令 $v=\\dot x$，则 $\\dot x=v$、$\\dot v=(1-x^2)v-x$。令两式为零，得唯一奇点 $(0,0)$。该点处雅可比矩阵为 $\\begin{bmatrix}0&1\\\\-1&1\\end{bmatrix}$，特征方程为 $\\lambda^2-\\lambda+1=0$，故 $\\lambda=(1\\pm j\\sqrt3)/2$。共轭特征值的实部均为正，附近轨迹向外螺旋。",
+  "originalImages": [],
+  "answerPdfPages": "703",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

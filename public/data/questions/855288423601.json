@@ -1,0 +1,8 @@
+{
+  "answer": "（1）$abc\\ne0$。（2）取 $u=v-Kx$，$K=[9,\\ 61,\\ -7]$。",
+  "explanation": "（1）能控阵和能观阵分别为\n$$\\mathcal C=b\\begin{bmatrix}1&0&1+a\\\\0&1&2\\\\0&a&a\\end{bmatrix},\\quad\n\\mathcal O=c\\begin{bmatrix}1&0&0\\\\0&1&1\\\\1+a&2&1\\end{bmatrix}.$$\n行列式分别为 $-ab^3,-c^3$，二者同时非零当且仅当 $abc\\ne0$。\n\n（2）记 $K=[k_1,k_2,k_3]$。代入 $A-BK$ 后展开特征多项式得\n$$s^3+(k_1-3)s^2+(-3k_1+k_2+3k_3-2)s+2k_1-k_2-6k_3+7.$$\n目标多项式 $(s+1)(s+2)(s+3)=s^3+6s^2+11s+6$。比较系数得 $k_1=9$、$k_2+3k_3=40$、$k_2+6k_3=19$，解出 $k_2=61,k_3=-7$。",
+  "originalImages": [],
+  "answerPdfPages": "725–726",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

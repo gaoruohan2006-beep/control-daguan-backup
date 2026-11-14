@@ -1,0 +1,8 @@
+{
+  "answer": "（1）$t_r\\approx0.427\\,\\mathrm s$，$t_p\\approx0.792\\,\\mathrm s$，超调量约 $67.31\\%$，5% 和 2% 调节时间的常用估算分别为 $6\\,\\mathrm s$、$8\\,\\mathrm s$。（2）$\\alpha\\approx3/16=0.1875$。",
+  "explanation": "（1）图 1 的闭环传函为 $16/(s^2+s+16)$。与标准形式比较得 $\\omega_n=4$、$\\zeta=1/8$、$\\omega_d=\\sqrt{63}/2$。首次到达稳态值的时间为 $(\\pi-\\arccos\\zeta)/\\omega_d$，首次峰值时间为 $\\pi/\\omega_d$。代入超调公式 $100e^{-\\pi\\zeta/\\sqrt{1-\\zeta^2}}\\%$，再用 $\\zeta\\omega_n=1/2$ 计算调节时间的工程估计。\n\n（2）从对象输出取微分反馈，内环化简为 $16/[s^2+(1+16\\alpha)s]$。再闭合外环，分母变为 $s^2+(1+16\\alpha)s+16$。由超调量反解得 $\\zeta\\approx1/2$，于是 $1+16\\alpha\\approx2(1/2)4=4$。",
+  "originalImages": [],
+  "answerPdfPages": "857–858",
+  "referenceNote": "题册没指定调节时间误差带，解析给出 5% 与 2% 两种常用估计。",
+  "sourceType": "reviewed"
+}

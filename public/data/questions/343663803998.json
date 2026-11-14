@@ -1,0 +1,8 @@
+{
+  "answer": "唯一奇点 $(0,0)$ 为不稳定焦点。令 $v=\\dot x$，有限斜率为 $m$ 的等倾线满足 $(2-3x^2-m)v=2x$，取 $v\\ne0$ 的部分。",
+  "explanation": "状态方程为 $\\dot x=v,\\ \\dot v=(2-3x^2)v-2x$。令两式为零，得 $x=v=0$。原点线性化矩阵 $\\begin{bmatrix}0&1\\\\-2&2\\end{bmatrix}$ 的特征根为 $1\\pm j$，所以原点为不稳定焦点。在 $v\\ne0$ 时，相轨迹斜率 $dv/dx=(2-3x^2)-2x/v$，令其等于常数 $m$ 即得等倾线。在 $v=0,x\\ne0$ 时，相轨迹切向为竖直方向。",
+  "originalImages": [],
+  "answerPdfPages": "775–776",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

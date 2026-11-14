@@ -1,0 +1,8 @@
+{
+  "answer": "（1）$G_K=1$。（2）可选 $G_K=1+0.5/s$。（3）$e_{\\rm ss}=0.15$。",
+  "explanation": "记 $P(s)=1/[s(s+1)]$。由 $C=P(G_KE+N)$、$E=R-C$ 得\n$$E=\\frac{R-PN}{1+PG_K}.$$\n（1）无扰动时，比例控制给出 $K_v=\\lim_{s\\to0}sPG_K=G_K$，故 $e_{\\rm ss}=1/G_K$，取 $G_K=1$。闭环分母 $s^2+s+1$ 稳定。\n\n（2）选 $G_K=k_p+k_i/s$，可使开环具有两个原点极点。闭环分母 $s^3+s^2+k_p s+k_i$ 的劳斯首列为 $1,1,k_p-k_i,k_i$，故任取 $k_p>k_i>0$ 即可。此时 $sE=s(s+1)/(s^3+s^2+k_p s+k_i)\\to0$。\n\n（3）闭环特征多项式为 $s(s+1)(s+3)+10=s^3+4s^2+3s+10$，劳斯首列为 $1,4,0.5,10$，允许取终值。将 $R,N$ 代入，可得\n$$sE(s)=\\frac{(s+1-0.5)(s+3)}{s(s+1)(s+3)+10}\\xrightarrow[s\\to0]{}\\frac{1.5}{10}=0.15.$$",
+  "originalImages": [],
+  "answerPdfPages": "811–812",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

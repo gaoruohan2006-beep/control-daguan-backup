@@ -1,0 +1,8 @@
+{
+  "answer": "$0<k<3\\sqrt5-5\\approx1.708$。",
+  "explanation": "由 $1+G(s)=0$，将分母乘 $2$ 后得特征多项式 $s^4+3s^3+4s^2+(k+2)s+2k$。劳斯表的 $s^2$ 行为 $((10-k)/3,2k,0)$。$s^1$ 行首项为\n$$\\frac{(10-k)(k+2)-18k}{10-k}=\\frac{20-10k-k^2}{10-k}.$$\n结合末行 $2k$，要求 $k>0$、$k<10$ 且 $k^2+10k-20<0$。解得 $0<k<3\\sqrt5-5$。",
+  "originalImages": [],
+  "answerPdfPages": "845",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

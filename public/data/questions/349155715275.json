@@ -1,0 +1,8 @@
+{
+  "answer": "$x_1(t)=\\frac12-2e^{-t}+\\frac12e^{-2t}$，$x_2(t)=2e^{-t}-e^{-2t}$（$t\\ge0$）。",
+  "explanation": "第一行给出 $x_2=\\dot x_1$。代入第二行，得 $\\ddot x_1+3\\dot x_1+2x_1=1$，齐次特征根为 $-1,-2$，常数特解为 $1/2$。令 $x_1=1/2+c_1e^{-t}+c_2e^{-2t}$，初值给出 $c_1+c_2=-3/2$、$-c_1-2c_2=1$，解得 $c_1=-2,c_2=1/2$。对 $x_1$ 求导即得 $x_2$。",
+  "originalImages": [],
+  "answerPdfPages": "715",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

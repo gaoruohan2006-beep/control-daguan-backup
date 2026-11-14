@@ -1,0 +1,8 @@
+{
+  "answer": "$\\Phi(s)=\\dfrac{1}{1+Ts}$，$T=\\dfrac{20}{\\ln 50}\\approx5.112\\,\\mathrm s$。",
+  "explanation": "一阶系统的单位阶跃响应为 $c(t)=1-e^{-t/T}$。代入 $c(20)=0.98$ 得 $e^{-20/T}=0.02$，取自然对数即可得到 $T$。",
+  "originalImages": [],
+  "answerPdfPages": "714",
+  "referenceNote": "参考答案 $T=5\\,\\mathrm s$ 用了 2% 调节时间的 $4T$ 近似。",
+  "sourceType": "reviewed"
+}

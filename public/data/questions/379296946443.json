@@ -1,0 +1,8 @@
+{
+  "answer": "$c_{\\rm ss}(t)=\\frac{A}{2\\sqrt2}\\sin(t-\\pi/4)$。",
+  "explanation": "先闭合反馈，得 $\\Phi=G/(1+G)=1/[2(s+1)]$。代入 $s=j$，幅值为 $1/(2\\sqrt2)$，相位为 $-\\pi/4$。闭环极点 $-1$ 的暂态衰减后，保留此同频正弦项。",
+  "originalImages": [],
+  "answerPdfPages": "943",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

@@ -1,0 +1,8 @@
+{
+  "answer": "B。",
+  "explanation": "A：观测误差满足 $\\dot e=(A-LC)e$。当 $e(0)\\ne0$ 时，即使误差趋于零，控制输入一般也有差异，因而瞬态响应可不同。\n\nB：将系统分解为能控和不能控两部分。若不能控模态均在左半平面，状态反馈只需将能控模态移至左半平面。例如 $A=\\operatorname{diag}(1,-1)$、$B=(1,0)^{\\mathsf T}$，取 $K=[2,0]$ 后闭环两极点均为 $-1$。\n\nC：完全能控保证状态反馈可任意配极点，静态输出反馈 $u=-Fy$ 还受到 $K=FC$ 的约束。\n\nD：可选取控制律使李雅普诺夫函数的导数满足稳定条件。例如 $\\dot x=u$，取 $u=-x$，对 $V=x^2/2$ 有 $\\dot V=-x^2$。",
+  "originalImages": [],
+  "answerPdfPages": "833",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

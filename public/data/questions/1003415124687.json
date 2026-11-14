@@ -1,0 +1,8 @@
+{
+  "answer": "原点全局指数稳定。",
+  "explanation": "取\n$$V(x)=x_1^2+x_2^2+x_3^2.$$\n求导并配方可得\n$$\\dot V=-2\\big[(x_1-x_2/2)^2+(x_3-x_2/2)^2+x_2^2/2\\big].$$\n括号内为正定二次型，因此存在常数 $c>0$ 使 $\\dot V\\le-cV$。由此得到 $V(t)\\le e^{-ct}V(0)$，即原点全局指数稳定。",
+  "originalImages": [],
+  "answerPdfPages": "936",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

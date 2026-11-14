@@ -151,6 +151,8 @@ def build():
     for path in sorted(source.glob("*.json")):
         for card in json.loads(path.read_text(encoding="utf-8-sig")):
             school, year, variant, number = identity = tuple(card[k] for k in SOURCE_FIELDS)
+            tier = card.get("tier", "985")
+            assert tier in {"985", "211"}, identity
             identifier = source_id(card)
             assert identifier not in ids, identity
             ids.add(identifier)
@@ -177,7 +179,7 @@ def build():
                 categories=topic_paths, tags=tags, hasFigure=bool(FIGURE.search(stem)),
                 stem=stem, pdfPage=str(card["questionPages"]),
                 **({"alsoAppearedIn": [source_entry(entry) for entry in other_sources]} if other_sources else {}),
-                search=" ".join(filter(None, [school, "985", str(year), str(variant), str(number), source_search,
+                search=" ".join(filter(None, [school, tier, str(year), str(variant), str(number), source_search,
                                                *topic_paths, *card["topics"], stem])),
             ))
             detail_rows[identifier] = dict(
@@ -205,11 +207,11 @@ def build():
         ))),
     ]
     write_json(PUBLIC / "data" / "library.json", dict(
-        subject="自动控制原理", source="985 高校初试题库", topicOrder=TOPICS,
+        subject="自动控制原理", source="985 与 211 高校初试题库", topicOrder=TOPICS,
         years=sorted({entry["year"] for q in questions for entry in [q, *q.get("alsoAppearedIn", [])]}, reverse=True),
         questionAliases=aliases, lists=lists, questions=questions,
     ))
-    print(f"{len(questions)} 道重排核对题，{len({q['school'] for q in questions})} 所 985 院校")
+    print(f"{len(questions)} 道重排核对题，{len({q['school'] for q in questions})} 所院校")
     print(dict(Counter(tag for q in questions for tag in q["tags"])))
 
 

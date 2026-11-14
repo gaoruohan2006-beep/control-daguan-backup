@@ -1,0 +1,8 @@
+{
+  "answer": "当且仅当 $0<a<2$ 时大范围渐近稳定。$a=2$ 时稳定，且不渐近。$a>2$ 时不稳定。",
+  "explanation": "由 $\\det(zI-A)=z(z^2-a/2)$ 得特征值 $0,\\pm\\sqrt{a/2}$。离散线性系统渐近稳定要求所有特征值模严格小于 $1$，故 $0<a<2$。当 $a=2$ 时单位圆上的两个特征值互异且为单根，轨迹有界。$a>2$ 则有模大于 $1$ 的模态。",
+  "originalImages": [],
+  "answerPdfPages": "824",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

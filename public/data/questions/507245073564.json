@@ -1,0 +1,8 @@
+{
+  "answer": "$\\Phi(z)=\\dfrac{0.368z+0.264}{z^2-z+0.632}$，闭环稳定。令 $\\rho=\\sqrt{0.632}$、$\\theta=\\arccos[1/(2\\rho)]$，则 $c[k]=1-\\rho^k(\\cos k\\theta+\\frac{0.132}{\\sqrt{0.382}}\\sin k\\theta)$，超调量为 $39.94\\%$。",
+  "explanation": "（1）闭环传函为 $G_k/(1+G_k)$。极点 $z=0.5\\pm j\\sqrt{0.382}$ 的模均为 $\\rho<1$。\n\n（2）将 $\\Phi(z)$ 的分子、分母同除以 $z^2$，得 $c[k]-c[k-1]+0.632c[k-2]=0.368r[k-1]+0.264r[k-2]$。因 $c[0]=0$、$c[1]=0.368$，当 $k\\ge2$ 时，令 $d[k]=c[k]-1$ 得齐次递推 $d[k]=d[k-1]-0.632d[k-2]$。代入极点和两项初值即得响应。\n\n$c[2]=1$、$c[3]=c[4]=1.399424$。对 $k\\ge5$，有 $|d[k]|\\le\\rho^5\\sqrt{1+0.132^2/0.382}<0.33$，因此最大值出现在 $k=3,4$。终值为 $1$，超调量为 $39.9424\\%$。\n\n![单位阶跃响应及峰值](img/reviewed/211-jiangnan-2025-step.svg)",
+  "originalImages": [],
+  "answerPdfPages": "735",
+  "referenceNote": "参考解析提前取整，并将终值误写进超调公式的分母。",
+  "sourceType": "reviewed"
+}

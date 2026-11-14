@@ -1,0 +1,8 @@
+{
+  "answer": "渐近稳定区为 $K_p>0,K_D>0$。在该区内，临界阻尼曲线为 $K_p=K_D^2$；过阻尼区为 $0<K_p<K_D^2$；欠阻尼区为 $K_p>K_D^2$。坐标轴的非负半轴为稳定边界，原点为重零根。其余区域存在右半平面根。",
+  "explanation": "用 $1+G=0$ 得 $s^2+4K_Ds+4K_p=0$。二阶劳斯条件给出 $K_p>0,K_D>0$。该区域内 $\\omega_n=2\\sqrt{K_p}$、$\\zeta=K_D/\\sqrt{K_p}$；令 $\\zeta=1$ 得 $K_p=K_D^2$，比较两侧即可判定阻尼类型。\n\n当 $K_p>0,K_D=0$ 时为纯虚共轭根；当 $K_D>0,K_p=0$ 时有一个零根；原点有两个零根，对应未补偿的双积分器，存在随时间增长的模态。$K_p<0$ 时常数项为负，必有一个正实根；$K_D<0,K_p\\ge0$ 时至少有一个极点实部为正。\n\n![PD 参数平面的稳定与阻尼区域](img/reviewed/211-xidian-2024-pd-regions.svg)",
+  "originalImages": [],
+  "answerPdfPages": "865",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

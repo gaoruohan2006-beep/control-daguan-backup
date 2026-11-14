@@ -1,0 +1,8 @@
+{
+  "answer": "$L_a(s)=\\dfrac{ak}{s(s^2+2s+k)}$。",
+  "explanation": "由 $1+G(s)=0$ 得 $s^3+2s^2+ks+ak=0$。把含 $a$ 的项单独移出，将其余项写成 $s(s^2+2s+k)$，即可整理成 $1+ak/[s(s^2+2s+k)]=0$。",
+  "originalImages": [],
+  "answerPdfPages": "703",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

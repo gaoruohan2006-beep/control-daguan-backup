@@ -1,0 +1,8 @@
+{
+  "answer": "$y(t)=\\dfrac{90}{7}e^{7t}-(6+t)e^{-t}+\\dfrac{43}{7}$，$t\\ge0$。",
+  "explanation": "逐个求解状态方程。第二行给出 $x_2=2-e^{-t}$，第三行给出 $x_3=(18/7)e^{7t}-4/7$。第一行是 $\\dot x_1+x_1=1+x_2=3-e^{-t}$。乘积分因子 $e^t$，从 $0$ 积分到 $t$ 得 $e^tx_1=3(e^t-1)-t$，因此 $x_1=3-(3+t)e^{-t}$。代入 $y=x_1+3x_2+5x_3$。初时输出为 $13$，与 $Cx(0)$ 相符。",
+  "originalImages": [],
+  "answerPdfPages": "936",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

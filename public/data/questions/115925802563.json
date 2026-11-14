@@ -1,0 +1,8 @@
+{
+  "answer": "（1）稳定。（2）两个。（3）按主导极点近似，$\\sigma\\%\\approx e^{-\\pi/\\sqrt3}\\times100\\%$，$t_p\\approx2\\pi/\\sqrt3\\,\\mathrm s$。按 5% 和 2% 误差带的常用估算分别为 $t_s\\approx6\\,\\mathrm s$ 和 $8\\,\\mathrm s$。",
+  "explanation": "闭环特征多项式为 $s^3+9s^2+9s+8$，劳斯首列为 $1,9,73/9,8$，均为正。令 $s=z-1$ 得 $z^3+6z^2-6z+7$，其首列为 $1,6,-43/6,7$，变号两次，故有两个闭环极点的实部大于 $-1$。\n\n将原多项式因式分解为 $(s+8)(s^2+s+1)$，得主导极点 $-0.5\\pm j\\sqrt3/2$，实极点 $-8$ 与左侧零点 $-8/1.05$ 接近。以直流增益保持为 $1$ 的二阶模型估算，$\\omega_n=1,\\zeta=1/2,\\omega_d=\\sqrt3/2$。代入标准超调、峰值时间公式及 $t_s\\approx(3\\text{ 或 }4)/(\\zeta\\omega_n)$ 得结果。",
+  "originalImages": [],
+  "answerPdfPages": "738–739",
+  "referenceNote": "回忆版写作“大于 −1 小于 0 的根”，此处按极点实部表述。",
+  "sourceType": "reviewed"
+}

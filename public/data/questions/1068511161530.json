@@ -1,0 +1,8 @@
+{
+  "answer": "（1）$\\Phi(s)=\\omega_n^2/(s^2+2\\zeta\\omega_n s+\\omega_n^2)$。（2）$T=0.1\\,\\mathrm s$，$K=10$。",
+  "explanation": "$G/(1+G)=\\dfrac{K/T}{s^2+s/T+K/T}$，故 $2\\zeta\\omega_n=1/T$、$\\omega_n^2=K/T$。目标极点给出特征多项式 $(s+5)^2+75=s^2+10s+100$。比较得到 $1/T=10$、$K/T=100$。",
+  "originalImages": [],
+  "answerPdfPages": "747–748",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

@@ -1,0 +1,8 @@
+{
+  "answer": "$\\omega_r=7/\\sqrt2\\,\\mathrm{rad/s}$，$M_r=50/\\sqrt{99}\\approx5.025$。",
+  "explanation": "由 $G(j\\omega)=25/(25-\\omega^2+j\\omega)$ 可知，要使幅值最大，须使 $D=(25-\\omega^2)^2+\\omega^2$ 最小。令 $v=\\omega^2\\ge0$，得 $D(v)=v^2-49v+625$，最小值在 $v=49/2$，为 $99/4$。取正频率并代回 $\\lvert G\\rvert=25/\\sqrt D$ 即得结果。",
+  "originalImages": [],
+  "answerPdfPages": "902–903",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

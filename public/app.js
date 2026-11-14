@@ -250,12 +250,13 @@ function renderTree() {
 
 
 function errataHTML(d) {
-  if (!d || !d.notes) return '';
+  const note = d?.notes || d?.referenceNote;
+  if (!note) return '';
   const lv = d.errataLevel || '';
-  const title = lv === 'ok' ? '已核对' : '勘误';
+  const title = d.notes ? (lv === 'ok' ? '已核对' : '勘误') : '校核说明';
   const badge = lv === 'severe' ? '严重，原答案不可照抄' : lv === 'conflict' ? '题目矛盾，原答案不可照抄' : '';
   const sev = lv === 'ok' ? 'ok' : (lv === 'severe' || lv === 'conflict') ? 'severe' : 'warn';
-  return `<aside class="note errata" data-sev="${sev}"><div class="errata-hd"><span class="errata-tag">${title}</span>${badge ? `<span class="errata-badge">${badge}</span>` : ''}</div><div class="errata-bd">${md(d.notes)}</div></aside>`;
+  return `<aside class="note errata" data-sev="${sev}"><div class="errata-hd"><span class="errata-tag">${title}</span>${badge ? `<span class="errata-badge">${badge}</span>` : ''}</div><div class="errata-bd">${md(note)}</div></aside>`;
 }
 function origHTML(d) {
   if (!d?.originalImages.length) return '';

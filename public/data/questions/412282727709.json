@@ -1,0 +1,8 @@
+{
+  "answer": "B，相位滞后校正。",
+  "explanation": "其极点与零点分别为 $-0.1$ 和 $-0.5$。对 $\\omega>0$，相角 $\\arctan(2\\omega)-\\arctan(10\\omega)<0$，因此是滞后环节。低频增益为 $1$，高频增益趋近于 $0.2$。",
+  "originalImages": [],
+  "answerPdfPages": "800",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

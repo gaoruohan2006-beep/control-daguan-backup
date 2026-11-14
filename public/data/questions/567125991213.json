@@ -1,0 +1,8 @@
+{
+  "answer": "$0<\\tau<\\dfrac52(\\pi-\\arctan2)\\approx5.0861\\,\\mathrm s$。",
+  "explanation": "令 $\\lvert L(j\\omega_c)\\rvert=1$，得 $1+25\\omega_c^2=5$，故 $\\omega_c=0.4\\,\\mathrm{rad/s}$。延迟项幅值为 $1$，相位为 $-\\omega\\tau$，故相角裕度为 $\\pi-\\arctan2-0.4\\tau$。\n\n对正频率，幅值严格递减，相位 $-\\arctan(5\\omega)-\\tau\\omega$ 也严格递减。若相位第一次到达 $-\\pi$ 时幅值小于 $1$，该次及其后的负实轴穿越均发生在 $(-1,0)$，奈奎斯特曲线不环绕 $-1$。若第一次穿越落在 $-1$ 左侧，则已有不稳定环绕，后续落在该射线上的穿越同向。因开环无右半平面极点，稳定等价于正相角裕度。边界取等时出现虚轴极点。",
+  "originalImages": [],
+  "answerPdfPages": "952",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

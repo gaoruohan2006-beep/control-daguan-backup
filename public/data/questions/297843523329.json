@@ -1,0 +1,8 @@
+{
+  "answer": "$T=60/\\ln50\\approx15.34\\,\\mathrm s$。",
+  "explanation": "将水温变化视为阶跃，以初始示数为零点归一化，读数为 $1-e^{-t/T}$。在 $t=60\\,\\mathrm s$ 时满足 $e^{-60/T}=0.02$，解得 $T=60/\\ln50$。",
+  "originalImages": [],
+  "answerPdfPages": "737",
+  "referenceNote": "参考答案给出按 4T 近似的 15 s。",
+  "sourceType": "reviewed"
+}

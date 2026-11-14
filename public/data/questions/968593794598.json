@@ -1,0 +1,8 @@
+{
+  "answer": "$c(t)=\\frac12-\\frac53e^{-t}+\\frac16e^{-4t}$，$t\\ge0$。",
+  "explanation": "由传递函数对应的微分方程 $\\ddot c+5\\dot c+4c=2r$ 出发，作单边拉普拉斯变换，代入初值和 $R=1/s$ 得 $(s^2+5s+4)C=2/s-s-4$。部分分式给出 $C=1/(2s)-5/[3(s+1)]+1/[6(s+4)]$，逐项反变换。",
+  "originalImages": [],
+  "answerPdfPages": "820",
+  "referenceNote": "将题册中“r(t) 为阶跃响应”更正为“输入为单位阶跃”。",
+  "sourceType": "reviewed"
+}

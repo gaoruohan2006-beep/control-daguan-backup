@@ -1,0 +1,8 @@
+{
+  "answer": "（1）$c(t)=-5\\cos3t+5e^{-3t/2}\\left[\\cos\\left(\\frac{3\\sqrt3}{2}t\\right)+\\frac1{\\sqrt3}\\sin\\left(\\frac{3\\sqrt3}{2}t\\right)\\right]$。\n（2）$\\omega=3/\\sqrt2\\,\\mathrm{rad/s}$，最大幅值 $10/\\sqrt3$。",
+  "explanation": "闭环传递函数为 $\\Phi=9/(s^2+3s+9)$。\n（1）$R(s)=15/(s^2+9)$，所以\n$$C(s)=\\frac{135}{(s^2+9)(s^2+3s+9)}=-\\frac{5s}{s^2+9}+\\frac{5(s+3)}{(s+\\frac32)^2+\\frac{27}{4}}.$$\n将 $s+3$ 写为 $(s+3/2)+3/2$ 后，逐项作反变换。暂态随 $e^{-3t/2}$ 衰减，稳态项是 $-5\\cos3t$。\n\n（2）稳态幅值为 $45/\\sqrt{(9-\\omega^2)^2+9\\omega^2}$。令 $v=\\omega^2$，根号内为 $v^2-9v+81=(v-9/2)^2+243/4$。取 $v=9/2$ 得最大幅值。\n\n![闭环频率响应与谐振峰](img/reviewed/211-cumt-2025-resonance.svg)",
+  "originalImages": [],
+  "answerPdfPages": "959",
+  "referenceNote": "参考答案只求了第（1）问的正弦稳态项。这一版补出零初值下的完整响应。",
+  "sourceType": "reviewed"
+}

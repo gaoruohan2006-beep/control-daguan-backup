@@ -1,0 +1,8 @@
+{
+  "answer": "$c_{\\rm ss}(t)=\\dfrac{2}{\\sqrt{10}}\\sin(t-\\arctan3)$。",
+  "explanation": "由 $G(j)=1/(1+3j)$ 得 $\\lvert G(j)\\rvert=1/\\sqrt{10}$、$\\angle G(j)=-\\arctan3$。因此同频稳态输出在输入幅值上乘 $1/\\sqrt{10}$，并滞后 $\\arctan3$。",
+  "originalImages": [],
+  "answerPdfPages": "809",
+  "referenceNote": "原汇编选项把幅值与正弦函数之间的乘号误排为加号。",
+  "sourceType": "reviewed"
+}

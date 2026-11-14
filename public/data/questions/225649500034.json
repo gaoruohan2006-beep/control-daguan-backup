@@ -1,0 +1,8 @@
+{
+  "answer": "C，$L_a(s)=a/[s(s^2+2s+3)]$。",
+  "explanation": "原闭环特征方程为 $s(s^2+2s+2)+s+a=0$。将前两项合并后得到 $s(s^2+2s+3)+a=0$，再写成 $1+L_a(s)=0$。",
+  "originalImages": [],
+  "answerPdfPages": "938",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

@@ -1,0 +1,8 @@
+{
+  "answer": "$\\sigma\\%=e^{-\\pi/\\sqrt3}\\times100\\%\\approx16.30\\%$。按常用估算，5% 调节时间约 $1.20\\,\\mathrm s$，2% 调节时间约 $1.60\\,\\mathrm s$。",
+  "explanation": "零初值变换后，将 $\\Phi(s)=1/(0.04s^2+0.2s+1)$ 化为 $25/(s^2+5s+25)$，得 $\\omega_n=5,\\zeta=0.5$。代入 $\\sigma\\%=100e^{-\\pi\\zeta/\\sqrt{1-\\zeta^2}}\\%$。用衰减率 $\\zeta\\omega_n=2.5$，按 $3/(\\zeta\\omega_n)$ 和 $4/(\\zeta\\omega_n)$ 估算两种常见误差带。",
+  "originalImages": [],
+  "answerPdfPages": "762",
+  "referenceNote": "回忆版未注明阶跃输入及调节时间误差带，这里补明采用单位阶跃，给出两种常见口径。",
+  "sourceType": "reviewed"
+}

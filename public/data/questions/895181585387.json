@@ -1,0 +1,8 @@
+{
+  "answer": "$e_{\\rm ss}=6$。",
+  "explanation": "闭环特征多项式为 $s^3+5s^2+6s+10$，劳斯首列为 $1,5,4,10$，闭环稳定。此为 I 型系统，速度误差系数 $K_v=\\lim_{s\\to0}sG(s)=10/6$。输入斜率为 $10$，所以 $e_{\\rm ss}=10/K_v=6$。",
+  "originalImages": [],
+  "answerPdfPages": "952",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

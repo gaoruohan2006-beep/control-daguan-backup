@@ -1,0 +1,8 @@
+{
+  "answer": "$$e^{At}=(A+3I)e^{-2t}-(A+2I)e^{-3t},\\qquad\nx(t)=\\begin{bmatrix}-e^{-2t}+2e^{-3t}\\\\3e^{-2t}-4e^{-3t}\\end{bmatrix}\\quad(t\\ge0^+).$$",
+  "explanation": "矩阵的特征多项式为 $s^2+5s+6=(s+2)(s+3)$，谱投影分别为 $A+3I$ 和 $-(A+2I)$，由此得到矩阵指数。冲激作用前后对 $\\dot x=Ax+B\\delta(t)$ 积分，得 $x(0^+)-x(0^-)=B$，于是 $x(0^+)=(1,-1)^{\\mathsf T}$。对 $t>0$，输入为零，乘以 $e^{At}$ 得所列结果。",
+  "originalImages": [],
+  "answerPdfPages": "818",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

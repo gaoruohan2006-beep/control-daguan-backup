@@ -1,0 +1,8 @@
+{
+  "answer": "$e_{\\rm ss}(t)=2\\sqrt{\\dfrac{17}{25}}\\sin\\!\\left(4t+45^\\circ+\\arctan 4-\\arctan \\dfrac43\\right)$。",
+  "explanation": "由 $E=R-C$、$C=GE$ 得误差通道 $E/R=(s+1)/(s+3)$。其极点为 $-3$，瞬态衰减。代入 $s=j4$ 得幅值 $\\sqrt{17}/5$，相角 $\\arctan 4-\\arctan(4/3)$。输入的幅值乘此前者，相位加上后者。",
+  "originalImages": [],
+  "answerPdfPages": "703",
+  "referenceNote": "参考答案的该小题填 0。正弦稳态误差随时间变化，本题应给出误差波形。",
+  "sourceType": "reviewed"
+}

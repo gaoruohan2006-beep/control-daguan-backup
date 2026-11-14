@@ -1,0 +1,8 @@
+{
+  "answer": "（1）$\\Phi(s)=12/(s^2+8s+12)$。（2）$\\omega_n=2\\sqrt3$，$\\zeta=2/\\sqrt3$。（3）$e_{\\rm ss}=2/3$。",
+  "explanation": "零状态下 $\\Phi(s)=sY(s)=1+0.5s/(s+6)-1.5s/(s+2)=12/[(s+2)(s+6)]$。与标准二阶分母比较得 $\\omega_n^2=12,2\\zeta\\omega_n=8$。由 $E/R=1-\\Phi(s)=s(s+8)/(s^2+8s+12)$，将 $R(s)=0.5/s+1/s^2$ 代入，取 $\\lim_{s\\to0}sE(s)=8/12$。",
+  "originalImages": [],
+  "answerPdfPages": "778–779",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

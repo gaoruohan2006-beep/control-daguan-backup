@@ -1,0 +1,8 @@
+{
+  "answer": "$\\Phi_{\\rm red}(s)=15.5/(s^2+2s+6)$。",
+  "explanation": "原闭环复极点为 $-1\\pm j\\sqrt5$，比 $-10$ 更靠近虚轴。零点 $-3.1$ 和极点 $-3$ 接近，可近似抵消。用 $\\Phi_{\\rm red}=K/(s^2+2s+6)$ 保留这对主导极点。要求直流增益保持原值 $150\\times3.1/(10\\times3\\times6)=15.5/6$，因此 $K=15.5$。",
+  "originalImages": [],
+  "answerPdfPages": "943",
+  "referenceNote": "先保持直流增益，再作主导极点近似。直接把近邻零极点约掉会得到分子 15，属于另一种近似。",
+  "sourceType": "reviewed"
+}

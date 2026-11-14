@@ -1,0 +1,8 @@
+{
+  "answer": "（1）$a>0,\\ 0<b<10a$。（2）$e_{\\rm ss}=2a/b$。",
+  "explanation": "闭环特征多项式为 $s^3+10s^2+as+b$，劳斯首列为 $1,10,(10a-b)/10,b$，同时为正当且仅当 $0<b<10a$。稳定时，输入的斜率为 $2$，速度误差系数 $K_v=\\lim_{s\\to0}sG(s)=b/a$，故 $e_{\\rm ss}=2/K_v$。",
+  "originalImages": [],
+  "answerPdfPages": "771",
+  "referenceNote": "原卷把斜率为 2 的输入称作单位斜坡，按公式 r(t)=2t 计算。",
+  "sourceType": "reviewed"
+}

@@ -1,0 +1,8 @@
+{
+  "answer": "原幅值裕度为 $1.5625$，即约 $3.88\\,\\mathrm{dB}$，相角裕度 $10^\\circ$。两个目标分别要求增益乘以 $0.15625$ 和 $1/4.8\\approx0.20833$。",
+  "explanation": "幅值在 $\\omega_c=8$ 时为 $1$，相位为 $-170^\\circ$，故相角裕度为 $10^\\circ$。相位在 $\\omega_g=10$ 时为 $-180^\\circ$，此处的幅值是 $0.64$，故幅值裕度为 $1/0.64$，分贝值为 $20\\log_{10}(1/0.64)$。\n\n令增益乘以正数 $\\alpha$，相频曲线保持相同。要使幅值裕度为 $20\\,\\mathrm{dB}$，须使 $\\alpha\\times0.64=10^{-20/20}=0.1$。要使相角裕度为 $50^\\circ$，新的幅值交越频率应满足相位为 $-130^\\circ$，查得 $\\omega=3$，故 $\\alpha\\times4.8=1$。",
+  "originalImages": [],
+  "answerPdfPages": "866",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}
