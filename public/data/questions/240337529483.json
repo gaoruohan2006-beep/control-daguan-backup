@@ -1,5 +1,5 @@
 {
-  "answer": "$c_{\\rm ss}(t)=\\dfrac{2}{\\sqrt{10}}\\sin(t-\\arctan3)$。 四个选项按印刷式均不成立。D 项的加号改为乘号后与结果一致。",
+  "answer": "D. $c_{\\rm ss}(t)=\\dfrac{2}{\\sqrt{10}}\\sin(t-\\arctan3)$。",
   "explanation": "**1. 从输入中读出频率。** $2\\sin t$ 的幅值是 $2$，角频率是 $1\\,\\mathrm{rad/s}$，初相位是零。稳定线性环节的暂态消失后，输出仍是同频正弦。\n\n**2. 计算该频率处的增益和相位。** 令 $s=j\\cdot1$，得到\n$$G(j)=\\frac{1}{1+3j}=\\frac{1-3j}{10}.$$\n分母 $1+3j$ 的模为 $\\sqrt{1^2+3^2}=\\sqrt{10}$，在第一象限，相角为 $\\arctan3$。取倒数后，模变为 $1/\\sqrt{10}$，相角变为 $-\\arctan3$。\n\n**3. 代回正弦。** 新幅值是 $2\\cdot1/\\sqrt{10}$，新初相位是 $0-\\arctan3$，故\n$$c_{\\rm ss}(t)=\\frac{2}{\\sqrt{10}}\\sin(t-\\arctan3).$$",
   "originalImages": [],
   "answerPdfPages": "809",
