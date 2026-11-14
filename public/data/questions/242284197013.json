@@ -1,0 +1,8 @@
+{
+  "answer": "设 $a=\\tau_1+\\tau_2+\\tau_3$，$b=\\tau_1\\tau_2+\\tau_1\\tau_3+\\tau_2\\tau_3$，$c=\\tau_1\\tau_2\\tau_3$。闭环稳定当且仅当 $0<K<ab/c-1$。临界值 $K_c=ab/c-1$，此时开环传递函数为 $K_c/[(1+\\tau_1s)(1+\\tau_2s)(1+\\tau_3s)]$。",
+  "explanation": "展开闭环分母得 $cs^3+bs^2+as+1+K$。劳斯首列为 $c,b,[ab-c(1+K)]/b,1+K$。在上界等号处，分母可分解为 $(cs+b)(s^2+a/c)$，所以有一对纯虚根 $\\pm j\\sqrt{a/c}$。由 $G=W/(1-W)$ 还原开环并代入临界增益。",
+  "originalImages": [],
+  "answerPdfPages": "1383–1384",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

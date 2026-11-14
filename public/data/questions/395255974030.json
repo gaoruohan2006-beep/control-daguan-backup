@@ -1,0 +1,8 @@
+{
+  "answer": "取 $x=Tz$，$T=\\begin{bmatrix}4&-4&1\\\\-1&1&0\\\\2&-3&1\\end{bmatrix}$，则\n$$A_c=\\begin{bmatrix}0&1&0\\\\0&0&1\\\\4&-8&5\\end{bmatrix},\\quad B_c=(0,0,1)^{\\mathsf T},\\quad C_c=[3\\quad-3\\quad1].$$\n当 $u=v-Kx$ 时，$K=[18\\quad48\\quad-8]$。",
+  "explanation": "开环特征多项式为 $(s-1)(s-2)^2=s^3-5s^2+8s-4$。用 $T=[A^2B-5AB+8B,\\ AB-5B,\\ B]$ 构造变换，三列独立。计算 $T^{-1}AT,T^{-1}B,CT$ 即得标准型。目标多项式为 $(s+1)(s+2)^2=s^3+5s^2+8s+4$。在标准型下比较得 $K_c=[8\\quad0\\quad10]$，由 $K=K_cT^{-1}$ 得原坐标解。",
+  "originalImages": [],
+  "answerPdfPages": "1520–1522",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

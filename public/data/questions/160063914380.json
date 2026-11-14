@@ -1,0 +1,8 @@
+{
+  "answer": "$0<K<2$。",
+  "explanation": "特征多项式为 $z(z^2-K/2)$，故特征值为 $0,\\pm\\sqrt{K/2}$。离散渐近稳定要求三根的模均小于 $1$，直接得到 $K<2$。$K=2$ 有两个单位圆上的根，不满足渐近稳定。",
+  "originalImages": [],
+  "answerPdfPages": "1530",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

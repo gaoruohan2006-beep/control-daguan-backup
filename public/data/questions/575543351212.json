@@ -1,0 +1,8 @@
+{
+  "answer": "相位超前校正。转折角频率为 $0.1$ 和 $0.5\\,\\mathrm{rad/s}$，最大超前角为 $\\arcsin(2/3)\\approx41.81^\\circ$。",
+  "explanation": "零点 $-0.1$ 比极点 $-0.5$ 更靠近原点。对 $\\omega>0$，$\\arctan(10\\omega)-\\arctan(2\\omega)>0$。低频增益为 $1$，高频增益为 $5$，中间渐近斜率为 $+20\\,\\mathrm{dB/dec}$。令相角对 $\\omega$ 的导数为零，得到最大相角出现在 $\\omega=1/\\sqrt{20}$，此时其正弦为 $(10-2)/(10+2)=2/3$。",
+  "originalImages": [],
+  "answerPdfPages": "1406",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

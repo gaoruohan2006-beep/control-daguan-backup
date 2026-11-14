@@ -1,0 +1,8 @@
+{
+  "answer": "原点是唯一平衡点且全局指数稳定。",
+  "explanation": "令 $A=\\begin{bmatrix}-1&1\\\\2&-3\\end{bmatrix}$，$\\det A=1$，所以唯一平衡点为原点。选 $V=x^{\\mathsf T}Px$，令 $A^{\\mathsf T}P+PA=-I$。解得\n$$P=\\begin{bmatrix}7/4&5/8\\\\5/8&3/8\\end{bmatrix}.$$\n$P$ 的一阶主子式和行列式 $17/64$ 都为正，故 $V$ 正定。且 $\\dot V=-(x_1^2+x_2^2)$，配合 $V$ 的二次型上下界即可得全局指数稳定。",
+  "originalImages": [],
+  "answerPdfPages": "1461",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

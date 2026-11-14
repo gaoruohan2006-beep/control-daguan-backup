@@ -1,0 +1,8 @@
+{
+  "answer": "$a>0$ 时原点全局渐近稳定；$a<0$ 时原点为不稳定的鞍点。",
+  "explanation": "平衡条件给出 $x_2=0$、$ax_1=0$，所以只有原点。$a<0$ 时，线性化特征值为 $\\pm\\sqrt{-a}$，一正一负，故原点是鞍点。\n\n$a>0$ 时取 $V=(ax_1^2+x_2^2)/2$，有 $\\dot V=-x_1^2x_2^2$。零导数集合是两条坐标轴，除原点外均无法保持在其中，且 $V$ 径向无界。由 LaSalle 不变性原理得全局渐近稳定。",
+  "originalImages": [],
+  "answerPdfPages": "汇编缺参考答案，按题面独立推导",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

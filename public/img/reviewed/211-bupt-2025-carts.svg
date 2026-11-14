@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 225" width="580" height="225" role="img" aria-labelledby="title">
+<title id="title">双联推车、弹簧与阻尼器</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 1L10 5 0 9z" fill="context-stroke"/></marker></defs>
+<style>
+.wire,.part,.axis,.guide,.curve,.curve2{stroke:#18222b;stroke-width:1.65;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.part{fill:#fff}.axis{stroke:#627284;stroke-width:1.4}.guide{stroke:#8794a1;stroke-dasharray:5 5;stroke-width:1.2}
+.curve{stroke:#174c85;stroke-width:2.2}.curve2{stroke:#487298;stroke-width:1.8;stroke-dasharray:5 4}
+.dot{fill:#18222b}.math,.plain{font:16px "Times New Roman","SimSun",serif;fill:#18222b}
+.plain{font-family:"SimSun","Noto Serif CJK SC",serif}.small{font:14px "Times New Roman","SimSun",serif;fill:#18222b}
+</style>
+<rect width="100%" height="100%" fill="#fff"/>
+<rect x="69" y="65" width="16" height="105" class="part"/>
+<polyline class="wire" points="68.00,75.00 61.00,70.00"/>
+<polyline class="wire" points="68.00,83.00 61.00,78.00"/>
+<polyline class="wire" points="68.00,91.00 61.00,86.00"/>
+<polyline class="wire" points="68.00,99.00 61.00,94.00"/>
+<polyline class="wire" points="68.00,107.00 61.00,102.00"/>
+<polyline class="wire" points="68.00,115.00 61.00,110.00"/>
+<polyline class="wire" points="68.00,123.00 61.00,118.00"/>
+<polyline class="wire" points="68.00,131.00 61.00,126.00"/>
+<polyline class="wire" points="68.00,139.00 61.00,134.00"/>
+<polyline class="wire" points="68.00,147.00 61.00,142.00"/>
+<polyline class="wire" points="68.00,155.00 61.00,150.00"/>
+<polyline class="wire" points="68.00,163.00 61.00,158.00"/>
+<polyline class="wire" points="68.00,171.00 61.00,166.00"/>
+<polyline class="wire" points="70.00,176.00 545.00,176.00"/>
+<polyline class="wire" points="72.00,176.00 68.00,183.00"/>
+<polyline class="wire" points="82.00,176.00 78.00,183.00"/>
+<polyline class="wire" points="92.00,176.00 88.00,183.00"/>
+<polyline class="wire" points="102.00,176.00 98.00,183.00"/>
+<polyline class="wire" points="112.00,176.00 108.00,183.00"/>
+<polyline class="wire" points="122.00,176.00 118.00,183.00"/>
+<polyline class="wire" points="132.00,176.00 128.00,183.00"/>
+<polyline class="wire" points="142.00,176.00 138.00,183.00"/>
+<polyline class="wire" points="152.00,176.00 148.00,183.00"/>
+<polyline class="wire" points="162.00,176.00 158.00,183.00"/>
+<polyline class="wire" points="172.00,176.00 168.00,183.00"/>
+<polyline class="wire" points="182.00,176.00 178.00,183.00"/>
+<polyline class="wire" points="192.00,176.00 188.00,183.00"/>
+<polyline class="wire" points="202.00,176.00 198.00,183.00"/>
+<polyline class="wire" points="212.00,176.00 208.00,183.00"/>
+<polyline class="wire" points="222.00,176.00 218.00,183.00"/>
+<polyline class="wire" points="232.00,176.00 228.00,183.00"/>
+<polyline class="wire" points="242.00,176.00 238.00,183.00"/>
+<polyline class="wire" points="252.00,176.00 248.00,183.00"/>
+<polyline class="wire" points="262.00,176.00 258.00,183.00"/>
+<polyline class="wire" points="272.00,176.00 268.00,183.00"/>
+<polyline class="wire" points="282.00,176.00 278.00,183.00"/>
+<polyline class="wire" points="292.00,176.00 288.00,183.00"/>
+<polyline class="wire" points="302.00,176.00 298.00,183.00"/>
+<polyline class="wire" points="312.00,176.00 308.00,183.00"/>
+<polyline class="wire" points="322.00,176.00 318.00,183.00"/>
+<polyline class="wire" points="332.00,176.00 328.00,183.00"/>
+<polyline class="wire" points="342.00,176.00 338.00,183.00"/>
+<polyline class="wire" points="352.00,176.00 348.00,183.00"/>
+<polyline class="wire" points="362.00,176.00 358.00,183.00"/>
+<polyline class="wire" points="372.00,176.00 368.00,183.00"/>
+<polyline class="wire" points="382.00,176.00 378.00,183.00"/>
+<polyline class="wire" points="392.00,176.00 388.00,183.00"/>
+<polyline class="wire" points="402.00,176.00 398.00,183.00"/>
+<polyline class="wire" points="412.00,176.00 408.00,183.00"/>
+<polyline class="wire" points="422.00,176.00 418.00,183.00"/>
+<polyline class="wire" points="432.00,176.00 428.00,183.00"/>
+<polyline class="wire" points="442.00,176.00 438.00,183.00"/>
+<polyline class="wire" points="452.00,176.00 448.00,183.00"/>
+<polyline class="wire" points="462.00,176.00 458.00,183.00"/>
+<polyline class="wire" points="472.00,176.00 468.00,183.00"/>
+<polyline class="wire" points="482.00,176.00 478.00,183.00"/>
+<polyline class="wire" points="492.00,176.00 488.00,183.00"/>
+<polyline class="wire" points="502.00,176.00 498.00,183.00"/>
+<polyline class="wire" points="512.00,176.00 508.00,183.00"/>
+<polyline class="wire" points="522.00,176.00 518.00,183.00"/>
+<polyline class="wire" points="532.00,176.00 528.00,183.00"/>
+<polyline class="wire" points="542.00,176.00 538.00,183.00"/>
+<rect x="198" y="82" width="110" height="69" class="part"/>
+<text x="253" y="122" class="math" text-anchor="middle">M₂</text>
+<circle cx="225" cy="163" r="12" class="part"/>
+<circle cx="283" cy="163" r="12" class="part"/>
+<polyline class="wire" points="213.00,65.00 282.00,65.00" marker-end="url(#arrow)"/>
+<text x="255" y="54" class="math" text-anchor="middle">x₂</text>
+<rect x="386" y="82" width="110" height="69" class="part"/>
+<text x="441" y="122" class="math" text-anchor="middle">M₁</text>
+<circle cx="413" cy="163" r="12" class="part"/>
+<circle cx="471" cy="163" r="12" class="part"/>
+<polyline class="wire" points="401.00,65.00 470.00,65.00" marker-end="url(#arrow)"/>
+<text x="443" y="54" class="math" text-anchor="middle">x₁</text>
+<polyline class="wire" points="85.00,98.00 123.50,98.00 126.50,90.00 132.50,106.00 138.50,90.00 144.50,106.00 150.50,90.00 156.50,106.00 159.50,98.00 198.00,98.00"/>
+<text x="141.5" y="82" class="math" text-anchor="middle">k₂</text>
+<polyline class="wire" points="85.00,134.00 135.50,134.00"/>
+<polyline class="wire" points="135.50,126.00 135.50,142.00"/>
+<polyline class="wire" points="130.50,125.00 153.50,125.00 153.50,143.00 130.50,143.00"/>
+<polyline class="wire" points="153.50,134.00 198.00,134.00"/>
+<text x="141.5" y="160" class="math" text-anchor="middle">b₂</text>
+<polyline class="wire" points="308.00,98.00 329.00,98.00 332.00,90.00 338.00,106.00 344.00,90.00 350.00,106.00 356.00,90.00 362.00,106.00 365.00,98.00 386.00,98.00"/>
+<text x="347.0" y="82" class="math" text-anchor="middle">k₁</text>
+<polyline class="wire" points="308.00,134.00 341.00,134.00"/>
+<polyline class="wire" points="341.00,126.00 341.00,142.00"/>
+<polyline class="wire" points="336.00,125.00 359.00,125.00 359.00,143.00 336.00,143.00"/>
+<polyline class="wire" points="359.00,134.00 386.00,134.00"/>
+<text x="347.0" y="160" class="math" text-anchor="middle">b₁</text>
+<polyline class="wire" points="496.00,115.00 550.00,115.00" marker-end="url(#arrow)"/>
+<text x="548" y="103" class="math" text-anchor="middle">u</text>
+</svg>

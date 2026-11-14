@@ -1,0 +1,8 @@
+{
+  "answer": "保留题给三阶分母时，能控标准型可取\n$$A_c=\\begin{bmatrix}0&1&0\\\\0&0&1\\\\-18&-27&-10\\end{bmatrix},\\quad B_c=(0,0,1)^{\\mathsf T},\\quad C_c=[1\\quad1\\quad0],\\quad D=0.$$\n能观标准型为 $A_o=A_c^{\\mathsf T}, B_o=C_c^{\\mathsf T}, C_o=B_c^{\\mathsf T}$，$D=0$。",
+  "explanation": "由伴随矩阵可得 $(sI-A_c)^{-1}B_c=(1,s,s^2)^{\\mathsf T}/(s^3+10s^2+27s+18)$，与 $C_c$ 相乘即为所求。SISO 的转置把能控标准型变为对偶的能观标准型，同时保持传递函数。\n\n题给分母可分解为 $(s+1)(s+3)(s+6)$，所以有一个零极点对消。题给分母下的能控型存在不可观模态，对偶能观型存在不可控模态；若要求最小实现，则先约分为 $1/[(s+3)(s+6)]$，再按二阶分母构造。",
+  "originalImages": [],
+  "answerPdfPages": "1500",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

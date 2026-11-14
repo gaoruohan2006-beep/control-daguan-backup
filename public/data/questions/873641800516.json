@@ -1,0 +1,8 @@
+{
+  "answer": "$e^{At}=e^{-t}I$，$A=-I$。可取 $V=(x_1^2+x_2^2)/2$，原点全局指数稳定。",
+  "explanation": "两个初始向量的列矩阵 $P=\\begin{bmatrix}2&4\\\\1&1\\end{bmatrix}$ 可逆。两组响应给出 $e^{At}P=e^{-t}P$，右乘 $P^{-1}$ 即得 $e^{At}$。在 $t=0$ 对矩阵指数求导得 $A=-I$。由 $\\dot V=-x_1^2-x_2^2=-2V$ 可见 $V$ 指数衰减。",
+  "originalImages": [],
+  "answerPdfPages": "1451",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

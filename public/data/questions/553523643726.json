@@ -1,0 +1,8 @@
+{
+  "answer": "（1）$e_{\\rm ss}=1/2$。（2）$c_{\\rm ss}(t)=\\sin(t+30^\\circ-\\arctan(1/2))/\\sqrt5$。",
+  "explanation": "闭环 $\\Phi(s)=1/(s+2)$ 稳定，单位阶跃的输出终值为 $\\Phi(0)=1/2$，因此误差也是 $1/2$。在 $\\omega=1$ 处，$\\Phi(j)=1/(2+j)$，幅值为 $1/\\sqrt5$，相角为 $-\\arctan(1/2)$，将这两项施加到输入正弦波上即可。",
+  "originalImages": [],
+  "answerPdfPages": "1290",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

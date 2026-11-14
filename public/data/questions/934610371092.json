@@ -1,0 +1,8 @@
+{
+  "answer": "原点是唯一平衡点，且全局渐近稳定。",
+  "explanation": "取 $V=(x_1^2+x_2^2)/2$。导数中的交叉项相消，得到 $\\dot V=-(2x_1^2+x_2^2)(x_1^6+x_2^6)$。该式在任何非零状态都严格小于零，因此非零状态不可能是平衡点。$V$ 正定且径向无界，$\\dot V$ 负定，所以原点全局渐近稳定。",
+  "originalImages": [],
+  "answerPdfPages": "1284",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

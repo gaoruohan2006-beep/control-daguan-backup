@@ -1,0 +1,8 @@
+{
+  "answer": "$K\\ge2$。",
+  "explanation": "闭环特征多项式为 $s^2+3s+K$。令 $s=z-1$，移位多项式为 $z^2+z+K-2$。$K>2$ 时两个根的实部严格小于零，$K=2$ 时是 $z=0,-1$，对应原极点 $-1,-2$。$K<2$ 时移位方程有一个正实根，违反约束。",
+  "originalImages": [],
+  "answerPdfPages": "1346",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

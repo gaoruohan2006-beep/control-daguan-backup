@@ -1,0 +1,8 @@
+{
+  "answer": "$$G(s)=\\begin{bmatrix}9/(s+7)&0\\\\6/(s+5)&3/(s+5)\\end{bmatrix}.$$\n系统内部渐近稳定、BIBO 稳定，且能控能观。可只保留 $u_1$。",
+  "explanation": "用 $G=C(sI-A)^{-1}B$，先将 $B$ 两行分别除以 $s+5,s+7$，再乘 $C$。两个内部极点均在左半平面，且输出传递矩阵亦只有稳定极点。$B,C$ 都是满秩的二阶矩阵。\n\n单独保留第一列 $b_1=(2,3)^{\\mathsf T}$ 时，$[b_1,Ab_1]$ 的行列式是 $-12$。第二列 $b_2=(1,0)^{\\mathsf T}$ 只作用于第一状态，无法调节第二状态。",
+  "originalImages": [],
+  "answerPdfPages": "1268",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

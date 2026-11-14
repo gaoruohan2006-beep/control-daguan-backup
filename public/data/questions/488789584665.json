@@ -1,0 +1,8 @@
+{
+  "answer": "可控标准型可取\n$$A_c=\\begin{bmatrix}0&1\\\\-3&-4\\end{bmatrix},\\quad B_c=\\begin{bmatrix}0\\\\1\\end{bmatrix},\\quad C_c=[5\\quad2],\\quad D=1.$$\n对角型可取 $A_d=\\operatorname{diag}(-1,-3)$，$B_d=(1,1)^{\\mathsf T}$，$C_d=[3/2\\quad1/2]$，$D=1$。",
+  "explanation": "先作多项式除法，得到 $G=1+(2s+5)/(s^2+4s+3)$。常数 $1$ 是直接通道。选伴随矩阵时，$(sI-A_c)^{-1}B_c=(1,s)^{\\mathsf T}/(s^2+4s+3)$，所以输出系数为 $[5,2]$。\n\n严格真分式又等于 $\\frac{3}{2(s+1)}+\\frac1{2(s+3)}$。用两个并联的一阶状态分别实现两个极点，按留数加权，得到对角型。",
+  "originalImages": [],
+  "answerPdfPages": "1401–1403",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

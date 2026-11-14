@@ -1,0 +1,8 @@
+{
+  "answer": "$x[k]=\\dfrac{k-1+(1-k)(-1)^k}{4}$，$k\\ge0$。",
+  "explanation": "零初值下 $(z+1)^2 X(z)=Z\\{k\\}=z/(z-1)^2$，所以\n$$X(z)=\\frac{z}{(z^2-1)^2}=\\frac14\\left[\\frac{z}{(z-1)^2}+\\frac{z}{(z+1)^2}-\\frac{z}{z-1}+\\frac{z}{z+1}\\right].$$\n逐项反变换得 $[k-k(-1)^k-1+(-1)^k]/4$。代回可验 $x[0]=x[1]=x[2]=0,\\ x[3]=1$。",
+  "originalImages": [],
+  "answerPdfPages": "1302",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

@@ -1,0 +1,8 @@
+{
+  "answer": "没有同时满足两个要求的实数 $K,a$。",
+  "explanation": "闭环多项式为 $s^4+6s^3+11s^2+(6+K)s+Ka$。劳斯首列为\n$$1,\\quad 6,\\quad \\frac{60-K}{6},\\quad 6+K-\\frac{36Ka}{60-K},\\quad Ka.$$\n稳定时，$K_v=\\lim_{s\\to0}sG=Ka/6$，斜坡误差为 $6/(Ka)$。要求误差 $\\le0.1$，得到 $Ka\\ge60$。闭环稳定还要求 $60-K>0$，且 $36Ka<(6+K)(60-K)$。但 $(6+K)(60-K)=1089-(K-27)^2\\le1089$，而 $Ka\\ge60$ 要求 $36Ka\\ge2160$，两个条件没有交集。",
+  "originalImages": [],
+  "answerPdfPages": "1355–1356",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

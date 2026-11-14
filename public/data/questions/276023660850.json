@@ -1,0 +1,8 @@
+{
+  "answer": "共轭根位于圆 $|s|=\\sqrt{k}$。$k=4$ 时，从 $\\pm 2j$ 沿左半圆到 $-2$ 汇合，随后沿负实轴分别趋向 $0^-$ 和 $-\\infty$。",
+  "explanation": "特征方程为 $s^2+as+k=0$。当 $0\\le a<2\\sqrt{k}$，两根是 $-a/2\\pm j\\sqrt{k-a^2/4}$，所以模恒为 $\\sqrt{k}$。$a$ 增大时，实部向左移动。到 $a=2\\sqrt{k}$，在 $-\\sqrt{k}$ 形成二重根。从这里继续增大 $a$，两实根的乘积保持为 $k$，绝对值较小的根趋向零，另一个趋向负无穷。\n\n![以阻尼系数为参数的根轨迹](img/reviewed/211-whut-2025-root.svg)",
+  "originalImages": [],
+  "answerPdfPages": "1366",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

@@ -1,0 +1,8 @@
+{
+  "answer": "取 $u=v-Kx$，可选 $K=[0\\quad1\\quad5]$。",
+  "explanation": "**1. 用 PBH 判据。** 对任意 $\\lambda$，把 $[\\lambda I-A,\\ B]$ 右乘可逆分块矩阵 $\\begin{bmatrix}I&0\\\\K&I\\end{bmatrix}$，得到 $[\\lambda I-(A-BK),\\ B]$，秩保持。因此完全能控性不变。\n\n**2. 分别处理固定极点和可移动极点。** 第一个状态满足 $\\dot x_1=-x_1$，固定极点已经是目标中的 $-1$。对可控的后两维，反馈后的多项式为 $s^2+(k_3-1)s+(3+k_2)$。与 $(s+2)^2$ 比较得到 $k_3=5,k_2=1$，$k_1$ 可取零。",
+  "originalImages": [],
+  "answerPdfPages": "1214–1215",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

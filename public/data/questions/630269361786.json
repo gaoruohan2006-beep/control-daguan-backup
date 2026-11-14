@@ -1,0 +1,8 @@
+{
+  "answer": "取 $x=Pz$，$P=\\begin{bmatrix}-5&-4&1\\\\0&1&0\\\\2&0&0\\end{bmatrix}$。则 $\\dot z=\\operatorname{diag}(0,1,2)z+(3/2,2,33/2)^{\\mathsf T}u$。",
+  "explanation": "$A$ 为上三角矩阵，特征值是 $0,1,2$。依次求得对应的特征向量 $(-5,0,2)^{\\mathsf T},(-4,1,0)^{\\mathsf T},(1,0,0)^{\\mathsf T}$，作为 $P$ 的三列。代入 $P\\dot z=APz+Bu$，有 $P^{-1}AP=\\operatorname{diag}(0,1,2)$，再解 $P b=B$ 得到新的输入列。",
+  "originalImages": [],
+  "answerPdfPages": "1517–1519",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

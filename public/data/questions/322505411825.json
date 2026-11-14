@@ -1,0 +1,8 @@
+{
+  "answer": "$G(s)=10/[s(s+3)(s+4)]$，$e_{\\rm ss}=1.2$。",
+  "explanation": "三阶分母的劳斯首列为 $1,7,74/7,10$，故闭环稳定。闭环无零点，分子为常数；单位阶跃零误差要求其直流增益为一，因此分子为 $10$。由 $G=\\Phi/(1-\\Phi)$ 得 $G=10/[s(s^2+7s+12)]$。系统为 I 型，$K_v=10/12$，单位斜坡稳态误差为 $1/K_v=1.2$。",
+  "originalImages": [],
+  "answerPdfPages": "1393",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

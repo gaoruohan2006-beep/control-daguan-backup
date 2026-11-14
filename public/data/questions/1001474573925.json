@@ -1,0 +1,8 @@
+{
+  "answer": "$$M_1\\ddot x_1=u-k_1(x_1-x_2)-b_1(\\dot x_1-\\dot x_2),$$\n$$M_2\\ddot x_2=k_1(x_1-x_2)+b_1(\\dot x_1-\\dot x_2)-k_2x_2-b_2\\dot x_2.$$\n令 $P=b_1s+k_1,\\ Q=b_2s+k_2,\\ D=(M_1s^2+P)(M_2s^2+P+Q)-P^2$，则 $X_1/U=(M_2s^2+P+Q)/D$，$X_2/U=P/D$。",
+  "explanation": "车间弹簧和阻尼器的作用分别取决于相对位移、相对速度，对两车的力大小相等、方向相反；墙端元件的另一端固定，因而相对量就是车 2 的位移和速度。对两条牛顿方程作零初值拉氏变换，得到 $(M_1s^2+P)X_1-PX_2=U$ 与 $-PX_1+(M_2s^2+P+Q)X_2=0$。解此二元方程组即可。",
+  "originalImages": [],
+  "answerPdfPages": "1392–1393",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

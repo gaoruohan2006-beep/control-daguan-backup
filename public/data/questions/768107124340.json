@@ -1,0 +1,8 @@
+{
+  "answer": "特征值为 $-1,-2,-3$。例如 $B=(1,1,0)^{\\mathsf T},(2,1,0)^{\\mathsf T},(3,1,0)^{\\mathsf T}$。",
+  "explanation": "特征多项式为 $s^3+6s^2+11s+6=(s+1)(s+2)(s+3)$。对 $\\lambda=-r$（$r=1,2,3$），可取左特征向量 $w_r^{\\mathsf T}=[1\\quad-r\\quad r^2]$。若 $w_r^{\\mathsf T}B=0$，该模态不受输入作用。分别令 $B=(r,1,0)^{\\mathsf T}$，便得到三种不能控的例子。",
+  "originalImages": [],
+  "answerPdfPages": "1238",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

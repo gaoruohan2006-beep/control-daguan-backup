@@ -1,0 +1,98 @@
+[
+  {
+    "school": "安徽大学",
+    "tier": "211",
+    "year": 2023,
+    "variant": "",
+    "number": "八",
+    "topics": [
+      "状态空间 / 标准型"
+    ],
+    "questionPages": "604",
+    "answerPages": "1500",
+    "stem": "给定 $G(s)=(s+1)/(s^3+10s^2+27s+18)$，分别写出能控标准型和能观标准型。",
+    "answer": "保留题给三阶分母时，能控标准型可取\n$$A_c=\\begin{bmatrix}0&1&0\\\\0&0&1\\\\-18&-27&-10\\end{bmatrix},\\quad B_c=(0,0,1)^{\\mathsf T},\\quad C_c=[1\\quad1\\quad0],\\quad D=0.$$\n能观标准型为 $A_o=A_c^{\\mathsf T}, B_o=C_c^{\\mathsf T}, C_o=B_c^{\\mathsf T}$，$D=0$。",
+    "explanation": "由伴随矩阵可得 $(sI-A_c)^{-1}B_c=(1,s,s^2)^{\\mathsf T}/(s^3+10s^2+27s+18)$，与 $C_c$ 相乘即为所求。SISO 的转置把能控标准型变为对偶的能观标准型，同时保持传递函数。\n\n题给分母可分解为 $(s+1)(s+3)(s+6)$，所以有一个零极点对消。题给分母下的能控型存在不可观模态，对偶能观型存在不可控模态；若要求最小实现，则先约分为 $1/[(s+3)(s+6)]$，再按二阶分母构造。",
+    "notes": ""
+  },
+  {
+    "school": "安徽大学",
+    "tier": "211",
+    "year": 2023,
+    "variant": "",
+    "number": "九",
+    "topics": [
+      "状态空间 / 状态反馈"
+    ],
+    "questionPages": "604",
+    "answerPages": "1501",
+    "stem": "系统满足\n$$A=\\begin{bmatrix}0&1&0\\\\0&-1&1\\\\0&-1&10\\end{bmatrix},\\quad B=\\begin{bmatrix}0\\\\0\\\\10\\end{bmatrix}.$$\n能否用状态反馈任意配置闭环极点？求使极点为 $-10,-1\\pm j\\sqrt3$ 的反馈增益。",
+    "answer": "可以。取 $u=v-Kx$，$K=[4\\quad6/5\\quad21/10]$。",
+    "explanation": "能控矩阵为 $\\begin{bmatrix}0&0&10\\\\0&10&90\\\\10&100&990\\end{bmatrix}$，行列式为 $-1000$，故完全能控。原特征多项式为 $s^3-9s^2-9s$。加入状态反馈后，分母为\n$$s^3+(-9+10k_3)s^2+(-9+10k_2+10k_3)s+10k_1.$$\n目标多项式 $(s+10)(s^2+2s+4)=s^3+12s^2+24s+40$，逐项比较即得所列参数。",
+    "notes": ""
+  },
+  {
+    "school": "安徽大学",
+    "tier": "211",
+    "year": 2024,
+    "variant": "831",
+    "number": "八",
+    "topics": [
+      "状态空间 / 对角标准型"
+    ],
+    "questionPages": "608",
+    "answerPages": "1517–1519",
+    "stem": "系统为 $\\dot x=Ax+Bu$，$A=\\begin{bmatrix}2&4&5\\\\0&1&0\\\\0&0&0\\end{bmatrix}$，$B=(1,2,3)^{\\mathsf T}$。将状态方程化为对角形式。",
+    "answer": "取 $x=Pz$，$P=\\begin{bmatrix}-5&-4&1\\\\0&1&0\\\\2&0&0\\end{bmatrix}$。则 $\\dot z=\\operatorname{diag}(0,1,2)z+(3/2,2,33/2)^{\\mathsf T}u$。",
+    "explanation": "$A$ 为上三角矩阵，特征值是 $0,1,2$。依次求得对应的特征向量 $(-5,0,2)^{\\mathsf T},(-4,1,0)^{\\mathsf T},(1,0,0)^{\\mathsf T}$，作为 $P$ 的三列。代入 $P\\dot z=APz+Bu$，有 $P^{-1}AP=\\operatorname{diag}(0,1,2)$，再解 $P b=B$ 得到新的输入列。",
+    "notes": ""
+  },
+  {
+    "school": "安徽大学",
+    "tier": "211",
+    "year": 2024,
+    "variant": "831",
+    "number": "十",
+    "topics": [
+      "状态空间 / 状态反馈"
+    ],
+    "questionPages": "608",
+    "answerPages": "1520–1522",
+    "stem": "系统为\n$$A=\\begin{bmatrix}1&0&0\\\\0&2&1\\\\0&0&2\\end{bmatrix},\\quad B=(1,0,1)^{\\mathsf T},\\quad C=[1\\quad1\\quad0].$$\n（1）变换为能控标准型。（2）求把闭环极点置于 $-1,-2,-2$ 的原坐标状态反馈增益。",
+    "answer": "取 $x=Tz$，$T=\\begin{bmatrix}4&-4&1\\\\-1&1&0\\\\2&-3&1\\end{bmatrix}$，则\n$$A_c=\\begin{bmatrix}0&1&0\\\\0&0&1\\\\4&-8&5\\end{bmatrix},\\quad B_c=(0,0,1)^{\\mathsf T},\\quad C_c=[3\\quad-3\\quad1].$$\n当 $u=v-Kx$ 时，$K=[18\\quad48\\quad-8]$。",
+    "explanation": "开环特征多项式为 $(s-1)(s-2)^2=s^3-5s^2+8s-4$。用 $T=[A^2B-5AB+8B,\\ AB-5B,\\ B]$ 构造变换，三列独立。计算 $T^{-1}AT,T^{-1}B,CT$ 即得标准型。目标多项式为 $(s+1)(s+2)^2=s^3+5s^2+8s+4$。在标准型下比较得 $K_c=[8\\quad0\\quad10]$，由 $K=K_cT^{-1}$ 得原坐标解。",
+    "notes": ""
+  },
+  {
+    "school": "安徽大学",
+    "tier": "211",
+    "year": 2025,
+    "variant": "831",
+    "number": "八",
+    "topics": [
+      "离散系统 / 单位圆稳定"
+    ],
+    "questionPages": "611",
+    "answerPages": "1530",
+    "stem": "离散系统为 $x[k+1]=Ax[k]$，其中 $A=\\begin{bmatrix}0&1&0\\\\0&0&1\\\\0&K/2&0\\end{bmatrix}$，$K>0$。求令原点渐近稳定的 $K$ 范围。",
+    "answer": "$0<K<2$。",
+    "explanation": "特征多项式为 $z(z^2-K/2)$，故特征值为 $0,\\pm\\sqrt{K/2}$。离散渐近稳定要求三根的模均小于 $1$，直接得到 $K<2$。$K=2$ 有两个单位圆上的根，不满足渐近稳定。",
+    "notes": ""
+  },
+  {
+    "school": "安徽大学",
+    "tier": "211",
+    "year": 2025,
+    "variant": "831",
+    "number": "十",
+    "topics": [
+      "状态空间 / 状态观测器"
+    ],
+    "questionPages": "612",
+    "answerPages": "1531–1532",
+    "stem": "系统为\n$$A=\\begin{bmatrix}1&0&0\\\\0&2&1\\\\0&0&2\\end{bmatrix},\\quad B=(1,0,1)^{\\mathsf T},\\quad C=[1\\quad1\\quad0].$$\n（1）建立能控标准型。（2）设计全维观测器，使估计误差极点为 $-3,-4,-5$。",
+    "answer": "可取 $x=Tz$，$T=\\begin{bmatrix}4&-4&1\\\\-1&1&0\\\\2&-3&1\\end{bmatrix}$，得\n$$A_c=\\begin{bmatrix}0&1&0\\\\0&0&1\\\\4&-8&5\\end{bmatrix},\\quad B_c=(0,0,1)^{\\mathsf T},\\quad C_c=[3\\quad-3\\quad1].$$\n在原坐标下取 $\\dot{\\hat x}=A\\hat x+Bu+L(y-C\\hat x)$，$L=[120\\quad-103\\quad210]^{\\mathsf T}$。",
+    "explanation": "原系统特征多项式为 $s^3-5s^2+8s-4$。用 $T=[A^2B-5AB+8B,\\ AB-5B,\\ B]$，得 $T^{-1}AT,T^{-1}B,CT$ 如上。原坐标的能观矩阵行列式为 $1$，可以任意配置观测器误差极点。令 $L=(l_1,l_2,l_3)^{\\mathsf T}$，可把 $\\det(sI-A+LC)$ 写成 $(s-1)(s-2)^2+l_1(s-2)^2+l_2(s-1)(s-2)+l_3(s-1)$。与 $(s+3)(s+4)(s+5)$ 比较系数，得所列 $L$。",
+    "notes": ""
+  }
+]

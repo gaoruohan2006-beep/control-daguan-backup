@@ -1,0 +1,8 @@
+{
+  "answer": "在下列能控标准型下，取 $u=v-Kx$，$K=[4\\quad4\\quad1]$，观测器增益为 $L=[12\\quad37\\quad-10]^{\\mathsf T}$。",
+  "explanation": "采用\n$$A=\\begin{bmatrix}0&1&0\\\\0&0&1\\\\0&-2&-3\\end{bmatrix},\\quad B=(0,0,1)^{\\mathsf T},\\quad C=[1\\quad0\\quad0].$$\n状态反馈只改变 $A$ 的末行。由目标分母 $(s+2)(s^2+2s+2)$ 比较系数，得到 $K$。\n\n观测器采用 $\\dot{\\hat x}=A\\hat x+Bu+L(y-C\\hat x)$，误差矩阵为 $A-LC$。其特征多项式为\n$$s^3+(3+l_1)s^2+(2+3l_1+l_2)s+2l_1+3l_2+l_3.$$\n与 $(s+5)^3=s^3+15s^2+75s+125$ 比较，得到 $l_1=12,l_2=37,l_3=-10$。",
+  "originalImages": [],
+  "answerPdfPages": "1489–1490",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

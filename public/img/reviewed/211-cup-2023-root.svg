@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 339" width="500" height="339" role="img" aria-labelledby="title">
+<title id="title">中国石油大学（北京）2023 根轨迹</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 1L10 5 0 9z" fill="context-stroke"/></marker></defs>
+<style>
+.wire,.part,.axis,.guide,.curve,.curve2{stroke:#18222b;stroke-width:1.65;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.part{fill:#fff}.axis{stroke:#627284;stroke-width:1.4}.guide{stroke:#8794a1;stroke-dasharray:5 5;stroke-width:1.2}
+.curve{stroke:#174c85;stroke-width:2.2}.curve2{stroke:#487298;stroke-width:1.8;stroke-dasharray:5 4}
+.dot{fill:#18222b}.math,.plain{font:16px "Times New Roman","SimSun",serif;fill:#18222b}
+.plain{font-family:"SimSun","Noto Serif CJK SC",serif}.small{font:14px "Times New Roman","SimSun",serif;fill:#18222b}
+</style>
+<rect width="100%" height="100%" fill="#fff"/>
+<polyline class="axis" points="62.00,156.00 452.00,156.00" marker-end="url(#arrow)"/>
+<polyline class="axis" points="406.56,285.00 406.56,27.00" marker-end="url(#arrow)"/>
+<text x="479.0" y="161.0" class="small" text-anchor="middle">Re(s)</text>
+<text x="406.56310679611653" y="16.0" class="small" text-anchor="middle">Im(s)</text>
+<polyline class="axis" points="179.38,154.11 179.38,157.89"/>
+<text x="179.378640776699" y="175.0" class="small" text-anchor="middle">−3</text>
+<polyline class="axis" points="255.11,154.11 255.11,157.89"/>
+<text x="255.10679611650485" y="175.0" class="small" text-anchor="middle">−2</text>
+<polyline class="axis" points="330.83,154.11 330.83,157.89"/>
+<text x="330.8349514563107" y="175.0" class="small" text-anchor="middle">−1</text>
+<text x="406.56310679611653" y="175.0" class="small" text-anchor="middle">0</text>
+<polyline class="curve" points="179.38,156.00 255.11,156.00"/>
+<polyline class="curve" points="330.83,156.00 255.11,156.00"/>
+<polyline class="curve" points="189.98,156.00 222.54,156.00" marker-end="url(#arrow)"/>
+<polyline class="curve" points="318.72,156.00 286.16,156.00" marker-end="url(#arrow)"/>
+<polyline class="curve" points="255.11,156.00 255.11,278.71" marker-end="url(#arrow)"/>
+<circle cx="255.10679611650485" cy="264.9924654518952" r="4" class="part"/>
+<text x="267.1067961165048" y="268.9924654518952" class="small" text-anchor="start">−2 − j2√3</text>
+<polyline class="curve" points="255.11,156.00 255.11,33.29" marker-end="url(#arrow)"/>
+<circle cx="255.10679611650485" cy="47.007534548104786" r="4" class="part"/>
+<text x="267.1067961165048" y="51.007534548104786" class="small" text-anchor="start">−2 + j2√3</text>
+<polyline class="wire" points="175.38,152.00 183.38,160.00"/>
+<polyline class="wire" points="175.38,160.00 183.38,152.00"/>
+<polyline class="wire" points="326.83,152.00 334.83,160.00"/>
+<polyline class="wire" points="326.83,160.00 334.83,152.00"/>
+<text x="250" y="313" class="plain" text-anchor="middle">× 开环极点　○ 阻尼比为 0.5 时的闭环极点</text>
+</svg>

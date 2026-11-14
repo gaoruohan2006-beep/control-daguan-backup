@@ -1,0 +1,98 @@
+[
+  {
+    "school": "中国石油大学（华东）",
+    "tier": "211",
+    "year": 2023,
+    "variant": "829",
+    "number": "一(2)",
+    "topics": [
+      "校正 / 超前"
+    ],
+    "questionPages": "570",
+    "answerPages": "1406",
+    "stem": "串联校正装置的传递函数为 $G_c(s)=(10s+1)/(2s+1)$。分析校正类型，并说明其频率特性。",
+    "answer": "相位超前校正。转折角频率为 $0.1$ 和 $0.5\\,\\mathrm{rad/s}$，最大超前角为 $\\arcsin(2/3)\\approx41.81^\\circ$。",
+    "explanation": "零点 $-0.1$ 比极点 $-0.5$ 更靠近原点。对 $\\omega>0$，$\\arctan(10\\omega)-\\arctan(2\\omega)>0$。低频增益为 $1$，高频增益为 $5$，中间渐近斜率为 $+20\\,\\mathrm{dB/dec}$。令相角对 $\\omega$ 的导数为零，得到最大相角出现在 $\\omega=1/\\sqrt{20}$，此时其正弦为 $(10-2)/(10+2)=2/3$。",
+    "notes": ""
+  },
+  {
+    "school": "中国石油大学（华东）",
+    "tier": "211",
+    "year": 2024,
+    "variant": "829",
+    "number": "八",
+    "topics": [
+      "状态空间 / 对角标准型"
+    ],
+    "questionPages": "577",
+    "answerPages": "汇编缺参考答案，按题面独立推导",
+    "stem": "系统满足 $\\ddot y+7\\dot y+12y=\\ddot u+3\\dot u+2u$。在零初值下求传递函数并写出对角标准型。",
+    "answer": "$G(s)=(s^2+3s+2)/(s^2+7s+12)$。一种对角型为\n$$\\dot z_1=-3z_1+u,\\qquad \\dot z_2=-4z_2+u,\\qquad y=2z_1-6z_2+u.$$",
+    "explanation": "对微分方程作拉普拉斯变换，得 $(s^2+7s+12)Y=(s^2+3s+2)U$。因分子和分母同阶，先写出单位直接通道，再分解严格真分式，得 $G(s)=1+2/(s+3)-6/(s+4)$。两个一阶模态并联，输出按留数加权后加上 $u$。",
+    "notes": ""
+  },
+  {
+    "school": "中国石油大学（华东）",
+    "tier": "211",
+    "year": 2024,
+    "variant": "829",
+    "number": "十",
+    "topics": [
+      "状态空间 / 能控能观"
+    ],
+    "questionPages": "578",
+    "answerPages": "汇编缺参考答案，按题面独立推导",
+    "stem": "已知\n$$A=\\begin{bmatrix}0&1&0\\\\0&a&0\\\\0&0&1\\end{bmatrix},\\quad B=(0,1,b)^{\\mathsf T},\\quad C=[1\\quad0\\quad c].$$\n求系统完全能控且完全能观的参数条件。",
+    "answer": "$a\\ne1,\\ b\\ne0,\\ c\\ne0$。",
+    "explanation": "能控矩阵为\n$$[B,AB,A^2B]=\\begin{bmatrix}0&1&a\\\\1&a&a^2\\\\b&b&b\\end{bmatrix},$$\n行列式为 $b(a-1)$。能观矩阵为\n$$\\begin{bmatrix}C\\\\CA\\\\CA^2\\end{bmatrix}=\\begin{bmatrix}1&0&c\\\\0&1&c\\\\0&a&c\\end{bmatrix},$$\n行列式为 $c(1-a)$。两者都须满秩，因此得到三个非零条件。",
+    "notes": ""
+  },
+  {
+    "school": "中国石油大学（华东）",
+    "tier": "211",
+    "year": 2024,
+    "variant": "829",
+    "number": "十一",
+    "topics": [
+      "状态空间 / 李雅普诺夫稳定"
+    ],
+    "questionPages": "578",
+    "answerPages": "汇编缺参考答案，按题面独立推导",
+    "stem": "系统为 $\\dot x_1=x_2,\\ \\dot x_2=-ax_1-x_1^2x_2$，$a\\ne0$。判断平衡点的稳定性。",
+    "answer": "$a>0$ 时原点全局渐近稳定；$a<0$ 时原点为不稳定的鞍点。",
+    "explanation": "平衡条件给出 $x_2=0$、$ax_1=0$，所以只有原点。$a<0$ 时，线性化特征值为 $\\pm\\sqrt{-a}$，一正一负，故原点是鞍点。\n\n$a>0$ 时取 $V=(ax_1^2+x_2^2)/2$，有 $\\dot V=-x_1^2x_2^2$。零导数集合是两条坐标轴，除原点外均无法保持在其中，且 $V$ 径向无界。由 LaSalle 不变性原理得全局渐近稳定。",
+    "notes": ""
+  },
+  {
+    "school": "中国石油大学（华东）",
+    "tier": "211",
+    "year": 2025,
+    "variant": "829",
+    "number": "二",
+    "topics": [
+      "建模 / 传递函数"
+    ],
+    "questionPages": "579",
+    "answerPages": "1416–1417",
+    "stem": "图示 RC 网络中电容串接于输入端和输出节点之间，电阻跨接输出节点与地。以 $u_1$ 为输入，$u_2$ 为输出，求微分方程和传递函数。\n\n![电容串接、电阻对地的 RC 网络](img/reviewed/211-upc-2025-rc.svg)",
+    "answer": "$RC\\dot u_2+u_2=RC\\dot u_1$，$U_2/U_1=RCs/(1+RCs)$。",
+    "explanation": "输出电阻电流为 $i=u_2/R$。电容电压为 $u_1-u_2$，其电流为 $i=C(\\dot u_1-\\dot u_2)$。节点处两电流相等，整理得微分方程。取零初值作拉氏变换，即得一阶高通传递函数。",
+    "notes": ""
+  },
+  {
+    "school": "中国石油大学（华东）",
+    "tier": "211",
+    "year": 2025,
+    "variant": "829",
+    "number": "十一",
+    "topics": [
+      "状态空间 / 稳定"
+    ],
+    "questionPages": "581",
+    "answerPages": "1424",
+    "stem": "零输入系统满足 $\\dot x=\\begin{bmatrix}0&1\\\\-2&-3\\end{bmatrix}x$。用李雅普诺夫第一法判断原点稳定性。",
+    "answer": "原点渐近稳定。由于系统本身是线性定常的，因此也是全局指数稳定。",
+    "explanation": "线性化矩阵就是给定矩阵。特征多项式为 $s^2+3s+2=(s+1)(s+2)$，两个特征值的实部均严格为负。李雅普诺夫第一法给出渐近稳定；具体来说，两模态按 $e^{-t}$ 与 $e^{-2t}$ 衰减，任意初值的轨迹都指数趋于原点。",
+    "notes": ""
+  }
+]

@@ -1,0 +1,8 @@
+{
+  "answer": "取\n$$A=\\begin{bmatrix}0&1&0\\\\0&0&1\\\\0&-2&-3\\end{bmatrix},\\quad B=(0,0,1)^{\\mathsf T},\\quad C=[10\\quad0\\quad0].$$\n取 $u=v-Kx$，$K=[4\\quad4\\quad1]$。",
+  "explanation": "原分母为 $s^3+3s^2+2s$，读取伴随矩阵末行系数，分子常数给出 $C$。该形式下反馈后分母为 $s^3+(3+k_3)s^2+(2+k_2)s+k_1$。目标多项式 $(s+2)(s^2+2s+2)=s^3+4s^2+6s+4$，故比较得到三个反馈系数。",
+  "originalImages": [],
+  "answerPdfPages": "1441–1442",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

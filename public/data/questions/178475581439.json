@@ -1,0 +1,8 @@
+{
+  "answer": "$RC\\dot u_2+u_2=RC\\dot u_1$，$U_2/U_1=RCs/(1+RCs)$。",
+  "explanation": "输出电阻电流为 $i=u_2/R$。电容电压为 $u_1-u_2$，其电流为 $i=C(\\dot u_1-\\dot u_2)$。节点处两电流相等，整理得微分方程。取零初值作拉氏变换，即得一阶高通传递函数。",
+  "originalImages": [],
+  "answerPdfPages": "1416–1417",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

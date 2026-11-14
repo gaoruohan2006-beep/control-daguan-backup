@@ -1,0 +1,8 @@
+{
+  "answer": "$c(t)=5/2-5e^{-t}+\\tfrac32e^{-2t}$（$t\\ge0$），$G(s)=5/[(s+1)(s+2)]$。",
+  "explanation": "常数特解为 $5/2$，齐次根为 $-1,-2$。设 $c=5/2+A e^{-t}+B e^{-2t}$，初值给出 $A+B=-7/2,\\ -A-2B=2$，解得 $A=-5,B=3/2$。\n\n求传递函数时使用零初值，把右端还原为 $5r(t)$ 并变换，得到 $(s^2+3s+2)C=5R$。因此传递函数与该次响应中的非零初始状态无关。",
+  "originalImages": [],
+  "answerPdfPages": "1382",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

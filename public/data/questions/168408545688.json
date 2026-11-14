@@ -1,0 +1,8 @@
+{
+  "answer": "可取 $x=Tz$，$T=\\begin{bmatrix}4&-4&1\\\\-1&1&0\\\\2&-3&1\\end{bmatrix}$，得\n$$A_c=\\begin{bmatrix}0&1&0\\\\0&0&1\\\\4&-8&5\\end{bmatrix},\\quad B_c=(0,0,1)^{\\mathsf T},\\quad C_c=[3\\quad-3\\quad1].$$\n在原坐标下取 $\\dot{\\hat x}=A\\hat x+Bu+L(y-C\\hat x)$，$L=[120\\quad-103\\quad210]^{\\mathsf T}$。",
+  "explanation": "原系统特征多项式为 $s^3-5s^2+8s-4$。用 $T=[A^2B-5AB+8B,\\ AB-5B,\\ B]$，得 $T^{-1}AT,T^{-1}B,CT$ 如上。原坐标的能观矩阵行列式为 $1$，可以任意配置观测器误差极点。令 $L=(l_1,l_2,l_3)^{\\mathsf T}$，可把 $\\det(sI-A+LC)$ 写成 $(s-1)(s-2)^2+l_1(s-2)^2+l_2(s-1)(s-2)+l_3(s-1)$。与 $(s+3)(s+4)(s+5)$ 比较系数，得所列 $L$。",
+  "originalImages": [],
+  "answerPdfPages": "1531–1532",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

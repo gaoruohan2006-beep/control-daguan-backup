@@ -1,0 +1,8 @@
+{
+  "answer": "$0<K<2$。当 $K=1$ 时，输出终值为 $1$。",
+  "explanation": "闭环特征多项式为 $D(z)=z^2+(K-1)z+0.5K$。Jury 条件为 $D(1)=1.5K>0,\\ D(-1)=2-0.5K>0,\\ |0.5K|<1$，取交集得 $0<K<2$。$K=1$ 在该区间内，故离散终值定理给出终值 $\\Phi(1)=1$。",
+  "originalImages": [],
+  "answerPdfPages": "1359",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

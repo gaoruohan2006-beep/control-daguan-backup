@@ -1,0 +1,8 @@
+{
+  "answer": "原点全局渐近稳定。",
+  "explanation": "令两条状态方程等于零可得唯一平衡点为原点。沿轨迹 $\\dot V=2x_1(2x_2)+2x_2(-2x_1-x_2)=-2x_2^2\\le0$。当 $x_2=0,\\ x_1\\ne0$ 时，$\\dot x_2=-2x_1\\ne0$，故 $\\dot V=0$ 的集合只含原点这一个不变集。$V$ 的子水平集有界，由 LaSalle 不变性原理得全局渐近稳定。",
+  "originalImages": [],
+  "answerPdfPages": "1239",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

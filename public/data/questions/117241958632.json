@@ -1,0 +1,8 @@
+{
+  "answer": "取 $\\lambda=-3/2,\\ x(0)=(-2,2)^{\\mathsf T}$。",
+  "explanation": "要求 $y=0$，即 $x_2=-x_1$。将其代入 $\\dot y=-x_1-2x_2+2u=0$ 得 $x_1=-2u,\\ x_2=2u$。第一条状态方程于是成为 $-2\\dot u=3u$，给出 $\\lambda=-3/2$。因 $u(0)=1$，初始状态固定为 $(-2,2)^{\\mathsf T}$。代回两条方程即可验证整个轨迹满足条件。",
+  "originalImages": [],
+  "answerPdfPages": "1369–1370",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

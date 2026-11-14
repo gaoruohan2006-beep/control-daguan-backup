@@ -1,0 +1,8 @@
+{
+  "answer": "可以。取 $u=v-Kx$，$K=[4\\quad6/5\\quad21/10]$。",
+  "explanation": "能控矩阵为 $\\begin{bmatrix}0&0&10\\\\0&10&90\\\\10&100&990\\end{bmatrix}$，行列式为 $-1000$，故完全能控。原特征多项式为 $s^3-9s^2-9s$。加入状态反馈后，分母为\n$$s^3+(-9+10k_3)s^2+(-9+10k_2+10k_3)s+10k_1.$$\n目标多项式 $(s+10)(s^2+2s+4)=s^3+12s^2+24s+40$，逐项比较即得所列参数。",
+  "originalImages": [],
+  "answerPdfPages": "1501",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

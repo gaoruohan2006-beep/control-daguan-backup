@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 554 180" width="554" height="180" role="img" aria-labelledby="title">
+<title id="title">参考信号前馈补偿回路</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 1L10 5 0 9z" fill="context-stroke"/></marker></defs>
+<style>
+.wire,.part,.axis,.guide,.curve,.curve2{stroke:#18222b;stroke-width:1.65;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.part{fill:#fff}.axis{stroke:#627284;stroke-width:1.4}.guide{stroke:#8794a1;stroke-dasharray:5 5;stroke-width:1.2}
+.curve{stroke:#174c85;stroke-width:2.2}.curve2{stroke:#487298;stroke-width:1.8;stroke-dasharray:5 4}
+.dot{fill:#18222b}.math,.plain{font:16px "Times New Roman","SimSun",serif;fill:#18222b}
+.plain{font-family:"SimSun","Noto Serif CJK SC",serif}.small{font:14px "Times New Roman","SimSun",serif;fill:#18222b}
+</style>
+<rect width="100%" height="100%" fill="#fff"/>
+<text x="36" y="88" class="math" text-anchor="middle">R(s)</text>
+<polyline class="wire" points="20.00,100.00 131.00,100.00" marker-end="url(#arrow)"/>
+<circle cx="141" cy="100" r="10" class="part"/>
+<polyline class="wire" points="135.00,94.00 147.00,106.00"/>
+<polyline class="wire" points="135.00,106.00 147.00,94.00"/>
+<text x="122" y="93" class="math" text-anchor="middle">+</text>
+<text x="154" y="125" class="math" text-anchor="middle">−</text>
+<polyline class="wire" points="151.00,100.00 296.00,100.00" marker-end="url(#arrow)"/>
+<circle cx="306" cy="100" r="10" class="part"/>
+<polyline class="wire" points="300.00,94.00 312.00,106.00"/>
+<polyline class="wire" points="300.00,106.00 312.00,94.00"/>
+<text x="286" y="90" class="math" text-anchor="middle">+</text>
+<text x="321" y="80" class="math" text-anchor="middle">+</text>
+<polyline class="wire" points="316.00,100.00 382.00,100.00" marker-end="url(#arrow)"/>
+<rect x="382" y="82" width="62" height="36" class="part"/>
+<text x="413.0" y="105" class="math" text-anchor="middle">G(s)</text>
+<polyline class="wire" points="444.00,100.00 527.00,100.00" marker-end="url(#arrow)"/>
+<text x="524" y="85" class="math" text-anchor="middle">C(s)</text>
+<polyline class="wire" points="87.00,100.00 87.00,41.00 189.00,41.00" marker-end="url(#arrow)"/>
+<circle cx="87" cy="100" r="3" class="dot"/>
+<rect x="189" y="23" width="72" height="36" class="part"/>
+<text x="225.0" y="46" class="math" text-anchor="middle">Gᵣ(s)</text>
+<polyline class="wire" points="261.00,41.00 306.00,41.00 306.00,90.00" marker-end="url(#arrow)"/>
+<circle cx="476" cy="100" r="3" class="dot"/>
+<polyline class="wire" points="476.00,100.00 476.00,145.00 141.00,145.00 141.00,110.00" marker-end="url(#arrow)"/>
+</svg>

@@ -1,0 +1,8 @@
+{
+  "answer": "$G(s)=(s^2+3s+2)/(s^2+7s+12)$。一种对角型为\n$$\\dot z_1=-3z_1+u,\\qquad \\dot z_2=-4z_2+u,\\qquad y=2z_1-6z_2+u.$$",
+  "explanation": "对微分方程作拉普拉斯变换，得 $(s^2+7s+12)Y=(s^2+3s+2)U$。因分子和分母同阶，先写出单位直接通道，再分解严格真分式，得 $G(s)=1+2/(s+3)-6/(s+4)$。两个一阶模态并联，输出按留数加权后加上 $u$。",
+  "originalImages": [],
+  "answerPdfPages": "汇编缺参考答案，按题面独立推导",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}
