@@ -50,11 +50,37 @@ async def verify():
             }""", old_id)
             await page.goto(f"{BASE}?question={old_id}")
             alias_card = page.locator(f'.card[data-id="{current_id}"]')
-            await alias_card.locator(".other-sources").wait_for()
+            await alias_card.wait_for()
+            alias_question = next(q for q in questions if q["id"] == current_id)
+            visible_sources = [source for source in alias_question["alsoAppearedIn"] if not source.get("hideOnCard")]
+            assert bool(await alias_card.locator(".other-sources").count()) == bool(visible_sources)
             assert await alias_card.locator('[data-act="fav"]').get_attribute("aria-pressed") == "true"
             await page.wait_for_function("""([oldId, currentId]) => CDGStore.get('rec').then(r =>
                 !r.notes[oldId] && r.notes[currentId]?.text === '重复题迁移测试')""", arg=[old_id, current_id])
             await page.evaluate("CDGStore.del('rec')")
+
+        guides = library["topicGuides"]
+        expected_topics = {
+            " / ".join(path.split(" / ")[:depth])
+            for q in questions for path in q["categories"]
+            for depth in range(2, len(path.split(" / ")) + 1)
+        }
+        assert set(guides) == expected_topics
+        topic, child = next(
+            (topic, child) for topic in guides for child in guides
+            if child.rsplit(" / ", 1)[0] == topic
+        )
+        await page.locator(f'.node[data-path="{topic.split(" / ")[0]}"] > .tw').click()
+        await page.locator(f'.node[data-path="{topic}"] > .nm').click()
+        guide = page.locator("#topicGuide")
+        assert await guide.get_by_text("知识点精讲", exact=True).is_visible()
+        await guide.locator(f'button[data-guide-path="{child}"]').click()
+        assert await guide.get_by_role("heading", name=child.rsplit(" / ", 1)[1]).is_visible()
+        assert not await guide.locator(".katex-error").count()
+        await guide.get_by_role("button", name="开始做题").click()
+        assert await page.locator("#cards .card").evaluate("card => card === document.activeElement")
+        await guide.locator("summary").click()
+        assert not await guide.locator(".guide-content").is_visible()
 
         for q in questions:
             identifier = q["id"]

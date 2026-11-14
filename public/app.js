@@ -137,7 +137,10 @@ function inline(s, hl) {
     if (m[1] != null) out.push(tex(m[1], true));
     else if (m[2] != null) out.push(tex(m[2], false));
     else if (m[4] != null) { const [alt, w] = m[3].split('|'); out.push(`<span class="fig"><img src="${esc(m[4])}" alt="${esc(alt)}" ${w ? `style="width:${+w}px"` : ''} loading="lazy" data-zoom title="单击放大图片"></span>`); }
-    else out.push(`<strong>${inline(m[5], hl)}</strong>`);
+    else {
+      const plan = m[5] === '解题思路' ? ' class="solution-plan"' : '';
+      out.push('<strong' + plan + '>' + inline(m[5], hl) + '</strong>');
+    }
     i = re.lastIndex;
   }
   out.push(txt(s.slice(i)));
@@ -216,7 +219,7 @@ function render() {
   $('#listName').textContent = `${L.name} · ${L.questionIds.length} 题`;
   const node = st.node ? flatNodes(tree).find(n => n.path === st.node) : null;
   $('#sectionLabel').textContent = node ? `${st.q ? '搜索 · ' : ''}${st.tab === 'retest' ? '复测 · ' : ''}${node.name}  ${sec.length} 题` : (st.q ? `搜索「${st.q}」 0 题` : '');
-  renderTree(); renderCards(sec); renderPager(sec); syncURL();
+  renderTree(); renderTopicGuide(node); renderCards(sec); renderPager(sec); syncURL();
   document.querySelectorAll('#modeSeg button').forEach(b => b.classList.toggle('on', b.dataset.mode === rec.mode));
   document.querySelectorAll('#fontSeg button').forEach(b => b.classList.toggle('on', +b.dataset.font === rec.fontScale));
   $('#accReadSum').textContent = `${rec.mode === 'multiple' ? '多题' : '单题'} · ${FONT_NAME[rec.fontScale] || '标准'}`;
@@ -279,8 +282,9 @@ function cardHTML(id, idx) {
   const paths = (L.categoryByQuestion[id] || q.categories);
   const leaf = paths[0].split(' / ').pop();
   const number = q.sourceType === 'reviewed' ? `原卷 ${q.number}` : `第 ${idx + 1} 题`;
-  const otherSources = q.alsoAppearedIn?.map(s =>
-    [s.school, s.year, s.variant, `原卷 ${s.number}`].filter(Boolean).join(' · ')) || [];
+  const otherSources = (q.alsoAppearedIn || [])
+    .filter(source => !source.hideOnCard)
+    .map(source => [source.school, source.year, source.variant, '原卷 ' + source.number].filter(Boolean).join(' · '));
   const sh = st.show[id] || {}; const mk = rec.marks[id]?.state; const fav = rec.favorites.includes(id);
   const hl = st.q && st.q.length > 0 ? st.q : null;
   let ans = '';
@@ -317,7 +321,7 @@ function cardHTML(id, idx) {
   const srs = rec.srs[id], pv = preview(id);
   const dueHTML = srs ? `<span class="due ${dayDiff(srs.card.due) <= 0 ? 'now' : ''}" title="FSRS 调度 · 已复习 ${srs.card.reps} 次">${fmtDue(srs.card.due)}</span>` : '<span class="due">未复习</span>';
   const hasNote = CDGNotes.has(rec.notes, id), noteOpen = !!sh.note;
-  return `<article class="card" data-id="${id}">
+  return `<article class="card" tabindex="-1" data-id="${id}">
     <header class="meta"><span class="qno">${esc(number)}</span><h2 class="src">${esc(q.source)}</h2>
       <span class="pop-wrap"><button type="button" class="cat-btn" data-act="cats" aria-expanded="false" aria-label="查看完整分类路径，共 ${paths.length} 处">${esc(leaf)}</button>
       <div class="popover catpop" hidden><b>分类路径</b>${paths.map(p => `<button type="button" data-act="gocat" data-path="${esc(p)}" title="查看本分类全部题目">${esc(p)}</button>`).join('')}</div></span>${hasNote ? `<span class="note-flag" title="本题有笔记">${IC.pen}有笔记</span>` : ''}${dueHTML}</header>
@@ -407,6 +411,38 @@ function onNoteInput(ta) {
   noteTimers.set(id, setTimeout(() => { commitNote(id); afterNoteSaved(id); }, 700));
   clearTimeout(ta._pv); ta._pv = setTimeout(() => { const live = sec.querySelector('.nb-live'); if (live) live.innerHTML = CDGNotes.render(ta.value) || '<div class="nb-empty">实时预览会显示在这里。</div>'; }, 120);
 }
+function renderTopicGuide(node) {
+  const el = $('#topicGuide');
+  const guide = st.listId === 'complete' && st.tab === 'bank' && node && lib.topicGuides?.[node.path];
+  if (!guide) {
+    el.hidden = true;
+    el.replaceChildren();
+    return;
+  }
+  if (!el.hidden && el.dataset.path === node.path) return;
+
+  const childTopics = Object.keys(lib.topicGuides).filter(path =>
+    path.startsWith(node.path + ' / ') && !path.slice(node.path.length + 3).includes(' / ')
+  );
+  el.dataset.path = node.path;
+  el.innerHTML = '<section class="topic-guide" aria-labelledby="topicGuideHeading">' +
+    '<details open><summary class="guide-summary">' +
+    '<div><p class="guide-label">知识点精讲</p>' +
+    '<h2 id="topicGuideHeading">' + esc(node.name) + '</h2></div>' +
+    '<span class="guide-chevron" aria-hidden="true">' + IC.chev + '</span></summary>' +
+    '<div class="guide-content"><div class="guide-overview">' + md(guide.overview) + '</div>' +
+    '<div class="guide-grid"><section class="guide-strategy"><h3>怎么选方法</h3><ol>' +
+    guide.strategy.map(step => '<li>' + md(step) + '</li>').join('') + '</ol></section>' +
+    '<section class="guide-formulas"><h3>关键公式</h3>' + md(guide.formulas) + '</section></div>' +
+    '<section class="guide-pitfalls"><h3>容易错在哪</h3>' + guide.pitfalls.map(point => md(point)).join('') + '</section>' +
+    '<div class="guide-footer">' +
+    (childTopics.length ? '<nav class="guide-links" aria-label="本节具体题型">' +
+      childTopics.map(path => '<button type="button" data-guide-path="' + esc(path) + '">' +
+        esc(path.split(' / ').pop()) + '</button>').join('') + '</nav>' : '') +
+    '<button type="button" class="guide-practice">开始做题</button></div></div></details></section>';
+  el.hidden = false;
+}
+
 function renderCards(sec) {
   const el = $('#cards');
   if (!sec.length) { el.innerHTML = `<div class="empty">${st.q ? '没有匹配的题目' : st.tab === 'fav' ? '暂无收藏题目。点题目下方的「收藏」即可加入。' : st.tab === 'retest' ? (st.rv === 'due' ? '今日没有待复习的题目。评分后的题目会在到期当天出现在这里。' : '暂无复测题目。把题目标记为「不熟练」或「不会」后会出现在这里。') : '暂无题目'}</div>`; return; }
@@ -445,9 +481,20 @@ function step(dir) {
   const si = tops.indexOf(st.node);
   if (rec.mode === 'multiple') { const t = tops[si + dir]; if (t) { st.node = t; st.qid = null; render(); $('#main').scrollTo(0, 0); } return; }
   const i = sec.indexOf(st.qid);
-  if (sec[i + dir] != null) st.qid = sec[i + dir];
-  else { const t = tops[si + dir]; if (!t) return; st.node = t; const n = flatNodes(tree).find(x => x.path === t); st.qid = dir > 0 ? n.ids[0] : n.ids[n.ids.length - 1]; }
-  render(); $('#main').scrollTo(0, 0);
+  if (sec[i + dir] != null) {
+    st.qid = sec[i + dir];
+    render();
+    if ($('#topicGuide').hidden) $('#main').scrollTo(0, 0);
+    else $('#cards').scrollIntoView({ block: 'start' });
+    return;
+  }
+  const t = tops[si + dir];
+  if (!t) return;
+  st.node = t;
+  const n = flatNodes(tree).find(x => x.path === t);
+  st.qid = dir > 0 ? n.ids[0] : n.ids[n.ids.length - 1];
+  render();
+  $('#main').scrollTo(0, 0);
 }
 
 // ---------- 详情（答案/解析） ----------
@@ -617,6 +664,23 @@ function bind() {
     const b = e.target.closest('button[data-act]'); if (!b) return; const path = b.closest('.node').dataset.path;
     if (b.dataset.act === 'toggle') { const n = b.closest('.node'); rec.open[path] = !n.classList.contains('open'); save(); renderTree(); return; }
     st.node = path; st.qid = null; rec.open[path] = true; save(); if (isMobile()) $('#app').classList.remove('drawer-open'); render(); $('#main').scrollTo(0, 0);
+  });
+  $('#topicGuide').addEventListener('click', e => {
+    if (e.target.closest('.guide-practice')) {
+      const question = $('#cards .card');
+      question?.focus({ preventScroll: true });
+      question?.scrollIntoView({ block: 'start' });
+      return;
+    }
+    const topic = e.target.closest('button[data-guide-path]');
+    if (!topic) return;
+    st.q = '';
+    $('#search').value = '';
+    st.node = topic.dataset.guidePath;
+    st.qid = null;
+    render();
+    $('#main').scrollTo(0, 0);
+    $('#topicGuide summary')?.focus();
   });
   $('#cards').addEventListener('click', e => {
     const img = e.target.closest('img[data-zoom]');

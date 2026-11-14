@@ -1,6 +1,6 @@
 {
   "answer": "$k=400\\,^\\circ\\mathrm C/\\mathrm{kW}$，$\\tau=4/\\ln 4\\approx2.885\\,\\mathrm{min}$。",
-  "explanation": "增量输入为 $0.5\\,\\mathrm{kW}$，稳态温升为 $200\\,^\\circ\\mathrm C$，故 $k=200/0.5=400\\,^\\circ\\mathrm C/\\mathrm{kW}$。一阶模型给出\n$$T(t)=80+200(1-e^{-t/\\tau}).$$\n由 $T(4)=230$ 可得 $e^{-4/\\tau}=1/4$，从而 $\\tau=4/\\ln4$。",
+  "explanation": "**1. 统一使用增量。** 原工作点为功率 $1.0\\,\\mathrm{kW}$、温度 $80^\\circ\\mathrm C$。输入增加量是 $1.5-1.0=0.5\\,\\mathrm{kW}$；输出的稳态增加量是 $280-80=200^\\circ\\mathrm C$。一阶模型在 $s=0$ 的增益为 $k$，因此 $k=200/0.5=400\\,^\\circ\\mathrm C/\\mathrm{kW}$。\n\n**2. 写出阶跃后的总温度。** 传函 $k/(1+\\tau s)$ 对幅值 $0.5$ 的阶跃给出增量 $0.5k(1-e^{-t/\\tau})$。加回初始温度：\n$$T(t)=80+200(1-e^{-t/\\tau}).$$\n\n**3. 代入第 4 分钟的数据。** $230=80+200(1-e^{-4/\\tau})$，所以 $1-e^{-4/\\tau}=150/200=3/4$。移项得 $e^{-4/\\tau}=1/4$，取对数得 $4/\\tau=\\ln4$，从而 $\\tau=4/\\ln4\\approx2.885\\,\\mathrm{min}$。",
   "originalImages": [],
   "answerPdfPages": "522",
   "referenceNote": "原解误将绝对功率 1.5 kW 当作阶跃增量，导致静态增益计算错误。",

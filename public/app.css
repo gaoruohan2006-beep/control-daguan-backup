@@ -245,3 +245,43 @@ mark{background:#fff3b0;color:inherit;border-radius:3px}
   margin: 0.35rem 0 0.75rem;
   color: var(--muted, #54616d);
 }
+
+
+/* Topic guides */
+#topicGuide[hidden]{display:none}
+#topicGuide{margin-bottom:18px}
+.topic-guide{min-width:0;border:1px solid var(--border);border-radius:16px;background:var(--canvas);overflow:hidden}
+.guide-summary{display:flex;align-items:center;justify-content:space-between;gap:16px;cursor:pointer;list-style:none;padding:20px clamp(16px,4vw,34px);background:linear-gradient(120deg,var(--brand-soft),var(--canvas));border-left:4px solid var(--brand)}
+.guide-summary::-webkit-details-marker{display:none}
+.guide-summary:focus-visible,.guide-links button:focus-visible,.guide-practice:focus-visible{outline:2px solid var(--brand);outline-offset:-3px}
+.guide-label{margin:0 0 4px;color:var(--brand);font-size:.83em;font-weight:700}
+.guide-summary h2{margin:0;color:var(--fg);font-size:clamp(23px,3vw,33px);line-height:1.25}
+.guide-chevron{display:grid;place-items:center;width:32px;height:32px;flex:0 0 auto;border-radius:50%;background:var(--canvas);color:var(--brand)}
+.guide-chevron .ic{width:18px;height:18px;transform:rotate(90deg)}
+.topic-guide details[open] .guide-chevron .ic{transform:rotate(-90deg)}
+.guide-content{display:grid;gap:16px;padding:18px clamp(16px,4vw,34px) 24px}
+.guide-content p{margin:.4em 0;line-height:1.8;overflow-wrap:anywhere}
+.guide-overview{font-size:1.08em;line-height:1.8;font-family:var(--reading)}
+.guide-grid{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,1fr);gap:14px}
+.guide-grid > section{min-width:0;padding:15px 17px;border-radius:10px;background:var(--panel);border:1px solid var(--border-subtle)}
+.guide-content h3{margin:0 0 7px;font-size:1em;line-height:1.35}
+.guide-strategy ol{margin:0;padding-left:1.35em}
+.guide-strategy li + li{margin-top:.4em}
+.guide-strategy li::marker{color:var(--brand);font-weight:700}
+.guide-formulas{overflow-wrap:anywhere}
+.guide-content .katex-display > .katex{white-space:normal}
+.guide-content .katex-display > .katex > .katex-html{min-width:min-content}
+.guide-content p > .katex{max-width:100%;display:inline-block;vertical-align:middle;overflow-x:auto}
+.guide-content .katex-display .katex{max-width:none}
+.guide-pitfalls{border-left:2px solid var(--warn-border);padding:4px 0 4px 13px}
+.guide-pitfalls h3{color:var(--warn)}
+.guide-footer{display:flex;justify-content:flex-end;align-items:center;flex-wrap:wrap;gap:10px;padding-top:13px;border-top:1px solid var(--border-subtle)}
+.guide-links{display:flex;flex:1 1 auto;flex-wrap:wrap;gap:8px}
+.guide-practice{padding:8px 14px;border-radius:8px;background:var(--brand-soft);color:var(--brand);font-weight:700}
+.guide-practice:hover{box-shadow:inset 0 0 0 1px var(--brand)}
+.guide-links button{padding:6px 11px;border:1px solid var(--border);border-radius:7px;color:var(--fg);background:var(--panel);font-size:.86em}
+.guide-links button:hover{background:var(--brand-soft);border-color:var(--brand)}
+.box[data-kind="exp"] .body > p:has(> .solution-plan){padding:11px 14px;border-left:3px solid var(--brand);background:var(--canvas);border-radius:0 8px 8px 0}
+.box[data-kind="exp"] .body > p > .solution-plan{color:var(--brand)}
+@media(max-width:720px){.guide-grid{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:420px){.guide-summary{padding-block:15px}.guide-content{padding-block:13px 17px;gap:12px}.guide-grid > section{padding:12px}}
