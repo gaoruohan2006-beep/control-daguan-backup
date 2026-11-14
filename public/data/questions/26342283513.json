@@ -1,6 +1,6 @@
 {
   "answer": "$a\\ne1,\\ b\\ne0,\\ c\\ne0$。",
-  "explanation": "能控矩阵为\n$$[B,AB,A^2B]=\\begin{bmatrix}0&1&a\\\\1&a&a^2\\\\b&b&b\\end{bmatrix},$$\n行列式为 $b(a-1)$。能观矩阵为\n$$\\begin{bmatrix}C\\\\CA\\\\CA^2\\end{bmatrix}=\\begin{bmatrix}1&0&c\\\\0&1&c\\\\0&a&c\\end{bmatrix},$$\n行列式为 $c(1-a)$。两者都须满秩，因此得到三个非零条件。",
+  "explanation": "能控矩阵为\n$$[B,AB,A^2B]=\\begin{bmatrix}0&1&a\\\\1&a&a^2\\\\b&b&b\\end{bmatrix},$$\n行列式为 $b(a-1)$。能观矩阵为\n$$\\begin{bmatrix}C\\\\CA\\\\CA^2\\end{bmatrix}=\\begin{bmatrix}1&0&c\\\\0&1&c\\\\0&a&c\\end{bmatrix},$$\n行列式为 $c(1-a)$。两者都须满秩，因此得到三个非零条件。\n\n> **遇到重特征值，PBH 能快速找必要条件。** $a=1$ 时，特征值 $1$ 的几何重数为 $2$，而系统只有一个输入和一个输出，故既不能完全能控也不能完全能观。",
   "originalImages": [],
   "answerPdfPages": "汇编缺参考答案，按题面独立推导",
   "referenceNote": "",

@@ -1,6 +1,6 @@
 {
   "answer": "$K=[2,1]$，$L=[19,81]^\\mathsf T$。以 $e=x-\\hat x$ 记误差，增广状态为 $[x^\\mathsf T,e^\\mathsf T]^\\mathsf T$。",
-  "explanation": "能控性矩阵行列式为 $-1$，能观性矩阵为 $I_2$。根据给定有效数字，将 $\\zeta,\\omega_n$ 视为 $1/\\sqrt2,\\sqrt2$。$A-BK$ 的特征多项式为 $s^2+(1+k_2)s+k_1$，与 $s^2+2s+2$ 对比即得 $K=[2,1]$。\n\n设 $L=[l_1,l_2]^\\mathsf T$，误差矩阵 $A-LC$ 的特征多项式为 $(s+l_1)(s+1)+l_2$。与 $(s+10)^2$ 比较得 $l_1=19,l_2=81$。\n\n令 $u=v-K\\hat x$，观测器方程为 $\\dot{\\hat x}=(A-BK-LC)\\hat x+Bv+Ly$。又 $\\dot e=(A-LC)e$，因此\n$$\\begin{bmatrix}\\dot x\\\\\\dot e\\end{bmatrix}\n=\\begin{bmatrix}A-BK&BK\\\\0&A-LC\\end{bmatrix}\\begin{bmatrix}x\\\\e\\end{bmatrix}\n+\\begin{bmatrix}B\\\\0\\end{bmatrix}v,\\qquad\ny=[C\\ \\ 0]\\begin{bmatrix}x\\\\e\\end{bmatrix}.$$",
+  "explanation": "能控性矩阵行列式为 $-1$，能观性矩阵为 $I_2$。根据给定有效数字，将 $\\zeta,\\omega_n$ 视为 $1/\\sqrt2,\\sqrt2$。$A-BK$ 的特征多项式为 $s^2+(1+k_2)s+k_1$，与 $s^2+2s+2$ 对比即得 $K=[2,1]$。\n\n设 $L=[l_1,l_2]^\\mathsf T$，误差矩阵 $A-LC$ 的特征多项式为 $(s+l_1)(s+1)+l_2$。与 $(s+10)^2$ 比较得 $l_1=19,l_2=81$。\n\n令 $u=v-K\\hat x$，观测器方程为 $\\dot{\\hat x}=(A-BK-LC)\\hat x+Bv+Ly$。又 $\\dot e=(A-LC)e$，因此\n$$\\begin{bmatrix}\\dot x\\\\\\dot e\\end{bmatrix}\n=\\begin{bmatrix}A-BK&BK\\\\0&A-LC\\end{bmatrix}\\begin{bmatrix}x\\\\e\\end{bmatrix}\n+\\begin{bmatrix}B\\\\0\\end{bmatrix}v,\\qquad\ny=[C\\ \\ 0]\\begin{bmatrix}x\\\\e\\end{bmatrix}.$$\n\n> **用误差坐标直接读闭环极点。** 增广矩阵为块上三角，特征多项式是 $\\det(sI-A+BK)\\det(sI-A+LC)$。右上角耦合项会影响暂态，两个对角块决定极点集合。",
   "originalImages": [],
   "answerPdfPages": "184",
   "referenceNote": "",

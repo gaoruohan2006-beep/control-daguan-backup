@@ -1,6 +1,6 @@
 {
   "answer": "一种三阶最小实现为\n$$A=\\operatorname{diag}(-1,-2,-3),\\quad B=\\begin{bmatrix}1&0\\\\-1&1\\\\0&-1\\end{bmatrix},\\quad C=[1\\quad1\\quad1],\\quad D=[0\\quad0].$$",
-  "explanation": "按简单极点作部分分式\n$$W(s)=\\frac{[1\\quad0]}{s+1}+\\frac{[-1\\quad1]}{s+2}+\\frac{[0\\quad-1]}{s+3}.$$\n令三个状态分别对应三个极点，从每个留数行读取 $B$ 的一行，并令 $C$ 将各状态相加。三个不同极点都实际出现，因此任何实现至少需要三个状态。所给实现恰好三阶。",
+  "explanation": "**解题思路** 每个单极点先单独看留数，再决定这一模态需要几个状态。\n\n按简单极点作部分分式\n$$W(s)=\\frac{[1\\quad0]}{s+1}+\\frac{[-1\\quad1]}{s+2}+\\frac{[0\\quad-1]}{s+3}.$$\n令三个状态分别对应三个极点，从每个留数行读取 $B$ 的一行，并令 $C$ 将各状态相加。三个不同极点都实际出现，因此任何实现至少需要三个状态。所给实现恰好三阶。\n\n> **单极点的最小状态数等于留数矩阵的秩。** 对不同单极点的严格真有理矩阵，可分解每个留数 $R_i=C_iB_i$ 并选 $A_i=\\lambda_iI_{\\operatorname{rank}R_i}$，再将各块拼接。",
   "originalImages": [],
   "answerPdfPages": "1230–1231",
   "referenceNote": "",

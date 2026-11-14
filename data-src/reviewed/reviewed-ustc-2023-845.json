@@ -11,7 +11,7 @@
     "answerPages": "381–383",
     "stem": "已知\n$$\\dot x=\\begin{bmatrix}-2&3\\\\-2&5\\end{bmatrix}x+\\begin{bmatrix}3\\\\5\\end{bmatrix}u,\\quad y=\\begin{bmatrix}5&-1\\end{bmatrix}x.$$\n（1）采用 $u=v-Kx$，配置闭环极点为 $-2,-2$。（2）设计最小维观测器，使其误差极点为 $-8$。",
     "answer": "$K=[-1,2]$。取 $z=x_2-\\tfrac32y$，可用 $\\dot{\\hat z}=-8\\hat z-10u-10y$、$\\hat x_2=\\hat z+\\tfrac32 y$、$\\hat x_1=(y+\\hat x_2)/5$。",
-    "explanation": "能控矩阵为 $\\left[\\begin{smallmatrix}3&9\\\\5&19\\end{smallmatrix}\\right]$，行列式为 $12$。闭环多项式为 $s^2+(3k_1+5k_2-3)s+4k_2-4$，与 $(s+2)^2$ 比较得到 $k_2=2,k_1=-1$。\n\n用 $y=5x_1-x_2$、$x_2$ 作坐标，有\n$$\\dot y=-1.6y+8.4x_2+10u,\\qquad \\dot x_2=-0.4y+4.6x_2+5u.$$\n取 $z=x_2-gy$，则误差动力学系数为 $4.6-8.4g$。令其为 $-8$，得 $g=1.5$。将 $x_2=z+1.5y$ 代入 $\\dot z=\\dot x_2-1.5\\dot y$，得 $\\dot z=-8z-10y-10u$，进而写出用可测 $y,u$ 驱动的观测器。",
+    "explanation": "**解题思路** 先选取包含已测输出 $y$ 的坐标，再找一个无需对 $y$ 求导的内部变量。该算例只需要估计一个状态。\n\n能控矩阵为 $\\left[\\begin{smallmatrix}3&9\\\\5&19\\end{smallmatrix}\\right]$，行列式为 $12$。闭环多项式为 $s^2+(3k_1+5k_2-3)s+4k_2-4$，与 $(s+2)^2$ 比较得到 $k_2=2,k_1=-1$。\n\n用 $y=5x_1-x_2$、$x_2$ 作坐标，有\n$$\\dot y=-1.6y+8.4x_2+10u,\\qquad \\dot x_2=-0.4y+4.6x_2+5u.$$\n取 $z=x_2-gy$，则误差动力学系数为 $4.6-8.4g$。令其为 $-8$，得 $g=1.5$。将 $x_2=z+1.5y$ 代入 $\\dot z=\\dot x_2-1.5\\dot y$，得 $\\dot z=-8z-10y-10u$，进而写出用可测 $y,u$ 驱动的观测器。\n\n> **降维观测器的误差极点。** 若可测坐标是 $y$、待估坐标是 $x_2$，选 $z=x_2-gy$，则误差系数为 $A_{22}-gA_{12}$。实现时只积分 $\\hat z$，再以 $\\hat x_2=\\hat z+gy$ 复原。",
     "notes": ""
   }
 ]

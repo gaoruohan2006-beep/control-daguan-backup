@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 342" width="660" height="342">
+  <title>开环奈奎斯特频率分支与原点小半圆的映射</title>
+  <defs>
+    <marker id="positive" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto"><path d="M0 0L10 5 0 10Z" fill="#2b658f"/></marker>
+    <marker id="negative" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto"><path d="M0 0L10 5 0 10Z" fill="#9a526c"/></marker>
+    <marker id="arc" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto"><path d="M0 0L10 5 0 10Z" fill="#677586"/></marker>
+  </defs>
+  <rect width="660" height="342" fill="#ffffff"/>
+  <g fill="none" stroke="#273543" stroke-width="1.1">
+    <path d="M39 161H374m-7-4 7 4-7 4M324 274V52m-4 7 4-7 4 7"/>
+  </g>
+  <g fill="#273543" font-family="Times New Roman, SimSun, serif" font-size="18">
+    <text x="122" y="31">频率分支（示意）</text><text x="394" y="31">原点绕行的像（示意）</text>
+    <text x="351" y="149">Re</text><text x="336" y="65">Im</text><text x="331" y="184">0</text>
+    <text x="225" y="187">−1</text>
+  </g>
+  <circle cx="233" cy="161" r="3" fill="#273543"/>
+  <g fill="none" stroke-width="2.5" stroke-linecap="round">
+    <path d="M45 236C112 219 166 216 211 207S294 178 324 161" stroke="#2b658f"/>
+    <path d="M130 217Q165 215 190 211" stroke="#2b658f" marker-end="url(#positive)"/>
+    <path d="M324 161C294 144 256 123 211 115S112 103 45 86" stroke="#9a526c"/>
+    <path d="M190 111Q165 107 130 105" stroke="#9a526c" marker-end="url(#negative)"/>
+    <path d="M445 151A82 82 0 0 1 527 69A82 82 0 0 1 609 151A82 82 0 0 1 527 233A82 82 0 0 1 445 169" stroke="#677586" stroke-dasharray="6 4"/>
+    <path d="M507 71Q527 65 549 72M606 130Q613 153 605 176M550 230Q527 236 505 230" stroke="#677586" marker-end="url(#arc)"/>
+  </g>
+  <g font-family="Times New Roman, SimSun, serif" font-size="18">
+    <text x="100" y="76" fill="#9a526c">ω &lt; 0</text>
+    <text x="100" y="252" fill="#2b658f">ω &gt; 0</text>
+    <text x="430" y="144" text-anchor="end" fill="#9a526c">起点</text>
+    <text x="430" y="188" text-anchor="end" fill="#2b658f">终点</text>
+    <text x="527" y="276" text-anchor="middle" fill="#273543">顺时针一周</text>
+    <text x="324" y="313" text-anchor="middle" fill="#273543">两条频率分支分别在原点上下两侧趋近实轴</text>
+  </g>
+</svg>

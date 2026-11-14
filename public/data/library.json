@@ -4299,9 +4299,9 @@
         "频域分析"
       ],
       "hasFigure": false,
-      "stem": "已知某线性稳定环节的传递函数为 $G(s)=1/(3s+1)$。输入 $r(t)=2\\sin t$ 时，求其稳态输出。",
+      "stem": "已知环节 $G(s)=1/(3s+1)$，输入 $r(t)=2\\sin t$。求稳态输出。原题选项如下。\n\nA. $2$　　B. $2/\\sqrt{10}$\n\nC. $\\dfrac{2}{\\sqrt{10}}+\\sin(t+\\arctan3)$\n\nD. $\\dfrac{2}{\\sqrt{10}}+\\sin(t-\\arctan3)$",
       "pdfPage": "321",
-      "search": "北京交通大学 211 2025 801 一(6) 频域分析 / 频率特性 / 频域性能指标 频域分析 / 频率特性 已知某线性稳定环节的传递函数为 $G(s)=1/(3s+1)$。输入 $r(t)=2\\sin t$ 时，求其稳态输出。"
+      "search": "北京交通大学 211 2025 801 一(6) 频域分析 / 频率特性 / 频域性能指标 频域分析 / 频率特性 已知环节 $G(s)=1/(3s+1)$，输入 $r(t)=2\\sin t$。求稳态输出。原题选项如下。\n\nA. $2$　　B. $2/\\sqrt{10}$\n\nC. $\\dfrac{2}{\\sqrt{10}}+\\sin(t+\\arctan3)$\n\nD. $\\dfrac{2}{\\sqrt{10}}+\\sin(t-\\arctan3)$"
     },
     {
       "id": 679107305293,
@@ -5811,9 +5811,9 @@
         "状态空间"
       ],
       "hasFigure": false,
-      "stem": "双输入双输出系统取\n$$A=\\operatorname{diag}(-5,-7),\\qquad B=\\begin{bmatrix}2&1\\\\3&0\\end{bmatrix},\\qquad C=\\begin{bmatrix}0&3\\\\3&0\\end{bmatrix},\\quad D=0.$$\n求传递函数矩阵，判断内外部稳定性、能控性和能观性，并指出仅保留哪一个输入还可以控制全部状态。",
+      "stem": "双输入双输出系统取\n$$A=\\operatorname{diag}(-5,-7),\\qquad B=\\begin{bmatrix}2&1\\\\3&0\\end{bmatrix},\\qquad C=\\begin{bmatrix}0&3\\\\3&0\\end{bmatrix},\\quad D=0.$$\n（1）求最简传递函数矩阵。（2）判断内外部稳定性、能控性及能观性。（3）只保留一个输入，哪个仍能控制全部状态？（4）写出四维能观标准型。",
       "pdfPage": "507",
-      "search": "华北电力大学 211 2023 821 保定专硕 五(1)–(3) 状态空间 / 结构性质与实现 / 能控性与能观性 状态空间 / 能控能观 双输入双输出系统取\n$$A=\\operatorname{diag}(-5,-7),\\qquad B=\\begin{bmatrix}2&1\\\\3&0\\end{bmatrix},\\qquad C=\\begin{bmatrix}0&3\\\\3&0\\end{bmatrix},\\quad D=0.$$\n求传递函数矩阵，判断内外部稳定性、能控性和能观性，并指出仅保留哪一个输入还可以控制全部状态。"
+      "search": "华北电力大学 211 2023 821 保定专硕 五(1)–(3) 状态空间 / 结构性质与实现 / 能控性与能观性 状态空间 / 能控能观 双输入双输出系统取\n$$A=\\operatorname{diag}(-5,-7),\\qquad B=\\begin{bmatrix}2&1\\\\3&0\\end{bmatrix},\\qquad C=\\begin{bmatrix}0&3\\\\3&0\\end{bmatrix},\\quad D=0.$$\n（1）求最简传递函数矩阵。（2）判断内外部稳定性、能控性及能观性。（3）只保留一个输入，哪个仍能控制全部状态？（4）写出四维能观标准型。"
     },
     {
       "id": 322891934382,

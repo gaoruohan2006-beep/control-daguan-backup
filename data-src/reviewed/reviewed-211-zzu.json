@@ -60,7 +60,7 @@
     "answerPages": "1489–1490",
     "stem": "系统的传递函数为 $G(s)=1/[s(s+1)(s+2)]$。（1）设计状态反馈将极点配置于 $-2,-1\\pm j$。（2）设计全维渐近状态观测器，使其三重误差极点为 $-5$。",
     "answer": "在下列能控标准型下，取 $u=v-Kx$，$K=[4\\quad4\\quad1]$，观测器增益为 $L=[12\\quad37\\quad-10]^{\\mathsf T}$。",
-    "explanation": "采用\n$$A=\\begin{bmatrix}0&1&0\\\\0&0&1\\\\0&-2&-3\\end{bmatrix},\\quad B=(0,0,1)^{\\mathsf T},\\quad C=[1\\quad0\\quad0].$$\n状态反馈只改变 $A$ 的末行。由目标分母 $(s+2)(s^2+2s+2)$ 比较系数，得到 $K$。\n\n观测器采用 $\\dot{\\hat x}=A\\hat x+Bu+L(y-C\\hat x)$，误差矩阵为 $A-LC$。其特征多项式为\n$$s^3+(3+l_1)s^2+(2+3l_1+l_2)s+2l_1+3l_2+l_3.$$\n与 $(s+5)^3=s^3+15s^2+75s+125$ 比较，得到 $l_1=12,l_2=37,l_3=-10$。",
+    "explanation": "采用\n$$A=\\begin{bmatrix}0&1&0\\\\0&0&1\\\\0&-2&-3\\end{bmatrix},\\quad B=(0,0,1)^{\\mathsf T},\\quad C=[1\\quad0\\quad0].$$\n状态反馈只改变 $A$ 的末行。由目标分母 $(s+2)(s^2+2s+2)$ 比较系数，得到 $K$。\n\n观测器采用 $\\dot{\\hat x}=A\\hat x+Bu+L(y-C\\hat x)$，误差矩阵为 $A-LC$。其特征多项式为\n$$s^3+(3+l_1)s^2+(2+3l_1+l_2)s+2l_1+3l_2+l_3.$$\n与 $(s+5)^3=s^3+15s^2+75s+125$ 比较，得到 $l_1=12,l_2=37,l_3=-10$。\n\n> **观测器配置可以转化为对偶反馈配置。** $(A-LC)^{\\mathsf T}=A^{\\mathsf T}-C^{\\mathsf T}L^{\\mathsf T}$。可对 $(A^{\\mathsf T},C^{\\mathsf T})$ 用状态反馈方法计算 $L^{\\mathsf T}$。",
     "notes": ""
   }
 ]
