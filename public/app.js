@@ -249,15 +249,6 @@ function renderTree() {
 }
 
 
-function errataHTML(d) {
-  const note = d?.notes || d?.referenceNote;
-  if (!note) return '';
-  const lv = d.errataLevel || '';
-  const title = d.notes ? (lv === 'ok' ? '已核对' : '勘误') : '校核说明';
-  const badge = lv === 'severe' ? '严重，原答案不可照抄' : lv === 'conflict' ? '题目矛盾，原答案不可照抄' : '';
-  const sev = lv === 'ok' ? 'ok' : (lv === 'severe' || lv === 'conflict') ? 'severe' : 'warn';
-  return `<aside class="note errata" data-sev="${sev}"><div class="errata-hd"><span class="errata-tag">${title}</span>${badge ? `<span class="errata-badge">${badge}</span>` : ''}</div><div class="errata-bd">${md(note)}</div></aside>`;
-}
 function origHTML(d) {
   if (!d?.originalImages.length) return '';
   const title = '原图解析';
@@ -293,7 +284,6 @@ function cardHTML(id, idx) {
   const sh = st.show[id] || {}; const mk = rec.marks[id]?.state; const fav = rec.favorites.includes(id);
   const hl = st.q && st.q.length > 0 ? st.q : null;
   let ans = '';
-  const noteHTML = errataHTML(d);
   const hasImgs = !!(d && d.originalImages.length);
   if (sh.answer) {
     let body = '加载中', tabs = '';
@@ -301,11 +291,11 @@ function cardHTML(id, idx) {
       if (d.answer && hasImgs) {
         const view = sh.ansSrc === 'orig' ? 'orig' : 'text';
         tabs = srcTabsHTML('answer', view);
-        body = view === 'orig' ? origHTML(d) : md(d.answer) + (!sh.exp ? noteHTML : '');
+        body = view === 'orig' ? origHTML(d) : md(d.answer);
       } else if (d.answer) {
-        body = md(d.answer) + (!sh.exp ? noteHTML : '');
+        body = md(d.answer);
       } else {
-        body = (sh.exp ? '<p class="muted">参考答案见下方「解析」中的原图。</p>' : origHTML(d)) + (!sh.exp ? noteHTML : '');
+        body = sh.exp ? '<p class="muted">参考答案见下方「解析」中的原图。</p>' : origHTML(d);
       }
     }
     ans += boxHTML('答案', 'answer', id, body, tabs);
@@ -316,9 +306,9 @@ function cardHTML(id, idx) {
       if (d.explanation && hasImgs) {
         const view = sh.expSrc === 'orig' ? 'orig' : 'text';
         tabs = srcTabsHTML('exp', view);
-        body = view === 'orig' ? origHTML(d) : md(d.explanation) + noteHTML;
+        body = view === 'orig' ? origHTML(d) : md(d.explanation);
       } else {
-        body = (d.explanation ? md(d.explanation) : '') + origHTML(d) + noteHTML;
+        body = (d.explanation ? md(d.explanation) : '') + origHTML(d);
       }
     }
     ans += boxHTML('解析', 'exp', id, body, tabs);
