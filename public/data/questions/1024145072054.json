@@ -1,0 +1,8 @@
+{
+  "answer": "$c_{\\rm ss}(t)=\\dfrac{1}{2\\sqrt2}\\sin(2t-45^\\circ)$，$e_{\\rm ss}(t)=\\dfrac{\\sqrt{10}}4\\sin(2t+\\arctan2-45^\\circ)$。",
+  "explanation": "**1. 分别求两个通道。** 闭环输出传递函数为 $\\Phi(s)=1/(s+2)$，误差传递函数为 $1-\\Phi(s)=(s+1)/(s+2)$。两者的极点都为 $-2$，因此可直接用正弦稳态频率响应。\n\n**2. 代入 $s=j2$。** 输出通道的幅值为 $1/\\sqrt{2^2+2^2}$，相角为 $-45^\\circ$。误差通道的分子为 $1+j2$，分母为 $2+j2$，因此幅值为 $\\sqrt5/\\sqrt8$，相角为 $\\arctan2-45^\\circ\\approx18.43^\\circ$。将各自幅值和相角作用到输入即可。",
+  "originalImages": [],
+  "answerPdfPages": "1017–1018",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

@@ -1,0 +1,8 @@
+{
+  "answer": "A，$Y/R=5/(s^2+12s+5)$。",
+  "explanation": "设中间信号为 $X$。积分器给出 $Y=X/s$，前一级给出 $(s+2)X=5(R-2X-Y)$。以 $X=sY$ 消去 $X$，得 $(s^2+12s+5)Y=5R$。",
+  "originalImages": [],
+  "answerPdfPages": "973",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

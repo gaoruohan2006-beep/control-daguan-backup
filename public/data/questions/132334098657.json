@@ -1,0 +1,8 @@
+{
+  "answer": "主导极点为 $-0.1$。保留直流增益的一阶近似为 $\\Phi_{\\rm red}(s)=2/(10s+1)$。",
+  "explanation": "另两个极点是 $-4\\pm j\\sqrt{84}$，对应衰减包络 $e^{-4t}$。实极点 $-0.1$ 的衰减速率为 $0.1$，且附近无零点对消，所以主导慢过程。在慢动态频段以二阶因子的直流值 $100$ 代替该因子，保留 $\\Phi(0)=2$，得到所列一阶模型。",
+  "originalImages": [],
+  "answerPdfPages": "1317",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

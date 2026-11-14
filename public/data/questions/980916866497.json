@@ -1,0 +1,8 @@
+{
+  "answer": "（1）$A=\\begin{bmatrix}0&1&0\\\\0&0&1\\\\0&-2&-3\\end{bmatrix}$，$B=(0,0,1)^{\\mathsf T}$，$C=[1\\quad0\\quad0]$。系统完全能控。\n\n（2）取 $u=v-Kx$，$K=[3\\quad2\\quad1]$。",
+  "explanation": "**1. 由原分母写出状态方程。** 分母为 $s^3+3s^2+2s$，取 $x_1=y,x_2=\\dot y,x_3=\\ddot y$ 即得标准型。$[B,AB,A^2B]$ 的三列分别为 $(0,0,1)^{\\mathsf T},(0,1,-3)^{\\mathsf T},(1,-3,7)^{\\mathsf T}$，行列式为 $-1$。\n\n**2. 比较闭环系数。** 目标多项式为 $(s+3)(s^2+s+1)=s^3+4s^2+4s+3$。在标准型中反馈只改变末行，故 $\\det(sI-A+BK)=s^3+(3+k_3)s^2+(2+k_2)s+k_1$。比较系数得 $K=[3\\quad2\\quad1]$，闭环方程为 $\\dot x_3=v-3x_1-4x_2-4x_3$。\n\n![闭环三积分器状态变量图](img/reviewed/211-ecust-2024-state.svg)",
+  "originalImages": [],
+  "answerPdfPages": "1200–1201",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

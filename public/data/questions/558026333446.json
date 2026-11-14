@@ -1,0 +1,8 @@
+{
+  "answer": "存在有限振幅谐波平衡解的条件为 $T_1+T_2>K_1K_2T_1T_2$。预测值为\n$$\\omega=\\frac1{\\sqrt{T_1T_2}},\\qquad A=\\frac{4MK_2T_1T_2}{\\pi(T_1+T_2-K_1K_2T_1T_2)}.$$",
+  "explanation": "**1. 化简线性内环。** 等效线性环节为\n$$G(s)=\\frac{K_2}{T_1T_2s^3+(T_1+T_2)s^2+s+K_1K_2}.$$\n外环满足 $1+N(A)G(j\\omega)=0$。乘开分母后，虚部为 $\\omega(1-T_1T_2\\omega^2)$，正频率解即 $\\omega=1/\\sqrt{T_1T_2}$。\n\n**2. 判定交点并求幅值。** 将频率代入实部方程，得 $K_2N(A)=(T_1+T_2)/(T_1T_2)-K_1K_2$。由于 $N(A)>0$，右边必须严格为正。再代入 $N(A)=4M/(\\pi A)$ 即得振幅。条件等号对应无穷振幅的极限。",
+  "originalImages": [],
+  "answerPdfPages": "1198–1199",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

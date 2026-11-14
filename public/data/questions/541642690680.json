@@ -1,0 +1,8 @@
+{
+  "answer": "$$\\Phi(t)=e^{-t}\\begin{bmatrix}1+t&t\\\\-t&1-t\\end{bmatrix},\\qquad\nx(t)=\\begin{bmatrix}3-(3t+2)e^{-t}\\\\-1+(3t-1)e^{-t}\\end{bmatrix}\\quad(t\\ge0).$$",
+  "explanation": "**1. 反变换。** $A$ 的特征多项式为 $(s+1)^2$，且\n$$(sI-A)^{-1}=\\frac1{(s+1)^2}\\begin{bmatrix}s+2&1\\\\-1&s\\end{bmatrix}\n=\\frac{I}{s+1}+\\frac{A+I}{(s+1)^2}.$$\n逐项逆变换即得 $\\Phi(t)$。\n\n**2. 把状态移到阶跃后的平衡点。** $t>0$ 时 $u=1$，令 $Ax_\\infty+B=0$，得 $x_\\infty=(3,-1)^{\\mathsf T}$。因此 $x(t)=x_\\infty+\\Phi(t)[x(0)-x_\\infty]$。将 $x(0)-x_\\infty=(-2,-1)^{\\mathsf T}$ 代入，即得上式。",
+  "originalImages": [],
+  "answerPdfPages": "1176",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

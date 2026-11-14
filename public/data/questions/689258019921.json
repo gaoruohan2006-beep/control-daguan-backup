@@ -1,0 +1,8 @@
+{
+  "answer": "（1）按指定变量，$\\dot x_1=x_2,\\ \\dot x_2=x_3,\\ \\dot x_3=-3x_1-7x_2-5x_3+2u+\\dot u$，$y=x_1$。\n\n（2）一种约旦实现为 $\\dot z_1=-z_1+z_2,\\ \\dot z_2=-z_2+u,\\ \\dot z_3=-3z_3+u$，$y=\\tfrac12 z_1+\\tfrac14 z_2-\\tfrac14 z_3$。",
+  "explanation": "**1. 处理输入导数。** 指定的第三个状态是 $\\ddot y$，所以 $\\dot x_3$ 直接含有 $\\dot u$。若需要输入只含 $u$ 的标准形式，可以改用第三个状态 $w_3=x_3-u$，于是 $\\dot x_2=w_3+u$、$\\dot w_3=-3x_1-7x_2-5w_3-3u$。\n\n**2. 按极点分解传递函数。** 零初值下\n$$\\frac{Y}{U}=\\frac{s+2}{(s+1)^2(s+3)}\n=\\frac{1}{2(s+1)^2}+\\frac{1}{4(s+1)}-\\frac{1}{4(s+3)}.$$\n令 $Z_2=U/(s+1)$、$Z_1=Z_2/(s+1)$、$Z_3=U/(s+3)$。变回时域得到两个串联的一阶环节和一个并联的一阶环节。重复极点 $-1$ 对应一个二阶约旦块。",
+  "originalImages": [],
+  "answerPdfPages": "1002–1003",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

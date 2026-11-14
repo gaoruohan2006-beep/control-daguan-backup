@@ -1,0 +1,8 @@
+{
+  "answer": "原点不稳定。",
+  "explanation": "直接计算得 $A^2=0$，且 $A\\ne0$，所以 $e^{At}=I+tA$。取任意小的初值 $x(0)=(\\varepsilon,0)^{\\mathsf T}$，则 $x(t)=(\\varepsilon(1+t),\\varepsilon t)^{\\mathsf T}$，随时间无界。由此可见，两个零特征值形成了非平凡约旦块。",
+  "originalImages": [],
+  "answerPdfPages": "1102",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

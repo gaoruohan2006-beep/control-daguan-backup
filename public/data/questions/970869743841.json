@@ -1,0 +1,8 @@
+{
+  "answer": "（1）$y^{(3)}-3\\dot y+2y=\\ddot u+5\\dot u-3u$。\n\n（2）可取 $\\dot z_1=z_1+z_2,\\ \\dot z_2=z_2+u,\\ \\dot z_3=-2z_3+u$，$y=z_1+2z_2-z_3$。",
+  "explanation": "**1. 交叉相乘。** 分母展开为 $s^3-3s+2$。从 $(s^3-3s+2)Y=(s^2+5s-3)U$ 得到对应的微分方程。\n\n**2. 拆成约旦块。** 部分分式为\n$$G(s)=\\frac1{(s-1)^2}+\\frac2{s-1}-\\frac1{s+2}.$$\n取 $Z_2=U/(s-1)$、$Z_1=Z_2/(s-1)$、$Z_3=U/(s+2)$。前两状态组成特征值 $1$ 的二阶约旦块，第三状态对应 $-2$，由分式系数得到输出方程。",
+  "originalImages": [],
+  "answerPdfPages": "1175",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

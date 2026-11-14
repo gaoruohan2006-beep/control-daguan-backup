@@ -1,0 +1,8 @@
+{
+  "answer": "令 $\\alpha=\\ln(100/3)/0.6$、$\\omega_d=\\pi/0.6$，则 $K=\\alpha^2+\\omega_d^2\\approx61.57$，$T=(2\\alpha-1)/K\\approx0.174\\,\\mathrm{s}$。",
+  "explanation": "闭环传递函数为 $K/[s^2+(1+KT)s+K]$。对无零点的欠阻尼二阶系统，设极点为 $-\\alpha\\pm j\\omega_d$，则 $t_p=\\pi/\\omega_d$，相对超调量为 $e^{-\\alpha t_p}$。由题设直接求得 $\\omega_d=\\pi/0.6$ 和 $\\alpha=-\\ln(0.03)/0.6$。\n\n将极点写成特征多项式 $s^2+2\\alpha s+\\alpha^2+\\omega_d^2$，比较一次项和常数项即得 $K,T$。\n\n> **已知超调和峰值时间，可直接求极点。** 先由峰值时间定虚部，再由 $\\alpha=-\\ln M_p/t_p$ 定实部，可省去单独反求阻尼比的步骤。",
+  "originalImages": [],
+  "answerPdfPages": "1058",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

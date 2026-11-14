@@ -1,0 +1,66 @@
+[
+  {
+    "school": "华东理工大学",
+    "tier": "211",
+    "year": 2023,
+    "variant": "816",
+    "number": "三",
+    "topics": [
+      "频域分析 / 稳定裕度"
+    ],
+    "questionPages": "473",
+    "answerPages": "1184–1185",
+    "stem": "单位负反馈系统的前向传递函数为 $G(s)=K/[s(s+b)]$，$K,b>0$。当输入 $r(t)=\\sin t$ 时，稳态输出为 $c(t)=\\sin(t-45^\\circ)$。（1）概略画出开环幅相特性曲线并判稳。（2）求相角裕度。",
+    "answer": "$K=2+\\sqrt2,\\ b=1+\\sqrt2$。闭环稳定。开环增益交越频率约为 $1.255\\,\\mathrm{rad/s}$，相角裕度约为 $62.54^\\circ$。幅相特性曲线见解析。",
+    "explanation": "**1. 用闭环频率响应反求参数。** $\\Phi(s)=K/(s^2+bs+K)$。由题设 $\\Phi(j)=e^{-j45^\\circ}$，取倒数得 $(K-1+jb)/K=(1+j)/\\sqrt2$，即得 $K,b$。\n\n**2. 画开环频率响应并判稳。** $G(j\\omega)$ 的实部为 $-K/(b^2+\\omega^2)$，虚部为 $-Kb/[\\omega(b^2+\\omega^2)]$。正频率分支从实部 $-K/b^2$、虚部 $-\\infty$ 向原点移动。由于 $K/b^2=2-\\sqrt2<1$，两条频率分支均在 $-1$ 的右侧。绕过原点极点的右半平面小半圆映射到右侧大半圆，完整曲线对 $-1$ 无环绕。闭环分母 $s^2+bs+K$ 也给出同一稳定结论。\n\n![开环正负频率幅相曲线](img/reviewed/211-ecust-2023-nyquist.svg)\n\n**3. 求相角裕度。** 由 $\\omega_c^2(\\omega_c^2+b^2)=K^2$ 求 $\\omega_c$，再代入 $\\gamma=90^\\circ-\\arctan(\\omega_c/b)$，得 $62.54^\\circ$。",
+    "notes": ""
+  },
+  {
+    "school": "华东理工大学",
+    "tier": "211",
+    "year": 2024,
+    "variant": "816",
+    "number": "七",
+    "topics": [
+      "非线性系统 / 自振"
+    ],
+    "questionPages": "477",
+    "answerPages": "1198–1199",
+    "stem": "图示系统的外环为单位负反馈，理想继电器描述函数为 $N(A)=4M/(\\pi A)$。线性对象为 $P(s)=K_2/[s(T_1s+1)(T_2s+1)]$，对象输出经 $K_1$ 作内负反馈。各参数均为正。按描述函数法求有限振幅自振的条件、角频率和振幅。\n\n![继电器与带内负反馈的三阶对象](img/reviewed/211-ecust-2024-relay.svg)",
+    "answer": "存在有限振幅谐波平衡解的条件为 $T_1+T_2>K_1K_2T_1T_2$。预测值为\n$$\\omega=\\frac1{\\sqrt{T_1T_2}},\\qquad A=\\frac{4MK_2T_1T_2}{\\pi(T_1+T_2-K_1K_2T_1T_2)}.$$",
+    "explanation": "**1. 化简线性内环。** 等效线性环节为\n$$G(s)=\\frac{K_2}{T_1T_2s^3+(T_1+T_2)s^2+s+K_1K_2}.$$\n外环满足 $1+N(A)G(j\\omega)=0$。乘开分母后，虚部为 $\\omega(1-T_1T_2\\omega^2)$，正频率解即 $\\omega=1/\\sqrt{T_1T_2}$。\n\n**2. 判定交点并求幅值。** 将频率代入实部方程，得 $K_2N(A)=(T_1+T_2)/(T_1T_2)-K_1K_2$。由于 $N(A)>0$，右边必须严格为正。再代入 $N(A)=4M/(\\pi A)$ 即得振幅。条件等号对应无穷振幅的极限。",
+    "notes": ""
+  },
+  {
+    "school": "华东理工大学",
+    "tier": "211",
+    "year": 2024,
+    "variant": "816",
+    "number": "八",
+    "topics": [
+      "状态空间 / 状态反馈"
+    ],
+    "questionPages": "477",
+    "answerPages": "1200–1201",
+    "stem": "已知 $G(s)=1/[s(s+1)(s+2)]$。（1）写出能控标准型并判断能控性。（2）设计状态反馈，使闭环极点为 $-3,-1/2\\pm j\\sqrt3/2$，并画出状态变量图。",
+    "answer": "（1）$A=\\begin{bmatrix}0&1&0\\\\0&0&1\\\\0&-2&-3\\end{bmatrix}$，$B=(0,0,1)^{\\mathsf T}$，$C=[1\\quad0\\quad0]$。系统完全能控。\n\n（2）取 $u=v-Kx$，$K=[3\\quad2\\quad1]$。",
+    "explanation": "**1. 由原分母写出状态方程。** 分母为 $s^3+3s^2+2s$，取 $x_1=y,x_2=\\dot y,x_3=\\ddot y$ 即得标准型。$[B,AB,A^2B]$ 的三列分别为 $(0,0,1)^{\\mathsf T},(0,1,-3)^{\\mathsf T},(1,-3,7)^{\\mathsf T}$，行列式为 $-1$。\n\n**2. 比较闭环系数。** 目标多项式为 $(s+3)(s^2+s+1)=s^3+4s^2+4s+3$。在标准型中反馈只改变末行，故 $\\det(sI-A+BK)=s^3+(3+k_3)s^2+(2+k_2)s+k_1$。比较系数得 $K=[3\\quad2\\quad1]$，闭环方程为 $\\dot x_3=v-3x_1-4x_2-4x_3$。\n\n![闭环三积分器状态变量图](img/reviewed/211-ecust-2024-state.svg)",
+    "notes": ""
+  },
+  {
+    "school": "华东理工大学",
+    "tier": "211",
+    "year": 2025,
+    "variant": "816",
+    "number": "八",
+    "topics": [
+      "状态空间 / 状态反馈"
+    ],
+    "questionPages": "481",
+    "answerPages": "1209–1211",
+    "stem": "两个线性系统分别为\n$$\\begin{aligned}\n\\Sigma_1:\\quad &\\dot z_1=\\begin{bmatrix}0&1\\\\-3&-4\\end{bmatrix}z_1+\\begin{bmatrix}0\\\\1\\end{bmatrix}u_1,\\quad y_1=[-2\\quad-1]z_1,\\\\\n\\Sigma_2:\\quad &\\dot z_2=-2z_2+u_2,\\quad y_2=-z_2.\n\\end{aligned}$$\n取 $u_2=y_1$。（1）求增广状态方程。（2）判断能控性。（3）作能控性分解。（4）判断能否通过状态反馈配置极点 $-4,-2,-2$，若能，求反馈矩阵并画状态变量图。",
+    "answer": "以 $u_1$ 为输入、串联末端 $y_2$ 为输出，令 $x=(z_{11},z_{12},z_2)^{\\mathsf T}$，则\n$$A=\\begin{bmatrix}0&1&0\\\\-3&-4&0\\\\-2&-1&-2\\end{bmatrix},\\quad\nB=\\begin{bmatrix}0\\\\1\\\\0\\end{bmatrix},\\quad C=[0\\quad0\\quad-1].$$\n能控秩为 2。可配置所给极点，取 $u_1=v-Kx$，$K=[5\\quad2\\quad0]$。",
+    "explanation": "**1. 代入串联关系。** 第三行由 $\\dot z_2=-2z_2-2z_{11}-z_{12}$ 得到。如果采用参考解的输出约定 $y=y_1+y_2$，则只需把 $C$ 换为 $[-2\\quad-1\\quad-1]$，以下能控性与反馈结论相同。\n\n**2. 提取能控子空间。** $B=(0,1,0)^{\\mathsf T}$，$AB=(1,-4,-1)^{\\mathsf T}$，且 $A^2B=-3B-4AB$。取 $P=[B,AB,(0,0,1)^{\\mathsf T}]$，令 $x=P\\xi$，得到\n$$\\dot\\xi=\\begin{bmatrix}0&-3&0\\\\1&-4&0\\\\0&0&-2\\end{bmatrix}\\xi+\n\\begin{bmatrix}1\\\\0\\\\0\\end{bmatrix}u_1,\\qquad y_2=[0\\quad1\\quad-1]\\xi.$$\n前两维能控，第三维的极点 $-2$ 固定。\n\n**3. 配置可控的两个极点。** 目标的另一组极点为 $-4,-2$，其多项式为 $s^2+6s+8$。在原坐标中取 $k_3=0$，前两维闭环多项式为 $s^2+(4+k_2)s+3+k_1$，所以 $k_2=2,k_1=5$。\n\n![串联系统配置极点后的状态变量图](img/reviewed/211-ecust-2025-cascade.svg)",
+    "notes": ""
+  }
+]

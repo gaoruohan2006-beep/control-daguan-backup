@@ -1,0 +1,8 @@
+{
+  "answer": "$g_{\\rm cl}(t)=\\frac43(e^{-t}-e^{-4t})$（$t\\ge0$）。",
+  "explanation": "闭环传递函数 $\\Phi=G/(1+G)=4/(s^2+5s+4)=4/[(s+1)(s+4)]$。在单位脉冲下输出的拉普拉斯变换为 $\\Phi(s)$，按部分分式分解成 $(4/3)[1/(s+1)-1/(s+4)]$ 即得。",
+  "originalImages": [],
+  "answerPdfPages": "1336",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

@@ -1,0 +1,8 @@
+{
+  "answer": "$c[2]=2K$，$t_s=2T$。",
+  "explanation": "将 $\\Phi(z)$ 写成 $Kz^{-1}+Kz^{-2}$。两个因子分别表示延迟一拍和两拍，所以 $c[n]=Kr[n-1]+Kr[n-2]$。单位阶跃满足 $r[n]=1$（$n\\ge0$），故 $c[0]=0,c[1]=K$，从 $n=2$ 起始终等于终值 $2K$，在第二拍调节完成。",
+  "originalImages": [],
+  "answerPdfPages": "1336",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

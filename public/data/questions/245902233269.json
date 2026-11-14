@@ -1,0 +1,8 @@
+{
+  "answer": "（1）$0<K<14$。（2）$27/40<K<24/5$。",
+  "explanation": "特征多项式化为首一形式 $s^3+14s^2+40s+40K$。由劳斯判据，$40K>0$ 且 $14\\cdot40>40K$，得到第一问。为检查 $s=-1$ 左侧，令 $s=z-1$ 得 $z^3+11z^2+15z+40K-27$，其劳斯条件为 $0<40K-27<165$，得到第二问。",
+  "originalImages": [],
+  "answerPdfPages": "1115–1116",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

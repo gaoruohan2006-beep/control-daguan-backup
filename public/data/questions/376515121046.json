@@ -1,0 +1,8 @@
+{
+  "answer": "$A=\\begin{bmatrix}0&1\\\\-2&3\\end{bmatrix}$，$y(t)=(e^t-e^{-2t})/3$（$t\\ge0$）。",
+  "explanation": "**1. 由逆矩阵的导数求 $A$。** 因 $\\Phi(t)^{-1}=e^{-At}$，其在 $t=0$ 的导数为 $-A$。逐项求导后取负即得所列矩阵。\n\n**2. 检查输入激发的模态。** $Ab=(1,1)^{\\mathsf T}=b$，所以 $b$ 在特征值 $1$ 的方向上。由零初值响应公式\n$$x(t)=\\int_0^t e^{A(t-\\tau)}b\\,e^{-2\\tau}\\,d\\tau=b e^t\\int_0^t e^{-3\\tau}\\,d\\tau.$$\n又 $cb=1$，故 $y(t)=(e^t-e^{-2t})/3$。",
+  "originalImages": [],
+  "answerPdfPages": "1112–1113",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

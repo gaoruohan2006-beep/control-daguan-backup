@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 158" width="540" height="158" role="img" aria-labelledby="title">
+<title id="title">误差采样与零阶保持的单位负反馈系统</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 1L10 5 0 9z" fill="context-stroke"/></marker></defs>
+<style>
+.wire,.part,.axis,.guide,.curve,.curve2{stroke:#18222b;stroke-width:1.65;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.part{fill:#fff}.axis{stroke:#627284;stroke-width:1.4}.guide{stroke:#8794a1;stroke-dasharray:5 5;stroke-width:1.2}
+.curve{stroke:#174c85;stroke-width:2.2}.curve2{stroke:#487298;stroke-width:1.8;stroke-dasharray:5 4}
+.dot{fill:#18222b}.math,.plain{font:16px "Times New Roman","SimSun",serif;fill:#18222b}
+.plain{font-family:"SimSun","Noto Serif CJK SC",serif}.small{font:14px "Times New Roman","SimSun",serif;fill:#18222b}
+</style>
+<rect width="100%" height="100%" fill="#fff"/>
+<text x="26" y="42" class="math" text-anchor="middle">r(t)</text>
+<polyline class="wire" points="15.00,56.00 67.00,56.00" marker-end="url(#arrow)"/>
+<circle cx="77" cy="56" r="10" class="part"/>
+<polyline class="wire" points="71.00,50.00 83.00,62.00"/>
+<polyline class="wire" points="71.00,62.00 83.00,50.00"/>
+<text x="58" y="49" class="math" text-anchor="middle">+</text>
+<text x="90" y="81" class="math" text-anchor="middle">−</text>
+<polyline class="wire" points="87.00,56.00 142.00,56.00"/>
+<circle cx="142" cy="56" r="3" class="part"/>
+<polyline class="wire" points="144.00,54.00 172.00,39.00"/>
+<circle cx="176" cy="56" r="3" class="part"/>
+<text x="156" y="81" class="math" text-anchor="middle">T</text>
+<text x="190" y="42" class="math" text-anchor="middle">e*(t)</text>
+<polyline class="wire" points="179.00,56.00 220.00,56.00" marker-end="url(#arrow)"/>
+<rect x="220" y="33" width="106" height="46" class="part"/>
+<text x="273.0" y="50" class="math" text-anchor="middle">1 − exp(−Ts)</text>
+<polyline class="wire" points="228.00,56.00 318.00,56.00"/>
+<text x="273.0" y="73" class="math" text-anchor="middle">s</text>
+<polyline class="wire" points="326.00,56.00 366.00,56.00" marker-end="url(#arrow)"/>
+<rect x="366" y="33" width="85" height="46" class="part"/>
+<text x="408.5" y="50" class="math" text-anchor="middle">k</text>
+<polyline class="wire" points="374.00,56.00 443.00,56.00"/>
+<text x="408.5" y="73" class="math" text-anchor="middle">s(s + 1)</text>
+<polyline class="wire" points="451.00,56.00 521.00,56.00" marker-end="url(#arrow)"/>
+<text x="509" y="43" class="math" text-anchor="middle">c(t)</text>
+<circle cx="479" cy="56" r="3" class="dot"/>
+<polyline class="wire" points="479.00,56.00 479.00,130.00 77.00,130.00 77.00,66.00" marker-end="url(#arrow)"/>
+</svg>

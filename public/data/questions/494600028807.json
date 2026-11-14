@@ -1,0 +1,8 @@
+{
+  "answer": "（1）$\\Phi(t)=e^{-t}\\begin{bmatrix}\\cos t+\\sin t&2\\sin t\\\\-\\sin t&\\cos t-\\sin t\\end{bmatrix}$。\n\n（2）$b<0$ 时原点全局渐近稳定，$b>0$ 时不稳定。",
+  "explanation": "**1. 求矩阵指数。** 当 $b=-2$ 时，写 $A=-I+N$，其中 $N=A+I$ 满足 $N^2=-I$。指数级数的偶次项合成 $\\cos t$，奇次项合成 $N\\sin t$，所以 $e^{At}=e^{-t}(I\\cos t+N\\sin t)$。\n\n**2. 构造李雅普诺夫函数。** 取 $V=x_1^2+2x_2^2$，则 $\\dot V=4bx_2^2$。$b<0$ 时，$\\dot V\\le0$，且在 $x_2=0,x_1\\ne0$ 处有 $\\dot x_2=-x_1\\ne0$。原点是零导数集合中的最大不变集，故由 LaSalle 原理得全局渐近稳定。$b>0$ 时，反向时间系统的 $V$ 导数为 $-4bx_2^2$，同理在反向时间全局渐近稳定。取任意非零状态，将其反向演化足够久便能靠近原点。这个小状态沿正向时间又会回到原来的非零状态，因此正向系统的原点不稳定。",
+  "originalImages": [],
+  "answerPdfPages": "1158",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

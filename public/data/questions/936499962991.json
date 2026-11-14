@@ -1,0 +1,8 @@
+{
+  "answer": "$k<-1/2$。",
+  "explanation": "伴随矩阵 $A$ 的特征多项式为 $s^3+2s^2-ks+1$。用劳斯判据，首列为 $1,2,(-2k-1)/2,1$，故渐近稳定当且仅当 $-2k-1>0$。等号时分母为 $(s+2)(s^2+1/2)$，含一对虚轴根。",
+  "originalImages": [],
+  "answerPdfPages": "1102",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

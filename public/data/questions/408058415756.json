@@ -1,0 +1,8 @@
+{
+  "answer": "C，比例积分（PI）。",
+  "explanation": "反相端为虚地，输入阻抗为 $R$，反馈电阻 $P$ 与电容 $C$ 串联，反馈阻抗为 $Z_f=P+1/(Cs)$。因此 $U_o/U_i=-Z_f/R=-P/R-1/(RCs)$。比例项和积分项相加，负号来自反相接法。",
+  "originalImages": [],
+  "answerPdfPages": "963",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

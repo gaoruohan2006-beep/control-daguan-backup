@@ -1,0 +1,8 @@
+{
+  "answer": "$G(s)=\\dfrac{s(s+1)}{s^2+2s+5}$。按题面“单位阶跃响应”计算，四个选项均不符合。",
+  "explanation": "对输出作拉普拉斯变换得到 $C(s)=(s+1)/[(s+1)^2+4]$。零状态单位阶跃输入为 $R(s)=1/s$，所以 $G(s)=sC(s)$。若将题面中的响应改为单位脉冲响应，则 $R(s)=1$，此时才对应参考答案 A。",
+  "originalImages": [],
+  "answerPdfPages": "973",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

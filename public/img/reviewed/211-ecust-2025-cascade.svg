@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 316" width="600" height="316" role="img" aria-labelledby="title">
+<title id="title">串联系统配置极点后的状态变量图</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 1L10 5 0 9z" fill="context-stroke"/></marker></defs>
+<style>
+.wire,.part,.axis,.guide,.curve,.curve2{stroke:#18222b;stroke-width:1.65;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.part{fill:#fff}.axis{stroke:#627284;stroke-width:1.4}.guide{stroke:#8794a1;stroke-dasharray:5 5;stroke-width:1.2}
+.curve{stroke:#174c85;stroke-width:2.2}.curve2{stroke:#487298;stroke-width:1.8;stroke-dasharray:5 4}
+.dot{fill:#18222b}.math,.plain{font:16px "Times New Roman","SimSun",serif;fill:#18222b}
+.plain{font-family:"SimSun","Noto Serif CJK SC",serif}.small{font:14px "Times New Roman","SimSun",serif;fill:#18222b}
+</style>
+<rect width="100%" height="100%" fill="#fff"/>
+<text x="28" y="41" class="math" text-anchor="middle">v</text>
+<polyline class="wire" points="16.00,54.00 68.00,54.00" marker-end="url(#arrow)"/>
+<circle cx="78" cy="54" r="10" class="part"/>
+<polyline class="wire" points="72.00,48.00 84.00,60.00"/>
+<polyline class="wire" points="72.00,60.00 84.00,48.00"/>
+<text x="58" y="46" class="math" text-anchor="middle">+</text>
+<polyline class="wire" points="88.00,54.00 132.00,54.00" marker-end="url(#arrow)"/>
+<rect x="132" y="36" width="60" height="36" class="part"/>
+<text x="162.0" y="59" class="math" text-anchor="middle">1/s</text>
+<polyline class="wire" points="192.00,54.00 307.00,54.00" marker-end="url(#arrow)"/>
+<text x="224" y="43" class="math" text-anchor="middle">x₂</text>
+<rect x="307" y="36" width="60" height="36" class="part"/>
+<text x="337.0" y="59" class="math" text-anchor="middle">1/s</text>
+<polyline class="wire" points="367.00,54.00 474.00,54.00" marker-end="url(#arrow)"/>
+<text x="411" y="43" class="math" text-anchor="middle">x₁</text>
+<circle cx="215" cy="54" r="3" class="dot"/>
+<circle cx="405" cy="54" r="3" class="dot"/>
+<rect x="149" y="99" width="296" height="34" class="part"/>
+<text x="296" y="121" class="math" text-anchor="middle">−6x₂ − 8x₁</text>
+<polyline class="wire" points="215.00,54.00 215.00,99.00" marker-end="url(#arrow)"/>
+<polyline class="wire" points="405.00,54.00 405.00,99.00" marker-end="url(#arrow)"/>
+<polyline class="wire" points="149.00,116.00 78.00,116.00 78.00,64.00" marker-end="url(#arrow)"/>
+<text x="96" y="74" class="math" text-anchor="middle">+</text>
+<polyline class="wire" points="215.00,81.00 125.00,81.00 125.00,111.00"/>
+<polyline class="wire" points="125.00,121.00 125.00,192.00 173.00,192.00 173.00,211.00" marker-end="url(#arrow)"/>
+<circle cx="215" cy="81" r="3" class="dot"/>
+<polyline class="wire" points="405.00,81.00 476.00,81.00 476.00,176.00 272.00,176.00 272.00,211.00" marker-end="url(#arrow)"/>
+<circle cx="405" cy="81" r="3" class="dot"/>
+<rect x="149" y="211" width="176" height="37" class="part"/>
+<text x="237" y="234" class="math" text-anchor="middle">−x₂ − 2x₁ − 2x₃</text>
+<polyline class="wire" points="325.00,229.00 358.00,229.00" marker-end="url(#arrow)"/>
+<rect x="358" y="211" width="58" height="36" class="part"/>
+<text x="387.0" y="234" class="math" text-anchor="middle">1/s</text>
+<polyline class="wire" points="416.00,229.00 486.00,229.00" marker-end="url(#arrow)"/>
+<text x="448" y="216" class="math" text-anchor="middle">x₃</text>
+<rect x="486" y="211" width="49" height="36" class="part"/>
+<text x="510.5" y="234" class="math" text-anchor="middle">−1</text>
+<polyline class="wire" points="535.00,229.00 578.00,229.00" marker-end="url(#arrow)"/>
+<text x="569" y="215" class="math" text-anchor="middle">y₂</text>
+<circle cx="449" cy="229" r="3" class="dot"/>
+<polyline class="wire" points="449.00,229.00 449.00,276.00 237.00,276.00 237.00,248.00" marker-end="url(#arrow)"/>
+</svg>

@@ -1,0 +1,8 @@
+{
+  "answer": "$G(s)=10/(s+0.2)+5/(s+0.5)=(15s+6)/[(s+0.2)(s+0.5)]$。",
+  "explanation": "因输入是单位脉冲，其拉普拉斯变换为 $1$，所以零状态输出的拉普拉斯变换就是传递函数。两个指数项分别变为 $10/(s+0.2)$、$5/(s+0.5)$，利用线性叠加相加。",
+  "originalImages": [],
+  "answerPdfPages": "1317",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

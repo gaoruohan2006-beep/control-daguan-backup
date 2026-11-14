@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 565 188" width="565" height="188" role="img" aria-labelledby="title">
+<title id="title">继电器与带内负反馈的三阶对象</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 1L10 5 0 9z" fill="context-stroke"/></marker></defs>
+<style>
+.wire,.part,.axis,.guide,.curve,.curve2{stroke:#18222b;stroke-width:1.65;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.part{fill:#fff}.axis{stroke:#627284;stroke-width:1.4}.guide{stroke:#8794a1;stroke-dasharray:5 5;stroke-width:1.2}
+.curve{stroke:#174c85;stroke-width:2.2}.curve2{stroke:#487298;stroke-width:1.8;stroke-dasharray:5 4}
+.dot{fill:#18222b}.math,.plain{font:16px "Times New Roman","SimSun",serif;fill:#18222b}
+.plain{font-family:"SimSun","Noto Serif CJK SC",serif}.small{font:14px "Times New Roman","SimSun",serif;fill:#18222b}
+</style>
+<rect width="100%" height="100%" fill="#fff"/>
+<text x="29" y="86" class="math" text-anchor="middle">r(t)</text>
+<polyline class="wire" points="17.00,101.00 67.00,101.00" marker-end="url(#arrow)"/>
+<circle cx="77" cy="101" r="10" class="part"/>
+<polyline class="wire" points="71.00,95.00 83.00,107.00"/>
+<polyline class="wire" points="71.00,107.00 83.00,95.00"/>
+<text x="58" y="94" class="math" text-anchor="middle">+</text>
+<text x="90" y="126" class="math" text-anchor="middle">−</text>
+<polyline class="wire" points="87.00,101.00 140.00,101.00" marker-end="url(#arrow)"/>
+<rect x="140" y="75" width="85" height="52" class="part"/>
+<polyline class="axis" points="149.00,101.00 217.00,101.00" marker-end="url(#arrow)"/>
+<polyline class="axis" points="178.00,120.00 178.00,81.00" marker-end="url(#arrow)"/>
+<polyline class="curve" points="152.00,113.00 178.00,113.00 178.00,89.00 205.00,89.00"/>
+<text x="211" y="88" class="small" text-anchor="middle">M</text>
+<text x="201" y="121" class="small" text-anchor="middle">−M</text>
+<polyline class="wire" points="225.00,101.00 272.00,101.00" marker-end="url(#arrow)"/>
+<circle cx="282" cy="101" r="10" class="part"/>
+<polyline class="wire" points="276.00,95.00 288.00,107.00"/>
+<polyline class="wire" points="276.00,107.00 288.00,95.00"/>
+<text x="264" y="93" class="math" text-anchor="middle">+</text>
+<text x="298" y="88" class="math" text-anchor="middle">−</text>
+<polyline class="wire" points="292.00,101.00 331.00,101.00" marker-end="url(#arrow)"/>
+<rect x="331" y="78" width="134" height="46" class="part"/>
+<text x="398.0" y="95" class="math" text-anchor="middle">K₂</text>
+<polyline class="wire" points="339.00,101.00 457.00,101.00"/>
+<text x="398.0" y="118" class="math" text-anchor="middle">s(T₁s + 1)(T₂s + 1)</text>
+<polyline class="wire" points="465.00,101.00 545.00,101.00" marker-end="url(#arrow)"/>
+<text x="542" y="87" class="math" text-anchor="middle">c(t)</text>
+<circle cx="498" cy="101" r="3" class="dot"/>
+<rect x="369" y="24" width="58" height="26" class="part"/>
+<text x="398" y="42" class="math" text-anchor="middle">K₁</text>
+<polyline class="wire" points="498.00,101.00 498.00,37.00 427.00,37.00" marker-end="url(#arrow)"/>
+<polyline class="wire" points="369.00,37.00 282.00,37.00 282.00,91.00" marker-end="url(#arrow)"/>
+<polyline class="wire" points="498.00,101.00 498.00,159.00 77.00,159.00 77.00,111.00" marker-end="url(#arrow)"/>
+</svg>

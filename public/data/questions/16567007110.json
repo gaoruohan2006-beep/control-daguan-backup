@@ -1,0 +1,8 @@
+{
+  "answer": "$K=2+\\sqrt2,\\ b=1+\\sqrt2$。闭环稳定。开环增益交越频率约为 $1.255\\,\\mathrm{rad/s}$，相角裕度约为 $62.54^\\circ$。幅相特性曲线见解析。",
+  "explanation": "**1. 用闭环频率响应反求参数。** $\\Phi(s)=K/(s^2+bs+K)$。由题设 $\\Phi(j)=e^{-j45^\\circ}$，取倒数得 $(K-1+jb)/K=(1+j)/\\sqrt2$，即得 $K,b$。\n\n**2. 画开环频率响应并判稳。** $G(j\\omega)$ 的实部为 $-K/(b^2+\\omega^2)$，虚部为 $-Kb/[\\omega(b^2+\\omega^2)]$。正频率分支从实部 $-K/b^2$、虚部 $-\\infty$ 向原点移动。由于 $K/b^2=2-\\sqrt2<1$，两条频率分支均在 $-1$ 的右侧。绕过原点极点的右半平面小半圆映射到右侧大半圆，完整曲线对 $-1$ 无环绕。闭环分母 $s^2+bs+K$ 也给出同一稳定结论。\n\n![开环正负频率幅相曲线](img/reviewed/211-ecust-2023-nyquist.svg)\n\n**3. 求相角裕度。** 由 $\\omega_c^2(\\omega_c^2+b^2)=K^2$ 求 $\\omega_c$，再代入 $\\gamma=90^\\circ-\\arctan(\\omega_c/b)$，得 $62.54^\\circ$。",
+  "originalImages": [],
+  "answerPdfPages": "1184–1185",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

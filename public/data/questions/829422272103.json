@@ -1,0 +1,8 @@
+{
+  "answer": "A，系统的结构和参数。",
+  "explanation": "对连续时间线性定常系统，内部渐近稳定性由齐次状态方程 $\\dot x=Ax$ 决定。$A$ 的特征值决定各个自由响应模态衰减、保持还是增长。系统结构和参数决定 $A$，初始状态决定各模态在具体响应中的权重。",
+  "originalImages": [],
+  "answerPdfPages": "963",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

@@ -1,0 +1,8 @@
+{
+  "answer": "两个。",
+  "explanation": "劳斯表的前两行为 $(1,-3,-4)$ 和 $(3,-9,1)$。$s^3$ 行首项为 $0$，同一行第二项为 $-13/3$。用 $\\varepsilon>0$ 替换首项，$s^2$ 行第一项为 $-9+13/\\varepsilon$，记为 $b$，当 $\\varepsilon$ 足够小时为正。$s^1$ 行首项为 $-13/3-\\varepsilon/b<0$，末行为 $1$。因此首列符号为 $+,+,+,+,-,+$，共有两次变号。",
+  "originalImages": [],
+  "answerPdfPages": "1326",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

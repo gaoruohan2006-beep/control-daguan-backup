@@ -1,0 +1,8 @@
+{
+  "answer": "$c_{\\rm ss}(t)=\\sqrt{10}\\,\\sin(3t-\\arctan 1-\\arctan(1/2))\\approx3.162\\sin(3t-71.57^\\circ)$。",
+  "explanation": "变换脉冲响应得到 $G(s)=6/(s+3)-6/(s+6)=18/[(s+3)(s+6)]$。在 $\\omega=3$ 处，两因子的幅值分别为 $3\\sqrt2$ 和 $3\\sqrt5$，相角分别为 $\\arctan1$、$\\arctan(1/2)$。乘上输入振幅 $5$ 后给出输出振幅 $5\\cdot 2/\\sqrt{10}=\\sqrt{10}$，相位扣除两个分母相角。",
+  "originalImages": [],
+  "answerPdfPages": "1058–1059",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

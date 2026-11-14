@@ -1,0 +1,8 @@
+{
+  "answer": "$c_{\\rm ss}(t)=\\dfrac{1}{\\sqrt2}\\cos(t+75^\\circ)$。",
+  "explanation": "闭环传递函数 $\\Phi(s)=G/(1+G)=s/[2(s+1)]$。其极点为 $-1$。在 $\\omega=1$ 时，$\\Phi(j)=j/[2(1+j)]=(1+j)/4$，幅值为 $1/(2\\sqrt2)$，相位为 $45^\\circ$。乘输入幅值并叠加相位即得结果。",
+  "originalImages": [],
+  "answerPdfPages": "1042",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

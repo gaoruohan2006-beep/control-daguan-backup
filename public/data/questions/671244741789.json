@@ -1,0 +1,8 @@
+{
+  "answer": "$$\\frac{U_o}{U_i}=\\frac{Ls+R_2}{(1+R_1 Cs)(Ls+R_2)+R_1}.$$\n$$\\dot x=\\begin{bmatrix}-1/(R_1C)&-1/C\\\\1/L&-R_2/L\\end{bmatrix}x\n+\\begin{bmatrix}1/(R_1C)\\\\0\\end{bmatrix}u_i,\\qquad u_o=[1\\quad 0]x.$$",
+  "explanation": "**1. 写两个储能元件的方程。** 对输出节点列电流方程 $(u_i-u_o)/R_1=C\\dot u_o+i_L$。沿电感与电阻串联支路列电压方程 $u_o=L\\dot i_L+R_2i_L$。解出两个导数，按题给顺序排列即得状态方程。\n\n**2. 消去电感电流。** 零初值下 $I_L=U_o/(Ls+R_2)$。代入节点方程可得 $U_i=[1+R_1Cs+R_1/(Ls+R_2)]U_o$。通分得到传递函数。",
+  "originalImages": [],
+  "answerPdfPages": "980",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

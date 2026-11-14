@@ -1,0 +1,8 @@
+{
+  "answer": "$U_o/U_i=1/(RCs+1)$，$Y/X=1/[(b/k)s+1]$。两者均为单位静态增益的一阶系统，时间常数分别为 $RC$、$b/k$。",
+  "explanation": "**电路。** 电容电流为 $C\\dot u_o$，电阻压降为 $RC\\dot u_o$。由回路电压关系得 $RC\\dot u_o+u_o=u_i$。\n\n**机械系统。** 输出节点没有质量，弹簧力与阻尼器力平衡，故 $k(x-y)=b\\dot y$，整理得 $(b/k)\\dot y+y=x$。\n\n**对应。** 两式在零初值下变换即得所求传递函数。当 $RC=b/k$ 时，两系统的对应输入输出具有相同的一阶动态方程。",
+  "originalImages": [],
+  "answerPdfPages": "1021",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

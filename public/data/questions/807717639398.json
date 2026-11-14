@@ -1,0 +1,8 @@
+{
+  "answer": "方框图见解析。令 $D(s)=(Ts+1)(s^2+s+1)+k_0k_1$，则 $C/R=k_0k_1/D(s)$，$C/F=-k_0k_2Ts/D(s)$。",
+  "explanation": "**1. 按等式连接各环节。** 第一、第三、第五式各对应一个求和点。第四式给出 $1/(Ts)$，末式给出 $k_0/(s^2+s+1)$。\n\n![三个求和点及两条负反馈支路](img/reviewed/211-dhu-2024-disturbance.svg)\n\n**2. 消去中间变量。** 将方程作零初值拉普拉斯变换。用 $X_4=X_5+k_2F$ 代入 $TsX_4=k_1(R-C)-X_5$，得到 $(Ts+1)X_5=k_1(R-C)-Ts k_2F$。再代入 $k_0 X_5=(s^2+s+1)C$，得到 $D(s)C=k_0k_1R-k_0k_2TsF$。分别令另一输入为零，就得到两个通道的传递函数。",
+  "originalImages": [],
+  "answerPdfPages": "968",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

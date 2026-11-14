@@ -1,0 +1,8 @@
+{
+  "answer": "$c\\ne0,\\ d\\ne0,\\ a+b\\ne0$。",
+  "explanation": "由 $AB=(-ac,bd)^{\\mathsf T}$ 得 $\\det[B,AB]=cd(a+b)$，故满秩当且仅当这三个因子均非零。两个输入分量非零保证输入会作用到两个方向，$a+b\\ne0$ 保证两方向的特征值不同，从而可以用多拍输入独立调节。",
+  "originalImages": [],
+  "answerPdfPages": "1317",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

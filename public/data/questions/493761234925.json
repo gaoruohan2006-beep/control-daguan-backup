@@ -1,0 +1,8 @@
+{
+  "answer": "$\\Phi(s)=600/[(s+10)(s+60)]$。",
+  "explanation": "零状态下 $R(s)=1/s$。将响应逐项变换后乘以 $s$ 得 $\\Phi(s)=1+0.2s/(s+60)-1.2s/(s+10)$。通分时二次项和一次项均消去，余下常数 $600$。直流增益为 $1$，与阶跃终值相符。参考答案分子写作 $60$，代入会给出终值 $0.1$。",
+  "originalImages": [],
+  "answerPdfPages": "1326",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

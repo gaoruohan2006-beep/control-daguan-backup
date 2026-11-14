@@ -1,0 +1,98 @@
+[
+  {
+    "school": "哈尔滨工程大学",
+    "tier": "211",
+    "year": 2023,
+    "variant": "808",
+    "number": "十一(1)",
+    "topics": [
+      "状态空间 / 稳定"
+    ],
+    "questionPages": "442",
+    "answerPages": "1102",
+    "stem": "已知 $\\dot x=Ax+Bu$，$A=\\begin{bmatrix}1&-1\\\\1&-1\\end{bmatrix},\\ B=\\begin{bmatrix}0\\\\1\\end{bmatrix}$。取 $u=0$，判断原点是否为李雅普诺夫稳定。",
+    "answer": "原点不稳定。",
+    "explanation": "直接计算得 $A^2=0$，且 $A\\ne0$，所以 $e^{At}=I+tA$。取任意小的初值 $x(0)=(\\varepsilon,0)^{\\mathsf T}$，则 $x(t)=(\\varepsilon(1+t),\\varepsilon t)^{\\mathsf T}$，随时间无界。由此可见，两个零特征值形成了非平凡约旦块。",
+    "notes": ""
+  },
+  {
+    "school": "哈尔滨工程大学",
+    "tier": "211",
+    "year": 2023,
+    "variant": "808",
+    "number": "十一(2)",
+    "topics": [
+      "状态空间 / 稳定"
+    ],
+    "questionPages": "442",
+    "answerPages": "1102",
+    "stem": "已知 $\\dot x=Ax+Bu$，其中 $A=\\begin{bmatrix}0&1&0\\\\0&0&1\\\\-1&k&-2\\end{bmatrix},\\ B=\\begin{bmatrix}0\\\\0\\\\1\\end{bmatrix}$。求使零输入系统原点渐近稳定的 $k$ 范围。",
+    "answer": "$k<-1/2$。",
+    "explanation": "伴随矩阵 $A$ 的特征多项式为 $s^3+2s^2-ks+1$。用劳斯判据，首列为 $1,2,(-2k-1)/2,1$，故渐近稳定当且仅当 $-2k-1>0$。等号时分母为 $(s+2)(s^2+1/2)$，含一对虚轴根。",
+    "notes": ""
+  },
+  {
+    "school": "哈尔滨工程大学",
+    "tier": "211",
+    "year": 2023,
+    "variant": "808",
+    "number": "十二",
+    "topics": [
+      "状态空间 / 状态反馈"
+    ],
+    "questionPages": "442",
+    "answerPages": "1102",
+    "stem": "系统为 $\\dot x=Ax+Bu,\\ y=Cx$，其中\n$$A=\\begin{bmatrix}1&1&0\\\\0&1&0\\\\0&0&-2\\end{bmatrix},\\quad B=\\begin{bmatrix}0\\\\1\\\\1\\end{bmatrix},\\quad C=[1\\quad0\\quad0].$$\n判断能否用状态反馈将系统极点配置为 $-1,-2,-3$，以及能否用全维观测器使估计误差极点为 $-1,-2,-3$。若能，给出增益。",
+    "answer": "两者均可以。取 $u=v-Kx$，$K=[8\\quad6\\quad0]$。观测器取 $\\dot{\\hat x}=A\\hat x+Bu+L(y-C\\hat x)$，$L=[6\\quad8\\quad0]^{\\mathsf T}$。",
+    "explanation": "**1. 设计状态反馈。** 能控矩阵三列分别为 $(0,1,1)^{\\mathsf T},(1,1,-2)^{\\mathsf T},(2,1,4)^{\\mathsf T}$，行列式为 $-9$，系统完全能控。为保留第三个方向的极点 $-2$，令 $k_3=0$，则 $A-BK$ 为块下三角。其左上二阶块的特征多项式为 $s^2+(k_2-2)s+1-k_2+k_1$。令其等于 $(s+1)(s+3)$，得 $k_2=6,k_1=8$。\n\n**2. 设计状态观测器。** $C$ 只能观测前两维，第三个状态的误差模态固定在 $-2$，与目标匹配。取 $L=(l_1,l_2,0)^{\\mathsf T}$，误差矩阵 $A-LC$ 的左上块特征多项式为 $s^2+(l_1-2)s+1-l_1+l_2$。与 $(s+1)(s+3)$ 比较得到 $l_1=6,l_2=8$。参考解对能控性的说明把 $B$ 的第三项误看为零。",
+    "notes": ""
+  },
+  {
+    "school": "哈尔滨工程大学",
+    "tier": "211",
+    "year": 2024,
+    "variant": "808",
+    "number": "十",
+    "topics": [
+      "状态空间 / 状态转移"
+    ],
+    "questionPages": "446",
+    "answerPages": "1112–1113",
+    "stem": "线性定常系统 $\\dot x=Ax+bu,\\ y=cx$ 满足\n$$\\Phi(t)^{-1}=\\begin{bmatrix}\n2e^{-t}-e^{-2t}&-e^{-t}+e^{-2t}\\\\\n2e^{-t}-2e^{-2t}&-e^{-t}+2e^{-2t}\n\\end{bmatrix},\\qquad b=\\begin{bmatrix}1\\\\1\\end{bmatrix},\\quad c=[0\\quad1].$$\n（1）求 $A$。（2）若 $x(0)=0,\\ u(t)=e^{-2t}$，求 $y(t)$。",
+    "answer": "$A=\\begin{bmatrix}0&1\\\\-2&3\\end{bmatrix}$，$y(t)=(e^t-e^{-2t})/3$（$t\\ge0$）。",
+    "explanation": "**1. 由逆矩阵的导数求 $A$。** 因 $\\Phi(t)^{-1}=e^{-At}$，其在 $t=0$ 的导数为 $-A$。逐项求导后取负即得所列矩阵。\n\n**2. 检查输入激发的模态。** $Ab=(1,1)^{\\mathsf T}=b$，所以 $b$ 在特征值 $1$ 的方向上。由零初值响应公式\n$$x(t)=\\int_0^t e^{A(t-\\tau)}b\\,e^{-2\\tau}\\,d\\tau=b e^t\\int_0^t e^{-3\\tau}\\,d\\tau.$$\n又 $cb=1$，故 $y(t)=(e^t-e^{-2t})/3$。",
+    "notes": ""
+  },
+  {
+    "school": "哈尔滨工程大学",
+    "tier": "211",
+    "year": 2025,
+    "variant": "808",
+    "number": "二",
+    "topics": [
+      "时域分析 / 劳斯与稳定度"
+    ],
+    "questionPages": "447",
+    "answerPages": "1115–1116",
+    "stem": "单位负反馈系统的开环传递函数为 $G(s)=K/[s(0.1s+1)(0.25s+1)]$。（1）求闭环稳定的 $K$ 范围。（2）求使所有闭环极点实部严格小于 $-1$ 的 $K$ 范围。",
+    "answer": "（1）$0<K<14$。（2）$27/40<K<24/5$。",
+    "explanation": "特征多项式化为首一形式 $s^3+14s^2+40s+40K$。由劳斯判据，$40K>0$ 且 $14\\cdot40>40K$，得到第一问。为检查 $s=-1$ 左侧，令 $s=z-1$ 得 $z^3+11z^2+15z+40K-27$，其劳斯条件为 $0<40K-27<165$，得到第二问。",
+    "notes": ""
+  },
+  {
+    "school": "哈尔滨工程大学",
+    "tier": "211",
+    "year": 2025,
+    "variant": "808",
+    "number": "十一",
+    "topics": [
+      "状态空间 / 状态反馈"
+    ],
+    "questionPages": "451",
+    "answerPages": "1127–1128",
+    "stem": "给定 $\\dot x=Ax+Bu,\\ y=Cx$，其中\n$$A=\\begin{bmatrix}6&-4&4\\\\0&0&1\\\\6&5&4\\end{bmatrix},\\quad B=\\begin{bmatrix}1\\\\0\\\\1\\end{bmatrix},\\quad C=[2\\quad-1\\quad2].$$\n（1）判断能控性，能控时化为能控规范型，否则作能控性分解。（2）判断 BIBO 稳定性。（3）用状态反馈将闭环极点配置在 $-1,-2,-3$。",
+    "answer": "（1）完全能控。一组能控规范型为\n$$\\bar A=\\begin{bmatrix}0&1&0\\\\0&0&1\\\\-54&5&10\\end{bmatrix},\\quad\n\\bar B=\\begin{bmatrix}0\\\\0\\\\1\\end{bmatrix},\\quad\\bar C=[-18\\quad-1\\quad4].$$\n（2）BIBO 不稳定。（3）在题设原坐标中，取 $u=v-Kx$，$K=[16/3\\quad16\\quad32/3]$。",
+    "explanation": "**1. 求能控矩阵和变换。** $M=[B,AB,A^2B]=\\begin{bmatrix}1&10&96\\\\0&1&10\\\\1&10&105\\end{bmatrix}$，$\\det M=9$。取 $x=Tz$，其中 $T=[A^2B-10AB-5B,\\ AB-10B,\\ B]$。代入 $T^{-1}AT,T^{-1}B,CT$ 即得所列规范型。\n\n**2. 检查传递函数的极点。** $G(s)=(4s^2-s-18)/(s^3-10s^2-5s+54)$，分子分母互素。分母在 $s=0,3,11$ 处依次取正、负、正值，故至少有两个正实根，传递函数不满足 BIBO 稳定条件。\n\n**3. 比较系数并变回原坐标。** 目标多项式为 $s^3+6s^2+11s+6$。在能控规范型坐标下取 $\\bar K=[-48\\quad16\\quad16]$。因 $x=Tz$，原坐标反馈增益为 $\\bar K T^{-1}=[16/3\\quad16\\quad32/3]$。",
+    "notes": ""
+  }
+]

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 191" width="540" height="191" role="img" aria-labelledby="title">
+<title id="title">闭环三积分器状态变量图</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 1L10 5 0 9z" fill="context-stroke"/></marker></defs>
+<style>
+.wire,.part,.axis,.guide,.curve,.curve2{stroke:#18222b;stroke-width:1.65;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.part{fill:#fff}.axis{stroke:#627284;stroke-width:1.4}.guide{stroke:#8794a1;stroke-dasharray:5 5;stroke-width:1.2}
+.curve{stroke:#174c85;stroke-width:2.2}.curve2{stroke:#487298;stroke-width:1.8;stroke-dasharray:5 4}
+.dot{fill:#18222b}.math,.plain{font:16px "Times New Roman","SimSun",serif;fill:#18222b}
+.plain{font-family:"SimSun","Noto Serif CJK SC",serif}.small{font:14px "Times New Roman","SimSun",serif;fill:#18222b}
+</style>
+<rect width="100%" height="100%" fill="#fff"/>
+<text x="29" y="45" class="math" text-anchor="middle">v</text>
+<polyline class="wire" points="18.00,60.00 72.00,60.00" marker-end="url(#arrow)"/>
+<circle cx="82" cy="60" r="10" class="part"/>
+<polyline class="wire" points="76.00,54.00 88.00,66.00"/>
+<polyline class="wire" points="76.00,66.00 88.00,54.00"/>
+<text x="62" y="51" class="math" text-anchor="middle">+</text>
+<text x="99" y="79" class="math" text-anchor="middle">+</text>
+<rect x="140" y="42" width="56" height="36" class="part"/>
+<text x="168.0" y="65" class="math" text-anchor="middle">1/s</text>
+<polyline class="wire" points="196.00,60.00 245.00,60.00" marker-end="url(#arrow)"/>
+<text x="223" y="48" class="math" text-anchor="middle">x₃</text>
+<rect x="258" y="42" width="56" height="36" class="part"/>
+<text x="286.0" y="65" class="math" text-anchor="middle">1/s</text>
+<polyline class="wire" points="314.00,60.00 363.00,60.00" marker-end="url(#arrow)"/>
+<text x="341" y="48" class="math" text-anchor="middle">x₂</text>
+<rect x="376" y="42" width="56" height="36" class="part"/>
+<text x="404.0" y="65" class="math" text-anchor="middle">1/s</text>
+<polyline class="wire" points="432.00,60.00 481.00,60.00" marker-end="url(#arrow)"/>
+<text x="459" y="48" class="math" text-anchor="middle">x₁ = y</text>
+<polyline class="wire" points="92.00,60.00 140.00,60.00" marker-end="url(#arrow)"/>
+<rect x="153" y="132" width="317" height="36" class="part"/>
+<text x="311" y="155" class="math" text-anchor="middle">−4x₃ − 4x₂ − 3x₁</text>
+<circle cx="220" cy="60" r="3" class="dot"/>
+<polyline class="wire" points="220.00,60.00 220.00,132.00" marker-end="url(#arrow)"/>
+<circle cx="338" cy="60" r="3" class="dot"/>
+<polyline class="wire" points="338.00,60.00 338.00,132.00" marker-end="url(#arrow)"/>
+<circle cx="453" cy="60" r="3" class="dot"/>
+<polyline class="wire" points="453.00,60.00 453.00,132.00" marker-end="url(#arrow)"/>
+<polyline class="wire" points="153.00,150.00 82.00,150.00 82.00,70.00" marker-end="url(#arrow)"/>
+</svg>

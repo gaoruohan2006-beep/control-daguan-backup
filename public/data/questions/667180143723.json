@@ -1,0 +1,8 @@
+{
+  "answer": "A，系统完全能控且完全能观。",
+  "explanation": "记 $B$ 的两列为 $b_1,b_2$，$C$ 的第一行为 $c_1$。取能控矩阵的三列 $[b_1,b_2,Ab_1]$，得到\n$$\\begin{bmatrix}0&1&2\\\\-2&-3&-2\\\\1&0&-3\\end{bmatrix},$$\n其行列式为 $-2$。取能观矩阵的三行 $[C^{\\mathsf T},(c_1A)^{\\mathsf T}]^{\\mathsf T}$，得到\n$$\\begin{bmatrix}1&0&2\\\\-2&3&0\\\\1&0&-4\\end{bmatrix},$$\n其行列式为 $-18$。两个矩阵都具有三阶非零子式，所以能控矩阵和能观矩阵均满秩。",
+  "originalImages": [],
+  "answerPdfPages": "1166",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

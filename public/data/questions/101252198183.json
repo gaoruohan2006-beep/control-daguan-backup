@@ -1,0 +1,8 @@
+{
+  "answer": "D，$12/\\sqrt{13}$。",
+  "explanation": "系统极点为 $-3$，瞬态衰减。输入角频率是 $2\\,\\mathrm{rad/s}$，故用 $|G(j2)|=4/|3+j2|=4/\\sqrt{13}$ 乘输入振幅 $3$，得到所求振幅。",
+  "originalImages": [],
+  "answerPdfPages": "973",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

@@ -1,0 +1,114 @@
+[
+  {
+    "school": "东华大学",
+    "tier": "211",
+    "year": 2023,
+    "variant": "824",
+    "number": "一(2)",
+    "topics": [
+      "校正 / PI 控制"
+    ],
+    "questionPages": "393",
+    "answerPages": "963",
+    "stem": "图示有源校正电路采用理想运算放大器。判断该环节属于哪一种校正。\n\n![反相运放 PI 校正电路](img/reviewed/211-dhu-2023-pi.svg)\n\nA. 比例（P）　B. 比例微分（PD）　C. 比例积分（PI）　D. 比例积分微分（PID）",
+    "answer": "C，比例积分（PI）。",
+    "explanation": "反相端为虚地，输入阻抗为 $R$，反馈电阻 $P$ 与电容 $C$ 串联，反馈阻抗为 $Z_f=P+1/(Cs)$。因此 $U_o/U_i=-Z_f/R=-P/R-1/(RCs)$。比例项和积分项相加，负号来自反相接法。",
+    "notes": ""
+  },
+  {
+    "school": "东华大学",
+    "tier": "211",
+    "year": 2023,
+    "variant": "824",
+    "number": "一(3)",
+    "topics": [
+      "选择与填空 / 选择"
+    ],
+    "questionPages": "393",
+    "answerPages": "963",
+    "stem": "线性定常系统的稳定性与下列哪个因素有关？\n\nA. 系统的结构和参数　B. 参考输入信号　C. 系统的初始条件　D. 扰动输入信号",
+    "answer": "A，系统的结构和参数。",
+    "explanation": "对连续时间线性定常系统，内部渐近稳定性由齐次状态方程 $\\dot x=Ax$ 决定。$A$ 的特征值决定各个自由响应模态衰减、保持还是增长。系统结构和参数决定 $A$，初始状态决定各模态在具体响应中的权重。",
+    "notes": ""
+  },
+  {
+    "school": "东华大学",
+    "tier": "211",
+    "year": 2024,
+    "variant": "824",
+    "number": "四",
+    "topics": [
+      "建模 / 方框图"
+    ],
+    "questionPages": "396",
+    "answerPages": "968",
+    "stem": "系统满足\n$$\\begin{aligned}\nx_1&=r-c,&x_2&=k_1x_1,&x_3&=x_2-x_5,\\\\\nT\\dot x_4&=x_3,&x_5&=x_4-k_2 f,&k_0x_5&=\\ddot c+\\dot c+c.\n\\end{aligned}$$\n（1）画系统方框图。（2）求 $C(s)/R(s)$ 和 $C(s)/F(s)$。",
+    "answer": "方框图见解析。令 $D(s)=(Ts+1)(s^2+s+1)+k_0k_1$，则 $C/R=k_0k_1/D(s)$，$C/F=-k_0k_2Ts/D(s)$。",
+    "explanation": "**1. 按等式连接各环节。** 第一、第三、第五式各对应一个求和点。第四式给出 $1/(Ts)$，末式给出 $k_0/(s^2+s+1)$。\n\n![三个求和点及两条负反馈支路](img/reviewed/211-dhu-2024-disturbance.svg)\n\n**2. 消去中间变量。** 将方程作零初值拉普拉斯变换。用 $X_4=X_5+k_2F$ 代入 $TsX_4=k_1(R-C)-X_5$，得到 $(Ts+1)X_5=k_1(R-C)-Ts k_2F$。再代入 $k_0 X_5=(s^2+s+1)C$，得到 $D(s)C=k_0k_1R-k_0k_2TsF$。分别令另一输入为零，就得到两个通道的传递函数。",
+    "notes": ""
+  },
+  {
+    "school": "东华大学",
+    "tier": "211",
+    "year": 2024,
+    "variant": "824",
+    "number": "五",
+    "topics": [
+      "根轨迹 / 绘制"
+    ],
+    "questionPages": "396",
+    "answerPages": "969",
+    "stem": "绘制以 $K^*\\ge0$ 为参数的单位负反馈根轨迹，求闭环稳定时 $K^*$ 的范围。开环传递函数为 $G(s)=K^*/[(s^2+2s+2)(s^2+2s+5)]$。",
+    "answer": "闭环稳定范围为 $0\\le K^*<65/4$。若按正增益约定取 $K^*>0$，则为 $0<K^*<65/4$。",
+    "explanation": "**1. 化成二次方程。** 令 $z=s+1$，特征方程为 $(z^2+1)(z^2+4)+K^*=0$，所以\n$$z^2=\\frac{-5\\pm\\sqrt{9-4K^*}}2.$$\n四条分支从 $-1\\pm j,-1\\pm 2j$ 出发。$0\\le K^*\\le9/4$ 时，分支沿 $\\operatorname{Re}s=-1$ 向 $-1\\pm j\\sqrt{5/2}$ 汇合。随后两对分支向两侧分开，渐近线交于 $-1$，方向为 $\\pm45^\\circ,\\pm135^\\circ$。\n\n![四分支根轨迹与虚轴交点](img/reviewed/211-dhu-2024-root.svg)\n\n**2. 求穿越虚轴的增益。** 将 $s=j\\omega$ 代入 $s^4+4s^3+11s^2+14s+10+K^*=0$。由虚部得 $\\omega^2=7/2$，代入实部得 $K^*=65/4$。劳斯首列为 $1,4,15/2,(65-4K^*)/7.5,10+K^*$，故在该增益处由稳定转为不稳定。",
+    "notes": ""
+  },
+  {
+    "school": "东华大学",
+    "tier": "211",
+    "year": 2025,
+    "variant": "824",
+    "number": "一(3)",
+    "topics": [
+      "数学基础 / 拉普拉斯变换"
+    ],
+    "questionPages": "398",
+    "answerPages": "973",
+    "stem": "已知系统的单位阶跃响应为 $c(t)=e^{-t}\\cos 2t$（$t\\ge0$），求系统的传递函数。\n\nA. $\\dfrac{s+1}{s^2+2s+5}$　B. $\\dfrac{2}{s^2+2s+5}$\n\nC. $\\dfrac{s+1}{s^3+2s^2+5s}$　D. $\\dfrac{2}{s^3+2s^2+5s}$",
+    "answer": "$G(s)=\\dfrac{s(s+1)}{s^2+2s+5}$。按题面“单位阶跃响应”计算，四个选项均不符合。",
+    "explanation": "对输出作拉普拉斯变换得到 $C(s)=(s+1)/[(s+1)^2+4]$。零状态单位阶跃输入为 $R(s)=1/s$，所以 $G(s)=sC(s)$。若将题面中的响应改为单位脉冲响应，则 $R(s)=1$，此时才对应参考答案 A。",
+    "notes": ""
+  },
+  {
+    "school": "东华大学",
+    "tier": "211",
+    "year": 2025,
+    "variant": "824",
+    "number": "一(5)",
+    "topics": [
+      "频域分析 / 频率特性"
+    ],
+    "questionPages": "398",
+    "answerPages": "973",
+    "stem": "系统传递函数为 $G(s)=4/(s+3)$。当 $r(t)=3\\sin 2t$ 时，求稳态输出的振幅。\n\nA. $16/\\sqrt{13}$　B. $9/\\sqrt{13}$　C. $8/\\sqrt{13}$　D. $12/\\sqrt{13}$",
+    "answer": "D，$12/\\sqrt{13}$。",
+    "explanation": "系统极点为 $-3$，瞬态衰减。输入角频率是 $2\\,\\mathrm{rad/s}$，故用 $|G(j2)|=4/|3+j2|=4/\\sqrt{13}$ 乘输入振幅 $3$，得到所求振幅。",
+    "notes": ""
+  },
+  {
+    "school": "东华大学",
+    "tier": "211",
+    "year": 2025,
+    "variant": "824",
+    "number": "一(6)",
+    "topics": [
+      "建模 / 方框图"
+    ],
+    "questionPages": "398",
+    "answerPages": "973",
+    "stem": "求图示系统的闭环传递函数。\n\n![输出反馈与中间信号反馈的控制系统](img/reviewed/211-dhu-2025-feedback.svg)\n\nA. $\\dfrac{5}{s^2+12s+5}$　B. $\\dfrac{s^2+2s+8}{s+2}$\n\nC. $\\dfrac{2}{s^2+2s+8}$　D. $\\dfrac{s}{s^2+2s+8}$",
+    "answer": "A，$Y/R=5/(s^2+12s+5)$。",
+    "explanation": "设中间信号为 $X$。积分器给出 $Y=X/s$，前一级给出 $(s+2)X=5(R-2X-Y)$。以 $X=sY$ 消去 $X$，得 $(s^2+12s+5)Y=5R$。",
+    "notes": ""
+  }
+]
