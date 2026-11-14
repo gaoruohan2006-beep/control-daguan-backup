@@ -136,10 +136,7 @@ def source_id(source):
 
 
 def source_entry(source):
-    entry = {key: source[key] for key in SOURCE_FIELDS}
-    if source.get("hideOnCard"):
-        entry["hideOnCard"] = True
-    return entry
+    return {key: source[key] for key in SOURCE_FIELDS}
 
 
 def build():

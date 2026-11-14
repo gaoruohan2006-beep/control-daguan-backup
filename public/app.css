@@ -241,12 +241,6 @@ mark{background:#fff3b0;color:inherit;border-radius:3px}
 @media (prefers-color-scheme:dark){
  :root{--directory-blue:#8cbcff;--directory-ink:#f0f2f5}
 }
-.other-sources {
-  margin: 0.35rem 0 0.75rem;
-  color: var(--muted, #54616d);
-}
-
-
 .box[data-kind="exp"] .body > p:is(.solution-tip,:has(> .solution-plan)){padding:11px 14px;border-left:3px solid var(--brand);background:var(--canvas);border-radius:0 8px 8px 0}
 .box[data-kind="exp"] .body > p.solution-tip{border-left-color:var(--danger)}
 .box[data-kind="exp"] .body > p > .solution-plan{color:var(--brand)}

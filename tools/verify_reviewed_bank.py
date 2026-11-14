@@ -51,9 +51,6 @@ async def verify():
             await page.goto(f"{BASE}?question={old_id}")
             alias_card = page.locator(f'.card[data-id="{current_id}"]')
             await alias_card.wait_for()
-            alias_question = next(q for q in questions if q["id"] == current_id)
-            visible_sources = [source for source in alias_question["alsoAppearedIn"] if not source.get("hideOnCard")]
-            assert bool(await alias_card.locator(".other-sources").count()) == bool(visible_sources)
             assert await alias_card.locator('[data-act="fav"]').get_attribute("aria-pressed") == "true"
             await page.wait_for_function("""([oldId, currentId]) => CDGStore.get('rec').then(r =>
                 !r.notes[oldId] && r.notes[currentId]?.text === '重复题迁移测试')""", arg=[old_id, current_id])
@@ -90,6 +87,7 @@ async def verify():
             }""")
             assert not bad, (q["source"], bad)
             body = await card.inner_text()
+            assert not any(line.startswith("另见 ") for line in body.splitlines()), q["source"]
             assert not any(ad in body for ad in ("公众号", "二维码", "真橙", "考研群", "讲义", "题本 PDF", "参考答案 PDF", "答案本 PDF")), q["source"]
 
         q = next(q for q in questions if q["hasFigure"])

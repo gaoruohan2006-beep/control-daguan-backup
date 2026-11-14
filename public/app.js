@@ -286,9 +286,6 @@ function cardHTML(id, idx) {
   const paths = (L.categoryByQuestion[id] || q.categories);
   const leaf = paths[0].split(' / ').pop();
   const number = q.sourceType === 'reviewed' ? `原卷 ${q.number}` : `第 ${idx + 1} 题`;
-  const otherSources = (q.alsoAppearedIn || [])
-    .filter(source => !source.hideOnCard)
-    .map(source => [source.school, source.year, source.variant, '原卷 ' + source.number].filter(Boolean).join(' · '));
   const sh = st.show[id] || {}; const mk = rec.marks[id]?.state; const fav = rec.favorites.includes(id);
   const hl = st.q && st.q.length > 0 ? st.q : null;
   let ans = '';
@@ -329,7 +326,6 @@ function cardHTML(id, idx) {
     <header class="meta"><span class="qno">${esc(number)}</span><h2 class="src">${esc(q.source)}</h2>
       <span class="pop-wrap"><button type="button" class="cat-btn" data-act="cats" aria-expanded="false" aria-label="查看完整分类路径，共 ${paths.length} 处">${esc(leaf)}</button>
       <div class="popover catpop" hidden><b>分类路径</b>${paths.map(p => `<button type="button" data-act="gocat" data-path="${esc(p)}" title="查看本分类全部题目">${esc(p)}</button>`).join('')}</div></span>${hasNote ? `<span class="note-flag" title="本题有笔记">${IC.pen}有笔记</span>` : ''}${dueHTML}</header>
-    ${otherSources.length ? `<p class="other-sources">另见 ${otherSources.map(esc).join('；')}</p>` : ''}
     <div class="stem">${md(q.stem, hl)}</div>
     <div class="actions">
       <button type="button" class="tog" data-act="answer" aria-pressed="${!!sh.answer}" aria-label="答案">${IC.eye}答案</button>
