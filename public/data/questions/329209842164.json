@@ -1,6 +1,6 @@
 {
   "answer": "$\\Phi(s)=k_1k_2/(s^2+as+k_2)$，$\\zeta\\approx0.6083$，$\\omega_n\\approx4.9478\\,\\mathrm{rad/s}$。$k_1=2$，$k_2\\approx24.4809$，$a\\approx6.0199$。",
-  "explanation": "超调比为 $(2.18-2.00)/2.00=0.09$。设闭环极点为 $-\\alpha\\pm j\\omega_d$，由峰值公式，\n$$\\omega_d=\\pi/0.8,\\qquad \\alpha=-\\ln(0.09)/0.8.$$\n因此 $a=2\\alpha$，$k_2=\\omega_n^2=\\alpha^2+\\omega_d^2$，$\\zeta=\\alpha/\\omega_n$。比例环节 $k_1$ 在比较点之前，所以直流增益直接等于 $k_1$。",
+  "explanation": "超调比为 $(2.18-2.00)/2.00=0.09$。设闭环极点为 $-\\alpha\\pm j\\omega_d$，由峰值公式，\n$$\\omega_d=\\pi/0.8,\\qquad \\alpha=-\\ln(0.09)/0.8.$$\n因此 $a=2\\alpha$，$k_2=\\omega_n^2=\\alpha^2+\\omega_d^2$，$\\zeta=\\alpha/\\omega_n$。比例环节 $k_1$ 在比较点之前，所以直流增益直接等于 $k_1$。\n\n**不用先反解阻尼比，先从峰时直接读极点。** 对从零开始的标准欠阻尼阶跃，设极点为 $-\\sigma\\pm j\\omega_d$。用 $\\omega_d=\\pi/t_p$、$\\sigma=-\\ln M_p/t_p$，本题 $M_p=(2.18-2)/2=0.09$。两次代值就得到闭环系数 $a=2\\sigma$、$k_2=\\sigma^2+\\omega_d^2$。这一步要求响应符合无零点标准二阶形。",
   "originalImages": [],
   "answerPdfPages": "524",
   "referenceNote": "",

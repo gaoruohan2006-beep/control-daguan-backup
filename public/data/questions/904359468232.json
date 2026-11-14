@@ -1,6 +1,6 @@
 {
   "answer": "$\\tau=1/K$。",
-  "explanation": "由图得 $C=G[(1+\\tau s)R-C]$，故\n$$\\frac C R=\\frac{K(1+\\tau s)}{\\tau s^2+s+K},\\qquad\n\\frac E R=\\frac{\\tau s^2+(1-K\\tau)s}{\\tau s^2+s+K}.$$\n单位斜坡对应 $R=1/s^2$。对 $\\tau>0,K>0$，二阶闭环特征式严格稳定。由终值定理得到 $e_{ss}=(1-K\\tau)/K$，令其为零即得 $\\tau=1/K$。",
+  "explanation": "由图得 $C=G[(1+\\tau s)R-C]$，故\n$$\\frac C R=\\frac{K(1+\\tau s)}{\\tau s^2+s+K},\\qquad\n\\frac E R=\\frac{\\tau s^2+(1-K\\tau)s}{\\tau s^2+s+K}.$$\n单位斜坡对应 $R=1/s^2$。对 $\\tau>0,K>0$，二阶闭环特征式严格稳定。由终值定理得到 $e_{ss}=(1-K\\tau)/K$，令其为零即得 $\\tau=1/K$。\n\n**前置校正可用闭环的低频斜率直接设计。** 稳定、单位直流增益的闭环 $\\Phi(s)$，单位斜坡稳态误差是 $-\\Phi'(0)$，因为 $sE=(1-\\Phi)/s$。本题 $\\Phi(s)=1+(\\tau-1/K)s+O(s^2)$，让一阶项为零便得 $\\tau=1/K$。这一写法适用于误差定义为 $R-C$，若题目换成比较点信号，先重新写误差通道。",
   "originalImages": [],
   "answerPdfPages": "586",
   "referenceNote": "",

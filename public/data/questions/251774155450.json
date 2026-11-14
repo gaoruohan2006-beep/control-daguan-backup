@@ -1,6 +1,6 @@
 {
   "answer": "$$\\frac{Y}{U_i}=\\frac{k_1k_f}{D(s)},$$\n$$\\begin{aligned}D(s)={}&(L_1s+R_1)(Ms^2+bs+k)\\\\&+k_ek_fs+\\eta k_1k_f.\\end{aligned}$$",
-  "explanation": "检测电压从输入端扣除，放大后的驱动电压为 $k_1(u_i-\\eta y)$。对线圈列电压方程 $L_1\\dot i+R_1i=k_1(u_i-\\eta y)-k_e\\dot y$。对衔铁列受力方程 $M\\ddot y+b\\dot y+ky=k_fi$。\n\n![含位移测量和反电动势的方框图](img/reviewed/hit-2023-01-block.svg)\n\n零初态下，第二式给出 $I=(Ms^2+bs+k)Y/k_f$。将它代入第一式的拉普拉斯变换，把含 $Y$ 的项移到左边，再除以 $U_i$，得所求传递函数。",
+  "explanation": "检测电压从输入端扣除，放大后的驱动电压为 $k_1(u_i-\\eta y)$。对线圈列电压方程 $L_1\\dot i+R_1i=k_1(u_i-\\eta y)-k_e\\dot y$。对衔铁列受力方程 $M\\ddot y+b\\dot y+ky=k_fi$。\n\n![含位移测量和反电动势的方框图](img/reviewed/hit-2023-01-block.svg)\n\n零初态下，第二式给出 $I=(Ms^2+bs+k)Y/k_f$。将它代入第一式的拉普拉斯变换，把含 $Y$ 的项移到左边，再除以 $U_i$，得所求传递函数。\n\n**按通道先写电气与机械阻抗，装配分母更快。** 原电气阻抗为 $L_1s+R_1$，机械位移阻抗为 $Ms^2+bs+k$。两者相乘是主分母。速度反电动势回路补上 $k_ek_fs$，位移反馈补上 $\\eta k_1k_f$。每个附加项可在两条平衡方程里追溯到一条反馈路径，也可以用量纲检查是否漏乘放大器或电磁系数。",
   "originalImages": [],
   "answerPdfPages": "156",
   "referenceNote": "",
