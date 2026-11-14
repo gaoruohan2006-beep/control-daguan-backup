@@ -29,7 +29,7 @@
     ],
     "stem": "**（15 分）** 已知 $G(s)=\\dfrac{s+2}{s^3+4s^2+s}$，写出对角型或约旦型状态空间表达式，画出模拟结构图。",
     "answer": "$$A=\\operatorname{diag}(0,-2-\\sqrt3,-2+\\sqrt3),\\quad B=\\begin{bmatrix}1\\\\1\\\\1\\end{bmatrix},\\quad C=\\begin{bmatrix}2&-1+\\sqrt3/2&-1-\\sqrt3/2\\end{bmatrix},\\quad D=0.$$\n\n![对角型并联模拟结构|680](img/reviewed/tianjin-2025-02-parallel.svg)",
-    "explanation": "因三个极点互异，可将 $G(s)$ 分解为\n$$\\frac2s+\\frac{-1+\\sqrt3/2}{s+2+\\sqrt3}+\\frac{-1-\\sqrt3/2}{s+2-\\sqrt3}.$$\n令 $x_i$ 为第 $i$ 个单位分子并联支路的输出，分别得到 $\\dot x_i=\\lambda_ix_i+u$，再以对应的留数对三个支路的输出加权求和。",
+    "explanation": "**（1）找极点并求各支路的系数。** 分母为 $s(s+2+\\sqrt3)(s+2-\\sqrt3)$，三个极点互异。对每个简单极点 $\\lambda_i$，对应留数由 $c_i=\\lim_{s\\to\\lambda_i}(s-\\lambda_i)G(s)$ 求出。以 $\\lambda_1=0$ 为例，$c_1=\\lim_{s\\to0}(s+2)/(s^2+4s+1)=2$。另外两个留数分别是 $-1+\\sqrt3/2$ 和 $-1-\\sqrt3/2$。因此\n$$G(s)=\\frac2s+\\frac{-1+\\sqrt3/2}{s+2+\\sqrt3}+\\frac{-1-\\sqrt3/2}{s+2-\\sqrt3}.$$\n\n**（2）把三项分别实现后相加。** 输入 $u$ 同时送入三个支路。每个支路的传递函数先取 $1/(s-\\lambda_i)$，并将其输出定义为状态 $x_i$，于是 $\\dot x_i=\\lambda_ix_i+u$。再将三路状态分别乘以留数 $c_i$，相加得到 $y=c_1x_1+c_2x_2+c_3x_3$。这就给出对角矩阵 $A$、全为 $1$ 的输入列向量 $B$，以及由留数构成的 $C$。$G(s)$ 严格真有理，因此 $D=0$。",
     "questionPages": "46",
     "answerPages": "82–83"
   },
@@ -44,7 +44,7 @@
     ],
     "stem": "**（15 分）** 阻尼系数为 $f$，弹簧弹性系数为 $k$，位移为 $y$，输入力为 $F(t)$，物体质量为 $m$。\n\n![质量–弹簧–阻尼系统|550](img/reviewed/tianjin-2025-03-mechanical.svg)\n\n（1）建立微分方程并求传递函数。\n\n（2）$0<f<2\\sqrt{mk}$ 时，求阻尼比 $\\zeta$ 和自然频率 $\\omega_n$ 的表达式。\n\n（3）作用 $3\\,\\mathrm N$ 阶跃力时，求物体的稳态位移。",
     "answer": "$$m\\ddot y+f\\dot y+ky=F(t),\\quad \\frac{Y(s)}{F(s)}=\\frac1{ms^2+fs+k},\\quad\n\\zeta=\\frac f{2\\sqrt{mk}},\\quad \\omega_n=\\sqrt{\\frac km},\\quad y(\\infty)=\\frac3k.$$",
-    "explanation": "以位移正方向列牛顿第二定律，弹簧力与阻尼力分别为 $-ky$、$-f\\dot y$。在零初始条件下取拉氏变换，并把归一化分母与 $s^2+2\\zeta\\omega_ns+\\omega_n^2$ 对照。由终值定理，$y(\\infty)=\\lim_{s\\to0}s[3/(s(ms^2+fs+k))]=3/k$。",
+    "explanation": "**（1）列受力平衡并求传递函数。** 取向右为正，弹簧力与位移方向相反，为 $-ky$。黏性阻尼力与速度方向相反，为 $-f\\dot y$。由牛顿第二定律得 $m\\ddot y=F(t)-f\\dot y-ky$。传递函数按零初值定义，取拉普拉斯变换得 $(ms^2+fs+k)Y(s)=F(s)$。\n\n**（2）对照标准二阶分母。** 分母除以 $m$ 得 $s^2+(f/m)s+k/m$。与 $s^2+2\\zeta\\omega_ns+\\omega_n^2$ 逐项比较，得到 $\\omega_n=\\sqrt{k/m}$，并由 $2\\zeta\\omega_n=f/m$ 得 $\\zeta=f/(2\\sqrt{mk})$。题给范围保证 $0<\\zeta<1$，所以系统处于欠阻尼状态。\n\n**（3）求恒定力下的最终位移。** 输入是幅值为 $3\\,\\mathrm N$ 的阶跃，故 $F(s)=3/s$。传递函数的分母在 $m,f,k>0$ 时为 Hurwitz 多项式，终值定理给出\n$$y(\\infty)=\\lim_{s\\to0}sY(s)=\\lim_{s\\to0}\\frac{3}{ms^2+fs+k}=\\frac3k.$$\n也可以从静态平衡核对。当速度和加速度都降至零时，弹簧力 $ky(\\infty)$ 恰好平衡 $3\\,\\mathrm N$。",
     "questionPages": "46",
     "answerPages": "83",
     "notes": "原解第（3）问停在 $Y(s)$，未给出题目所求的稳态位移。"
@@ -92,7 +92,7 @@
     ],
     "stem": "**（15 分）** 系统\n$$\\dot x=\\begin{bmatrix}-1&-2\\\\1&-1\\end{bmatrix}x.$$\n用两种方法判断系统稳定性。",
     "answer": "原点全局指数稳定。",
-    "explanation": "方法一：特征多项式为 $(\\lambda+1)^2+2$，特征值为 $-1\\pm\\sqrt2j$，均在左半平面。\n\n方法二：取 $V=x_1^2+2x_2^2$，则\n$$\\dot V=2x_1(-x_1-2x_2)+4x_2(x_1-x_2)=-2x_1^2-4x_2^2=-2V.$$\n$V$ 正定且径向无界，结论成立。",
+    "explanation": "**（1）由特征值判断。** 计算\n$$\\det(\\lambda I-A)=(\\lambda+1)^2+2.$$\n根为 $-1\\pm j\\sqrt2$，实部均为 $-1$。这是线性定常自治系统，因此所有初值的响应均指数衰减。\n\n**（2）由李雅普诺夫函数判断。** 取 $V=x_1^2+2x_2^2$。代入 $\\dot x_1=-x_1-2x_2$、$\\dot x_2=x_1-x_2$，\n$$\\dot V=2x_1(-x_1-2x_2)+4x_2(x_1-x_2)=-2x_1^2-4x_2^2=-2V.$$\n从而 $V(t)=e^{-2t}V(0)$。再由 $\\lVert x\\rVert^2\\le V\\le2\\lVert x\\rVert^2$ 得 $\\lVert x(t)\\rVert\\le\\sqrt2e^{-t}\\lVert x(0)\\rVert$，故原点全局指数稳定。",
     "questionPages": "47",
     "answerPages": "85–86",
     "notes": "原解计算 $\\dot V$ 时误抄 $\\dot x_1$，导致交叉项错误。"

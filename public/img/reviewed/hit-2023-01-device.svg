@@ -8,11 +8,11 @@
 
 	<style type="text/css">
 	<![CDATA[
-		.st1 {fill:none;stroke:#1c2735;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.6}
+		.st1 {fill:none;stroke:#1c2735;stroke-linecap:round;stroke-linejoin:round;stroke-width:2.05}
 		.st2 {fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
 		.st3 {fill:#1c2735;font-family:"Times New Roman", "Liberation Serif", SimSun, "宋体", "Noto Serif CJK SC", serif;font-size:2.14666em;font-style:italic}
 		.st4 {font-family:"Times New Roman", "Liberation Serif", SimSun, "宋体", "Noto Serif CJK SC", serif;font-size:1em}
-		.st5 {stroke:#1c2735;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.6}
+		.st5 {stroke:#1c2735;stroke-linecap:round;stroke-linejoin:round;stroke-width:2.05}
 		.st6 {fill:#1c2735;font-family:"Times New Roman", "Liberation Serif", SimSun, "宋体", "Noto Serif CJK SC", serif;font-size:1.58668em;font-style:italic}
 		.st7 {fill:#1c2735;font-family:"Times New Roman", "Liberation Serif", SimSun, "宋体", "Noto Serif CJK SC", serif;font-size:1.16666em}
 		.st8 {fill:#1c2735;font-family:"Times New Roman", "Liberation Serif", SimSun, "宋体", "Noto Serif CJK SC", serif;font-size:1.16666em}
@@ -20,14 +20,14 @@
 		.st10 {fill:#1c2735;font-family:"Times New Roman", "Liberation Serif", SimSun, "宋体", "Noto Serif CJK SC", serif;font-size:1.49334em;font-style:italic}
 		.st11 {fill:#1c2735;font-family:"Times New Roman", "Liberation Serif", SimSun, "宋体", "Noto Serif CJK SC", serif;font-size:1.41666em;font-style:italic}
 		.st12 {stroke:#1c2735;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.05}
-		.st13 {fill:#ffffff;stroke:#1c2735;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.6}
+		.st13 {fill:#ffffff;stroke:#1c2735;stroke-linecap:round;stroke-linejoin:round;stroke-width:2.05}
 		.st14 {stroke:#1c2735;stroke-linecap:round;stroke-linejoin:round;stroke-width:1}
-		.st15 {fill:#1c2735;stroke:#1c2735;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.6}
+		.st15 {fill:#1c2735;stroke:#1c2735;stroke-linecap:round;stroke-linejoin:round;stroke-width:2.05}
 		.st16 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
 	]]>
 	</style>
 
-	<g v:mID="7" v:index="4" v:groupContext="foregroundPage">
+	<g v:mID="7" v:index="3" v:groupContext="foregroundPage">
 		<title>hit-2023-01-device</title>
 		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
 				v:shadowOffsetY="-8.50394"/>

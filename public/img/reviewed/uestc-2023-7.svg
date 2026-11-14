@@ -3,28 +3,31 @@
 <!-- 由 Microsoft Visio, SVG Export 生成 uestc-2023-7.svg uestc-2023-7 -->
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
 		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="11.1667in" height="3.44444in" viewBox="0 0 804 248"
-		xml:space="preserve" color-interpolation-filters="sRGB" class="st13">
+		xml:space="preserve" color-interpolation-filters="sRGB" class="st16">
 	<v:documentProperties v:langID="2052" v:metric="true" v:viewMarkup="false"/>
 
 	<style type="text/css">
 	<![CDATA[
-		.st1 {stroke:#182d49;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.7}
+		.st1 {stroke:#182d49;stroke-linecap:round;stroke-linejoin:round;stroke-width:2.15}
 		.st2 {fill:#182d49;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
-		.st3 {fill:#ffffff;stroke:#182d49;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.7}
+		.st3 {fill:#ffffff;stroke:#182d49;stroke-linecap:round;stroke-linejoin:round;stroke-width:2.15}
 		.st4 {fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
 		.st5 {fill:#182d49;font-family:"Times New Roman", "Liberation Serif", SimSun, "宋体", "Noto Serif CJK SC", serif;font-size:1.41305em}
 		.st6 {fill:#182d49;font-family:"Times New Roman", "Liberation Serif", SimSun, "宋体", "Noto Serif CJK SC", serif;font-size:1.16666em}
 		.st7 {fill:#182d49;font-family:"Times New Roman", "Liberation Serif", SimSun, "宋体", "Noto Serif CJK SC", serif;font-size:1.16666em}
-		.st8 {fill:#f6f9fd;stroke:#182d49;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.6}
+		.st8 {fill:#f6f9fd;stroke:#182d49;stroke-linecap:round;stroke-linejoin:round;stroke-width:2.05}
 		.st9 {fill:#182d49;font-family:"Times New Roman", "Liberation Serif", SimSun, "宋体", "Noto Serif CJK SC", serif;font-size:1.41305em}
 		.st10 {font-family:"Times New Roman", "Liberation Serif", SimSun, "宋体", "Noto Serif CJK SC", serif;font-size:1em}
-		.st11 {stroke:#1858a5;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.7}
+		.st11 {stroke:#1858a5;stroke-linecap:round;stroke-linejoin:round;stroke-width:2.15}
 		.st12 {font-family:"Times New Roman", "Liberation Serif", SimSun, "宋体", "Noto Serif CJK SC", serif;font-size:1em}
-		.st13 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+		.st13 {fill:#17212d;font-family:"Times New Roman", "Liberation Serif", SimSun, "宋体", "Noto Serif CJK SC", serif;font-size:1.5em}
+		.st14 {fill:#17212d;font-family:"Times New Roman", "Liberation Serif", SimSun, "宋体", "Noto Serif CJK SC", serif;font-size:1.5em;font-style:italic}
+		.st15 {stroke:#17212d;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.95}
+		.st16 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
 	]]>
 	</style>
 
-	<g v:mID="45" v:index="43" v:groupContext="foregroundPage">
+	<g v:mID="45" v:index="39" v:groupContext="foregroundPage">
 		<title>uestc-2023-7</title>
 		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
 				v:shadowOffsetY="-8.50394"/>
@@ -257,10 +260,25 @@
 		</g>
 		<g id="shape45-124" v:mID="45" v:groupContext="shape" transform="translate(631.714,-114.935)">
 			<title>工作表.45</title>
-			<desc>2/[s(s+1)²]</desc>
-			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="49.7862" cy="234.435" width="99.58" height="27.1304"/>
 			<rect x="0" y="220.87" width="99.5723" height="27.1304" class="st4"/>
-			<text x="13.74" y="239.52" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>2/[s(s+1)²]</text>		</g>
+		</g>
+		<g id="shape46-126" v:mID="46" v:groupContext="shape" transform="translate(631,-133.48)">
+			<title>工作表.46</title>
+			<desc>2</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="50.5" cy="241.88" width="101.01" height="12.24"/>
+			<rect x="0" y="235.76" width="101" height="12.24" class="st4"/>
+			<text x="46" y="247.28" class="st13" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>2</text>		</g>
+		<g id="shape47-129" v:mID="47" v:groupContext="shape" transform="translate(631,-110.28)">
+			<title>工作表.47</title>
+			<desc>s(s+1)²</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="50.5" cy="241.88" width="101.01" height="12.24"/>
+			<rect x="0" y="235.76" width="101" height="12.24" class="st4"/>
+			<text x="24.23" y="247.28" class="st14" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>s(s+1)²</text>		</g>
+		<g id="shape48-132" v:mID="48" v:groupContext="shape" transform="translate(647.89,-128)">
+			<title>工作表.48</title>
+			<path d="M0 248 L67.22 248" class="st15"/>
+		</g>
 	</g>
 </svg>

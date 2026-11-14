@@ -8,16 +8,16 @@
 
 	<style type="text/css">
 	<![CDATA[
-		.st1 {fill:#ffffff;stroke:#1c2735;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.6}
+		.st1 {fill:#ffffff;stroke:#1c2735;stroke-linecap:round;stroke-linejoin:round;stroke-width:2.05}
 		.st2 {fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
 		.st3 {fill:#1c2735;font-family:"Times New Roman", "Liberation Serif", SimSun, "宋体", "Noto Serif CJK SC", serif;font-size:1.16666em}
 		.st4 {fill:#1c2735;font-family:"Times New Roman", "Liberation Serif", SimSun, "宋体", "Noto Serif CJK SC", serif;font-size:1.16666em}
 		.st5 {fill:#1c2735;font-family:"Times New Roman", "Liberation Serif", SimSun, "宋体", "Noto Serif CJK SC", serif;font-size:1.58668em;font-style:italic}
-		.st6 {stroke:#1c2735;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.6}
+		.st6 {stroke:#1c2735;stroke-linecap:round;stroke-linejoin:round;stroke-width:2.05}
 		.st7 {fill:#1c2735;font-family:"Times New Roman", "Liberation Serif", SimSun, "宋体", "Noto Serif CJK SC", serif;font-size:1.08334em}
-		.st8 {fill:none;stroke:#1c2735;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.6}
+		.st8 {fill:none;stroke:#1c2735;stroke-linecap:round;stroke-linejoin:round;stroke-width:2.05}
 		.st9 {fill:#1c2735;font-family:"Times New Roman", "Liberation Serif", SimSun, "宋体", "Noto Serif CJK SC", serif;font-size:1.41666em;font-style:italic}
-		.st10 {stroke:#1c2735;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.15}
+		.st10 {stroke:#1c2735;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.6}
 		.st11 {font-family:"Times New Roman", "Liberation Serif", SimSun, "宋体", "Noto Serif CJK SC", serif;font-size:1em}
 		.st12 {stroke:#1c2735;stroke-linecap:round;stroke-linejoin:round;stroke-width:1}
 		.st13 {fill:#1c2735;font-family:SimSun, "宋体", "Noto Serif CJK SC", "Times New Roman", serif;font-size:1.21333em}
@@ -25,7 +25,7 @@
 	]]>
 	</style>
 
-	<g v:mID="8" v:index="5" v:groupContext="foregroundPage">
+	<g v:mID="8" v:index="4" v:groupContext="foregroundPage">
 		<title>seu-2023-electromechanical</title>
 		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
 				v:shadowOffsetY="-8.50394"/>

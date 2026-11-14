@@ -8,8 +8,8 @@
 
 	<style type="text/css">
 	<![CDATA[
-		.st1 {fill:none;stroke:#242831;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.8}
-		.st2 {stroke:#242831;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.8}
+		.st1 {fill:none;stroke:#242831;stroke-linecap:round;stroke-linejoin:round;stroke-width:2.25}
+		.st2 {stroke:#242831;stroke-linecap:round;stroke-linejoin:round;stroke-width:2.25}
 		.st3 {fill:#242831;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
 		.st4 {fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
 		.st5 {fill:#000000;font-family:"Times New Roman", "Liberation Serif", SimSun, "宋体", "Noto Serif CJK SC", serif;font-size:1.53333em}

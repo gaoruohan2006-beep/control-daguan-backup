@@ -8,21 +8,21 @@
 
 	<style type="text/css">
 	<![CDATA[
-		.st1 {stroke:#1c2735;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5}
+		.st1 {stroke:#1c2735;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.95}
 		.st2 {fill:#1c2735;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
-		.st3 {fill:#ffffff;stroke:#1c2735;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5}
+		.st3 {fill:#ffffff;stroke:#1c2735;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.95}
 		.st4 {fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
 		.st5 {fill:#1c2735;font-family:SimSun, "宋体", "Noto Serif CJK SC", "Times New Roman", serif;font-size:1.16666em}
 		.st6 {fill:#1c2735;font-family:"Times New Roman", "Liberation Serif", SimSun, "宋体", "Noto Serif CJK SC", serif;font-size:1.53333em;font-style:italic}
 		.st7 {fill:#1c2735;font-family:"Times New Roman", "Liberation Serif", SimSun, "宋体", "Noto Serif CJK SC", serif;font-size:1.44999em;font-style:italic}
-		.st8 {fill:#1c2735;stroke:#1c2735;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5}
+		.st8 {fill:#1c2735;stroke:#1c2735;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.95}
 		.st9 {fill:#1c2735;font-family:"Times New Roman", "Liberation Serif", SimSun, "宋体", "Noto Serif CJK SC", serif;font-size:1.7em;font-style:italic}
 		.st10 {fill:#1c2735;font-family:"Times New Roman", "Liberation Serif", SimSun, "宋体", "Noto Serif CJK SC", serif;font-size:1.33333em;font-style:italic}
 		.st11 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
 	]]>
 	</style>
 
-	<g v:mID="17" v:index="15" v:groupContext="foregroundPage">
+	<g v:mID="17" v:index="14" v:groupContext="foregroundPage">
 		<title>hit-2023-05-block</title>
 		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
 				v:shadowOffsetY="-8.50394"/>

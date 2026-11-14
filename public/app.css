@@ -229,15 +229,17 @@ mark{background:#fff3b0;color:inherit;border-radius:3px}
 .stem p,.box .body p{margin:.6em 0}
 .box{background:var(--panel);border-color:var(--border);padding:16px clamp(12px,2.5vw,26px)}
 .box h4{font-size:calc(20px * var(--fs));margin-bottom:6px}
-.fig{margin:20px auto;text-align:center}
-.fig img{display:block;margin:0 auto;max-width:100%;max-height:540px;object-fit:contain;background:#fff}
+.fig{display:block;margin:22px auto;text-align:center}
+.fig img{display:block;margin:0 auto;max-width:100%;height:auto;background:#fff}
+.box[data-kind="exp"] .body > p{margin-block:.85em}
+.box[data-kind="exp"] .body > p > strong:first-child{display:block;color:var(--fg);line-height:1.5;margin-bottom:.25em}
 @media (prefers-color-scheme:dark){.fig img{filter:none}}
 @media (max-width:600px){
  .card{padding:16px}
  .cards{font-size:calc(16px * var(--fs))}
  .meta{margin-bottom:15px;padding-bottom:10px}
  .due{display:none}
- .fig{margin:16px auto}
+ .fig{margin:18px -6px}
 }
 
 /* Directory typography follows the three levels of the topic tree. */

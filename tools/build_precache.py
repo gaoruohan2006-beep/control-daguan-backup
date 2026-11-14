@@ -49,7 +49,7 @@ def version_for(files):
         h.update(rel.encode())
         h.update(b"\0")
         content = (ROOT / rel).read_bytes()
-        if not rel.startswith("vendor/"):
+        if Path(rel).suffix in {".html", ".js", ".css", ".json", ".webmanifest", ".svg", ".txt", ".md"}:
             content = content.replace(b"\r\n", b"\n")
         if rel == "index.html":
             content = STAMPED_ASSET.sub(r"\1", content.decode("utf-8")).encode("utf-8")

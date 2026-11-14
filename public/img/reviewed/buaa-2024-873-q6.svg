@@ -8,9 +8,9 @@
 
 	<style type="text/css">
 	<![CDATA[
-		.st1 {stroke:#273244;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.65}
+		.st1 {stroke:#273244;stroke-linecap:round;stroke-linejoin:round;stroke-width:2.1}
 		.st2 {fill:#273244;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
-		.st3 {fill:#ffffff;stroke:#273244;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5}
+		.st3 {fill:#ffffff;stroke:#273244;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.95}
 		.st4 {fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
 		.st5 {fill:#000000;font-family:"Times New Roman", "Liberation Serif", SimSun, "宋体", "Noto Serif CJK SC", serif;font-size:1.41666em}
 		.st6 {font-family:"Times New Roman", "Liberation Serif", SimSun, "宋体", "Noto Serif CJK SC", serif;font-size:1em}

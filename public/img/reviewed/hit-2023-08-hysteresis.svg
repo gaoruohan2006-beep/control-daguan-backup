@@ -8,24 +8,24 @@
 
 	<style type="text/css">
 	<![CDATA[
-		.st1 {stroke:#1c2735;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5}
+		.st1 {stroke:#1c2735;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.95}
 		.st2 {fill:#1c2735;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
 		.st3 {fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
 		.st4 {fill:#1c2735;font-family:"Times New Roman", "Liberation Serif", SimSun, "宋体", "Noto Serif CJK SC", serif;font-size:1.44999em}
 		.st5 {fill:#1c2735;font-family:"Times New Roman", "Liberation Serif", SimSun, "宋体", "Noto Serif CJK SC", serif;font-size:1.44999em;font-style:italic}
 		.st6 {fill:#1c2735;font-family:"Times New Roman", "Liberation Serif", SimSun, "宋体", "Noto Serif CJK SC", serif;font-size:1.44999em;font-style:italic}
 		.st7 {font-family:"Times New Roman", "Liberation Serif", SimSun, "宋体", "Noto Serif CJK SC", serif;font-size:1em}
-		.st8 {stroke:#5f8eb7;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5}
-		.st9 {stroke:#b67489;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5}
+		.st8 {stroke:#5f8eb7;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.95}
+		.st9 {stroke:#b67489;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.95}
 		.st10 {fill:#b67489;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
-		.st11 {stroke:#a5b1bd;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5}
-		.st12 {fill:#1c2735;stroke:#1c2735;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5}
+		.st11 {stroke:#a5b1bd;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.95}
+		.st12 {fill:#1c2735;stroke:#1c2735;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.95}
 		.st13 {font-family:SimSun, "宋体", "Noto Serif CJK SC", "Times New Roman", serif;font-size:1em}
 		.st14 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
 	]]>
 	</style>
 
-	<g v:mID="19" v:index="17" v:groupContext="foregroundPage">
+	<g v:mID="19" v:index="16" v:groupContext="foregroundPage">
 		<title>hit-2023-08-hysteresis</title>
 		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
 				v:shadowOffsetY="-8.50394"/>

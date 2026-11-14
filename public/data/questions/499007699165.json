@@ -1,6 +1,6 @@
 {
   "answer": "$$m\\ddot y+f\\dot y+ky=F(t),\\quad \\frac{Y(s)}{F(s)}=\\frac1{ms^2+fs+k},\\quad\n\\zeta=\\frac f{2\\sqrt{mk}},\\quad \\omega_n=\\sqrt{\\frac km},\\quad y(\\infty)=\\frac3k.$$",
-  "explanation": "以位移正方向列牛顿第二定律，弹簧力与阻尼力分别为 $-ky$、$-f\\dot y$。在零初始条件下取拉氏变换，并把归一化分母与 $s^2+2\\zeta\\omega_ns+\\omega_n^2$ 对照。由终值定理，$y(\\infty)=\\lim_{s\\to0}s[3/(s(ms^2+fs+k))]=3/k$。",
+  "explanation": "**（1）列受力平衡并求传递函数。** 取向右为正，弹簧力与位移方向相反，为 $-ky$。黏性阻尼力与速度方向相反，为 $-f\\dot y$。由牛顿第二定律得 $m\\ddot y=F(t)-f\\dot y-ky$。传递函数按零初值定义，取拉普拉斯变换得 $(ms^2+fs+k)Y(s)=F(s)$。\n\n**（2）对照标准二阶分母。** 分母除以 $m$ 得 $s^2+(f/m)s+k/m$。与 $s^2+2\\zeta\\omega_ns+\\omega_n^2$ 逐项比较，得到 $\\omega_n=\\sqrt{k/m}$，并由 $2\\zeta\\omega_n=f/m$ 得 $\\zeta=f/(2\\sqrt{mk})$。题给范围保证 $0<\\zeta<1$，所以系统处于欠阻尼状态。\n\n**（3）求恒定力下的最终位移。** 输入是幅值为 $3\\,\\mathrm N$ 的阶跃，故 $F(s)=3/s$。传递函数的分母在 $m,f,k>0$ 时为 Hurwitz 多项式，终值定理给出\n$$y(\\infty)=\\lim_{s\\to0}sY(s)=\\lim_{s\\to0}\\frac{3}{ms^2+fs+k}=\\frac3k.$$\n也可以从静态平衡核对。当速度和加速度都降至零时，弹簧力 $ky(\\infty)$ 恰好平衡 $3\\,\\mathrm N$。",
   "originalImages": [],
   "answerPdfPages": "83",
   "referenceNote": "原解第（3）问停在 $Y(s)$，未给出题目所求的稳态位移。",

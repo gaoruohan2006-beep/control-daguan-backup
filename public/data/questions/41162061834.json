@@ -1,6 +1,6 @@
 {
   "answer": "原点全局指数稳定。",
-  "explanation": "方法一：特征多项式为 $(\\lambda+1)^2+2$，特征值为 $-1\\pm\\sqrt2j$，均在左半平面。\n\n方法二：取 $V=x_1^2+2x_2^2$，则\n$$\\dot V=2x_1(-x_1-2x_2)+4x_2(x_1-x_2)=-2x_1^2-4x_2^2=-2V.$$\n$V$ 正定且径向无界，结论成立。",
+  "explanation": "**（1）由特征值判断。** 计算\n$$\\det(\\lambda I-A)=(\\lambda+1)^2+2.$$\n根为 $-1\\pm j\\sqrt2$，实部均为 $-1$。这是线性定常自治系统，因此所有初值的响应均指数衰减。\n\n**（2）由李雅普诺夫函数判断。** 取 $V=x_1^2+2x_2^2$。代入 $\\dot x_1=-x_1-2x_2$、$\\dot x_2=x_1-x_2$，\n$$\\dot V=2x_1(-x_1-2x_2)+4x_2(x_1-x_2)=-2x_1^2-4x_2^2=-2V.$$\n从而 $V(t)=e^{-2t}V(0)$。再由 $\\lVert x\\rVert^2\\le V\\le2\\lVert x\\rVert^2$ 得 $\\lVert x(t)\\rVert\\le\\sqrt2e^{-t}\\lVert x(0)\\rVert$，故原点全局指数稳定。",
   "originalImages": [],
   "answerPdfPages": "85–86",
   "referenceNote": "原解计算 $\\dot V$ 时误抄 $\\dot x_1$，导致交叉项错误。",
