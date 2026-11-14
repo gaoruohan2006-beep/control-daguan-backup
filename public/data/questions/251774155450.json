@@ -1,5 +1,5 @@
 {
-  "answer": "$$\\frac{Y}{U_i}=\\frac{k_1k_f}{(L_1s+R_1)(Ms^2+bs+k)+k_ek_fs+\\eta k_1k_f}.$$",
+  "answer": "$$\\frac{Y}{U_i}=\\frac{k_1k_f}{D(s)},$$\n$$\\begin{aligned}D(s)={}&(L_1s+R_1)(Ms^2+bs+k)\\\\&+k_ek_fs+\\eta k_1k_f.\\end{aligned}$$",
   "explanation": "检测电压从输入端扣除，放大后的驱动电压为 $k_1(u_i-\\eta y)$。对线圈列电压方程 $L_1\\dot i+R_1i=k_1(u_i-\\eta y)-k_e\\dot y$。对衔铁列受力方程 $M\\ddot y+b\\dot y+ky=k_fi$。\n\n![含位移测量和反电动势的方框图](img/reviewed/hit-2023-01-block.svg)\n\n零初态下，第二式给出 $I=(Ms^2+bs+k)Y/k_f$。将它代入第一式的拉普拉斯变换，把含 $Y$ 的项移到左边，再除以 $U_i$，得所求传递函数。",
   "originalImages": [],
   "answerPdfPages": "156",

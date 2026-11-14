@@ -137,7 +137,7 @@ function inline(s, hl) {
     if (m[1] != null) out.push(tex(m[1], true));
     else if (m[2] != null) out.push(tex(m[2], false));
     else if (m[4] != null) { const [alt, w] = m[3].split('|'); out.push(`<span class="fig"><img src="${esc(m[4])}" alt="${esc(alt)}" ${w ? `style="width:${+w}px"` : ''} loading="lazy" data-zoom title="单击放大图片"></span>`); }
-    else out.push(`<strong>${txt(m[5])}</strong>`);
+    else out.push(`<strong>${inline(m[5], hl)}</strong>`);
     i = re.lastIndex;
   }
   out.push(txt(s.slice(i)));

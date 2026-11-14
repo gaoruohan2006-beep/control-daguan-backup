@@ -1,6 +1,6 @@
 {
   "answer": "（1）$\\Phi(s)=\\omega_n^2/(s^2+2\\zeta\\omega_n s+\\omega_n^2)$。（2）$T=0.1\\,\\mathrm s$，$K=10$。",
-  "explanation": "$G/(1+G)=\\dfrac{K/T}{s^2+s/T+K/T}$，故 $2\\zeta\\omega_n=1/T$、$\\omega_n^2=K/T$。目标极点给出特征多项式 $(s+5)^2+75=s^2+10s+100$。比较得到 $1/T=10$、$K/T=100$。",
+  "explanation": "**（1）先把闭环分母首项化成 $1$。** 比较点满足 $E=R-C$，且 $C=GE$，所以 $\\Phi=G/(1+G)$。代入并把分子、分母同时除以 $T$：\n$$\\Phi(s)=\\frac{K}{Ts^2+s+K}=\\frac{K/T}{s^2+(1/T)s+K/T}.$$\n与标准二阶分母 $s^2+2\\zeta\\omega_ns+\\omega_n^2$ 比较，得到 $2\\zeta\\omega_n=1/T$、$\\omega_n^2=K/T$。分子也是 $K/T=\\omega_n^2$，所以闭环直流增益为 $1$。\n\n**（2）用目标根构造目标多项式。** 将两个根各减自 $s$ 作因式，利用共轭相乘：\n$$(s+5-j5\\sqrt3)(s+5+j5\\sqrt3)=(s+5)^2+75=s^2+10s+100.$$\n比较系数，$1/T=10$ 给出 $T=0.1\\,\\mathrm s$；$K/T=100$ 给出 $K=100T=10$。",
   "originalImages": [],
   "answerPdfPages": "747–748",
   "referenceNote": "",

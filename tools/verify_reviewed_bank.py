@@ -1,6 +1,7 @@
 """Exercise the published question bank with a real Chromium browser."""
 import asyncio
 import os
+import re
 import sys
 from pathlib import Path
 
@@ -8,6 +9,7 @@ from playwright.async_api import async_playwright
 
 BASE = sys.argv[1] if len(sys.argv) > 1 else "http://localhost:8765/"
 CHROME = os.environ.get("CHROME_PATH", "/usr/bin/google-chrome")
+TEX = re.compile(r"\$\$([\s\S]+?)\$\$|\$([^$]+?)\$")
 
 
 async def verify():
@@ -63,6 +65,18 @@ async def verify():
             await card.get_by_role("button", name="解析", exact=True).click()
             await card.locator('.box[data-kind="exp"] .body > :first-child').wait_for()
             assert await card.locator(".katex-error").count() == 0, q["source"]
+            detail = await page.evaluate(
+                "id => fetch('data/questions/' + id + '.json').then(r => r.json())", identifier
+            )
+            for selector, value in (
+                (".stem", q["stem"]),
+                ('.box[data-kind="answer"] .body', detail["answer"]),
+                ('.box[data-kind="exp"] .body', detail["explanation"]),
+            ):
+                expected = [(block or inline).replace("\n", " ").strip() for block, inline in TEX.findall(value)]
+                rendered = await card.locator(f'{selector} annotation[encoding="application/x-tex"]').all_text_contents()
+                assert [formula.strip() for formula in rendered] == expected, (q["source"], q["number"], selector)
+                assert await card.locator(f"{selector} .errata").count() == 0
             bad = await card.evaluate("""async card => {
                 const images = [...card.querySelectorAll('img')];
                 await Promise.all(images.map(img => { img.loading = 'eager'; return img.decode().catch(() => {}); }));

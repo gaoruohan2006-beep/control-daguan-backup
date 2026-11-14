@@ -1,6 +1,6 @@
 {
   "answer": "$L_a(s)=\\dfrac{ak}{s(s^2+2s+k)}$。",
-  "explanation": "由 $1+G(s)=0$ 得 $s^3+2s^2+ks+ak=0$。把含 $a$ 的项单独移出，将其余项写成 $s(s^2+2s+k)$，即可整理成 $1+ak/[s(s^2+2s+k)]=0$。",
+  "explanation": "由单位负反馈的特征方程 $1+G(s)=0$ 开始。把题给传函代入并乘 $s^2(s+2)$：\n$$s^2(s+2)+k(s+a)=s^3+2s^2+ks+ak=0.$$\n要画的是 $a$ 变化时的根轨迹，所以把 $ak$ 保留在一个单独的项中。其余三项可提出公因子 $s$，得到 $s(s^2+2s+k)+ak=0$。按标准形式写成\n$$1+\\frac{ak}{s(s^2+2s+k)}=0.$$\n因此等效开环传函为 $ak/[s(s^2+2s+k)]$，这里的变化参数是 $a$，$k$ 保留为固定系数。",
   "originalImages": [],
   "answerPdfPages": "703",
   "referenceNote": "",

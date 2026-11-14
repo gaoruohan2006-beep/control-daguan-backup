@@ -1,6 +1,6 @@
 {
   "answer": "$\\dfrac{X(s)}{U(s)}=\\dfrac{1}{s^2+5s+3}\\begin{bmatrix}s+7\\\\2s-3\\end{bmatrix}$。",
-  "explanation": "零初值下 $(sI-A)X=BU$，故 $X/U=(sI-A)^{-1}B$。矩阵 $sI-A=\\begin{bmatrix}s&-1\\\\3&s+5\\end{bmatrix}$ 的行列式为 $s^2+5s+3$。将其伴随矩阵 $\\begin{bmatrix}s+5&1\\\\-3&s\\end{bmatrix}$ 乘以 $B$，即得所求。若另求输出传函，再左乘 $C=[0,2]$ 得 $(4s-6)/(s^2+5s+3)$。",
+  "explanation": "**1. 对状态方程作拉普拉斯变换。** 初始状态为零，所以 $\\mathcal L\\{\\dot x\\}=sX$。由 $sX=AX+BU$ 得 $(sI-A)X=BU$，即 $X/U=(sI-A)^{-1}B$。这个结果是两行一列，分别代表输入到两个状态的通道。\n\n**2. 求二阶矩阵的逆。** 有\n$$sI-A=\\begin{bmatrix}s&-1\\\\3&s+5\\end{bmatrix},\\qquad\n\\det(sI-A)=s(s+5)-(-1)\\cdot3=s^2+5s+3.$$\n用二阶逆矩阵公式，交换主对角线元素、把非对角线元素变号，再除以行列式。于是\n$$\\frac{X}{U}=\\frac1{s^2+5s+3}\\begin{bmatrix}s+5&1\\\\-3&s\\end{bmatrix}\\begin{bmatrix}1\\\\2\\end{bmatrix}\n=\\frac1{s^2+5s+3}\\begin{bmatrix}s+7\\\\2s-3\\end{bmatrix}.$$\n题问的是状态向量。如果求 $Y/U$，则由 $y=2x_2$ 取第二行再乘 $2$，得到 $(4s-6)/(s^2+5s+3)$。",
   "originalImages": [],
   "answerPdfPages": "890",
   "referenceNote": "",

@@ -1,6 +1,6 @@
 {
   "answer": "对。",
-  "explanation": "若这对极点的实部绝对值比其他闭环极点小得多，且相应模态没有被邻近零点明显削弱，其暂态分量衰减最慢。保留这对极点形成二阶近似，可用阻尼比和自然频率估算超调量、峰值时间等。",
+  "explanation": "假设某一对闭环极点为 $-\\alpha\\pm j\\beta$。它们在时域中的贡献可写成 $e^{-\\alpha t}(C_1\\cos\\beta t+C_2\\sin\\beta t)$。$\\alpha$ 越小，包络 $e^{-\\alpha t}$ 衰减越慢。\n\n如果调整增益后，其他极点比这对极点离虚轴远得多，它们的暂态通常先衰减。还要确认这对极点的作用没有被附近的零点明显削弱。满足这些条件时，保留这对极点即可建立二阶近似，其分母是\n$$ (s+\\alpha)^2+\\beta^2=s^2+2\\alpha s+\\alpha^2+\\beta^2.$$\n比较标准分母可得 $\\omega_n=\\sqrt{\\alpha^2+\\beta^2}$、$\\zeta=\\alpha/\\omega_n$，再用二阶公式估算超调、峰值时间等。所以题目所说的方法可行。",
   "originalImages": [],
   "answerPdfPages": "327",
   "referenceNote": "",

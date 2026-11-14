@@ -1,6 +1,6 @@
 {
   "answer": "$\\omega_r=7/\\sqrt2\\,\\mathrm{rad/s}$，$M_r=50/\\sqrt{99}\\approx5.025$。",
-  "explanation": "由 $G(j\\omega)=25/(25-\\omega^2+j\\omega)$ 可知，要使幅值最大，须使 $D=(25-\\omega^2)^2+\\omega^2$ 最小。令 $v=\\omega^2\\ge0$，得 $D(v)=v^2-49v+625$，最小值在 $v=49/2$，为 $99/4$。取正频率并代回 $\\lvert G\\rvert=25/\\sqrt D$ 即得结果。",
+  "explanation": "**1. 写出频率响应的幅值。** 代入 $s=j\\omega$，平方项变成 $-\\omega^2$，一次项变成 $j\\omega$。所以\n$$|G(j\\omega)|=\\frac{25}{\\sqrt{(25-\\omega^2)^2+\\omega^2}}.$$\n分子固定为 $25$，因此寻找最大幅值等价于寻找根号内的最小值。\n\n**2. 用配方找到最小点。** 令 $v=\\omega^2\\ge0$，则根号内为\n$$(25-v)^2+v=v^2-49v+625=(v-49/2)^2+99/4.$$\n当 $v=49/2$ 时平方项为零，且这个点在允许区间内。取正频率，得到 $\\omega_r=\\sqrt{49/2}=7/\\sqrt2\\,\\mathrm{rad/s}$。代回幅值式，峰值为 $M_r=25/\\sqrt{99/4}=50/\\sqrt{99}\\approx5.025$。",
   "originalImages": [],
   "answerPdfPages": "902–903",
   "referenceNote": "",

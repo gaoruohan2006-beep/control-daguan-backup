@@ -83,6 +83,8 @@ textarea{width:100%;font:12px/1.5 ui-monospace,monospace;border:1px solid var(--
 .stem p,.box p{margin:.35em 0}
 .fig{margin:10px 0;text-align:center}.fig img{max-width:100%;height:auto;cursor:zoom-in;border-radius:6px}
 .katex-display{margin:.6em 0;overflow-x:auto;overflow-y:hidden;padding:2px 0}
+.stem .katex-display > .katex,.box .katex-display > .katex{white-space:normal}
+.stem .katex-display > .katex > .katex-html,.box .katex-display > .katex > .katex-html{min-width:min-content}
 .actions{display:flex;align-items:center;gap:10px;border-top:1px solid var(--border-subtle);margin-top:14px;padding-top:10px;flex-wrap:wrap}
 .tog{display:inline-flex;align-items:center;gap:5px;padding:6px 9px;border-radius:8px;font-size:12.5px;color:var(--fg)}
 .tog:hover{background:var(--panel)}.tog[aria-pressed=true]{background:var(--brand-soft);color:var(--brand)}
@@ -228,7 +230,7 @@ mark{background:#fff3b0;color:inherit;border-radius:3px}
  .cards{font-size:calc(16px * var(--fs))}
  .meta{margin-bottom:15px;padding-bottom:10px}
  .due{display:none}
- .fig{margin:18px -6px}
+ .fig{margin:18px auto}
 }
 
 /* Directory typography follows the three levels of the topic tree. */

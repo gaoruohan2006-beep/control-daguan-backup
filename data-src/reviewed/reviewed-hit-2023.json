@@ -10,7 +10,7 @@
     "questionPages": "71",
     "answerPages": "156",
     "stem": "电磁执行机构如图。输入电压为 $u_i$，放大器增益为 $k_1$，位移检测电压为 $\\eta y$。线圈电阻和电感为 $R_1,L_1$，电磁力 $f=k_fi$，反电动势 $e=k_e\\dot y$。衔铁质量为 $M$，弹簧刚度为 $k$，黏性阻尼系数为 $b$，初始静止。\n\n![电磁驱动、衔铁与位移测量](img/reviewed/hit-2023-01-device.svg)\n\n（1）画出系统方框图，标出测量环节。（2）求 $Y(s)/U_i(s)$。",
-    "answer": "$$\\frac{Y}{U_i}=\\frac{k_1k_f}{(L_1s+R_1)(Ms^2+bs+k)+k_ek_fs+\\eta k_1k_f}.$$",
+    "answer": "$$\\frac{Y}{U_i}=\\frac{k_1k_f}{D(s)},$$\n$$\\begin{aligned}D(s)={}&(L_1s+R_1)(Ms^2+bs+k)\\\\&+k_ek_fs+\\eta k_1k_f.\\end{aligned}$$",
     "explanation": "检测电压从输入端扣除，放大后的驱动电压为 $k_1(u_i-\\eta y)$。对线圈列电压方程 $L_1\\dot i+R_1i=k_1(u_i-\\eta y)-k_e\\dot y$。对衔铁列受力方程 $M\\ddot y+b\\dot y+ky=k_fi$。\n\n![含位移测量和反电动势的方框图](img/reviewed/hit-2023-01-block.svg)\n\n零初态下，第二式给出 $I=(Ms^2+bs+k)Y/k_f$。将它代入第一式的拉普拉斯变换，把含 $Y$ 的项移到左边，再除以 $U_i$，得所求传递函数。",
     "notes": ""
   },

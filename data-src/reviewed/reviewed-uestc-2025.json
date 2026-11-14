@@ -9,7 +9,7 @@
     ],
     "stem": "已知图中各环节的传递函数 $G_1,G_2,G_3,G_4,H_1,H_2$。求闭环传递函数 $U_o(s)/U_i(s)$。\n\n![多环反馈系统](img/reviewed/uestc-2025-1-a.svg)",
     "answer": "令 $\\Delta=1+G_2H_1-G_1G_2H_1+G_2G_3H_2$，则\n$$\\frac{U_o}{U_i}=\\frac{G_1G_2G_3+(1+G_2H_1-G_1G_2H_1)G_4}{\\Delta}.$$",
-    "explanation": "**（1）沿箭头给中间信号命名。** 令 $X$ 为 $G_2$ 的输出，记第一个、第二个加法点的输出为 $E_1,E_2$。图中 $H_1X$ 在第一个加法点取正号，在第二个取负号。$H_2U_o$ 在第二个加法点取负号，$G_4U_i$ 则直接加到输出。\n$$\\begin{aligned}\nE_1&=U_i+H_1X,\\\\\nE_2&=G_1E_1-H_1X-H_2U_o,\\\\\nX&=G_2E_2,\\qquad U_o=G_3X+G_4U_i.\n\\end{aligned}$$\n\n**（2）先消去 $U_o$，再求输出。** 将 $E_1,E_2,U_o$ 代入 $X=G_2E_2$，把含 $X$ 的项移到左边，得\n$$\\underbrace{(1+G_2H_1-G_1G_2H_1+G_2G_3H_2)}_{\\Delta}X\n=G_2(G_1-H_2G_4)U_i.$$\n因此 $U_o/U_i=G_4+G_2G_3(G_1-H_2G_4)/\\Delta$。通分后，分子中 $G_2G_3H_2G_4$ 与 $-G_2G_3H_2G_4$ 抵消，得到答案中的表达式。\n\n**（3）用特例核对。** 令 $H_1=H_2=0$，可得 $U_o/U_i=G_1G_2G_3+G_4$，正好是图中两条前向路径的传递函数之和。",
+    "explanation": "**（1）沿箭头给中间信号命名。** 令 $X$ 为 $G_2$ 的输出，记第一个、第二个加法点的输出为 $E_1,E_2$。图中 $H_1X$ 在第一个加法点取正号，在第二个取负号。$H_2U_o$ 在第二个加法点取负号，$G_4U_i$ 则直接加到输出。\n$$\\begin{aligned}\nE_1&=U_i+H_1X,\\\\\nE_2&=G_1E_1-H_1X-H_2U_o,\\\\\nX&=G_2E_2,\\qquad U_o=G_3X+G_4U_i.\n\\end{aligned}$$\n\n**（2）先消去 $U_o$，再求输出。** 将 $E_1,E_2,U_o$ 代入 $X=G_2E_2$，把含 $X$ 的项移到左边，得\n$$\\Delta X=G_2(G_1-H_2G_4)U_i,$$\n$$\\Delta=1+G_2H_1-G_1G_2H_1+G_2G_3H_2.$$\n因此 $U_o/U_i=G_4+G_2G_3(G_1-H_2G_4)/\\Delta$。通分后，分子中 $G_2G_3H_2G_4$ 与 $-G_2G_3H_2G_4$ 抵消，得到答案中的表达式。\n\n**（3）用特例核对。** 令 $H_1=H_2=0$，可得 $U_o/U_i=G_1G_2G_3+G_4$，正好是图中两条前向路径的传递函数之和。",
     "questionPages": "56",
     "answerPages": "105–106",
     "notes": "保留原题第（2）问，直接给出各环节的符号模型。"
@@ -121,7 +121,7 @@
       "离散系统 / 稳定性 / 朱里判据"
     ],
     "stem": "已知离散控制系统如图所示，其中\n$$G_1=2,\\qquad G_2(s)=\\frac{1-e^{-Ts}}s\\cdot\\frac1{s+1},\\qquad\nG_3(s)=\\frac1{s(s+1)},\\qquad T=1\\,\\mathrm{s}.$$\n\n（1）求输出 $C(z)$。\n\n（2）判断系统稳定性。\n\n![含三个同步采样点的离散反馈系统](img/reviewed/uestc-2025-8.svg)",
-    "answer": "令 $\\alpha=e^{-1}$，则\n$$C(z)=\\frac{2(1-\\alpha)(z-1)(z-\\alpha)}{z^3-(1+2\\alpha)z^2+(2-2\\alpha+3\\alpha^2)z-\\alpha^2}R(z).$$\n闭环不稳定。",
+    "answer": "令 $\\alpha=e^{-1}$，则\n$$C(z)=\\frac{2(1-\\alpha)(z-1)(z-\\alpha)}{D(z)}R(z),$$\n$$\\begin{aligned}D(z)={}&z^3-(1+2\\alpha)z^2\\\\&+(2-2\\alpha+3\\alpha^2)z-\\alpha^2.\\end{aligned}$$\n闭环不稳定。",
     "explanation": "采样器隔开的两块分别化为脉冲传递函数。带零阶保持器的 $G_2$ 由阶跃采样差分得到 $G_2(z)=(1-\\alpha)/(z-\\alpha)$。$G_3$ 的冲激响应为 $1-e^{-t}$，采样后\n$$G_3(z)=\\frac z{z-1}-\\frac z{z-\\alpha}=\\frac{z(1-\\alpha)}{(z-1)(z-\\alpha)}.$$\n按负反馈关系，$C/R=2G_2/(1+2G_2G_3)$，整理得上式。分母有一对极点约为 $0.82348\\pm0.91972j$，模约 $1.234$，大于 1。",
     "questionPages": "58",
     "answerPages": "114",

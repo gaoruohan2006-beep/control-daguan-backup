@@ -52,7 +52,7 @@
     ],
     "stem": "已知开环传递函数\n$$G(s)=\\frac{7.5(1+s/3)}{s(1+s/2)(1+s/2+s^2/2)}.$$\n画出对数幅频特性图。",
     "answer": "低频渐近线为 $20\\log_{10}(7.5/\\omega)$。三个转折频率依次为 $\\sqrt2,2,3\\,\\mathrm{rad/s}$，渐近线斜率依次为 $-20,-60,-80,-60\\,\\mathrm{dB/dec}$。",
-    "explanation": "积分环节给出初始斜率。二阶因子的无阻尼自然频率为 $\\sqrt2$，使斜率减少 $40\\,\\mathrm{dB/dec}$。频率 $2$ 对应一阶极点，频率 $3$ 对应一阶零点。精确幅值为\n$$|G(j\\omega)|=\\frac{7.5\\sqrt{1+(\\omega/3)^2}}{\\omega\\sqrt{1+(\\omega/2)^2}\\sqrt{(1-\\omega^2/2)^2+(\\omega/2)^2}}.$$\n图中实线为精确幅频曲线，虚线为渐近线。\n\n![伯德幅频曲线及渐近线|630](img/reviewed/xmu-2024-bode.svg)",
+    "explanation": "积分环节给出初始斜率。二阶因子的无阻尼自然频率为 $\\sqrt2$，使斜率减少 $40\\,\\mathrm{dB/dec}$。频率 $2$ 对应一阶极点，频率 $3$ 对应一阶零点。精确幅值为\n$$|G(j\\omega)|=\\frac{7.5\\sqrt{1+(\\omega/3)^2}}{\\omega F_1(\\omega)F_2(\\omega)},$$\n$$F_1(\\omega)=\\sqrt{1+(\\omega/2)^2},$$\n$$F_2(\\omega)=\\sqrt{(1-\\omega^2/2)^2+(\\omega/2)^2}.$$\n图中实线为精确幅频曲线，虚线为渐近线。\n\n![伯德幅频曲线及渐近线|630](img/reviewed/xmu-2024-bode.svg)",
     "questionPages": "220",
     "answerPages": "526"
   },

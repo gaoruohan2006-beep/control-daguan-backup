@@ -1,6 +1,6 @@
 {
   "answer": "$\\zeta=1/2,\\ \\omega_n=2\\,\\mathrm{rad/s}$，$t_r=2\\pi/(3\\sqrt3)\\,\\mathrm s$。按工程公式，5% 和 2% 调节时间分别约 $3\\,\\mathrm s$ 和 $4\\,\\mathrm s$。",
-  "explanation": "由指数和正弦项可识别 $\\zeta\\omega_n=1$、$\\omega_d=\\sqrt3$。由 $\\omega_n^2=(\\zeta\\omega_n)^2+\\omega_d^2$ 得 $\\omega_n=2$，进而 $\\zeta=0.5$。首次达到 $c(t)=1$ 时 $\\sqrt3t+\\pi/3=\\pi$，故 $t_r=2\\pi/(3\\sqrt3)$。常用调节时间公式分别为 $3/(\\zeta\\omega_n)$ 和 $4/(\\zeta\\omega_n)$。",
+  "explanation": "**1. 从时域表达式读两个参数。** 欠阻尼阶跃暂态的指数形式是 $e^{-\\zeta\\omega_nt}$，正弦的角频率是 $\\omega_d=\\omega_n\\sqrt{1-\\zeta^2}$。题给指数为 $e^{-t}$、正弦项为 $\\sin(\\sqrt3t+\\pi/3)$，所以 $\\zeta\\omega_n=1$、$\\omega_d=\\sqrt3$。由 $\\omega_d^2=\\omega_n^2-(\\zeta\\omega_n)^2$ 得 $\\omega_n^2=3+1=4$，取正值 $\\omega_n=2$，故 $\\zeta=1/2$。\n\n**2. 找第一次到达稳态值的时刻。** $c(\\infty)=1$，而有限时刻的指数因子始终大于零。要使 $c(t)=1$，必须有 $\\sin(\\sqrt3t+\\pi/3)=0$。初始相角是 $\\pi/3$，第一个到达的正弦零点是 $\\pi$，所以\n$$t_r=\\frac{\\pi-\\pi/3}{\\sqrt3}=\\frac{2\\pi}{3\\sqrt3}\\,\\mathrm s.$$\n\n**3. 由暂态衰减率估算调节时间。** 使用常见工程公式，5% 误差带为 $t_s\\approx3/(\\zeta\\omega_n)=3\\,\\mathrm s$，2% 误差带为 $t_s\\approx4/(\\zeta\\omega_n)=4\\,\\mathrm s$。",
   "originalImages": [],
   "answerPdfPages": "874",
   "referenceNote": "题册未指定调节时间误差带，给出两种常用估计。",

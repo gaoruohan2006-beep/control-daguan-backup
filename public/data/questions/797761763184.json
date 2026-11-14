@@ -1,5 +1,5 @@
 {
-  "answer": "$$A=\\operatorname{diag}(0,-2-\\sqrt3,-2+\\sqrt3),\\quad B=\\begin{bmatrix}1\\\\1\\\\1\\end{bmatrix},\\quad C=\\begin{bmatrix}2&-1+\\sqrt3/2&-1-\\sqrt3/2\\end{bmatrix},\\quad D=0.$$\n\n![对角型并联模拟结构|680](img/reviewed/tianjin-2025-02-parallel.svg)",
+  "answer": "$$A=\\operatorname{diag}(0,-2-\\sqrt3,-2+\\sqrt3),$$\n$$B=\\begin{bmatrix}1\\\\1\\\\1\\end{bmatrix},\\quad D=0,$$\n$$C=\\begin{bmatrix}2&-1+\\sqrt3/2&-1-\\sqrt3/2\\end{bmatrix}.$$\n\n![对角型并联模拟结构|680](img/reviewed/tianjin-2025-02-parallel.svg)",
   "explanation": "**（1）找极点并求各支路的系数。** 分母为 $s(s+2+\\sqrt3)(s+2-\\sqrt3)$，三个极点互异。对每个简单极点 $\\lambda_i$，对应留数由 $c_i=\\lim_{s\\to\\lambda_i}(s-\\lambda_i)G(s)$ 求出。以 $\\lambda_1=0$ 为例，$c_1=\\lim_{s\\to0}(s+2)/(s^2+4s+1)=2$。另外两个留数分别是 $-1+\\sqrt3/2$ 和 $-1-\\sqrt3/2$。因此\n$$G(s)=\\frac2s+\\frac{-1+\\sqrt3/2}{s+2+\\sqrt3}+\\frac{-1-\\sqrt3/2}{s+2-\\sqrt3}.$$\n\n**（2）把三项分别实现后相加。** 输入 $u$ 同时送入三个支路。每个支路的传递函数先取 $1/(s-\\lambda_i)$，并将其输出定义为状态 $x_i$，于是 $\\dot x_i=\\lambda_ix_i+u$。再将三路状态分别乘以留数 $c_i$，相加得到 $y=c_1x_1+c_2x_2+c_3x_3$。这就给出对角矩阵 $A$、全为 $1$ 的输入列向量 $B$，以及由留数构成的 $C$。$G(s)$ 严格真有理，因此 $D=0$。",
   "originalImages": [],
   "answerPdfPages": "82–83",

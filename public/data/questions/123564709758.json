@@ -1,6 +1,6 @@
 {
-  "answer": "$e_{\\rm ss}(t)=2\\sqrt{\\dfrac{17}{25}}\\sin\\!\\left(4t+45^\\circ+\\arctan 4-\\arctan \\dfrac43\\right)$。",
-  "explanation": "由 $E=R-C$、$C=GE$ 得误差通道 $E/R=(s+1)/(s+3)$。其极点为 $-3$，瞬态衰减。代入 $s=j4$ 得幅值 $\\sqrt{17}/5$，相角 $\\arctan 4-\\arctan(4/3)$。输入的幅值乘此前者，相位加上后者。",
+  "answer": "令 $\\varphi=\\pi/4+\\arctan4-\\arctan(4/3)$，则\n$$e_{\\rm ss}(t)=\\frac{2\\sqrt{17}}{5}\\sin(4t+\\varphi).$$",
+  "explanation": "**1. 求误差信号经过的通道。** 比较点 $E=R-C$，前向环节 $C=GE$。代入并移项得 $(1+G)E=R$，从而\n$$\\frac ER=\\frac1{1+2/(s+1)}=\\frac{s+1}{s+3}.$$\n这个通道的极点为 $-3$，所以暂态消失后只剩同频正弦。\n\n**2. 在输入频率求复数的模与相角。** 角频率为 $4$，代入得 $(1+4j)/(3+4j)$。分子模为 $\\sqrt{17}$，分母模为 $5$，所以频响模为 $\\sqrt{17}/5$。两复数都在第一象限，相角相减得 $\\arctan4-\\arctan(4/3)$。\n\n**3. 回到时域。** 幅值用 $2$ 乘频响模，初相位用 $45^\\circ$ 加频响相位，并统一角度单位：\n总初相位为 $\\varphi=\\pi/4+\\arctan4-\\arctan(4/3)$，故\n$$e_{\\rm ss}(t)=\\frac{2\\sqrt{17}}5\\sin(4t+\\varphi).$$",
   "originalImages": [],
   "answerPdfPages": "703",
   "referenceNote": "参考答案的该小题填 0。正弦稳态误差随时间变化，本题应给出误差波形。",

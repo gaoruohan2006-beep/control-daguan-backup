@@ -11,7 +11,7 @@
     "answerPages": "333",
     "stem": "判断正误：稳定线性定常系统受正弦信号激励时，其稳态输出与输入同频，幅值和相位可以不同。",
     "answer": "正确。这里的输出指暂态衰减后的正弦稳态响应。",
-    "explanation": "设输入为 $A\\cos\\omega t$。复指数 $e^{j\\omega t}$ 在线性定常系统下对应乘以复增益 $G(j\\omega)$，取实部得 $A|G(j\\omega)|\\cos[\\omega t+\\arg G(j\\omega)]$。当该频率处增益为零时，正弦分量被抑制。",
+    "explanation": "复指数 $e^{j\\omega t}$ 送入线性定常系统后，其稳态部分是 $G(j\\omega)e^{j\\omega t}$。将 $G(j\\omega)$ 写成 $M e^{j\\varphi}$，则输出为 $M e^{j(\\omega t+\\varphi)}$，其中相随时间变化的速率仍是 $\\omega$。\n\n例如输入 $A\\cos\\omega t$ 是 $Ae^{j\\omega t}$ 的实部。由线性性，取相应输出的实部得到\n$$y_{\\rm ss}(t)=A|G(j\\omega)|\\cos\\!\\bigl(\\omega t+\\arg G(j\\omega)\\bigr).$$\n其中幅值乘以频响模，初相位加上频响相角。稳定性保证其他暂态消失。如果该频率恰是零点，正弦稳态分量被完全抑制。",
     "notes": ""
   }
 ]
