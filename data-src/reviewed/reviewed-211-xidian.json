@@ -1,0 +1,66 @@
+[
+  {
+    "school": "西安电子科技大学",
+    "tier": "211",
+    "year": 2023,
+    "variant": "843",
+    "number": "四",
+    "topics": [
+      "时域分析 / 二阶性能"
+    ],
+    "questionPages": "349",
+    "answerPages": "857–858",
+    "stem": "图 1 为单位负反馈系统。图 2 在对象输入端增加了微分反馈 $\\alpha s$。\n（1）对图 1 的单位阶跃响应，求上升时间、峰值时间、超调量及调节时间。\n（2）若图 2 的超调量为 $16.3\\%$，求 $\\alpha$。\n\n![原系统与带内环微分反馈的系统](img/reviewed/211-xidian-2023-rate-feedback.svg)",
+    "answer": "（1）$t_r\\approx0.427\\,\\mathrm s$，$t_p\\approx0.792\\,\\mathrm s$，超调量约 $67.31\\%$，5% 和 2% 调节时间的常用估算分别为 $6\\,\\mathrm s$、$8\\,\\mathrm s$。（2）$\\alpha\\approx3/16=0.1875$。",
+    "explanation": "（1）图 1 的闭环传函为 $16/(s^2+s+16)$。与标准形式比较得 $\\omega_n=4$、$\\zeta=1/8$、$\\omega_d=\\sqrt{63}/2$。首次到达稳态值的时间为 $(\\pi-\\arccos\\zeta)/\\omega_d$，首次峰值时间为 $\\pi/\\omega_d$。代入超调公式 $100e^{-\\pi\\zeta/\\sqrt{1-\\zeta^2}}\\%$，再用 $\\zeta\\omega_n=1/2$ 计算调节时间的工程估计。\n\n（2）从对象输出取微分反馈，内环化简为 $16/[s^2+(1+16\\alpha)s]$。再闭合外环，分母变为 $s^2+(1+16\\alpha)s+16$。由超调量反解得 $\\zeta\\approx1/2$，于是 $1+16\\alpha\\approx2(1/2)4=4$。",
+    "notes": "题册没指定调节时间误差带，解析给出 5% 与 2% 两种常用估计。"
+  },
+  {
+    "school": "西安电子科技大学",
+    "tier": "211",
+    "year": 2024,
+    "variant": "843",
+    "number": "二",
+    "topics": [
+      "校正 / PD 控制"
+    ],
+    "questionPages": "353",
+    "answerPages": "865",
+    "stem": "采用 $K_p+K_Ds$ 控制器和 $4/s^2$ 对象的单位负反馈系统如图。在以 $K_p$ 为横轴、$K_D$ 为纵轴的平面上标出稳定、不稳定、临界阻尼、过阻尼及欠阻尼区域。\n\n![PD 控制系统](img/reviewed/211-xidian-2024-pd.svg)",
+    "answer": "渐近稳定区为 $K_p>0,K_D>0$。在该区内，临界阻尼曲线为 $K_p=K_D^2$；过阻尼区为 $0<K_p<K_D^2$；欠阻尼区为 $K_p>K_D^2$。坐标轴的非负半轴为稳定边界，原点为重零根。其余区域存在右半平面根。",
+    "explanation": "用 $1+G=0$ 得 $s^2+4K_Ds+4K_p=0$。二阶劳斯条件给出 $K_p>0,K_D>0$。该区域内 $\\omega_n=2\\sqrt{K_p}$、$\\zeta=K_D/\\sqrt{K_p}$；令 $\\zeta=1$ 得 $K_p=K_D^2$，比较两侧即可判定阻尼类型。\n\n当 $K_p>0,K_D=0$ 时为纯虚共轭根；当 $K_D>0,K_p=0$ 时有一个零根；原点有两个零根，对应未补偿的双积分器，存在随时间增长的模态。$K_p<0$ 时常数项为负，必有一个正实根；$K_D<0,K_p\\ge0$ 时至少有一个极点实部为正。\n\n![PD 参数平面的稳定与阻尼区域](img/reviewed/211-xidian-2024-pd-regions.svg)",
+    "notes": ""
+  },
+  {
+    "school": "西安电子科技大学",
+    "tier": "211",
+    "year": 2024,
+    "variant": "843",
+    "number": "四",
+    "topics": [
+      "频域分析 / 稳定裕度"
+    ],
+    "questionPages": "353",
+    "answerPages": "866",
+    "stem": "某单位负反馈系统的开环频率响应如下。求原系统幅值裕度与相角裕度，再分别求使幅值裕度为 $20\\,\\mathrm{dB}$、相角裕度为 $50^\\circ$ 时增益应乘的倍数。\n\n频率 $\\omega$ / (rad/s)：2，3，4，5，6，7，8，9，10。\n\n幅值 $|G(j\\omega)|$ 依次为 7.5，4.8，3.15，2.25，1.70，1.35，1.00，0.86，0.64。\n\n相角 $\\angle G(j\\omega)$ 依次为 $-118^\\circ,-130^\\circ,-140^\\circ,-150^\\circ,-157^\\circ,-163^\\circ,-170^\\circ,-176^\\circ,-180^\\circ$。",
+    "answer": "原幅值裕度为 $1.5625$，即约 $3.88\\,\\mathrm{dB}$，相角裕度 $10^\\circ$。两个目标分别要求增益乘以 $0.15625$ 和 $1/4.8\\approx0.20833$。",
+    "explanation": "幅值在 $\\omega_c=8$ 时为 $1$，相位为 $-170^\\circ$，故相角裕度为 $10^\\circ$。相位在 $\\omega_g=10$ 时为 $-180^\\circ$，此处的幅值是 $0.64$，故幅值裕度为 $1/0.64$，分贝值为 $20\\log_{10}(1/0.64)$。\n\n令增益乘以正数 $\\alpha$，相频曲线保持相同。要使幅值裕度为 $20\\,\\mathrm{dB}$，须使 $\\alpha\\times0.64=10^{-20/20}=0.1$。要使相角裕度为 $50^\\circ$，新的幅值交越频率应满足相位为 $-130^\\circ$，查得 $\\omega=3$，故 $\\alpha\\times4.8=1$。",
+    "notes": ""
+  },
+  {
+    "school": "西安电子科技大学",
+    "tier": "211",
+    "year": 2025,
+    "variant": "843",
+    "number": "二(1)",
+    "topics": [
+      "时域分析 / 由阶跃反求"
+    ],
+    "questionPages": "356",
+    "answerPages": "874",
+    "stem": "典型单位负反馈二阶系统的开环传递函数为 $G(s)=\\omega_n^2/[s(s+2\\zeta\\omega_n)]$。若其单位阶跃响应为 $c(t)=1-\\frac2{\\sqrt3}e^{-t}\\sin(\\sqrt3t+\\pi/3)$，求 $\\zeta,\\omega_n$、上升时间和调节时间。",
+    "answer": "$\\zeta=1/2,\\ \\omega_n=2\\,\\mathrm{rad/s}$，$t_r=2\\pi/(3\\sqrt3)\\,\\mathrm s$。按工程公式，5% 和 2% 调节时间分别约 $3\\,\\mathrm s$ 和 $4\\,\\mathrm s$。",
+    "explanation": "由指数和正弦项可识别 $\\zeta\\omega_n=1$、$\\omega_d=\\sqrt3$。由 $\\omega_n^2=(\\zeta\\omega_n)^2+\\omega_d^2$ 得 $\\omega_n=2$，进而 $\\zeta=0.5$。首次达到 $c(t)=1$ 时 $\\sqrt3t+\\pi/3=\\pi$，故 $t_r=2\\pi/(3\\sqrt3)$。常用调节时间公式分别为 $3/(\\zeta\\omega_n)$ 和 $4/(\\zeta\\omega_n)$。",
+    "notes": "题册未指定调节时间误差带，给出两种常用估计。"
+  }
+]

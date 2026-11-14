@@ -1,0 +1,114 @@
+[
+  {
+    "school": "江南大学",
+    "tier": "211",
+    "year": 2023,
+    "variant": "807",
+    "number": "一(2)",
+    "topics": [
+      "根轨迹 / 参数根轨迹"
+    ],
+    "questionPages": "277",
+    "answerPages": "703",
+    "stem": "单位负反馈系统的开环传递函数为 $G(s)=k(s+a)/[s^2(s+2)]$。写出以 $a$ 为参数的等效开环传递函数。",
+    "answer": "$L_a(s)=\\dfrac{ak}{s(s^2+2s+k)}$。",
+    "explanation": "由 $1+G(s)=0$ 得 $s^3+2s^2+ks+ak=0$。把含 $a$ 的项单独移出，将其余项写成 $s(s^2+2s+k)$，即可整理成 $1+ak/[s(s^2+2s+k)]=0$。",
+    "notes": ""
+  },
+  {
+    "school": "江南大学",
+    "tier": "211",
+    "year": 2023,
+    "variant": "807",
+    "number": "一(3)",
+    "topics": [
+      "时域分析 / 稳态误差"
+    ],
+    "questionPages": "277",
+    "answerPages": "703",
+    "stem": "单位负反馈系统的开环传递函数为 $G(s)=2/(s+1)$，输入 $r(t)=2\\sin(4t+45^\\circ)$。求稳态误差。",
+    "answer": "$e_{\\rm ss}(t)=2\\sqrt{\\dfrac{17}{25}}\\sin\\!\\left(4t+45^\\circ+\\arctan 4-\\arctan \\dfrac43\\right)$。",
+    "explanation": "由 $E=R-C$、$C=GE$ 得误差通道 $E/R=(s+1)/(s+3)$。其极点为 $-3$，瞬态衰减。代入 $s=j4$ 得幅值 $\\sqrt{17}/5$，相角 $\\arctan 4-\\arctan(4/3)$。输入的幅值乘此前者，相位加上后者。",
+    "notes": "参考答案的该小题填 0。正弦稳态误差随时间变化，本题应给出误差波形。"
+  },
+  {
+    "school": "江南大学",
+    "tier": "211",
+    "year": 2023,
+    "variant": "807",
+    "number": "一(4)",
+    "topics": [
+      "非线性系统 / 平衡点"
+    ],
+    "questionPages": "277",
+    "answerPages": "703",
+    "stem": "已知非线性系统满足 $\\ddot x-(1-x^2)\\dot x+x=0$。判断奇点类型。",
+    "answer": "原点是不稳定焦点。",
+    "explanation": "令 $v=\\dot x$，则 $\\dot x=v$、$\\dot v=(1-x^2)v-x$。令两式为零，得唯一奇点 $(0,0)$。该点处雅可比矩阵为 $\\begin{bmatrix}0&1\\\\-1&1\\end{bmatrix}$，特征方程为 $\\lambda^2-\\lambda+1=0$，故 $\\lambda=(1\\pm j\\sqrt3)/2$。共轭特征值的实部均为正，附近轨迹向外螺旋。",
+    "notes": ""
+  },
+  {
+    "school": "江南大学",
+    "tier": "211",
+    "year": 2024,
+    "variant": "807",
+    "number": "一(2)",
+    "topics": [
+      "时域分析 / 由阶跃反求"
+    ],
+    "questionPages": "281",
+    "answerPages": "714",
+    "stem": "某一阶系统单位阶跃响应如图，稳态值为 $1$，且 $c(20)=0.98$。求闭环传递函数。\n\n![一阶系统单位阶跃响应](img/reviewed/211-jiangnan-2024-step.svg)",
+    "answer": "$\\Phi(s)=\\dfrac{1}{1+Ts}$，$T=\\dfrac{20}{\\ln 50}\\approx5.112\\,\\mathrm s$。",
+    "explanation": "一阶系统的单位阶跃响应为 $c(t)=1-e^{-t/T}$。代入 $c(20)=0.98$ 得 $e^{-20/T}=0.02$，取自然对数即可得到 $T$。",
+    "notes": "参考答案 $T=5\\,\\mathrm s$ 用了 2% 调节时间的 $4T$ 近似。"
+  },
+  {
+    "school": "江南大学",
+    "tier": "211",
+    "year": 2024,
+    "variant": "807",
+    "number": "一(5)",
+    "topics": [
+      "状态空间 / 响应"
+    ],
+    "questionPages": "281",
+    "answerPages": "715",
+    "stem": "已知 $\\dot x=\\begin{bmatrix}0&1\\\\-2&-3\\end{bmatrix}x+\\begin{bmatrix}0\\\\1\\end{bmatrix}u$，$x(0)=(-1,1)^{\\mathsf T}$。求单位阶跃输入下的全状态响应。",
+    "answer": "$x_1(t)=\\frac12-2e^{-t}+\\frac12e^{-2t}$，$x_2(t)=2e^{-t}-e^{-2t}$（$t\\ge0$）。",
+    "explanation": "第一行给出 $x_2=\\dot x_1$。代入第二行，得 $\\ddot x_1+3\\dot x_1+2x_1=1$，齐次特征根为 $-1,-2$，常数特解为 $1/2$。令 $x_1=1/2+c_1e^{-t}+c_2e^{-2t}$，初值给出 $c_1+c_2=-3/2$、$-c_1-2c_2=1$，解得 $c_1=-2,c_2=1/2$。对 $x_1$ 求导即得 $x_2$。",
+    "notes": ""
+  },
+  {
+    "school": "江南大学",
+    "tier": "211",
+    "year": 2024,
+    "variant": "807",
+    "number": "九",
+    "topics": [
+      "状态空间 / 状态反馈"
+    ],
+    "questionPages": "284",
+    "answerPages": "725–726",
+    "stem": "已知 $\\dot x=Ax+Bu,\\ y=Cx$，其中 $$A=\\begin{bmatrix}0&1&1\\\\1&2&0\\\\a&0&1\\end{bmatrix},\\ B=\\begin{bmatrix}b\\\\0\\\\0\\end{bmatrix},\\ C=[c,\\ 0,\\ 0].$$ （1）求系统完全能控、能观的条件。（2）当 $a=3,b=1,c=2$ 时，用状态反馈将极点配置为 $-1,-2,-3$。",
+    "answer": "（1）$abc\\ne0$。（2）取 $u=v-Kx$，$K=[9,\\ 61,\\ -7]$。",
+    "explanation": "（1）能控阵和能观阵分别为\n$$\\mathcal C=b\\begin{bmatrix}1&0&1+a\\\\0&1&2\\\\0&a&a\\end{bmatrix},\\quad\n\\mathcal O=c\\begin{bmatrix}1&0&0\\\\0&1&1\\\\1+a&2&1\\end{bmatrix}.$$\n行列式分别为 $-ab^3,-c^3$，二者同时非零当且仅当 $abc\\ne0$。\n\n（2）记 $K=[k_1,k_2,k_3]$。代入 $A-BK$ 后展开特征多项式得\n$$s^3+(k_1-3)s^2+(-3k_1+k_2+3k_3-2)s+2k_1-k_2-6k_3+7.$$\n目标多项式 $(s+1)(s+2)(s+3)=s^3+6s^2+11s+6$。比较系数得 $k_1=9$、$k_2+3k_3=40$、$k_2+6k_3=19$，解出 $k_2=61,k_3=-7$。",
+    "notes": ""
+  },
+  {
+    "school": "江南大学",
+    "tier": "211",
+    "year": 2025,
+    "variant": "807",
+    "number": "二(7)",
+    "topics": [
+      "离散系统 / 差分响应"
+    ],
+    "questionPages": "288",
+    "answerPages": "735",
+    "stem": "单位负反馈离散系统的开环脉冲传递函数为 $G_k(z)=(0.368z+0.264)/(z^2-1.368z+0.368)$。（1）求闭环脉冲传递函数并判稳。（2）求单位阶跃响应及超调量，结果保留两位小数。\n\n![闭环离散控制系统](img/reviewed/211-jiangnan-2025-sampled.svg)",
+    "answer": "$\\Phi(z)=\\dfrac{0.368z+0.264}{z^2-z+0.632}$，闭环稳定。令 $\\rho=\\sqrt{0.632}$、$\\theta=\\arccos[1/(2\\rho)]$，则 $c[k]=1-\\rho^k(\\cos k\\theta+\\frac{0.132}{\\sqrt{0.382}}\\sin k\\theta)$，超调量为 $39.94\\%$。",
+    "explanation": "（1）闭环传函为 $G_k/(1+G_k)$。极点 $z=0.5\\pm j\\sqrt{0.382}$ 的模均为 $\\rho<1$。\n\n（2）将 $\\Phi(z)$ 的分子、分母同除以 $z^2$，得 $c[k]-c[k-1]+0.632c[k-2]=0.368r[k-1]+0.264r[k-2]$。因 $c[0]=0$、$c[1]=0.368$，当 $k\\ge2$ 时，令 $d[k]=c[k]-1$ 得齐次递推 $d[k]=d[k-1]-0.632d[k-2]$。代入极点和两项初值即得响应。\n\n$c[2]=1$、$c[3]=c[4]=1.399424$。对 $k\\ge5$，有 $|d[k]|\\le\\rho^5\\sqrt{1+0.132^2/0.382}<0.33$，因此最大值出现在 $k=3,4$。终值为 $1$，超调量为 $39.9424\\%$。\n\n![单位阶跃响应及峰值](img/reviewed/211-jiangnan-2025-step.svg)",
+    "notes": "参考解析提前取整，并将终值误写进超调公式的分母。"
+  }
+]

@@ -1,0 +1,66 @@
+[
+  {
+    "school": "河北工业大学",
+    "tier": "211",
+    "year": 2023,
+    "variant": "980",
+    "number": "一(2)",
+    "topics": [
+      "频域分析 / 频率特性"
+    ],
+    "questionPages": "360",
+    "answerPages": "884",
+    "stem": "单位负反馈系统的开环传递函数为 $G(s)=k/[s(Ts+1)]$，$T,k>0$。输入 $r(t)=\\sin(10t)$ 时稳态输出为 $c_{\\rm ss}(t)=\\sin(10t-\\pi/2)$。求 $k,T$。",
+    "answer": "$k=10$，$T=0.1\\,\\mathrm s$。",
+    "explanation": "闭环传函为 $\\Phi(s)=k/(Ts^2+s+k)$。题意给出 $\\Phi(j10)=-j$。因此 $k=-j(k-100T+j10)=10-j(k-100T)$。对比实、虚部得 $k=10,\\ k=100T$。所得闭环分母系数均为正，满足二阶稳定条件。",
+    "notes": ""
+  },
+  {
+    "school": "河北工业大学",
+    "tier": "211",
+    "year": 2024,
+    "variant": "980",
+    "number": "一(2)",
+    "topics": [
+      "状态空间 / 传递函数"
+    ],
+    "questionPages": "364",
+    "answerPages": "890",
+    "stem": "系统满足 $\\dot x=\\begin{bmatrix}0&1\\\\-3&-5\\end{bmatrix}x+\\begin{bmatrix}1\\\\2\\end{bmatrix}u$，$y=2x_2$，初始状态为零。求由输入到状态向量的传递函数。",
+    "answer": "$\\dfrac{X(s)}{U(s)}=\\dfrac{1}{s^2+5s+3}\\begin{bmatrix}s+7\\\\2s-3\\end{bmatrix}$。",
+    "explanation": "零初值下 $(sI-A)X=BU$，故 $X/U=(sI-A)^{-1}B$。矩阵 $sI-A=\\begin{bmatrix}s&-1\\\\3&s+5\\end{bmatrix}$ 的行列式为 $s^2+5s+3$。将其伴随矩阵 $\\begin{bmatrix}s+5&1\\\\-3&s\\end{bmatrix}$ 乘以 $B$，即得所求。若另求输出传函，再左乘 $C=[0,2]$ 得 $(4s-6)/(s^2+5s+3)$。",
+    "notes": ""
+  },
+  {
+    "school": "河北工业大学",
+    "tier": "211",
+    "year": 2025,
+    "variant": "897",
+    "number": "一(4)",
+    "topics": [
+      "频域分析 / 频率指标"
+    ],
+    "questionPages": "367",
+    "answerPages": "902–903",
+    "stem": "已知环节 $G(s)=25/(s^2+s+25)$。求谐振频率和谐振峰值。",
+    "answer": "$\\omega_r=7/\\sqrt2\\,\\mathrm{rad/s}$，$M_r=50/\\sqrt{99}\\approx5.025$。",
+    "explanation": "由 $G(j\\omega)=25/(25-\\omega^2+j\\omega)$ 可知，要使幅值最大，须使 $D=(25-\\omega^2)^2+\\omega^2$ 最小。令 $v=\\omega^2\\ge0$，得 $D(v)=v^2-49v+625$，最小值在 $v=49/2$，为 $99/4$。取正频率并代回 $\\lvert G\\rvert=25/\\sqrt D$ 即得结果。",
+    "notes": ""
+  },
+  {
+    "school": "河北工业大学",
+    "tier": "211",
+    "year": 2025,
+    "variant": "897",
+    "number": "三(1)",
+    "topics": [
+      "状态空间 / 李雅普诺夫稳定"
+    ],
+    "questionPages": "368",
+    "answerPages": "904–905",
+    "stem": "判断非线性系统 $\\dot x_1=x_2^3,\\ \\dot x_2=-x_1-x_2x_1^2$ 的原点稳定性。",
+    "answer": "原点全局渐近稳定。",
+    "explanation": "取 $V=x_1^2/2+x_2^4/4$，它正定且径向无界。沿轨迹 $\\dot V=x_1x_2^3+x_2^3(-x_1-x_2x_1^2)=-x_1^2x_2^4\\le0$。在 $x_1=0,x_2\\ne0$ 时有 $\\dot x_1=x_2^3\\ne0$，轨迹离开该轴；在 $x_2=0,x_1\\ne0$ 时有 $\\dot x_2=-x_1\\ne0$，轨迹也离开该轴。因此 $\\dot V=0$ 的集合中最大不变集仅为原点。由 LaSalle 不变性原理得结论。",
+    "notes": ""
+  }
+]
