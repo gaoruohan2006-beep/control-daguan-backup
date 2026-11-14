@@ -80,6 +80,8 @@ async def verify():
                 rendered = await card.locator(f'{selector} annotation[encoding="application/x-tex"]').all_text_contents()
                 assert [formula.strip() for formula in rendered] == expected, (q["source"], q["number"], selector)
                 assert await card.locator(f"{selector} .errata").count() == 0
+            expected_tips = sum(p.startswith("> ") for p in detail["explanation"].split("\n\n"))
+            assert await card.locator(".box[data-kind='exp'] p.solution-tip").count() == expected_tips
             bad = await card.evaluate("""async card => {
                 const images = [...card.querySelectorAll('img')];
                 await Promise.all(images.map(img => { img.loading = 'eager'; return img.decode().catch(() => {}); }));

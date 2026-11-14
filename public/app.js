@@ -147,6 +147,10 @@ function inline(s, hl) {
   return out.join('');
 }
 const md = (s, hl) => s.split(/\n\s*\n/).map(p => p.trim()).filter(Boolean).map(p => {
+  if (p.startsWith('> ')) {
+    const content = p.replace(/^> /gm, '').replace(/\n/g, ' ');
+    return '<p class="solution-tip">' + inline(content, hl) + '</p>';
+  }
   const h = inline(p.replace(/\n/g, ' '), hl);
   return /^<span class="fig">[^]*<\/span>$/.test(h) ? `<div class="fig">${h.replace(/^<span class="fig">|<\/span>$/g, '')}</div>` : `<p>${h}</p>`;
 }).join('');

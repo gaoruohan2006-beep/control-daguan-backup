@@ -1,6 +1,6 @@
 {
   "answer": "两项结论均成立。可用 PBH 矩阵的可逆初等块变换证明。",
-  "explanation": "令 $A_K=A+BK$。对任意复数 $\\lambda$，\n$$[\\lambda I-A_K\\ \\ B]=[\\lambda I-A\\ \\ B]\\begin{bmatrix}I&0\\\\-K&I\\end{bmatrix}.$$\n右端的块三角矩阵可逆，所以两 PBH 矩阵的秩相同，得到（1）。取 $K=FC$ 就得到输出反馈下的能控性。\n\n对能观性，将 $A_F=A+BFC$ 代入\n$$\\begin{bmatrix}\\lambda I-A_F\\\\ C\\end{bmatrix}\n=\\begin{bmatrix}I&-BF\\\\0&I\\end{bmatrix}\\begin{bmatrix}\\lambda I-A\\\\C\\end{bmatrix}.$$\n左乘矩阵也可逆，故能观性的 PBH 秩条件保持不变。\n\n**用左特征向量一句话说明反馈前后为何等价。** 若 $wB=0$，则 $w(A+BF)=wA$。因此所有满足 $wB=0$ 的左特征向量，在反馈前后以同一特征值存在。PBH 用的恰好是这些左特征向量，所以能控性不变。这里把状态反馈矩阵分别取为 $K$ 与题中的 $FC$，即可覆盖两问。",
+  "explanation": "令 $A_K=A+BK$。对任意复数 $\\lambda$，\n$$[\\lambda I-A_K\\ \\ B]=[\\lambda I-A\\ \\ B]\\begin{bmatrix}I&0\\\\-K&I\\end{bmatrix}.$$\n右端的块三角矩阵可逆，所以两 PBH 矩阵的秩相同，得到（1）。取 $K=FC$ 就得到输出反馈下的能控性。\n\n对能观性，将 $A_F=A+BFC$ 代入\n$$\\begin{bmatrix}\\lambda I-A_F\\\\ C\\end{bmatrix}\n=\\begin{bmatrix}I&-BF\\\\0&I\\end{bmatrix}\\begin{bmatrix}\\lambda I-A\\\\C\\end{bmatrix}.$$\n左乘矩阵也可逆，故能观性的 PBH 秩条件保持不变。\n\n> **用左特征向量一句话说明反馈前后为何等价。** 若 $wB=0$，则 $w(A+BF)=wA$。因此所有满足 $wB=0$ 的左特征向量，在反馈前后以同一特征值存在。PBH 用的恰好是这些左特征向量，所以能控性不变。这里把状态反馈矩阵分别取为 $K$ 与题中的 $FC$，即可覆盖两问。",
   "originalImages": [],
   "answerPdfPages": "423–424",
   "referenceNote": "",
