@@ -42,6 +42,7 @@ async def verify():
         await page.locator("#search").fill(questions[0]["school"])
         await page.wait_for_function("(school) => document.querySelectorAll('#tree .node.top').length === 1 && document.querySelector('.card .src').textContent.includes(school)", arg=questions[0]["school"])
         await page.locator("#search").fill("")
+        await page.wait_for_function("!new URLSearchParams(location.search).has('q')")
         await page.locator("#listBtn").click()
         await page.locator('[data-list="complete"]').click()
 
@@ -49,8 +50,10 @@ async def verify():
             await page.locator("#listBtn").click()
             await page.locator('[data-list="practice-1000"]').click()
             assert await page.locator("#listName").inner_text() == f"起点精选1000题 · {len(practice)} 题"
-            assert await page.locator(".card .qno").inner_text() == practice[0]["number"]
             start = practice[0]["id"]
+            first_practice = page.locator(f'.card[data-id="{start}"]')
+            await first_practice.wait_for()
+            assert await first_practice.locator(".qno").inner_text() == practice[0]["number"]
             await page.goto(f"{BASE}?question={start}")
             await page.locator(f'.card[data-id="{start}"]').wait_for()
             assert "list=practice-1000" in page.url
@@ -156,7 +159,7 @@ async def verify():
         assert await integral.evaluate("formula => formula.scrollWidth <= formula.clientWidth + 1")
 
         # A worked root locus includes both display fractions and a zoomable solution figure.
-        solution_question = next(q for q in questions if q["school"] == "中国计量大学" and q["year"] == 2023)
+        solution_question = next(q for q in exams if q["school"] == "中国计量大学" and q["year"] == 2023)
         await mobile.goto(f"{BASE}?question={solution_question['id']}")
         await mobile.get_by_role("button", name="答案", exact=True).click()
         await mobile.get_by_role("button", name="解析", exact=True).click()
