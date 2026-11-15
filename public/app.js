@@ -228,6 +228,7 @@ function render() {
   const nDue = dueIds().length, bd = $('#dueBadge'); bd.hidden = !nDue; bd.textContent = nDue; bd.title = `今日待复习 ${nDue} 题`;
   $('#retention').value = rec.retention; $('#retentionVal').textContent = rec.retention.toFixed(2);
   const L = curList();
+  $('#search').placeholder = L.id === 'practice-1000' ? '搜索题号、院校或考点' : '搜索院校、考点或年份';
   $('#listName').textContent = `${L.name} · ${L.questionIds.length} 题`;
   const node = st.node ? flatNodes(tree).find(n => n.path === st.node) : null;
   $('#sectionLabel').textContent = node ? `${st.q ? '搜索 · ' : ''}${st.tab === 'retest' ? '复测 · ' : ''}${node.name}  ${sec.length} 题` : (st.q ? `搜索「${st.q}」 0 题` : '');
@@ -294,7 +295,7 @@ function cardHTML(id, idx) {
   const q = byId.get(id), L = curList(), d = details.get(id);
   const paths = (L.categoryByQuestion[id] || q.categories);
   const leaf = paths[0].split(' / ').pop();
-  const number = q.sourceType === 'reviewed' ? `原卷 ${q.number}` : `第 ${idx + 1} 题`;
+  const number = q.sourceType === 'reviewed' ? `原卷 ${q.number}` : q.number;
   const sh = st.show[id] || {}; const mk = rec.marks[id]?.state; const fav = rec.favorites.includes(id);
   const hl = st.q && st.q.length > 0 ? st.q : null;
   let ans = '';

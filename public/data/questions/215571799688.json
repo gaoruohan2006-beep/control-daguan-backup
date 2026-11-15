@@ -1,0 +1,8 @@
+{
+  "answer": "错误。",
+  "explanation": "控制器根据偏差等信号计算控制指令，执行机构接受该指令后直接改变操纵变量。例如温度控制器输出阀位指令，电动阀门实际改变蒸汽流量，二者职能不同。",
+  "originalImages": [],
+  "answerPdfPages": "2",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

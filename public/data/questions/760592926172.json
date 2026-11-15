@@ -1,0 +1,8 @@
+{
+  "answer": "记 $B_0=H_1(1+G_3H_2H_3)$，$\\Delta=1+G_1G_2B_0$。\n$$E(s)=\\frac{2(1-G_4G_2B_0)}{s^3\\Delta}+\\frac{G_3H_1H_2H_3}{s\\Delta}.$$",
+  "explanation": "**从信号图列方程。** 以下增益省略自变量 $s$。求某一外输入的通道时，其余独立输入置零。\n\n$$E=- B H_{1} - C H_{1} H_{2} H_{3} + R.$$\n\n$$X=E G_{1} + G_{4} R.$$\n\n$$B=G_{2} X.$$\n\n$$C=B G_{3} - G_{3} N.$$\n\n**逐条核对回路。**\n\n$L_{1}=- G_{1} G_{2} H_{1}$，对应 $E\\to X\\to B\\to E$。\n\n$L_{2}=- G_{1} G_{2} G_{3} H_{1} H_{2} H_{3}$，对应 $E\\to X\\to B\\to C\\to E$。\n\n没有互不接触的回路乘积项。\n\n$$\\Delta=- L_{1} - L_{2} + 1.$$\n\n**$\\frac{E}{R}$ 的前向通路。**\n\n$R\\to E$ 的增益与余因子为\n$$P_{1}=1,\\qquad \\Delta_{1}=1.$$\n\n$R\\to X\\to B\\to E$ 的增益与余因子为\n$$P_{2}=- G_{2} G_{4} H_{1},\\qquad \\Delta_{2}=1.$$\n\n$R\\to X\\to B\\to C\\to E$ 的增益与余因子为\n$$P_{3}=- G_{2} G_{3} G_{4} H_{1} H_{2} H_{3},\\qquad \\Delta_{3}=1.$$\n\n$$\\frac{E}{R}=\\frac{P_{1}\\Delta_{1}+P_{2}\\Delta_{2}+P_{3}\\Delta_{3}}{\\Delta}.$$\n\n**$\\frac{E}{N}$ 的前向通路。**\n\n$N\\to C\\to E$ 的增益与余因子为\n$$P_{1}=G_{3} H_{1} H_{2} H_{3},\\qquad \\Delta_{1}=1.$$\n\n$$\\frac{E}{N}=\\frac{P_{1}\\Delta_{1}}{\\Delta}.$$\n\n**代入两种输入。** 令 $B_0=H_1(1+G_3H_2H_3)$。从方程解得 $\\frac{E}{R}=\\frac{1-G_4G_2B_0}{\\Delta}$，$\\frac{E}{N}=\\frac{G_3H_1H_2H_3}{\\Delta}$。分别乘以 $R(s)=\\frac2{s^3}$ 和 $N(s)=\\frac1s$ 再相加。",
+  "originalImages": [],
+  "answerPdfPages": "23–24",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

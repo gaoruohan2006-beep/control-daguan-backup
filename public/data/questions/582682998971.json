@@ -1,0 +1,8 @@
+{
+  "answer": "$$\\frac{C}{Q}=\\frac{G_1G_3+G_2}{G_2+G_2G_3-G_1G_3}.$$",
+  "explanation": "**从信号图列方程。** 以下增益省略自变量 $s$。求某一外输入的通道时，其余独立输入置零。\n\n$$E=- C H + R.$$\n\n$$X=- C + E G_{1}.$$\n\n$$Q=- C + E G_{2}.$$\n\n$$C=G_{3} X + Q.$$\n\n**逐条核对回路。**\n\n$L_{1}=- G_{3}$，对应 $X\\to C\\to X$。\n\n$L_{2}=-1$，对应 $Q\\to C\\to Q$。\n\n$L_{3}=- G_{1} G_{3} H$，对应 $E\\to X\\to C\\to E$。\n\n$L_{4}=- G_{2} H$，对应 $E\\to Q\\to C\\to E$。\n\n没有互不接触的回路乘积项。\n\n$$\\Delta=- L_{1} - L_{2} - L_{3} - L_{4} + 1.$$\n\n**$\\frac{C}{R}$ 的前向通路。**\n\n$R\\to E\\to X\\to C$ 的增益与余因子为\n$$P_{1}=G_{1} G_{3},\\qquad \\Delta_{1}=1.$$\n\n$R\\to E\\to Q\\to C$ 的增益与余因子为\n$$P_{2}=G_{2},\\qquad \\Delta_{2}=1.$$\n\n$$\\frac{C}{R}=\\frac{P_{1}\\Delta_{1}+P_{2}\\Delta_{2}}{\\Delta}.$$\n\n**$\\frac{Q}{R}$ 的前向通路。**\n\n$R\\to E\\to X\\to C\\to Q$ 的增益与余因子为\n$$P_{1}=- G_{1} G_{3},\\qquad \\Delta_{1}=1.$$\n\n$R\\to E\\to Q$ 的增益与余因子为\n$$P_{2}=G_{2},\\qquad \\Delta_{2}=1 - L_{1}.$$\n\n$$\\frac{Q}{R}=\\frac{P_{1}\\Delta_{1}+P_{2}\\Delta_{2}}{\\Delta}.$$\n\n$Q=G_2E-C$ 是内部信号，因此先分别求 $C/R$、$Q/R$。由 $C=G_3(G_1E-C)+Q$ 与 $Q=G_2E-C$ 可复核\n$$(2+G_3)C=(G_1G_3+G_2)E.$$\n把 $C$ 代入 $Q=G_2E-C$，再相除即得结果。除法要求 $Q/R$ 非恒零。",
+  "originalImages": [],
+  "answerPdfPages": "25",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

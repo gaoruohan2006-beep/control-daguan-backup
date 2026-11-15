@@ -1,0 +1,8 @@
+{
+  "answer": "令 $\\Delta=1+G_1G_2+G_1G_2G_3$。\n$$\\frac{E}{R}=\\frac{1+G_1G_2}{\\Delta}.$$\n$$\\frac{C}{N}=\\frac{G_3(1+G_1G_2+G_{c1}G_2)}{\\Delta}.$$\n理想完全补偿需 $G_{c1}=-\\dfrac{1+G_1G_2}{G_2}$。",
+  "explanation": "**从信号图列方程。** 以下增益省略自变量 $s$。求某一外输入的通道时，其余独立输入置零。\n\n$$E=- C + R.$$\n\n$$F=- B + E.$$\n\n$$A=F G_{1} + Gc_{1} N.$$\n\n$$B=A G_{2}.$$\n\n$$C=B G_{3} + G_{3} N.$$\n\n**逐条核对回路。**\n\n$L_{1}=- G_{1} G_{2}$，对应 $F\\to A\\to B\\to F$。\n\n$L_{2}=- G_{1} G_{2} G_{3}$，对应 $E\\to F\\to A\\to B\\to C\\to E$。\n\n没有互不接触的回路乘积项。\n\n$$\\Delta=- L_{1} - L_{2} + 1.$$\n\n**$\\frac{E}{R}$ 的前向通路。**\n\n$R\\to E$ 的增益与余因子为\n$$P_{1}=1,\\qquad \\Delta_{1}=1 - L_{1}.$$\n\n$$\\frac{E}{R}=\\frac{P_{1}\\Delta_{1}}{\\Delta}.$$\n\n**$\\frac{C}{N}$ 的前向通路。**\n\n$N\\to A\\to B\\to C$ 的增益与余因子为\n$$P_{1}=G_{2} G_{3} Gc_{1},\\qquad \\Delta_{1}=1.$$\n\n$N\\to C$ 的增益与余因子为\n$$P_{2}=G_{3},\\qquad \\Delta_{2}=1 - L_{1}.$$\n\n$$\\frac{C}{N}=\\frac{P_{1}\\Delta_{1}+P_{2}\\Delta_{2}}{\\Delta}.$$\n\n由 $F=E-B$，有 $B(1+G_1G_2)=G_1G_2E+G_{c1}G_2N$，且 $C=G_3(B+N)$。令 $R=0$ 后通分，扰动分子是 $G_3(1+G_1G_2+G_{c1}G_2)$。使它恒等于零，即得完全补偿条件。实际实现还要检查因果性与内部稳定性。",
+  "originalImages": [],
+  "answerPdfPages": "21–22",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

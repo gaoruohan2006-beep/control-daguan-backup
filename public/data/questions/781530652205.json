@@ -1,0 +1,8 @@
+{
+  "answer": "恒值控制系统。",
+  "explanation": "水位控制的参考信号是固定设定值。用水量可以随时间变化，但它作用在出水侧，属于扰动。系统通过调节进水量抵消扰动，使实际液位回到给定值。",
+  "originalImages": [],
+  "answerPdfPages": "2",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

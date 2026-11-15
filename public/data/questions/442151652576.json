@@ -1,0 +1,8 @@
+{
+  "answer": "$$\\frac{Y}{V}=\\frac{G_2G_3(G_1+G_4)}{D_0}.$$\n$$\\begin{aligned}\nD_0={}&(1+G_1H_1)(1+G_3H_2)\\\\\n&-G_2+G_2G_3H_3.\n\\end{aligned}$$",
+  "explanation": "**从信号图列方程。** 以下增益省略自变量 $s$。求某一外输入的通道时，其余独立输入置零。\n\n$$E=- H_{1} X + V.$$\n\n$$X=E G_{1} + G_{4} V - H_{3} Y + Z.$$\n\n$$Z=G_{2} X - H_{2} Y.$$\n\n$$Y=G_{3} Z.$$\n\n**逐条核对回路。**\n\n$L_{1}=- G_{1} H_{1}$，对应 $E\\to X\\to E$。\n\n$L_{2}=G_{2}$，对应 $X\\to Z\\to X$。\n\n$L_{3}=- G_{3} H_{2}$，对应 $Z\\to Y\\to Z$。\n\n$L_{4}=- G_{2} G_{3} H_{3}$，对应 $X\\to Z\\to Y\\to X$。\n\n互不接触的回路乘积为 $L_{1} L_{3}$。\n\n$$\\Delta=L_{1} L_{3} - L_{1} - L_{2} - L_{3} - L_{4} + 1.$$\n\n**$\\frac{Y}{V}$ 的前向通路。**\n\n$V\\to E\\to X\\to Z\\to Y$ 的增益与余因子为\n$$P_{1}=G_{1} G_{2} G_{3},\\qquad \\Delta_{1}=1.$$\n\n$V\\to X\\to Z\\to Y$ 的增益与余因子为\n$$P_{2}=G_{2} G_{3} G_{4},\\qquad \\Delta_{2}=1.$$\n\n$$\\frac{Y}{V}=\\frac{P_{1}\\Delta_{1}+P_{2}\\Delta_{2}}{\\Delta}.$$\n\n**按原题要求做等效化简。** 先化简最右边 $G_3$ 与 $H_2$ 的局部反馈。从 $X$ 到 $Z$ 的等效增益为\n$$B=\\frac{G_2}{1+G_3H_2},\\quad Z=BX,\\quad Y=G_3BX.$$\n左部 $G_1$ 与前馈 $G_4$ 给出\n$$X=(G_1+G_4)V-G_1H_1X+Z-H_3Y.$$\n代入 $Z,Y$ 后，原结构化为一个从 $V$ 到 $X$ 的合成环节，再与 $G_3B$ 串联。通分得到答案中的分母。",
+  "originalImages": [],
+  "answerPdfPages": "56–57",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

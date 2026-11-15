@@ -1,0 +1,8 @@
+{
+  "answer": "$c(t)=2h(t)-2h(t-1)$。当 $h(t)=3\\,1(t)$ 时，$G(s)=3$。",
+  "explanation": "令 $1(t)$ 为单位阶跃，矩形输入写成 $2[1(t)-1(t-1)]$。线性保证可以相减，定常性保证第二项的输出也延迟一秒，因此得到 $c(t)$。\n\n若 $h(t)$ 在 $t=0$ 由零跳到 $3$，则 $H(s)=\\frac3s$。阶跃输入的拉氏变换为 $\\frac1s$，故 $G(s)=sH(s)=3$。这一传递函数含直接通道，能产生响应跳变。",
+  "originalImages": [],
+  "answerPdfPages": "13",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

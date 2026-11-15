@@ -1,0 +1,8 @@
+{
+  "answer": "零初始条件下，输出量的拉普拉斯变换与输入量的拉普拉斯变换之比。",
+  "explanation": "例如由 $a_1\\dot y+a_0 y=b_0 u$，在零初值下得到 $(a_1s+a_0)Y=b_0U$，传递函数是 $\\frac{b_0}{a_1s+a_0}$。若存在初始状态，$Y$ 还包含初值引起的自由响应，求传递函数时必须专取零状态映射。",
+  "originalImages": [],
+  "answerPdfPages": "14",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

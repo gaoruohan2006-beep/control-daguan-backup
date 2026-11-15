@@ -1,0 +1,8 @@
+{
+  "answer": "D",
+  "explanation": "设零状态输入输出算子为 $\\mathcal T$。齐次性要求 $\\mathcal T[au]=a\\mathcal T[u]$，可加性要求 $\\mathcal T[u_1+u_2]=\\mathcal T[u_1]+\\mathcal T[u_2]$。两条合并就是线性，采用连续时间还是离散时间、参数是否随时间变化，都不影响这一定义。举例，若 $y=u^2$，输入变成 $2u$ 时输出为 $4u^2$，违背齐次性，故选 D。",
+  "originalImages": [],
+  "answerPdfPages": "1",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

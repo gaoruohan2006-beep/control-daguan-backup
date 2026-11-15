@@ -1,0 +1,8 @@
+{
+  "answer": "$RC\\dot u_o(t)=-u_i(t)$。",
+  "explanation": "理想运放在线性负反馈下，两输入端电压相等且输入电流为零。同相端无电流，所以其电阻没有压降，反相端电位也为零。反相端流入的电阻电流为 $\\frac{u_i}{R}$。从该节点经电容流向输出端的电流为 $C\\frac{\\mathrm d}{\\mathrm dt}(0-u_o)=-C\\dot u_o$。两电流相等，得所求方程。若取零初值，则 $G(s)=-\\frac1{RCs}$。",
+  "originalImages": [],
+  "answerPdfPages": "14",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

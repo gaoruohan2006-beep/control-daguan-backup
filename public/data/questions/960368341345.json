@@ -1,0 +1,8 @@
+{
+  "answer": "错误。",
+  "explanation": "**写出闭环分子。** 若前向通道、反馈通道分别为 $G=\\frac{N_G}{D_G}$、$H=\\frac{N_H}{D_H}$，则\n$$T=\\frac{G}{1+GH}=\\frac{N_GD_H}{D_GD_H+N_GN_H}.$$\n零点取决于分子和可能的相消。它与开环通道采用何种定义也有关系。\n\n**构造环路增益的反例。** 取 $G=\\frac{s+1}{s+2}$、$H=\\frac1{s+1}$，约分后 $L=GH=\\frac1{s+2}$，既无有限零点，也无 $-1$ 极点。闭环 $T=\\frac{s+1}{s+3}$ 仍有 $-1$ 零点。若只把前向通道叫开环，取 $G=\\frac1{s+1}$、$H=\\frac1{s+2}$，闭环则出现前向通道没有的零点 $-2$。\n\n单位反馈且没有公因子相消时，闭环分子才直接保留前向通道的零点。",
+  "originalImages": [],
+  "answerPdfPages": "16",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

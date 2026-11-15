@@ -25,10 +25,16 @@ async def verify():
         questions = library["questions"]
         ids = {q["id"] for q in questions}
         assert questions and len(ids) == len(questions)
-        assert all(q["sourceType"] == "reviewed" for q in questions)
-        assert [entry["id"] for entry in library["lists"]] == ["complete", "by-school"]
-        assert all(set(entry["questionIds"]) == ids for entry in library["lists"])
-        schools = {path.split(" / ")[0] for paths in library["lists"][1]["categoryByQuestion"].values() for path in paths}
+        exams = [q for q in questions if q["sourceType"] == "reviewed"]
+        practice = [q for q in questions if q["sourceType"] == "practice"]
+        assert len(exams) + len(practice) == len(questions)
+        lists = {entry["id"]: entry for entry in library["lists"]}
+        assert set(lists) == ({"complete", "by-school", "practice-1000"} if practice else {"complete", "by-school"})
+        assert all(set(lists[key]["questionIds"]) == {q["id"] for q in exams} for key in ("complete", "by-school"))
+        if practice:
+            assert lists["practice-1000"]["questionIds"] == [q["id"] for q in practice]
+            assert all(q["pdfPage"] for q in practice)
+        schools = {path.split(" / ")[0] for paths in lists["by-school"]["categoryByQuestion"].values() for path in paths}
         assert await page.locator('.node[data-path="历年真题"]').count() == 0
         await page.locator("#listBtn").click()
         await page.locator('[data-list="by-school"]').click()
@@ -38,6 +44,16 @@ async def verify():
         await page.locator("#search").fill("")
         await page.locator("#listBtn").click()
         await page.locator('[data-list="complete"]').click()
+
+        if practice:
+            await page.locator("#listBtn").click()
+            await page.locator('[data-list="practice-1000"]').click()
+            assert await page.locator("#listName").inner_text() == f"起点精选1000题 · {len(practice)} 题"
+            assert await page.locator(".card .qno").inner_text() == practice[0]["number"]
+            start = practice[0]["id"]
+            await page.goto(f"{BASE}?question={start}")
+            await page.locator(f'.card[data-id="{start}"]').wait_for()
+            assert "list=practice-1000" in page.url
 
         if aliases := library.get("questionAliases"):
             old_id, current_id = next(iter(aliases.items()))

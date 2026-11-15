@@ -1,0 +1,8 @@
+{
+  "answer": "B",
+  "explanation": "零初值下，$\\left(s^3+s^2+1\\right)Y=KX$。因此\n$$G(s)=\\frac{K}{s^3+s^2+1}.$$\n非零常数分子与三次分母没有公因子，最简传递函数的分母阶数为 $3$。原式的一阶导数缺项只表示对应系数为零，最高阶导数是三阶。",
+  "originalImages": [],
+  "answerPdfPages": "12",
+  "referenceNote": "原册导数分母漏写阶数，按最高阶导数三阶的题意改用上标括号记法。",
+  "sourceType": "practice"
+}

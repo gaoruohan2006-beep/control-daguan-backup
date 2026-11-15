@@ -1,0 +1,8 @@
+{
+  "answer": "随动系统。",
+  "explanation": "系统接收参考信号后实时跟踪其变化。参考方向或位置可以由外部操作者随时调整，因此跟踪规律无法预先编程。恒值给定保持常数，程序给定则预先安排随时间变化的规律。",
+  "originalImages": [],
+  "answerPdfPages": "2",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

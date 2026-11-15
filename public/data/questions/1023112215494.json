@@ -1,0 +1,8 @@
+{
+  "answer": "$$G(s)=\\frac{10}{s+0.2}+\\frac7{s+0.4}=\\frac{17s+5.4}{s^2+0.6s+0.08}.$$",
+  "explanation": "分别对 $10e^{-0.2t}$ 和 $7e^{-0.4t}$ 作拉氏变换，得 $\\frac{10}{s+0.2}$ 与 $\\frac7{s+0.4}$。相加时分子是 $10(s+0.4)+7(s+0.2)=17s+5.4$，分母是 $(s+0.2)(s+0.4)$。单位冲激输入的变换为 $1$，因此无需再乘或除 $s$。",
+  "originalImages": [],
+  "answerPdfPages": "14",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

@@ -1,0 +1,8 @@
+{
+  "answer": "$$\\Phi(s)=\\frac{2}{s+2},\\qquad G(s)=\\frac2s.$$",
+  "explanation": "将阶跃响应作拉氏变换得 $\\frac1s-\\frac1{s+2}$。乘以 $s$ 得 $\\Phi(s)=1-\\frac{s}{s+2}=\\frac2{s+2}$。单位负反馈有 $\\Phi=\\frac{G}{1+G}$，解得\n$$G=\\frac{\\Phi}{1-\\Phi}=\\frac{\\frac2{s+2}}{\\frac{s}{s+2}}=\\frac2s.$$\n把结果接回单位负反馈即可复核。",
+  "originalImages": [],
+  "answerPdfPages": "15",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

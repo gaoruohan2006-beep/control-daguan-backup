@@ -1,0 +1,8 @@
+{
+  "answer": "D",
+  "explanation": "对同一状态矩阵 $A$，各通道的传递函数可以用 $D(s)=\\det(sI-A)$ 作公共分母。具体是 $C_i(sI-A)^{-1}B_i+D_i$。$B_i$、$C_i$ 或直接项不同，会改变分子。举例，两通道分别为 $\\frac1{s+1}$ 和 $\\frac2{s+1}$，分母相同，分子不同。\n\n题干明确以未约分的公共分母比较。若分别约分，有些通道的不可控或不可观模态会相消，此时约简后的分母也可能不同。例如 $\\operatorname{diag}(-1,-2)$ 的两个独立通道，约分后可分别只有极点 $-1$、$-2$。",
+  "originalImages": [],
+  "answerPdfPages": "12",
+  "referenceNote": "补足公共分母、暂不约分的比较口径，使选项唯一。",
+  "sourceType": "practice"
+}

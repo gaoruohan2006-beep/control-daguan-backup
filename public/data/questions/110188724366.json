@@ -1,0 +1,8 @@
+{
+  "answer": "C",
+  "explanation": "沿信号方向看，供电电压是操纵量，电热丝把电能转换为热能，加热炉是被控对象。系统希望调到指定值的输出是炉内温度，因此炉温是被控量，选 C。",
+  "originalImages": [],
+  "answerPdfPages": "1",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

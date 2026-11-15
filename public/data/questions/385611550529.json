@@ -1,0 +1,8 @@
+{
+  "answer": "C",
+  "explanation": "用拉普拉斯初值定理\n$$f(0^+)=\\lim_{s\\to+\\infty}sF(s).$$\n从积分看，$sF(s)=\\int_0^\\infty e^{-u}f(u/s)\\,\\mathrm du$，这是通过 $u=st$ 得到的。对足够大的正实数 $s$，主要权重集中在 $t$ 的右邻域，因此得到右极限。取 $s\\to0$ 涉及终值，需要另查终值定理条件。",
+  "originalImages": [],
+  "answerPdfPages": "12",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

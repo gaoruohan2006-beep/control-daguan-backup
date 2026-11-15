@@ -1,0 +1,8 @@
+{
+  "answer": "下式的 $\\Delta$ 由解析中的有向回路确定。\n\n$$\\frac{C}{R_{1}}=\\frac{G_{1} G_{2} \\left(G_{3} G_{4} G_{5} H_{2} + G_{3} + G_{4} G_{5} G_{6}\\right)}{\\Delta}.$$\n\n$$\\frac{C}{R_{2}}=\\frac{G_{4} G_{5} \\left(G_{1} G_{2} G_{3} + G_{1} G_{2} G_{6} H_{1} + G_{6}\\right)}{\\Delta}.$$",
+  "explanation": "**从信号图列方程。** 以下增益省略自变量 $s$。求某一外输入的通道时，其余独立输入置零。\n\n$$E_{1}=- H_{1} X + R_{1} + Y.$$\n\n$$E_{2}=- H_{2} Y + R_{2} + X.$$\n\n$$X=E_{1} G_{1} G_{2}.$$\n\n$$Y=E_{2} G_{4} G_{5}.$$\n\n$$C=G_{3} X + G_{6} Y.$$\n\n**逐条核对回路。**\n\n$L_{1}=- G_{1} G_{2} H_{1}$，对应 $E_{1}\\to X\\to E_{1}$。\n\n$L_{2}=- G_{4} G_{5} H_{2}$，对应 $E_{2}\\to Y\\to E_{2}$。\n\n$L_{3}=G_{1} G_{2} G_{4} G_{5}$，对应 $E_{1}\\to X\\to E_{2}\\to Y\\to E_{1}$。\n\n互不接触的回路乘积为 $L_{1} L_{2}$。\n\n$$\\Delta=L_{1} L_{2} - L_{1} - L_{2} - L_{3} + 1.$$\n\n**$\\frac{C}{R_{1}}$ 的前向通路。**\n\n$R_{1}\\to E_{1}\\to X\\to E_{2}\\to Y\\to C$ 的增益与余因子为\n$$P_{1}=G_{1} G_{2} G_{4} G_{5} G_{6},\\qquad \\Delta_{1}=1.$$\n\n$R_{1}\\to E_{1}\\to X\\to C$ 的增益与余因子为\n$$P_{2}=G_{1} G_{2} G_{3},\\qquad \\Delta_{2}=1 - L_{2}.$$\n\n$$\\frac{C}{R_{1}}=\\frac{P_{1}\\Delta_{1}+P_{2}\\Delta_{2}}{\\Delta}.$$\n\n**$\\frac{C}{R_{2}}$ 的前向通路。**\n\n$R_{2}\\to E_{2}\\to Y\\to E_{1}\\to X\\to C$ 的增益与余因子为\n$$P_{1}=G_{1} G_{2} G_{3} G_{4} G_{5},\\qquad \\Delta_{1}=1.$$\n\n$R_{2}\\to E_{2}\\to Y\\to C$ 的增益与余因子为\n$$P_{2}=G_{4} G_{5} G_{6},\\qquad \\Delta_{2}=1 - L_{1}.$$\n\n$$\\frac{C}{R_{2}}=\\frac{P_{1}\\Delta_{1}+P_{2}\\Delta_{2}}{\\Delta}.$$\n\n可先用 $A=G_1G_2$、$B=G_4G_5$ 记两串联段。两支路输出满足\n$$(1+AH_1)X-AY=AR_1.$$\n$$(1+BH_2)Y-BX=BR_2.$$\n二元线性方程组行列式为 $(1+AH_1)(1+BH_2)-AB$。再代 $C=G_3X+G_6Y$ 可与梅森公式对照。",
+  "originalImages": [],
+  "answerPdfPages": "46",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

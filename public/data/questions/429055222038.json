@@ -1,0 +1,8 @@
+{
+  "answer": "B",
+  "explanation": "令固定的开关函数 $m(t)=1(t-4)$，系统是乘法算子 $y=m(t)r(t)$。对多个输入先线性组合再乘 $m$，等于各自乘 $m$ 后再线性组合，故线性。取单位阶跃输入，原输出在 $t=4$ 接通。输入延迟一秒，系统仍在 $t=4$ 接通，原输出延迟一秒则要到 $t=5$ 才接通，故时变。",
+  "originalImages": [],
+  "answerPdfPages": "1",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

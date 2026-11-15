@@ -1,0 +1,8 @@
+{
+  "answer": "出水温度闭环反馈，冷水流量作为可测扰动进行前馈补偿，两路共同调节加热功率。",
+  "explanation": "**反馈。** 将测得出水温度与参考比较，温度偏低时增加加热功率，偏高则减小。\n\n**前馈。** 冷水流量突然增大时，即使温度尚未变化，流量计也能提前给出补偿信号。若入口温度保持不变且忽略散热，稳态热量关系近似为\n$$Q_{\\mathrm h}=\\rho c_p q(T_{\\mathrm{out}}-T_{\\mathrm{in}}).$$\n给定出口温度下，入口体积流量 $q$ 增大需要更大的加热功率。反馈用于修正前馈模型误差和未测扰动。\n\n![控制系统功能框图](img/reviewed/qd1000-a01-loop-05.svg)",
+  "originalImages": [],
+  "answerPdfPages": "4–5",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

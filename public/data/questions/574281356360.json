@@ -1,0 +1,8 @@
+{
+  "answer": "$u_C(t)=5-4e^{-t}$，单位为伏，$t\\ge0$。",
+  "explanation": "电容电压连续，故 $u_C(0^+)=1\\,\\mathrm V$。闭合后回路满足 $u_0=Ri+u_C$，而 $i=C\\dot u_C$。因此\n$$RC\\dot u_C+u_C=5,\\qquad RC=100\\times10^3\\cdot 10\\times10^{-6}=1\\,\\mathrm s.$$\n常数特解为 $5$，齐次项为 $Ae^{-t/(RC)}$。用初值解得 $A=-4$。代入 $t=0$ 为 $1$，当 $t\\to\\infty$ 时为电源电压 $5$。",
+  "originalImages": [],
+  "answerPdfPages": "13",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

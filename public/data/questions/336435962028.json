@@ -1,0 +1,8 @@
+{
+  "answer": "下式的 $\\Delta$ 由解析中的有向回路确定。\n\n$$\\frac{C}{R}=\\frac{G_{1} G_{2} G_{3}}{\\Delta}.$$\n\n$$\\frac{E}{R}=\\frac{G_{2} G_{3} H_{2} + G_{3} H_{2} + 1}{\\Delta}.$$",
+  "explanation": "**从信号图列方程。** 以下增益省略自变量 $s$。求某一外输入的通道时，其余独立输入置零。\n\n$$E=- C H_{1} + R.$$\n\n$$U=- C H_{2} + E G_{1}.$$\n\n$$X=G_{2} U.$$\n\n$$V=- C H_{2} + X.$$\n\n$$C=G_{3} V.$$\n\n**逐条核对回路。**\n\n$L_{1}=- G_{3} H_{2}$，对应 $V\\to C\\to V$。\n\n$L_{2}=- G_{2} G_{3} H_{2}$，对应 $U\\to X\\to V\\to C\\to U$。\n\n$L_{3}=- G_{1} G_{2} G_{3} H_{1}$，对应 $E\\to U\\to X\\to V\\to C\\to E$。\n\n没有互不接触的回路乘积项。\n\n$$\\Delta=- L_{1} - L_{2} - L_{3} + 1.$$\n\n**$\\frac{C}{R}$ 的前向通路。**\n\n$R\\to E\\to U\\to X\\to V\\to C$ 的增益与余因子为\n$$P_{1}=G_{1} G_{2} G_{3},\\qquad \\Delta_{1}=1.$$\n\n$$\\frac{C}{R}=\\frac{P_{1}\\Delta_{1}}{\\Delta}.$$\n\n**$\\frac{E}{R}$ 的前向通路。**\n\n$R\\to E$ 的增益与余因子为\n$$P_{1}=1,\\qquad \\Delta_{1}=- L_{1} - L_{2} + 1.$$\n\n$$\\frac{E}{R}=\\frac{P_{1}\\Delta_{1}}{\\Delta}.$$\n\n**框图化简步骤。** 将 $G_2$ 前的 $-H_2C$ 移到 $G_2$ 后，等效为 $-G_2H_2C$。与原有 $-H_2C$ 合并，内环反馈增益为 $(1+G_2)H_2$。因此内环 $C/E=\\frac{G_1G_2G_3}{1+G_3(1+G_2)H_2}$。然后按外环反馈 $H_1$ 化简，得到 $C/R$。用 $E/R=1-H_1C/R$ 与梅森结果交叉核对。",
+  "originalImages": [],
+  "answerPdfPages": "63–64",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

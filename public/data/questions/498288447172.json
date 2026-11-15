@@ -1,0 +1,8 @@
+{
+  "answer": "令 $P=G_1(G_2+G_4)$，则\n$$\\frac{C}{R}=\\frac{G_3P+G_5}{1+G_3H(1+P)}.$$",
+  "explanation": "**从信号图列方程。** 以下增益省略自变量 $s$。求某一外输入的通道时，其余独立输入置零。\n\n$$E=- C H + R.$$\n\n$$X=E G_{1}.$$\n\n$$U=- C H + G_{4} X.$$\n\n$$V=G_{2} X + U.$$\n\n$$Y=G_{3} V.$$\n\n$$C=G_{5} R + Y.$$\n\n**逐条核对回路。**\n\n$L_{1}=- G_{3} H$，对应 $U\\to V\\to Y\\to C\\to U$。\n\n$L_{2}=- G_{1} G_{2} G_{3} H$，对应 $E\\to X\\to V\\to Y\\to C\\to E$。\n\n$L_{3}=- G_{1} G_{3} G_{4} H$，对应 $E\\to X\\to U\\to V\\to Y\\to C\\to E$。\n\n没有互不接触的回路乘积项。\n\n$$\\Delta=- L_{1} - L_{2} - L_{3} + 1.$$\n\n**$\\frac{C}{R}$ 的前向通路。**\n\n$R\\to E\\to X\\to U\\to V\\to Y\\to C$ 的增益与余因子为\n$$P_{1}=G_{1} G_{3} G_{4},\\qquad \\Delta_{1}=1.$$\n\n$R\\to E\\to X\\to V\\to Y\\to C$ 的增益与余因子为\n$$P_{2}=G_{1} G_{2} G_{3},\\qquad \\Delta_{2}=1.$$\n\n$R\\to C$ 的增益与余因子为\n$$P_{3}=G_{5},\\qquad \\Delta_{3}=1.$$\n\n$$\\frac{C}{R}=\\frac{P_{1}\\Delta_{1}+P_{2}\\Delta_{2}+P_{3}\\Delta_{3}}{\\Delta}.$$\n\n**用等效结构化简复核。** $X$ 经 $G_2$、$G_4$ 同时去往 $V$，因此\n$$V=(G_2+G_4)X-HC.$$\n再用 $X=G_1(R-HC)$，将反馈信号写成同一项。输出 $C=G_3V+G_5R$ 仍包含从参考端直接过来的 $G_5$。移项可得闭环传递函数。",
+  "originalImages": [],
+  "answerPdfPages": "58",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

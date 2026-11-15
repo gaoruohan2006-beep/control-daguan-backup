@@ -1,0 +1,8 @@
+{
+  "answer": "下式的 $\\Delta$ 由解析中的有向回路确定。\n\n$$\\frac{C}{R}=\\frac{G_{1} G_{2} G_{5} + G_{1} G_{2} + G_{2} G_{3} G_{4} H_{1} + G_{2} G_{3} G_{5} + G_{2} G_{3} + G_{3} G_{4}}{\\Delta}.$$",
+  "explanation": "**从信号图列方程。** 以下增益省略自变量 $s$。求某一外输入的通道时，其余独立输入置零。\n\n$$E=- C H_{2} + R.$$\n\n$$B=E G_{3}.$$\n\n$$A=B + E G_{1} - H_{1} X.$$\n\n$$X=A G_{2}.$$\n\n$$Y=B G_{4} + G_{5} X.$$\n\n$$C=X + Y.$$\n\n**逐条核对回路。**\n\n$L_{1}=- G_{2} H_{1}$，对应 $A\\to X\\to A$。\n\n$L_{2}=- G_{3} G_{4} H_{2}$，对应 $E\\to B\\to Y\\to C\\to E$。\n\n$L_{3}=- G_{1} G_{2} H_{2}$，对应 $E\\to A\\to X\\to C\\to E$。\n\n$L_{4}=- G_{2} G_{3} H_{2}$，对应 $E\\to B\\to A\\to X\\to C\\to E$。\n\n$L_{5}=- G_{1} G_{2} G_{5} H_{2}$，对应 $E\\to A\\to X\\to Y\\to C\\to E$。\n\n$L_{6}=- G_{2} G_{3} G_{5} H_{2}$，对应 $E\\to B\\to A\\to X\\to Y\\to C\\to E$。\n\n互不接触的回路乘积为 $L_{1} L_{2}$。\n\n$$\\Delta=1-S_1+S_2.$$\n\n各阶 $S_k$ 是上列每组 $k$ 个互不接触回路的增益乘积之和。$S_1$ 为所有单独回路增益的和。\n\n**$\\frac{C}{R}$ 的前向通路。**\n\n$R\\to E\\to B\\to A\\to X\\to Y\\to C$ 的增益与余因子为\n$$P_{1}=G_{2} G_{3} G_{5},\\qquad \\Delta_{1}=1.$$\n\n$R\\to E\\to B\\to A\\to X\\to C$ 的增益与余因子为\n$$P_{2}=G_{2} G_{3},\\qquad \\Delta_{2}=1.$$\n\n$R\\to E\\to B\\to Y\\to C$ 的增益与余因子为\n$$P_{3}=G_{3} G_{4},\\qquad \\Delta_{3}=1 - L_{1}.$$\n\n$R\\to E\\to A\\to X\\to Y\\to C$ 的增益与余因子为\n$$P_{4}=G_{1} G_{2} G_{5},\\qquad \\Delta_{4}=1.$$\n\n$R\\to E\\to A\\to X\\to C$ 的增益与余因子为\n$$P_{5}=G_{1} G_{2},\\qquad \\Delta_{5}=1.$$\n\n$$\\frac{C}{R}=\\frac{P_{1}\\Delta_{1}+P_{2}\\Delta_{2}+P_{3}\\Delta_{3}+P_{4}\\Delta_{4}+P_{5}\\Delta_{5}}{\\Delta}.$$\n\n上路输出 $X$ 除了直接到 $C$，还通过 $G_5$ 加到下路，所以在 $C=X+Y$ 中，共可写成 $C=(1+G_5)X+G_4B$。这是校验五条前向通路是否齐全的简便办法。",
+  "originalImages": [],
+  "answerPdfPages": "48–49",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

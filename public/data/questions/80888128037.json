@@ -1,0 +1,8 @@
+{
+  "answer": "$$\\frac{C}{R}=- \\frac{s^{3} - 3 s - 3}{\\left(s + 1\\right) \\left(2 s^{4} + 3 s^{3} + 8 s^{2} + 5 s + 1\\right)}.$$\n\n下式的 $\\Delta$ 由解析中的有向回路确定。\n\n$$\\frac{C}{R}=\\frac{K \\left(K^{2} + K s + K - s + 1\\right)}{\\Delta}.$$",
+  "explanation": "**从信号图列方程。** 以下增益省略自变量 $s$。求某一外输入的通道时，其余独立输入置零。\n\n$$A=R.$$\n\n$$B=A - X s - Z s^{2}.$$\n\n$$P=B K.$$\n\n$$X=A + P - Q s.$$\n\n$$Q=K X.$$\n\n$$Z=B + Q - W s.$$\n\n$$W=K Z.$$\n\n$$C=W.$$\n\n**逐条核对回路。**\n\n$L_{1}=- s^{2}$，对应 $B\\to Z\\to B$。\n\n$L_{2}=- K s$，对应 $X\\to Q\\to X$。\n\n$L_{3}=- K s$，对应 $Z\\to W\\to Z$。\n\n$L_{4}=- K s$，对应 $B\\to P\\to X\\to B$。\n\n$L_{5}=- K^{2} s^{2}$，对应 $B\\to P\\to X\\to Q\\to Z\\to B$。\n\n互不接触的回路乘积为 $L_{1} L_{2}$、$L_{2} L_{3}$、$L_{3} L_{4}$。\n\n$$\\Delta=L_{1} L_{2} - L_{1} + L_{2} L_{3} - L_{2} + L_{3} L_{4} - L_{3} - L_{4} - L_{5} + 1.$$\n\n**$\\frac{C}{R}$ 的前向通路。**\n\n$R\\to A\\to B\\to P\\to X\\to Q\\to Z\\to W\\to C$ 的增益与余因子为\n$$P_{1}=K^{3},\\qquad \\Delta_{1}=1.$$\n\n$R\\to A\\to B\\to Z\\to W\\to C$ 的增益与余因子为\n$$P_{2}=K,\\qquad \\Delta_{2}=1 - L_{2}.$$\n\n$R\\to A\\to X\\to B\\to Z\\to W\\to C$ 的增益与余因子为\n$$P_{3}=- K s,\\qquad \\Delta_{3}=1.$$\n\n$R\\to A\\to X\\to Q\\to Z\\to W\\to C$ 的增益与余因子为\n$$P_{4}=K^{2},\\qquad \\Delta_{4}=1.$$\n\n$$\\frac{C}{R}=\\frac{P_{1}\\Delta_{1}+P_{2}\\Delta_{2}+P_{3}\\Delta_{3}+P_{4}\\Delta_{4}}{\\Delta}.$$\n\n两个跨级前馈分别从 $A$ 到 $X$、从 $B$ 到 $Z$。较长的跨级反馈从 $Z$ 回到 $B$，增益为 $-s^2$，与三个 $-s$ 支路不能混写。先保留 $K$ 完成路径和回路计算，再代入 $K=\\frac1{s+1}$ 化成多项式。",
+  "originalImages": [],
+  "answerPdfPages": "51–52",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

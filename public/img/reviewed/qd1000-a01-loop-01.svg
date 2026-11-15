@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 537 156" width="537" height="156" role="img" aria-labelledby="title">
+<title id="title">控制系统功能框图</title>
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 1L10 5 0 9z" fill="#20384d"/></marker></defs>
+<style>
+text{fill:#142f45;font:15px "Times New Roman",SimSun,"Noto Serif CJK SC",serif}
+.wire,.arr{fill:none;stroke:#20384d;stroke-width:1.65;stroke-linecap:round;stroke-linejoin:round}
+.arr{marker-end:url(#ar)}.box{fill:#fff;stroke:#20384d;stroke-width:1.6}.node{fill:#20384d}
+</style>
+<rect width="100%" height="100%" fill="#fff"/>
+<path class="arr" d="M16 51H88"/>
+<text x="47" y="37.0" text-anchor="middle">设定液位</text>
+<circle class="box" cx="100" cy="51" r="11"/>
+<text x="82" y="45.0" text-anchor="middle">+</text>
+<text x="114" y="72.0" text-anchor="middle">−</text>
+<path class="wire" d="M93 44l14 14m0 -14l-14 14"/>
+<path class="arr" d="M112 51H139"/>
+<rect class="box" x="139" y="28" width="79" height="46" rx="3"/>
+<text x="178.5" y="56.0" text-anchor="middle">杠杆机构</text>
+<path class="arr" d="M218 51H238"/>
+<rect class="box" x="238" y="28" width="79" height="46" rx="3"/>
+<text x="277.5" y="56.0" text-anchor="middle">进水阀</text>
+<path class="arr" d="M317 51H337"/>
+<rect class="box" x="337" y="28" width="79" height="46" rx="3"/>
+<text x="376.5" y="56.0" text-anchor="middle">水箱</text>
+<path class="arr" d="M416 51H522"/>
+<text x="488" y="35.0" text-anchor="middle">实际液位</text>
+<circle class="node" cx="457" cy="51" r="3"/>
+<path class="arr" d="M457 51V120H335"/>
+<rect class="box" x="201" y="103" width="134" height="34" rx="3"/>
+<text x="268" y="125.0" text-anchor="middle">浮球测量</text>
+<path class="arr" d="M201 120H100V62"/>
+<text x="376" y="19.0" text-anchor="middle">出水扰动</text>
+<path class="arr" d="M376 24V28"/>
+</svg>

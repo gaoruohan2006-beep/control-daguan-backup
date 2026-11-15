@@ -1,0 +1,8 @@
+{
+  "answer": "下式的 $\\Delta$ 由解析中的有向回路确定。\n\n$$\\frac{C}{R}=\\frac{G_{4} \\left(G_{1} G_{2} G_{3} + 1\\right)}{\\Delta}.$$\n\n$$\\frac{C}{N}=\\frac{G_{3} G_{4}}{\\Delta}.$$",
+  "explanation": "**从信号图列方程。** 以下增益省略自变量 $s$。求某一外输入的通道时，其余独立输入置零。\n\n$$A=R.$$\n\n$$B=A G_{1} - Y.$$\n\n$$D=B G_{2} + N.$$\n\n$$U=A + D G_{3} - H Y.$$\n\n$$Y=G_{4} U.$$\n\n$$C=Y.$$\n\n**逐条核对回路。**\n\n$L_{1}=- G_{4} H$，对应 $U\\to Y\\to U$。\n\n$L_{2}=- G_{2} G_{3} G_{4}$，对应 $B\\to D\\to U\\to Y\\to B$。\n\n没有互不接触的回路乘积项。\n\n$$\\Delta=- L_{1} - L_{2} + 1.$$\n\n**$\\frac{C}{R}$ 的前向通路。**\n\n$R\\to A\\to B\\to D\\to U\\to Y\\to C$ 的增益与余因子为\n$$P_{1}=G_{1} G_{2} G_{3} G_{4},\\qquad \\Delta_{1}=1.$$\n\n$R\\to A\\to U\\to Y\\to C$ 的增益与余因子为\n$$P_{2}=G_{4},\\qquad \\Delta_{2}=1.$$\n\n$$\\frac{C}{R}=\\frac{P_{1}\\Delta_{1}+P_{2}\\Delta_{2}}{\\Delta}.$$\n\n**$\\frac{C}{N}$ 的前向通路。**\n\n$N\\to D\\to U\\to Y\\to C$ 的增益与余因子为\n$$P_{1}=G_{3} G_{4},\\qquad \\Delta_{1}=1.$$\n\n$$\\frac{C}{N}=\\frac{P_{1}\\Delta_{1}}{\\Delta}.$$\n\n从 $A$ 到 $U$ 的下方支路方向为正向，增益是 $1$，所以参考输入有一条绕过 $G_1G_2G_3$ 的路径。扰动 $N$ 在 $D$ 点注入，经过 $G_3G_4$ 才到输出。",
+  "originalImages": [],
+  "answerPdfPages": "38",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

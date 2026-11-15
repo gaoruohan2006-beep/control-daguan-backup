@@ -1,0 +1,8 @@
+{
+  "answer": "下式的 $\\Delta$ 由解析中的有向回路确定。\n\n$$\\frac{C}{R}=\\frac{G_{3} \\left(G_{1} G_{2} + H_{1}\\right)}{\\Delta}.$$\n\n$$\\frac{C}{N}=\\frac{G_{3} H}{\\Delta}.$$",
+  "explanation": "**从信号图列方程。** 以下增益省略自变量 $s$。求某一外输入的通道时，其余独立输入置零。\n\n$$E=- C + R.$$\n\n$$V=E G_{1} - H_{2} U.$$\n\n$$X=G_{2} V.$$\n\n$$U=H N + H_{1} R + X.$$\n\n$$C=G_{3} U.$$\n\n**逐条核对回路。**\n\n$L_{1}=- G_{2} H_{2}$，对应 $V\\to X\\to U\\to V$。\n\n$L_{2}=- G_{1} G_{2} G_{3}$，对应 $E\\to V\\to X\\to U\\to C\\to E$。\n\n没有互不接触的回路乘积项。\n\n$$\\Delta=- L_{1} - L_{2} + 1.$$\n\n**$\\frac{C}{R}$ 的前向通路。**\n\n$R\\to E\\to V\\to X\\to U\\to C$ 的增益与余因子为\n$$P_{1}=G_{1} G_{2} G_{3},\\qquad \\Delta_{1}=1.$$\n\n$R\\to U\\to C$ 的增益与余因子为\n$$P_{2}=G_{3} H_{1},\\qquad \\Delta_{2}=1.$$\n\n$$\\frac{C}{R}=\\frac{P_{1}\\Delta_{1}+P_{2}\\Delta_{2}}{\\Delta}.$$\n\n**$\\frac{C}{N}$ 的前向通路。**\n\n$N\\to U\\to C$ 的增益与余因子为\n$$P_{1}=G_{3} H,\\qquad \\Delta_{1}=1.$$\n\n$$\\frac{C}{N}=\\frac{P_{1}\\Delta_{1}}{\\Delta}.$$\n\n两条外部附加支路都在 $G_2$ 之后注入 $U$。局部反馈 $H_2$ 也从 $U$ 取样，外环反馈则从 $G_3$ 的输出取样，所以两回路的增益分别含 $G_2H_2$ 和 $G_1G_2G_3$。",
+  "originalImages": [],
+  "answerPdfPages": "40",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

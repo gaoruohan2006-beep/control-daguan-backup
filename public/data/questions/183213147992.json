@@ -1,0 +1,8 @@
+{
+  "answer": "$$G(s)=\\frac{1}{0.04s^2+0.24s+8}=\\frac{25}{s^2+6s+200}.$$",
+  "explanation": "输出的二阶导数、一阶导数与自身，变换后分别为 $s^2C,sC,C$。提取 $C$ 得\n$$(0.04s^2+0.24s+8)C=R.$$\n两边除以分母，再把分子分母同乘 $25$，得到首一分母形式。取 $s=0$ 核验直流增益应为 $\\frac18$，也可由常值微分方程直接看出。",
+  "originalImages": [],
+  "answerPdfPages": "12",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

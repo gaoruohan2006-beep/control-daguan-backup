@@ -1,0 +1,8 @@
+{
+  "answer": "快速性和准确性。",
+  "explanation": "稳定性要求扰动后的自由响应不会发散，并通常希望达到渐近稳定。快速性考察响应接近给定值所需时间，可用上升时间、调节时间等描述。准确性考察输出与期望值的偏差，常用稳态误差评价。",
+  "originalImages": [],
+  "answerPdfPages": "2",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

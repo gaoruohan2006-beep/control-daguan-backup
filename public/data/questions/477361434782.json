@@ -1,0 +1,8 @@
+{
+  "answer": "恒值控制系统与随动控制系统。",
+  "explanation": "恒值控制维持一个指定常量，例如保持水位。随动控制跟踪随时间变化的参考，例如伺服转台跟踪指令角度。若进一步细分变化的参考，预先给定时间规律的系统常另列为程序控制系统。",
+  "originalImages": [],
+  "answerPdfPages": "2",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

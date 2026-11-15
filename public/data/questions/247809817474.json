@@ -1,0 +1,8 @@
+{
+  "answer": "下式的 $\\Delta$ 由解析中的有向回路确定。\n\n$$\\frac{C}{R}=\\frac{G_{1} G_{2} G_{3}}{\\Delta}.$$",
+  "explanation": "**从信号图列方程。** 以下增益省略自变量 $s$。求某一外输入的通道时，其余独立输入置零。\n\n$$E=- H_{1} X + R.$$\n\n$$U=E G_{1} - H_{1} X.$$\n\n$$X=- C H_{2} + G_{2} U.$$\n\n$$C=G_{3} X.$$\n\n**逐条核对回路。**\n\n$L_{1}=- G_{2} H_{1}$，对应 $U\\to X\\to U$。\n\n$L_{2}=- G_{3} H_{2}$，对应 $X\\to C\\to X$。\n\n$L_{3}=- G_{1} G_{2} H_{1}$，对应 $E\\to U\\to X\\to E$。\n\n没有互不接触的回路乘积项。\n\n$$\\Delta=- L_{1} - L_{2} - L_{3} + 1.$$\n\n**$\\frac{C}{R}$ 的前向通路。**\n\n$R\\to E\\to U\\to X\\to C$ 的增益与余因子为\n$$P_{1}=G_{1} G_{2} G_{3},\\qquad \\Delta_{1}=1.$$\n\n$$\\frac{C}{R}=\\frac{P_{1}\\Delta_{1}}{\\Delta}.$$\n\n$H_1$ 先取 $X$，然后把同一负反馈量送入两个求和点，形成两条闭合回路。$H_2$ 从输出 $C$ 回到 $G_3$ 输入，形成另一条局部回路。三条回路都经过 $X$，因此不取回路乘积项。",
+  "originalImages": [],
+  "answerPdfPages": "50",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

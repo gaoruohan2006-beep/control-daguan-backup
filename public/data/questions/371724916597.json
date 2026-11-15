@@ -1,0 +1,8 @@
+{
+  "answer": "错误。",
+  "explanation": "复频率 $s$ 可以取复值。由实系数微分方程或实状态空间模型所得传递函数，分子分母可取实系数。通用有限维因果模型允许直接通道，所以可以同阶。严格真分式对应没有直接通道。题给判断把复变量与多项式系数混在了一起。",
+  "originalImages": [],
+  "answerPdfPages": "15",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

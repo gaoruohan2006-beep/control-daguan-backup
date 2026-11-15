@@ -129,14 +129,64 @@ def write_json(path, data):
     path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
 
 
+def question_id(parts):
+    identity = json.dumps(parts, ensure_ascii=False)
+    return int.from_bytes(hashlib.blake2s(identity.encode(), digest_size=5).digest(), "big") + 1_000_000
+
+
 def source_id(source):
     school, year, variant, number = (source[k] for k in SOURCE_FIELDS)
-    identity = json.dumps([school, year, variant, str(number)], ensure_ascii=False)
-    return int.from_bytes(hashlib.blake2s(identity.encode(), digest_size=5).digest(), "big") + 1_000_000
+    return question_id([school, year, variant, str(number)])
 
 
 def source_entry(source):
     return {key: source[key] for key in SOURCE_FIELDS}
+
+
+PRACTICE_TITLE = "起点精选1000题"
+PRACTICE_CHAPTERS = {
+    1: "自动控制基本概念",
+    2: "控制系统数学模型",
+}
+PRACTICE_KINDS = ("选择题", "填空题", "判断题", "简答题", "分析题")
+
+
+def load_practice(ids, detail_rows):
+    rows = []
+    paths = {}
+    source = ROOT / "data-src" / "practice"
+    for file in sorted(source.glob("qd1000-*.json")):
+        for card in json.loads(file.read_text(encoding="utf-8-sig")):
+            volume = card["volume"]
+            chapter = card["chapter"]
+            kind = card["kind"]
+            number = card["number"]
+            origin = card["origin"]
+            identity = (volume, chapter, kind, number)
+            assert volume in {"A", "B"} and chapter > 0 and kind in PRACTICE_KINDS and number > 0, identity
+            identifier = question_id([PRACTICE_TITLE, *identity])
+            assert identifier not in ids, identity
+            ids.add(identifier)
+            stem, answer, explanation = [card[k].strip() for k in ("stem", "answer", "explanation")]
+            assert all((stem, answer, explanation, origin, card["questionPages"], card["answerPages"])), identity
+            for location in FIGURE.findall("\n".join((stem, answer, explanation))):
+                assert location.startswith("img/reviewed/") and location.endswith(".svg")
+                assert (PUBLIC / location).is_file(), (identity, location)
+            topic_paths = [primary_topic({**card, "school": origin, "year": None, "variant": volume})]
+            tags = [topic_paths[0].split(" / ")[0]]
+            number_label = f"{volume}册 · 第{chapter}章 · {kind}{number}"
+            chapter_label = f"{volume}册 第{chapter}章 {PRACTICE_CHAPTERS.get(chapter, '')}".strip()
+            paths[identifier] = [f"{chapter_label} / {kind}"]
+            rows.append(dict(
+                id=identifier, number=number_label, source=f"{PRACTICE_TITLE} · {origin}", sourceType="practice",
+                categories=topic_paths, tags=tags, hasFigure=bool(FIGURE.search(stem)), stem=stem,
+                pdfPage=card["questionPages"], search=" ".join((PRACTICE_TITLE, origin, number_label, chapter_label, *topic_paths, stem)),
+            ))
+            detail_rows[identifier] = dict(
+                answer=answer, explanation=explanation, originalImages=[], answerPdfPages=card["answerPages"],
+                referenceNote=card.get("notes", ""), sourceType="practice",
+            )
+    return rows, paths
 
 
 def build():
@@ -187,6 +237,7 @@ def build():
                 referenceNote=card.get("notes", ""), sourceType="reviewed",
             )
 
+    practice, practice_paths = load_practice(ids, detail_rows)
     assert not ids.intersection(aliases), "A merged question is still present as its own card"
     for identifier, detail in detail_rows.items():
         write_json(detail_dir / f"{identifier}.json", detail)
@@ -206,12 +257,15 @@ def build():
             f'{entry["school"]} / {entry["year"]}' for entry in [q, *q.get("alsoAppearedIn", [])]
         ))),
     ]
+    if practice:
+        lists.append(question_list("practice-1000", PRACTICE_TITLE, practice, lambda q: practice_paths[q["id"]]))
     write_json(PUBLIC / "data" / "library.json", dict(
-        subject="自动控制原理", source="985、211 与双非院校初试题库", topicOrder=TOPICS,
+        subject="自动控制原理", source="院校初试题库与起点精选1000题", topicOrder=TOPICS,
         years=sorted({entry["year"] for q in questions for entry in [q, *q.get("alsoAppearedIn", [])]}, reverse=True),
-        questionAliases=aliases, lists=lists, questions=questions,
+        questionAliases=aliases, lists=lists, questions=questions + practice,
     ))
     print(f"{len(questions)} 道重排核对题，{len({q['school'] for q in questions})} 所院校")
+    print(f"{len(practice)} 道起点精选练习")
     print(dict(Counter(tag for q in questions for tag in q["tags"])))
 
 

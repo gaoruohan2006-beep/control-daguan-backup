@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 537 189" width="537" height="189" role="img" aria-labelledby="title">
+<title id="title">控制系统功能框图</title>
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 1L10 5 0 9z" fill="#20384d"/></marker></defs>
+<style>
+text{fill:#142f45;font:15px "Times New Roman",SimSun,"Noto Serif CJK SC",serif}
+.wire,.arr{fill:none;stroke:#20384d;stroke-width:1.65;stroke-linecap:round;stroke-linejoin:round}
+.arr{marker-end:url(#ar)}.box{fill:#fff;stroke:#20384d;stroke-width:1.6}.node{fill:#20384d}
+</style>
+<rect width="100%" height="100%" fill="#fff"/>
+<path class="arr" d="M16 84H88"/>
+<text x="47" y="70.0" text-anchor="middle">给定温度</text>
+<circle class="box" cx="100" cy="84" r="11"/>
+<text x="82" y="78.0" text-anchor="middle">+</text>
+<text x="114" y="105.0" text-anchor="middle">−</text>
+<path class="wire" d="M93 77l14 14m0 -14l-14 14"/>
+<path class="arr" d="M112 84H139"/>
+<rect class="box" x="139" y="61" width="79" height="46" rx="3"/>
+<text x="178.5" y="89.0" text-anchor="middle">温度控制</text>
+<path class="wire" d="M218 84H221"/><path class="arr" d="M235 84H238"/>
+<circle class="box" cx="228" cy="84" r="7"/>
+<text x="228" y="88.0" text-anchor="middle">+</text>
+<rect class="box" x="238" y="61" width="79" height="46" rx="3"/>
+<text x="277.5" y="89.0" text-anchor="middle">加热棒</text>
+<path class="arr" d="M317 84H337"/>
+<rect class="box" x="337" y="61" width="79" height="46" rx="3"/>
+<text x="376.5" y="89.0" text-anchor="middle">水箱热过程</text>
+<path class="arr" d="M416 84H522"/>
+<text x="488" y="68.0" text-anchor="middle">出水温度</text>
+<circle class="node" cx="457" cy="84" r="3"/>
+<path class="arr" d="M457 84V153H335"/>
+<rect class="box" x="201" y="136" width="134" height="34" rx="3"/>
+<text x="268" y="158.0" text-anchor="middle">出水温度测量</text>
+<path class="arr" d="M201 153H100V95"/>
+<path class="arr" d="M473 18H414"/><rect class="box" x="290" y="5" width="124" height="26" rx="3"/>
+<text x="491" y="42.0" text-anchor="middle">测得扰动</text>
+<text x="352" y="23.0" text-anchor="middle">流量补偿</text>
+<path class="arr" d="M290 18H228V77"/>
+</svg>

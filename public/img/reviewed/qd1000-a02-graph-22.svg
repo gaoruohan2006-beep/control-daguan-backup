@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 532 224" width="532" height="224" role="img" aria-labelledby="title">
+<title id="title">题中各信号支路及其增益</title>
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 1L10 5 0 9z" fill="#20384d"/></marker></defs>
+<style>
+text{fill:#142f45;font:15px "Times New Roman",SimSun,"Noto Serif CJK SC",serif}
+.wire,.arr{fill:none;stroke:#20384d;stroke-width:1.65;stroke-linecap:round;stroke-linejoin:round}
+.arr{marker-end:url(#ar)}.box{fill:#fff;stroke:#20384d;stroke-width:1.6}.node{fill:#20384d}
+</style>
+<rect width="100%" height="100%" fill="#fff"/>
+<path class="arr" d="M53 80H140"/>
+<rect x="87.5" y="56" width="18" height="17" rx="3" fill="#fff"/>
+<text x="96.5" y="69.0" text-anchor="middle">1</text>
+<path class="arr" d="M482 88Q470 112 452 112H193Q175 112 163 88"/>
+<rect x="308.5" y="118" width="28" height="17" rx="3" fill="#fff"/>
+<text x="322.5" y="131.0" text-anchor="middle">−1</text>
+<path class="arr" d="M369 88Q357 144 339 144H193Q175 144 163 88"/>
+<rect x="247.0" y="150" width="38" height="17" rx="3" fill="#fff"/>
+<text x="266.0" y="163.0" text-anchor="middle">−H₁</text>
+<path class="arr" d="M166 80H253"/>
+<rect x="195.5" y="56" width="28" height="17" rx="3" fill="#fff"/>
+<text x="209.5" y="69.0" text-anchor="middle">G₁</text>
+<path class="arr" d="M482 88Q470 176 452 176H306Q288 176 276 88"/>
+<rect x="360.0" y="182" width="38" height="17" rx="3" fill="#fff"/>
+<text x="379.0" y="195.0" text-anchor="middle">−H₂</text>
+<path class="arr" d="M279 80H366"/>
+<rect x="308.5" y="56" width="28" height="17" rx="3" fill="#fff"/>
+<text x="322.5" y="69.0" text-anchor="middle">G₂</text>
+<path class="arr" d="M276 72Q288 48 306 48H452Q470 48 482 72"/>
+<rect x="365.0" y="28" width="28" height="17" rx="3" fill="#fff"/>
+<text x="379.0" y="41.0" text-anchor="middle">G₄</text>
+<path class="arr" d="M392 80H479"/>
+<rect x="421.5" y="56" width="28" height="17" rx="3" fill="#fff"/>
+<text x="435.5" y="69.0" text-anchor="middle">G₃</text>
+<circle class="box" cx="40" cy="80" r="12"/>
+<text x="40" y="84.0" text-anchor="middle">R</text>
+<circle class="box" cx="153" cy="80" r="12"/>
+<text x="153" y="84.0" text-anchor="middle">U</text>
+<circle class="box" cx="266" cy="80" r="12"/>
+<text x="266" y="84.0" text-anchor="middle">V</text>
+<circle class="box" cx="379" cy="80" r="12"/>
+<text x="379" y="84.0" text-anchor="middle">X</text>
+<circle class="box" cx="492" cy="80" r="12"/>
+<text x="492" y="84.0" text-anchor="middle">C</text>
+</svg>

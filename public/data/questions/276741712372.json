@@ -1,0 +1,8 @@
+{
+  "answer": "下式的 $\\Delta$ 由解析中的有向回路确定。\n\n$$\\frac{C}{R}=\\frac{G_{1} G_{2} G_{3} G_{4} G_{5}}{\\Delta}.$$",
+  "explanation": "**从信号图列方程。** 以下增益省略自变量 $s$。求某一外输入的通道时，其余独立输入置零。\n\n$$E=- C G_{8} + R.$$\n\n$$X=E G_{1} - G_{7} W.$$\n\n$$U=G_{2} X.$$\n\n$$V=C G_{6} + G_{3} U.$$\n\n$$W=G_{4} V.$$\n\n$$C=G_{5} W.$$\n\n**逐条核对回路。**\n\n$L_{1}=G_{4} G_{5} G_{6}$，对应 $V\\to W\\to C\\to V$。\n\n$L_{2}=- G_{2} G_{3} G_{4} G_{7}$，对应 $X\\to U\\to V\\to W\\to X$。\n\n$L_{3}=- G_{1} G_{2} G_{3} G_{4} G_{5} G_{8}$，对应 $E\\to X\\to U\\to V\\to W\\to C\\to E$。\n\n没有互不接触的回路乘积项。\n\n$$\\Delta=- L_{1} - L_{2} - L_{3} + 1.$$\n\n**$\\frac{C}{R}$ 的前向通路。**\n\n$R\\to E\\to X\\to U\\to V\\to W\\to C$ 的增益与余因子为\n$$P_{1}=G_{1} G_{2} G_{3} G_{4} G_{5},\\qquad \\Delta_{1}=1.$$\n\n$$\\frac{C}{R}=\\frac{P_{1}\\Delta_{1}}{\\Delta}.$$\n\n中间支路 $G_7$ 取自 $G_4$ 之后、$G_5$ 之前；外环 $G_8$ 才取自 $C$。图中 $G_6$ 回到 $G_4$ 前的求和点为正号，故闭环特征式中对应一项 $-G_4G_5G_6$。",
+  "originalImages": [],
+  "answerPdfPages": "35",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

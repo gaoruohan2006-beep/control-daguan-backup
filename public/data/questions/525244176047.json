@@ -1,0 +1,8 @@
+{
+  "answer": "B",
+  "explanation": "单位负反馈给出 $1+G(s)=0$。将开环分母与分子相加得到闭环特征多项式\n$$D_{\\rm cl}(s)=(s^2+6s+6)+(3s+3)=s^2+9s+9.$$\n所以选 B。$s^2+6s+6$ 是开环分母；若只把反馈项的一次或常数系数加进去，结果也会错。闭环分子零点 $s=-1$ 代入 $D_{\\rm cl}$ 得 $1$，没有相消。",
+  "originalImages": [],
+  "answerPdfPages": "11",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

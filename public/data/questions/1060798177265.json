@@ -1,0 +1,8 @@
+{
+  "answer": "开环控制系统和闭环控制系统。",
+  "explanation": "分类依据是被控输出是否反馈到控制输入。开环控制按指令产生控制作用。闭环控制测量输出，并利用测量信息修正控制量。有些系统还在闭环上叠加前馈补偿，形成复合控制。",
+  "originalImages": [],
+  "answerPdfPages": "2",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

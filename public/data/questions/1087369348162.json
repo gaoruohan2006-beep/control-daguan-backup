@@ -1,0 +1,8 @@
+{
+  "answer": "下式的 $\\Delta$ 由解析中的有向回路确定。\n\n$$\\frac{C}{R_{1}}=\\frac{- A \\left(B - 1\\right)}{\\Delta}.$$\n\n$$\\frac{C}{R_{2}}=\\frac{B \\left(A I_{0} + I_{0} + 1\\right)}{\\Delta}.$$",
+  "explanation": "**从信号图列方程。** 以下增益省略自变量 $s$。求某一外输入的通道时，其余独立输入置零。\n\n$$E=R_{1} - Z.$$\n\n$$X=A E.$$\n\n$$F=R_{2} - W - X.$$\n\n$$Y=B F.$$\n\n$$Z=X + Y.$$\n\n$$W=I_{0} Y.$$\n\n$$C=W + Z.$$\n\n**逐条核对回路。**\n\n$L_{1}=- A$，对应 $E\\to X\\to Z\\to E$。\n\n$L_{2}=- B I_{0}$，对应 $F\\to Y\\to W\\to F$。\n\n$L_{3}=A B$，对应 $E\\to X\\to F\\to Y\\to Z\\to E$。\n\n互不接触的回路乘积为 $L_{1} L_{2}$。\n\n$$\\Delta=L_{1} L_{2} - L_{1} - L_{2} - L_{3} + 1.$$\n\n**$\\frac{C}{R_{1}}$ 的前向通路。**\n\n$R_{1}\\to E\\to X\\to F\\to Y\\to Z\\to C$ 的增益与余因子为\n$$P_{1}=- A B,\\qquad \\Delta_{1}=1.$$\n\n$R_{1}\\to E\\to X\\to F\\to Y\\to W\\to C$ 的增益与余因子为\n$$P_{2}=- A B I_{0},\\qquad \\Delta_{2}=1.$$\n\n$R_{1}\\to E\\to X\\to Z\\to C$ 的增益与余因子为\n$$P_{3}=A,\\qquad \\Delta_{3}=1 - L_{2}.$$\n\n$$\\frac{C}{R_{1}}=\\frac{P_{1}\\Delta_{1}+P_{2}\\Delta_{2}+P_{3}\\Delta_{3}}{\\Delta}.$$\n\n**$\\frac{C}{R_{2}}$ 的前向通路。**\n\n$R_{2}\\to F\\to Y\\to Z\\to C$ 的增益与余因子为\n$$P_{1}=B,\\qquad \\Delta_{1}=1.$$\n\n$R_{2}\\to F\\to Y\\to W\\to C$ 的增益与余因子为\n$$P_{2}=B I_{0},\\qquad \\Delta_{2}=1 - L_{1}.$$\n\n$$\\frac{C}{R_{2}}=\\frac{P_{1}\\Delta_{1}+P_{2}\\Delta_{2}}{\\Delta}.$$\n\n上环返回量为 $Z=X+Y$。下环在第一个求和点同时扣除 $X$ 与 $W=I_0Y$。输出 $C=Z+W$，所以两次求传递函数时，用同一闭环特征式，不能把两个输入通道混在一起。",
+  "originalImages": [],
+  "answerPdfPages": "35–36",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

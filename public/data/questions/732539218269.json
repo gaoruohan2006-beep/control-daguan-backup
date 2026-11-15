@@ -1,0 +1,8 @@
+{
+  "answer": "偏差控制。差值由给定量减去反馈量得到。",
+  "explanation": "以负反馈为例，测量通道把输出变为反馈量 $b(t)$，比较点形成 $e(t)=r(t)-b(t)$。控制器按偏差产生控制量。非单位反馈时 $b$ 需要换算到给定信号的单位和量纲。",
+  "originalImages": [],
+  "answerPdfPages": "2",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

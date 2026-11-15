@@ -1,0 +1,8 @@
+{
+  "answer": "正确。",
+  "explanation": "开环结构中，指令经控制器和执行元件作用于对象，输出信号没有回到控制器。来自外部扰动测量的前馈信号仍可影响控制器，但真正把输出送回控制器才构成反馈。",
+  "originalImages": [],
+  "answerPdfPages": "2",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

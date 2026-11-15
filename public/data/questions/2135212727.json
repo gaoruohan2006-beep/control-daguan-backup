@@ -1,0 +1,8 @@
+{
+  "answer": "下式的 $\\Delta$ 由解析中的有向回路确定。\n\n$$\\frac{C}{R}=\\frac{G_{3} \\left(G_{1} + G_{2}\\right)}{\\Delta}.$$",
+  "explanation": "**从信号图列方程。** 以下增益省略自变量 $s$。求某一外输入的通道时，其余独立输入置零。\n\n$$E=- C H + R.$$\n\n$$U=- C + E \\left(G_{1} + G_{2}\\right).$$\n\n$$C=G_{3} U.$$\n\n**逐条核对回路。**\n\n$L_{1}=- G_{3}$，对应 $U\\to C\\to U$。\n\n$L_{2}=- G_{3} H \\left(G_{1} + G_{2}\\right)$，对应 $E\\to U\\to C\\to E$。\n\n没有互不接触的回路乘积项。\n\n$$\\Delta=- L_{1} - L_{2} + 1.$$\n\n**$\\frac{C}{R}$ 的前向通路。**\n\n$R\\to E\\to U\\to C$ 的增益与余因子为\n$$P_{1}=G_{3} \\left(G_{1} + G_{2}\\right),\\qquad \\Delta_{1}=1.$$\n\n$$\\frac{C}{R}=\\frac{P_{1}\\Delta_{1}}{\\Delta}.$$\n\n原框图从 $E$ 到 $U$ 的 $G_1$、$G_2$ 两支路并联，可以先相加。由 $C=G_3[(G_1+G_2)(R-HC)-C]$ 展开，也能逐项核对闭环分母。",
+  "originalImages": [],
+  "answerPdfPages": "31",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

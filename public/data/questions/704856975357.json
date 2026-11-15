@@ -1,0 +1,8 @@
+{
+  "answer": "下式的 $\\Delta$ 由解析中的有向回路确定。\n\n$$\\frac{C}{R}=\\frac{G_{1} G_{2} G_{3} G_{4}}{\\Delta}.$$",
+  "explanation": "**从信号图列方程。** 以下增益省略自变量 $s$。求某一外输入的通道时，其余独立输入置零。\n\n$$E=- C G_{7} + R.$$\n\n$$U=E G_{1} - G_{5} X.$$\n\n$$V=- C G_{6} + G_{2} U.$$\n\n$$X=G_{3} V.$$\n\n$$C=G_{4} X.$$\n\n**逐条核对回路。**\n\n$L_{1}=- G_{2} G_{3} G_{5}$，对应 $U\\to V\\to X\\to U$。\n\n$L_{2}=- G_{3} G_{4} G_{6}$，对应 $V\\to X\\to C\\to V$。\n\n$L_{3}=- G_{1} G_{2} G_{3} G_{4} G_{7}$，对应 $E\\to U\\to V\\to X\\to C\\to E$。\n\n没有互不接触的回路乘积项。\n\n$$\\Delta=- L_{1} - L_{2} - L_{3} + 1.$$\n\n**$\\frac{C}{R}$ 的前向通路。**\n\n$R\\to E\\to U\\to V\\to X\\to C$ 的增益与余因子为\n$$P_{1}=G_{1} G_{2} G_{3} G_{4},\\qquad \\Delta_{1}=1.$$\n\n$$\\frac{C}{R}=\\frac{P_{1}\\Delta_{1}}{\\Delta}.$$\n\n**另一种化简。** 由 $C=G_4X$，回到 $G_3$ 前的负反馈项折作 $G_4G_6X$。另外 $U=G_1E-G_5X$，$E=R-G_7C$。代入 $X=G_3(G_2U-G_6C)$，可得到三个反馈增益在同一闭环分母中相加。",
+  "originalImages": [],
+  "answerPdfPages": "59–61",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

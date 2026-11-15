@@ -1,0 +1,8 @@
+{
+  "answer": "令 $P=G_2G_3$、$\\Delta=1+P+PG_4$。所求三个通道为\n$$\\frac{X_c}{N_1}=\\frac{G_4(1+P+G_1G_3)}{\\Delta}.$$\n$$\\frac{X_c}{N_2}=-1,\\qquad\n\\frac{X_c}{X_r}=\\frac{PG_4}{\\Delta}.$$",
+  "explanation": "**从信号图列方程。** 以下增益省略自变量 $s$。求某一外输入的通道时，其余独立输入置零。\n\n$$E=Xr - Y.$$\n\n$$F=- B + E.$$\n\n$$A=F G_{2} + G_{1} N_{1}.$$\n\n$$B=A G_{3}.$$\n\n$$U=B + N_{1}.$$\n\n$$Y=G_{4} U.$$\n\n$$Xc=- N_{2} + Y.$$\n\n**逐条核对回路。**\n\n$L_{1}=- G_{2} G_{3}$，对应 $F\\to A\\to B\\to F$。\n\n$L_{2}=- G_{2} G_{3} G_{4}$，对应 $E\\to F\\to A\\to B\\to U\\to Y\\to E$。\n\n没有互不接触的回路乘积项。\n\n$$\\Delta=- L_{1} - L_{2} + 1.$$\n\n**$\\frac{Xc}{N_{1}}$ 的前向通路。**\n\n$N_{1}\\to A\\to B\\to U\\to Y\\to Xc$ 的增益与余因子为\n$$P_{1}=G_{1} G_{3} G_{4},\\qquad \\Delta_{1}=1.$$\n\n$N_{1}\\to U\\to Y\\to Xc$ 的增益与余因子为\n$$P_{2}=G_{4},\\qquad \\Delta_{2}=1 - L_{1}.$$\n\n$$\\frac{Xc}{N_{1}}=\\frac{P_{1}\\Delta_{1}+P_{2}\\Delta_{2}}{\\Delta}.$$\n\n**$\\frac{Xc}{N_{2}}$ 的前向通路。**\n\n$N_{2}\\to Xc$ 的增益与余因子为\n$$P_{1}=-1,\\qquad \\Delta_{1}=- L_{1} - L_{2} + 1.$$\n\n$$\\frac{Xc}{N_{2}}=\\frac{P_{1}\\Delta_{1}}{\\Delta}.$$\n\n**$\\frac{Xc}{Xr}$ 的前向通路。**\n\n$Xr\\to E\\to F\\to A\\to B\\to U\\to Y\\to Xc$ 的增益与余因子为\n$$P_{1}=G_{2} G_{3} G_{4},\\qquad \\Delta_{1}=1.$$\n\n$$\\frac{Xc}{Xr}=\\frac{P_{1}\\Delta_{1}}{\\Delta}.$$\n\n$N_2$ 在所有反馈取样点之后的最后一个求和点以负号进入，故 $\\frac{X_c}{N_2}=-1$。而 $N_1$ 有两条入口，分别是 $G_3$ 之前的补偿支路和 $G_4$ 之前的直接支路。",
+  "originalImages": [],
+  "answerPdfPages": "39",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

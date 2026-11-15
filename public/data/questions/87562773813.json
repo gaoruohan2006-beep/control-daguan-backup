@@ -1,0 +1,8 @@
+{
+  "answer": "B",
+  "explanation": "**按比较点列方程。** 令误差 $E=R-2X-Y$。由 $\\dfrac5{s+2}$ 和积分器分别得到\n$$(s+2)X=5(R-2X-Y),\\qquad X=sY.$$\n消去 $X$ 得 $s(s+2)Y=5R-10sY-5Y$，整理为\n$$\\frac{Y(s)}{R(s)}=\\frac5{s^2+12s+5}.$$\n\n**用回路增益复核。** 两条负反馈回路增益是 $-\\frac{10}{s+2}$ 和 $-\\frac5{s(s+2)}$，且相接触。梅森特征式由 $1$ 减去两回路之和，与消元所得分母一致。\n\n> **勘误。** 原册 B、C 重复，8 月勘误将 C 的一次项改为 $10s$，因此正确选项唯一为 B。",
+  "originalImages": [],
+  "answerPdfPages": "11",
+  "referenceNote": "8 月勘误第 1 页，修正 C 项分母的 s 项。",
+  "sourceType": "practice"
+}

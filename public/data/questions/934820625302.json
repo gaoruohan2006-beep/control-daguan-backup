@@ -1,0 +1,8 @@
+{
+  "answer": "下式的 $\\Delta$ 由解析中的有向回路确定。\n\n$$\\frac{C}{R}=\\frac{G_{1} G_{2}}{\\Delta}.$$\n\n$$\\frac{C}{N}=\\frac{- G_{2} \\left(G_{1} H_{1} - 1\\right)}{\\Delta}.$$",
+  "explanation": "**从信号图列方程。** 以下增益省略自变量 $s$。求某一外输入的通道时，其余独立输入置零。\n\n$$E=- C H_{3} - H_{1} N + R.$$\n\n$$X=E G_{1}.$$\n\n$$U=C H_{2} + N + X.$$\n\n$$C=G_{2} U.$$\n\n**逐条核对回路。**\n\n$L_{1}=G_{2} H_{2}$，对应 $U\\to C\\to U$。\n\n$L_{2}=- G_{1} G_{2} H_{3}$，对应 $E\\to X\\to U\\to C\\to E$。\n\n没有互不接触的回路乘积项。\n\n$$\\Delta=- L_{1} - L_{2} + 1.$$\n\n**$\\frac{C}{R}$ 的前向通路。**\n\n$R\\to E\\to X\\to U\\to C$ 的增益与余因子为\n$$P_{1}=G_{1} G_{2},\\qquad \\Delta_{1}=1.$$\n\n$$\\frac{C}{R}=\\frac{P_{1}\\Delta_{1}}{\\Delta}.$$\n\n**$\\frac{C}{N}$ 的前向通路。**\n\n$N\\to E\\to X\\to U\\to C$ 的增益与余因子为\n$$P_{1}=- G_{1} G_{2} H_{1},\\qquad \\Delta_{1}=1.$$\n\n$N\\to U\\to C$ 的增益与余因子为\n$$P_{2}=G_{2},\\qquad \\Delta_{2}=1.$$\n\n$$\\frac{C}{N}=\\frac{P_{1}\\Delta_{1}+P_{2}\\Delta_{2}}{\\Delta}.$$\n\n两条扰动路径的作用符号相反，有效扰动因子含 $1-G_1H_1$。输出经 $H_2$ 回到 $U$ 的正反馈也要计入 $\\Delta$。",
+  "originalImages": [],
+  "answerPdfPages": "26",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

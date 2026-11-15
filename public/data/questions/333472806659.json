@@ -1,0 +1,8 @@
+{
+  "answer": "错误。",
+  "explanation": "伺服系统要跟踪参考指令，指令通常随时间变化，例如电机位置按给定轨迹变化。恒值参考只是可能的特例。实际系统的暂态也允许出现跟踪误差，需按性能指标评价。",
+  "originalImages": [],
+  "answerPdfPages": "2",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

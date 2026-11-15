@@ -1,0 +1,8 @@
+{
+  "answer": "测量液位并与给定值比较，控制器操纵进水阀，流出量的变化是扰动。",
+  "explanation": "在测点和流体密度固定的情况下，静压随液面高度增加。由 $A\\dot H=Q_1-Q_2$ 知出流增大首先会使水位下降，控制器根据反馈增开进水阀提高 $Q_1$。若水位偏高，控制器应关小进水阀。给定值决定期望液位，用水阀开度变化引入外部扰动。\n\n![控制系统功能框图](img/reviewed/qd1000-a01-loop-08.svg)",
+  "originalImages": [],
+  "answerPdfPages": "6",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

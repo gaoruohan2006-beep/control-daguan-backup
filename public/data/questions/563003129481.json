@@ -1,0 +1,8 @@
+{
+  "answer": "D",
+  "explanation": "零初值使 $\\mathcal L\\{\\dot x_o\\}=sX_o$、$\\mathcal L\\{\\ddot x_o\\}=s^2X_o$。因此 $(3s^2+6s+1)X_o=2X_i$，相除得\n$$G(s)=\\frac{X_o(s)}{X_i(s)}=\\frac2{3s^2+6s+1}.$$\n输入乘数 $2$ 留在分子。若想把分母写成首一形式，应把分子和分母同时除以 $3$。",
+  "originalImages": [],
+  "answerPdfPages": "12",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

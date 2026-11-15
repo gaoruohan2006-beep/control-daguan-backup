@@ -1,0 +1,8 @@
+{
+  "answer": "下式的 $\\Delta$ 由解析中的有向回路确定。\n\n$$\\frac{C}{R}=\\frac{G_{2} G_{3} \\left(G_{1} + G_{4}\\right)}{\\Delta}.$$\n\n$$\\frac{E}{R}=\\frac{- G_{2} G_{3} G_{4} H + 1}{\\Delta}.$$\n\n$$\\frac{C}{N}=\\frac{G_{3}}{\\Delta}.$$",
+  "explanation": "**从信号图列方程。** 以下增益省略自变量 $s$。求某一外输入的通道时，其余独立输入置零。\n\n$$E=- C H + R.$$\n\n$$X=E G_{1} + G_{4} R.$$\n\n$$Y=G_{2} X + N.$$\n\n$$C=G_{3} Y.$$\n\n**逐条核对回路。**\n\n$L_{1}=- G_{1} G_{2} G_{3} H$，对应 $E\\to X\\to Y\\to C\\to E$。\n\n没有互不接触的回路乘积项。\n\n$$\\Delta=1 - L_{1}.$$\n\n**$\\frac{C}{R}$ 的前向通路。**\n\n$R\\to E\\to X\\to Y\\to C$ 的增益与余因子为\n$$P_{1}=G_{1} G_{2} G_{3},\\qquad \\Delta_{1}=1.$$\n\n$R\\to X\\to Y\\to C$ 的增益与余因子为\n$$P_{2}=G_{2} G_{3} G_{4},\\qquad \\Delta_{2}=1.$$\n\n$$\\frac{C}{R}=\\frac{P_{1}\\Delta_{1}+P_{2}\\Delta_{2}}{\\Delta}.$$\n\n**$\\frac{E}{R}$ 的前向通路。**\n\n$R\\to E$ 的增益与余因子为\n$$P_{1}=1,\\qquad \\Delta_{1}=1.$$\n\n$R\\to X\\to Y\\to C\\to E$ 的增益与余因子为\n$$P_{2}=- G_{2} G_{3} G_{4} H,\\qquad \\Delta_{2}=1.$$\n\n$$\\frac{E}{R}=\\frac{P_{1}\\Delta_{1}+P_{2}\\Delta_{2}}{\\Delta}.$$\n\n**$\\frac{C}{N}$ 的前向通路。**\n\n$N\\to Y\\to C$ 的增益与余因子为\n$$P_{1}=G_{3},\\qquad \\Delta_{1}=1.$$\n\n$$\\frac{C}{N}=\\frac{P_{1}\\Delta_{1}}{\\Delta}.$$\n\n由 $E=R-HC$ 可验算 $\\frac{E}{R}=1-H\\frac{C}{R}$。",
+  "originalImages": [],
+  "answerPdfPages": "18",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

@@ -1,0 +1,8 @@
+{
+  "answer": "下式的 $\\Delta$ 由解析中的有向回路确定。\n\n$$\\frac{C}{R}=\\frac{G_{1} G_{2} G_{3} G_{4} - G_{1} G_{3} G_{4} + G_{1} G_{3} + G_{1} G_{4} - G_{1} + G_{3} G_{4}}{\\Delta}.$$",
+  "explanation": "**从信号图列方程。** 以下增益省略自变量 $s$。求某一外输入的通道时，其余独立输入置零。\n\n$$E=- C + R.$$\n\n$$B=E G_{3}.$$\n\n$$X=B G_{1} - E G_{1} - G_{1} G_{2} X.$$\n\n$$U=B - X.$$\n\n$$Y=G_{4} U.$$\n\n$$C=X + Y.$$\n\n**逐条核对回路。**\n\n$L_{1}=- G_{1} G_{2}$，对应 $X\\to X$。\n\n$L_{2}=G_{1}$，对应 $E\\to X\\to C\\to E$。\n\n$L_{3}=- G_{1} G_{3}$，对应 $E\\to B\\to X\\to C\\to E$。\n\n$L_{4}=- G_{3} G_{4}$，对应 $E\\to B\\to U\\to Y\\to C\\to E$。\n\n$L_{5}=- G_{1} G_{4}$，对应 $E\\to X\\to U\\to Y\\to C\\to E$。\n\n$L_{6}=G_{1} G_{3} G_{4}$，对应 $E\\to B\\to X\\to U\\to Y\\to C\\to E$。\n\n互不接触的回路乘积为 $L_{1} L_{4}$。\n\n$$\\Delta=1-S_1+S_2.$$\n\n各阶 $S_k$ 是上列每组 $k$ 个互不接触回路的增益乘积之和。$S_1$ 为所有单独回路增益的和。\n\n**$\\frac{C}{R}$ 的前向通路。**\n\n$R\\to E\\to B\\to X\\to U\\to Y\\to C$ 的增益与余因子为\n$$P_{1}=- G_{1} G_{3} G_{4},\\qquad \\Delta_{1}=1.$$\n\n$R\\to E\\to B\\to X\\to C$ 的增益与余因子为\n$$P_{2}=G_{1} G_{3},\\qquad \\Delta_{2}=1.$$\n\n$R\\to E\\to B\\to U\\to Y\\to C$ 的增益与余因子为\n$$P_{3}=G_{3} G_{4},\\qquad \\Delta_{3}=1 - L_{1}.$$\n\n$R\\to E\\to X\\to U\\to Y\\to C$ 的增益与余因子为\n$$P_{4}=G_{1} G_{4},\\qquad \\Delta_{4}=1.$$\n\n$R\\to E\\to X\\to C$ 的增益与余因子为\n$$P_{5}=- G_{1},\\qquad \\Delta_{5}=1.$$\n\n$$\\frac{C}{R}=\\frac{P_{1}\\Delta_{1}+P_{2}\\Delta_{2}+P_{3}\\Delta_{3}+P_{4}\\Delta_{4}+P_{5}\\Delta_{5}}{\\Delta}.$$\n\n先化简 $X$ 点的局部负反馈。它满足 $X=G_1(B-E-G_2X)$，故 $(1+G_1G_2)X=G_1(B-E)$。另外 $B=G_3E$、$C=X+G_4(B-X)$。把这三式与 $E=R-C$ 联立即可验算结果。",
+  "originalImages": [],
+  "answerPdfPages": "44",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

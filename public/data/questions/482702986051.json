@@ -1,0 +1,8 @@
+{
+  "answer": "错误。",
+  "explanation": "恒值控制的给定值是常数。对象输出在起动或受扰动时可以偏离它。若出水量增加，固定阀位的水箱会失去原有水位，测量液位并调节进水的闭环可以纠正这种偏差。因此恒值目标本身无法推出无需反馈。",
+  "originalImages": [],
+  "answerPdfPages": "2",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

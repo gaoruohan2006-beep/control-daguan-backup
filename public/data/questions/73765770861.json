@@ -1,0 +1,8 @@
+{
+  "answer": "下式的 $\\Delta$ 由解析中的有向回路确定。\n\n$$\\frac{C}{R}=\\frac{G_{1} \\left(G_{2} G_{3} + G_{4}\\right)}{\\Delta}.$$",
+  "explanation": "**从信号图列方程。** 以下增益省略自变量 $s$。求某一外输入的通道时，其余独立输入置零。\n\n$$U=- C - H_{1} X + R.$$\n\n$$V=- C H_{2} + G_{1} U.$$\n\n$$X=G_{2} V.$$\n\n$$C=G_{3} X + G_{4} V.$$\n\n**逐条核对回路。**\n\n$L_{1}=- G_{4} H_{2}$，对应 $V\\to C\\to V$。\n\n$L_{2}=- G_{1} G_{2} H_{1}$，对应 $U\\to V\\to X\\to U$。\n\n$L_{3}=- G_{1} G_{4}$，对应 $U\\to V\\to C\\to U$。\n\n$L_{4}=- G_{2} G_{3} H_{2}$，对应 $V\\to X\\to C\\to V$。\n\n$L_{5}=- G_{1} G_{2} G_{3}$，对应 $U\\to V\\to X\\to C\\to U$。\n\n没有互不接触的回路乘积项。\n\n$$\\Delta=- L_{1} - L_{2} - L_{3} - L_{4} - L_{5} + 1.$$\n\n**$\\frac{C}{R}$ 的前向通路。**\n\n$R\\to U\\to V\\to X\\to C$ 的增益与余因子为\n$$P_{1}=G_{1} G_{2} G_{3},\\qquad \\Delta_{1}=1.$$\n\n$R\\to U\\to V\\to C$ 的增益与余因子为\n$$P_{2}=G_{1} G_{4},\\qquad \\Delta_{2}=1.$$\n\n$$\\frac{C}{R}=\\frac{P_{1}\\Delta_{1}+P_{2}\\Delta_{2}}{\\Delta}.$$\n\n前两个接连的减法点可合并为 $U=R-C-H_1X$。$V$ 是 $G_2$ 与 $G_4$ 共同的输入，且 $V=G_1U-H_2C$。因此 $X=G_2V$、$C=(G_2G_3+G_4)V$，代回两式可直接化简分母。",
+  "originalImages": [],
+  "answerPdfPages": "41–42",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

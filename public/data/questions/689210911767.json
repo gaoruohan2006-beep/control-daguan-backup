@@ -1,0 +1,8 @@
+{
+  "answer": "错误。",
+  "explanation": "传递函数定义针对零初始状态。考虑 $\\dot y+y=u$ 且 $y(0^-)=y_0\\ne0$。变换得到 $(s+1)Y=U+y_0$，所以总输出的比值会含 $\\frac{y_0}{(s+1)U}$。零状态部分满足 $Y_{\\rm zs}=\\frac1{s+1}U$，此时的比值 $\\frac1{s+1}$ 才是系统的传递函数。",
+  "originalImages": [],
+  "answerPdfPages": "16",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

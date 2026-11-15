@@ -1,0 +1,8 @@
+{
+  "answer": "正确。",
+  "explanation": "分母为 $s(s+1)^3$。分子在 $s=0,-1$ 时都非零，分母四阶且没有相消。保持一阶原点极点对应一个积分环节，故为Ⅰ型。阶次计全部最简分母的次数，型别只计原点极点的重数。",
+  "originalImages": [],
+  "answerPdfPages": "15",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

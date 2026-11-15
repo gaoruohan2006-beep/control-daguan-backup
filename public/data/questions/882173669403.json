@@ -1,0 +1,8 @@
+{
+  "answer": "被控对象是锅炉汽包，被控量是汽包水位。",
+  "explanation": "系统调节的是汽包内的液面高度。给水阀改变进入汽包的水量，所以给水流量属于操纵量。蒸汽负荷变化会改变水位和汽水状态，属于外部扰动。对本题这一局部水位回路，汽包是被控对象。",
+  "originalImages": [],
+  "answerPdfPages": "2",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

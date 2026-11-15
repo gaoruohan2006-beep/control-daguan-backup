@@ -1,0 +1,8 @@
+{
+  "answer": "$$\\frac{C}{R}=\\frac{G_1G_2G_3}{D_0}-G_4,$$\n其中\n$$D_0=1+G_2G_3H_1+(1-G_1)G_2H_2.$$",
+  "explanation": "**从信号图列方程。** 以下增益省略自变量 $s$。求某一外输入的通道时，其余独立输入置零。\n\n$$E=H_{2} X + R.$$\n\n$$U=E G_{1} - H_{1} Y - H_{2} X.$$\n\n$$X=G_{2} U.$$\n\n$$Y=G_{3} X.$$\n\n$$C=- G_{4} R + Y.$$\n\n**逐条核对回路。**\n\n$L_{1}=- G_{2} H_{2}$，对应 $U\\to X\\to U$。\n\n$L_{2}=G_{1} G_{2} H_{2}$，对应 $E\\to U\\to X\\to E$。\n\n$L_{3}=- G_{2} G_{3} H_{1}$，对应 $U\\to X\\to Y\\to U$。\n\n没有互不接触的回路乘积项。\n\n$$\\Delta=- L_{1} - L_{2} - L_{3} + 1.$$\n\n**$\\frac{C}{R}$ 的前向通路。**\n\n$R\\to E\\to U\\to X\\to Y\\to C$ 的增益与余因子为\n$$P_{1}=G_{1} G_{2} G_{3},\\qquad \\Delta_{1}=1.$$\n\n$R\\to C$ 的增益与余因子为\n$$P_{2}=- G_{4},\\qquad \\Delta_{2}=- L_{1} - L_{2} - L_{3} + 1.$$\n\n$$\\frac{C}{R}=\\frac{P_{1}\\Delta_{1}+P_{2}\\Delta_{2}}{\\Delta}.$$\n\n**用等效局部回路直接化简。** $H_2X$ 进入首个比较点时为正，进入第二个比较点时为负。把两式合并得\n$$U=G_1R+(G_1-1)H_2X-H_1Y.$$\n代 $X=G_2U$、$Y=G_3X$，消掉两个反馈信号。最后 $C=Y-G_4R$。$G_4$ 所在支路从参考输入直接进入末端比较点，不能在化简内环时一并除以局部反馈分母。",
+  "originalImages": [],
+  "answerPdfPages": "62",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

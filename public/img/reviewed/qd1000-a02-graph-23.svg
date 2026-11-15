@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1097 320" width="1097" height="320" role="img" aria-labelledby="title">
+<title id="title">题中各信号支路及其增益</title>
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 1L10 5 0 9z" fill="#20384d"/></marker></defs>
+<style>
+text{fill:#142f45;font:15px "Times New Roman",SimSun,"Noto Serif CJK SC",serif}
+.wire,.arr{fill:none;stroke:#20384d;stroke-width:1.65;stroke-linecap:round;stroke-linejoin:round}
+.arr{marker-end:url(#ar)}.box{fill:#fff;stroke:#20384d;stroke-width:1.6}.node{fill:#20384d}
+</style>
+<rect width="100%" height="100%" fill="#fff"/>
+<path class="arr" d="M50 136Q62 112 80 112H226Q244 112 256 136"/>
+<rect x="144.0" y="92" width="18" height="17" rx="3" fill="#fff"/>
+<text x="153.0" y="105.0" text-anchor="middle">1</text>
+<path class="arr" d="M934 152Q922 176 904 176H306Q288 176 276 152"/>
+<rect x="591.0" y="182" width="28" height="17" rx="3" fill="#fff"/>
+<text x="605.0" y="195.0" text-anchor="middle">−1</text>
+<path class="arr" d="M163 136Q175 80 193 80H339Q357 80 369 136"/>
+<rect x="257.0" y="60" width="18" height="17" rx="3" fill="#fff"/>
+<text x="266.0" y="73.0" text-anchor="middle">1</text>
+<path class="arr" d="M1047 152Q1035 208 1017 208H419Q401 208 389 152"/>
+<rect x="704.0" y="214" width="28" height="17" rx="3" fill="#fff"/>
+<text x="718.0" y="227.0" text-anchor="middle">−1</text>
+<path class="arr" d="M276 136Q288 48 306 48H452Q470 48 482 136"/>
+<rect x="365.0" y="28" width="28" height="17" rx="3" fill="#fff"/>
+<text x="379.0" y="41.0" text-anchor="middle">G₁</text>
+<path class="arr" d="M595 152Q583 240 565 240H532Q514 240 502 152"/>
+<rect x="519.5" y="246" width="58" height="17" rx="3" fill="#fff"/>
+<text x="548.5" y="259.0" text-anchor="middle">G₁·G₃</text>
+<path class="arr" d="M389 136Q401 112 419 112H565Q583 112 595 136"/>
+<rect x="478.0" y="92" width="28" height="17" rx="3" fill="#fff"/>
+<text x="492.0" y="105.0" text-anchor="middle">G₄</text>
+<path class="arr" d="M505 144H592"/>
+<rect x="519.5" y="120" width="58" height="17" rx="3" fill="#fff"/>
+<text x="548.5" y="133.0" text-anchor="middle">G₂·G₄</text>
+<path class="arr" d="M502 136Q514 80 532 80H678Q696 80 708 136"/>
+<rect x="596.0" y="60" width="18" height="17" rx="3" fill="#fff"/>
+<text x="605.0" y="73.0" text-anchor="middle">1</text>
+<path class="arr" d="M1047 152Q1035 240 1017 240H758Q740 240 728 152"/>
+<rect x="873.5" y="246" width="28" height="17" rx="3" fill="#fff"/>
+<text x="887.5" y="259.0" text-anchor="middle">H₃</text>
+<path class="arr" d="M615 136Q627 48 645 48H791Q809 48 821 136"/>
+<rect x="709.0" y="28" width="18" height="17" rx="3" fill="#fff"/>
+<text x="718.0" y="41.0" text-anchor="middle">1</text>
+<path class="arr" d="M934 152Q922 272 904 272H871Q853 272 841 152"/>
+<rect x="873.5" y="278" width="28" height="17" rx="3" fill="#fff"/>
+<text x="887.5" y="291.0" text-anchor="middle">H₂</text>
+<path class="arr" d="M728 136Q740 112 758 112H904Q922 112 934 136"/>
+<rect x="817.0" y="92" width="28" height="17" rx="3" fill="#fff"/>
+<text x="831.0" y="105.0" text-anchor="middle">H₁</text>
+<path class="arr" d="M841 136Q853 80 871 80H1017Q1035 80 1047 136"/>
+<rect x="930.0" y="60" width="28" height="17" rx="3" fill="#fff"/>
+<text x="944.0" y="73.0" text-anchor="middle">H₄</text>
+<circle class="box" cx="40" cy="144" r="12"/>
+<text x="40" y="148.0" text-anchor="middle">R₁</text>
+<circle class="box" cx="153" cy="144" r="12"/>
+<text x="153" y="148.0" text-anchor="middle">R₂</text>
+<circle class="box" cx="266" cy="144" r="12"/>
+<text x="266" y="148.0" text-anchor="middle">E₁</text>
+<circle class="box" cx="379" cy="144" r="12"/>
+<text x="379" y="148.0" text-anchor="middle">E₂</text>
+<circle class="box" cx="492" cy="144" r="12"/>
+<text x="492" y="148.0" text-anchor="middle">X₁</text>
+<circle class="box" cx="605" cy="144" r="12"/>
+<text x="605" y="148.0" text-anchor="middle">X₂</text>
+<circle class="box" cx="718" cy="144" r="12"/>
+<text x="718" y="148.0" text-anchor="middle">U₁</text>
+<circle class="box" cx="831" cy="144" r="12"/>
+<text x="831" y="148.0" text-anchor="middle">U₂</text>
+<circle class="box" cx="944" cy="144" r="12"/>
+<text x="944" y="148.0" text-anchor="middle">C₁</text>
+<circle class="box" cx="1057" cy="144" r="12"/>
+<text x="1057" y="148.0" text-anchor="middle">C₂</text>
+</svg>

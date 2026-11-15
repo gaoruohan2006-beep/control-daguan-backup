@@ -1,0 +1,8 @@
+{
+  "answer": "正确。",
+  "explanation": "前向通道把参考输入通过比较、控制、执行和对象传到输出。画成信号流图后，一条前向通路从输入结点走向输出结点，每个结点最多经过一次。反馈支路从输出或中间节点返回较早的比较位置，用于形成回路。",
+  "originalImages": [],
+  "answerPdfPages": "16",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

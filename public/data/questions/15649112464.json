@@ -1,0 +1,8 @@
+{
+  "answer": "错误。",
+  "explanation": "液位高度是要保持在设定值的被控量。控制器输出作用于阀门，通过改变进水流量或出水流量来调节液位。本书示例采用进水调节，因此进水流量是直接作用于水箱的操纵量。",
+  "originalImages": [],
+  "answerPdfPages": "2",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

@@ -1,0 +1,8 @@
+{
+  "answer": "叠加原理。另一条是齐次性。",
+  "explanation": "用 $\\mathcal T$ 表示系统的零状态映射，可加性是 $\\mathcal T[u+v]=\\mathcal T[u]+\\mathcal T[v]$，齐次性是 $\\mathcal T[au]=a\\mathcal T[u]$。两条一起给出 $\\mathcal T[au+bv]=a\\mathcal T[u]+b\\mathcal T[v]$。",
+  "originalImages": [],
+  "answerPdfPages": "2",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

@@ -1,0 +1,8 @@
+{
+  "answer": "下式的 $\\Delta$ 由解析中的有向回路确定。\n\n$$\\frac{C}{R}=\\frac{G_{1} G_{2} \\left(G_{3} + G_{4}\\right)}{\\Delta}.$$",
+  "explanation": "**从信号图列方程。** 以下增益省略自变量 $s$。求某一外输入的通道时，其余独立输入置零。\n\n$$E=- C H_{2} - E G_{5} H_{2} + R.$$\n\n$$U=C H_{1} + E G_{1}.$$\n\n$$X=G_{2} U.$$\n\n$$C=X \\left(G_{3} + G_{4}\\right).$$\n\n**逐条核对回路。**\n\n$L_{1}=- G_{5} H_{2}$，对应 $E\\to E$。\n\n$L_{2}=G_{2} H_{1} \\left(G_{3} + G_{4}\\right)$，对应 $U\\to X\\to C\\to U$。\n\n$L_{3}=- G_{1} G_{2} H_{2} \\left(G_{3} + G_{4}\\right)$，对应 $E\\to U\\to X\\to C\\to E$。\n\n互不接触的回路乘积为 $L_{1} L_{2}$。\n\n$$\\Delta=L_{1} L_{2} - L_{1} - L_{2} - L_{3} + 1.$$\n\n**$\\frac{C}{R}$ 的前向通路。**\n\n$R\\to E\\to U\\to X\\to C$ 的增益与余因子为\n$$P_{1}=G_{1} G_{2} \\left(G_{3} + G_{4}\\right),\\qquad \\Delta_{1}=1.$$\n\n$$\\frac{C}{R}=\\frac{P_{1}\\Delta_{1}}{\\Delta}.$$\n\n将 $G_3$ 与 $G_4$ 并联相加。下部回路负反馈量是 $H_2(C+G_5E)$，所以折算为 $C\\to E$ 的 $-H_2$ 和 $E$ 点自回路 $-G_5H_2$。上部 $H_1$ 的反馈是正向加入 $U$。",
+  "originalImages": [],
+  "answerPdfPages": "55",
+  "referenceNote": "",
+  "sourceType": "practice"
+}
