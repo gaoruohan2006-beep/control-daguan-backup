@@ -1,6 +1,6 @@
 {
-  "answer": "$\\ddot x+3\\dot x+2x=F$，$X/F=1/[(s+1)(s+2)]$。可取\n$$A=\\operatorname{diag}(-1,-2),\\quad B=\\begin{bmatrix}1\\\\1\\end{bmatrix},\\quad C=[1\\quad-1],\\quad D=0.$$",
-  "explanation": "弹簧力和阻尼力分别是 $-kx,-f\\dot x$，由牛顿第二定律得到方程。零初值下作拉氏变换，得 $(s^2+3s+2)X=F$。将传递函数分解为 $1/(s+1)-1/(s+2)$，令两个状态分别满足 $\\dot z_1=-z_1+F,\\ \\dot z_2=-2z_2+F$，再取输出 $x=z_1-z_2$，即可读出矩阵。\n\n> **实单极点的对角实现。** 每个简单实极点对应一个一阶状态，部分分式的留数可放在输出矩阵中。",
+  "answer": "$\\ddot x+3\\dot x+2x=F$，$\\dfrac{X}{F}=\\dfrac{1}{(s+1)(s+2)}$。可取\n$$A=\\operatorname{diag}(-1,-2),\\quad B=\\begin{bmatrix}1\\\\1\\end{bmatrix},\\quad C=[1\\quad-1],\\quad D=0.$$",
+  "explanation": "弹簧力和阻尼力分别是 $-kx,-f\\dot x$，由牛顿第二定律得到方程。零初值下作拉氏变换，得 $(s^2+3s+2)X=F$。将传递函数分解为 $\\dfrac{1}{s+1}-\\dfrac{1}{s+2}$，令两个状态分别满足 $\\dot z_1=-z_1+F,\\ \\dot z_2=-2z_2+F$，再取输出 $x=z_1-z_2$，即可读出矩阵。\n\n> **实单极点的对角实现。** 每个简单实极点对应一个一阶状态，部分分式的留数可放在输出矩阵中。",
   "originalImages": [],
   "answerPdfPages": "1717",
   "referenceNote": "",

@@ -1,5 +1,5 @@
 {
-  "answer": "$(\\alpha,\\beta,\\gamma)=(2,1,2)$，$A=\\begin{bmatrix}1&2\\\\-4&-5\\end{bmatrix}$。令 $a=e^{-t},b=e^{-3t}$，有\n$$e^{At}=\\begin{bmatrix}2a-b&a-b\\\\-2a+2b&-a+2b\\end{bmatrix}.$$\n零状态响应为 $\\bigl(1-a-(1-b)/3,\\;-(1-a)+2(1-b)/3\\bigr)^{\\mathsf T}$。",
+  "answer": "$(\\alpha,\\beta,\\gamma)=(2,1,2)$，$A=\\begin{bmatrix}1&2\\\\-4&-5\\end{bmatrix}$。令 $a=e^{-t},b=e^{-3t}$，有\n$$e^{At}=\\begin{bmatrix}2a-b&a-b\\\\-2a+2b&-a+2b\\end{bmatrix}.$$\n零状态响应为 \n\n$$x(t)=\\begin{bmatrix}1-a-\\frac{1-b}{3}\\\\-(1-a)+\\frac{2(1-b)}{3}\\end{bmatrix}.$$",
   "explanation": "**解题思路** 初值先定常数，两条独立初态再确定状态转移矩阵的两列。求到矩阵后，只需积分它乘以 $B$ 的结果。\n\n把 $t=0$ 代入，第一分量给出 $\\alpha-\\beta=1,\\ 2\\alpha-\\beta=3$，第二分量给出 $\\alpha+\\gamma=4,\\ \\alpha+2\\gamma=6$。解得上述参数。由于 $(2,1)-(1,1)=(1,0)$，状态转移矩阵第一列是 $x^{(2)}-x^{(1)}$；第二列是 $2x^{(1)}-x^{(2)}$。将两列在 $t=0$ 求导得到 $A$。对单位阶跃，$x(t)=\\int_0^t e^{A\\tau}B\\,d\\tau$，逐项积分第二列即得答案。\n\n> **多条自由响应反求系统。** 若初态列组成可逆矩阵 $X_0$，直接用 $\\Phi(t)=X(t)X_0^{-1}$ 及 $A=\\dot X(0)X_0^{-1}$。",
   "originalImages": [],
   "answerPdfPages": "1612–1613",

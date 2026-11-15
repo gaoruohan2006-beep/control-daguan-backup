@@ -1,6 +1,6 @@
 {
-  "answer": "A，$Y/R=5/(s^2+12s+5)$。",
-  "explanation": "设中间信号为 $X$。积分器给出 $Y=X/s$，前一级给出 $(s+2)X=5(R-2X-Y)$。以 $X=sY$ 消去 $X$，得 $(s^2+12s+5)Y=5R$。",
+  "answer": "A。$\\displaystyle\\frac{Y(s)}{R(s)}=\\frac{5}{s^2+12s+5}$。",
+  "explanation": "**从框图写两条信号关系。** 设积分器前的信号为 $X(s)$，积分器给出 $Y=\\frac{X}{s}$。前一级比较点从 $R$ 同时减去 $2X$ 和 $Y$，所以 $(s+2)X=5(R-2X-Y)$。\n\n**消去内部信号。** 用 $X=sY$ 代入，左边是 $s(s+2)Y$，右边是 $5R-10sY-5Y$。整理后有\n$$(s^2+12s+5)Y=5R.$$\n因此选 A。核对低频时，有限常值输出使积分器前的稳态信号为零，两个负反馈项中只剩 $Y$，与闭环直流增益 $1$ 一致。",
   "originalImages": [],
   "answerPdfPages": "973",
   "referenceNote": "",

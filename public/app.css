@@ -81,7 +81,6 @@ textarea{width:100%;font:12px/1.5 ui-monospace,monospace;border:1px solid var(--
 .catpop button::before{content:"• ";color:var(--subtle)}
 .stem,.box .body{line-height:1.85}
 .stem p,.box p{margin:.35em 0}
-.fig{margin:10px 0;text-align:center}.fig img{max-width:100%;height:auto;cursor:zoom-in;border-radius:6px}
 .katex-display{margin:.6em 0;overflow-x:auto;overflow-y:hidden;padding:2px 0}
 .stem .katex-display > .katex,.box .katex-display > .katex{white-space:normal}
 .stem .katex-display > .katex > .katex-html,.box .katex-display > .katex > .katex-html{min-width:min-content}
@@ -220,8 +219,21 @@ mark{background:#fff3b0;color:inherit;border-radius:3px}
 .stem p,.box .body p{margin:.6em 0}
 .box{background:var(--panel);border-color:var(--border);padding:16px clamp(12px,2.5vw,26px)}
 .box h4{font-size:calc(20px * var(--fs));margin-bottom:6px}
-.fig{display:block;margin:22px auto;text-align:center}
-.fig img{display:block;margin:0 auto;max-width:100%;height:auto;background:#fff}
+.fig{display:block;margin:1em auto;text-align:center}
+.fig img{
+  display:block;
+  margin:0 auto;
+  width:auto;
+  height:auto;
+  max-width:min(100%,var(--figure-width,100%),620px);
+  max-height:clamp(240px,52svh,400px);
+  background:#fff;
+  border-radius:6px;
+  cursor:zoom-in;
+}
+.box .fig img{max-width:min(100%,var(--figure-width,100%),560px)}
+.box .katex-display{margin-block:.8em;padding-block:4px}
+.box[data-kind="answer"] .body > p{margin-block:.65em}
 .box[data-kind="exp"] .body > p{margin-block:.85em}
 .box[data-kind="exp"] .body > p > strong:first-child{display:block;color:var(--fg);line-height:1.5;margin-bottom:.25em}
 @media (prefers-color-scheme:dark){.fig img{filter:none}}
@@ -230,7 +242,7 @@ mark{background:#fff3b0;color:inherit;border-radius:3px}
  .cards{font-size:calc(16px * var(--fs))}
  .meta{margin-bottom:15px;padding-bottom:10px}
  .due{display:none}
- .fig{margin:18px auto}
+ .fig{margin-block:.85em}
  .stem,.box .body{line-break:strict}
  .math-content{white-space:nowrap}
  .math-wide{display:block;max-width:100%;margin:.3em 0;overflow-x:auto;padding:2px 0;text-align:center}

@@ -1,6 +1,6 @@
 {
-  "answer": "$G(s)=(s^2+3s+2)/(s^2+7s+12)$。一种对角型为\n$$\\dot z_1=-3z_1+u,\\qquad \\dot z_2=-4z_2+u,\\qquad y=2z_1-6z_2+u.$$",
-  "explanation": "对微分方程作拉普拉斯变换，得 $(s^2+7s+12)Y=(s^2+3s+2)U$。因分子和分母同阶，先写出单位直接通道，再分解严格真分式，得 $G(s)=1+2/(s+3)-6/(s+4)$。两个一阶模态并联，输出按留数加权后加上 $u$。",
+  "answer": "$G(s)=\\dfrac{s^2+3s+2}{s^2+7s+12}$。一种对角型为\n$$\\dot z_1=-3z_1+u,\\qquad \\dot z_2=-4z_2+u,\\qquad y=2z_1-6z_2+u.$$",
+  "explanation": "**先分出直接通道。** 零初值下，\n$$G(s)=\\frac{s^2+3s+2}{s^2+7s+12}\n=1+\\frac{-4s-10}{(s+3)(s+4)}\n=1+\\frac2{s+3}-\\frac6{s+4}.$$\n分子和分母同为二阶，所以多项式除法所得常数 $1$ 应保留。\n\n**把严格真分式写成并联状态。** 令 $(s+3)Z_1=U$、$(s+4)Z_2=U$。由分式分解式得到 $Y=2Z_1-6Z_2+U$，因此\n$$A=\\operatorname{diag}(-3,-4),\\quad B=\\begin{bmatrix}1\\\\1\\end{bmatrix},$$\n$$C=[2\\quad-6],\\qquad D=1.$$\n用 $C(sI-A)^{-1}B+D$ 可还原所求传递函数。",
   "originalImages": [],
   "answerPdfPages": "汇编缺参考答案，按题面独立推导",
   "referenceNote": "",

@@ -92,7 +92,14 @@ async def verify():
 
         q = next(q for q in questions if q["hasFigure"])
         await page.goto(f"{BASE}?question={q['id']}")
-        await page.locator(".stem img").first.click()
+        first_figure = page.locator(".stem img").first
+        await first_figure.evaluate("img => img.decode()")
+        assert await first_figure.evaluate("""img => {
+            const { width, height } = img.getBoundingClientRect();
+            return width <= 620.5 && height <= 400.5 &&
+                Math.abs(width - height * img.naturalWidth / img.naturalHeight) < 2;
+        }""")
+        await first_figure.click()
         assert await page.locator("#lightbox").is_visible()
         await page.get_by_role("button", name="放大", exact=True).click()
         assert await page.get_by_role("button", name="适应屏幕", exact=True).get_attribute("aria-pressed") == "true"
@@ -131,6 +138,24 @@ async def verify():
         await mobile.evaluate("document.fonts.ready.then(() => true)")
         assert "\\begin{aligned}" in await integral.locator('annotation').text_content()
         assert await integral.evaluate("formula => formula.scrollWidth <= formula.clientWidth + 1")
+
+        # A worked root locus includes both display fractions and a zoomable solution figure.
+        solution_question = next(q for q in questions if q["school"] == "中国计量大学" and q["year"] == 2023)
+        await mobile.goto(f"{BASE}?question={solution_question['id']}")
+        await mobile.get_by_role("button", name="答案", exact=True).click()
+        await mobile.get_by_role("button", name="解析", exact=True).click()
+        fraction = mobile.locator('.box[data-kind="answer"] .katex-display .mfrac').first
+        await fraction.wait_for()
+        graph = mobile.locator('.box[data-kind="exp"] .fig img')
+        await graph.evaluate("img => img.decode()")
+        assert await graph.evaluate("""img => {
+            const {width, height} = img.getBoundingClientRect();
+            return width <= img.closest('.body').clientWidth + 1 &&
+                height <= 400.5 && document.documentElement.scrollWidth <= innerWidth;
+        }""")
+        await graph.click()
+        assert await mobile.locator("#lightbox").is_visible()
+        await mobile.keyboard.press("Escape")
 
         await mobile.goto(f"{BASE}?question=740666644522")
         matrix = mobile.locator('.stem .katex-display annotation')

@@ -137,8 +137,12 @@ function inline(s, hl) {
     const { display, before, formula, after, image, url, bold } = m.groups;
     if (display != null) out.push(tex(display, true));
     else if (formula != null) out.push(`<span class="inline-math"><span class="math-content">${txt(before || '')}${tex(formula, false)}${txt(after)}</span></span>`);
-    else if (url != null) { const [alt, w] = image.split('|'); out.push(`<span class="fig"><img src="${esc(url)}" alt="${esc(alt)}" ${w ? `style="width:${+w}px"` : ''} loading="lazy" data-zoom title="单击放大图片"></span>`); }
-    else {
+    else if (url != null) {
+      const [alt, width] = image.split('|');
+      const w = Number(width);
+      const size = Number.isFinite(w) && w > 0 ? `style="--figure-width:${w}px"` : '';
+      out.push(`<span class="fig"><img src="${esc(url)}" alt="${esc(alt)}" ${size} loading="lazy" data-zoom title="单击放大图片"></span>`);
+    } else {
       const plan = bold === '解题思路' ? ' class="solution-plan"' : '';
       out.push('<strong' + plan + '>' + inline(bold, hl) + '</strong>');
     }
@@ -153,7 +157,10 @@ const md = (s, hl) => s.split(/\n\s*\n/).map(p => p.trim()).filter(Boolean).map(
     return '<p class="solution-tip">' + inline(content, hl) + '</p>';
   }
   const h = inline(p.replace(/\n/g, ' '), hl);
-  return /^<span class="fig">[^]*<\/span>$/.test(h) ? `<div class="fig">${h.replace(/^<span class="fig">|<\/span>$/g, '')}</div>` : `<p>${h}</p>`;
+  if (/^!\[[^\]]*\]\([^)]+\)$/.test(p) || /^\$\$[^$]+\$\$$/.test(p)) {
+    return h;
+  }
+  return '<p>' + h + '</p>';
 }).join('');
 
 // ---------- 题目集合 ----------

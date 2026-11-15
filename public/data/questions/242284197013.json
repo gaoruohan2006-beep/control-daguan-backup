@@ -1,6 +1,6 @@
 {
-  "answer": "令 $a=\\tau_1+\\tau_2+\\tau_3$，$b=\\tau_1\\tau_2+\\tau_1\\tau_3+\\tau_2\\tau_3$，$c=\\tau_1\\tau_2\\tau_3$。闭环渐近稳定当且仅当 $0<K<K_{\\rm cr}$，其中 $K_{\\rm cr}=ab/c-1$。临界增益下\n$$G_{\\rm cr}(s)=\\frac{ab/c-1}{(1+\\tau_1s)(1+\\tau_2s)(1+\\tau_3s)}.$$",
-  "explanation": "**解题思路** 先用闭环分母做劳斯判据，再用单位负反馈的代数关系恢复开环模型。\n\n分母展开为 $cs^3+bs^2+as+1+K$，劳斯首列为 $c,b,[ab-c(1+K)]/b,1+K$。由于 $a,b,c,K>0$，严格稳定等价于 $K<ab/c-1$，且 $ab>c$ 保证该区间非空。在上界取等时，分母化成 $(cs+b)(s^2+a/c)$，极点为 $-b/c,\\ \\pm j\\sqrt{a/c}$，说明该边界是一对单纯的虚轴极点。\n\n由 $W=G/(1+G)$ 得 $G=W/(1-W)$。分母中的 $+K$ 与分子相减后抵消，故 $G=K/[(1+\\tau_1s)(1+\\tau_2s)(1+\\tau_3s)]$。代入 $K_{\\rm cr}$ 即得所求。\n\n> **三阶稳定上界的频域复核。** 把归一化的三阶开环分母在 $s=j\\omega$ 处写成 $1-b\\omega^2+j\\omega(a-c\\omega^2)$。负实轴交越满足 $\\omega^2=a/c$，分母实部为 $1-ab/c$。令此时 $G(j\\omega)=-1$ 可直接得到同一临界增益。",
+  "answer": "令 $a=\\tau_1+\\tau_2+\\tau_3$，$b=\\tau_1\\tau_2+\\tau_1\\tau_3+\\tau_2\\tau_3$，$c=\\tau_1\\tau_2\\tau_3$。闭环渐近稳定当且仅当 $0<K<K_{\\rm cr}$，其中 $K_{\\rm cr}=\\dfrac{ab}{c}-1$。临界增益下\n$$G_{\\rm cr}(s)=\\frac{ab/c-1}{(1+\\tau_1s)(1+\\tau_2s)(1+\\tau_3s)}.$$",
+  "explanation": "**解题思路** 先用闭环分母做劳斯判据，再用单位负反馈的代数关系恢复开环模型。\n\n分母展开为 $cs^3+bs^2+as+1+K$，劳斯首列为 $c,b,\\dfrac{ab-c(1+K)}{b},1+K$。由于 $a,b,c,K>0$，严格稳定等价于 $K<\\dfrac{ab}{c}-1$，且 $ab>c$ 保证该区间非空。在上界取等时，分母化成 $(cs+b)(s^2+a/c)$，极点为 $-\\dfrac{b}{c},\\ \\pm j\\sqrt{a/c}$，说明该边界是一对单纯的虚轴极点。\n\n由 $W=\\dfrac{G}{1+G}$ 得 $G=\\dfrac{W}{1-W}$。分母中的 $+K$ 与分子相减后抵消，故 $G=\\dfrac{K}{(1+\\tau_1s)(1+\\tau_2s)(1+\\tau_3s)}$。代入 $K_{\\rm cr}$ 即得所求。\n\n> **三阶稳定上界的频域复核。** 把归一化的三阶开环分母在 $s=j\\omega$ 处写成 $1-b\\omega^2+j\\omega(a-c\\omega^2)$。负实轴交越满足 $\\omega^2=\\dfrac{a}{c}$，分母实部为 $1-\\dfrac{ab}{c}$。令此时 $G(j\\omega)=-1$ 可直接得到同一临界增益。",
   "originalImages": [],
   "answerPdfPages": "1383–1384",
   "referenceNote": "",

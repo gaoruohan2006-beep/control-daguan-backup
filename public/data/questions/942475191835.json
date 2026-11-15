@@ -1,6 +1,6 @@
 {
-  "answer": "$k_f=7$。上述条件下 $e_{\\rm ss}=-2$。一般有 $e_{\\rm ss}=-1/k_p$。",
-  "explanation": "从第二个比较点写 $(s+2)C=k_p(R-C)/s+N-k_f s C$，故闭环多项式为 $D=(1+k_f)s^2+2s+k_p$，且 $C/R=k_p/D$、$C/N=s/D$。标准化后 $\\zeta=1/\\sqrt{(1+k_f)k_p}$，代入给定值解得 $k_f=7$。\n\n由 $R=0$ 知 $E=-C$，故 $sE=-1/D$，取极限得 $-1/k_p=-2$。因三个系数均正，终值定理可用。增大 $k_p$ 使误差绝对值变小，$k_f$ 只进入较高次项，因而在此模型中影响暂态但不改变该终值。\n\n> **扰动位置决定静差。** 先断开其他输入求扰动到误差的通道。扰动注入在积分器前或后，传递函数在原点的零点阶数可能不同。",
+  "answer": "$k_f=7$。上述条件下 $e_{\\rm ss}=-2$。一般有 $e_{\\rm ss}=-\\dfrac{1}{k_p}$。",
+  "explanation": "**（1）求闭环分母并匹配阻尼比。** 按第二个求和点的正负号写\n$$(s+2)C=\\frac{k_p}{s}(R-C)+N-k_fsC.$$\n两边乘以 $s$ 并把含 $C$ 的项移到左边，得到\n$$D(s)C=k_pR+sN,\\qquad D(s)=(1+k_f)s^2+2s+k_p.$$\n把 $D(s)$ 除以 $1+k_f$，分别对照 $\\omega_n^2$ 和 $2\\zeta\\omega_n$ 的系数。\n$$\\omega_n^2=\\frac{k_p}{1+k_f},\\qquad\n\\zeta=\\frac{1}{\\sqrt{k_p(1+k_f)}}.$$\n代入 $k_p=\\frac12$、$\\zeta=\\frac12$，解得 $k_f=7$。\n\n**（2）求扰动造成的稳态误差。** 令 $R=0$，此时 $E=-C$。代入 $N(s)=\\dfrac{1}{s^2}$ 得\n$$sE(s)=-s\\cdot\\frac{s}{D(s)}\\cdot\\frac1{s^2}=-\\frac{1}{D(s)}.$$\n$D(s)$ 的三个系数均为正，是二阶 Hurwitz 多项式，故可取终值 $e_{\\rm ss}=-\\dfrac{1}{k_p}=-2$。\n\n**（3）讨论参数影响。** 稳态误差绝对值是 $\\dfrac{1}{k_p}$。增大 $k_p$ 会减小误差绝对值。$k_f$ 改变 $D(s)$ 的二次项，因而影响暂态，取 $s\\to0$ 时只剩常数项 $k_p$。",
   "originalImages": [],
   "answerPdfPages": "1753–1754",
   "referenceNote": "",

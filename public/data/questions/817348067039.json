@@ -1,6 +1,6 @@
 {
   "answer": "$c\\ne0,\\ d\\ne0,\\ a+b\\ne0$。",
-  "explanation": "由 $AB=(-ac,bd)^{\\mathsf T}$ 得 $\\det[B,AB]=cd(a+b)$，故满秩当且仅当这三个因子均非零。两个输入分量非零保证输入会作用到两个方向，$a+b\\ne0$ 保证两方向的特征值不同，从而可以用多拍输入独立调节。",
+  "explanation": "**按离散能控秩判据计算。** 二阶单输入系统的能控矩阵由 $B,AB$ 两列组成。这里\n$$[B,AB]=\\begin{bmatrix}c&-ac\\\\d&bd\\end{bmatrix},\\qquad\n\\det[B,AB]=cd(a+b).$$\n因此秩为 $2$ 的充要条件是 $c\\ne0,\\ d\\ne0,\\ a+b\\ne0$。\n\n**解释三个因子。** $c=0$ 或 $d=0$ 时，相应状态无法直接受输入作用，且对角 $A$ 不提供交叉耦合。$a+b=0$ 时 $A=-aI$，即使 $B$ 的两个分量非零，$AB$ 也只与 $B$ 共线，连续两拍的输入无法独立控制两个方向。",
   "originalImages": [],
   "answerPdfPages": "1317",
   "referenceNote": "",

@@ -1,5 +1,5 @@
 {
-  "answer": "$\\ddot u_o+\\dot u_o+u_o=u_i$，$U_o/U_i=1/(s^2+s+1)$。状态模型为\n$$\\dot x=\\begin{bmatrix}0&-1\\\\1&-1\\end{bmatrix}x+\\begin{bmatrix}1\\\\0\\end{bmatrix}u_i,\\quad\nu_o=[0\\quad1]x.$$",
+  "answer": "$\\ddot u_o+\\dot u_o+u_o=u_i$，$\\dfrac{U_o}{U_i}=\\dfrac{1}{s^2+s+1}$。状态模型为\n$$\\dot x=\\begin{bmatrix}0&-1\\\\1&-1\\end{bmatrix}x+\\begin{bmatrix}1\\\\0\\end{bmatrix}u_i,\\quad\nu_o=[0\\quad1]x.$$",
   "explanation": "由电容关系 $i=C\\dot u_o$ 和回路定律 $L\\dot i+Ri+u_o=u_i$，消去 $i$，得 $LC\\ddot u_o+RC\\dot u_o+u_o=u_i$。代入元件参数并在零初值下作拉氏变换，得到所需微分方程和传递函数。\n\n代入参数后有 $i=x_1-x_2$，所以 $\\dot x_2=i=x_1-x_2$。又 $\\dot x_1=\\dot u_o+\\dot i=i+(u_i-i-u_o)=u_i-x_2$，直接读出模型矩阵。复核可用第二条状态方程消去 $x_1$，还原同一微分方程。",
   "originalImages": [],
   "answerPdfPages": "1707",

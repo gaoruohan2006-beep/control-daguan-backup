@@ -1,6 +1,6 @@
 {
-  "answer": "$\\Phi=K/[s^2+(1+K\\tau)s+K]$。$K=4,\\ \\tau=1/4$。超调量为 $100e^{-\\pi/\\sqrt3}\\%\\approx16.30\\%$，$t_s\\approx4\\,\\mathrm{s}$。",
-  "explanation": "列式 $s(s+1)C=K[R-C-\\tau sC]$ 得闭环传函。对比标准二阶分母，$K=\\omega_n^2=4$ 且 $1+K\\tau=2\\zeta\\omega_n=2$，故 $\\tau=1/4$。因闭环无零点且直流增益为 $1$，可直接代入 $M_p=\\exp[-\\pi\\zeta/\\sqrt{1-\\zeta^2}]$ 和 $t_s\\approx4/(\\zeta\\omega_n)$。后者是工程近似，若要求精确值应从阶跃响应求最后一次带边界交点。",
+  "answer": "$\\Phi=\\dfrac{K}{s^2+(1+K\\tau)s+K}$。$K=4,\\ \\tau=\\dfrac{1}{4}$。超调量为 $100e^{-\\pi/\\sqrt3}\\%\\approx16.30\\%$，$t_s\\approx4\\,\\mathrm{s}$。",
+  "explanation": "**（1）列反馈关系。** 设 $C$ 为输出的拉氏变换。把求和点信号 $R-C-\\tau sC$ 代入前向通道，整理为\n$$[s^2+(1+K\\tau)s+K]C=KR.$$\n\n**（2）匹配标准二阶分母。** 与 $s^2+2\\zeta\\omega_ns+\\omega_n^2$ 比较，得 $K=\\omega_n^2=4$，$1+K\\tau=2\\zeta\\omega_n=2$，因此 $\\tau=\\frac14$。\n\n**（3）算超调与调节时间。** 此时分子为常数，直流增益为 $1$，闭环为标准欠阻尼二阶系统。阻尼振荡频率是 $\\omega_d=\\omega_n\\sqrt{1-\\zeta^2}=\\sqrt3\\,\\mathrm{rad/s}$，第一峰出现在 $t_p=\\frac{\\pi}{\\omega_d}$。所以\n$$M_p=\\exp\\left(-\\frac{\\pi\\zeta}{\\sqrt{1-\\zeta^2}}\\right)=e^{-\\pi/\\sqrt3}.$$\n百分比超调约为 $16.30\\%$。题设采用 $2\\%$ 工程近似，故 $t_s\\approx\\frac{4}{\\zeta\\omega_n}=4\\,\\mathrm{s}$。按误差带精确定义计算时，应求响应最后一次穿过误差带边界的时刻。",
   "originalImages": [],
   "answerPdfPages": "1870–1871",
   "referenceNote": "",

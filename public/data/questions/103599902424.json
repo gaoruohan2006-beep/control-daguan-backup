@@ -1,6 +1,6 @@
 {
-  "answer": "$0<\\zeta<1/\\sqrt2$ 时存在有限的正频率谐振峰，$M_r=1/(2\\zeta\\sqrt{1-\\zeta^2})$，$\\omega_r=\\omega_n\\sqrt{1-2\\zeta^2}$。",
-  "explanation": "令 $u=(\\omega/\\omega_n)^2$，则 $|\\Phi(j\\omega)|^{-2}=(1-u)^2+4\\zeta^2u$。这个开口向上的二次式在 $u=1-2\\zeta^2$ 处最小。$0<\\zeta<1/\\sqrt2$ 时最小点在正频率，代回得到峰值。若 $\\zeta\\ge1/\\sqrt2$，最大幅值在零频。$\\zeta=0$ 对应无阻尼，在 $\\omega=\\omega_n$ 处幅值发散。",
+  "answer": "$0<\\zeta<\\dfrac{1}{\\sqrt2}$ 时存在有限的正频率谐振峰。\n\n$$M_r=\\frac{1}{2\\zeta\\sqrt{1-\\zeta^2}},\\qquad \\omega_r=\\omega_n\\sqrt{1-2\\zeta^2}.$$",
+  "explanation": "令 $u=(\\omega/\\omega_n)^2$，则 $|\\Phi(j\\omega)|^{-2}=(1-u)^2+4\\zeta^2u$。这个开口向上的二次式在 $u=1-2\\zeta^2$ 处最小。$0<\\zeta<\\dfrac{1}{\\sqrt2}$ 时最小点在正频率，代回得到峰值。若 $\\zeta\\ge\\dfrac{1}{\\sqrt2}$，最大幅值在零频。$\\zeta=0$ 对应无阻尼，在 $\\omega=\\omega_n$ 处幅值发散。\n\n把极小点 $u_*=1-2\\zeta^2$ 代回，有 $|\\Phi(j\\omega_r)|^{-2}=4\\zeta^2(1-\\zeta^2)$，取正平方根再取倒数即得 $M_r$。这里按稳定二阶模型取正阻尼，$\\zeta=\\dfrac{1}{\\sqrt2}$ 时峰值退到原点。",
   "originalImages": [],
   "answerPdfPages": "1590",
   "referenceNote": "补充典型二阶模型和要求有限正频率谐振峰的条件。",

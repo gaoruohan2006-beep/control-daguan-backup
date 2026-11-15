@@ -1,6 +1,6 @@
 {
-  "answer": "D，$12/\\sqrt{13}$。",
-  "explanation": "系统极点为 $-3$，瞬态衰减。输入角频率是 $2\\,\\mathrm{rad/s}$，故用 $|G(j2)|=4/|3+j2|=4/\\sqrt{13}$ 乘输入振幅 $3$，得到所求振幅。",
+  "answer": "D，$\\dfrac{12}{\\sqrt{13}}$。",
+  "explanation": "**为什么代入 $s=j2$？** 系统极点为 $-3$，齐次解按 $e^{-3t}$ 衰减。对角频率 $2\\,\\mathrm{rad/s}$ 的正弦输入，稳态输出保持这一角频率。振幅乘以 $|G(j2)|$，相位加上 $\\arg G(j2)$。\n\n**计算幅值。** \n$$|G(j2)|=\\left|\\frac4{3+j2}\\right|\n=\\frac4{\\sqrt{3^2+2^2}}=\\frac4{\\sqrt{13}}.$$\n乘输入振幅 $3$ 得 $\\frac{12}{\\sqrt{13}}$。若还需写出稳态相位，它相对输入滞后 $\\arctan(\\frac23)$。",
   "originalImages": [],
   "answerPdfPages": "973",
   "referenceNote": "",

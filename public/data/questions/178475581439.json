@@ -1,6 +1,6 @@
 {
-  "answer": "$RC\\dot u_2+u_2=RC\\dot u_1$，$U_2/U_1=RCs/(1+RCs)$。",
-  "explanation": "输出电阻电流为 $i=u_2/R$。电容电压为 $u_1-u_2$，其电流为 $i=C(\\dot u_1-\\dot u_2)$。节点处两电流相等，整理得微分方程。取零初值作拉氏变换，即得一阶高通传递函数。",
+  "answer": "$RC\\dot u_2+u_2=RC\\dot u_1$，$\\dfrac{U_2}{U_1}=\\dfrac{RCs}{1+RCs}$。",
+  "explanation": "**由元件方程列微分方程。** 取沿输入流向输出的电流为 $i$。电阻电压是 $u_2$，电容电压是 $u_1-u_2$。输出节点只有这两个支路，故\n$$i=\\frac{u_2}{R}=C(\\dot u_1-\\dot u_2).$$\n两边乘以 $R$ 并移项，得 $RC\\dot u_2+u_2=RC\\dot u_1$。\n\n**在零初值下变换。** $(1+RCs)U_2=RCsU_1$，因此\n$$G(s)=\\frac{U_2(s)}{U_1(s)}=\\frac{RCs}{1+RCs}.$$\n原点是零点，极点为 $-\\frac1{RC}$。直流增益为零，高频增益趋近 $1$，与串联电容隔直、导通高频的性质一致。",
   "originalImages": [],
   "answerPdfPages": "1416–1417",
   "referenceNote": "",

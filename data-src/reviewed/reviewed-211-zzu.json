@@ -12,7 +12,7 @@
     "answerPages": "1461",
     "stem": "试用李雅普诺夫第二法判断 $\\dot x_1=-x_1+x_2,\\ \\dot x_2=2x_1-3x_2$ 的平衡点稳定性。",
     "answer": "原点是唯一平衡点且全局指数稳定。",
-    "explanation": "令 $A=\\begin{bmatrix}-1&1\\\\2&-3\\end{bmatrix}$，$\\det A=1$，所以唯一平衡点为原点。选 $V=x^{\\mathsf T}Px$，令 $A^{\\mathsf T}P+PA=-I$。解得\n$$P=\\begin{bmatrix}7/4&5/8\\\\5/8&3/8\\end{bmatrix}.$$\n$P$ 的一阶主子式和行列式 $17/64$ 都为正，故 $V$ 正定。且 $\\dot V=-(x_1^2+x_2^2)$，配合 $V$ 的二次型上下界即可得全局指数稳定。",
+    "explanation": "令 $A=\\begin{bmatrix}-1&1\\\\2&-3\\end{bmatrix}$，$\\det A=1$，所以唯一平衡点为原点。选 $V=x^{\\mathsf T}Px$，令 $A^{\\mathsf T}P+PA=-I$。解得\n$$P=\\begin{bmatrix}7/4&5/8\\\\5/8&3/8\\end{bmatrix}.$$\n$P$ 的一阶主子式和行列式 $\\dfrac{17}{64}$ 都为正，故 $V$ 正定。且 $\\dot V=-(x_1^2+x_2^2)$，配合 $V$ 的二次型上下界即可得全局指数稳定。",
     "notes": ""
   },
   {
@@ -28,7 +28,7 @@
     "answerPages": "1461",
     "stem": "系统状态方程为 $\\dot x=\\begin{bmatrix}-1&-2\\\\-1&-3\\end{bmatrix}x+(2,1)^{\\mathsf T}u$。求反馈矩阵 $K$，使 $u=v-Kx$ 时的闭环极点为 $-1\\pm2j$。",
     "answer": "$K=[1/3\\quad-8/3]$。",
-    "explanation": "能控矩阵为 $[B,AB]=\\begin{bmatrix}2&-4\\\\1&-5\\end{bmatrix}$，行列式为 $-6$。写 $K=[k_1\\quad k_2]$，闭环特征多项式为 $s^2+(4+2k_1+k_2)s+1+4k_1-k_2$。与目标 $s^2+2s+5$ 比较，解得 $k_1=1/3,k_2=-8/3$。",
+    "explanation": "能控矩阵为 $[B,AB]=\\begin{bmatrix}2&-4\\\\1&-5\\end{bmatrix}$，行列式为 $-6$。写 $K=[k_1\\quad k_2]$，闭环特征多项式为 $s^2+(4+2k_1+k_2)s+1+4k_1-k_2$。与目标 $s^2+2s+5$ 比较，解得 $k_1=\\dfrac{1}{3},k_2=-\\dfrac{8}{3}$。",
     "notes": ""
   },
   {

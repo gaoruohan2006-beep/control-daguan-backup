@@ -1,6 +1,6 @@
 {
-  "answer": "（1）$t_s\\approx1\\,\\mathrm{s}$，输出终值为 $1/8$。（2）$\\alpha=10/7,\\ k=96/7,\\ \\zeta=3/\\sqrt{21}\\approx0.655$。",
-  "explanation": "在第二个求和点直接列式 $C=2[R-(k+\\alpha s)C]/(s^2+4s)$，故闭环分母为 $s^2+(4+2\\alpha)s+2k$，有 $\\omega_n=\\sqrt{2k}$、$\\zeta\\omega_n=2+\\alpha$。第（1）问中 $\\omega_n=4$，故 $t_s\\approx1$，而闭环直流增益为 $1/k$。\n\n第（2）问由 $3/(2+\\alpha)=7/8$ 得 $2+\\alpha=24/7$。用 $E/R=1-kC/R$ 得\n$$\\frac{E}{R}=\\frac{s^2+(4+2\\alpha)s}{s^2+(4+2\\alpha)s+2k}.$$\n单位斜坡时 $R=1/s^2$，因此 $e_{\\rm ss}=(2+\\alpha)/k$，由此解得 $k$ 和 $\\zeta$。代回可见闭环分母系数为正，满足二阶稳定条件，可以使用终值定理。\n\n> **非单位外环先写误差定义。** 这里求和点误差是 $r-kc$。若题目改求 $r-c$，斜坡下可能需要比较两条直线的斜率。",
+  "answer": "（1）$t_s\\approx1\\,\\mathrm{s}$，输出终值为 $\\dfrac{1}{8}$。（2）$\\alpha=\\dfrac{10}{7},\\ k=\\dfrac{96}{7},\\ \\zeta=\\dfrac{3}{\\sqrt{21}}\\approx0.655$。",
+  "explanation": "在第二个求和点直接列式 $C=\\dfrac{2[R-(k+\\alpha s)C]}{s^2+4s}$，故闭环分母为 $s^2+(4+2\\alpha)s+2k$，有 $\\omega_n=\\sqrt{2k}$、$\\zeta\\omega_n=2+\\alpha$。第（1）问中 $\\omega_n=4$，故 $t_s\\approx1$，而闭环直流增益为 $\\dfrac{1}{k}$。\n\n第（2）问由 $\\dfrac{3}{2+\\alpha}=\\dfrac{7}{8}$ 得 $2+\\alpha=\\dfrac{24}{7}$。用 $\\dfrac{E}{R}=1-\\dfrac{kC}{R}$ 得\n$$\\frac{E}{R}=\\frac{s^2+(4+2\\alpha)s}{s^2+(4+2\\alpha)s+2k}.$$\n单位斜坡时 $R=\\dfrac{1}{s^2}$，因此 $e_{\\rm ss}=\\dfrac{2+\\alpha}{k}$，由此解得 $k$ 和 $\\zeta$。代回可见闭环分母系数为正，满足二阶稳定条件，可以使用终值定理。\n\n**回代验证两组结果。** 第（1）问由 $\\zeta\\omega_n=3$ 得 $\\alpha=1$，分母为 $s^2+6s+16$，终值是 $\\dfrac{2}{16}=\\dfrac{1}{8}$。第（2）问代回有 $\\dfrac{3}{2+\\alpha}=\\dfrac{7}{8}$，且 $\\dfrac{2+\\alpha}{k}=\\dfrac{1}{4}$。由 $\\omega_n=\\sqrt{192/7}$ 再算 $\\zeta=\\dfrac{24/7}{\\omega_n}=\\dfrac{3}{\\sqrt{21}}$。\n\n> **非单位外环先写误差定义。** 这里求和点误差是 $r-kc$。若题目改求 $r-c$，斜坡下可能需要比较两条直线的斜率。",
   "originalImages": [],
   "answerPdfPages": "1725–1726",
   "referenceNote": "补充调节时间近似口径，并明确误差为比较点信号。",

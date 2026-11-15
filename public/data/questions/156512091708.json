@@ -1,6 +1,6 @@
 {
   "answer": "A",
-  "explanation": "零初始条件下微分方程的拉氏变换不含初值项，得到 $D(s)Y(s)=N(s)U(s)$，从而 $G(s)=N(s)/D(s)$。零输入时研究的是初始状态引起的响应。阶跃等试验信号可用于辨识传递特性，但定义并不限定输入信号。",
+  "explanation": "**从微分方程看定义。** 若线性定常系统可写为 $D(\\frac{\\mathrm d}{\\mathrm dt})y=N(\\frac{\\mathrm d}{\\mathrm dt})u$，在零初始条件下，各阶导数的拉氏变换只留下相应的 $s$ 次幂。于是\n$$D(s)Y(s)=N(s)U(s),\\qquad\nG(s)=\\left.\\frac{Y(s)}{U(s)}\\right|_{\\text{零初始条件}}=\\frac{N(s)}{D(s)}.$$\n\n因此选 A。存在非零初态时，输出还含零输入响应，直接取总输出与输入之比会混入初值项。阶跃、脉冲等试验信号可用于测量响应，符合要求的输入都可以通过同一个 $G(s)$ 求零状态输出。",
   "originalImages": [],
   "answerPdfPages": "1557",
   "referenceNote": "",
