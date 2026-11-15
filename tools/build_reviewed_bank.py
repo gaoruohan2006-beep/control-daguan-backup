@@ -153,7 +153,6 @@ PRACTICE_KINDS = ("选择题", "填空题", "判断题", "简答题", "分析题
 
 def load_practice(ids, aliases, detail_rows):
     rows = []
-    paths = {}
     source = ROOT / "data-src" / "practice"
     for file in sorted(source.glob("qd1000-*.json")):
         for card in json.loads(file.read_text(encoding="utf-8-sig")):
@@ -180,9 +179,11 @@ def load_practice(ids, aliases, detail_rows):
             tags = [topic_paths[0].split(" / ")[0]]
             number_label = f"{volume}册 · 第{chapter}章 · {kind}{number}"
             chapter_label = f"{volume}册 第{chapter}章 {PRACTICE_CHAPTERS.get(chapter, '')}".strip()
-            paths[identifier] = [f"{chapter_label} / {kind}"]
+            school, year = re.fullmatch(r"(.+?)(?:\s*(\d{4}))?", origin.strip()).groups()
+            school = re.sub(r"（(?:学硕|专硕|\d{3})）$", "", school)
             rows.append(dict(
                 id=identifier, number=number_label, source=f"{PRACTICE_TITLE} · {origin}", sourceType="practice",
+                school=school, year=int(year) if year else None,
                 categories=topic_paths, tags=tags, hasFigure=bool(FIGURE.search(stem)), stem=stem,
                 pdfPage=card["questionPages"], search=" ".join((PRACTICE_TITLE, origin, number_label, chapter_label, *topic_paths, stem)),
             ))
@@ -190,7 +191,13 @@ def load_practice(ids, aliases, detail_rows):
                 answer=answer, explanation=explanation, originalImages=[], answerPdfPages=card["answerPages"],
                 referenceNote=card.get("notes", ""), sourceType="practice",
             )
-    return rows, paths
+    return rows
+
+
+def school_paths(question):
+    entries = [question, *question.get("alsoAppearedIn", [])]
+    paths = (f'{q["school"]} / {q["year"]}' if q["year"] else q["school"] for q in entries)
+    return list(dict.fromkeys(paths))
 
 
 def build():
@@ -241,7 +248,7 @@ def build():
                 referenceNote=card.get("notes", ""), sourceType="reviewed",
             )
 
-    practice, practice_paths = load_practice(ids, aliases, detail_rows)
+    practice = load_practice(ids, aliases, detail_rows)
     assert not ids.intersection(aliases), "A merged question is still present as its own card"
     assert set(aliases.values()) <= ids, "A merged question's retained card is missing"
     for identifier, detail in detail_rows.items():
@@ -255,19 +262,18 @@ def build():
                     categoryByQuestion={str(q["id"]): paths(q) for q in rows})
 
     questions.sort(key=lambda q: (q["school"], -q["year"], q["source"], str(q["number"]).zfill(4)))
-    validate_topic_tree(questions)
+    all_questions = questions + practice
+    validate_topic_tree(all_questions)
+    by_school = sorted(all_questions, key=lambda q: (q["school"], -(q["year"] or 0)))
     lists = [
-        question_list("complete", "专题分类", questions, lambda q: q["categories"]),
-        question_list("by-school", "按院校", questions, lambda q: list(dict.fromkeys(
-            f'{entry["school"]} / {entry["year"]}' for entry in [q, *q.get("alsoAppearedIn", [])]
-        ))),
+        question_list("complete", "按专题", all_questions, lambda q: q["categories"]),
+        question_list("by-school", "按院校", by_school, school_paths),
     ]
-    if practice:
-        lists.append(question_list("practice-1000", PRACTICE_TITLE, practice, lambda q: practice_paths[q["id"]]))
     write_json(PUBLIC / "data" / "library.json", dict(
         subject="自动控制原理", source="院校初试题库与起点精选1000题", topicOrder=TOPICS,
-        years=sorted({entry["year"] for q in questions for entry in [q, *q.get("alsoAppearedIn", [])]}, reverse=True),
-        questionAliases=aliases, lists=lists, questions=questions + practice,
+        years=sorted({entry["year"] for q in all_questions for entry in [q, *q.get("alsoAppearedIn", [])]
+                      if entry["year"] is not None}, reverse=True),
+        questionAliases=aliases, lists=lists, questions=all_questions,
     ))
     print(f"{len(questions)} 道重排核对题，{len({q['school'] for q in questions})} 所院校")
     print(f"{len(practice)} 道起点精选练习")

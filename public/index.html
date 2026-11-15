@@ -7,21 +7,21 @@
 <meta name="color-scheme" content="light dark" />
 <meta name="mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-title" content="控制大观" />
+<meta name="apple-mobile-web-app-title" content="控制考研真题大观园" />
 <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-<title>控制大观 · 985、211 与双非院校自动控制原理题库</title>
+<title>控制考研真题大观园</title>
 <link rel="manifest" href="manifest.webmanifest" />
 <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png" />
 <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png" />
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%23006bea'/><text x='16' y='22' font-size='17' text-anchor='middle' fill='white' font-family='sans-serif'>控</text></svg>" />
 <link rel="stylesheet" href="vendor/katex/katex.min.css" />
-<link rel="stylesheet" href="app.css?v=24145c48d62b" />
+<link rel="stylesheet" href="app.css?v=7a5d0c3b0719" />
 </head>
 <body>
 <div id="app">
   <header class="topbar">
-    <a class="brand" href="./" id="brand" title="回到首页">控制大观</a>
+    <a class="brand" href="./" id="brand" title="回到首页">控制考研真题大观园</a>
     <nav class="seg" id="tabs" role="tablist">
       <button type="button" role="tab" data-tab="bank">题库</button>
       <button type="button" role="tab" data-tab="fav">收藏</button>
@@ -61,7 +61,7 @@
               <button type="button" class="btn ghost block" id="genCodeBtn">生成记录码并复制</button>
               <textarea id="codeInput" rows="4" placeholder="粘贴全部 CG1 分段记录码"></textarea>
               <button type="button" class="btn soft block" id="importCodeBtn" disabled>校验并导入记录码</button>
-              <p class="hint">也可导入控制大观导出的学习记录 JSON（最多 10 MB）。</p>
+              <p class="hint">也可导入本站导出的学习记录 JSON（最多 10 MB）。</p>
               <button type="button" class="btn soft block" id="importJsonBtn">导入记录 JSON</button>
               <input type="file" id="importFile" accept=".json,application/json" hidden />
             </div>
@@ -113,7 +113,7 @@
         <div class="popover lists" id="listPop" role="listbox" hidden></div>
       </div>
       <div class="seg small rv-seg" id="rvSeg" hidden><button type="button" data-rv="due">今日待复习</button><button type="button" data-rv="marked">不熟练 · 不会</button></div>
-      <div class="search"><svg viewBox="0 0 24 24" class="ic"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="search" type="search" placeholder="搜索院校、考点或年份" aria-label="搜索题目" /></div>
+      <div class="search"><svg viewBox="0 0 24 24" class="ic"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="search" type="search" placeholder="搜索院校、考点或题号" aria-label="搜索题目" /></div>
       <div class="tree" id="tree"></div>
     </aside>
     <div class="scrim" id="scrim" hidden></div>
@@ -144,6 +144,6 @@
 <script src="notes.js"></script>
 <script src="sync.js"></script>
 <script src="pwa.js"></script>
-<script src="app.js?v=24145c48d62b"></script>
+<script src="app.js?v=7a5d0c3b0719"></script>
 </body>
 </html>

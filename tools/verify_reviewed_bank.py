@@ -21,6 +21,10 @@ async def verify():
         page.on("pageerror", lambda exc: errors.append(str(exc)))
         await page.goto(BASE)
         await page.wait_for_selector(".card")
+        assert await page.title() == "控制考研真题大观园"
+        assert await page.locator("#brand").inner_text() == "控制考研真题大观园"
+        manifest = await (await page.request.get(f"{BASE}manifest.webmanifest")).json()
+        assert manifest["name"] == manifest["short_name"] == "控制考研真题大观园"
         library = await page.evaluate("fetch('data/library.json').then(r => r.json())")
         questions = library["questions"]
         ids = {q["id"] for q in questions}
@@ -29,14 +33,13 @@ async def verify():
         practice = [q for q in questions if q["sourceType"] == "practice"]
         assert len(exams) + len(practice) == len(questions)
         lists = {entry["id"]: entry for entry in library["lists"]}
-        assert set(lists) == ({"complete", "by-school", "practice-1000"} if practice else {"complete", "by-school"})
-        assert all(set(lists[key]["questionIds"]) == {q["id"] for q in exams} for key in ("complete", "by-school"))
-        if practice:
-            assert lists["practice-1000"]["questionIds"] == [q["id"] for q in practice]
-            assert all(q["pdfPage"] for q in practice)
+        assert {key: entry["name"] for key, entry in lists.items()} == {"complete": "按专题", "by-school": "按院校"}
+        assert all(set(entry["questionIds"]) == ids for entry in lists.values())
+        assert all(q["pdfPage"] and q["school"] for q in practice)
         schools = {path.split(" / ")[0] for paths in lists["by-school"]["categoryByQuestion"].values() for path in paths}
         assert await page.locator('.node[data-path="历年真题"]').count() == 0
         await page.locator("#listBtn").click()
+        assert await page.locator("#listPop [data-list]").count() == 2
         await page.locator('[data-list="by-school"]').click()
         assert len(await page.locator("#tree .node.top").all()) == len(schools)
         await page.locator("#search").fill(questions[0]["school"])
@@ -47,16 +50,16 @@ async def verify():
         await page.locator('[data-list="complete"]').click()
 
         if practice:
-            await page.locator("#listBtn").click()
-            await page.locator('[data-list="practice-1000"]').click()
-            assert await page.locator("#listName").inner_text() == f"起点精选1000题 · {len(practice)} 题"
             start = practice[0]["id"]
-            first_practice = page.locator(f'.card[data-id="{start}"]')
-            await first_practice.wait_for()
-            assert await first_practice.locator(".qno").inner_text() == practice[0]["number"]
-            await page.goto(f"{BASE}?question={start}")
-            await page.locator(f'.card[data-id="{start}"]').wait_for()
-            assert "list=practice-1000" in page.url
+            for mode in ("complete", "by-school", "practice-1000"):
+                await page.goto(f"{BASE}?list={mode}&question={start}")
+                first_practice = page.locator(f'.card[data-id="{start}"]')
+                await first_practice.wait_for()
+                assert await first_practice.locator(".qno").inner_text() == practice[0]["number"]
+                assert f"list={'by-school' if mode == 'by-school' else 'complete'}" in page.url
+            await page.goto(f"{BASE}?list=practice-1000")
+            await page.wait_for_function("document.querySelector('#search').value === '起点精选1000题'")
+            assert "起点精选1000题" in await page.locator(".card .src").first.inner_text()
 
         if aliases := library.get("questionAliases"):
             old_id, current_id = next(iter(aliases.items()))
@@ -136,6 +139,7 @@ async def verify():
         mobile = await browser.new_page(viewport={"width": 390, "height": 844}, is_mobile=True, has_touch=True)
         await mobile.goto(f"{BASE}?question={q['id']}")
         await mobile.locator(".card").wait_for()
+        assert await mobile.locator("#brand").is_visible()
         await mobile.locator("#tocBtn").click()
         assert await mobile.locator("#sidebar").is_visible()
         await mobile.locator("#tree .node.top .nm").first.click()

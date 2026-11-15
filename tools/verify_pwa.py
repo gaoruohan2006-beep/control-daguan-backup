@@ -117,7 +117,7 @@ async def main():
         ok('apple-touch-icon 已链接', apple and 'apple-touch-icon' in apple, apple)
         man = await (await pg.request.get(BASE + 'manifest.webmanifest')).json()
         ok('manifest 字段：name / short_name / lang / display / id',
-           man.get('name') == '控制大观' and man.get('short_name') == '控制大观' and man.get('lang') == 'zh-CN'
+           man.get('name') == '控制考研真题大观园' and man.get('short_name') == '控制考研真题大观园' and man.get('lang') == 'zh-CN'
            and man.get('display') == 'standalone' and bool(man.get('id')),
            {k: man.get(k) for k in ('name', 'short_name', 'lang', 'display', 'id', 'start_url', 'scope')})
         ok('start_url 与 scope 为相对路径 ./', man.get('start_url') == './' and man.get('scope') == './',

@@ -1,8 +1,8 @@
 {
   "id": "./",
-  "name": "控制大观",
-  "short_name": "控制大观",
-  "description": "985 与 211 高校控制类初试真题刷题与复习",
+  "name": "控制考研真题大观园",
+  "short_name": "控制考研真题大观园",
+  "description": "按院校和专题练习自动控制原理考研真题",
   "lang": "zh-CN",
   "start_url": "./",
   "scope": "./",

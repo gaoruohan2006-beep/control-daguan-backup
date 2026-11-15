@@ -228,7 +228,6 @@ function render() {
   const nDue = dueIds().length, bd = $('#dueBadge'); bd.hidden = !nDue; bd.textContent = nDue; bd.title = `今日待复习 ${nDue} 题`;
   $('#retention').value = rec.retention; $('#retentionVal').textContent = rec.retention.toFixed(2);
   const L = curList();
-  $('#search').placeholder = L.id === 'practice-1000' ? '搜索题号、院校或考点' : '搜索院校、考点或年份';
   $('#listName').textContent = `${L.name} · ${L.questionIds.length} 题`;
   const node = st.node ? flatNodes(tree).find(n => n.path === st.node) : null;
   $('#sectionLabel').textContent = node ? `${st.q ? '搜索 · ' : ''}${st.tab === 'retest' ? '复测 · ' : ''}${node.name}  ${sec.length} 题` : (st.q ? `搜索「${st.q}」 0 题` : '');
@@ -497,16 +496,19 @@ function syncURL() {
 }
 function readURL() {
   const p = new URLSearchParams(location.search);
-  st.listId = lib.lists.some(l => l.id === p.get('list')) ? p.get('list') : 'complete';
+  const list = p.get('list');
+  st.listId = lib.lists.some(l => l.id === list) ? list : 'complete';
   st.tab = ['bank', 'fav', 'retest'].includes(p.get('tab')) ? p.get('tab') : 'bank';
   st.qid = p.get('question') ? canonicalId(p.get('question')) : null;
   if (st.qid != null && !curList().questionIds.includes(st.qid)) {
     const containing = lib.lists.find(l => l.questionIds.includes(st.qid));
     if (containing) st.listId = containing.id;
   }
-  st.q = p.get('q') || ''; $('#search').value = st.q;
+  const oldPracticeList = list === 'practice-1000';
+  st.q = p.get('q') || (oldPracticeList && st.qid == null ? '起点精选1000题' : '');
+  $('#search').value = st.q;
   st.rv = p.get('rv') === 'marked' ? 'marked' : 'due';
-  st.node = p.get('section') || null;
+  st.node = oldPracticeList ? null : p.get('section') || null;
   if (st.qid != null && !st.node) {
     const paths = curList().categoryByQuestion[st.qid]; if (paths) st.node = paths[0].split(' / ')[0];
   }
@@ -521,7 +523,7 @@ function exportJSON() {
   setMsg('已导出学习记录 JSON。');
 }
 function applyImport(d) {
-  if (!d || d.app !== 'control-daguan' || !Array.isArray(d.favorites) || typeof d.marks !== 'object') throw new Error('不是有效的控制大观记录文件，请重新导出 JSON。');
+  if (!d || d.app !== 'control-daguan' || !Array.isArray(d.favorites) || typeof d.marks !== 'object') throw new Error('无法识别学习记录，请重新导出 JSON。');
   d = remapRecords(normRec(d));
   const known = id => byId.has(Number(id));
   const before = CDGSync.canon({ f: rec.favorites, m: rec.marks, s: rec.srs });
