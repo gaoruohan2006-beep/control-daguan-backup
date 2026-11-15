@@ -32,12 +32,12 @@ def collect():
         add(rel)
     icons = ROOT / "icons"
     if icons.is_dir():
-        for p in sorted(icons.rglob("*")):
+        for p in sorted(icons.rglob("*"), key=Path.as_posix):
             if p.is_file():
                 add(str(p.relative_to(ROOT)))
     vendor = ROOT / "vendor"
     if vendor.is_dir():
-        for p in sorted(vendor.rglob("*")):
+        for p in sorted(vendor.rglob("*"), key=Path.as_posix):
             if p.is_file():
                 add(str(p.relative_to(ROOT)))
     return files
@@ -62,7 +62,9 @@ def main():
     files = collect()
     if not files:
         sys.exit("no shell files found under public/")
-    ver = version_for(files)
+    card_assets = sorted(p.relative_to(ROOT).as_posix() for pattern in ("data/questions/*.json", "img/reviewed/*.svg")
+                         for p in ROOT.glob(pattern))
+    ver = version_for(files + card_assets)
     index = INDEX.read_text(encoding="utf-8")
     stamped = STAMPED_ASSET.sub(lambda m: f"{m[1]}?v={ver}", index)
     if index != stamped:

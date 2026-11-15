@@ -104,7 +104,7 @@ async def verify():
             bad = await card.evaluate("""async card => {
                 const images = [...card.querySelectorAll('img')];
                 await Promise.all(images.map(img => { img.loading = 'eager'; return img.decode().catch(() => {}); }));
-                return images.filter(img => !img.naturalWidth || !img.getAttribute('src').endsWith('.svg'))
+                return images.filter(img => !img.naturalWidth || !new URL(img.src).pathname.endsWith('.svg'))
                     .map(img => img.getAttribute('src'));
             }""")
             assert not bad, (q["source"], bad)

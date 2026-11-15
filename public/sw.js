@@ -3,17 +3,17 @@
 
 // PRECACHE 由 tools/build_precache.py 在构建时写入，请勿手改
 const PRECACHE = {
-  "version": "7a5d0c3b0719",
+  "version": "039bc9cac6bc",
   "files": [
     "./",
     "./index.html",
-    "./app.js?v=7a5d0c3b0719",
-    "./app.css?v=7a5d0c3b0719",
+    "./app.js?v=039bc9cac6bc",
+    "./app.css?v=039bc9cac6bc",
     "./notes.js",
     "./sync.js",
     "./pwa.js",
     "./manifest.webmanifest",
-    "./data/library.json?v=7a5d0c3b0719",
+    "./data/library.json?v=039bc9cac6bc",
     "./icons/apple-touch-icon.png",
     "./icons/favicon-32.png",
     "./icons/icon-192.png",
@@ -25,8 +25,9 @@ const PRECACHE = {
     "./vendor/bank-fonts/wenkai-reviewed.woff2",
     "./vendor/dompurify/LICENSE",
     "./vendor/dompurify/purify.min.js",
-    "./vendor/idb-keyval/idb-keyval.umd.js",
     "./vendor/idb-keyval/LICENCE",
+    "./vendor/idb-keyval/idb-keyval.umd.js",
+    "./vendor/katex/README.md",
     "./vendor/katex/fonts/KaTeX_AMS-Regular.ttf",
     "./vendor/katex/fonts/KaTeX_AMS-Regular.woff",
     "./vendor/katex/fonts/KaTeX_AMS-Regular.woff2",
@@ -89,7 +90,6 @@ const PRECACHE = {
     "./vendor/katex/fonts/KaTeX_Typewriter-Regular.woff2",
     "./vendor/katex/katex.min.css",
     "./vendor/katex/katex.min.js",
-    "./vendor/katex/README.md",
     "./vendor/marked/LICENSE.md",
     "./vendor/marked/marked.umd.js",
     "./vendor/ts-fsrs/LICENSE",
@@ -160,14 +160,16 @@ async function networkFirstNav(req) {
 
 async function networkFirstRuntime(req) {
   const cache = await caches.open(RUNTIME);
+  const key = new URL(req.url);
+  key.searchParams.delete('v');
   try {
     const fresh = await fetch(req, { cache: 'no-cache' });
     if (fresh.ok) {
-      await cache.put(req, fresh.clone());
+      await cache.put(key.href, fresh.clone());
       return fresh;
     }
   } catch {}
-  return await cache.match(req) || new Response('', { status: 503, statusText: 'offline' });
+  return await cache.match(key.href) || new Response('', { status: 503, statusText: 'offline' });
 }
 
 async function staleWhileRevalidate(req) {

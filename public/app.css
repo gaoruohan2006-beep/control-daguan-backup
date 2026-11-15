@@ -81,9 +81,12 @@ textarea{width:100%;font:12px/1.5 ui-monospace,monospace;border:1px solid var(--
 .catpop button::before{content:"• ";color:var(--subtle)}
 .stem,.box .body{line-height:1.85}
 .stem p,.box p{margin:.35em 0}
-.katex-display{margin:.6em 0;overflow-x:auto;overflow-y:hidden;padding:2px 0}
+.katex-display{margin:.75em 0;overflow-x:auto;overflow-y:hidden;padding:4px 0}
 .stem .katex-display > .katex,.box .katex-display > .katex{white-space:normal}
 .stem .katex-display > .katex > .katex-html,.box .katex-display > .katex > .katex-html{min-width:min-content}
+.math-content{white-space:nowrap}
+.math-wide{display:flex;max-width:100%;margin:.35em 0;overflow-x:auto;padding:4px 0}
+.math-wide .math-content{flex:none;margin-inline:auto}
 .actions{display:flex;align-items:center;gap:10px;border-top:1px solid var(--border-subtle);margin-top:14px;padding-top:10px;flex-wrap:wrap}
 .tog{display:inline-flex;align-items:center;gap:5px;padding:6px 9px;border-radius:8px;font-size:12.5px;color:var(--fg)}
 .tog:hover{background:var(--panel)}.tog[aria-pressed=true]{background:var(--brand-soft);color:var(--brand)}
@@ -245,9 +248,6 @@ mark{background:#fff3b0;color:inherit;border-radius:3px}
  .due{display:none}
  .fig{margin-block:.85em}
  .stem,.box .body{line-break:strict}
- .math-content{white-space:nowrap}
- .math-wide{display:block;max-width:100%;margin:.3em 0;overflow-x:auto;padding:2px 0;text-align:center}
- .math-wide .math-content{display:inline-block;min-width:max-content}
 }
 
 /* Directory typography follows the three levels of the topic tree. */

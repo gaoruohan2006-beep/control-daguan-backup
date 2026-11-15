@@ -2,7 +2,8 @@
 (() => {
 'use strict';
 const buildVersion = new URL(document.currentScript.src).searchParams.get('v');
-const libraryUrl = buildVersion ? `data/library.json?v=${buildVersion}` : 'data/library.json';
+const versionedAsset = path => buildVersion ? `${path}?v=${buildVersion}` : path;
+const libraryUrl = versionedAsset('data/library.json');
 const $ = (s, r = document) => r.querySelector(s);
 const STORE = 'control-daguan:v1';
 const MARKS = { shaky: '不熟练', unknown: '不会', mastered: '掌握' };
@@ -141,7 +142,7 @@ function inline(s, hl) {
       const [alt, width] = image.split('|');
       const w = Number(width);
       const size = Number.isFinite(w) && w > 0 ? `style="--figure-width:${w}px"` : '';
-      out.push(`<span class="fig"><img src="${esc(url)}" alt="${esc(alt)}" ${size} loading="lazy" data-zoom title="单击放大图片"></span>`);
+      out.push(`<span class="fig"><img src="${esc(versionedAsset(url))}" alt="${esc(alt)}" ${size} loading="lazy" data-zoom title="单击放大图片"></span>`);
     } else {
       const plan = bold === '解题思路' ? ' class="solution-plan"' : '';
       out.push('<strong' + plan + '>' + inline(bold, hl) + '</strong>');
@@ -244,7 +245,6 @@ function openSec(key) {
   });
 }
 const isMobile = () => matchMedia('(max-width:900px)').matches;
-const narrowReading = matchMedia('(max-width:600px)');
 
 function renderTree() {
   const el = $('#tree');
@@ -420,6 +420,21 @@ function onNoteInput(ta) {
   noteTimers.set(id, setTimeout(() => { commitNote(id); afterNoteSaved(id); }, 700));
   clearTimeout(ta._pv); ta._pv = setTimeout(() => { const live = sec.querySelector('.nb-live'); if (live) live.innerHTML = CDGNotes.render(ta.value) || '<div class="nb-empty">实时预览会显示在这里。</div>'; }, 120);
 }
+function layoutCardMath(cards) {
+  const firstCard = cards.firstElementChild;
+  // Measure once the reading and math fonts have loaded.
+  return document.fonts.ready.then(() => {
+    if (firstCard !== cards.firstElementChild) return;
+    const widths = new Map();
+    const wide = [...cards.querySelectorAll('.inline-math')].filter(math => {
+      const paragraph = math.closest('p');
+      if (!paragraph) return false;
+      if (!widths.has(paragraph)) widths.set(paragraph, paragraph.clientWidth);
+      return math.firstElementChild.getBoundingClientRect().width > .85 * widths.get(paragraph);
+    });
+    wide.forEach(math => math.classList.add('math-wide'));
+  });
+}
 function renderCards(sec) {
   const el = $('#cards');
   if (!sec.length) { el.innerHTML = `<div class="empty">${st.q ? '没有匹配的题目' : st.tab === 'fav' ? '暂无收藏题目。点题目下方的「收藏」即可加入。' : st.tab === 'retest' ? (st.rv === 'due' ? '今日没有待复习的题目。评分后的题目会在到期当天出现在这里。' : '暂无复测题目。把题目标记为「不熟练」或「不会」后会出现在这里。') : '暂无题目'}</div>`; return; }
@@ -427,20 +442,7 @@ function renderCards(sec) {
   ids.forEach(id => { if ((st.show[id]?.answer || st.show[id]?.exp) && !details.has(id)) loadDetail(id); });
   const a = document.activeElement, keep = a?.matches?.('textarea.note-input') ? { id: a.dataset.noteInput, s: a.selectionStart, e: a.selectionEnd, top: a.scrollTop } : null;
   el.innerHTML = ids.map(id => cardHTML(id, sec.indexOf(id))).join('');
-  if (narrowReading.matches) {
-    const firstCard = el.firstElementChild;
-    // Measure after both the body and KaTeX fonts load, since fallback widths differ.
-    document.fonts.ready.then(() => {
-      if (firstCard !== el.firstElementChild || !narrowReading.matches) return;
-      const widths = new Map();
-      const wide = [...el.querySelectorAll('.inline-math')].filter(math => {
-        const paragraph = math.closest('p');
-        if (!widths.has(paragraph)) widths.set(paragraph, paragraph.clientWidth);
-        return math.firstElementChild.getBoundingClientRect().width > .85 * widths.get(paragraph);
-      });
-      wide.forEach(math => math.classList.add('math-wide'));
-    });
-  }
+  layoutCardMath(el);
   const ta = keep && el.querySelector(`textarea[data-note-input="${keep.id}"]`);
   if (ta) { ta.focus({ preventScroll: true }); ta.setSelectionRange(keep.s, keep.e); ta.scrollTop = keep.top; }
 }
@@ -480,7 +482,7 @@ function step(dir) {
 // ---------- 详情（答案/解析） ----------
 async function loadDetail(id) {
   if (details.has(id)) return;
-  try { const r = await fetch(`data/questions/${id}.json`); if (!r.ok) throw 0; details.set(id, await r.json()); render(); }
+  try { const r = await fetch(versionedAsset(`data/questions/${id}.json`)); if (!r.ok) throw 0; details.set(id, await r.json()); render(); }
   catch { toast('静态文件读取失败，请重试。'); }
 }
 

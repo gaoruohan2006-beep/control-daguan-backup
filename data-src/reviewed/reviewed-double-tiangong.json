@@ -26,7 +26,7 @@
     ],
     "questionPages": "691",
     "answerPages": "1717",
-    "stem": "在线性弹簧、质量、黏性阻尼并联的平移系统中，质量 $M=1$，阻尼系数 $f=3$，刚度 $k=2$。位移 $x$ 从静平衡位置算起，外力 $F$ 与 $x$ 的正方向相同。\n\n（1）求运动微分方程。（2）在零初值下求 $X(s)/F(s)$。（3）给出一组对角型状态空间表达式。",
+    "stem": "在线性弹簧、质量、黏性阻尼并联的平移系统中，质量 $M=1$，阻尼系数 $f=3$，刚度 $k=2$。位移 $x$ 从静平衡位置算起，外力 $F$ 与 $x$ 的正方向相同。\n\n（1）求运动微分方程。（2）在零初值下求 $\\dfrac{X(s)}{F(s)}$。（3）给出一组对角型状态空间表达式。",
     "answer": "$\\ddot x+3\\dot x+2x=F$，$\\dfrac{X}{F}=\\dfrac{1}{(s+1)(s+2)}$。可取\n$$A=\\operatorname{diag}(-1,-2),\\quad B=\\begin{bmatrix}1\\\\1\\end{bmatrix},\\quad C=[1\\quad-1],\\quad D=0.$$",
     "explanation": "弹簧力和阻尼力分别是 $-kx,-f\\dot x$，由牛顿第二定律得到方程。零初值下作拉氏变换，得 $(s^2+3s+2)X=F$。将传递函数分解为 $\\dfrac{1}{s+1}-\\dfrac{1}{s+2}$，令两个状态分别满足 $\\dot z_1=-z_1+F,\\ \\dot z_2=-2z_2+F$，再取输出 $x=z_1-z_2$，即可读出矩阵。\n\n> **实单极点的对角实现。** 每个简单实极点对应一个一阶状态，部分分式的留数可放在输出矩阵中。",
     "notes": ""
@@ -42,7 +42,7 @@
     ],
     "questionPages": "695",
     "answerPages": "1725–1726",
-    "stem": "下图系统中，比较点的误差定义为 $E=R-kC$。调节时间按二阶系统 $5\\%$ 工程近似 $t_s\\approx3/(\\zeta\\omega_n)$ 计算。\n\n![含测速反馈与外环反馈系数的方框图](img/reviewed/double-tianguong-2025-feedback.svg)\n\n（1）$k=8,\\ \\zeta=0.75$，求单位阶跃下的 $t_s$ 和输出终值。（2）若 $t_s=0.875\\,\\mathrm{s}$，且单位斜坡下比较点稳态误差为 $0.25$，求 $\\alpha,k,\\zeta$。",
+    "stem": "下图系统中，比较点的误差定义为 $E=R-kC$。调节时间按二阶系统 $5\\%$ 工程近似 $t_s\\approx\\dfrac{3}{\\zeta\\omega_n}$ 计算。\n\n![含测速反馈与外环反馈系数的方框图](img/reviewed/double-tianguong-2025-feedback.svg)\n\n（1）$k=8,\\ \\zeta=0.75$，求单位阶跃下的 $t_s$ 和输出终值。（2）若 $t_s=0.875\\,\\mathrm{s}$，且单位斜坡下比较点稳态误差为 $0.25$，求 $\\alpha,k,\\zeta$。",
     "answer": "（1）$t_s\\approx1\\,\\mathrm{s}$，输出终值为 $\\dfrac{1}{8}$。（2）$\\alpha=\\dfrac{10}{7},\\ k=\\dfrac{96}{7},\\ \\zeta=\\dfrac{3}{\\sqrt{21}}\\approx0.655$。",
     "explanation": "在第二个求和点直接列式 $C=\\dfrac{2[R-(k+\\alpha s)C]}{s^2+4s}$，故闭环分母为 $s^2+(4+2\\alpha)s+2k$，有 $\\omega_n=\\sqrt{2k}$、$\\zeta\\omega_n=2+\\alpha$。第（1）问中 $\\omega_n=4$，故 $t_s\\approx1$，而闭环直流增益为 $\\dfrac{1}{k}$。\n\n第（2）问由 $\\dfrac{3}{2+\\alpha}=\\dfrac{7}{8}$ 得 $2+\\alpha=\\dfrac{24}{7}$。用 $\\dfrac{E}{R}=1-\\dfrac{kC}{R}$ 得\n$$\\frac{E}{R}=\\frac{s^2+(4+2\\alpha)s}{s^2+(4+2\\alpha)s+2k}.$$\n单位斜坡时 $R=\\dfrac{1}{s^2}$，因此 $e_{\\rm ss}=\\dfrac{2+\\alpha}{k}$，由此解得 $k$ 和 $\\zeta$。代回可见闭环分母系数为正，满足二阶稳定条件，可以使用终值定理。\n\n**回代验证两组结果。** 第（1）问由 $\\zeta\\omega_n=3$ 得 $\\alpha=1$，分母为 $s^2+6s+16$，终值是 $\\dfrac{2}{16}=\\dfrac{1}{8}$。第（2）问代回有 $\\dfrac{3}{2+\\alpha}=\\dfrac{7}{8}$，且 $\\dfrac{2+\\alpha}{k}=\\dfrac{1}{4}$。由 $\\omega_n=\\sqrt{192/7}$ 再算 $\\zeta=\\dfrac{24/7}{\\omega_n}=\\dfrac{3}{\\sqrt{21}}$。\n\n> **非单位外环先写误差定义。** 这里求和点误差是 $r-kc$。若题目改求 $r-c$，斜坡下可能需要比较两条直线的斜率。",
     "notes": "补充调节时间近似口径，并明确误差为比较点信号。"

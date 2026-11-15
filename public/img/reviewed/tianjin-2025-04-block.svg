@@ -70,11 +70,11 @@
 		</g>
 		<g id="shape11-28" v:mID="11" v:groupContext="shape" transform="translate(258.746,-87.4363)">
 			<title>工作表.11</title>
-			<desc>s²(s+2)</desc>
+			<desc>s²(s+3)</desc>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
 			<v:textRect cx="42.2544" cy="199.28" width="84.51" height="29.44"/>
 			<rect x="0" y="184.56" width="84.5088" height="29.44" class="st4"/>
-			<text x="16.42" y="204.8" class="st7" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>s²(s+2)</text>		</g>
+			<text x="16.42" y="204.8" class="st7" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>s²(s+3)</text>		</g>
 		<g id="shape12-31" v:mID="12" v:groupContext="shape" transform="translate(386,-115)">
 			<title>工作表.12</title>
 			<path d="M0 214 L148 214" class="st1"/>

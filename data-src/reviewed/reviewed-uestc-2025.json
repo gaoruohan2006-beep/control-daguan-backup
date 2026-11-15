@@ -7,7 +7,7 @@
     "topics": [
       "建模 / 方框图"
     ],
-    "stem": "已知图中各环节的传递函数 $G_1,G_2,G_3,G_4,H_1,H_2$。求闭环传递函数 $U_o(s)/U_i(s)$。\n\n![多环反馈系统](img/reviewed/uestc-2025-1-a.svg)",
+    "stem": "已知图中各环节的传递函数 $G_1,G_2,G_3,G_4,H_1,H_2$。求闭环传递函数 $\\dfrac{U_o(s)}{U_i(s)}$。\n\n![多环反馈系统](img/reviewed/uestc-2025-1-a.svg)",
     "answer": "令 $\\Delta=1+G_2H_1-G_1G_2H_1+G_2G_3H_2$，则\n$$\\frac{U_o}{U_i}=\\frac{G_1G_2G_3+(1+G_2H_1-G_1G_2H_1)G_4}{\\Delta}.$$",
     "explanation": "**解题思路** 多回路同时靠图形移动容易混淆符号。沿每个求和点写信号方程，先消去一个中间变量，再保留要求的输入和输出。\n\n**Step 1 · 沿箭头给中间信号命名** 令 $X$ 为 $G_2$ 的输出，记第一个、第二个加法点的输出为 $E_1,E_2$。图中 $H_1X$ 在第一个加法点取正号，在第二个取负号。$H_2U_o$ 在第二个加法点取负号，$G_4U_i$ 则直接加到输出。\n$$\\begin{aligned}\nE_1&=U_i+H_1X,\\\\\nE_2&=G_1E_1-H_1X-H_2U_o,\\\\\nX&=G_2E_2,\\qquad U_o=G_3X+G_4U_i.\n\\end{aligned}$$\n\n**Step 2 · 先消去 $U_o$，再求输出** 将 $E_1,E_2,U_o$ 代入 $X=G_2E_2$，把含 $X$ 的项移到左边，得\n$$\\Delta X=G_2(G_1-H_2G_4)U_i,$$\n$$\\Delta=1+G_2H_1-G_1G_2H_1+G_2G_3H_2.$$\n因此 $\\dfrac{U_o}{U_i}=G_4+\\dfrac{G_2G_3(G_1-H_2G_4)}{\\Delta}$。通分后，分子中 $G_2G_3H_2G_4$ 与 $-G_2G_3H_2G_4$ 抵消，得到答案中的表达式。\n\n**Step 3 · 用特例核对** 令 $H_1=H_2=0$，可得 $\\dfrac{U_o}{U_i}=G_1G_2G_3+G_4$，正好是图中两条前向路径的传递函数之和。",
     "questionPages": "56",
@@ -154,8 +154,8 @@
       "时域分析 / 二阶系统",
       "时域分析 / 稳态误差"
     ],
-    "stem": "设\n$$\\dot x=\\begin{bmatrix}0&1\\\\0&-1\\end{bmatrix}x+\\begin{bmatrix}0\\\\2\\end{bmatrix}u,\\qquad\ny=\\begin{bmatrix}1&0\\end{bmatrix}x,\\qquad v=-kx+u.$$\n假设系统可观测，设计一个 $k$，使稳态误差 $e=y-v=0$，超调量小于 $\\mathrm e\\%$。（$\\ln100=4.6,\\ \\sqrt{0.57}=0.75$。）",
-    "answer": "把 $v$ 作为单位阶跃参考输入，按题面约定 $u=v+kx$，可取 $k=[-1,\\,-0.6]$。",
+    "stem": "设\n$$\\dot x=\\begin{bmatrix}0&1\\\\0&-1\\end{bmatrix}x+\\begin{bmatrix}0\\\\2\\end{bmatrix}u,\\qquad\ny=\\begin{bmatrix}1&0\\end{bmatrix}x,\\qquad v=-kx+u.$$\n取零初始状态和单位阶跃参考输入 $v(t)=1(t)$。设计一组状态反馈增益 $k$，使 $e(t)=y(t)-v(t)$ 的稳态值为零，且输出的百分比超调量小于 $\\mathrm e\\%$（约 $2.718\\%$）。",
+    "answer": "由反馈关系得 $u=v+kx$，可取 $k=[-1,\\,-0.6]$。",
     "explanation": "令 $k=[k_1,k_2]$，从 $v$ 到 $y$ 的闭环传递函数为\n$$\\frac{Y}{V}=\\frac{2}{s^2+(1-2k_2)s-2k_1}.$$\n闭环稳定时，单位阶跃稳态增益为 $-\\dfrac{1}{k_1}$，因此取 $k_1=-1$。选择 $k_2=-0.6$，可得 $\\omega_n=\\sqrt2$、$\\zeta=\\dfrac{2.2}{2\\sqrt2}\\simeq0.7778$。计算超调量 $100\\exp[-\\pi\\zeta/\\sqrt{1-\\zeta^2}]\\simeq2.04\\%<\\mathrm e\\%$。",
     "questionPages": "58",
     "answerPages": "116–117",

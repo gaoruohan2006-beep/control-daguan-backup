@@ -10,7 +10,7 @@
     ],
     "questionPages": "760",
     "answerPages": "1870–1871",
-    "stem": "单位负反馈系统的前向通道由 $K/s$ 和 $1/(s+1)$ 串联，在前向通道入口另扣除输出的测速反馈 $\\tau sC$。也就是前向输入为 $R-C-\\tau sC$。\n\n（1）求 $C/R$。（2）当 $\\zeta=0.5,\\ \\omega_n=2\\,\\mathrm{rad/s}$ 时，求 $K,\\tau$。（3）求此时单位阶跃的超调量及 $2\\%$ 工程近似调节时间。",
+    "stem": "单位负反馈系统的前向通道由 $K/s$ 和 $\\dfrac{1}{s+1}$ 串联，在前向通道入口另扣除输出的测速反馈 $\\tau sC$。也就是前向输入为 $R-C-\\tau sC$。\n\n（1）求 $C/R$。（2）当 $\\zeta=0.5,\\ \\omega_n=2\\,\\mathrm{rad/s}$ 时，求 $K,\\tau$。（3）求此时单位阶跃的超调量及 $2\\%$ 工程近似调节时间。",
     "answer": "$\\Phi=\\dfrac{K}{s^2+(1+K\\tau)s+K}$。$K=4,\\ \\tau=\\dfrac{1}{4}$。超调量为 $100e^{-\\pi/\\sqrt3}\\%\\approx16.30\\%$，$t_s\\approx4\\,\\mathrm{s}$。",
     "explanation": "**（1）列反馈关系。** 设 $C$ 为输出的拉氏变换。把求和点信号 $R-C-\\tau sC$ 代入前向通道，整理为\n$$[s^2+(1+K\\tau)s+K]C=KR.$$\n\n**（2）匹配标准二阶分母。** 与 $s^2+2\\zeta\\omega_ns+\\omega_n^2$ 比较，得 $K=\\omega_n^2=4$，$1+K\\tau=2\\zeta\\omega_n=2$，因此 $\\tau=\\frac14$。\n\n**（3）算超调与调节时间。** 此时分子为常数，直流增益为 $1$，闭环为标准欠阻尼二阶系统。阻尼振荡频率是 $\\omega_d=\\omega_n\\sqrt{1-\\zeta^2}=\\sqrt3\\,\\mathrm{rad/s}$，第一峰出现在 $t_p=\\frac{\\pi}{\\omega_d}$。所以\n$$M_p=\\exp\\left(-\\frac{\\pi\\zeta}{\\sqrt{1-\\zeta^2}}\\right)=e^{-\\pi/\\sqrt3}.$$\n百分比超调约为 $16.30\\%$。题设采用 $2\\%$ 工程近似，故 $t_s\\approx\\frac{4}{\\zeta\\omega_n}=4\\,\\mathrm{s}$。按误差带精确定义计算时，应求响应最后一次穿过误差带边界的时刻。",
     "notes": ""
@@ -26,9 +26,9 @@
     ],
     "questionPages": "764",
     "answerPages": "1880",
-    "stem": "已知超前网络 $G_c(s)=(Ts+1)/(\\alpha Ts+1)$，$T>0,\\ 0<\\alpha<1$。证明最大超前角出现在两转折频率的几何平均处，并求该频率、最大超前角。",
+    "stem": "已知超前网络 $G_c(s)=\\dfrac{Ts+1}{\\alpha Ts+1}$，$T>0,\\ 0<\\alpha<1$。证明最大超前角出现在两转折频率的几何平均处，并求该频率、最大超前角。",
     "answer": "$\\omega_m=\\dfrac{1}{T\\sqrt\\alpha}$，$\\varphi_m=\\arcsin[(1-\\alpha)/(1+\\alpha)]$。",
-    "explanation": "对正频率，超前相角为 $\\varphi(\\omega)=\\arctan(T\\omega)-\\arctan(\\alpha T\\omega)$。由正切差角式，\n$$\\tan\\varphi=\\frac{(1-\\alpha)T\\omega}{1+\\alpha T^2\\omega^2}.$$\n令 $x=T\\omega$，导数符号由 $1-\\alpha x^2$ 决定。因此唯一极大值出现在 $x=1/\\sqrt\\alpha$。零、极点转折频率为 $\\dfrac{1}{T},\\dfrac{1}{\\alpha T}$，几何平均正好为 $\\omega_m$。代回得 $\\tan\\varphi_m=(1-\\alpha)/(2\\sqrt\\alpha)$，即所给正弦式。\n\n> **校正设计中同时读幅值。** 在 $\\omega_m$ 处 $|G_c|=1/\\sqrt\\alpha$，可和剪切频率的补幅要求一并使用。",
+    "explanation": "对正频率，超前相角为 $\\varphi(\\omega)=\\arctan(T\\omega)-\\arctan(\\alpha T\\omega)$。由正切差角式，\n$$\\tan\\varphi=\\frac{(1-\\alpha)T\\omega}{1+\\alpha T^2\\omega^2}.$$\n令 $x=T\\omega$，导数符号由 $1-\\alpha x^2$ 决定。因此唯一极大值出现在 $x=1/\\sqrt\\alpha$。零、极点转折频率为 $\\dfrac{1}{T},\\dfrac{1}{\\alpha T}$，几何平均正好为 $\\omega_m$。代回得 $\\tan\\varphi_m=\\dfrac{1-\\alpha}{2\\sqrt\\alpha}$，即所给正弦式。\n\n> **校正设计中同时读幅值。** 在 $\\omega_m$ 处 $|G_c|=1/\\sqrt\\alpha$，可和剪切频率的补幅要求一并使用。",
     "notes": "科目代码按题本页眉 811，答案册页眉印作 834。"
   },
   {
@@ -42,7 +42,7 @@
     ],
     "questionPages": "766",
     "answerPages": "1884",
-    "stem": "开环传递函数为 $G(s)=50(s-2)/(s^2+11s+10)$。求正的增益交越频率，写出各频段的幅频渐近斜率，并绘制对数幅频渐近线。",
+    "stem": "开环传递函数为 $G(s)=\\dfrac{50(s-2)}{s^2+11s+10}$。求正的增益交越频率，写出各频段的幅频渐近斜率，并绘制对数幅频渐近线。",
     "answer": "$$\\begin{aligned}\\omega_c&=\\sqrt{\\frac{2399+\\sqrt{2399^2+39600}}{2}}\\\\\n&\\approx49.02\\,\\mathrm{rad/s}.\\end{aligned}$$\n\n转折频率 $1,2,10\\,\\mathrm{rad/s}$，各段斜率为 $0,-20,0,-20\\,\\mathrm{dB/dec}$。",
     "explanation": "**解题思路** 交越频率用精确幅值求，作近似图才用转折频率和斜率。右半平面零点的幅值贡献与对称的左半平面零点相同。\n\n分解 $G=-\\dfrac{10(1-s/2)}{(1+s)(1+s/10)}$。低频幅值为 $20\\,\\mathrm{dB}$。首个极点使斜率下降 $20\\,\\mathrm{dB/dec}$；零点使其回到零；最后一极点使其再降到 $-20\\,\\mathrm{dB/dec}$，平台为 $20-20\\log_{10}2\\approx13.98\\,\\mathrm{dB}$。精确幅值条件是\n$$2500(\\omega^2+4)=(\\omega^2+1)(\\omega^2+100).$$\n令 $x=\\omega^2$ 得 $x^2-2399x-9900=0$，只有一个正根。\n\n![对数幅频折线及精确交越频率](img/reviewed/double-ecjtu-2025-bode.svg)\n\n> **幅值和相位分别看。** 因子 $1-\\dfrac{s}{2}$ 和 $1+\\dfrac{s}{2}$ 幅值相同，前者提供相位滞后，后者提供相位超前。",
     "notes": ""

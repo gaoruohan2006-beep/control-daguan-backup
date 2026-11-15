@@ -10,7 +10,7 @@
     ],
     "questionPages": "604",
     "answerPages": "1500",
-    "stem": "给定 $G(s)=(s+1)/(s^3+10s^2+27s+18)$，分别写出能控标准型和能观标准型。",
+    "stem": "给定 $G(s)=\\dfrac{s+1}{s^3+10s^2+27s+18}$，分别写出能控标准型和能观标准型。",
     "answer": "保留题给三阶分母时，能控标准型可取\n$$A_c=\\begin{bmatrix}0&1&0\\\\0&0&1\\\\-18&-27&-10\\end{bmatrix},\\quad B_c=(0,0,1)^{\\mathsf T},\\quad C_c=[1\\quad1\\quad0],\\quad D=0.$$\n能观标准型为 $A_o=A_c^{\\mathsf T}, B_o=C_c^{\\mathsf T}, C_o=B_c^{\\mathsf T}$，$D=0$。",
     "explanation": "由伴随矩阵可得 $(sI-A_c)^{-1}B_c=\\dfrac{(1,s,s^2)^{\\mathsf T}}{s^3+10s^2+27s+18}$，与 $C_c$ 相乘即为所求。SISO 的转置把能控标准型变为对偶的能观标准型，同时保持传递函数。\n\n题给分母可分解为 $(s+1)(s+3)(s+6)$，所以有一个零极点对消。题给分母下的能控型存在不可观模态，对偶能观型存在不可控模态；若要求最小实现，则先约分为 $\\dfrac{1}{(s+3)(s+6)}$，再按二阶分母构造。",
     "notes": ""
@@ -76,7 +76,7 @@
     "answerPages": "1531–1532",
     "stem": "系统为\n$$A=\\begin{bmatrix}1&0&0\\\\0&2&1\\\\0&0&2\\end{bmatrix},\\quad B=(1,0,1)^{\\mathsf T},\\quad C=[1\\quad1\\quad0].$$\n（1）建立能控标准型。（2）设计全维观测器，使估计误差极点为 $-3,-4,-5$。",
     "answer": "可取 $x=Tz$，$T=\\begin{bmatrix}4&-4&1\\\\-1&1&0\\\\2&-3&1\\end{bmatrix}$，得\n$$A_c=\\begin{bmatrix}0&1&0\\\\0&0&1\\\\4&-8&5\\end{bmatrix},\\quad B_c=(0,0,1)^{\\mathsf T},\\quad C_c=[3\\quad-3\\quad1].$$\n在原坐标下取 $\\dot{\\hat x}=A\\hat x+Bu+L(y-C\\hat x)$，$L=[120\\quad-103\\quad210]^{\\mathsf T}$。",
-    "explanation": "原系统特征多项式为 $s^3-5s^2+8s-4$。用 $T=[A^2B-5AB+8B,\\ AB-5B,\\ B]$，得 $T^{-1}AT,T^{-1}B,CT$ 如上。原坐标的能观矩阵行列式为 $1$，可以任意配置观测器误差极点。令 $L=(l_1,l_2,l_3)^{\\mathsf T}$，可把 $\\det(sI-A+LC)$ 写成 $(s-1)(s-2)^2+l_1(s-2)^2+l_2(s-1)(s-2)+l_3(s-1)$。与 $(s+3)(s+4)(s+5)$ 比较系数，得所列 $L$。",
+    "explanation": "原系统特征多项式为 $s^3-5s^2+8s-4$。用 $T=[A^2B-5AB+8B,\\ AB-5B,\\ B]$，得 $T^{-1}AT,T^{-1}B,CT$ 如上。原坐标的能观矩阵行列式为 $1$，可以任意配置观测器误差极点。令 $L=(l_1,l_2,l_3)^{\\mathsf T}$，观测误差的特征多项式为 $$\\begin{aligned}\n\\det(sI-A+LC)={}&(s-1)(s-2)^2+l_1(s-2)^2\\\\\n&+l_2(s-1)(s-2)+l_3(s-1).\n\\end{aligned}$$与 $(s+3)(s+4)(s+5)$ 比较系数，得所列 $L$。",
     "notes": ""
   }
 ]

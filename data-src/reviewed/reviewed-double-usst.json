@@ -42,7 +42,7 @@
     ],
     "questionPages": "733",
     "answerPages": "1818",
-    "stem": "系统开环传递函数为 $G(s)=(2s+1)/[s(s+1)]$。求 $\\omega>0$ 时的幅频、相频特性。",
+    "stem": "系统开环传递函数为 $G(s)=\\dfrac{2s+1}{s(s+1)}$。求 $\\omega>0$ 时的幅频、相频特性。",
     "answer": "$$\\begin{aligned}|G(j\\omega)|&=\\frac{\\sqrt{1+4\\omega^2}}{\\omega\\sqrt{1+\\omega^2}},\\\\\n\\angle G(j\\omega)&=\\arctan(2\\omega)-90^\\circ-\\arctan\\omega.\\end{aligned}$$",
     "explanation": "将 $s$ 换为 $j\\omega$。分子 $1+j2\\omega$ 提供模 $\\sqrt{1+4\\omega^2}$ 和超前角 $\\arctan(2\\omega)$。分母的 $j\\omega$ 和 $1+j\\omega$ 分别使整体相位扣除 $90^\\circ$、$\\arctan\\omega$。低频时幅值约为 $\\dfrac{1}{\\omega}$，高频时约为 $\\dfrac{2}{\\omega}$，可作为式子的端点校验。\n\n**按因子分别取模、取角。** 令 $s=j\\omega$ 后有\n$$G(j\\omega)=\\frac{1+j2\\omega}{j\\omega(1+j\\omega)}.$$\n对 $\\omega>0$，三个因子的辐角分别在第一象限、正虚轴和第一象限上，因此按分子的角减去两个分母因子的角即可。高低频的相位极限均为 $-90^\\circ$，中间频段的差值 $\\arctan(2\\omega)-\\arctan\\omega$ 为正。",
     "notes": ""
