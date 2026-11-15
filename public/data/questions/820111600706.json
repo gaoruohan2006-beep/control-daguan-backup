@@ -1,8 +1,0 @@
-{
-  "answer": "$$G(s)=\\frac{10}{s+0.2}+\\frac5{s+0.5}=\\frac{15s+6}{(s+0.2)(s+0.5)}.$$",
-  "explanation": "输入是 $\\delta(t)$，其拉氏变换为 $1$，故输出变换就是传递函数。用 $\\mathcal L\\{e^{-at}1(t)\\}=\\frac1{s+a}$ 分别计算两项。通分时分子为 $10(s+0.5)+5(s+0.2)=15s+6$。直流增益 $\\frac{15\\cdot0+6}{0.2\\cdot0.5}=60$，与两个指数项积分之和一致。",
-  "originalImages": [],
-  "answerPdfPages": "13–14",
-  "referenceNote": "",
-  "sourceType": "practice"
-}

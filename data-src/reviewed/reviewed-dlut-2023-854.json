@@ -10,7 +10,7 @@
     "questionPages": "93",
     "answerPages": "213",
     "stem": "质量为 $m$ 的小车受牵引力 $u(t)$，阻力为 $bv(t)$，位移为 $s(t)$、速度为 $v(t)$。分别列出牵引力与位移、牵引力与速度之间的微分方程。取 $x=[s,v]^\\mathsf T$、$y=s$ 写出状态空间模型。若牵引力保持为 $u_0$，求稳态速度。",
-    "answer": "$m\\ddot s+b\\dot s=u$，$m\\dot v+bv=u$；$v(\\infty)=\\dfrac{u_0}{b}$（$b>0$）。",
+    "answer": "$m\\ddot s+b\\dot s=u$，$m\\dot v+bv=u$；$v(\\infty)=\\dfrac{u_0}{b}$（$b>0$）。\n\n状态空间模型为\n$$\\dot x=\\begin{bmatrix}0&1\\\\0&-b/m\\end{bmatrix}x+\n\\begin{bmatrix}0\\\\1/m\\end{bmatrix}u.$$\n$$y=[1\\quad0]x.$$",
     "explanation": "取牵引方向为正，牛顿第二定律给出 $m\\dot v=u-bv$，再用 $\\dot s=v$ 得位移方程。状态方程为\n$$\\dot x=\\begin{bmatrix}0&1\\\\0&-b/m\\end{bmatrix}x+\\begin{bmatrix}0\\\\1/m\\end{bmatrix}u,\\quad y=\\begin{bmatrix}1&0\\end{bmatrix}x.$$\n常值牵引时 $v(t)=\\dfrac{u_0}{b}+[v(0)-u_0/b]e^{-bt/m}$。当 $b>0$ 时，指数项衰减，速度收敛。",
     "notes": ""
   },

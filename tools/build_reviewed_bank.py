@@ -151,7 +151,7 @@ PRACTICE_CHAPTERS = {
 PRACTICE_KINDS = ("选择题", "填空题", "判断题", "简答题", "分析题")
 
 
-def load_practice(ids, detail_rows):
+def load_practice(ids, aliases, detail_rows):
     rows = []
     paths = {}
     source = ROOT / "data-src" / "practice"
@@ -165,7 +165,11 @@ def load_practice(ids, detail_rows):
             identity = (volume, chapter, kind, number)
             assert volume in {"A", "B"} and chapter > 0 and kind in PRACTICE_KINDS and number > 0, identity
             identifier = question_id([PRACTICE_TITLE, *identity])
-            assert identifier not in ids, identity
+            assert identifier not in ids and identifier not in aliases, identity
+            if target := card.get("sameAs"):
+                assert target != identifier, identity
+                aliases[identifier] = target
+                continue
             ids.add(identifier)
             stem, answer, explanation = [card[k].strip() for k in ("stem", "answer", "explanation")]
             assert all((stem, answer, explanation, origin, card["questionPages"], card["answerPages"])), identity
@@ -237,8 +241,9 @@ def build():
                 referenceNote=card.get("notes", ""), sourceType="reviewed",
             )
 
-    practice, practice_paths = load_practice(ids, detail_rows)
+    practice, practice_paths = load_practice(ids, aliases, detail_rows)
     assert not ids.intersection(aliases), "A merged question is still present as its own card"
+    assert set(aliases.values()) <= ids, "A merged question's retained card is missing"
     for identifier, detail in detail_rows.items():
         write_json(detail_dir / f"{identifier}.json", detail)
     for path in detail_dir.glob("*.json"):
