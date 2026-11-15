@@ -1,0 +1,8 @@
+{
+  "answer": "A",
+  "explanation": "零初始条件下微分方程的拉氏变换不含初值项，得到 $D(s)Y(s)=N(s)U(s)$，从而 $G(s)=N(s)/D(s)$。零输入时研究的是初始状态引起的响应。阶跃等试验信号可用于辨识传递特性，但定义并不限定输入信号。",
+  "originalImages": [],
+  "answerPdfPages": "1557",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

@@ -1,0 +1,8 @@
+{
+  "answer": "$\\omega_m=1/(T\\sqrt\\alpha)$，$\\varphi_m=\\arcsin[(1-\\alpha)/(1+\\alpha)]$。",
+  "explanation": "对正频率，超前相角为 $\\varphi(\\omega)=\\arctan(T\\omega)-\\arctan(\\alpha T\\omega)$。由正切差角式，\n$$\\tan\\varphi=\\frac{(1-\\alpha)T\\omega}{1+\\alpha T^2\\omega^2}.$$\n令 $x=T\\omega$，导数符号由 $1-\\alpha x^2$ 决定。因此唯一极大值出现在 $x=1/\\sqrt\\alpha$。零、极点转折频率为 $1/T,1/(\\alpha T)$，几何平均正好为 $\\omega_m$。代回得 $\\tan\\varphi_m=(1-\\alpha)/(2\\sqrt\\alpha)$，即所给正弦式。\n\n> **校正设计中同时读幅值。** 在 $\\omega_m$ 处 $|G_c|=1/\\sqrt\\alpha$，可和剪切频率的补幅要求一并使用。",
+  "originalImages": [],
+  "answerPdfPages": "1880",
+  "referenceNote": "科目代码按题本页眉 811，答案册页眉印作 834。",
+  "sourceType": "reviewed"
+}

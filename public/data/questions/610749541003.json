@@ -1,0 +1,8 @@
+{
+  "answer": "$\\omega_c=\\sqrt{[2399+\\sqrt{2399^2+39600}]/2}\\approx49.02\\,\\mathrm{rad/s}$。转折频率 $1,2,10\\,\\mathrm{rad/s}$，各段斜率为 $0,-20,0,-20\\,\\mathrm{dB/dec}$。",
+  "explanation": "**解题思路** 交越频率用精确幅值求，作近似图才用转折频率和斜率。右半平面零点的幅值贡献与对称的左半平面零点相同。\n\n分解 $G=-10(1-s/2)/[(1+s)(1+s/10)]$。低频幅值为 $20\\,\\mathrm{dB}$。首个极点使斜率下降 $20\\,\\mathrm{dB/dec}$；零点使其回到零；最后一极点使其再降到 $-20\\,\\mathrm{dB/dec}$，平台为 $20-20\\log_{10}2\\approx13.98\\,\\mathrm{dB}$。精确幅值条件是\n$$2500(\\omega^2+4)=(\\omega^2+1)(\\omega^2+100).$$\n令 $x=\\omega^2$ 得 $x^2-2399x-9900=0$，只有一个正根。\n\n![对数幅频折线及精确交越频率](img/reviewed/double-ecjtu-2025-bode.svg)\n\n> **幅值和相位分别看。** 因子 $1-s/2$ 和 $1+s/2$ 幅值相同，前者提供相位滞后，后者提供相位超前。",
+  "originalImages": [],
+  "answerPdfPages": "1884",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

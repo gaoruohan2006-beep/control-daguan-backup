@@ -1,0 +1,50 @@
+[
+  {
+    "school": "浙江工业大学",
+    "tier": "双非",
+    "year": 2023,
+    "variant": "828",
+    "number": "七",
+    "topics": [
+      "状态空间 / 状态转移"
+    ],
+    "questionPages": "644",
+    "answerPages": "1606",
+    "stem": "设 $\\dot x=\\begin{bmatrix}0&2\\\\2&-3\\end{bmatrix}x+\\begin{bmatrix}0\\\\1\\end{bmatrix}u,\\ y=[1\\quad0]x$。\n\n（1）求 $Y(s)/U(s)$。（2）判断原点是否渐近稳定。（3）若 $x(0)=(1,-1)^{\\mathsf T}$ 且输入为单位阶跃，求 $x(t)$。",
+    "answer": "（1）$2/[(s-1)(s+4)]$。（2）不稳定。（3）\n$$x(t)=\\begin{bmatrix}\n-\\frac12+\\frac45e^t+\\frac7{10}e^{-4t}\\\\\n\\frac25e^t-\\frac75 e^{-4t}\n\\end{bmatrix}.$$",
+    "explanation": "在零初值下，第一条状态方程给出 $sx_1=2x_2$（这里用小写表示状态的拉氏变换）。消去 $x_2$ 得 $Y/U=2/(s^2+3s-4)$。状态矩阵的特征值为 $1,-4$，故原点不稳定。\n\n阶跃作用下先解 $Ax_*+B=0$，得 $x_*=(-1/2,0)^{\\mathsf T}$。平移变量 $z=x-x_*$ 后满足 $\\dot z=Az$。按两个特征向量分解 $z(0)$，得到 $z(t)=\\tfrac45 e^t(1,1/2)^{\\mathsf T}+\\tfrac7{10}e^{-4t}(1,-2)^{\\mathsf T}$，再加回 $x_*$。\n\n> **恒值输入可先平移。** 若 $A$ 可逆，$x(t)=x_*+e^{At}[x(0)-x_*]$。$x_*$ 是平衡点，轨迹是否向它收敛还由 $A$ 的稳定性决定。",
+    "notes": ""
+  },
+  {
+    "school": "浙江工业大学",
+    "tier": "双非",
+    "year": 2024,
+    "variant": "828",
+    "number": "七",
+    "topics": [
+      "状态空间 / 状态转移"
+    ],
+    "questionPages": "648",
+    "answerPages": "1612–1613",
+    "stem": "某二阶系统 $\\dot x=Ax+Bu$ 的两条零输入响应为\n$$x^{(1)}(t)=\\begin{bmatrix}(\\alpha+1)e^{-t}-(\\beta+1)e^{-3t}\\\\-3e^{-t}+(\\alpha+\\gamma)e^{-3t}\\end{bmatrix},$$\n$$x^{(2)}(t)=\\begin{bmatrix}(2\\alpha+1)e^{-t}-(\\beta+2)e^{-3t}\\\\-5e^{-t}+(\\alpha+2\\gamma)e^{-3t}\\end{bmatrix},$$\n对应初态 $(1,1)^{\\mathsf T}$ 和 $(2,1)^{\\mathsf T}$。\n\n（1）求 $\\alpha,\\beta,\\gamma$。（2）求 $A$ 和 $e^{At}$。（3）设 $B=(0,1)^{\\mathsf T}$，求单位阶跃下的零状态响应。",
+    "answer": "$(\\alpha,\\beta,\\gamma)=(2,1,2)$，$A=\\begin{bmatrix}1&2\\\\-4&-5\\end{bmatrix}$。令 $a=e^{-t},b=e^{-3t}$，有\n$$e^{At}=\\begin{bmatrix}2a-b&a-b\\\\-2a+2b&-a+2b\\end{bmatrix}.$$\n零状态响应为 $\\bigl(1-a-(1-b)/3,\\;-(1-a)+2(1-b)/3\\bigr)^{\\mathsf T}$。",
+    "explanation": "**解题思路** 初值先定常数，两条独立初态再确定状态转移矩阵的两列。求到矩阵后，只需积分它乘以 $B$ 的结果。\n\n把 $t=0$ 代入，第一分量给出 $\\alpha-\\beta=1,\\ 2\\alpha-\\beta=3$，第二分量给出 $\\alpha+\\gamma=4,\\ \\alpha+2\\gamma=6$。解得上述参数。由于 $(2,1)-(1,1)=(1,0)$，状态转移矩阵第一列是 $x^{(2)}-x^{(1)}$；第二列是 $2x^{(1)}-x^{(2)}$。将两列在 $t=0$ 求导得到 $A$。对单位阶跃，$x(t)=\\int_0^t e^{A\\tau}B\\,d\\tau$，逐项积分第二列即得答案。\n\n> **多条自由响应反求系统。** 若初态列组成可逆矩阵 $X_0$，直接用 $\\Phi(t)=X(t)X_0^{-1}$ 及 $A=\\dot X(0)X_0^{-1}$。",
+    "notes": ""
+  },
+  {
+    "school": "浙江工业大学",
+    "tier": "双非",
+    "year": 2025,
+    "variant": "828",
+    "number": "七",
+    "topics": [
+      "状态空间 / 状态转移"
+    ],
+    "questionPages": "652",
+    "answerPages": "1620–1621",
+    "stem": "设 $\\dot x=\\begin{bmatrix}0&1\\\\-2&-3\\end{bmatrix}x+\\begin{bmatrix}0\\\\1\\end{bmatrix}u,\\ y=[-1\\quad1]x$。\n\n（1）求传递函数。（2）求状态转移矩阵。（3）设 $x(0)=(-1,1)^{\\mathsf T}$，求在单位阶跃下的状态响应。（4）用李雅普诺夫第二法分析平衡点的渐近稳定性。",
+    "answer": "$Y/U=(s-1)/[(s+1)(s+2)]$。记 $a=e^{-t},b=e^{-2t}$，有\n$$e^{At}=\\begin{bmatrix}2a-b&a-b\\\\-2a+2b&-a+2b\\end{bmatrix},\\qquad\nx(t)=\\begin{bmatrix}\\tfrac12-2a+\\tfrac12b\\\\2a-b\\end{bmatrix}.$$\n平衡点全局渐近稳定。",
+    "explanation": "零初值下第一条方程给出 $X_2=sX_1$，第二条给出 $X_1/U=1/(s^2+3s+2)$，故 $Y=(s-1)X_1$。由不同特征值 $-1,-2$ 的谱投影可写 $\\Phi(t)=(A+2I)a-(A+I)b$。单位阶跃下 $Ax_*+B=0$，得 $x_*=(1/2,0)^{\\mathsf T}$，用 $x(t)=x_*+\\Phi(t)(x(0)-x_*)$ 即得响应。\n\n取偏差 $z=x-x_*$ 及 $V=2z_1^2+z_2^2$，有 $\\dot V=-6z_2^2$。若轨迹恒有 $z_2=0$，还须 $\\dot z_2=-2z_1=0$，故最大不变集仅原点。由 LaSalle 原理得到偏差全局趋于零。零输入平衡原点的论证相同。\n\n> **二阶不同根直接套谱投影。** 若 $A$ 有不同特征值 $\\lambda_1,\\lambda_2$，则 $e^{At}$ 是 $I,A$ 的一次组合，可用在这两个特征值处插值求系数。",
+    "notes": ""
+  }
+]

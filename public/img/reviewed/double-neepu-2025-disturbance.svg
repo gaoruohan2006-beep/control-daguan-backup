@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 592 171" width="592" height="171" role="img" aria-labelledby="title">
+<title id="title">含 PI 环节与对象输入扰动的方框图</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 1L10 5 0 9z" fill="context-stroke"/></marker></defs>
+<style>
+.wire,.part,.axis,.guide,.curve,.curve2{stroke:#18222b;stroke-width:1.65;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.part{fill:#fff}.axis{stroke:#627284;stroke-width:1.4}.guide{stroke:#8794a1;stroke-dasharray:5 5;stroke-width:1.2}
+.curve{stroke:#174c85;stroke-width:2.2}.curve2{stroke:#487298;stroke-width:1.8;stroke-dasharray:5 4}
+.dot{fill:#18222b}.math,.plain{font:16px "Times New Roman","SimSun",serif;fill:#18222b}
+.plain{font-family:"SimSun","Noto Serif CJK SC",serif}.small{font:14px "Times New Roman","SimSun",serif;fill:#18222b}
+</style>
+<rect width="100%" height="100%" fill="#fff"/>
+<text x="36" y="56" class="math" text-anchor="middle">R(s)</text>
+<polyline class="wire" points="22.00,75.00 83.00,75.00" marker-end="url(#arrow)"/>
+<circle cx="93" cy="75" r="10" class="part"/>
+<polyline class="wire" points="87.00,69.00 99.00,81.00"/>
+<polyline class="wire" points="87.00,81.00 99.00,69.00"/>
+<text x="74" y="68" class="math" text-anchor="middle">+</text>
+<text x="106" y="100" class="math" text-anchor="middle">−</text>
+<polyline class="wire" points="103.00,75.00 145.00,75.00" marker-end="url(#arrow)"/>
+<rect x="145" y="52" width="70" height="46" class="part"/>
+<text x="180.0" y="69" class="math" text-anchor="middle">s + a</text>
+<polyline class="wire" points="153.00,75.00 207.00,75.00"/>
+<text x="180.0" y="92" class="math" text-anchor="middle">s</text>
+<polyline class="wire" points="215.00,75.00 253.00,75.00" marker-end="url(#arrow)"/>
+<text x="123" y="56" class="math" text-anchor="middle">E(s)</text>
+<circle cx="263" cy="75" r="10" class="part"/>
+<polyline class="wire" points="257.00,69.00 269.00,81.00"/>
+<polyline class="wire" points="257.00,81.00 269.00,69.00"/>
+<text x="244" y="67" class="math" text-anchor="middle">+</text>
+<text x="263" y="20" class="math" text-anchor="middle">N(s)</text>
+<polyline class="wire" points="263.00,28.00 263.00,65.00" marker-end="url(#arrow)"/>
+<text x="278" y="52" class="math" text-anchor="middle">+</text>
+<polyline class="wire" points="273.00,75.00 332.00,75.00" marker-end="url(#arrow)"/>
+<rect x="332" y="52" width="116" height="46" class="part"/>
+<text x="390.0" y="69" class="math" text-anchor="middle">k(s + 3)</text>
+<polyline class="wire" points="340.00,75.00 440.00,75.00"/>
+<text x="390.0" y="92" class="math" text-anchor="middle">s² − 1</text>
+<polyline class="wire" points="448.00,75.00 560.00,75.00" marker-end="url(#arrow)"/>
+<text x="548" y="56" class="math" text-anchor="middle">C(s)</text>
+<circle cx="503" cy="75" r="3" class="dot"/>
+<polyline class="wire" points="503.00,75.00 503.00,124.00 93.00,124.00"/>
+<polyline class="wire" points="93.00,124.00 93.00,85.00" marker-end="url(#arrow)"/>
+</svg>

@@ -1,0 +1,8 @@
+{
+  "answer": "C",
+  "explanation": "设极点为 $-\\sigma\\pm j\\omega_d$，射线夹角为 $\\theta$。移动时 $\\zeta=\\sigma/\\sqrt{\\sigma^2+\\omega_d^2}=\\cos\\theta$ 固定，故 $M_p=\\exp[-\\pi\\zeta/\\sqrt{1-\\zeta^2}]$ 不变。极点沿射线远离原点时，$\\omega_d$ 增大，峰值时间 $\\pi/\\omega_d$ 缩短。\n\n> **极点几何读图。** 同一阻尼比对应从原点出发的固定夹角射线。闭环含零点时，超调量还受分子影响。",
+  "originalImages": [],
+  "answerPdfPages": "1695",
+  "referenceNote": "用射线夹角替代示意图，并明确标准无零点二阶模型。",
+  "sourceType": "reviewed"
+}

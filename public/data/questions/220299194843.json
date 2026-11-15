@@ -1,0 +1,8 @@
+{
+  "answer": "闭环不稳定，有两个右半平面极点。",
+  "explanation": "闭环多项式为 $D=s^4+s^3+3s^2+3s+7$。$s^4$ 行为 $(1,3,7)$，$s^3$ 行为 $(1,3,0)$，故 $s^2$ 行为 $(0,7,0)$，只有首项为零。用 $\\varepsilon>0$ 替换，劳斯首列变成\n$$1,\\quad1,\\quad\\varepsilon,\\quad3-7/\\varepsilon,\\quad7.$$\n当 $\\varepsilon$ 充分小时，符号序列是 $+,+,+,-,+$，有两次变化。另可代 $s=j\\omega$，虚部为 $\\omega(3-\\omega^2)$，其零点处实部均为 $7$，没有虚轴根。\n\n> **零首项与全零行的处理不同。** 同行其余项非零时采用正无穷小；整行全零才用上一行构造的辅助多项式求导。",
+  "originalImages": [],
+  "answerPdfPages": "汇编无对应参考答案，按题面独立推导",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

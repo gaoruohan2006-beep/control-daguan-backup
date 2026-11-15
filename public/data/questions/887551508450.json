@@ -1,0 +1,8 @@
+{
+  "answer": "$|G(j\\omega)|=\\sqrt{1+4\\omega^2}/(\\omega\\sqrt{1+\\omega^2})$，$\\angle G(j\\omega)=\\arctan(2\\omega)-90^\\circ-\\arctan\\omega$。",
+  "explanation": "将 $s$ 换为 $j\\omega$。分子 $1+j2\\omega$ 提供模 $\\sqrt{1+4\\omega^2}$ 和超前角 $\\arctan(2\\omega)$。分母的 $j\\omega$ 和 $1+j\\omega$ 分别使整体相位扣除 $90^\\circ$、$\\arctan\\omega$。低频时幅值约为 $1/\\omega$，高频时约为 $2/\\omega$，可作为式子的端点校验。",
+  "originalImages": [],
+  "answerPdfPages": "1818",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

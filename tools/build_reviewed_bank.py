@@ -152,7 +152,7 @@ def build():
         for card in json.loads(path.read_text(encoding="utf-8-sig")):
             school, year, variant, number = identity = tuple(card[k] for k in SOURCE_FIELDS)
             tier = card.get("tier", "985")
-            assert tier in {"985", "211"}, identity
+            assert tier in {"985", "211", "双非"}, identity
             identifier = source_id(card)
             assert identifier not in ids, identity
             ids.add(identifier)
@@ -207,7 +207,7 @@ def build():
         ))),
     ]
     write_json(PUBLIC / "data" / "library.json", dict(
-        subject="自动控制原理", source="985 与 211 高校初试题库", topicOrder=TOPICS,
+        subject="自动控制原理", source="985、211 与双非院校初试题库", topicOrder=TOPICS,
         years=sorted({entry["year"] for q in questions for entry in [q, *q.get("alsoAppearedIn", [])]}, reverse=True),
         questionAliases=aliases, lists=lists, questions=questions,
     ))

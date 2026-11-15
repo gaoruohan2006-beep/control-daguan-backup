@@ -1,0 +1,8 @@
+{
+  "answer": "（1）$0<K<6\\sqrt6-14$。（2）$e_{\\rm ss}=1$。（3）$c_{\\rm ss}(t)=-3.6\\sin t+0.8\\cos t$。",
+  "explanation": "闭环多项式为 $s^4+3s^3+4s^2+(2+K)s+4K$。劳斯首列为\n$$1,\\quad3,\\quad \\frac{10-K}{3},\\quad\\frac{20-28K-K^2}{10-K},\\quad4K.$$\n要求 $K>0$、$K<10$、$K^2+28K-20<0$，交集即答案。$0.5$ 在稳定范围内，且 $\\lim_{s\\to0}sG=2K=1$，单位斜坡的终值误差为 $1$。\n\n正弦输入用闭环频率响应。$K=0.5$ 时有\n$$\\Phi(j)=\\frac{2+0.5j}{-1-0.5j}=-1.8+0.4j.$$输出是 $\\operatorname{Im}[2\\Phi(j)e^{jt}]$。展开即得到实数时间表达式。\n\n> **同一系统两种稳态算法。** 多项式输入看原点附近的误差通道；正弦输入在指定非零频率代入闭环传递函数。",
+  "originalImages": [],
+  "answerPdfPages": "1896–1897",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

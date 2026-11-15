@@ -1,0 +1,8 @@
+{
+  "answer": "B",
+  "explanation": "乘以固定时间函数 $1(t-4)$ 保持叠加性和齐次性，因此系统线性。取 $r(t)=1(t)$，延迟一秒的输入为 $1(t-1)$，系统仍在 $t=4$ 接通；原输出若延迟一秒则在 $t=5$ 接通。两者不同，因而系统时变。",
+  "originalImages": [],
+  "answerPdfPages": "1685",
+  "referenceNote": "补全原卷遗漏的 $t=4$ 取值。",
+  "sourceType": "reviewed"
+}

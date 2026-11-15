@@ -1,0 +1,8 @@
+{
+  "answer": "$\\Phi=K/[s^2+(1+K\\tau)s+K]$。$K=4,\\ \\tau=1/4$。超调量为 $100e^{-\\pi/\\sqrt3}\\%\\approx16.30\\%$，$t_s\\approx4\\,\\mathrm{s}$。",
+  "explanation": "列式 $s(s+1)C=K[R-C-\\tau sC]$ 得闭环传函。对比标准二阶分母，$K=\\omega_n^2=4$ 且 $1+K\\tau=2\\zeta\\omega_n=2$，故 $\\tau=1/4$。因闭环无零点且直流增益为 $1$，可直接代入 $M_p=\\exp[-\\pi\\zeta/\\sqrt{1-\\zeta^2}]$ 和 $t_s\\approx4/(\\zeta\\omega_n)$。后者是工程近似，若要求精确值应从阶跃响应求最后一次带边界交点。",
+  "originalImages": [],
+  "answerPdfPages": "1870–1871",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

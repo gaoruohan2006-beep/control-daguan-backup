@@ -1,0 +1,8 @@
+{
+  "answer": "取 $G_c(s)=1+0.530778s$，对应 $k\\approx2.575110$。固定该校正装置后，对任意 $k>0$ 闭环渐近稳定。",
+  "explanation": "**解题思路** 选直流增益为 $1$ 的 PD 控制器 $G_c=1+bs$，让它只改变特征多项式的一次项。先用共轭根的实部、虚部构造二次因子，再由固定的二次项系数确定第三个极点。\n\n设目标共轭根为 $-\\sigma\\pm j\\omega_d$，其中 $\\sigma=\\zeta\\omega_d/\\sqrt{1-\\zeta^2}\\approx0.611495$。目标三阶多项式为 $(s+p)[s^2+2\\sigma s+\\sigma^2+\\omega_d^2]$。与 $s^3+10s^2+10kb s+10k$ 比较，得\n$$p=10-2\\sigma,\\quad\nk=\\frac{p(\\sigma^2+\\omega_d^2)}{10},\\quad\nb=\\frac{\\sigma^2+\\omega_d^2+2p\\sigma}{10k}.$$\n第三极点为 $-p\\approx-8.7770$。固定 $b$ 后，劳斯首列为 $1,10,k(10b-1),10k$，全正所需的 $b>0.1$ 已满足。\n\n> **解释增益的唯一性。** 校正器若也含任意比例增益，题目只能定出它与 $k$ 的乘积。这里固定校正器的直流增益为 $1$，得到一组明确解。",
+  "originalImages": [],
+  "answerPdfPages": "1672–1673",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

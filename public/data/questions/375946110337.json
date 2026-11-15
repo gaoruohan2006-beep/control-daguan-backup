@@ -1,0 +1,8 @@
+{
+  "answer": "$Y/U=(s-1)/[(s+1)(s+2)]$。记 $a=e^{-t},b=e^{-2t}$，有\n$$e^{At}=\\begin{bmatrix}2a-b&a-b\\\\-2a+2b&-a+2b\\end{bmatrix},\\qquad\nx(t)=\\begin{bmatrix}\\tfrac12-2a+\\tfrac12b\\\\2a-b\\end{bmatrix}.$$\n平衡点全局渐近稳定。",
+  "explanation": "零初值下第一条方程给出 $X_2=sX_1$，第二条给出 $X_1/U=1/(s^2+3s+2)$，故 $Y=(s-1)X_1$。由不同特征值 $-1,-2$ 的谱投影可写 $\\Phi(t)=(A+2I)a-(A+I)b$。单位阶跃下 $Ax_*+B=0$，得 $x_*=(1/2,0)^{\\mathsf T}$，用 $x(t)=x_*+\\Phi(t)(x(0)-x_*)$ 即得响应。\n\n取偏差 $z=x-x_*$ 及 $V=2z_1^2+z_2^2$，有 $\\dot V=-6z_2^2$。若轨迹恒有 $z_2=0$，还须 $\\dot z_2=-2z_1=0$，故最大不变集仅原点。由 LaSalle 原理得到偏差全局趋于零。零输入平衡原点的论证相同。\n\n> **二阶不同根直接套谱投影。** 若 $A$ 有不同特征值 $\\lambda_1,\\lambda_2$，则 $e^{At}$ 是 $I,A$ 的一次组合，可用在这两个特征值处插值求系数。",
+  "originalImages": [],
+  "answerPdfPages": "1620–1621",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

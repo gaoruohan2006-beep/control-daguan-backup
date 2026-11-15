@@ -1,0 +1,8 @@
+{
+  "answer": "C",
+  "explanation": "闭环多项式为 $s^3+6s^2+5s+K$，劳斯首列为 $1,6,(30-K)/6,K$。正增益的稳定边界是 $K=30$。此时多项式为 $(s+6)(s^2+5)$，对应 $-6,\\pm j\\sqrt5$。",
+  "originalImages": [],
+  "answerPdfPages": "1676–1677",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

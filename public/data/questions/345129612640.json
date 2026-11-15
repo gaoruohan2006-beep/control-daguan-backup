@@ -1,0 +1,8 @@
+{
+  "answer": "$g(t)=\\dfrac{25}{4}e^{-3t}\\sin4t$，$c_{\\rm step}(t)=1-e^{-3t}(\\cos4t+\\tfrac34\\sin4t)$，两式取 $t\\ge0$。",
+  "explanation": "将方程在零初值下作拉氏变换，得 $G(s)=25/[(s+3)^2+16]$。脉冲输入的变换为 $1$，因此直接对 $G$ 反变换。阶跃响应是对脉冲响应从 $0$ 积分到 $t$ 的结果。求得的阶跃响应在 $t=0$ 为零，对 $t>0$ 求导恰等于 $g(t)$，终值也等于 $G(0)=1$。",
+  "originalImages": [],
+  "answerPdfPages": "1785",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

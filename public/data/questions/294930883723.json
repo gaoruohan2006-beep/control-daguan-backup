@@ -1,0 +1,8 @@
+{
+  "answer": "原点全局指数稳定。",
+  "explanation": "**第一法。** 特征多项式为 $s^2+s+1$，两个特征值为 $(-1\\pm j\\sqrt3)/2$，实部均严格为负。线性系统的原点全局指数稳定。\n\n**第二法。** 取 $V=\\tfrac32x_1^2+x_1x_2+x_2^2$。其对称矩阵的首阶主子式和行列式分别为 $3/2$ 和 $5/4$，故 $V$ 正定。代入 $\\dot x_1=x_2,\\ \\dot x_2=-x_1-x_2$ 得 $\\dot V=-x_1^2-x_2^2$。由于 $V$ 与 $\\|x\\|^2$ 双向有界比较，$\\dot V\\le -V/\\lambda_{\\max}(P)$，因此得到全局指数衰减。\n\n> **系统地构造二次型。** 令 $V=x^{\\mathsf T}Px$，解线性方程 $A^{\\mathsf T}P+PA=-I$，再核对 $P\\succ0$。",
+  "originalImages": [],
+  "answerPdfPages": "1550",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

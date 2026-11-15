@@ -1,0 +1,50 @@
+[
+  {
+    "school": "天津工业大学",
+    "tier": "双非",
+    "year": 2023,
+    "variant": "811",
+    "number": "一",
+    "topics": [
+      "建模 / 微分方程与传递函数"
+    ],
+    "questionPages": "688",
+    "answerPages": "1707",
+    "stem": "下图为串联 $RLC$ 电路，$R=1\\,\\Omega$，$L=1\\,\\mathrm H$，$C=1\\,\\mathrm F$。以 $u_i(t)$ 为输入、电容电压 $u_o(t)$ 为输出，初始条件为零。\n\n![串联 RLC 电路及电压参考方向](img/reviewed/double-tianguong-2023-rlc.svg)\n\n（1）求输入输出微分方程。（2）求 $U_o/U_i$。（3）取 $x_1=u_o+Ri,\\ x_2=u_o$，求状态空间模型。",
+    "answer": "$\\ddot u_o+\\dot u_o+u_o=u_i$，$U_o/U_i=1/(s^2+s+1)$。状态模型为\n$$\\dot x=\\begin{bmatrix}0&-1\\\\1&-1\\end{bmatrix}x+\\begin{bmatrix}1\\\\0\\end{bmatrix}u_i,\\quad\nu_o=[0\\quad1]x.$$",
+    "explanation": "由电容关系 $i=C\\dot u_o$ 和回路定律 $L\\dot i+Ri+u_o=u_i$，消去 $i$，得 $LC\\ddot u_o+RC\\dot u_o+u_o=u_i$。代入元件参数并在零初值下作拉氏变换，得到所需微分方程和传递函数。\n\n代入参数后有 $i=x_1-x_2$，所以 $\\dot x_2=i=x_1-x_2$。又 $\\dot x_1=\\dot u_o+\\dot i=i+(u_i-i-u_o)=u_i-x_2$，直接读出模型矩阵。复核可用第二条状态方程消去 $x_1$，还原同一微分方程。",
+    "notes": ""
+  },
+  {
+    "school": "天津工业大学",
+    "tier": "双非",
+    "year": 2024,
+    "variant": "811",
+    "number": "一",
+    "topics": [
+      "建模 / 机械系统"
+    ],
+    "questionPages": "691",
+    "answerPages": "1717",
+    "stem": "在线性弹簧、质量、黏性阻尼并联的平移系统中，质量 $M=1$，阻尼系数 $f=3$，刚度 $k=2$。位移 $x$ 从静平衡位置算起，外力 $F$ 与 $x$ 的正方向相同。\n\n（1）求运动微分方程。（2）在零初值下求 $X(s)/F(s)$。（3）给出一组对角型状态空间表达式。",
+    "answer": "$\\ddot x+3\\dot x+2x=F$，$X/F=1/[(s+1)(s+2)]$。可取\n$$A=\\operatorname{diag}(-1,-2),\\quad B=\\begin{bmatrix}1\\\\1\\end{bmatrix},\\quad C=[1\\quad-1],\\quad D=0.$$",
+    "explanation": "弹簧力和阻尼力分别是 $-kx,-f\\dot x$，由牛顿第二定律得到方程。零初值下作拉氏变换，得 $(s^2+3s+2)X=F$。将传递函数分解为 $1/(s+1)-1/(s+2)$，令两个状态分别满足 $\\dot z_1=-z_1+F,\\ \\dot z_2=-2z_2+F$，再取输出 $x=z_1-z_2$，即可读出矩阵。\n\n> **实单极点的对角实现。** 每个简单实极点对应一个一阶状态，部分分式的留数可放在输出矩阵中。",
+    "notes": ""
+  },
+  {
+    "school": "天津工业大学",
+    "tier": "双非",
+    "year": 2025,
+    "variant": "811",
+    "number": "二",
+    "topics": [
+      "时域分析 / 动态响应"
+    ],
+    "questionPages": "695",
+    "answerPages": "1725–1726",
+    "stem": "下图系统中，比较点的误差定义为 $E=R-kC$。调节时间按二阶系统 $5\\%$ 工程近似 $t_s\\approx3/(\\zeta\\omega_n)$ 计算。\n\n![含测速反馈与外环反馈系数的方框图](img/reviewed/double-tianguong-2025-feedback.svg)\n\n（1）$k=8,\\ \\zeta=0.75$，求单位阶跃下的 $t_s$ 和输出终值。（2）若 $t_s=0.875\\,\\mathrm{s}$，且单位斜坡下比较点稳态误差为 $0.25$，求 $\\alpha,k,\\zeta$。",
+    "answer": "（1）$t_s\\approx1\\,\\mathrm{s}$，输出终值为 $1/8$。（2）$\\alpha=10/7,\\ k=96/7,\\ \\zeta=3/\\sqrt{21}\\approx0.655$。",
+    "explanation": "在第二个求和点直接列式 $C=2[R-(k+\\alpha s)C]/(s^2+4s)$，故闭环分母为 $s^2+(4+2\\alpha)s+2k$，有 $\\omega_n=\\sqrt{2k}$、$\\zeta\\omega_n=2+\\alpha$。第（1）问中 $\\omega_n=4$，故 $t_s\\approx1$，而闭环直流增益为 $1/k$。\n\n第（2）问由 $3/(2+\\alpha)=7/8$ 得 $2+\\alpha=24/7$。用 $E/R=1-kC/R$ 得\n$$\\frac{E}{R}=\\frac{s^2+(4+2\\alpha)s}{s^2+(4+2\\alpha)s+2k}.$$\n单位斜坡时 $R=1/s^2$，因此 $e_{\\rm ss}=(2+\\alpha)/k$，由此解得 $k$ 和 $\\zeta$。代回可见闭环分母系数为正，满足二阶稳定条件，可以使用终值定理。\n\n> **非单位外环先写误差定义。** 这里求和点误差是 $r-kc$。若题目改求 $r-c$，斜坡下可能需要比较两条直线的斜率。",
+    "notes": "补充调节时间近似口径，并明确误差为比较点信号。"
+  }
+]

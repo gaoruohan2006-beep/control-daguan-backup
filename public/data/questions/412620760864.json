@@ -1,0 +1,8 @@
+{
+  "answer": "$\\gamma_{\\max}=\\arcsin[(T_1-T_2)/(T_1+T_2)]$，在 $K=1/(T_1^{3/2}\\sqrt{T_2})$ 时取得。",
+  "explanation": "**解题思路** 改变 $K$ 只移动幅频曲线，因而可先把交越频率当作变量。先找超前相角的峰值频率，再用单位幅值求回 $K$。\n\n$\\gamma(\\omega)=\\arctan(T_1\\omega)-\\arctan(T_2\\omega)$。令导数 $T_1/(1+T_1^2\\omega^2)-T_2/(1+T_2^2\\omega^2)$ 为零，得 $\\omega_*=1/\\sqrt{T_1T_2}$。导数在此由正变负。由正切差角公式，$\\tan\\gamma_{\\max}=(T_1-T_2)/(2\\sqrt{T_1T_2})$，等价于答案的正弦形式。在该频率处，超前环节幅值为 $\\sqrt{T_1/T_2}$，故 $K\\sqrt{T_1/T_2}/\\omega_*^2=1$，求得所需 $K$。\n\n> **超前环节的峰值位置。** 最大超前相角发生在零点、极点转折频率的几何平均处。调增益可以让交越点落在这个频率。",
+  "originalImages": [],
+  "answerPdfPages": "1587",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}

@@ -1,0 +1,8 @@
+{
+  "answer": "共轭根从 $1\\pm j$ 沿圆 $(\\operatorname{Re}s+1)^2+(\\operatorname{Im}s)^2=5$ 向左移动，在 $-1-\\sqrt5$ 会合，两实根随后分别趋向 $-1$、$-\\infty$。临界阻尼时 $a=4+2\\sqrt5$。",
+  "explanation": "特征方程为 $s^2+(a-2)s+a+2=0$，也可写成 $s^2-2s+2+a(s+1)=0$。等效根轨迹的极点是 $1\\pm j$，零点是 $-1$。实轴段为 $(-\\infty,-1]$，唯一渐近线沿负实轴。\n\n共轭期间设实部为 $x$、虚部绝对值为 $y$，由根和得 $a=2-2x$，由根积得 $x^2+y^2=a+2$。消去参数即得圆，且随 $a$ 变大，$x$ 单调向左。判别式为 $a^2-8a-4$，非负参数下只有 $4+2\\sqrt5$ 能产生二重根，且该根严格为负。虚轴穿越发生在 $a=2$，对应 $\\pm 2j$。\n\n![从右半平面出发的圆弧根轨迹](img/reviewed/double-nuist-2023-locus.svg)",
+  "originalImages": [],
+  "answerPdfPages": "1762–1763",
+  "referenceNote": "",
+  "sourceType": "reviewed"
+}
