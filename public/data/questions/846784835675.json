@@ -1,0 +1,8 @@
+{
+  "answer": "A。",
+  "explanation": "开环有右半平面极点并不直接决定闭环稳定性。闭环特征多项式为 $s(s-1)(s+5)+10(s+1)=s^3+4s^2+5s+10$。劳斯首列为 $1,4,\\frac{5}{2},10$，全部为正，因此闭环渐近稳定。",
+  "originalImages": [],
+  "answerPdfPages": "104",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

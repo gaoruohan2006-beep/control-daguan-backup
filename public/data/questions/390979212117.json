@@ -1,0 +1,8 @@
+{
+  "answer": "5。",
+  "explanation": "$C=\\frac{5}{s(s+2)}$，反变换 $c(t)=\\frac52(1-e^{-2t})$，导数 $\\dot c=5e^{-2t}$，所以 $\\dot c(0^+)=5$。也可用 $\\dot c(0^+)=\\lim_{s\\to\\infty}sG(s)$ 验证。",
+  "originalImages": [],
+  "answerPdfPages": "111",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

@@ -1,0 +1,8 @@
+{
+  "answer": "（1）$\\frac{C}{R}=\\frac{1}{s^2+4s+3}$；（2）$c=\\frac{1}{2}+e^{-t}-\\tfrac12e^{-2t}$。",
+  "explanation": "第一问零初值变换即可，传递函数本身不取决于本次输入是不是阶跃。第二问单边变换给 $(s^2+3s+2)C=\\frac{1}{s}+s+3$。部分分式为 $C=\\frac{1}{2s}+\\frac{1}{s+1}-\\frac{1}{2(s+2)}$。回代初值 $\\frac{1}{2}+1-\\frac{1}{2}=1$，初始导数 $-1+1=0$，最终值1/2，均满足运动方程。",
+  "originalImages": [],
+  "answerPdfPages": "227–228",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

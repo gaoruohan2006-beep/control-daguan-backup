@@ -1,0 +1,8 @@
+{
+  "answer": "（1）$0<T<100$；（2）不存在。",
+  "explanation": "闭环分母 $D=s^3+25s^2+4s+T$，三阶劳斯条件为 $T>0$、$25\\times4>T$，得稳定区。若要求根实部小于 $-1$，令 $s=z-1$，有 $D(z-1)=z^3+22z^2-43z+T+20$。Hurwitz 多项式的系数必须同号，但一次项恒为负，所以无论 $T$ 如何取值都不满足。",
+  "originalImages": [],
+  "answerPdfPages": "162–163",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

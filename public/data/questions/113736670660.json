@@ -1,0 +1,8 @@
+{
+  "answer": "下式的 $\\Delta$ 由解析中的有向回路确定。\n\n$$\\frac{C}{R}=\\frac{\\frac{100}{3 s + 5}}{\\Delta}.$$\n\n$$\\frac{E}{R}=\\frac{10}{\\Delta}.$$",
+  "explanation": "**从信号图列方程。** 以下增益省略自变量 $s$。求某一外输入的通道时，其余独立输入置零。\n\n$$E=- B + 10 R.$$\n\n$$C=\\frac{20 E}{6 s + 10}.$$\n\n$$B=\\frac{10 C}{20 s + 5}.$$\n\n**逐条核对回路。**\n\n$L_{1}=- \\frac{200}{\\left(6 s + 10\\right) \\left(20 s + 5\\right)}$，对应 $E\\to C\\to B\\to E$。\n\n没有互不接触的回路乘积项。\n\n$$\\Delta=1 - L_{1}.$$\n\n**$\\frac{C}{R}$ 的前向通路。**\n\n$R\\to E\\to C$ 的增益与余因子为\n$$P_{1}=\\frac{200}{6 s + 10},\\qquad \\Delta_{1}=1.$$\n\n$$\\frac{C}{R}=\\frac{P_{1}\\Delta_{1}}{\\Delta}.$$\n\n**$\\frac{E}{R}$ 的前向通路。**\n\n$R\\to E$ 的增益与余因子为\n$$P_{1}=10,\\qquad \\Delta_{1}=1.$$\n\n$$\\frac{E}{R}=\\frac{P_{1}\\Delta_{1}}{\\Delta}.$$\n\n前向环节为 $\\frac{20}{6s+10}$，反馈环节为 $\\frac{10}{20s+5}$，参考前置增益为 $10$。通分可复核\n$$\\frac CR=\\frac{100(4s+1)}{12s^2+23s+25}.$$\n$$\\frac ER=\\frac{10(12s^2+23s+5)}{12s^2+23s+25}.$$\n这里的误差由题目定义为 $10r-b$，不能当成 $r-c$。",
+  "originalImages": [],
+  "answerPdfPages": "97–98",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

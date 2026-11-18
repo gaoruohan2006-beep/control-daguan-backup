@@ -1,0 +1,8 @@
+{
+  "answer": "$e_{ss}=0.1$。",
+  "explanation": "闭环分母为 $s^3+20s^2+300s+400$，三阶劳斯条件 $20\\times300>400$ 成立。误差分解为 $E=\\frac{R}{1+40P}-\\frac{PN}{1+40P}$。参考斜坡的速度系数为 $\\lim s40P=4$，贡献 $\\frac{0.2}{4}=0.05$；扰动通道低频为 $-\\frac{1}{40}$，负阶跃幅度为-2，贡献 $(-\\frac{1}{40})(-2)=0.05$。线性相加得0.1。",
+  "originalImages": [],
+  "answerPdfPages": "174–175",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

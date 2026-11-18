@@ -1,0 +1,8 @@
+{
+  "answer": "依次为过阻尼稳定、欠阻尼稳定、临界阻尼稳定、无阻尼临界振荡、负阻尼不稳定。",
+  "explanation": "根为 $-\\zeta\\omega_n\\pm\\omega_n\\sqrt{\\zeta^2-1}$。$\\zeta>1$ 为两个相异负实根；$0<\\zeta<1$ 为左半平面共轭复根；$\\zeta=1$ 为负实重根；$\\zeta=0$ 为简单纯虚根；$-1<\\zeta<0$ 的共轭根实部为正，振幅指数增长。过阻尼与临界阻尼的典型无零点阶跃响应无超调，欠阻尼有衰减振荡。",
+  "originalImages": [],
+  "answerPdfPages": "121",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

@@ -1,0 +1,8 @@
+{
+  "answer": "$$\\frac{U_o}{U_i}=\\frac{R_2(1+R_1Cs)}{R_1+R_2+R_1R_2Cs}.$$",
+  "explanation": "并联阻抗 $Z_1=\\frac{R_1}{1+R_1Cs}$，输出阻抗为 $R_2$。由分压关系 $\\frac{U_o}{U_i}=\\frac{R_2}{Z_1+R_2}$，通分得结果。等价微分方程为\n$$R_1R_2C\\dot u_o+(R_1+R_2)u_o=R_1R_2C\\dot u_i+R_2u_i.$$\n低频时电容开路，增益为 $\\frac{R_2}{R_1+R_2}$；高频时电容近似短路，增益趋于 $1$，与结果一致。",
+  "originalImages": [],
+  "answerPdfPages": "74–75",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

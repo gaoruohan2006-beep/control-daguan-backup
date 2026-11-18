@@ -1,0 +1,8 @@
+{
+  "answer": "$k=2\\,\\mathrm{\\frac{N}{m}},m=0.08\\,\\mathrm{kg},b=0.16\\,\\mathrm{N\\,\\frac{s}{m}}$，$\\frac{Y}{X}=\\frac{12.5}{s^2+2s+25}$。",
+  "explanation": "运动方程 $m\\ddot y+b\\dot y+ky=x$。1牛顿下终值0.5米给 $k=\\frac{1}{0.5}=2$。按题干明确的工程公式，$4=\\frac{4}{0.2\\omega_n}$ 得 $\\omega_n=5$。因此 $m=\\frac{k}{\\omega_n^2}=0.08$，$b=2\\zeta\\omega_nm=0.16$。将三个参数代入即可得到传递函数。图中0.49相对于0.5偏差2%，按答案册将其用于工程调节时间读数；这些估计不应再称作完整响应的精确拟合。",
+  "originalImages": [],
+  "answerPdfPages": "288–289",
+  "referenceNote": "图示与典型二阶曲线并非精确一致；按答案册以0.49确定2%误差带及4秒工程读数的解释，把近似约定直接写入题干。",
+  "sourceType": "practice"
+}

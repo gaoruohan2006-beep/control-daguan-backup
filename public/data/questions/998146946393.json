@@ -1,0 +1,8 @@
+{
+  "answer": "$c(t)=50(1-e^{-0.4t})1(t)$。",
+  "explanation": "传递函数 $\\frac{50}{2.5s+1}$，时间常数 $T=2.5$，静态增益 $50$。阶跃输出变换为 $\\frac{50}{s(2.5s+1)}=\\frac{50}{s}-\\frac{50}{s+0.4}$，反变换即可。响应初值为0，终值为50。",
+  "originalImages": [],
+  "answerPdfPages": "113",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

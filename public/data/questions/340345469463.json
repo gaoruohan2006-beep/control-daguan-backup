@@ -1,0 +1,8 @@
+{
+  "answer": "$L_a=\\frac{K}{s(s^2+2s+K)}$。",
+  "explanation": "清分母得 $s^3+2s^2+Ks+Ka=0$，将基准部分 $s(s^2+2s+K)$ 与参数项aK分开，得到结果。此题与上一题仅相似，固定极点由-1变为-2，参数根轨迹及稳定边界会改变，应保留为不同条件的题。",
+  "originalImages": [],
+  "answerPdfPages": "293",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

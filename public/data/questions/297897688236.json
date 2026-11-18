@@ -1,0 +1,8 @@
+{
+  "answer": "C。$K=\\frac{4}{3}$。",
+  "explanation": "对误差变换得 $E=\\frac{2}{s+2}-\\frac{1}{s+4}=\\frac{s+6}{s^2+6s+8}$。另一方面 $E=\\frac{Ts+1}{Ts^2+s+K}$。将后一式分子分母同除以 $T$，比较分子常数得 $\\frac{1}{T}=6$，再比较分母常数得 $\\frac{K}{T}=8$。因此 $T=\\frac{1}{6}$、$K=\\frac{4}{3}$。",
+  "originalImages": [],
+  "answerPdfPages": "107–108",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

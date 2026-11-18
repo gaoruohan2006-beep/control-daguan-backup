@@ -1,0 +1,8 @@
+{
+  "answer": "稳定要求 $K>0$，欠阻尼区 $K>\\frac{1}{4}$，令 $d=\\sqrt{4K-1}$，\n$$t_r=\\frac{2[\\pi-\\arccos(\\frac{1}{2\\sqrt K})]}d,\\quad t_p=\\frac{2\\pi}d,\\quad\\sigma=e^{-\\frac{\\pi}{d}}.$$\n5%按3系数估算为6秒，2%按4系数估算为8秒；这些是工程估算。",
+  "explanation": "闭环 $\\frac{K}{s^2+s+K}$，自然频率 $\\sqrt K$、阻尼比 $\\frac{1}{2\\sqrt K}$，乘积恒为0.5。$0<K<\\frac{1}{4}$ 为过阻尼，两负实根中慢根随K增加向左移，响应通常加快；$K=\\frac{1}{4}$ 为-0.5重根；$K>\\frac{1}{4}$ 为共轭根，实部始终-0.5，振荡频率随K增大，超调增大、峰值时间缩短。工程调节时间固定并不意味着精确误差带的最后交点严格不变。",
+  "originalImages": [],
+  "answerPdfPages": "275–278",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

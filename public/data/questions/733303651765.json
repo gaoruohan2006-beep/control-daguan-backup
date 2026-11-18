@@ -1,0 +1,8 @@
+{
+  "answer": "B。$K=1$。",
+  "explanation": "分别提取三个常数 $2,5,3$，分母总常数为 $30$。因此 $G=\\frac{1}{(1.5s+1)(0.2s+1)((\\frac{2}{3})s+1)}$，时间常数形式的增益为 $\\frac{30}{2\\cdot5\\cdot3}=1$。不要把最高次系数归一形式中的系数当成开环静态增益。",
+  "originalImages": [],
+  "answerPdfPages": "105",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

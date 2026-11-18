@@ -1,0 +1,8 @@
+{
+  "answer": "A。",
+  "explanation": "约去 $s+2$ 后，开环为 $\\frac{K}{s(s^2+3s+3)}$，无有限零点，三个极点和为-3，故渐近线交点 $\\sigma_a=\\frac{-3-0}{3-0}=-1$。若保留未约去的极点和零点，同在-2的一对在求和差中抵消，也得到相同答案；该固定稳定模态不生成额外的可移动轨迹分支。",
+  "originalImages": [],
+  "answerPdfPages": "292",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

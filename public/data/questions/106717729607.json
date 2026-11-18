@@ -1,0 +1,8 @@
+{
+  "answer": "$G=\\frac{4}{s(s^2+4.5s+10)}$，第三个闭环极点为 $-0.5$。",
+  "explanation": "设第三个极点为 $-p$，闭环特征式为 $(s+p)(s^2+4s+8)$。与 $s^3+as^2+bs+k$ 比较，得 $a=p+4,b=4p+8,k=8p$。单位斜坡误差 $\\frac{b}{k}=2.5$，所以 $\\frac{4p+8}{8p}=2.5$，解得 $p=0.5$，再求其余参数。三根均在左半平面，稳态误差公式适用。",
+  "originalImages": [],
+  "answerPdfPages": "229",
+  "referenceNote": "把答案册隐含的无零点I型模型假设直接写入题干，避免一般三阶传递函数的反求不唯一。",
+  "sourceType": "practice"
+}

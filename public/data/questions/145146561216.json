@@ -1,0 +1,8 @@
+{
+  "answer": "$\\omega_n=2\\,\\mathrm{\\frac{rad}{s}}$。",
+  "explanation": "与标准分母 $s^2+2\\zeta\\omega_ns+\\omega_n^2$ 比较，常数项给出 $\\omega_n^2=4$，所以 $\\omega_n=2$。其实际振荡频率为 $\\omega_d=\\sqrt3$，与自然频率不同。",
+  "originalImages": [],
+  "answerPdfPages": "119",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

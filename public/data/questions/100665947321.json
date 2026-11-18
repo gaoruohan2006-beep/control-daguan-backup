@@ -1,0 +1,8 @@
+{
+  "answer": "（1）$K=119$，$\\omega=\\sqrt{17}\\,\\mathrm{\\frac{rad}{s}}$；（2）$14<K<15$。",
+  "explanation": "闭环特征式 $D=s^3+7s^2+17s+K$。劳斯首列 $1,7,\\frac{119-K}{7},K$，故稳定区为 $0<K<119$。在临界值119，$D=(s+7)(s^2+17)$。\n第二问令 $s=z-2$，则 $D(z-2)=z^3+z^2+z+K-14$。要求原根实部小于 $-2$，等价于新多项式 Hurwitz，三阶条件为 $K-14>0$ 且 $1>K-14$，即 $14<K<15$。",
+  "originalImages": [],
+  "answerPdfPages": "127–129",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

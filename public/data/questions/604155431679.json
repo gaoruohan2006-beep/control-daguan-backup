@@ -1,0 +1,8 @@
+{
+  "answer": "错误。",
+  "explanation": "稳定保证自然响应衰减，阶跃引起的强迫稳态一般为 $G(0)$，不必为零。例如 $G=\\frac{1}{s+1}$ 的单位阶跃响应为 $1-e^{-t}$，终值为1。只有相应直流增益为零时才可能阶跃终值为零。",
+  "originalImages": [],
+  "answerPdfPages": "120",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

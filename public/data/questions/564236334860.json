@@ -1,0 +1,8 @@
+{
+  "answer": "稳定欠阻尼要求 $K_1>0,\\ 1<K_2<1+2\\sqrt{K_1}$，\n$$\\sigma=\\exp\\!\\left[-\\frac{\\pi(K_2-1)}{\\sqrt{4K_1-(K_2-1)^2}}\\right].$$\n（3）$K_2\\ge9$，同时保留上述欠阻尼限制；（4）$e_{ss}=\\frac{K_2-1}{K_1}$。",
+  "explanation": "闭环分母 $s^2+(K_2-1)s+K_1$，自然频率 $\\sqrt{K_1}$、阻尼比 $\\frac{K_2-1}{2\\sqrt{K_1}}$。稳定需一次与常数系数均正，欠阻尼再要求判别式负。2%工程调节时间为 $\\frac{8}{K_2-1}$，得第三问。单位斜坡速度系数 $K_v=\\frac{K_1}{K_2-1}$。",
+  "originalImages": [],
+  "answerPdfPages": "236–237",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

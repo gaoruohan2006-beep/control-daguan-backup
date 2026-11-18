@@ -1,0 +1,8 @@
+{
+  "answer": "下式的 $\\Delta$ 由解析中的有向回路确定。\n\n$$\\frac{C}{R}=\\frac{G_{1} \\left(G_{2} + G_{3}\\right)}{\\Delta}.$$\n\n$$\\frac{C}{D_{1}}=\\frac{\\left(G_{2} + G_{3}\\right) \\left(G_{1} Gf - 1\\right)}{\\Delta}.$$\n\n$$\\frac{C}{D_{2}}=\\frac{- G_{1} H \\left(G_{2} + G_{3}\\right)}{\\Delta}.$$",
+  "explanation": "**从信号图列方程。** 以下增益省略自变量 $s$。求某一外输入的通道时，其余独立输入置零。\n\n$$E=- C H + D_{1} Gf - D_{2} H + R.$$\n\n$$X=- D_{1} + E G_{1}.$$\n\n$$C=X \\left(G_{2} + G_{3}\\right).$$\n\n**逐条核对回路。**\n\n$L_{1}=- G_{1} H \\left(G_{2} + G_{3}\\right)$，对应 $E\\to X\\to C\\to E$。\n\n没有互不接触的回路乘积项。\n\n$$\\Delta=1 - L_{1}.$$\n\n**$\\frac{C}{R}$ 的前向通路。**\n\n$R\\to E\\to X\\to C$ 的增益与余因子为\n$$P_{1}=G_{1} \\left(G_{2} + G_{3}\\right),\\qquad \\Delta_{1}=1.$$\n\n$$\\frac{C}{R}=\\frac{P_{1}\\Delta_{1}}{\\Delta}.$$\n\n**$\\frac{C}{D_{1}}$ 的前向通路。**\n\n$D_{1}\\to E\\to X\\to C$ 的增益与余因子为\n$$P_{1}=G_{1} Gf \\left(G_{2} + G_{3}\\right),\\qquad \\Delta_{1}=1.$$\n\n$D_{1}\\to X\\to C$ 的增益与余因子为\n$$P_{2}=- G_{2} - G_{3},\\qquad \\Delta_{2}=1.$$\n\n$$\\frac{C}{D_{1}}=\\frac{P_{1}\\Delta_{1}+P_{2}\\Delta_{2}}{\\Delta}.$$\n\n**$\\frac{C}{D_{2}}$ 的前向通路。**\n\n$D_{2}\\to E\\to X\\to C$ 的增益与余因子为\n$$P_{1}=- G_{1} H \\left(G_{2} + G_{3}\\right),\\qquad \\Delta_{1}=1.$$\n\n$$\\frac{C}{D_{2}}=\\frac{P_{1}\\Delta_{1}}{\\Delta}.$$\n\n令 $P=G_2+G_3$，$D=1+G_1PH$，由节点方程直接得\n$$C=\\frac{G_1P}{D}R+\\frac{P(G_1G_f-1)}D D_1-\\frac{G_1PH}{D}D_2.$$\n扰动 $D_1$ 的两条通路相互抵消要求 $G_f=\\frac{1}{G_1}$。这是形式上的完全补偿，还须保证所选补偿器可实现且内部稳定。",
+  "originalImages": [],
+  "answerPdfPages": "93–94",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

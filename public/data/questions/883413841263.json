@@ -1,0 +1,8 @@
+{
+  "answer": "$$\\frac{U_o}{U_i}=-\\frac{R_2+R_3}{R_1}-\\frac{R_2R_3Cs}{R_1(1+R_4Cs)}.$$",
+  "explanation": "反相端为虚地，节点电流平衡给出 $U_a=-\\frac{R_2U_i}{R_1}$。令接地支路阻抗 $Z=R_4+\\frac{1}{Cs}$，节点 $a$ 满足 $\\frac{U_a}{R_2}+\\frac{U_a-U_o}{R_3}+\\frac{U_a}{Z}=0$。由此\n$$U_o=U_a\\left(1+\\frac{R_3}{R_2}+\\frac{R_3}{Z}\\right).$$\n代入 $U_a$ 和 $Z$ 得答案。合并为一个分式时，分子为 $-[R_2+R_3+C(R_2R_4+R_3R_4+R_2R_3)s]$，分母为 $R_1(1+R_4Cs)$。",
+  "originalImages": [],
+  "answerPdfPages": "90–91",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

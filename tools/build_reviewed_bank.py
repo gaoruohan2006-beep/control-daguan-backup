@@ -147,11 +147,13 @@ PRACTICE_TITLE = "起点精选1000题"
 PRACTICE_CHAPTERS = {
     1: "自动控制基本概念",
     2: "控制系统数学模型",
+    3: "线性系统时域分析",
+    4: "线性系统的根轨迹法",
 }
 PRACTICE_KINDS = ("选择题", "填空题", "判断题", "简答题", "分析题")
 
 
-def load_practice(ids, aliases, detail_rows):
+def load_practice(ids, aliases, detail_rows, merged_references):
     rows = []
     source = ROOT / "data-src" / "practice"
     for file in sorted(source.glob("qd1000-*.json")):
@@ -168,6 +170,12 @@ def load_practice(ids, aliases, detail_rows):
             if target := card.get("sameAs"):
                 assert target != identifier, identity
                 aliases[identifier] = target
+                school, year = re.fullmatch(r"(.+?)(?:\s*(\d{4}))?", origin.strip()).groups()
+                merged_references.append((target, dict(
+                    volume=volume, chapter=chapter, kind=kind, number=number, origin=origin,
+                    school=re.sub(r"（(?:学硕|专硕|\d{3})）$", "", school), year=int(year) if year else None,
+                    questionPages=card["questionPages"], answerPages=card["answerPages"],
+                )))
                 continue
             ids.add(identifier)
             stem, answer, explanation = [card[k].strip() for k in ("stem", "answer", "explanation")]
@@ -195,7 +203,7 @@ def load_practice(ids, aliases, detail_rows):
 
 
 def school_paths(question):
-    entries = [question, *question.get("alsoAppearedIn", [])]
+    entries = [question, *question.get("alsoAppearedIn", []), *question.get("practiceReferences", [])]
     paths = (f'{q["school"]} / {q["year"]}' if q["year"] else q["school"] for q in entries)
     return list(dict.fromkeys(paths))
 
@@ -248,9 +256,18 @@ def build():
                 referenceNote=card.get("notes", ""), sourceType="reviewed",
             )
 
-    practice = load_practice(ids, aliases, detail_rows)
+    merged_references = []
+    practice = load_practice(ids, aliases, detail_rows, merged_references)
     assert not ids.intersection(aliases), "A merged question is still present as its own card"
     assert set(aliases.values()) <= ids, "A merged question's retained card is missing"
+    retained = {q["id"]: q for q in [*questions, *practice]}
+    for target, reference in merged_references:
+        question = retained[target]
+        question.setdefault("practiceReferences", []).append(reference)
+        reference_label = f'{reference["volume"]}册 第{reference["chapter"]}章 {reference["kind"]}{reference["number"]}'
+        question["search"] += f' {PRACTICE_TITLE} {reference_label} {reference["origin"]}'
+        if PRACTICE_TITLE not in question["source"]:
+            question["source"] += f' · {PRACTICE_TITLE}'
     for identifier, detail in detail_rows.items():
         write_json(detail_dir / f"{identifier}.json", detail)
     for path in detail_dir.glob("*.json"):

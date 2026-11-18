@@ -1,0 +1,8 @@
+{
+  "answer": "$$K=\\frac{2\\pi^2}{15},\\quad \\tau=\\frac{\\frac{2\\pi}{\\sqrt3}-1}{10}.$$\n闭环根 $-\\frac{\\pi}{\\sqrt3\\pm j\\pi}$，阶跃稳态误差为0。",
+  "explanation": "闭环分母 $s^2+(1+10\\tau)s+10K$。由 $t_p=\\frac{\\pi}{\\omega_d}=1$ 得 $\\omega_d=\\pi$；又 $\\omega_d=\\omega_n\\sqrt{1-0.5^2}$，故 $\\omega_n=\\frac{2\\pi}{\\sqrt3}$。比较常数项和一次项求得参数。闭环根由 $-\\zeta\\omega_n\\pm j\\omega_d$ 得出。闭环直流增益1，稳定时单位阶跃误差为零。",
+  "originalImages": [],
+  "answerPdfPages": "144–145",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

@@ -1,0 +1,8 @@
+{
+  "answer": "A。",
+  "explanation": "一阶阶跃响应的相对剩余误差为 $e^{-\\frac{t}{T}}$。误差带为 $\\delta$ 时，$t_s=-T\\ln\\delta$，与 $T$ 成正比。故时间常数越大，响应越慢，达到相同精度所需时间越长。",
+  "originalImages": [],
+  "answerPdfPages": "104",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

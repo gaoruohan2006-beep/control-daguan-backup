@@ -1,0 +1,8 @@
+{
+  "answer": "$$\\frac{U_o}{U_i}=\\frac{R^2C_1C_2s^2+2RC_1s+1}{R^2C_1C_2s^2+R(2C_1+C_2)s+1}.$$",
+  "explanation": "设电阻中点电压为 $V$。在该点与输出点分别列 KCL：\n$$\\frac{V-U_i}{R}+\\frac{V-U_o}{R}+C_2sV=0.$$\n$$\\frac{U_o-V}{R}+C_1s(U_o-U_i)=0.$$\n第二式给 $V=(1+RC_1s)U_o-RC_1sU_i$。代入第一式得到答案。对应微分方程为\n$$R^2C_1C_2\\ddot u_o+R(2C_1+C_2)\\dot u_o+u_o=R^2C_1C_2\\ddot u_i+2RC_1\\dot u_i+u_i.$$\n高频电容 $C_1$ 形成输入输出直连，故高频增益为 $1$。",
+  "originalImages": [],
+  "answerPdfPages": "92–93",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

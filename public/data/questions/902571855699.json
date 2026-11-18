@@ -1,0 +1,8 @@
+{
+  "answer": "（1）$K=\\frac{2\\pi^2}{15}$，$\\tau=\\frac{\\frac{2\\pi}{\\sqrt3}-1}{\\frac{4\\pi^2}{3}}$；（2）超调26.432%，峰值1.7059秒，精确5%调节3.8437秒，工程估算3.8462秒。",
+  "explanation": "闭环分母 $s^2+(1+10K\\tau)s+10K$。第一问由 $\\omega_d=\\pi$、$\\zeta=0.5$ 得 $\\omega_n=\\frac{2\\pi}{\\sqrt3}$，再比较系数求参数。第二问 $\\omega_n=2,\\zeta=0.39,\\omega_d=\\sqrt{3.3916}$，超调为 $\\exp[-\\frac{0.78\\pi}{\\sqrt{3.3916}}]$，峰值为 $\\frac{\\pi}{\\sqrt{3.3916}}$。以标准阶跃响应的相对误差求最后一个 $\\pm5\\%$ 交点得3.8437秒。若采用答案册的3.5系数，工程估算会为4.4872秒，不能把不同工程系数所得值称为同一个精确时间。",
+  "originalImages": [],
+  "answerPdfPages": "213–214",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

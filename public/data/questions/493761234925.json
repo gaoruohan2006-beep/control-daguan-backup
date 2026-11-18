@@ -1,6 +1,6 @@
 {
-  "answer": "$\\Phi(s)=\\dfrac{600}{(s+10)(s+60)}$。",
-  "explanation": "**利用单位阶跃的拉氏变换。** 零状态下 $R(s)=\\frac1s$，故闭环传递函数等于 $sC(s)$。逐项变换得\n$$\\Phi(s)=1+\\frac{0.2s}{s+60}-\\frac{1.2s}{s+10}.$$\n\n**通分并校验终值。** 公分母为 $(s+60)(s+10)$，分子合并为\n$$\\begin{aligned}\n&(s+60)(s+10)+0.2s(s+10)-1.2s(s+60)\\\\\n&=600.\n\\end{aligned}$$\n$s^2$ 与 $s$ 项均相消。由题给响应可直接读出终值为 $1$，所得 $\\Phi(0)=1$ 与之相符。",
+  "answer": "$$\\Phi=\\frac{600}{s^2+70s+600},\\quad \\zeta\\approx1.43,\\quad \\omega_n\\approx24.49\\,\\mathrm{\\frac{rad}{s}}.$$",
+  "explanation": "$\\Phi=sC=1+\\frac{0.2s}{s+60}-\\frac{1.2s}{s+10}$。通分后一次项相消，得分子600。于是 $\\omega_n=\\sqrt{600}=10\\sqrt6$，$\\zeta=\\frac{70}{2\\sqrt{600}}=\\frac{7}{2\\sqrt6}>1$，为过阻尼系统。",
   "originalImages": [],
   "answerPdfPages": "1326",
   "referenceNote": "",

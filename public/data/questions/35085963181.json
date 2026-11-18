@@ -1,0 +1,8 @@
+{
+  "answer": "2 个。",
+  "explanation": "**列劳斯表。**\n$$\\begin{array}{c|ccc}s^{5}&1&-3&-4\\\\s^{4}&3&-9&12\\\\s^{3}&\\varepsilon&-8&0\\\\s^{2}&\\frac{24 - 9 \\varepsilon}{\\varepsilon}&12&0\\\\s^{1}&\\frac{4 \\varepsilon^{2} - 24 \\varepsilon + 64}{3 \\varepsilon - 8}&0&0\\\\s^{0}&12&0&0\\end{array}$$\n\n首项为零而非全零行时，用正的 $\\varepsilon$ 代替并取右极限。\n\n首列符号依次为 $+,+,0,+,-,+$，有 2 次变号，故右半平面根有 2 个。",
+  "originalImages": [],
+  "answerPdfPages": "118–119",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

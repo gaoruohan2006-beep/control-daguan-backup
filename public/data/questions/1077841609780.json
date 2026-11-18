@@ -1,0 +1,8 @@
+{
+  "answer": "$K=10$，$\\omega=1\\,\\mathrm{\\frac{rad}{s}}$。",
+  "explanation": "劳斯表前两行是 $(1,31,20+K)$、$(9,9,0)$，第三行首项30，第四行首项为 $\\frac{90-9K}{30}$。出现临界全零行时 $K=10$，辅助多项式为 $30s^2+30$，给出虚根 $\\pm j$。此时 $D=(s^2+1)(s^2+9s+30)$，另两根在左半平面，故为临界振荡。",
+  "originalImages": [],
+  "answerPdfPages": "206",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

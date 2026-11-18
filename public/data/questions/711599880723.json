@@ -1,0 +1,8 @@
+{
+  "answer": "$K=0.032$。",
+  "explanation": "将分子写为 $0.8(10s+1)$，第二个二阶因子写为 $25(0.04s^2+0.04s+1)$，第一个二阶因子的常数已为1。因此常数系数为 $\\frac{0.8}{25}=0.032$。此处有积分器，开环直流值发散，所问“开环增益”指标准时间常数形式中的常数。",
+  "originalImages": [],
+  "answerPdfPages": "118",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

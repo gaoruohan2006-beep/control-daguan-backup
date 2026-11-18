@@ -1,0 +1,8 @@
+{
+  "answer": "$$\\Phi_{red}\\approx\\frac2{s^2+s+1}.$$",
+  "explanation": "零点约为 $-2.0408$，与极点 $-2$ 接近，形成偶极子；另有快极点 $-8$。主导极点为 $-\\frac{0.5\\pm j\\sqrt3}{2}$。先近似相消接近的因子，再将快环节 $\\frac{1}{0.125s+1}$ 按低频增益1处理，即得答案。原、降阶模型的直流增益均为2。",
+  "originalImages": [],
+  "answerPdfPages": "115",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

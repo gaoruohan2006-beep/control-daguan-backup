@@ -1,0 +1,8 @@
+{
+  "answer": "A。$t_s\\approx3\\,\\mathrm s,t_p=\\pi\\,\\mathrm s$。",
+  "explanation": "极点形式 $-\\zeta\\omega_n\\pm j\\omega_d$，故 $\\zeta\\omega_n=1$、$\\omega_d=1$。峰值时间为 $\\frac{\\pi}{\\omega_d}=\\pi$，5% 调节时间的常用工程值为 $\\frac{3}{\\zeta\\omega_n}=3$。",
+  "originalImages": [],
+  "answerPdfPages": "102–103",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

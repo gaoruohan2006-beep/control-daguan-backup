@@ -1,0 +1,8 @@
+{
+  "answer": "$K=100$。",
+  "explanation": "闭环分母 $s^2+10s+K$，比较得 $\\omega_n=\\sqrt K$、$2\\zeta\\omega_n=10$。代入 $\\zeta=0.5$ 得 $\\omega_n=10$，故 $K=100$。",
+  "originalImages": [],
+  "answerPdfPages": "118",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

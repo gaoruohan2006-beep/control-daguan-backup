@@ -1,0 +1,458 @@
+[
+  {
+    "identity": [
+      "A",
+      2,
+      "分析题",
+      44
+    ],
+    "id": 749560777686,
+    "retainedId": 1001474573925,
+    "action": "reuse",
+    "reason": "same two-cart forces and both transfer functions"
+  },
+  {
+    "identity": [
+      "A",
+      2,
+      "分析题",
+      47
+    ],
+    "id": 405038058494,
+    "retainedId": 671244741789,
+    "action": "reuse",
+    "reason": "same RLC network; retained card also has state model"
+  },
+  {
+    "identity": [
+      "A",
+      2,
+      "分析题",
+      55
+    ],
+    "id": 716026025638,
+    "retainedId": 258182817708,
+    "action": "reuse",
+    "reason": "same RC/mechanical analogy; variable names exchanged"
+  },
+  {
+    "identity": [
+      "A",
+      2,
+      "分析题",
+      59
+    ],
+    "id": 720397946948,
+    "retainedId": 178475581439,
+    "action": "reuse",
+    "reason": "same high-pass RC network and differential equation"
+  },
+  {
+    "identity": [
+      "A",
+      3,
+      "分析题",
+      6
+    ],
+    "id": 27606604235,
+    "retainedId": 226586557319,
+    "action": "reuse",
+    "reason": "identical response and three questions; book school attribution differs"
+  },
+  {
+    "identity": [
+      "A",
+      3,
+      "分析题",
+      9
+    ],
+    "id": 665005247259,
+    "retainedId": 334277758298,
+    "action": "reuse",
+    "reason": "same quartic parameter stability question"
+  },
+  {
+    "identity": [
+      "A",
+      3,
+      "分析题",
+      10
+    ],
+    "id": 113879608439,
+    "retainedId": 995149599723,
+    "action": "reuse",
+    "reason": "same fourth-order gain and error constraints"
+  },
+  {
+    "identity": [
+      "A",
+      3,
+      "分析题",
+      13
+    ],
+    "id": 1036239251581,
+    "retainedId": 866246799262,
+    "action": "reuse",
+    "reason": "same 30-second level sensor and 0.2 cm/s ramp"
+  },
+  {
+    "identity": [
+      "A",
+      3,
+      "分析题",
+      14
+    ],
+    "id": 463253870394,
+    "retainedId": 957422569642,
+    "action": "reuse",
+    "reason": "same three speed feedback design cases"
+  },
+  {
+    "identity": [
+      "A",
+      3,
+      "分析题",
+      22
+    ],
+    "id": 886614489981,
+    "retainedId": 942475191835,
+    "action": "reuse",
+    "reason": "same integral controller and derivative feedback disturbance problem"
+  },
+  {
+    "identity": [
+      "A",
+      3,
+      "分析题",
+      44
+    ],
+    "id": 52420701704,
+    "retainedId": 50167009334,
+    "action": "reuse",
+    "reason": "same fifth-degree polynomial and imaginary roots"
+  },
+  {
+    "identity": [
+      "A",
+      3,
+      "分析题",
+      46
+    ],
+    "id": 860618041926,
+    "retainedId": 879330766515,
+    "action": "reuse",
+    "reason": "same model; retained card explicitly uses 3-coefficient settling estimate"
+  },
+  {
+    "identity": [
+      "A",
+      3,
+      "分析题",
+      48
+    ],
+    "id": 340519199340,
+    "retainedId": 894973933039,
+    "action": "reuse",
+    "reason": "same cubic gain stability and ramp error"
+  },
+  {
+    "identity": [
+      "A",
+      3,
+      "分析题",
+      59
+    ],
+    "id": 6165053982,
+    "retainedId": 542475020921,
+    "action": "reuse",
+    "reason": "same unstable-object PI loop and reference/disturbance inputs"
+  },
+  {
+    "identity": [
+      "A",
+      3,
+      "分析题",
+      80
+    ],
+    "id": 225248675514,
+    "retainedId": 537506726399,
+    "action": "reuse",
+    "reason": "same 2 rad/s critical oscillation design"
+  },
+  {
+    "identity": [
+      "A",
+      3,
+      "分析题",
+      90
+    ],
+    "id": 684829967141,
+    "retainedId": 829021614992,
+    "action": "reuse",
+    "reason": "same fourth-order transfer function after factor reordering"
+  },
+  {
+    "identity": [
+      "A",
+      3,
+      "分析题",
+      92
+    ],
+    "id": 963223070197,
+    "retainedId": 159579944272,
+    "action": "reuse",
+    "reason": "same zeta and peak time; retained card includes both bands"
+  },
+  {
+    "identity": [
+      "A",
+      3,
+      "分析题",
+      97
+    ],
+    "id": 625473693730,
+    "retainedId": 322505411825,
+    "action": "upgrade",
+    "reason": "same model; add complete-model transient question and answer"
+  },
+  {
+    "identity": [
+      "A",
+      3,
+      "分析题",
+      101
+    ],
+    "id": 769824577346,
+    "retainedId": 817203494036,
+    "action": "reuse",
+    "reason": "same quartic with zero-pivot Routh table"
+  },
+  {
+    "identity": [
+      "A",
+      3,
+      "分析题",
+      107
+    ],
+    "id": 687621057065,
+    "retainedId": 322891934382,
+    "action": "upgrade",
+    "reason": "same coefficient condition theorem; include ramp case"
+  },
+  {
+    "identity": [
+      "A",
+      3,
+      "分析题",
+      110
+    ],
+    "id": 381311230542,
+    "retainedId": 499007699165,
+    "action": "reuse",
+    "reason": "same mass-spring-damper and 3 N final displacement"
+  },
+  {
+    "identity": [
+      "A",
+      3,
+      "选择题",
+      23
+    ],
+    "id": 995645085758,
+    "retainedId": 34868443644,
+    "action": "reuse",
+    "reason": "same closed-loop function and false DC-gain option"
+  },
+  {
+    "identity": [
+      "A",
+      3,
+      "填空题",
+      6
+    ],
+    "id": 459699040690,
+    "retainedId": 1024707168126,
+    "action": "reuse",
+    "reason": "same impulse response of unity feedback loop"
+  },
+  {
+    "identity": [
+      "A",
+      3,
+      "填空题",
+      15
+    ],
+    "id": 689695094005,
+    "retainedId": 493761234925,
+    "action": "upgrade",
+    "reason": "same step response; add damping and natural frequency"
+  },
+  {
+    "identity": [
+      "A",
+      3,
+      "填空题",
+      17
+    ],
+    "id": 1005461198095,
+    "retainedId": 297843523329,
+    "action": "reuse",
+    "reason": "same 60-second thermometer response"
+  },
+  {
+    "identity": [
+      "A",
+      3,
+      "填空题",
+      20
+    ],
+    "id": 1093597979475,
+    "retainedId": 578176230489,
+    "action": "reuse",
+    "reason": "identical two-exponential impulse response"
+  },
+  {
+    "identity": [
+      "A",
+      3,
+      "填空题",
+      22
+    ],
+    "id": 1055143326557,
+    "retainedId": 460877991948,
+    "action": "reuse",
+    "reason": "same first-order response point (20,0.98)"
+  },
+  {
+    "identity": [
+      "A",
+      3,
+      "填空题",
+      26
+    ],
+    "id": 379389318535,
+    "retainedId": 580777786413,
+    "action": "reuse",
+    "reason": "identical DC-preserving reduction"
+  },
+  {
+    "identity": [
+      "A",
+      3,
+      "简答题",
+      2
+    ],
+    "id": 1043014474925,
+    "retainedId": 1309217566,
+    "action": "reuse",
+    "reason": "same dominant pole definition and conditions"
+  },
+  {
+    "identity": [
+      "A",
+      3,
+      "选择题",
+      15
+    ],
+    "id": 765657108630,
+    "retainedId": 43915166247,
+    "action": "reuse",
+    "reason": "same dominant-pole distance and decay-rate question"
+  },
+  {
+    "identity": [
+      "A",
+      3,
+      "选择题",
+      21
+    ],
+    "id": 282078530320,
+    "retainedId": 43915166247,
+    "action": "reuse",
+    "reason": "same dominant-pole distance and decay-rate question"
+  },
+  {
+    "identity": [
+      "A",
+      3,
+      "填空题",
+      31
+    ],
+    "id": 1014653287686,
+    "retainedId": 43915166247,
+    "action": "reuse",
+    "reason": "same dominant-pole distance and decay-rate question"
+  },
+  {
+    "identity": [
+      "A",
+      2,
+      "分析题",
+      62
+    ],
+    "id": 696566974513,
+    "retainedId": 664634327223,
+    "action": "upgrade",
+    "reason": "same two-RC topology; combine requested derivation"
+  },
+  {
+    "identity": [
+      "A",
+      3,
+      "分析题",
+      98
+    ],
+    "id": 304369572033,
+    "retainedId": 326053557202,
+    "action": "append",
+    "reason": "same loop and pole -5; add step response to retained problem"
+  },
+  {
+    "identity": [
+      "A",
+      3,
+      "分析题",
+      99
+    ],
+    "id": 357895092456,
+    "retainedId": 650419697771,
+    "action": "append",
+    "reason": "equivalent reference feedforward placement; preserve parameter conversion"
+  },
+  {
+    "identity": [
+      "A",
+      3,
+      "分析题",
+      27
+    ],
+    "id": 631352348330,
+    "retainedId": 957422569642,
+    "action": "append",
+    "reason": "same parameter model and first case; add the sector constraint"
+  },
+  {
+    "identity": [
+      "A",
+      3,
+      "填空题",
+      18
+    ],
+    "id": 584042281679,
+    "retainedId": 878044393027,
+    "action": "append",
+    "reason": "same step response; add the frequency response task"
+  },
+  {
+    "identity": [
+      "A",
+      4,
+      "选择题",
+      11
+    ],
+    "id": 424455364928,
+    "retainedId": 512626496146,
+    "action": "reuse",
+    "reason": "same additional left-half-plane pole and root-locus trend"
+  }
+]

@@ -1,0 +1,8 @@
+{
+  "answer": "C。10。",
+  "explanation": "提取第二个因子的常数 $4$，得 $G=\\frac{10}{(2s+1)(0.25s+1)}$，所以开环增益为 $10$。该系统没有积分器，开环静态增益也等于 $G(0)=10$。",
+  "originalImages": [],
+  "answerPdfPages": "110",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

@@ -1,0 +1,8 @@
+{
+  "answer": "$L_a=\\frac{K}{s(s^2+s+K)}$。",
+  "explanation": "闭环特征式为 $s^3+s^2+Ks+Ka=0$。不含a的部分是 $s(s^2+s+K)$，参数项为aK，因此 $1+\\frac{aK}{s(s^2+s+K)}=0$。K固定时它仍出现在基准函数中，不是本次扫动的参数。",
+  "originalImages": [],
+  "answerPdfPages": "293",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

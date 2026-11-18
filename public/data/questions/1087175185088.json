@@ -1,0 +1,8 @@
+{
+  "answer": "$s=\\pm j$，$K=5$。",
+  "explanation": "闭环分母 $D=s^4+4s^3+6s^2+4s+K$。令 $s=j\\omega,\\omega>0$，虚部为 $4\\omega(1-\\omega^2)=0$，所以 $\\omega=1$；实部 $\\omega^4-6\\omega^2+K=0$ 给K=5。此时 $D=(s^2+1)(s^2+4s+5)$，另两根在左半平面，确为稳定边界。",
+  "originalImages": [],
+  "answerPdfPages": "294",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

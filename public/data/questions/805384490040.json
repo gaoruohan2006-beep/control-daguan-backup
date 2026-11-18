@@ -1,0 +1,8 @@
+{
+  "answer": "C。",
+  "explanation": "特征式 $s^3+6s^2+8s+K$，劳斯得稳定区 $0<K<48$，$K=48$ 有虚根 $\\pm j\\sqrt8$，故A、B错误。轨迹上点的对应增益为 $K=|s_0(s_0+2)(s_0+4)|$。分离点由 $3s^2+12s+8=0$ 得 $s_d=-2+\\frac{2}{\\sqrt3}$，另一根由根和为-6得 $-2-\\frac{4}{\\sqrt3}\\ne-4$。",
+  "originalImages": [],
+  "answerPdfPages": "292",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

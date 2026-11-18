@@ -1,0 +1,8 @@
+{
+  "answer": "C。1。",
+  "explanation": "闭环分母 $s^2+2s+10$ 稳定。系统为 I 型，阶跃分量误差为零，速度误差系数 $K_v=5$，斜坡分量误差为 $\\frac{5}{K_v}=1$。输入 $5t$ 的拉氏变换为 $\\frac{5}{s^2}$，不能遗漏斜率系数。",
+  "originalImages": [],
+  "answerPdfPages": "111",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

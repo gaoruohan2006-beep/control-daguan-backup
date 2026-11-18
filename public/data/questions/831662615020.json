@@ -1,0 +1,8 @@
+{
+  "answer": "正确。",
+  "explanation": "$\\zeta=1$ 时特征式 $(s+\\omega_n)^2$，重根位于负实轴。自然响应为 $(a+bt)e^{-\\omega_nt}$，当 $\\omega_n>0$ 时仍趋于零，因此稳定。负实重根不会像虚轴重根那样引起不衰减或增长。",
+  "originalImages": [],
+  "answerPdfPages": "120",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

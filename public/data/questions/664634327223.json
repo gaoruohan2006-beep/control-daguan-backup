@@ -1,0 +1,8 @@
+{
+  "answer": "令 $a=R_1R_2C_1C_2$、$b=R_1C_1+R_1C_2+R_2C_2$、$d=R_1C_1+R_2C_2$，\n$$a\\ddot u_o+b\\dot u_o+u_o=a\\ddot u_i+d\\dot u_i+u_i.$$\n$$\\frac{U_o}{U_i}=\\frac{as^2+ds+1}{as^2+bs+1}.$$",
+  "explanation": "串联负载中的电流为 $i_1+i_2$，所以 $u_o=R_2(i_1+i_2)+C_2^{-1}\\int_0^t(i_1+i_2)\\,\\mathrm d\\tau$。对时间求导，将题给的 $i_1,i_2$ 及其导数代入：\n$$\\dot u_o=R_2C_1(\\ddot u_i-\\ddot u_o)+\\left(\\frac{R_2}{R_1}+\\frac{C_1}{C_2}\\right)(\\dot u_i-\\dot u_o)+\\frac{u_i-u_o}{R_1C_2}.$$\n乘以 $R_1C_2$ 并按输出导数移项，得到微分方程。零初值变换得传递函数，与同拓扑的第 50 题一致。",
+  "originalImages": [],
+  "answerPdfPages": "78–80",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

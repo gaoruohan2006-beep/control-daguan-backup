@@ -1,0 +1,8 @@
+{
+  "answer": "（1）$K=2,p=3$；（2）$K=25,p=6$。",
+  "explanation": "第一问 $E=\\frac{2}{s+1}-\\frac{1}{s+2}=\\frac{s+3}{s^2+3s+2}$，而单位阶跃误差为 $\\frac{s+p}{s^2+ps+K}$，比较得参数。第二问 $\\omega_d=4$，超调指数给 $\\zeta\\omega_n=3$，故 $\\omega_n^2=3^2+4^2=25$，$K=25$、$p=2\\zeta\\omega_n=6$。",
+  "originalImages": [],
+  "answerPdfPages": "187–188",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

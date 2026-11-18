@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 532 192" width="532" height="192" role="img" aria-label="题中各信号支路及其增益">
+<title>题中各信号支路及其增益</title><defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 1L10 5 0 9z" fill="#20384d"/></marker></defs>
+<style>text{fill:#142f45;font:15px "Times New Roman",SimSun,serif}.wire,.arr{fill:none;stroke:#20384d;stroke-width:1.65;stroke-linecap:round;stroke-linejoin:round}.arr{marker-end:url(#ar)}.box{fill:#fff;stroke:#20384d;stroke-width:1.6}.node{fill:#20384d}</style><rect width="100%" height="100%" fill="white"/><path class="arr" d="M53 48H140"/>
+<rect x="87.5" y="24" width="18" height="17" rx="3" fill="#fff"/>
+<text x="96.5" y="37" text-anchor="middle">1</text>
+<path class="arr" d="M369 56Q357 80 339 80H193Q175 80 163 56"/>
+<rect x="252.0" y="86" width="28" height="17" rx="3" fill="#fff"/>
+<text x="266.0" y="99" text-anchor="middle">−1</text>
+<path class="arr" d="M482 56Q470 112 452 112H193Q175 112 163 56"/>
+<rect x="303.5" y="118" width="38" height="17" rx="3" fill="#fff"/>
+<text x="322.5" y="131" text-anchor="middle">−Kt</text>
+<path class="arr" d="M166 48H253"/>
+<rect x="195.5" y="24" width="28" height="17" rx="3" fill="#fff"/>
+<text x="209.5" y="37" text-anchor="middle">K₁</text>
+<path class="arr" d="M369 56Q357 144 339 144H306Q288 144 276 56"/>
+<rect x="308.5" y="150" width="28" height="17" rx="3" fill="#fff"/>
+<text x="322.5" y="163" text-anchor="middle">−1</text>
+<path class="arr" d="M279 48H366"/>
+<rect x="263.5" y="24" width="118" height="17" rx="3" fill="#fff"/>
+<text x="322.5" y="37" text-anchor="middle">Km/(Tm·s+1)</text>
+<path class="arr" d="M392 48H479"/>
+<rect x="391.5" y="24" width="88" height="17" rx="3" fill="#fff"/>
+<text x="435.5" y="37" text-anchor="middle">K₂·K₃·K₄</text>
+<circle class="box" cx="40" cy="48" r="12"/>
+<text x="40" y="52" text-anchor="middle">R</text>
+<circle class="box" cx="153" cy="48" r="12"/>
+<text x="153" y="52" text-anchor="middle">E</text>
+<circle class="box" cx="266" cy="48" r="12"/>
+<text x="266" y="52" text-anchor="middle">Ua</text>
+<circle class="box" cx="379" cy="48" r="12"/>
+<text x="379" y="52" text-anchor="middle">V</text>
+<circle class="box" cx="492" cy="48" r="12"/>
+<text x="492" y="52" text-anchor="middle">C</text></svg>

@@ -1,0 +1,8 @@
+{
+  "answer": "误差无有限终值，渐近为 $e(t)=0.2t+0.24+o(1)$。",
+  "explanation": "特征多项式为 $s(s+10)(s+5)+500=s^3+15s^2+50s+500$，满足 $15\\times50>500$，闭环稳定。比较点误差通道 $S=\\frac{1}{1+GH}$ 为I型灵敏度函数，低频展开 $S=0.1s+0.02s^2+O(s^3)$。与 $R=\\frac{2}{s}+\\frac{2}{s^2}+\\frac{2}{s^3}$ 相乘，得到 $E=\\frac{0.2}{s^2}+\\frac{0.24}{s}+$ 稳定衰减项，因此误差线性增长。非单位反馈时必须先明确比较点误差，不能直接将 $R-C$ 当作同一信号。",
+  "originalImages": [],
+  "answerPdfPages": "182–183",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

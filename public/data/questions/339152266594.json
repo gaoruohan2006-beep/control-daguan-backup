@@ -1,0 +1,8 @@
+{
+  "answer": "$$y(t)=1-4e^{-t}+2e^{-2t},\\quad t\\ge0.$$",
+  "explanation": "单边变换得 $(s^2+3s+2)Y=\\frac{2}{s}-s-3$。部分分式为 $Y=\\frac{1}{s}-\\frac{4}{s+1}+\\frac{2}{s+2}$。初值检查：$1-4+2=-1$，导数 $4-4=0$；终值为1。题目已明确非零初始运动方程，因此不能仅用 $Y=\\frac{\\Phi}{s}$。",
+  "originalImages": [],
+  "answerPdfPages": "131–133",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

@@ -1,0 +1,8 @@
+{
+  "answer": "令 $P=G_2-G_1+2G_1G_2$，\n$$\\frac CR=\\frac{G_3P}{1+G_1G_2+G_3P}.$$\n（2）$\\Phi=\\frac{2}{s^2+s+3}$，精确5%调节约6.0132秒，工程估算6秒；（3）$\\Phi=\\frac{2-s}{s^3+3s^2+3s+6}$，$e_{ss}=\\frac{2}{3}$。",
+  "explanation": "由两耦合方程得 $X=\\frac{G_1(G_2-1)U}{1+G_1G_2}$、$Y=\\frac{G_2(1+G_1)U}{1+G_1G_2}$，相加再闭合外环得到通式。第二问标准分母给 $\\zeta\\omega_n=0.5$，工程时间为6秒，完整误差带最后交点略有差异。第三问代入并通分，三阶分母满足 $3\\times3>6$，稳定，直流增益1/3，所以阶跃误差2/3。交叉线路没有节点时不能相连，正负号须按所列方程。",
+  "originalImages": [],
+  "answerPdfPages": "218–220",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

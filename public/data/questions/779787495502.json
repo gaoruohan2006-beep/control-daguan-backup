@@ -1,0 +1,8 @@
+{
+  "answer": "令 $D=1+(G_2+G_3)G_4$，\n$$\\frac CR=\\frac{[G_2+G_3+G_1G_2]G_4}D,\\quad H=-\\frac1{G_2+G_3}.$$",
+  "explanation": "将输出式写为 $C=G_4[(G_2+G_3)E+G_1G_2R+N]$，再代入误差定义。参考分子为 $G_4(G_2+G_3+G_1G_2)$，扰动分子为 $G_4[1+H(G_2+G_3)]$，公共分母为 $D$。将扰动分子恒等置零，得到理想补偿。补偿器存在的前提是 $G_2+G_3$ 不恒零，且实际应用还须检查因果性和内部稳定性。",
+  "originalImages": [],
+  "answerPdfPages": "197–198",
+  "referenceNote": "题本询问H但原图相应扰动支路漏标H；按答案册的该支路定义在题干直接补齐。",
+  "sourceType": "practice"
+}

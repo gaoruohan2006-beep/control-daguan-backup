@@ -1,0 +1,8 @@
+{
+  "answer": "$t_s=\\frac{\\ln20}{5}\\approx0.5991\\,\\mathrm s$；工程近似0.6秒。",
+  "explanation": "单位阶跃终值为2，响应为 $2(1-e^{-5t})$。相对终值误差为 $e^{-5t}$，令其等于0.05即可。采用相对误差带，静态增益2不会使调节时间加倍。",
+  "originalImages": [],
+  "answerPdfPages": "118",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

@@ -1,0 +1,8 @@
+{
+  "answer": "（1）超调 $e^{-\\frac{\\pi}{2}}\\approx20.79\\%$，峰值 $\\frac{\\pi}{4}$ 秒，5%工程时间1.5秒、2%工程时间2秒；（2）0.4；（3）扰动误差为 $-\\frac{1}{K}$，增大 $K$ 可减小幅值。",
+  "explanation": "闭环分母为 $s^2+4s+KK_1$，第一问常数20，得 $\\omega_n=2\\sqrt5,\\zeta=\\frac{1}{\\sqrt5},\\omega_d=4$。误差系数 $K_v=\\frac{KK_1}{4}=5$，斜率2的误差为2/5，阶跃分量无差。扰动通道为 $\\frac{E}{N}=-\\frac{G}{1+KG}$，零频极限为 $-\\frac{1}{K}$。二阶模型内正增益始终稳定，但增益增大使阻尼比减小，扰动精度与动态平稳性有代价。",
+  "originalImages": [],
+  "answerPdfPages": "240–241",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

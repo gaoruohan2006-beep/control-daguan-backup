@@ -1,0 +1,8 @@
+{
+  "answer": "扰动通道分别为 $\\frac{G_d}{1+GK}$ 和 $\\frac{G_d+GK_d}{1+GK}$。准确且可实现的前馈取 $K_d=-\\frac{G_d}{G}$ 时可完全抵消。",
+  "explanation": "分别将输出项移到左边即可求两通道。前馈提供额外的设计自由度，但只有当 $G_d+GK_d$ 比原 $G_d$ 更小时才改善抑制；符号或模型错误也可能加重扰动。因此不能仅凭画出前馈通路就断言一定更好。形式逆还要满足稳定性、因果性、相对阶数和扰动可测等实现条件。",
+  "originalImages": [],
+  "answerPdfPages": "235–236",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

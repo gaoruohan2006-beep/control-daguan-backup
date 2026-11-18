@@ -1,0 +1,8 @@
+{
+  "answer": "4 个，分别为 $-2,-1,-1+j,-1-j$。",
+  "explanation": "试根并多项式除法得 $D=(s+1)(s+2)(s+3)(s^2+2s+2)$。二次因子的根为 $-1\\pm j$，它们虽然不是实数，但实部也落在区间内。闭区间包括边界-2与-1，因此计入四个；如果只问“实根位于区间”才是两个。",
+  "originalImages": [],
+  "answerPdfPages": "205–206",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

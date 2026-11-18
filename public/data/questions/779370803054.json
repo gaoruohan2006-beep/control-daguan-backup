@@ -1,0 +1,8 @@
+{
+  "answer": "A。",
+  "explanation": "闭环极点为 $-1\\pm j\\sqrt3$ 与 $-36$。快极点远离主导极点，保留静态增益后近似为 $\\frac{\\frac{5}{36}}{s^2+2s+4}$。其阻尼振荡频率为 $\\sqrt3$，故 $t_p\\approx\\frac{\\pi}{\\sqrt3}$。分子常数影响幅值，不影响典型二阶峰值时间。B 是上升时间公式。",
+  "originalImages": [],
+  "answerPdfPages": "105",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

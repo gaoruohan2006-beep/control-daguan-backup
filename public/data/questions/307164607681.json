@@ -1,0 +1,8 @@
+{
+  "answer": "正确。",
+  "explanation": "$t_p=\\frac{\\pi}{\\omega_n\\sqrt{1-\\zeta^2}}$；首次达到终值的上升时间为 $t_r=\\frac{\\pi-\\arccos\\zeta}{\\omega_n\\sqrt{1-\\zeta^2}}$。固定 $0<\\zeta<1$ 时，两者均与 $\\omega_n$ 成反比。",
+  "originalImages": [],
+  "answerPdfPages": "120",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

@@ -1,0 +1,8 @@
+{
+  "answer": "（1）$\\zeta=0.25,\\omega_n=10$，$t_s\\approx1.2\\,\\mathrm s$，$e_{ss}=0.15$；（2）增大 $T_2$ 或减小 $T_1,K_1,K_2$ 可提高阻尼比；（3）不能只由“都增大”确定。",
+  "explanation": "闭环分母为 $T_1T_2s^2+T_2s+K_1K_2$，故\n$$\\omega_n=\\sqrt{\\frac{K_1K_2}{T_1T_2}},\\quad\\zeta=\\frac12\\sqrt{\\frac{T_2}{T_1K_1K_2}}.$$\n代数值得所列指标。比较点误差 $E=\\frac{U_i}{1+K_2G}$，斜坡斜率为 $v$ 时 $e_{ss}=\\frac{vT_2}{K_1K_2}$。因此 $T_1$ 不影响该稳态值，$T_2$ 增大会使误差增大，两个增益增大会使误差减小，同时增大须比较相对倍数。跟踪误差 $u_i-u_o$ 与比较点误差不同；本题按题给比较点计算。",
+  "originalImages": [],
+  "answerPdfPages": "150–152",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

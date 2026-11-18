@@ -1,0 +1,8 @@
+{
+  "answer": "$$\\frac X U=\\frac{Ba}{Rm s^2+(RD+B^2a^2)s+RK}.$$",
+  "explanation": "杆运动产生反电动势 $e=Ba\\dot x$，电路方程为 $u=Ri+Ba\\dot x$。安培力为 $F=Bai$，机械方程为 $m\\ddot x+D\\dot x+Kx=Bai$。代入 $i=\\frac{u-Ba\\dot x}{R}$，得到\n$$Rm\\ddot x+(RD+B^2a^2)\\dot x+RKx=Bau.$$\n零初值拉氏变换得结果。运动感应电动势产生的 $\\frac{B^2a^2}{R}$ 相当于额外阻尼，符号必须为正。",
+  "originalImages": [],
+  "answerPdfPages": "84",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

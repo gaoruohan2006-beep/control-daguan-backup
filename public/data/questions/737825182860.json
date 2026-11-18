@@ -1,0 +1,8 @@
+{
+  "answer": "$$G=\\frac{3s+7}{s^2+s-4}.$$",
+  "explanation": "脉冲响应的拉氏变换即闭环传递函数 $\\Phi=\\frac{1}{s+3}+\\frac{2}{s+1}=\\frac{3s+7}{s^2+4s+3}$。由单位负反馈关系 $G=\\frac{\\Phi}{1-\\Phi}$，通分得分母 $s^2+s-4$。闭环稳定与开环有右半平面极点不矛盾。",
+  "originalImages": [],
+  "answerPdfPages": "112",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

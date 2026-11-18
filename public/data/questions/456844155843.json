@@ -1,0 +1,8 @@
+{
+  "answer": "C。$0<K<30$。",
+  "explanation": "特征多项式为 $D=s^3+6s^2+5s+K$。三阶劳斯首列为 $1,6,\\frac{30-K}{6},K$。首列同正要求 $K>0$ 且 $30-K>0$，因此选 C；边界 $K=0$ 或 $K=30$ 都不属于渐近稳定。",
+  "originalImages": [],
+  "answerPdfPages": "102",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

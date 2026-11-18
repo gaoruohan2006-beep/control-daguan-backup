@@ -1,0 +1,8 @@
+{
+  "answer": "（1）$\\zeta=0.2,\\omega_n=6$，超调约52.66%，$t_p\\approx0.5344$ 秒，$t_s\\approx2.5$ 秒；（2）$K_t=12$，超调约4.599%，$t_p\\approx0.7332$ 秒，$t_s\\approx0.7143$ 秒。",
+  "explanation": "标准化分母 $s^2+(2.4+\\frac{K_t}{2})s+36$，所以自然频率恒为6，阻尼比为 $\\frac{2.4+\\frac{K_t}{2}}{12}$。无测速时为0.2；要求0.7得 $K_t=12$。分别用 $\\sigma=e^{-\\frac{\\pi\\zeta}{\\sqrt{1-\\zeta^2}}}$、$t_p=\\frac{\\pi}{6\\sqrt{1-\\zeta^2}}$ 计算。所列5%时间统一按 $\\frac{3}{\\zeta\\omega_n}$ 估算。测速反馈减小超调，但峰值时间可能增大，且过强反馈造成过阻尼后不保证更快。",
+  "originalImages": [],
+  "answerPdfPages": "229–232",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

@@ -1,0 +1,8 @@
+{
+  "answer": "$$(M+m)\\ddot x+ml\\ddot\\theta=u.$$\n$$J\\ddot\\theta- mgl\\theta=-ml\\ddot x.$$\n令 $q=(M+m)J-m^2l^2>0$，有\n$$\\frac{\\Theta}{U}=\\frac{-ml}{qs^2-(M+m)mgl}.$$",
+  "explanation": "小角度时摆球横坐标为 $x+l\\theta$。水平动量平衡给出第一式；绕支点的角动量平衡给出第二式，重力对直立平衡产生失稳力矩。消去 $\\ddot x$ 得 $q\\ddot\\theta-(M+m)mgl\\theta=-ml u$，其开环有一个正实极点。\n**反馈方向必须与模型符号一致。** 取角度与角速度反馈 $u=k_p\\theta+k_d\\dot\\theta$，则\n$$q\\ddot\\theta+mlk_d\\dot\\theta+[mlk_p-(M+m)mgl]\\theta=0.$$\n当 $k_d>0$、$k_p>(M+m)g$ 时，角度子系统渐近稳定。结构为角度传感器与角速度估计器，经比例、微分增益相加后驱动小车。若还要求小车位置回到指定位置，应测量 $(x,\\dot x,\\theta,\\dot\\theta)$ 并作全状态反馈；仅稳摆角不能保证小车位置收敛。",
+  "originalImages": [],
+  "answerPdfPages": "76–77",
+  "referenceNote": "明确 J 为支点总惯量；小角度模型及反馈符号按题给坐标独立推导。",
+  "sourceType": "practice"
+}

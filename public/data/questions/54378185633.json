@@ -1,0 +1,8 @@
+{
+  "answer": "C。",
+  "explanation": "闭环分母 $s^2+4s+16$。与 $s^2+2\\zeta\\omega_ns+\\omega_n^2$ 比较得 $\\omega_n=4$、$\\zeta=\\frac{1}{2}$。因 $0<\\zeta<1$，极点为一对左半平面共轭复根，属于欠阻尼。",
+  "originalImages": [],
+  "answerPdfPages": "108",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

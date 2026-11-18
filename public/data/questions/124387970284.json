@@ -1,0 +1,8 @@
+{
+  "answer": "$G_a=\\frac{0.5s+1}{s}$，$\\Phi=\\frac{5}{s^2+5}$；第三问误差无有限终值；去掉积分后 $\\zeta=\\frac{1}{\\sqrt5},\\omega_n=\\sqrt5$。",
+  "explanation": "闭环未约去前的特征式为 $s^3+2s^2+5s+10=(s+2)(s^2+5)$，参考通道可约去稳定因子 $s+2$，仍有简单虚轴极点 $\\pm j\\sqrt5$。所以阶跃及斜坡激起持续振荡，不能给实际稳态误差为零。去掉积分支路后，开环为 $\\frac{5}{s(s+2)}$，闭环分母 $s^2+2s+5$，比较标准形式得到第四问参数。",
+  "originalImages": [],
+  "answerPdfPages": "226–227",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

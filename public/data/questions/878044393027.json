@@ -1,0 +1,8 @@
+{
+  "answer": "$G=\\frac{36}{s(s+13)}$，$\\zeta=\\frac{13}{12},\\omega_n=6$，$e_{ss}=\\frac{13}{18}$。\n\n**书册补充：第3章填空题18。** $$\\Phi(j\\omega)=\\frac{36}{(j\\omega)^2+13j\\omega+36}.$$",
+  "explanation": "对阶跃响应先求 $\\Phi=sC=\\frac{36}{(s+4)(s+9)}$。再用 $G=\\frac{\\Phi}{1-\\Phi}$ 得开环。分母 $s^2+13s+36$ 对应自然频率6、阻尼比13/12，为过阻尼。速度系数 $\\frac{36}{13}$，斜率2的误差为 $\\frac{2}{\\frac{36}{13}}=\\frac{13}{18}$，阶跃分量无差。\n\n**书册补充：第3章填空题18。**\n\n先求 $\\Phi(s)=s[\\frac{1}{s}-\\frac{1.8}{s+4}+\\frac{0.8}{s+9}]$。通分后 $s^2$、$s$ 项均相消，分子为36，分母为 $(s+4)(s+9)$。再令 $s=j\\omega$ 即得闭环频率特性，而不是对时间响应直接代入 $t=j\\omega$。",
+  "originalImages": [],
+  "answerPdfPages": "241–242",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

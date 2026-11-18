@@ -1,0 +1,8 @@
+{
+  "answer": "$K=128$，闭环根 $-4,-4\\pm4j$，$e_{ss}=0.5$。",
+  "explanation": "特征式为 $D=s^3+12s^2+(32+\\frac{K}{4})s+K$。设复根为 $-a\\pm ja$、第三根为 $-b$，则 $D=(s+b)(s^2+2as+2a^2)$。比较系数得到 $b+2a=12$、$2a^2+2ab=32+\\frac{K}{4}$、$2a^2b=K$，消元为 $(a-4)(a^2-4a+8)=0$。实解 $a=b=4$，得增益128。外误差 $E=R-C$ 的单位斜坡终值为 $\\frac{32+\\frac{K}{4}}{K}=\\frac{1}{2}$。",
+  "originalImages": [],
+  "answerPdfPages": "258–259",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

@@ -1,0 +1,8 @@
+{
+  "answer": "（1）$\\eta=0$ 无阻尼；$\\eta>0$ 稳定，超调随阻尼增大而减小，过阻尼后调节可能变慢。（2）可取 $G_f=1,G_c=1+\\frac{K_2}{2s}$，两种阶跃共同作用下误差终值0。",
+  "explanation": "第一问闭环分母为 $s^2+K_2\\eta s+K_1K_2$，$\\omega_n=\\sqrt{K_1K_2}$、$\\zeta=\\frac{K_2\\eta}{2\\sqrt{K_1K_2}}$。原点开始的 $\\eta=0$ 有纯虚根，并非渐近稳定。进入欠阻尼区后超调减小；过阻尼时慢根趋近 $-\\frac{K_1}{\\eta}$，过大的速度反馈反而延长响应。\n令 $G_f=\\eta>0,G_c=k_p+\\frac{k_i}{s}$，闭环特征式变为 $s^3+K_2\\eta s^2+K_2k_ps+K_2k_i$。三阶稳定条件 $K_2\\eta k_p>k_i>0$。所给设计取 $\\eta=k_p=1,k_i=\\frac{K_2}{2}$，严格满足。此时参考阶跃和输入到末级积分器的扰动阶跃，在误差通道内均具有零频零点，所以终值均为零。",
+  "originalImages": [],
+  "answerPdfPages": "208–211",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

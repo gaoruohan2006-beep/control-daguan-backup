@@ -1,0 +1,8 @@
+{
+  "answer": "B。",
+  "explanation": "相对超调量为首次峰值超过终值的百分比，衡量过渡过程对目标值的越过程度，属于平稳性指标。典型二阶模型中 $\\sigma=\\exp[-\\frac{\\pi\\zeta}{\\sqrt{1-\\zeta^2}}]$；阻尼比越大，超调越小。快速性通常用上升、峰值和调节时间描述，稳态准确性用稳态误差描述。",
+  "originalImages": [],
+  "answerPdfPages": "108–109",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

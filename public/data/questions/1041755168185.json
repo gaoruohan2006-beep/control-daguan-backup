@@ -1,0 +1,8 @@
+{
+  "answer": "错误。",
+  "explanation": "误差为 $e_{ss}=\\frac{1}{1+K_p}$。任意有限 $K_p>0$ 时该值仍大于零，只能在 $K_p\\to\\infty$ 的形式极限下趋于零。实际增益还受稳定性、噪声和饱和约束，严格无差通常需积分内模。",
+  "originalImages": [],
+  "answerPdfPages": "120",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

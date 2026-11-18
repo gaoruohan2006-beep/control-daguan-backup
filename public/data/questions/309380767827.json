@@ -1,0 +1,8 @@
+{
+  "answer": "$K=4,\\beta=0.8$；$\\sigma=e^{-\\frac{4\\pi}{3}}\\approx1.516\\%$，$t_s\\approx2.5\\,\\mathrm s$；$G=s+3.2$。",
+  "explanation": "消元得 $(s^2+K\\beta s+K)Z=KR-KN-sGN$，再加上 $C=Z+N$。无扰动时分母与标准二阶式比较得 $K=4,K\\beta=3.2$。扰动分子为 $s^2+K\\beta s-sG$，使它恒为零要求 $G=s+K\\beta$。补偿包括微分与比例项。超调和工程调节时间按题给阻尼比、自然频率计算。",
+  "originalImages": [],
+  "answerPdfPages": "166–168",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

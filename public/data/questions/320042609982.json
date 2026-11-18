@@ -1,0 +1,8 @@
+{
+  "answer": "闭环稳定；三项依次为 $0,2,+\\infty$（第三项无有限稳态误差）。",
+  "explanation": "特征多项式为 $s^3+8s^2+20s+12$，劳斯首列 $1,8,\\frac{37}{2},12$ 全正。系统为I型，$K_p=\\infty$、$K_v=\\lim sG=\\frac{12}{12}=1$、$K_a=0$。因此阶跃无差，斜率2的斜坡误差为 $\\frac{2}{K_v}=2$，非零二次输入产生增长误差。",
+  "originalImages": [],
+  "answerPdfPages": "179–180",
+  "referenceNote": "落实8月勘误第3页：分析题41斜坡误差由答案册的1更正为2。",
+  "sourceType": "practice"
+}

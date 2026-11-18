@@ -1,0 +1,8 @@
+{
+  "answer": "$K_1=100$，闭环稳定。",
+  "explanation": "闭环特征式 $T_2s^2+(1+K_2T_1)s+K_1K_2$。正参数下各系数为正，二阶稳定。由于扰动以负号输入对象，误差通道为 $\\frac{E}{N}=\\frac{K_2}{D}$，单位阶跃终值为 $\\frac{K_2}{K_1K_2}=\\frac{1}{K_1}$。解等于0.01得100，不能遗漏扰动符号而得到负增益。",
+  "originalImages": [],
+  "answerPdfPages": "274–275",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

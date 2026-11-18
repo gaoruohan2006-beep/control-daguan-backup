@@ -1,0 +1,8 @@
+{
+  "answer": "（1）$\\sigma=e^{-\\frac{\\pi}{\\sqrt{15}}}\\approx44.43\\%$，$t_s\\approx6\\,\\mathrm s$，$e_{ss}=1.25$；（2）$K=1$。",
+  "explanation": "闭环分母 $Ts^2+s+K$，故 $\\omega_n=\\sqrt{\\frac{K}{T}}$、$\\zeta=\\frac{1}{2\\sqrt{KT}}$。第一问得 $\\omega_n=2,\\zeta=\\frac{1}{4}$，代入典型二阶超调公式得到44.43%，按 $\\frac{3}{\\zeta\\omega_n}$ 得6秒。$K_v=K=4$，斜坡误差为 $\\frac{5}{4}$。第二问由 $\\frac{1}{2\\sqrt K}=0.5$ 得 $K=1$。",
+  "originalImages": [],
+  "answerPdfPages": "125–126",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

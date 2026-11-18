@@ -1,0 +1,8 @@
+{
+  "answer": "$$\\Phi=\\frac{s+1.4}{s^2+0.8s+1.16}.$$",
+  "explanation": "先用 $\\sqrt2\\sin(t+\\frac{\\pi}{4})=\\sin t+\\cos t$。分别利用指数移位，得 $\\Phi=\\frac{1}{(s+0.4)^2+1}+\\frac{s+0.4}{(s+0.4)^2+1}$。相加得到 $\\frac{s+1.4}{(s+0.4)^2+1}$，展开分母即得。",
+  "originalImages": [],
+  "answerPdfPages": "117",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

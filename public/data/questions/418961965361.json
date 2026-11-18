@@ -1,0 +1,8 @@
+{
+  "answer": "$\\omega_n=\\frac{\\sqrt2}{2}\\,\\mathrm{\\frac{rad}{s}}$，$\\zeta=\\frac{\\sqrt2}{2}$。",
+  "explanation": "自然频率为极点到原点的距离，$\\omega_n=\\sqrt{0.5^2+0.5^2}=\\frac{\\sqrt2}{2}$。阻尼比为负实部绝对值除以模长，$\\zeta=\\frac{0.5}{\\frac{\\sqrt2}{2}}=\\frac{\\sqrt2}{2}$。虚部0.5是阻尼振荡频率，不能当成自然频率。",
+  "originalImages": [],
+  "answerPdfPages": "117",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

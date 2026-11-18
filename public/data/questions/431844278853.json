@@ -1,0 +1,8 @@
+{
+  "answer": "令归一时间 $u=\\frac tT$。\n\n无阻尼 $\\zeta=0$：\n$$c=1-\\cos u.$$\n\n欠阻尼 $0<\\zeta<1$，记 $\\beta=\\sqrt{1-\\zeta^2}$、$\\varphi=\\arccos\\zeta$：\n$$c=1-\\frac{e^{-\\zeta u}}\\beta\\sin(\\beta u+\\varphi).$$\n\n临界阻尼 $\\zeta=1$：\n$$c=1-(1+u)e^{-u}.$$\n\n过阻尼 $\\zeta>1$，记 $v=\\sqrt{\\zeta^2-1}$：\n$$\\begin{aligned}c&=1-e^{-\\zeta u}A(u),\\\\A(u)&=\\cosh(vu)+\\frac\\zeta v\\sinh(vu).\\end{aligned}$$",
+  "explanation": "极点统一为 $s=\\frac{-\\zeta\\pm\\sqrt{\\zeta^2-1}}{T}$。无阻尼时在虚轴 $\\frac{\\pm j}{T}$，持续振荡；欠阻尼时为左半平面复共轭根，振荡衰减；临界阻尼时为 $-\\frac{1}{T}$ 重根，响应单调；过阻尼时为两个相异负实根，响应单调但慢实极点可拖长过程。归一时间图只比较阻尼比，不混入时间常数改变。\n\n![四种阻尼的归一响应与极点](img/reviewed/qd1000-next-response-81.svg)",
+  "originalImages": [],
+  "answerPdfPages": "237–240",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

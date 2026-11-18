@@ -1,0 +1,8 @@
+{
+  "answer": "C。",
+  "explanation": "A 的极点实部为正；B 的三阶劳斯条件 $0.5\\times4>20$ 不成立；D 的根实部为 $0.05>0$。C 对应 $\\Phi=s[\\frac{10}{s}+\\frac{10}{s+1}]=\\frac{10(s+2)}{s+1}$，唯一极点为 $-1$，且可有直接传递项 $10$，所以输入输出稳定。其阶跃起始值非零不会自动导致不稳定。",
+  "originalImages": [],
+  "answerPdfPages": "110–111",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

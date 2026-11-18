@@ -1,0 +1,8 @@
+{
+  "answer": "$0<K_1K_2<1.5$；$e_{ss}=\\frac{2.4}{K_1K_2}$。",
+  "explanation": "令 $P=K_1K_2$，闭环分母 $D=s^4+3s^3+2s^2+Ps+0.5P$。劳斯第三行首项 $\\frac{6-P}{3}$，第四行首项 $\\frac{P(1.5-P)}{6-P}$，故稳定区为 $0<P<1.5$。环路为II型，$K_a=\\frac{P}{4}$，参考二次项加速度0.6，贡献 $\\frac{0.6}{\\frac{P}{4}}=\\frac{2.4}{P}$。控制器有积分作用，扰动位于其后，阶跃扰动误差终值为零；脉冲只激起稳定衰减响应，也不改变稳态值。",
+  "originalImages": [],
+  "answerPdfPages": "250–251",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

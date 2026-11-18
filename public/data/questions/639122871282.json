@@ -1,0 +1,8 @@
+{
+  "answer": "不存在同时满足两个要求的正参数。",
+  "explanation": "闭环分母为 $D=s^4+4s^3+5s^2+(2+K)s+aK$。劳斯条件为\n$$0<K<18,\\qquad 0<a<\\frac{(18-K)(K+2)}{16K}.$$\n参考斜坡贡献 $\\frac{2}{aK}$，扰动在对象输入以负号注入，误差贡献为 $\\frac{1}{a}$，两者同号，所以\n$$e_{ss}=\\frac{K+2}{aK}\\le0.3\\ \\Longrightarrow\\ a\\ge\\frac{10(K+2)}{3K}.$$\n若两边界能相容，须 $\\frac{10}{3}<\\frac{18-K}{16}$，即 $K<-\\frac{106}{3}$，与 $K>0$ 矛盾。因此不能只列一组互不相容的不等式就称设计完成。",
+  "originalImages": [],
+  "answerPdfPages": "189–191",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

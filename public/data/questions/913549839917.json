@@ -1,0 +1,8 @@
+{
+  "answer": "D。$0.5$。",
+  "explanation": "先判稳：特征多项式为 $0.2s^3+1.2s^2+s+2$，三阶条件 $1.2\\times1>0.2\\times2$ 成立。速度误差系数 $K_v=\\lim_{s\\to0}sG(s)=2$，因此 $e_{ss}=\\frac{1}{K_v}=0.5$。",
+  "originalImages": [],
+  "answerPdfPages": "103–104",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

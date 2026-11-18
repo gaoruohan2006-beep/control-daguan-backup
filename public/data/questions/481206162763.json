@@ -1,0 +1,8 @@
+{
+  "answer": "$135^\\circ$ 与 $225^\\circ$（等价于与负实轴夹角 $\\pm45^\\circ$）。",
+  "explanation": "稳定复极点 $s=-\\zeta\\omega_n\\pm j\\omega_n\\sqrt{1-\\zeta^2}$。当 $\\zeta=\\frac{1}{\\sqrt2}$ 时，实部绝对值与虚部绝对值相等，所以在左半平面的两条45度射线上。若从正实轴计角，必须写135和225度。",
+  "originalImages": [],
+  "answerPdfPages": "119",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

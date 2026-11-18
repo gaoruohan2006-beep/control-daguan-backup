@@ -1,0 +1,8 @@
+{
+  "answer": "幅值 $K|L_0(s)|=1$；相角 $\\arg L_0(s)=(2l+1)\\pi$。",
+  "explanation": "特征方程等价于 $KL_0=-1$。复数相等要求模和辐角同时相等，分别给幅值、相角条件。以K为可变参数画轨迹时，先用相角筛选位置，再由幅值为各点标定对应增益。",
+  "originalImages": [],
+  "answerPdfPages": "293",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

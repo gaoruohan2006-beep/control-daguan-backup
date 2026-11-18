@@ -1,0 +1,8 @@
+{
+  "answer": "$t_r=\\frac{4\\pi}{3\\sqrt3}\\approx2.418\\,\\mathrm s$，$t_p=\\frac{2\\pi}{\\sqrt3}\\approx3.628\\,\\mathrm s$，$t_s\\approx6\\,\\mathrm s$。",
+  "explanation": "闭环 $\\frac{1}{s^2+s+1}$，$\\omega_n=1,\\zeta=0.5,\\omega_d=\\frac{\\sqrt3}{2}$，$\\arccos\\zeta=\\frac{\\pi}{3}$。首次达到终值的上升时间 $\\frac{\\pi-\\frac{\\pi}{3}}{\\omega_d}$，峰值时间 $\\frac{\\pi}{\\omega_d}$，5%工程调节时间 $\\frac{3}{\\zeta\\omega_n}$。这里上升时间采用0到100%定义，调节时间明确为工程估算。",
+  "originalImages": [],
+  "answerPdfPages": "171",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

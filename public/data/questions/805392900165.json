@@ -1,0 +1,8 @@
+{
+  "answer": "令 $a=-\\frac{\\ln(0.3)}{0.1}$、$b=10\\pi$、$w^2=a^2+b^2$，\n$$\\Phi=\\frac{w^2}{s^2+2as+w^2},\\quad G=\\frac{w^2}{s(s+2a)}.$$\n数值约 $G=\\frac{1131.9155}{s(s+24.07946)}$，$e_{ss}\\approx0.0212732$。",
+  "explanation": "由超调量 $0.3=e^{-\\frac{\\pi\\zeta}{\\sqrt{1-\\zeta^2}}}=e^{-at_p}$，得到衰减率 $a=-\\frac{\\ln0.3}{0.1}$；峰值时间给阻尼振荡频率 $b=\\frac{\\pi}{0.1}$。因此自然频率平方为 $a^2+b^2$，无需使用图旁不一致的近似提示。开环速度系数 $K_v=\\frac{w^2}{2a}$，单位斜坡误差为 $\\frac{2a}{w^2}$。可回代 $e^{-a(0.1)}=0.3$ 检查图示数据。",
+  "originalImages": [],
+  "answerPdfPages": "184–185",
+  "referenceNote": "题图旁指数近似提示与30%超调不一致，按图中可直接读出的峰值和时间独立反求；8月勘误未列此项。",
+  "sourceType": "practice"
+}

@@ -1,0 +1,8 @@
+{
+  "answer": "B。",
+  "explanation": "与标准二阶分母比较，$\\omega_n=\\sqrt5$，$\\zeta=\\frac{1}{\\sqrt5}$，在 $0$ 与 $1$ 之间。也可直接求根为 $-1\\pm2j$，是一对左半平面共轭复根，因此欠阻尼。",
+  "originalImages": [],
+  "answerPdfPages": "111",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

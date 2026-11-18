@@ -1,0 +1,8 @@
+{
+  "answer": "$L_a=\\frac{s(s+1)}{s^3+s^2+10}$。",
+  "explanation": "闭环特征式 $s(s+1)(s+a)+10=s^3+s^2+10+a\\,s(s+1)=0$。按“参数项与不含参数项”分组，再除以不含参数的多项式，得到结果。根轨迹的等效开环零点变为0和-1，不能把含a的极点直接用于这组参数轨迹。",
+  "originalImages": [],
+  "answerPdfPages": "293",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

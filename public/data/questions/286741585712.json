@@ -1,0 +1,8 @@
+{
+  "answer": "（1）$K_c>K_s$；（2）一组数值解为 $K_c\\approx81.002668,T\\approx0.08652843$。",
+  "explanation": "闭环函数\n$$\\Phi=\\frac{K_c(Ts+1)}{s^2+K_cTs+K_c-K_s}.$$\n正参数下二阶稳定等价于 $K_c>K_s$。分子含零点，不能用无零点典型二阶超调式直接反求参数。\n令 $a=\\frac{K_cT}{2}$、$b=\\sqrt{K_c-K_s-a^2}$、$A=\\frac{K_c}{K_c-K_s}$。归一阶跃误差为\n$$q(t)=e^{-at}\\left[\\cos bt+\\frac{a-\\frac{K_cT}{A}}{b}\\sin bt\\right].$$\n用响应导数为零确定首峰，使最大 $-q(t)$ 为 $e^{-1}$；再求 $|q|=0.05$ 的最后交点为0.8。带正参数约束数值求根得到所列解，回代超调36.787944%、调节0.800000秒。该解的极点约 $-3.50452\\pm8.24142j$、终值约1.009975。\n\n![第3章分析题74的响应比较](img/reviewed/qd1000-next-response-74.svg)",
+  "originalImages": [],
+  "answerPdfPages": "228–229",
+  "referenceNote": "原答案用无零点二阶近似求参数；此处题干明确保留零点及精确误差带，给出完整模型的一组数值解。",
+  "sourceType": "practice"
+}

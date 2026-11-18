@@ -1,0 +1,8 @@
+{
+  "answer": "C。",
+  "explanation": "附加开环极点引入额外相角滞后，通常将相关轨迹推向右侧；附加左半平面零点通常提供相位超前，具有向左吸引作用。但具体位置、增益与其他零极点会改变结果，不能把趋势表述成“任意位置都必然改善”。A、B绝对化且未限定位置，D把常规零点作用方向写反。",
+  "originalImages": [],
+  "answerPdfPages": "292",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

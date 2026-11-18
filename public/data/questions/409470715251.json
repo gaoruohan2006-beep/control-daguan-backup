@@ -1,0 +1,8 @@
+{
+  "answer": "C。",
+  "explanation": "$K_p=\\lim_{s\\to0}G(s)H(s)$。分母有一个未相消原点极点，分子在原点非零，因此正向低频极限趋于正无穷。若还要求单位阶跃零稳态误差，须另行保证闭环稳定，不能把误差系数的形式极限直接等同于实际终值。",
+  "originalImages": [],
+  "answerPdfPages": "111",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

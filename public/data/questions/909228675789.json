@@ -1,0 +1,8 @@
+{
+  "answer": "闭环不稳定，有2个右半平面极点。",
+  "explanation": "特征方程为 $1+G=0$，清分母得到 $D=s^5+2s^4+9s^3+10s^2+s+2$。\n\n**列劳斯表。**\n$$\\begin{array}{c|ccc}s^{5}&1&9&1\\\\s^{4}&2&10&2\\\\s^{3}&4&0&0\\\\s^{2}&10&2&0\\\\s^{1}&- \\frac{4}{5}&0&0\\\\s^{0}&2&0&0\\end{array}$$\n\n\n\n首列符号依次为 $+,+,+,+,-,+$，有 2 次变号，故右半平面根有 2 个。",
+  "originalImages": [],
+  "answerPdfPages": "123–124",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

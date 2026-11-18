@@ -1,0 +1,8 @@
+{
+  "answer": "$e_{ss}=\\frac{1}{3}$。",
+  "explanation": "分母两根实部为负，闭环稳定。输出终值为 $\\Phi(0)=\\frac{4}{6}=\\frac{2}{3}$，误差 $e=r-c$ 的终值为 $1-\\frac{2}{3}=\\frac{1}{3}$。题给是闭环函数，若错误套成 $\\frac{1}{1+\\Phi(0)}$ 会得到不正确的值。",
+  "originalImages": [],
+  "answerPdfPages": "119",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

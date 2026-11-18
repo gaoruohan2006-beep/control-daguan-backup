@@ -1,0 +1,8 @@
+{
+  "answer": "$a>0$。",
+  "explanation": "将方程联立，闭环分母为 $s^3+(1+10a)s^2+10s+10$。三阶稳定条件为 $1+10a>0$ 和 $10(1+10a)>10$，后者更强，得到 $a>0$。在 $a=0$ 时分母为 $(s+1)(s^2+10)$，有一对纯虚根，不能纳入稳定区。",
+  "originalImages": [],
+  "answerPdfPages": "136",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

@@ -1,0 +1,8 @@
+{
+  "answer": "$J\\ddot\\theta+f\\dot\\theta=T$，$G=\\frac{1}{s(Js+f)}$；无超调稳定范围 $0<K\\le\\frac{f^2}{4J}$。",
+  "explanation": "阻尼力矩与角速度反向，故运动方程中为正阻尼项。反馈闭合后传递函数为 $\\frac{1}{Js^2+fs+K}$。稳定需 $K>0$；该无零点二阶系统无超调等价于两个负实根（含重根），故判别式 $f^2-4JK\\ge0$。与稳定条件相交得到答案。",
+  "originalImages": [],
+  "answerPdfPages": "283–284",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

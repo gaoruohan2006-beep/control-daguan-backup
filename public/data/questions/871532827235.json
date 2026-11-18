@@ -1,0 +1,8 @@
+{
+  "answer": "$$\\frac{U_o}{U_i}=\\frac{1}{R_1R_2C_1C_2s^2+(R_1C_1+R_1C_2+R_2C_2)s+1}.$$",
+  "explanation": "**列节点方程。** 记中间电压为 $U_a$，则\n$$\\frac{U_i-U_a}{R_1}=C_1sU_a+\\frac{U_a-U_o}{R_2}.$$\n$$\\frac{U_a-U_o}{R_2}=C_2sU_o.$$\n第二式给出 $U_a=(1+R_2C_2s)U_o$，代回第一式整理即得结果。输入输出之间的微分方程为\n$$R_1R_2C_1C_2\\ddot u_o+(R_1C_1+R_1C_2+R_2C_2)\\dot u_o+u_o=u_i.$$\n**结构图连接规则。** 将第一式写成 $U_a=\\frac{I_1-I_2}{C_1s}$，并取 $I_1=\\frac{U_i-U_a}{R_1}$、$I_2=\\frac{U_a-U_o}{R_2}$、$U_o=\\frac{I_2}{C_2s}$，依次用两个比较点、两个比例环节和两个积分环节连接。这保留了后一级对前一级的负载作用，不能直接相乘两个孤立 RC 环节。\n\n**等价信号流结构图。** 节点为求和点，支路标出对应环节；负号已包含在反馈增益中。\n\n![题中各信号支路及其增益](img/reviewed/qd1000-next-graph-2-43-solution.svg)",
+  "originalImages": [],
+  "answerPdfPages": "69–70",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

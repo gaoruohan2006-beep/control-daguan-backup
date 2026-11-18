@@ -1,0 +1,8 @@
+{
+  "answer": "$$\\frac{\\Omega}{U_1}=\\frac{K_1C_m}{(Ls+R)(Js+f)+C_m(C_e+K_1K_3)}.$$",
+  "explanation": "从电压比较点出发，经 $K_1$ 得到 $U_2$；第二个比较点减去 $E$，经 $\\frac{1}{Ls+R}$ 得到 $I$；再经 $C_m$ 得到转矩，经 $\\frac{1}{Js+f}$ 得到角速度。从角速度分别经 $C_e$ 回到电枢比较点、经 $K_3$ 回到参考比较点，均为负反馈。\n用 $I=\\frac{(Js+f)\\Omega}{C_m}$ 代入电枢方程，并将 $U_2=K_1(U_1-K_3\\Omega)$ 代入，可得 $[(Ls+R)(Js+f)+C_mC_e+K_1C_mK_3]\\Omega=K_1C_mU_1$。转速反馈增加分母常数项，两种反馈不应混为同一个未经放大的系数。\n\n**等价信号流结构图。** 节点为求和点，支路标出对应环节；负号已包含在反馈增益中。 图中W表示角速度，V表示扣除反电动势后的电枢电压。\n\n![题中各信号支路及其增益](img/reviewed/qd1000-next-graph-2-65-solution.svg)",
+  "originalImages": [],
+  "answerPdfPages": "94–97",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

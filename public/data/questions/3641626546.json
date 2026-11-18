@@ -1,0 +1,8 @@
+{
+  "answer": "$$c(t)=1-11e^{-2t}+8e^{-3t},\\qquad t\\ge0.$$",
+  "explanation": "闭环分母为 $(s+2)(s+3)$。对带初值的运动方程作单边变换：\n$$ (s^2+5s+6)C=\\frac6s-2s-12.$$\n部分分式为 $C=\\frac{1}{s}-\\frac{11}{s+2}+\\frac{8}{s+3}$，反变换得答案。复核 $c(0^+)=1-11+8=-2$、$\\dot c(0^+)=22-24=-2$，且终值1。只用零初值传递函数乘阶跃会遗漏自由响应。",
+  "originalImages": [],
+  "answerPdfPages": "124–125",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

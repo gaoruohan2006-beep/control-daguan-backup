@@ -1,0 +1,8 @@
+{
+  "answer": "$0<K<3$ 时稳定，$e_{ss}=\\frac{1}{2K}$；满足严格误差要求的范围为 $2<K<3$。",
+  "explanation": "闭环特征式 $2s^3+3s^2+(1+K)s+2K$。三阶稳定条件为 $K>0$、$3(1+K)>4K$，得 $K<3$。速度系数为 $\\lim sG=2K$，所以误差 $\\frac{1}{2K}$。严格小于0.25给 $K>2$；等于2只达到边界，不应包含。",
+  "originalImages": [],
+  "answerPdfPages": "253",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

@@ -1,0 +1,8 @@
+{
+  "answer": "$\\frac{1}{2}<K<\\frac{5}{6}$。",
+  "explanation": "先清除时间常数分母，闭环特征式为 $D=s^3+7s^2+12s+12K$。令 $s=z-1$，有 $D(z-1)=z^3+4z^2+z+12K-6$。三阶 Hurwitz 条件为 $12K-6>0$ 且 $4>12K-6$，从而 $\\frac{1}{2}<K<\\frac{5}{6}$。",
+  "originalImages": [],
+  "answerPdfPages": "136",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

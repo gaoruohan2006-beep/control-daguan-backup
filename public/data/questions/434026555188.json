@@ -1,0 +1,8 @@
+{
+  "answer": "$T=0.1\\,\\mathrm s$；一阶微分（比例微分）环节；$K=2$。",
+  "explanation": "将 $s+10=10(0.1s+1)$，得 $G=\\frac{2(s+1)}{s(0.1s+1)}$。因此惯性时间常数为0.1，一阶分子 $s+1$ 是比例与微分并联形成的一阶微分环节，系统型别为I型，开环增益为2。",
+  "originalImages": [],
+  "answerPdfPages": "115",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

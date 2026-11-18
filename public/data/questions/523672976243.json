@@ -1,0 +1,8 @@
+{
+  "answer": "B。约 $4\\,\\mathrm s$。",
+  "explanation": "输出 $c(t)=2(1-e^{-t})$，相对误差为 $e^{-t}$。精确阈值由 $e^{-t_s}=0.02$ 得 $t_s=\\ln50\\approx3.912\\,\\mathrm s$，工程上取 $4T=4\\,\\mathrm s$。输入幅度改变不会改变相对误差带对应的时间。",
+  "originalImages": [],
+  "answerPdfPages": "103",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

@@ -1,0 +1,8 @@
+{
+  "answer": "C。",
+  "explanation": "标准特征方程为 $s^2+2\\zeta\\omega_ns+\\omega_n^2=0$。负实重根要求判别式为零且根为负，因此 $\\zeta=1$、$\\omega_n>0$，即临界阻尼。单位阶跃响应为 $1-(1+\\omega_nt)e^{-\\omega_nt}$，无振荡。",
+  "originalImages": [],
+  "answerPdfPages": "109",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

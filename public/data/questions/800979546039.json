@@ -1,0 +1,8 @@
+{
+  "answer": "$K_3=0.01$，$K_1K_2\\ge\\frac{10^6(\\ln10)^2}{\\pi^2+(\\ln10)^2}\\approx349464.274$。",
+  "explanation": "令 $P=K_1K_2$，闭环分母为 $Is^2+PK_3s+P$。单位斜坡误差为 $K_3$ 米，1厘米即0.01米。标准二阶阻尼比 $\\zeta=\\frac{K_3\\sqrt P}{2\\sqrt I}$。10%超调要求 $\\zeta\\ge\\frac{\\ln10}{\\sqrt{\\pi^2+(\\ln10)^2}}$；代入 $I=25,K_3=0.01$，平方整理得乘积下界。超过临界阻尼后无超调，同样包含在条件内。",
+  "originalImages": [],
+  "answerPdfPages": "224–225",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

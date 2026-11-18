@@ -1,0 +1,8 @@
+{
+  "answer": "A。",
+  "explanation": "主导极点为 $-1\\pm j\\sqrt3$，极点 $-100$ 为快极点。低频下 $\\frac{s+10.5}{s+100}\\approx\\frac{10.5}{100}$，因此保留二阶分母后分子为 $10.5$。原直流增益为 $100\\times\\frac{10.5}{100\\times4}=2.625$，降阶后仍为 $\\frac{10.5}{4}=2.625$。",
+  "originalImages": [],
+  "answerPdfPages": "111",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

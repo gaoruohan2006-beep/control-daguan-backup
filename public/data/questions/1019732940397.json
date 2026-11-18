@@ -1,0 +1,8 @@
+{
+  "answer": "C。",
+  "explanation": "稳定极点到负实轴的夹角为 $\\varphi$，阻尼比 $\\zeta=\\cos\\varphi$。沿固定射线移动改变自然频率而不改变阻尼比。典型二阶相对超调只由阻尼比决定，所以不变。若系统有额外零点或显著高阶模态，此结论不再自动成立。",
+  "originalImages": [],
+  "answerPdfPages": "291",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

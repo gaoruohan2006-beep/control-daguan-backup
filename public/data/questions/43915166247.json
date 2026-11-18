@@ -1,0 +1,8 @@
+{
+  "answer": "D。",
+  "explanation": "设主导极点 $p=-a+jb$，$a>0$。相应模态含 $e^{-at}\\cos(bt+\\varphi)$，其包络衰减时间常数为 $\\frac{1}{a}$。向虚轴靠近意味着 $a$ 减小，因此衰减变慢，调节过程通常延长。仅凭与虚轴的距离不能断定振荡频率或超调量的变化。",
+  "originalImages": [],
+  "answerPdfPages": "105–106",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

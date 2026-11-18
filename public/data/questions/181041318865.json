@@ -1,0 +1,8 @@
+{
+  "answer": "下式的 $\\Delta$ 由解析中的有向回路确定。\n\n$$\\frac{C}{R}=\\frac{G_{1} \\left(G_{2} G_{3} + G_{4}\\right)}{\\Delta}.$$",
+  "explanation": "**从信号图列方程。** 以下增益省略自变量 $s$。求某一外输入的通道时，其余独立输入置零。\n\n$$E=- C H_{3} - H_{1} X + R.$$\n\n$$X=- C H_{2} + E G_{1}.$$\n\n$$C=X \\left(G_{2} G_{3} + G_{4}\\right).$$\n\n**逐条核对回路。**\n\n$L_{1}=- G_{1} H_{1}$，对应 $E\\to X\\to E$。\n\n$L_{2}=- H_{2} \\left(G_{2} G_{3} + G_{4}\\right)$，对应 $X\\to C\\to X$。\n\n$L_{3}=- G_{1} H_{3} \\left(G_{2} G_{3} + G_{4}\\right)$，对应 $E\\to X\\to C\\to E$。\n\n没有互不接触的回路乘积项。\n\n$$\\Delta=- L_{1} - L_{2} - L_{3} + 1.$$\n\n**$\\frac{C}{R}$ 的前向通路。**\n\n$R\\to E\\to X\\to C$ 的增益与余因子为\n$$P_{1}=G_{1} \\left(G_{2} G_{3} + G_{4}\\right),\\qquad \\Delta_{1}=1.$$\n\n$$\\frac{C}{R}=\\frac{P_{1}\\Delta_{1}}{\\Delta}.$$\n\n（1）令 $P=G_2G_3+G_4$，则 $C=PX$，$X=G_1(R-H_1X-H_3C)-H_2C$，故 $\\frac{C}{R}=\\frac{G_1P}{1+G_1H_1+(G_1H_3+H_2)P}$。\n（2）质量块受弹力 $-ky$、阻尼力 $-f_v\\dot y$，所以 $m\\ddot y+f_v\\dot y+ky=f(t)$，\n$$\\frac{Y}{F}=\\frac1{ms^2+f_vs+k}.$$\n在静平衡位置附近建模，重力已被静态弹簧力抵消。",
+  "originalImages": [],
+  "answerPdfPages": "80–81",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

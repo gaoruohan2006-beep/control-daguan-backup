@@ -1,0 +1,8 @@
+{
+  "answer": "$\\omega_n=6,\\zeta=\\frac{1}{3}$；$\\sigma=e^{-\\frac{\\pi}{2\\sqrt2}}\\approx32.93\\%$，$t_p=\\frac{\\pi}{4\\sqrt2}$ 秒，$t_s\\approx1.5$ 秒；无阻尼根 $\\pm6j$，临界阻尼重根 $-6$。",
+  "explanation": "极点模长为 $\\sqrt{(-2)^2+(4\\sqrt2)^2}=6$，负实部为 $\\zeta\\omega_n=2$。阻尼振荡频率 $4\\sqrt2$，故超调指数为 $-\\frac{2\\pi}{4\\sqrt2}$。5%工程调节时间 $\\frac{3}{2}$。固定自然频率6后，分别令阻尼比0和1，代入标准根公式。",
+  "originalImages": [],
+  "answerPdfPages": "252",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

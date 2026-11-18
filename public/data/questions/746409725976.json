@@ -1,0 +1,8 @@
+{
+  "answer": "$$LC\\ddot u_o+RC\\dot u_o+u_o=u_i,\\quad \\frac{U_o}{U_i}=\\frac1{LCs^2+RCs+1}.$$\n（2）$\\omega_n=\\sqrt{40}\\approx6.325\\,\\mathrm{\\frac{rad}{s}}$，$\\zeta=\\frac{1}{8\\sqrt{10}}\\approx0.03953$。",
+  "explanation": "电路电流 $i=C\\dot u_o$，KVL 为 $u_i=L\\dot i+Ri+u_o$。代入得微分方程，零初值变换得传递函数。标准化分母为 $s^2+(\\frac{R}{L})s+\\frac{1}{LC}$，因此 $\\omega_n=\\frac{1}{\\sqrt{LC}}$、$\\zeta=(\\frac{R}{2})\\sqrt{\\frac{C}{L}}$。题中数字为 $R=1,L=2$，不能将单位符号误识为额外的0。",
+  "originalImages": [],
+  "answerPdfPages": "126–127",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

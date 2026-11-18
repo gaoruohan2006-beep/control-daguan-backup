@@ -1,0 +1,8 @@
+{
+  "answer": "$K=0.2$，$t_r=\\frac{\\pi-\\arccos0.6}{0.8}\\approx2.768$ 秒，$t_p=\\frac{\\pi}{0.8}\\approx3.927$ 秒，$\\sigma\\approx9.478\\%$，$t_s\\approx5$ 秒。",
+  "explanation": "闭环分母 $s^2+(1+K)s+1$，自然频率1、阻尼比 $\\frac{1+K}{2}$。代入0.6得增益0.2，阻尼振荡频率0.8，据典型二阶公式求指标。速度反馈可增加阻尼、降低超调，但过强可导致过阻尼而变慢；本结构外环速度系数从1降为 $\\frac{1}{1+K}$，单位斜坡误差增至 $1+K$。测速噪声和微分实现也是实际代价，不能只说反馈必然改善全部性能。",
+  "originalImages": [],
+  "answerPdfPages": "191–192",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

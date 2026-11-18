@@ -1,0 +1,8 @@
+{
+  "answer": "$K_1>0,\\quad0<K_2<(\\frac{5}{2})K_1$。",
+  "explanation": "置外部输入为零，$E_1=-Y_1$、$E_2=-Y_2$、$Y_2=-G_2Y_1$。因此特征式为 $1+K_1G_1-K_2G_1G_2=0$。\n清分母得到\n$$D=s^3+14s^2+(40+5K_1)s+50K_1-20K_2.$$\n三阶稳定条件要求 $50K_1-20K_2>0$ 且 $14(40+5K_1)>50K_1-20K_2$。第二条在 $K_1,K_2>0$ 时自动成立，故真正限制是 $0<K_2<(\\frac{5}{2})K_1$。",
+  "originalImages": [],
+  "answerPdfPages": "146–148",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

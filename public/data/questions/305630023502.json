@@ -1,0 +1,8 @@
+{
+  "answer": "下式的 $\\Delta$ 由解析中的有向回路确定。\n\n$$\\frac{C}{R}=\\frac{G_{1} G_{2} G_{3} - G_{1} G_{2} G_{4} H_{1} + G_{2} G_{3} G_{4} H_{2} + G_{2} G_{4} H_{1} + G_{4}}{\\Delta}.$$",
+  "explanation": "**从信号图列方程。** 以下增益省略自变量 $s$。求某一外输入的通道时，其余独立输入置零。\n\n$$E=A H_{1} + R.$$\n\n$$F=- A H_{1} - B H_{2} + E G_{1}.$$\n\n$$A=F G_{2}.$$\n\n$$B=A G_{3}.$$\n\n$$C=B + G_{4} R.$$\n\n**逐条核对回路。**\n\n$L_{1}=- G_{2} H_{1}$，对应 $F\\to A\\to F$。\n\n$L_{2}=G_{1} G_{2} H_{1}$，对应 $E\\to F\\to A\\to E$。\n\n$L_{3}=- G_{2} G_{3} H_{2}$，对应 $F\\to A\\to B\\to F$。\n\n没有互不接触的回路乘积项。\n\n$$\\Delta=- L_{1} - L_{2} - L_{3} + 1.$$\n\n**$\\frac{C}{R}$ 的前向通路。**\n\n$R\\to E\\to F\\to A\\to B\\to C$ 的增益与余因子为\n$$P_{1}=G_{1} G_{2} G_{3},\\qquad \\Delta_{1}=1.$$\n\n$R\\to C$ 的增益与余因子为\n$$P_{2}=G_{4},\\qquad \\Delta_{2}=- L_{1} - L_{2} - L_{3} + 1.$$\n\n$$\\frac{C}{R}=\\frac{P_{1}\\Delta_{1}+P_{2}\\Delta_{2}}{\\Delta}.$$\n\n**求运放支路。** 在理想运放线性负反馈条件下，反相节点为虚地且输入电流为零。设输入侧中间电压为 $V_a$，反馈侧中间电压为 $V_b$，有 $V_a=\\frac{U_i}{2+R_1C_1s}$，$V_b=-\\frac{R_2V_a}{R_1}$，$U_o=(2+R_2C_2s)V_b$。因此\n$$G_4=-\\frac{R_2(2+R_2C_2s)}{R_1(2+R_1C_1s)}=-2.$$\n总图先求 $A=G_2[G_1(R+H_1A)-H_1A-H_2G_3A]$。记 $D=1-G_1G_2H_1+G_2H_1+G_2G_3H_2$，则 $\\frac{C}{R}=\\frac{G_1G_2G_3}{D}-2$。正反馈 $A\\to E$ 的符号为正。",
+  "originalImages": [],
+  "answerPdfPages": "72–74",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

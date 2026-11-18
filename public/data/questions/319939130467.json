@@ -1,0 +1,8 @@
+{
+  "answer": "错误。",
+  "explanation": "固定 $\\zeta$ 时，上升、峰值及调节时间按 $\\frac{1}{\\omega_n}$ 缩短，但相对超调量 $\\sigma=e^{-\\frac{\\pi\\zeta}{\\sqrt{1-\\zeta^2}}}$ 只取决于阻尼比，不随 $\\omega_n$ 改变。前半句正确，后半句错误。",
+  "originalImages": [],
+  "answerPdfPages": "120",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

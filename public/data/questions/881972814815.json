@@ -1,0 +1,8 @@
+{
+  "answer": "$y(t)=\\tfrac78e^t-\\tfrac14e^{-t}+\\tfrac38e^{-3t}$。",
+  "explanation": "齐次特征根为1与-3，特解取 $Ae^{-t}$，代入得 $-4A=1$，故 $A=-\\frac{1}{4}$。写总解 $C_1e^t+C_2e^{-3t}-(\\frac{1}{4})e^{-t}$，初值给 $C_1+C_2=\\frac{5}{4}$、$C_1-3C_2=-\\frac{1}{4}$，解得 $C_1=\\frac{7}{8},C_2=\\frac{3}{8}$。也可用单边拉氏变换得到同样分式。",
+  "originalImages": [],
+  "answerPdfPages": "257–258",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

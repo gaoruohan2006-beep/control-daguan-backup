@@ -1,0 +1,8 @@
+{
+  "answer": "$\\Phi=\\frac{1}{s(s+1)}$，$G=\\frac{1}{s^2+s-1}$；阶跃响应 $c=t-1+e^{-t}$，无有限终值。",
+  "explanation": "零初值二阶无零点函数的斜直线渐近响应意味着闭环含原点极点。写 $\\Phi=\\frac{K}{s(s+a)}$，其阶跃响应为 $(\\frac{K}{a})t-\\frac{K}{a^2}+(\\frac{K}{a^2})e^{-at}$。渐近斜率1、截距-1给 $\\frac{K}{a}=1,\\frac{K}{a^2}=1$，故 $K=a=1$。再由单位负反馈逆关系 $G=\\frac{\\Phi}{1-\\Phi}$ 得开环。闭环含积分器，不能把图中持续增长的曲线误称为有稳态值的稳定阶跃响应。",
+  "originalImages": [],
+  "answerPdfPages": "215",
+  "referenceNote": "题图的斜线及差值按渐近关系写清，避免将有限时刻的近似图示当成精确等式。",
+  "sourceType": "practice"
+}

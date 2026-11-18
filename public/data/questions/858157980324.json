@@ -1,0 +1,8 @@
+{
+  "answer": "$$\\frac{U_o}{U_i}=-\\frac{R_1R_2C_1C_2s^2+(R_1C_1+R_2C_1+R_2C_2)s+1}{R_0C_1s}.$$",
+  "explanation": "反相端虚地，令 $Z_1=R_1+\\frac{1}{C_1s}$。在反相端列 KCL：$\\frac{U_i}{R_0}+\\frac{U_a}{Z_1}=0$，即 $U_a=-\\frac{Z_1U_i}{R_0}$。节点 $a$ 满足\n$$\\frac{U_a}{Z_1}+C_2sU_a+\\frac{U_a-U_o}{R_2}=0.$$\n故 $U_o=U_a(1+\\frac{R_2}{Z_1}+R_2C_2s)$。代入 $U_a$ 并整理即得结果。该理想模型含微分与积分作用，不应误用简单的 $-\\frac{Z_f}{Z_i}$ 而忽略 T 形反馈网络中接地的电容。",
+  "originalImages": [],
+  "answerPdfPages": "88–89",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

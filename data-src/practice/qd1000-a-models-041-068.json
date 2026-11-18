@@ -1,0 +1,455 @@
+[
+  {
+    "volume": "A",
+    "chapter": 2,
+    "kind": "分析题",
+    "number": 41,
+    "origin": "浙江工业大学 2025",
+    "questionPages": "36",
+    "answerPages": "66–67",
+    "topics": [
+      "建模 / 方框图"
+    ],
+    "stem": "各节点信号等于流入支路信号之和，图中增益省略自变量 $s$。\n\n![题中各信号支路及其增益](img/reviewed/qd1000-next-graph-2-41.svg)\n\n将图化为前向通道 $G_1G_2$、反馈通道 $H$ 的负反馈结构，再化为单位负反馈结构，求等效 $H(s)$ 和 $G(s)$。",
+    "answer": "$$H(s)=1-\\frac{K}{G_2(s)}.$$\n$$G(s)=\\frac{G_1(s)G_2(s)}{1-KG_1(s)}.$$\n$$\\frac CR=\\frac{G_1G_2}{1-KG_1+G_1G_2}.$$",
+    "explanation": "**从信号图列方程。** 以下增益省略自变量 $s$。求某一外输入的通道时，其余独立输入置零。\n\n$$E=- C + K X + R.$$\n\n$$X=E G_{1}.$$\n\n$$C=G_{2} X.$$\n\n**逐条核对回路。**\n\n$L_{1}=G_{1} K$，对应 $E\\to X\\to E$。\n\n$L_{2}=- G_{1} G_{2}$，对应 $E\\to X\\to C\\to E$。\n\n没有互不接触的回路乘积项。\n\n$$\\Delta=- L_{1} - L_{2} + 1.$$\n\n**$\\frac{C}{R}$ 的前向通路。**\n\n$R\\to E\\to X\\to C$ 的增益与余因子为\n$$P_{1}=G_{1} G_{2},\\qquad \\Delta_{1}=1.$$\n\n$$\\frac{C}{R}=\\frac{P_{1}\\Delta_{1}}{\\Delta}.$$\n\n原反馈信号为 $C-KX$。由 $X=\\frac{C}{G_2}$，在前向通道保持 $G_1G_2$ 时，$H=1-\\frac{K}{G_2}$。若改成单位负反馈，令 $T=\\frac{G}{1+G}$，则 $G=\\frac{T}{1-T}$。两种等效开环必须区分。",
+    "notes": ""
+  },
+  {
+    "volume": "A",
+    "chapter": 2,
+    "kind": "分析题",
+    "number": 42,
+    "origin": "浙江理工大学 2025",
+    "questionPages": "36",
+    "answerPages": "67–68",
+    "topics": [
+      "建模 / 方框图"
+    ],
+    "stem": "各节点信号等于流入支路信号之和，图中增益省略自变量 $s$。\n\n![题中各信号支路及其增益](img/reviewed/qd1000-next-graph-2-42.svg)\n\n求图示系统的闭环传递函数 $\\frac{C(s)}{R(s)}$。",
+    "answer": "下式的 $\\Delta$ 由解析中的有向回路确定。\n\n$$\\frac{C}{R}=\\frac{G_{1} \\left(G_{2} G_{3} + G_{4}\\right)}{\\Delta}.$$",
+    "explanation": "**从信号图列方程。** 以下增益省略自变量 $s$。求某一外输入的通道时，其余独立输入置零。\n\n$$E=- C + R.$$\n\n$$F=E - H_{1} Y.$$\n\n$$X=- C H_{2} + F G_{1}.$$\n\n$$Y=G_{2} X.$$\n\n$$C=G_{3} Y + G_{4} X.$$\n\n**逐条核对回路。**\n\n$L_{1}=- G_{4} H_{2}$，对应 $X\\to C\\to X$。\n\n$L_{2}=- G_{1} G_{2} H_{1}$，对应 $F\\to X\\to Y\\to F$。\n\n$L_{3}=- G_{2} G_{3} H_{2}$，对应 $X\\to Y\\to C\\to X$。\n\n$L_{4}=- G_{1} G_{4}$，对应 $E\\to F\\to X\\to C\\to E$。\n\n$L_{5}=- G_{1} G_{2} G_{3}$，对应 $E\\to F\\to X\\to Y\\to C\\to E$。\n\n没有互不接触的回路乘积项。\n\n$$\\Delta=- L_{1} - L_{2} - L_{3} - L_{4} - L_{5} + 1.$$\n\n**$\\frac{C}{R}$ 的前向通路。**\n\n$R\\to E\\to F\\to X\\to Y\\to C$ 的增益与余因子为\n$$P_{1}=G_{1} G_{2} G_{3},\\qquad \\Delta_{1}=1.$$\n\n$R\\to E\\to F\\to X\\to C$ 的增益与余因子为\n$$P_{2}=G_{1} G_{4},\\qquad \\Delta_{2}=1.$$\n\n$$\\frac{C}{R}=\\frac{P_{1}\\Delta_{1}+P_{2}\\Delta_{2}}{\\Delta}.$$\n\n先令 $P=G_2G_3+G_4$，则 $C=PX$，$X=G_1(R-C-H_1G_2X)-H_2C$。因此 $[1+G_1G_2H_1+(G_1+H_2)P]X=G_1R$。$H_2$ 的反馈来自总输出，跨越 $G_3$ 前的连线没有接点，不应相连。",
+    "notes": ""
+  },
+  {
+    "volume": "A",
+    "chapter": 2,
+    "kind": "分析题",
+    "number": 43,
+    "origin": "重庆邮电大学 2025",
+    "questionPages": "37",
+    "answerPages": "69–70",
+    "topics": [
+      "建模 / 传递函数"
+    ],
+    "stem": "零初始条件。输入端依次串联 $R_1,R_2$；两电阻中间节点通过 $C_1$ 接地，输出节点通过 $C_2$ 接地。输出不接负载。画出系统结构图，并求 $\\frac{U_o}{U_i}$。\n\n![电路元件与接线关系](img/reviewed/qd1000-next-2-43.svg)",
+    "answer": "$$\\frac{U_o}{U_i}=\\frac{1}{R_1R_2C_1C_2s^2+(R_1C_1+R_1C_2+R_2C_2)s+1}.$$",
+    "explanation": "**列节点方程。** 记中间电压为 $U_a$，则\n$$\\frac{U_i-U_a}{R_1}=C_1sU_a+\\frac{U_a-U_o}{R_2}.$$\n$$\\frac{U_a-U_o}{R_2}=C_2sU_o.$$\n第二式给出 $U_a=(1+R_2C_2s)U_o$，代回第一式整理即得结果。输入输出之间的微分方程为\n$$R_1R_2C_1C_2\\ddot u_o+(R_1C_1+R_1C_2+R_2C_2)\\dot u_o+u_o=u_i.$$\n**结构图连接规则。** 将第一式写成 $U_a=\\frac{I_1-I_2}{C_1s}$，并取 $I_1=\\frac{U_i-U_a}{R_1}$、$I_2=\\frac{U_a-U_o}{R_2}$、$U_o=\\frac{I_2}{C_2s}$，依次用两个比较点、两个比例环节和两个积分环节连接。这保留了后一级对前一级的负载作用，不能直接相乘两个孤立 RC 环节。\n\n**等价信号流结构图。** 节点为求和点，支路标出对应环节；负号已包含在反馈增益中。\n\n![题中各信号支路及其增益](img/reviewed/qd1000-next-graph-2-43-solution.svg)",
+    "notes": ""
+  },
+  {
+    "volume": "A",
+    "chapter": 2,
+    "kind": "分析题",
+    "number": 44,
+    "origin": "北京邮电大学 2025",
+    "questionPages": "37–38",
+    "answerPages": "70–72",
+    "topics": [
+      "建模 / 机械系统"
+    ],
+    "stem": "两辆推车位移 $x_1,x_2$ 均向右为正。质量为 $M_1,M_2$，车 1 受外力 $u$；两车间并联 $k_1,b_1$；车 2 与墙间并联 $k_2,b_2$。忽略轮地摩擦，初值为零。列运动方程，求 $\\frac{X_1}{U}$ 和 $\\frac{X_2}{U}$。",
+    "answer": "令 $P=b_1s+k_1$、$Q=b_2s+k_2$，\n$$D=(M_1s^2+P)(M_2s^2+P+Q)-P^2.$$\n$$\\frac{X_1}{U}=\\frac{M_2s^2+P+Q}{D},\\qquad \\frac{X_2}{U}=\\frac{P}{D}.$$",
+    "explanation": "车 1 受到的连接力与两车相对位移、相对速度相反；对车 2 该力反号，再叠加与墙相连元件的力：\n$$M_1\\ddot x_1=u-k_1(x_1-x_2)-b_1(\\dot x_1-\\dot x_2).$$\n$$M_2\\ddot x_2=k_1(x_1-x_2)+b_1(\\dot x_1-\\dot x_2)-k_2x_2-b_2\\dot x_2.$$\n零初值拉氏变换后，两方程系数矩阵的行列式为 $D$。用克拉默法则，第一列替换为 $(U,0)^{\\mathsf T}$，分别得到两个分子。静态时 $\\frac{X_2}{U}=\\frac{1}{k_2}$，$\\frac{X_1}{U}=\\frac{1}{k_1}+\\frac{1}{k_2}$，与两弹簧静力平衡一致。",
+    "notes": "",
+    "sameAs": 1001474573925
+  },
+  {
+    "volume": "A",
+    "chapter": 2,
+    "kind": "分析题",
+    "number": 45,
+    "origin": "电子科技大学（839） 2025",
+    "questionPages": "38–39",
+    "answerPages": "72–74",
+    "topics": [
+      "建模 / 方框图"
+    ],
+    "stem": "各节点信号等于流入支路信号之和，图中增益省略自变量 $s$。\n\n![题中各信号支路及其增益](img/reviewed/qd1000-next-graph-2-45.svg)\n\n图中 $G_4$ 由理想运放电路实现：输入到反相端之间串联两个 $R_1$，中间节点由 $C_1$ 接地；反相端到输出之间串联两个 $R_2$，中间节点由 $C_2$ 接地；同相端接地。$R_1=1\\,\\Omega,R_2=2\\,\\Omega,C_1=2\\,\\mathrm F,C_2=1\\,\\mathrm F$。先求 $G_4$，再求总传递函数。",
+    "answer": "下式的 $\\Delta$ 由解析中的有向回路确定。\n\n$$\\frac{C}{R}=\\frac{G_{1} G_{2} G_{3} - G_{1} G_{2} G_{4} H_{1} + G_{2} G_{3} G_{4} H_{2} + G_{2} G_{4} H_{1} + G_{4}}{\\Delta}.$$",
+    "explanation": "**从信号图列方程。** 以下增益省略自变量 $s$。求某一外输入的通道时，其余独立输入置零。\n\n$$E=A H_{1} + R.$$\n\n$$F=- A H_{1} - B H_{2} + E G_{1}.$$\n\n$$A=F G_{2}.$$\n\n$$B=A G_{3}.$$\n\n$$C=B + G_{4} R.$$\n\n**逐条核对回路。**\n\n$L_{1}=- G_{2} H_{1}$，对应 $F\\to A\\to F$。\n\n$L_{2}=G_{1} G_{2} H_{1}$，对应 $E\\to F\\to A\\to E$。\n\n$L_{3}=- G_{2} G_{3} H_{2}$，对应 $F\\to A\\to B\\to F$。\n\n没有互不接触的回路乘积项。\n\n$$\\Delta=- L_{1} - L_{2} - L_{3} + 1.$$\n\n**$\\frac{C}{R}$ 的前向通路。**\n\n$R\\to E\\to F\\to A\\to B\\to C$ 的增益与余因子为\n$$P_{1}=G_{1} G_{2} G_{3},\\qquad \\Delta_{1}=1.$$\n\n$R\\to C$ 的增益与余因子为\n$$P_{2}=G_{4},\\qquad \\Delta_{2}=- L_{1} - L_{2} - L_{3} + 1.$$\n\n$$\\frac{C}{R}=\\frac{P_{1}\\Delta_{1}+P_{2}\\Delta_{2}}{\\Delta}.$$\n\n**求运放支路。** 在理想运放线性负反馈条件下，反相节点为虚地且输入电流为零。设输入侧中间电压为 $V_a$，反馈侧中间电压为 $V_b$，有 $V_a=\\frac{U_i}{2+R_1C_1s}$，$V_b=-\\frac{R_2V_a}{R_1}$，$U_o=(2+R_2C_2s)V_b$。因此\n$$G_4=-\\frac{R_2(2+R_2C_2s)}{R_1(2+R_1C_1s)}=-2.$$\n总图先求 $A=G_2[G_1(R+H_1A)-H_1A-H_2G_3A]$。记 $D=1-G_1G_2H_1+G_2H_1+G_2G_3H_2$，则 $\\frac{C}{R}=\\frac{G_1G_2G_3}{D}-2$。正反馈 $A\\to E$ 的符号为正。",
+    "notes": ""
+  },
+  {
+    "volume": "A",
+    "chapter": 2,
+    "kind": "分析题",
+    "number": 46,
+    "origin": "东北林业大学 2025",
+    "questionPages": "39",
+    "answerPages": "74–75",
+    "topics": [
+      "建模 / 传递函数"
+    ],
+    "stem": "零初值、无负载。$R_1$ 与 $C$ 并联后，串接 $R_2$；输入为整个网络电压，输出为 $R_2$ 两端电压。求传递函数及微分方程。",
+    "answer": "$$\\frac{U_o}{U_i}=\\frac{R_2(1+R_1Cs)}{R_1+R_2+R_1R_2Cs}.$$",
+    "explanation": "并联阻抗 $Z_1=\\frac{R_1}{1+R_1Cs}$，输出阻抗为 $R_2$。由分压关系 $\\frac{U_o}{U_i}=\\frac{R_2}{Z_1+R_2}$，通分得结果。等价微分方程为\n$$R_1R_2C\\dot u_o+(R_1+R_2)u_o=R_1R_2C\\dot u_i+R_2u_i.$$\n低频时电容开路，增益为 $\\frac{R_2}{R_1+R_2}$；高频时电容近似短路，增益趋于 $1$，与结果一致。",
+    "notes": ""
+  },
+  {
+    "volume": "A",
+    "chapter": 2,
+    "kind": "分析题",
+    "number": 47,
+    "origin": "东南大学 2025",
+    "questionPages": "40",
+    "answerPages": "75–76",
+    "topics": [
+      "建模 / 传递函数"
+    ],
+    "stem": "零初始条件。输入先经过串联电阻 $R_1$，输出端对地有两条并联支路：电容 $C$，以及电感 $L$ 与电阻 $R_2$ 的串联支路。输出为并联网络端电压，求 $\\frac{X_c}{X_r}$。",
+    "answer": "$$\\frac{X_c}{X_r}=\\frac{Ls+R_2}{R_1LCs^2+(L+R_1R_2C)s+R_1+R_2}.$$",
+    "explanation": "并联导纳为 $Y=Cs+\\frac{1}{Ls+R_2}$，故并联阻抗 $Z=\\frac{Ls+R_2}{LCs^2+R_2Cs+1}$。分压得 $\\frac{X_c}{X_r}=\\frac{Z}{R_1+Z}$。乘去阻抗分母并按 $s$ 次数整理即得结果。也可写 $i_C=C\\dot x_c$、$L\\dot i_L+R_2i_L=x_c$、$\\frac{x_r-x_c}{R_1}=i_C+i_L$ 消元。$s=0$ 时增益为 $\\frac{R_2}{R_1+R_2}$，不是 $1$。",
+    "notes": "",
+    "sameAs": 671244741789
+  },
+  {
+    "volume": "A",
+    "chapter": 2,
+    "kind": "分析题",
+    "number": 48,
+    "origin": "南京航空航天大学 2025",
+    "questionPages": "40",
+    "answerPages": "76–77",
+    "topics": [
+      "建模 / 机械系统"
+    ],
+    "stem": "倒立摆安装在水平小车上。小车质量 $M$，摆球质量 $m$，杆长 $l$，杆无质量，不计摩擦。以竖直向上为 $\\theta=0$，顺时针为正，小车向右位移为 $x$，水平驱动力为 $u$。用 $J$ 表示摆相对支点的总转动惯量（点质球时 $J=ml^2$）。求小角度线性模型，并给出使直立平衡稳定的反馈控制结构。",
+    "answer": "$$(M+m)\\ddot x+ml\\ddot\\theta=u.$$\n$$J\\ddot\\theta- mgl\\theta=-ml\\ddot x.$$\n令 $q=(M+m)J-m^2l^2>0$，有\n$$\\frac{\\Theta}{U}=\\frac{-ml}{qs^2-(M+m)mgl}.$$",
+    "explanation": "小角度时摆球横坐标为 $x+l\\theta$。水平动量平衡给出第一式；绕支点的角动量平衡给出第二式，重力对直立平衡产生失稳力矩。消去 $\\ddot x$ 得 $q\\ddot\\theta-(M+m)mgl\\theta=-ml u$，其开环有一个正实极点。\n**反馈方向必须与模型符号一致。** 取角度与角速度反馈 $u=k_p\\theta+k_d\\dot\\theta$，则\n$$q\\ddot\\theta+mlk_d\\dot\\theta+[mlk_p-(M+m)mgl]\\theta=0.$$\n当 $k_d>0$、$k_p>(M+m)g$ 时，角度子系统渐近稳定。结构为角度传感器与角速度估计器，经比例、微分增益相加后驱动小车。若还要求小车位置回到指定位置，应测量 $(x,\\dot x,\\theta,\\dot\\theta)$ 并作全状态反馈；仅稳摆角不能保证小车位置收敛。",
+    "notes": "明确 J 为支点总惯量；小角度模型及反馈符号按题给坐标独立推导。"
+  },
+  {
+    "volume": "A",
+    "chapter": 2,
+    "kind": "分析题",
+    "number": 49,
+    "origin": "北京信息科技大学 2025",
+    "questionPages": "41",
+    "answerPages": "77–78",
+    "topics": [
+      "建模 / 机械系统"
+    ],
+    "stem": "无质量机械网络：输入端位移 $x_i$ 与输出端位移 $x_o$ 之间并联弹簧 $k_2$ 和阻尼器 $B_2$；输出端经阻尼器 $B_1$ 与弹簧 $k_1$ 串联后固定到地。忽略重力，初值为零。求微分方程和 $\\frac{X_o}{X_i}$。",
+    "answer": "$$\\frac{X_o}{X_i}=\\frac{B_1B_2s^2+(B_1k_2+B_2k_1)s+k_1k_2}{B_1B_2s^2+(B_1k_2+B_2k_1+B_1k_1)s+k_1k_2}.$$",
+    "explanation": "设下部弹簧与阻尼器之间的位移为 $z$。质量忽略时，节点受力平衡：\n$$B_2(\\dot x_i-\\dot x_o)+k_2(x_i-x_o)=B_1(\\dot x_o-\\dot z)=k_1z.$$\n下部串联支路的动态刚度为 $K_b=\\frac{B_1k_1s}{B_1s+k_1}$；上部并联刚度为 $K_a=B_2s+k_2$。由 $K_a(X_i-X_o)=K_bX_o$ 得 $\\frac{X_o}{X_i}=\\frac{K_a}{K_a+K_b}$，通分得到答案。\n微分方程为\n$$\\begin{aligned}B_1B_2\\ddot x_o&+(B_1k_2+B_2k_1+B_1k_1)\\dot x_o+k_1k_2x_o\\\\\n&=B_1B_2\\ddot x_i+(B_1k_2+B_2k_1)\\dot x_i+k_1k_2x_i.\\end{aligned}$$",
+    "notes": ""
+  },
+  {
+    "volume": "A",
+    "chapter": 2,
+    "kind": "分析题",
+    "number": 50,
+    "origin": "东北电力大学 2025",
+    "questionPages": "41",
+    "answerPages": "78–80",
+    "topics": [
+      "建模 / 传递函数"
+    ],
+    "stem": "零初值。输入与输出之间是并联的 $R_1,C_1$；输出节点经串联的 $R_2,C_2$ 接地。$i_1=C_1\\,\\frac{\\mathrm d(u_i-u_o)}{\\mathrm dt}$，$i_2=\\frac{u_i-u_o}{R_1}$，均流向输出。（1）只借助 $i_1,i_2$ 消去中间变量，列输入输出微分方程；（2）求 $\\frac{U_o}{U_i}$。",
+    "answer": "令 $a=R_1R_2C_1C_2$、$b=R_1C_1+R_1C_2+R_2C_2$、$d=R_1C_1+R_2C_2$，\n$$a\\ddot u_o+b\\dot u_o+u_o=a\\ddot u_i+d\\dot u_i+u_i.$$\n$$\\frac{U_o}{U_i}=\\frac{as^2+ds+1}{as^2+bs+1}.$$",
+    "explanation": "串联负载中的电流为 $i_1+i_2$，所以 $u_o=R_2(i_1+i_2)+C_2^{-1}\\int_0^t(i_1+i_2)\\,\\mathrm d\\tau$。对时间求导，将题给的 $i_1,i_2$ 及其导数代入：\n$$\\dot u_o=R_2C_1(\\ddot u_i-\\ddot u_o)+\\left(\\frac{R_2}{R_1}+\\frac{C_1}{C_2}\\right)(\\dot u_i-\\dot u_o)+\\frac{u_i-u_o}{R_1C_2}.$$\n乘以 $R_1C_2$ 并按输出导数移项，得到微分方程。零初值变换得传递函数，与同拓扑的第 50 题一致。",
+    "notes": ""
+  },
+  {
+    "volume": "A",
+    "chapter": 2,
+    "kind": "分析题",
+    "number": 51,
+    "origin": "华东交通大学 2025",
+    "questionPages": "42",
+    "answerPages": "80–81",
+    "topics": [
+      "建模 / 方框图"
+    ],
+    "stem": "各节点信号等于流入支路信号之和，图中增益省略自变量 $s$。\n\n![题中各信号支路及其增益](img/reviewed/qd1000-next-graph-2-51.svg)\n\n（1）求信号流图的 $\\frac{C}{R}$。（2）另有质量块 $m$，向下受力为 $f$，向下位移为 $y$；质量块经弹簧 $k$ 接固定顶端，经阻尼器 $f_v$ 接固定底端。相对静平衡位置计位移，求 $\\frac{Y}{F}$。",
+    "answer": "下式的 $\\Delta$ 由解析中的有向回路确定。\n\n$$\\frac{C}{R}=\\frac{G_{1} \\left(G_{2} G_{3} + G_{4}\\right)}{\\Delta}.$$",
+    "explanation": "**从信号图列方程。** 以下增益省略自变量 $s$。求某一外输入的通道时，其余独立输入置零。\n\n$$E=- C H_{3} - H_{1} X + R.$$\n\n$$X=- C H_{2} + E G_{1}.$$\n\n$$C=X \\left(G_{2} G_{3} + G_{4}\\right).$$\n\n**逐条核对回路。**\n\n$L_{1}=- G_{1} H_{1}$，对应 $E\\to X\\to E$。\n\n$L_{2}=- H_{2} \\left(G_{2} G_{3} + G_{4}\\right)$，对应 $X\\to C\\to X$。\n\n$L_{3}=- G_{1} H_{3} \\left(G_{2} G_{3} + G_{4}\\right)$，对应 $E\\to X\\to C\\to E$。\n\n没有互不接触的回路乘积项。\n\n$$\\Delta=- L_{1} - L_{2} - L_{3} + 1.$$\n\n**$\\frac{C}{R}$ 的前向通路。**\n\n$R\\to E\\to X\\to C$ 的增益与余因子为\n$$P_{1}=G_{1} \\left(G_{2} G_{3} + G_{4}\\right),\\qquad \\Delta_{1}=1.$$\n\n$$\\frac{C}{R}=\\frac{P_{1}\\Delta_{1}}{\\Delta}.$$\n\n（1）令 $P=G_2G_3+G_4$，则 $C=PX$，$X=G_1(R-H_1X-H_3C)-H_2C$，故 $\\frac{C}{R}=\\frac{G_1P}{1+G_1H_1+(G_1H_3+H_2)P}$。\n（2）质量块受弹力 $-ky$、阻尼力 $-f_v\\dot y$，所以 $m\\ddot y+f_v\\dot y+ky=f(t)$，\n$$\\frac{Y}{F}=\\frac1{ms^2+f_vs+k}.$$\n在静平衡位置附近建模，重力已被静态弹簧力抵消。",
+    "notes": ""
+  },
+  {
+    "volume": "A",
+    "chapter": 2,
+    "kind": "分析题",
+    "number": 52,
+    "origin": "华南理工大学 2025",
+    "questionPages": "43",
+    "answerPages": "81–82",
+    "topics": [
+      "建模 / 机电系统"
+    ],
+    "stem": "直流电机的电枢电感忽略，电阻 $R_a$，电压 $V_a$，反电势 $V_b=K_b\\dot\\theta_m$，转矩 $T_m=K_Ti_a$。电机惯量 $J_m$；负载惯量 $J_L$，负载轴以阻尼 $C_L$ 接地，两轴间为扭转弹簧 $K_L$。初值为零。（1）求 $\\frac{\\Theta_m}{T_m}$；（2）画出 $V_a\\to\\Theta_L$ 的结构图，并列各环节传递函数。",
+    "answer": "令 $A=J_Ls^2+C_Ls+K_L$，$D=(J_ms^2+K_L)A-K_L^2$。\n$$\\frac{\\Theta_m}{T_m}=\\frac A D,\\quad \\frac{\\Theta_L}{\\Theta_m}=\\frac{K_L}{A}.$$\n$$\\frac{\\Theta_L}{V_a}=\\frac{K_TK_L}{R_aD+K_TK_bsA}.$$",
+    "explanation": "分别对两根轴写力矩平衡：\n$$J_ms^2\\Theta_m=T_m-K_L(\\Theta_m-\\Theta_L).$$\n$$J_Ls^2\\Theta_L=K_L(\\Theta_m-\\Theta_L)-C_Ls\\Theta_L.$$\n由第二式得 $A\\Theta_L=K_L\\Theta_m$，代回第一式即得机械端口传递函数。\n电路满足 $V_a=R_ai_a+K_bs\\Theta_m$，故 $T_m=(\\frac{K_T}{R_a})(V_a-K_bs\\Theta_m)$。**结构图**：电压比较点先减去 $V_b$，串联 $\\frac{K_T}{R_a}$ 后得到 $T_m$，再串联 $\\frac{A}{D}$ 得到 $\\Theta_m$，再串联 $\\frac{K_L}{A}$ 得到 $\\Theta_L$；从 $\\Theta_m$ 经 $K_bs$ 反馈到电压比较点。代入消元得到最终传递函数。\n\n**等价信号流结构图。** 节点为求和点，支路标出对应环节；负号已包含在反馈增益中。 图中M、L分别表示电机与负载角位移，A、D同上。\n\n![题中各信号支路及其增益](img/reviewed/qd1000-next-graph-2-52-solution.svg)",
+    "notes": ""
+  },
+  {
+    "volume": "A",
+    "chapter": 2,
+    "kind": "分析题",
+    "number": 53,
+    "origin": "南京工业大学 2025",
+    "questionPages": "44",
+    "answerPages": "83–84",
+    "topics": [
+      "建模 / 方框图"
+    ],
+    "stem": "各节点信号等于流入支路信号之和，图中增益省略自变量 $s$。\n\n![题中各信号支路及其增益](img/reviewed/qd1000-next-graph-2-53.svg)\n\n该记录系统由放大器、伺服电机、齿轮系、记录笔和测量反馈组成。求单回路、特征式、$\\frac{C}{R}$ 和 $\\frac{U_a}{R}$，并说明被控对象和被控量。",
+    "answer": "下式的 $\\Delta$ 由解析中的有向回路确定。\n\n$$\\frac{C}{R}=\\frac{\\frac{K_{1} K_{2} K_{3} K_{4} Km}{Tm s + 1}}{\\Delta}.$$\n\n$$\\frac{Ua}{R}=\\frac{K_{1}}{\\Delta}.$$",
+    "explanation": "**从信号图列方程。** 以下增益省略自变量 $s$。求某一外输入的通道时，其余独立输入置零。\n\n$$E=- C Kt + R - V.$$\n\n$$Ua=E K_{1} - V.$$\n\n$$V=\\frac{Km Ua}{Tm s + 1}.$$\n\n$$C=K_{2} K_{3} K_{4} V.$$\n\n**逐条核对回路。**\n\n$L_{1}=- \\frac{Km}{Tm s + 1}$，对应 $Ua\\to V\\to Ua$。\n\n$L_{2}=- \\frac{K_{1} Km}{Tm s + 1}$，对应 $E\\to Ua\\to V\\to E$。\n\n$L_{3}=- \\frac{K_{1} K_{2} K_{3} K_{4} Km Kt}{Tm s + 1}$，对应 $E\\to Ua\\to V\\to C\\to E$。\n\n没有互不接触的回路乘积项。\n\n$$\\Delta=- L_{1} - L_{2} - L_{3} + 1.$$\n\n**$\\frac{C}{R}$ 的前向通路。**\n\n$R\\to E\\to Ua\\to V\\to C$ 的增益与余因子为\n$$P_{1}=\\frac{K_{1} K_{2} K_{3} K_{4} Km}{Tm s + 1},\\qquad \\Delta_{1}=1.$$\n\n$$\\frac{C}{R}=\\frac{P_{1}\\Delta_{1}}{\\Delta}.$$\n\n**$\\frac{Ua}{R}$ 的前向通路。**\n\n$R\\to E\\to Ua$ 的增益与余因子为\n$$P_{1}=K_{1},\\qquad \\Delta_{1}=1.$$\n\n$$\\frac{Ua}{R}=\\frac{P_{1}\\Delta_{1}}{\\Delta}.$$\n\n被控对象为伺服电机、齿轮传动机构及记录笔组成的执行机构；被控量为记录笔位移。图中速度信号同时进入两个比较点，两条负反馈回路都必须计入。",
+    "notes": ""
+  },
+  {
+    "volume": "A",
+    "chapter": 2,
+    "kind": "分析题",
+    "number": 54,
+    "origin": "清华大学 2025",
+    "questionPages": "44–45",
+    "answerPages": "84",
+    "topics": [
+      "建模 / 机电系统"
+    ],
+    "stem": "两条无电阻导轨间距为 $a$。导轨上有质量 $m$、电阻 $R$ 的滑杆，杆与地之间并联弹簧 $K$、阻尼器 $D$。磁感应强度 $B$ 垂直导轨平面，输入电压 $u$ 的正方向使安培力沿位移 $x$ 正方向。初值为零，求 $\\frac{X}{U}$。",
+    "answer": "$$\\frac X U=\\frac{Ba}{Rm s^2+(RD+B^2a^2)s+RK}.$$",
+    "explanation": "杆运动产生反电动势 $e=Ba\\dot x$，电路方程为 $u=Ri+Ba\\dot x$。安培力为 $F=Bai$，机械方程为 $m\\ddot x+D\\dot x+Kx=Bai$。代入 $i=\\frac{u-Ba\\dot x}{R}$，得到\n$$Rm\\ddot x+(RD+B^2a^2)\\dot x+RKx=Bau.$$\n零初值拉氏变换得结果。运动感应电动势产生的 $\\frac{B^2a^2}{R}$ 相当于额外阻尼，符号必须为正。",
+    "notes": ""
+  },
+  {
+    "volume": "A",
+    "chapter": 2,
+    "kind": "分析题",
+    "number": 55,
+    "origin": "苏州大学 2025",
+    "questionPages": "45",
+    "answerPages": "85",
+    "topics": [
+      "建模 / 机械系统"
+    ],
+    "stem": "（1）无负载 RC 网络：串联电阻 $R$，输出端电容 $C$ 接地，求 $\\frac{V_o}{V_i}$。（2）无质量机械系统：位移输入 $y$ 经过弹簧 $k$ 连接输出节点 $x$，该节点经阻尼器 $f$ 接地，忽略重力，求 $\\frac{X}{Y}$，并写 $\\frac{Y}{X}$。（3）说明两系统的相似性。均取零初值。",
+    "answer": "$$\\frac{V_o}{V_i}=\\frac1{RCs+1},\\qquad \\frac X Y=\\frac1{(\\frac{f}{k})s+1}.$$\n$$\\frac Y X=1+\\frac f k s.$$",
+    "explanation": "电路中 $i=C\\dot v_o$，又 $v_i-v_o=Ri$，所以 $RC\\dot v_o+v_o=v_i$。机械节点受力平衡为 $k(y-x)=f\\dot x$，即 $(\\frac{f}{k})\\dot x+x=y$。两者均为单位静态增益的一阶惯性系统，时间常数对应 $\\frac{RC\\leftrightarrow f}{k}$。注意输入为 $y$、输出为 $x$ 时正向传递函数是 $\\frac{X}{Y}$；反比值 $\\frac{Y}{X}$ 一并列出，避免将题图标注方向与比值颠倒。",
+    "notes": "按题中输入输出方向明确正向比值，并同时保留题本询问的逆比值。",
+    "sameAs": 258182817708
+  },
+  {
+    "volume": "A",
+    "chapter": 2,
+    "kind": "分析题",
+    "number": 56,
+    "origin": "中国矿业大学 2025",
+    "questionPages": "46",
+    "answerPages": "85–86",
+    "topics": [
+      "建模 / 传递函数"
+    ],
+    "stem": "输入电压 $u_1$ 经 $R_1$ 到中间节点 $u_3$，该节点由 $C$ 接地；从中间节点经电感 $L$ 到输出节点 $u_2$，输出由 $R_2$ 接地。取 $i_1$ 为 $R_1$ 电流，$i_2$ 为 $L$ 电流，均向右。零初值，画结构图并求 $\\frac{U_2}{U_1}$。",
+    "answer": "$$\\frac{U_2}{U_1}=\\frac{R_2}{R_1LCs^2+(L+R_1R_2C)s+R_1+R_2}.$$",
+    "explanation": "由元件关系与节点电流平衡：\n$$I_1=\\frac{U_1-U_3}{R_1},\\quad U_3=\\frac{I_1-I_2}{Cs}.$$\n$$I_2=\\frac{U_3-U_2}{Ls},\\quad U_2=R_2I_2.$$\n这些式子直接给出含 $i_1,i_2,u_3$ 的结构图：两个电压比较点经 $\\frac{1}{R_1}$、$\\frac{1}{Ls}$ 得到两电流，电流差经 $\\frac{1}{Cs}$ 得到 $u_3$，$i_2$ 经 $R_2$ 得到输出。\n由 $U_3=(Ls+R_2)I_2$、$I_1=CsU_3+I_2$ 代回输入式，可得 $U_1=[R_1LCs^2+(L+R_1R_2C)s+R_1+R_2]I_2$，再除以 $U_2=R_2I_2$ 即得答案。\n\n**等价信号流结构图。** 节点为求和点，支路标出对应环节；负号已包含在反馈增益中。\n\n![题中各信号支路及其增益](img/reviewed/qd1000-next-graph-2-56-solution.svg)",
+    "notes": ""
+  },
+  {
+    "volume": "A",
+    "chapter": 2,
+    "kind": "分析题",
+    "number": 57,
+    "origin": "中南大学 2025",
+    "questionPages": "46",
+    "answerPages": "86–88",
+    "topics": [
+      "建模 / 传递函数"
+    ],
+    "stem": "零初值 RC 无源网络：输入正端经 $R_1$ 到节点 $a$，$a$ 经 $C_1$ 接输入负端；$a$ 经 $R_2$ 到节点 $b$；$b$ 经 $C_2$ 到节点 $c$；$c$ 经 $R_3\\parallel C_3$ 接输入负端。输出为 $u_{c2}=u_b-u_c$，无外负载。求微分方程和 $\\frac{U_{c2}}{U_i}$。",
+    "answer": "记\n$$\\begin{aligned}a_3&=R_1R_2R_3C_1C_2C_3,\\\\\na_2&=R_1R_2C_1C_2+R_1R_3C_1C_2\\\\&\\quad+R_1R_3C_1C_3+R_1R_3C_2C_3+R_2R_3C_2C_3,\\\\\na_1&=R_1C_1+R_1C_2+R_2C_2+R_3C_2+R_3C_3.\\end{aligned}$$\n$$\\frac{U_{c2}}{U_i}=\\frac{1+R_3C_3s}{a_3s^3+a_2s^2+a_1s+1}.$$",
+    "explanation": "令流经 $R_2,C_2$ 的电流为 $I$，则 $I=C_2sU_{c2}$。节点 $c$ 电压为 $U_c=\\frac{R_3I}{1+R_3C_3s}$。因此\n$$U_a=U_{c2}+\\left[R_2+\\frac{R_3}{1+R_3C_3s}\\right]C_2sU_{c2}.$$\n输入节点满足 $U_i=U_a+R_1(C_1sU_a+I)$。将上式代入并乘以 $1+R_3C_3s$，整理得到三阶分母与一次分子。微分方程为\n$$a_3u_{c2}^{(3)}+a_2\\ddot u_{c2}+a_1\\dot u_{c2}+u_{c2}=R_3C_3\\dot u_i+u_i.$$\n不能把节点 $c$ 当地，否则会丢掉 $R_3,C_3$ 的影响。",
+    "notes": ""
+  },
+  {
+    "volume": "A",
+    "chapter": 2,
+    "kind": "分析题",
+    "number": 58,
+    "origin": "上海交通大学（862） 2025",
+    "questionPages": "47",
+    "answerPages": "88–89",
+    "topics": [
+      "建模 / 传递函数"
+    ],
+    "stem": "理想运放同相端接地，输入 $u_i$ 经 $R_0$ 接反相端。反相端经 $R_1$、$C_1$ 串联到节点 $a$；$a$ 经 $R_2$ 接输出 $u_o$，并经 $C_2$ 接地。在线性负反馈条件及零初值下求 $\\frac{U_o}{U_i}$。",
+    "answer": "$$\\frac{U_o}{U_i}=-\\frac{R_1R_2C_1C_2s^2+(R_1C_1+R_2C_1+R_2C_2)s+1}{R_0C_1s}.$$",
+    "explanation": "反相端虚地，令 $Z_1=R_1+\\frac{1}{C_1s}$。在反相端列 KCL：$\\frac{U_i}{R_0}+\\frac{U_a}{Z_1}=0$，即 $U_a=-\\frac{Z_1U_i}{R_0}$。节点 $a$ 满足\n$$\\frac{U_a}{Z_1}+C_2sU_a+\\frac{U_a-U_o}{R_2}=0.$$\n故 $U_o=U_a(1+\\frac{R_2}{Z_1}+R_2C_2s)$。代入 $U_a$ 并整理即得结果。该理想模型含微分与积分作用，不应误用简单的 $-\\frac{Z_f}{Z_i}$ 而忽略 T 形反馈网络中接地的电容。",
+    "notes": ""
+  },
+  {
+    "volume": "A",
+    "chapter": 2,
+    "kind": "分析题",
+    "number": 59,
+    "origin": "中国石油大学（华东） 2025",
+    "questionPages": "47",
+    "answerPages": "89–90",
+    "topics": [
+      "建模 / 传递函数"
+    ],
+    "stem": "零初值无源网络，输入串联电容 $C$，输出端由电阻 $R$ 接地，无外负载。输入电压 $u_1$、输出电压 $u_2$。列微分方程并求 $\\frac{U_2}{U_1}$。",
+    "answer": "$$RC\\dot u_2+u_2=RC\\dot u_1,\\qquad \\frac{U_2}{U_1}=\\frac{RCs}{1+RCs}.$$",
+    "explanation": "电容电流为 $i=C\\,\\frac{\\mathrm d(u_1-u_2)}{\\mathrm dt}$，电阻电流为 $i=\\frac{u_2}{R}$。两式相等并移项得到微分方程，零初值拉氏变换即可求比值。低频电容阻抗大，输出趋零；高频电容近似短路，输出趋输入，所以这是高通环节。阶跃输入时输出初始跳到输入幅度，随后按 $e^{-\\frac{t}{RC}}$ 衰减。",
+    "notes": "",
+    "sameAs": 178475581439
+  },
+  {
+    "volume": "A",
+    "chapter": 2,
+    "kind": "分析题",
+    "number": 60,
+    "origin": "北京工业大学 2025",
+    "questionPages": "48",
+    "answerPages": "90–91",
+    "topics": [
+      "建模 / 传递函数"
+    ],
+    "stem": "理想运放同相端接地，输入经 $R_1$ 接反相端；反相端经 $R_2$ 到节点 $a$，节点 $a$ 经 $R_3$ 接输出；节点 $a$ 另经 $R_4$ 与电容 $C$ 串联接地。零初值，求 $\\frac{U_o}{U_i}$。",
+    "answer": "$$\\frac{U_o}{U_i}=-\\frac{R_2+R_3}{R_1}-\\frac{R_2R_3Cs}{R_1(1+R_4Cs)}.$$",
+    "explanation": "反相端为虚地，节点电流平衡给出 $U_a=-\\frac{R_2U_i}{R_1}$。令接地支路阻抗 $Z=R_4+\\frac{1}{Cs}$，节点 $a$ 满足 $\\frac{U_a}{R_2}+\\frac{U_a-U_o}{R_3}+\\frac{U_a}{Z}=0$。由此\n$$U_o=U_a\\left(1+\\frac{R_3}{R_2}+\\frac{R_3}{Z}\\right).$$\n代入 $U_a$ 和 $Z$ 得答案。合并为一个分式时，分子为 $-[R_2+R_3+C(R_2R_4+R_3R_4+R_2R_3)s]$，分母为 $R_1(1+R_4Cs)$。",
+    "notes": ""
+  },
+  {
+    "volume": "A",
+    "chapter": 2,
+    "kind": "分析题",
+    "number": 61,
+    "origin": "济南大学 2025",
+    "questionPages": "48",
+    "answerPages": "91",
+    "topics": [
+      "建模 / 传递函数"
+    ],
+    "stem": "输入经 $R_1$ 到输出节点，输出由 $R_2$ 与 $C$ 并联接地。零初值、无外负载，求传递函数 $\\frac{U_o}{U_i}$。",
+    "answer": "$$\\frac{U_o}{U_i}=\\frac{R_2}{R_1R_2Cs+R_1+R_2}.$$",
+    "explanation": "并联负载阻抗 $Z=\\frac{R_2}{1+R_2Cs}$，分压得 $\\frac{U_o}{U_i}=\\frac{Z}{R_1+Z}$。也可直接写 $\\frac{u_i-u_o}{R_1}=\\frac{u_o}{R_2}+C\\dot u_o$。所以它是一阶惯性环节，静态增益 $\\frac{R_2}{R_1+R_2}$，时间常数 $\\frac{R_1R_2C}{R_1+R_2}$，与戴维南等效电阻乘电容一致。",
+    "notes": ""
+  },
+  {
+    "volume": "A",
+    "chapter": 2,
+    "kind": "分析题",
+    "number": 62,
+    "origin": "江南大学 2025",
+    "questionPages": "48–49",
+    "answerPages": "91–92",
+    "topics": [
+      "建模 / 传递函数"
+    ],
+    "stem": "零初值。输入与输出之间是并联的 $R_1,C_1$；输出节点经串联的 $R_2,C_2$ 接地。$i_1=C_1\\,\\frac{\\mathrm d(u_i-u_o)}{\\mathrm dt}$，$i_2=\\frac{u_i-u_o}{R_1}$，均流向输出。（1）只借助 $i_1,i_2$ 消去中间变量，列输入输出微分方程；（2）求 $\\frac{U_o}{U_i}$。",
+    "answer": "令 $a=R_1R_2C_1C_2$、$b=R_1C_1+R_1C_2+R_2C_2$、$d=R_1C_1+R_2C_2$，\n$$a\\ddot u_o+b\\dot u_o+u_o=a\\ddot u_i+d\\dot u_i+u_i.$$\n$$\\frac{U_o}{U_i}=\\frac{as^2+ds+1}{as^2+bs+1}.$$",
+    "explanation": "串联负载中的电流为 $i_1+i_2$，所以 $u_o=R_2(i_1+i_2)+C_2^{-1}\\int_0^t(i_1+i_2)\\,\\mathrm d\\tau$。对时间求导，将题给的 $i_1,i_2$ 及其导数代入：\n$$\\dot u_o=R_2C_1(\\ddot u_i-\\ddot u_o)+\\left(\\frac{R_2}{R_1}+\\frac{C_1}{C_2}\\right)(\\dot u_i-\\dot u_o)+\\frac{u_i-u_o}{R_1C_2}.$$\n乘以 $R_1C_2$ 并按输出导数移项，得到微分方程。零初值变换得传递函数，与同拓扑的第 50 题一致。",
+    "notes": "",
+    "sameAs": 664634327223
+  },
+  {
+    "volume": "A",
+    "chapter": 2,
+    "kind": "分析题",
+    "number": 63,
+    "origin": "厦门大学 2025",
+    "questionPages": "49",
+    "answerPages": "92–93",
+    "topics": [
+      "建模 / 传递函数"
+    ],
+    "stem": "输入正端与输出正端之间直接跨接电容 $C_1$；另一路由两个相同电阻 $R$ 串联连接两端，电阻中点通过 $C_2$ 接地。输入、输出负端接地。零初值、输出无负载，求微分方程与 $\\frac{U_o}{U_i}$。",
+    "answer": "$$\\frac{U_o}{U_i}=\\frac{R^2C_1C_2s^2+2RC_1s+1}{R^2C_1C_2s^2+R(2C_1+C_2)s+1}.$$",
+    "explanation": "设电阻中点电压为 $V$。在该点与输出点分别列 KCL：\n$$\\frac{V-U_i}{R}+\\frac{V-U_o}{R}+C_2sV=0.$$\n$$\\frac{U_o-V}{R}+C_1s(U_o-U_i)=0.$$\n第二式给 $V=(1+RC_1s)U_o-RC_1sU_i$。代入第一式得到答案。对应微分方程为\n$$R^2C_1C_2\\ddot u_o+R(2C_1+C_2)\\dot u_o+u_o=R^2C_1C_2\\ddot u_i+2RC_1\\dot u_i+u_i.$$\n高频电容 $C_1$ 形成输入输出直连，故高频增益为 $1$。",
+    "notes": ""
+  },
+  {
+    "volume": "A",
+    "chapter": 2,
+    "kind": "分析题",
+    "number": 64,
+    "origin": "上海电力大学 2025",
+    "questionPages": "50",
+    "answerPages": "93–94",
+    "topics": [
+      "建模 / 方框图"
+    ],
+    "stem": "各节点信号等于流入支路信号之和，图中增益省略自变量 $s$。\n\n![题中各信号支路及其增益](img/reviewed/qd1000-next-graph-2-64.svg)\n\n求 $\\frac{C}{R},\\frac{C}{D_1},\\frac{C}{D_2}$，写出 $C$，并设计 $G_f$ 使 $D_1$ 对输出无影响。",
+    "answer": "下式的 $\\Delta$ 由解析中的有向回路确定。\n\n$$\\frac{C}{R}=\\frac{G_{1} \\left(G_{2} + G_{3}\\right)}{\\Delta}.$$\n\n$$\\frac{C}{D_{1}}=\\frac{\\left(G_{2} + G_{3}\\right) \\left(G_{1} Gf - 1\\right)}{\\Delta}.$$\n\n$$\\frac{C}{D_{2}}=\\frac{- G_{1} H \\left(G_{2} + G_{3}\\right)}{\\Delta}.$$",
+    "explanation": "**从信号图列方程。** 以下增益省略自变量 $s$。求某一外输入的通道时，其余独立输入置零。\n\n$$E=- C H + D_{1} Gf - D_{2} H + R.$$\n\n$$X=- D_{1} + E G_{1}.$$\n\n$$C=X \\left(G_{2} + G_{3}\\right).$$\n\n**逐条核对回路。**\n\n$L_{1}=- G_{1} H \\left(G_{2} + G_{3}\\right)$，对应 $E\\to X\\to C\\to E$。\n\n没有互不接触的回路乘积项。\n\n$$\\Delta=1 - L_{1}.$$\n\n**$\\frac{C}{R}$ 的前向通路。**\n\n$R\\to E\\to X\\to C$ 的增益与余因子为\n$$P_{1}=G_{1} \\left(G_{2} + G_{3}\\right),\\qquad \\Delta_{1}=1.$$\n\n$$\\frac{C}{R}=\\frac{P_{1}\\Delta_{1}}{\\Delta}.$$\n\n**$\\frac{C}{D_{1}}$ 的前向通路。**\n\n$D_{1}\\to E\\to X\\to C$ 的增益与余因子为\n$$P_{1}=G_{1} Gf \\left(G_{2} + G_{3}\\right),\\qquad \\Delta_{1}=1.$$\n\n$D_{1}\\to X\\to C$ 的增益与余因子为\n$$P_{2}=- G_{2} - G_{3},\\qquad \\Delta_{2}=1.$$\n\n$$\\frac{C}{D_{1}}=\\frac{P_{1}\\Delta_{1}+P_{2}\\Delta_{2}}{\\Delta}.$$\n\n**$\\frac{C}{D_{2}}$ 的前向通路。**\n\n$D_{2}\\to E\\to X\\to C$ 的增益与余因子为\n$$P_{1}=- G_{1} H \\left(G_{2} + G_{3}\\right),\\qquad \\Delta_{1}=1.$$\n\n$$\\frac{C}{D_{2}}=\\frac{P_{1}\\Delta_{1}}{\\Delta}.$$\n\n令 $P=G_2+G_3$，$D=1+G_1PH$，由节点方程直接得\n$$C=\\frac{G_1P}{D}R+\\frac{P(G_1G_f-1)}D D_1-\\frac{G_1PH}{D}D_2.$$\n扰动 $D_1$ 的两条通路相互抵消要求 $G_f=\\frac{1}{G_1}$。这是形式上的完全补偿，还须保证所选补偿器可实现且内部稳定。",
+    "notes": ""
+  },
+  {
+    "volume": "A",
+    "chapter": 2,
+    "kind": "分析题",
+    "number": 65,
+    "origin": "西安电子科技大学 2025",
+    "questionPages": "50–51",
+    "answerPages": "94–97",
+    "topics": [
+      "建模 / 机电系统"
+    ],
+    "stem": "直流电机速度负反馈：$\\Delta U=U_1-U_3$，放大器 $U_2=K_1\\Delta U$，测速机 $U_3=K_3\\omega$。电枢 $Ri+L\\dot i=U_2-E$，反电动势 $E=C_e\\omega$；转矩 $M=C_mi$，机械部分 $J\\dot\\omega+f\\omega=M$。初值为零。画结构图，求 $\\frac{\\Omega}{U_1}$。",
+    "answer": "$$\\frac{\\Omega}{U_1}=\\frac{K_1C_m}{(Ls+R)(Js+f)+C_m(C_e+K_1K_3)}.$$",
+    "explanation": "从电压比较点出发，经 $K_1$ 得到 $U_2$；第二个比较点减去 $E$，经 $\\frac{1}{Ls+R}$ 得到 $I$；再经 $C_m$ 得到转矩，经 $\\frac{1}{Js+f}$ 得到角速度。从角速度分别经 $C_e$ 回到电枢比较点、经 $K_3$ 回到参考比较点，均为负反馈。\n用 $I=\\frac{(Js+f)\\Omega}{C_m}$ 代入电枢方程，并将 $U_2=K_1(U_1-K_3\\Omega)$ 代入，可得 $[(Ls+R)(Js+f)+C_mC_e+K_1C_mK_3]\\Omega=K_1C_mU_1$。转速反馈增加分母常数项，两种反馈不应混为同一个未经放大的系数。\n\n**等价信号流结构图。** 节点为求和点，支路标出对应环节；负号已包含在反馈增益中。 图中W表示角速度，V表示扣除反电动势后的电枢电压。\n\n![题中各信号支路及其增益](img/reviewed/qd1000-next-graph-2-65-solution.svg)",
+    "notes": ""
+  },
+  {
+    "volume": "A",
+    "chapter": 2,
+    "kind": "分析题",
+    "number": 66,
+    "origin": "重庆邮电大学 2025",
+    "questionPages": "51",
+    "answerPages": "97–98",
+    "topics": [
+      "建模 / 方框图"
+    ],
+    "stem": "各节点信号等于流入支路信号之和，图中增益省略自变量 $s$。\n\n![题中各信号支路及其增益](img/reviewed/qd1000-next-graph-2-66.svg)\n\n系统满足 $e=10r-b$、$6\\dot c+10c=20e$、$20\\dot b+5b=10c$，初值为零。画结构图，并求 $\\frac{C}{R}$ 与 $\\frac{E}{R}$。",
+    "answer": "下式的 $\\Delta$ 由解析中的有向回路确定。\n\n$$\\frac{C}{R}=\\frac{\\frac{100}{3 s + 5}}{\\Delta}.$$\n\n$$\\frac{E}{R}=\\frac{10}{\\Delta}.$$",
+    "explanation": "**从信号图列方程。** 以下增益省略自变量 $s$。求某一外输入的通道时，其余独立输入置零。\n\n$$E=- B + 10 R.$$\n\n$$C=\\frac{20 E}{6 s + 10}.$$\n\n$$B=\\frac{10 C}{20 s + 5}.$$\n\n**逐条核对回路。**\n\n$L_{1}=- \\frac{200}{\\left(6 s + 10\\right) \\left(20 s + 5\\right)}$，对应 $E\\to C\\to B\\to E$。\n\n没有互不接触的回路乘积项。\n\n$$\\Delta=1 - L_{1}.$$\n\n**$\\frac{C}{R}$ 的前向通路。**\n\n$R\\to E\\to C$ 的增益与余因子为\n$$P_{1}=\\frac{200}{6 s + 10},\\qquad \\Delta_{1}=1.$$\n\n$$\\frac{C}{R}=\\frac{P_{1}\\Delta_{1}}{\\Delta}.$$\n\n**$\\frac{E}{R}$ 的前向通路。**\n\n$R\\to E$ 的增益与余因子为\n$$P_{1}=10,\\qquad \\Delta_{1}=1.$$\n\n$$\\frac{E}{R}=\\frac{P_{1}\\Delta_{1}}{\\Delta}.$$\n\n前向环节为 $\\frac{20}{6s+10}$，反馈环节为 $\\frac{10}{20s+5}$，参考前置增益为 $10$。通分可复核\n$$\\frac CR=\\frac{100(4s+1)}{12s^2+23s+25}.$$\n$$\\frac ER=\\frac{10(12s^2+23s+5)}{12s^2+23s+25}.$$\n这里的误差由题目定义为 $10r-b$，不能当成 $r-c$。",
+    "notes": ""
+  },
+  {
+    "volume": "A",
+    "chapter": 2,
+    "kind": "分析题",
+    "number": 67,
+    "origin": "大连理工大学 2025",
+    "questionPages": "52",
+    "answerPages": "98–99",
+    "topics": [
+      "建模 / 方框图"
+    ],
+    "stem": "各节点信号等于流入支路信号之和，图中增益省略自变量 $s$。\n\n![题中各信号支路及其增益](img/reviewed/qd1000-next-graph-2-67.svg)\n\n给定 $X_1=G_1R-G_4G_5C$，$X_2=G_2(X_1-G_6X_1)$，$X_3=G_3(X_2-G_7C)$，$C=G_4X_3$。画结构图并求 $\\frac{C}{R}$。",
+    "answer": "下式的 $\\Delta$ 由解析中的有向回路确定。\n\n$$\\frac{C}{R}=\\frac{- G_{1} G_{2} G_{3} G_{4} \\left(G_{6} - 1\\right)}{\\Delta}.$$",
+    "explanation": "**从信号图列方程。** 以下增益省略自变量 $s$。求某一外输入的通道时，其余独立输入置零。\n\n$$X_{1}=- C G_{4} G_{5} + G_{1} R.$$\n\n$$X_{2}=X_{1} \\left(- G_{2} G_{6} + G_{2}\\right).$$\n\n$$X_{3}=- C G_{3} G_{7} + G_{3} X_{2}.$$\n\n$$C=G_{4} X_{3}.$$\n\n**逐条核对回路。**\n\n$L_{1}=- G_{3} G_{4} G_{7}$，对应 $X_{3}\\to C\\to X_{3}$。\n\n$L_{2}=- G_{3} G_{4}^{2} G_{5} \\left(- G_{2} G_{6} + G_{2}\\right)$，对应 $X_{1}\\to X_{2}\\to X_{3}\\to C\\to X_{1}$。\n\n没有互不接触的回路乘积项。\n\n$$\\Delta=- L_{1} - L_{2} + 1.$$\n\n**$\\frac{C}{R}$ 的前向通路。**\n\n$R\\to X_{1}\\to X_{2}\\to X_{3}\\to C$ 的增益与余因子为\n$$P_{1}=G_{1} G_{3} G_{4} \\left(- G_{2} G_{6} + G_{2}\\right),\\qquad \\Delta_{1}=1.$$\n\n$$\\frac{C}{R}=\\frac{P_{1}\\Delta_{1}}{\\Delta}.$$\n\n第二式括号内两项都取自 $X_1$，故可合并为 $X_2=G_2(1-G_6)X_1$。代入其余三式得\n$$\\frac CR=\\frac{G_1G_2G_3G_4(1-G_6)}{1+G_3G_4G_7+G_2G_3G_4^2G_5(1-G_6)}.$$",
+    "notes": ""
+  },
+  {
+    "volume": "A",
+    "chapter": 2,
+    "kind": "分析题",
+    "number": 68,
+    "origin": "上海交通大学 2025",
+    "questionPages": "52–53",
+    "answerPages": "99–102",
+    "topics": [
+      "建模 / 方框图"
+    ],
+    "stem": "各节点信号等于流入支路信号之和，图中增益省略自变量 $s$。\n\n![题中各信号支路及其增益](img/reviewed/qd1000-next-graph-2-68.svg)\n\n（1）用梅森公式求图示信号流图的 $\\frac{C}{R}$。（2）另一个系统满足 $E=R+G_4N-G_3C$、$C=G_1G_2E+N$，问 $G_4$ 取何值可使扰动 $N$ 对输出无影响？",
+    "answer": "下式的 $\\Delta$ 由解析中的有向回路确定。\n\n$$\\frac{C}{R}=\\frac{G_{1} G_{2} G_{3} + G_{1} G_{5} + G_{3} G_{4} + G_{4} G_{5} G_{7} + G_{4} G_{5} G_{9}}{\\Delta}.$$",
+    "explanation": "**从信号图列方程。** 以下增益省略自变量 $s$。求某一外输入的通道时，其余独立输入置零。\n\n$$A=B G_{6} + R.$$\n\n$$B=A G_{1} + G_{9} Z.$$\n\n$$X=B + G_{7} Y.$$\n\n$$Y=A G_{4} + G_{2} X.$$\n\n$$Z=C G_{8} + Y.$$\n\n$$C=G_{3} Z + G_{5} X.$$\n\n**逐条核对回路。**\n\n$L_{1}=G_{1} G_{6}$，对应 $A\\to B\\to A$。\n\n$L_{2}=G_{2} G_{7}$，对应 $X\\to Y\\to X$。\n\n$L_{3}=G_{3} G_{8}$，对应 $Z\\to C\\to Z$。\n\n$L_{4}=G_{4} G_{6} G_{9}$，对应 $A\\to Y\\to Z\\to B\\to A$。\n\n$L_{5}=G_{2} G_{9}$，对应 $B\\to X\\to Y\\to Z\\to B$。\n\n$L_{6}=G_{5} G_{8} G_{9}$，对应 $B\\to X\\to C\\to Z\\to B$。\n\n$L_{7}=G_{4} G_{5} G_{6} G_{7} G_{8} G_{9}$，对应 $A\\to Y\\to X\\to C\\to Z\\to B\\to A$。\n\n互不接触的回路乘积为 $L_{1} L_{2}$、$L_{1} L_{3}$、$L_{2} L_{3}$、$L_{1} L_{2} L_{3}$。\n\n$$\\Delta=1-S_1+S_2-S_3.$$\n\n各阶 $S_k$ 是上列每组 $k$ 个互不接触回路的增益乘积之和。$S_1$ 为所有单独回路增益的和。\n\n**$\\frac{C}{R}$ 的前向通路。**\n\n$R\\to A\\to B\\to X\\to Y\\to Z\\to C$ 的增益与余因子为\n$$P_{1}=G_{1} G_{2} G_{3},\\qquad \\Delta_{1}=1.$$\n\n$R\\to A\\to B\\to X\\to C$ 的增益与余因子为\n$$P_{2}=G_{1} G_{5},\\qquad \\Delta_{2}=1.$$\n\n$R\\to A\\to Y\\to X\\to C$ 的增益与余因子为\n$$P_{3}=G_{4} G_{5} G_{7},\\qquad \\Delta_{3}=1.$$\n\n$R\\to A\\to Y\\to Z\\to B\\to X\\to C$ 的增益与余因子为\n$$P_{4}=G_{4} G_{5} G_{9},\\qquad \\Delta_{4}=1.$$\n\n$R\\to A\\to Y\\to Z\\to C$ 的增益与余因子为\n$$P_{5}=G_{3} G_{4},\\qquad \\Delta_{5}=1.$$\n\n$$\\frac{C}{R}=\\frac{P_{1}\\Delta_{1}+P_{2}\\Delta_{2}+P_{3}\\Delta_{3}+P_{4}\\Delta_{4}+P_{5}\\Delta_{5}}{\\Delta}.$$\n\n（2）置 $R=0$，消去 $E$ 得\n$$\\frac CN=\\frac{1+G_1G_2G_4}{1+G_1G_2G_3}.$$\n因此理想完全补偿要求 $G_4=-\\frac{1}{G_1G_2}$。负号不可遗漏，因为扰动直接通路以正号进入输出。",
+    "notes": ""
+  }
+]

@@ -1,0 +1,8 @@
+{
+  "answer": "阶跃误差0；斜坡误差 $\\frac{a}{K_1}+K_2$。增大 $K_1$ 降低斜坡误差，但有限 $K_2>0$ 构成其下界；增大 $K_2$ 使误差增大。",
+  "explanation": "先闭合速度局部环，外环开环 $L=\\frac{K_1}{s(Ts+a+K_1K_2)}$。闭环分母 $Ts^2+(a+K_1K_2)s+K_1$，正参数下稳定。该外环为I型，阶跃零误差；$K_v=\\frac{K_1}{a+K_1K_2}$，斜坡误差为倒数。$T$ 不影响这一低频误差系数，但影响动态性能。",
+  "originalImages": [],
+  "answerPdfPages": "278–279",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

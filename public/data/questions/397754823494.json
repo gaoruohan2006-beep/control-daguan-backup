@@ -1,0 +1,8 @@
+{
+  "answer": "（1）$c=1-\\frac43e^{-t}+\\frac13e^{-4t}$；（2）$K_1=0.25,K_2=0.05$，$t_p=\\frac{2\\pi}{\\sqrt3}$。",
+  "explanation": "标准化闭环函数为 $\\frac{4K_1}{s^2+(0.8+4K_2)s+4K_1}$。第一问分母 $s^2+5s+4=(s+1)(s+4)$，分解阶跃输出得结果。第二问复极点模长等于 $\\omega_n$，单位圆要求 $\\omega_n=1$，故 $4K_1=1$；再由 $2\\zeta\\omega_n=0.8+4K_2=1$ 得 $K_2=0.05$。$\\omega_d=\\frac{\\sqrt3}{2}$，所以峰值时间为 $\\frac{2\\pi}{\\sqrt3}$。",
+  "originalImages": [],
+  "answerPdfPages": "159–160",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

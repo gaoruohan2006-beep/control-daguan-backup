@@ -1,0 +1,8 @@
+{
+  "answer": "$c(t)=(1-e^{-\\frac{t}{T}})1(t)$。",
+  "explanation": "输出变换为 $\\frac{1}{s(1+Ts)}=\\frac{1}{s}-\\frac{1}{s+\\frac{1}{T}}$。反变换得到答案；$t=T$ 时达到终值的 $1-e^{-1}\\approx63.2\\%$，可用于检查时间常数。",
+  "originalImages": [],
+  "answerPdfPages": "114",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

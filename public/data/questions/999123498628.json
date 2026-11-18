@@ -1,0 +1,8 @@
+{
+  "answer": "偶极子（近似相消的零极点对）。",
+  "explanation": "若零点 $z$ 与极点 $p$ 接近，因子 $\\frac{s-z}{s-p}=1+\\frac{p-z}{s-p}$。当两者距离相对其模长很小时，相关模态的留数通常较小，可在适用频段近似相消。精确相消和近似相消不同，右半平面或虚轴极点不能凭相消外观就认定内部稳定。",
+  "originalImages": [],
+  "answerPdfPages": "112",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

@@ -1,0 +1,8 @@
+{
+  "answer": "正确。",
+  "explanation": "若闭环矩阵有特征值 $\\lambda_i$，状态自然响应由 $e^{\\lambda_it}$ 及重根对应的 $t^ke^{\\lambda_it}$ 组成。极点决定指数和振荡形式，初值、输入和零点决定各模态在给定输出中的系数；某些内部模态可能在非最小输入输出传递函数中被隐藏。",
+  "originalImages": [],
+  "answerPdfPages": "120",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

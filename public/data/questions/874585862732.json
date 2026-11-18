@@ -1,0 +1,8 @@
+{
+  "answer": "$$H(s)=1-\\frac{K}{G_2(s)}.$$\n$$G(s)=\\frac{G_1(s)G_2(s)}{1-KG_1(s)}.$$\n$$\\frac CR=\\frac{G_1G_2}{1-KG_1+G_1G_2}.$$",
+  "explanation": "**从信号图列方程。** 以下增益省略自变量 $s$。求某一外输入的通道时，其余独立输入置零。\n\n$$E=- C + K X + R.$$\n\n$$X=E G_{1}.$$\n\n$$C=G_{2} X.$$\n\n**逐条核对回路。**\n\n$L_{1}=G_{1} K$，对应 $E\\to X\\to E$。\n\n$L_{2}=- G_{1} G_{2}$，对应 $E\\to X\\to C\\to E$。\n\n没有互不接触的回路乘积项。\n\n$$\\Delta=- L_{1} - L_{2} + 1.$$\n\n**$\\frac{C}{R}$ 的前向通路。**\n\n$R\\to E\\to X\\to C$ 的增益与余因子为\n$$P_{1}=G_{1} G_{2},\\qquad \\Delta_{1}=1.$$\n\n$$\\frac{C}{R}=\\frac{P_{1}\\Delta_{1}}{\\Delta}.$$\n\n原反馈信号为 $C-KX$。由 $X=\\frac{C}{G_2}$，在前向通道保持 $G_1G_2$ 时，$H=1-\\frac{K}{G_2}$。若改成单位负反馈，令 $T=\\frac{G}{1+G}$，则 $G=\\frac{T}{1-T}$。两种等效开环必须区分。",
+  "originalImages": [],
+  "answerPdfPages": "66–67",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

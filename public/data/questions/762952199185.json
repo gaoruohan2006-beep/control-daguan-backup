@@ -1,0 +1,8 @@
+{
+  "answer": "$\\zeta=0$。",
+  "explanation": "标准二阶极点为 $-\\zeta\\omega_n\\pm j\\omega_n\\sqrt{1-\\zeta^2}$。振幅既不衰减也不增长要求实部为零，因此 $\\zeta=0$。此时阶跃响应 $1-\\cos\\omega_nt$，为无阻尼振荡。",
+  "originalImages": [],
+  "answerPdfPages": "112",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

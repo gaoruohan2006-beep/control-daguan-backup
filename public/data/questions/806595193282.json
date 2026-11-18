@@ -1,0 +1,8 @@
+{
+  "answer": "$e_{ss}=\\frac{1-K_1}{K_2}$。",
+  "explanation": "由输出方程得 $E=\\frac{R-G_cN}{1+G}$，其中 $G=\\frac{K_2}{s(T_2s+1)}$。闭环分母 $T_2s^2+s+K_2$ 稳定。代入 $R=N=\\frac{1}{s^2}$，有 $sE=\\frac{1-G_c}{s(1+G)}$，取 $s\\to0$ 得 $\\frac{1-K_1}{K_2}$。给定与扰动同为斜坡，但扰动在输出处以正号注入，所以其误差贡献为负；不能把两贡献的绝对值相加。",
+  "originalImages": [],
+  "answerPdfPages": "130–131",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

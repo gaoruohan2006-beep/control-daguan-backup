@@ -1,0 +1,8 @@
+{
+  "answer": "$\\zeta=0.5,\\omega_n=2$，$\\Phi=\\frac{4}{s^2+2s+4}$，$G=\\frac{4}{s(s+2)}$；$t_1=\\ln[\\frac{2}{0.006\\sqrt3}]\\approx5.2598$ 秒；已保持在5%带内；斜坡误差0.5。",
+  "explanation": "典型二阶相位 $\\varphi=\\arccos\\zeta$，所以 $\\zeta=0.5$。由 $b=\\omega_n\\sqrt{1-\\zeta^2}=\\sqrt3$ 得自然频率2、衰减率 $a=1$，包络系数 $A=\\frac{1}{\\sqrt{1-\\zeta^2}}=\\frac{2}{\\sqrt3}$。解 $(\\frac{2}{\\sqrt3})e^{-t_1}=0.006$ 得时间。此时包络已小于0.05且以后单调衰减，所以未来均保持在5%带内，不能只凭某一瞬间误差小就断言调节完成。$K_v=\\frac{4}{2}=2$，斜坡误差1/2。",
+  "originalImages": [],
+  "answerPdfPages": "216–218",
+  "referenceNote": "将原题单个时刻表达式所隐含的二阶振荡频率、相位和包络条件直接写入题干，使反求条件完整。",
+  "sourceType": "practice"
+}

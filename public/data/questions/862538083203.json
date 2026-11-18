@@ -1,0 +1,8 @@
+{
+  "answer": "$a=0$ 时 $e_{ss}=0.01$；$a>0$ 时误差无有限稳态值且向正无穷增长。",
+  "explanation": "闭环分母 $0.1s^2+s+100$ 稳定。系统 I 型，$K_v=100$、$K_a=0$。阶跃分量无误差，单位斜坡贡献0.01；若 $a>0$，非零二次输入超出I型系统有限误差跟踪能力，误差含增长项，不能仍给0.01。",
+  "originalImages": [],
+  "answerPdfPages": "170–171",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

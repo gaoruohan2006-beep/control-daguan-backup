@@ -1,0 +1,8 @@
+{
+  "answer": "$$\\frac{U_o}{U_i}=\\frac{R_2}{R_1R_2Cs+R_1+R_2}.$$",
+  "explanation": "并联负载阻抗 $Z=\\frac{R_2}{1+R_2Cs}$，分压得 $\\frac{U_o}{U_i}=\\frac{Z}{R_1+Z}$。也可直接写 $\\frac{u_i-u_o}{R_1}=\\frac{u_o}{R_2}+C\\dot u_o$。所以它是一阶惯性环节，静态增益 $\\frac{R_2}{R_1+R_2}$，时间常数 $\\frac{R_1R_2C}{R_1+R_2}$，与戴维南等效电阻乘电容一致。",
+  "originalImages": [],
+  "answerPdfPages": "91",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

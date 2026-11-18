@@ -1,0 +1,8 @@
+{
+  "answer": "$\\ddot u_c+2.5\\dot u_c+u_c=\\dot u+u$，$u_c(t)=1-(\\frac{17}{15})e^{-\\frac{t}{2}}+(\\frac{7}{30})e^{-2t}$。",
+  "explanation": "总阻抗法给 $\\frac{U_c}{U}=\\frac{1+R_1C_1s}{R_1R_2C_1C_2s^2+(R_1C_1+R_1C_2+R_2C_2)s+1}$，代数值得微分方程。对 $t>0$ 输入导数为零；输出电容电流等于总电流，所以 $\\dot u_c(0^+)=\\frac{i_r(0^+)}{C_2}=0.1$。单边变换得 $(s^2+2.5s+1)U_c=\\frac{1}{s}+0.1s+0.35$。分解成 $\\frac{1}{s}-\\frac{\\frac{17}{15}}{s+0.5}+\\frac{\\frac{7}{30}}{s+2}$ 后反变换，初值和导数均可回代核查。",
+  "originalImages": [],
+  "answerPdfPages": "286–287",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

@@ -1,0 +1,8 @@
+{
+  "answer": "正确。",
+  "explanation": "零初值下 $Y=G(s)U$，单位脉冲输入 $U=1$，输出变换为 $Y=G$，故 $g(t)=\\mathcal L^{-1}\\{G\\}$。如存在直接传递，脉冲响应中会包含相应的 $\\delta(t)$ 项。",
+  "originalImages": [],
+  "answerPdfPages": "120",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

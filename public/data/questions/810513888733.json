@@ -1,0 +1,8 @@
+{
+  "answer": "（1）$c=0.8[1-e^{-6t}(\\cos8t+0.75\\sin8t)]$，误差0.2；（2）$K=\\frac{4451}{49}\\approx90.8367,K_t=\\frac{588}{22255}\\approx0.026421$；（3）$K\\ge99$。",
+  "explanation": "第一问闭环为 $\\frac{80}{s^2+12s+100}$，终值0.8。闭合速度反馈后分母为 $s^2+(12+20KK_t)s+20(1+K)$。由 $\\zeta\\omega_n=30$ 和 $\\zeta=0.7$ 得 $\\omega_n=\\frac{300}{7}$，比较常数项、一次项得到参数。注意原题误差为 $R-C$，即使引入速度反馈也仍按外误差定义。第三问扰动稳态输出 $\\frac{1}{1+K}$，误差负号不影响绝对值约束，故 $\\frac{1}{1+K}\\le0.01$ 给 $K\\ge99$。",
+  "originalImages": [],
+  "answerPdfPages": "262–264",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

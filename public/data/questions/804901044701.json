@@ -1,0 +1,8 @@
+{
+  "answer": "负实轴上，可为两个相异根或一对重根。",
+  "explanation": "典型二阶无超调要求 $\\zeta\\ge1$，自然频率为正。根为 $-\\zeta\\omega_n\\pm\\omega_n\\sqrt{\\zeta^2-1}$，二者均为负实数；等号时为负实重根。一般高阶或含零点系统可以有复极点却仍无超调，故本题必须限定典型二阶。",
+  "originalImages": [],
+  "answerPdfPages": "293",
+  "referenceNote": "把答案册使用的典型无零点二阶前提直接写入题干，避免原题对一般连续系统的过度概括。",
+  "sourceType": "practice"
+}

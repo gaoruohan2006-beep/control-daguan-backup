@@ -1,0 +1,8 @@
+{
+  "answer": "C。",
+  "explanation": "原特征式为 $s(s^2+2s+2)+s+a=s^3+2s^2+3s+a=0$。因此改写为 $1+\\frac{a}{s(s^2+2s+3)}=0$。参数a在原分子中的常数位置，不能简单把原开环函数的整个分子当成比例增益。",
+  "originalImages": [],
+  "answerPdfPages": "292",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

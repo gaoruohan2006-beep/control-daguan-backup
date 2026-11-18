@@ -1,0 +1,8 @@
+{
+  "answer": "通式 $\\Phi=\\frac{K}{s^2+(1+K\\tau)s+K}$。令 $a=\\frac{1+K\\tau}{2},b=\\sqrt{K-a^2}$，本题三组均有 $b>0$，\n$$c(t)=1-e^{-at}\\left(\\cos bt+\\frac a b\\sin bt\\right).$$\n第一组 $(a,b)=(0.7,\\sqrt{1.51})$；另两组分别 $(3,1)$、$(1.5,\\frac{\\sqrt{31}}{2})$。",
+  "explanation": "直接闭合非单位反馈得到通式，三组参数分别代入。$K=10,\\tau=0.5$ 时衰减率3、超调 $e^{-3\\pi}\\approx0.00807\\%$；$\\tau=0.2$ 时衰减率1.5、超调 $\\exp[-\\frac{3\\pi}{\\sqrt{31}}]\\approx18.40\\%$。两者终值均为1，但测速反馈较大的一组振荡显著减弱。图像按完整函数绘制，不使用分母参数代替实际曲线。\n\n![第3章分析题86的响应比较](img/reviewed/qd1000-next-response-86.svg)",
+  "originalImages": [],
+  "answerPdfPages": "247–250",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

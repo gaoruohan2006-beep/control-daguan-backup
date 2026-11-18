@@ -1,0 +1,8 @@
+{
+  "answer": "$\\frac{C}{R}=\\frac{K}{s^2+K\\beta s+K}$。开环幅频曲线对任意实 $\\beta$ 均递减；若同时要求闭环稳定需 $\\beta>0$。完全补偿 $G_n=s$。",
+  "explanation": "闭合局部反馈后，外环开环为 $L=\\frac{K}{s(s+K\\beta)}$，幅值为 $\\frac{K}{\\omega\\sqrt{\\omega^2+K^2\\beta^2}}$，对任意实 $\\beta$ 及 $\\omega>0$ 均严格递减。但稳定性还需检查分母系数，得 $\\beta>0$。扰动通道分子为 $(s+K\\beta)(s-G_n)$，因此取 $G_n=s$ 可恒等抵消。不要把“闭环无谐振峰”条件误用到本题的开环幅频单调性。",
+  "originalImages": [],
+  "answerPdfPages": "255–256",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

@@ -1,0 +1,8 @@
+{
+  "answer": "$72\\le K<81$。",
+  "explanation": "闭环特征多项式为 $s^4+9s^3+18s^2+Ks+K$。劳斯首列为\n$$1,\\quad9,\\quad\\frac{162-K}{9},\\quad\\frac{K(81-K)}{162-K},\\quad K.$$\n首列同正得到 $0<K<81$。输入 $r=t^2$ 的变换为 $\\frac{2}{s^3}$，系统为 II 型，$K_a=\\lim s^2G=\\frac{K}{18}$，因此 $e_{ss}=\\frac{2}{K_a}=\\frac{36}{K}$。误差要求给出 $K\\ge72$，与稳定区相交为 $72\\le K<81$。边界81出现虚根，必须排除。",
+  "originalImages": [],
+  "answerPdfPages": "116",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

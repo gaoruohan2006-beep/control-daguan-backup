@@ -1,0 +1,8 @@
+{
+  "answer": "A。$\\frac{1}{2}$。",
+  "explanation": "误差变换为 $E=\\frac{1-\\Phi}{s^2}=\\frac{s+2}{s(s^2+2s+4)}$。$sE$ 的极点均在左半平面，终值定理适用，因此 $e_{ss}=\\frac{\\lim_{s\\to0}(s+2)}{s^2+2s+4}=\\frac{1}{2}$。题给的是闭环传递函数，不能直接把它代入开环速度误差系数。",
+  "originalImages": [],
+  "answerPdfPages": "106",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

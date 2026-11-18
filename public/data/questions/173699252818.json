@@ -1,0 +1,8 @@
+{
+  "answer": "C。",
+  "explanation": "实轴上右侧的每个实零点或实极点贡献一个180度相角，左侧贡献0度；复共轭零极点成对相角相加为360度整数倍。因此总相角为奇数倍180度时，右侧实零极点的总数应为奇数，重根按重数计。",
+  "originalImages": [],
+  "answerPdfPages": "290",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

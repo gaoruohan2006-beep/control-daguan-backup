@@ -1,0 +1,8 @@
+{
+  "answer": "$\\tau>T>0$。",
+  "explanation": "特征多项式为 $Ts^3+s^2+\\tau s+1$。劳斯首列为 $T,1,\\tau-T,1$。在 $T>0$ 前提下，同正等价于 $\\tau>T$。若 $\\tau=T$，则 $(Ts+1)(s^2+1)$ 出现虚根，属于临界而非渐近稳定。",
+  "originalImages": [],
+  "answerPdfPages": "119",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

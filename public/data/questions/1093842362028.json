@@ -1,0 +1,8 @@
+{
+  "answer": "积分环节存储了过渡过程中的累积状态，零输入只表示其状态不再变化，并不强制其状态为零。",
+  "explanation": "由 $C=\\frac{E}{s(s+1)}$ 得时域方程 $\\ddot c+\\dot c=e$。稳态时 $\\dot c=\\ddot c=0$，所以可以同时满足 $e=0$、$c=1$。也可从内部积分状态理解：积分器输出等于初值加误差信号的历史积分；误差最终变零以后，历史累积值继续保留。整个闭环特征式 $s^2+s+1$ 稳定，且 $\\Phi(0)=1$。",
+  "originalImages": [],
+  "answerPdfPages": "121",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

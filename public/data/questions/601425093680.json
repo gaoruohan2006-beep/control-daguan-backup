@@ -1,0 +1,8 @@
+{
+  "answer": "$G_1=\\frac{8}{s+5}$，$G_f=-\\frac{s+5}{8}$。",
+  "explanation": "由 $G_1=sH(s)$ 得 $\\frac{8}{s+5}$。加入前馈后，进入输出积分环节的扰动合成为 $(1+G_1G_f)N$。完全抵消要求 $1+G_1G_f=0$，所以 $G_f=-\\frac{1}{G_1}=-\\frac{s+5}{8}$。该理想补偿含微分作用，需要扰动可测；实际实现常用带高频滤波的近似微分，形式消扰条件不自动保证可实现性。",
+  "originalImages": [],
+  "answerPdfPages": "145–146",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

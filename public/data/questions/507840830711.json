@@ -1,0 +1,8 @@
+{
+  "answer": "B。",
+  "explanation": "闭环分母 $s^2+2s+K$，故 $\\omega_n=\\sqrt K$、$\\zeta=\\frac{1}{\\sqrt K}$，乘积 $\\zeta\\omega_n=1$。因此 5% 工程估算 $t_s\\approx3$ 不变。相对超调量 $\\exp[-\\frac{\\pi}{\\sqrt{K-1}}]$ 随 $K$ 增大而增大。这里“不变”针对题干指定的工程估算，实际最后进入误差带的时刻会随振荡相位变化。",
+  "originalImages": [],
+  "answerPdfPages": "102",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

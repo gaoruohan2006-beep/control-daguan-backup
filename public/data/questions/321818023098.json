@@ -1,0 +1,8 @@
+{
+  "answer": "$$\\frac{U_2}{U_1}=\\frac{R_2}{R_1LCs^2+(L+R_1R_2C)s+R_1+R_2}.$$",
+  "explanation": "由元件关系与节点电流平衡：\n$$I_1=\\frac{U_1-U_3}{R_1},\\quad U_3=\\frac{I_1-I_2}{Cs}.$$\n$$I_2=\\frac{U_3-U_2}{Ls},\\quad U_2=R_2I_2.$$\n这些式子直接给出含 $i_1,i_2,u_3$ 的结构图：两个电压比较点经 $\\frac{1}{R_1}$、$\\frac{1}{Ls}$ 得到两电流，电流差经 $\\frac{1}{Cs}$ 得到 $u_3$，$i_2$ 经 $R_2$ 得到输出。\n由 $U_3=(Ls+R_2)I_2$、$I_1=CsU_3+I_2$ 代回输入式，可得 $U_1=[R_1LCs^2+(L+R_1R_2C)s+R_1+R_2]I_2$，再除以 $U_2=R_2I_2$ 即得答案。\n\n**等价信号流结构图。** 节点为求和点，支路标出对应环节；负号已包含在反馈增益中。\n\n![题中各信号支路及其增益](img/reviewed/qd1000-next-graph-2-56-solution.svg)",
+  "originalImages": [],
+  "answerPdfPages": "85–86",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

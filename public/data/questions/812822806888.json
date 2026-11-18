@@ -1,0 +1,8 @@
+{
+  "answer": "$$G_1=\\frac1{Ls+R_2},\\quad G_2=\\frac1{C_2s},\\quad G_3=R_2,\\quad G_4=\\frac{R_1}{1+R_1C_1s}.$$\n$$\\frac{U_o}{U_i}=\\frac{(1+R_1C_1s)(1+R_2C_2s)}{a_3s^3+a_2s^2+a_1s+1},$$\n其中 $a_3=R_1C_1C_2L$，$a_2=R_1R_2C_1C_2+C_2L$，$a_1=R_1C_1+R_1C_2+R_2C_2$。所有元件严格为正时渐近稳定。",
+  "explanation": "电感与 $R_2$ 的电压和为 $U_i-U_{c1}-U_{c2}$，从而确定 $G_1$；其余环节直接由电阻、电容与并联RC阻抗关系确定。输入总阻抗为 $\\frac{R_1}{1+R_1C_1s}+Ls+R_2+\\frac{1}{C_2s}$，输出阻抗为 $R_2+\\frac{1}{C_2s}$，分压并清分母得通式。三阶劳斯条件为 $a_i>0$ 且 $a_2a_1>a_3$。对于严格正元件，后一差值展开后各剩余项均为正，故自动满足；不必把它误当成还需另加的独立物理限制。",
+  "originalImages": [],
+  "answerPdfPages": "281–283",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

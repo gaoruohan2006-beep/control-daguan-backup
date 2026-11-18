@@ -1,0 +1,8 @@
+{
+  "answer": "A。",
+  "explanation": "原闭环特征式 $(s+2)(s+a)+8=s^2+2s+8+a(s+2)=0$。将不含参数的部分作为基准分母，除以 $s^2+2s+8$ 得 $1+\\frac{a(s+2)}{s^2+2s+8}=0$。因此参数根轨迹的开环极点并非直接照抄原系统含a的极点。",
+  "originalImages": [],
+  "answerPdfPages": "290",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

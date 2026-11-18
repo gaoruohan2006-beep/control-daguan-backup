@@ -1,0 +1,8 @@
+{
+  "answer": "$K=6$，振荡频率 $\\sqrt2\\,\\mathrm{\\frac{rad}{s}}$。",
+  "explanation": "闭环分母 $s^3+3s^2+2s+K$。劳斯首列 $1,3,\\frac{6-K}{3},K$，稳定范围 $0<K<6$。在 $K=6$ 时，分母为 $(s+3)(s^2+2)$，出现简单虚根 $\\pm j\\sqrt2$。",
+  "originalImages": [],
+  "answerPdfPages": "114",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

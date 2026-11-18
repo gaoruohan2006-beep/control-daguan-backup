@@ -1,0 +1,8 @@
+{
+  "answer": "C。",
+  "explanation": "积分器能提高系统型别，增益增大可提高有限误差系数，正确的扰动补偿可减小对应扰动误差。纯微分作用在零频处增益为零，单独依靠微分不能提高低频误差系数；它主要用于改变动态响应。实际加积分或增益时仍须先检查稳定性。",
+  "originalImages": [],
+  "answerPdfPages": "110",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

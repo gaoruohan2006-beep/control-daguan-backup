@@ -1,0 +1,8 @@
+{
+  "answer": "$c(t)=1-2e^{-t}+e^{-2t}$；无超调；$t_s=-\\ln(1-\\sqrt{0.95})\\approx3.6761$ 秒。",
+  "explanation": "闭环 $\\Phi=\\frac{2}{(s+1)(s+2)}$，分解 $\\frac{\\Phi}{s}=\\frac{1}{s}-\\frac{2}{s+1}+\\frac{1}{s+2}$。响应可写成 $(1-e^{-t})^2$，对 $t\\ge0$ 单调上升至1，故超调为零。相对误差为 $2e^{-t}-e^{-2t}$，置 $z=e^{-t}$，解 $2z-z^2=0.05$，取 $0<z<1$ 的根 $z=1-\\sqrt{0.95}$。",
+  "originalImages": [],
+  "answerPdfPages": "202–203",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

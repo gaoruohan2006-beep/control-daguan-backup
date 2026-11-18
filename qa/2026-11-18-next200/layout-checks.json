@@ -1,0 +1,1606 @@
+{
+  "sourceEntries": 238,
+  "retainedCardsExercised": 229,
+  "sizes": [
+    {
+      "width": 1380,
+      "fontScale": 1,
+      "cards": 229
+    },
+    {
+      "width": 1380,
+      "fontScale": 1.3,
+      "cards": 229
+    },
+    {
+      "width": 1024,
+      "fontScale": 1,
+      "cards": 229
+    },
+    {
+      "width": 1024,
+      "fontScale": 1.3,
+      "cards": 229
+    },
+    {
+      "width": 390,
+      "fontScale": 1,
+      "cards": 229
+    },
+    {
+      "width": 390,
+      "fontScale": 1.3,
+      "cards": 229
+    }
+  ],
+  "issues": [],
+  "mobileScrollableFormulas": [
+    {
+      "id": "11114136013",
+      "type": "math",
+      "tex": "[(Ls+R)(Js+f)+C_mC_e+K_1C_mK_3]\\Omega=K_1C_mU_1",
+      "width": 456,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1
+    },
+    {
+      "id": "15003974441",
+      "type": "math",
+      "tex": "(s+2)(s+a)+8=s^2+2s+8+a(s+2)=0",
+      "width": 410,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1
+    },
+    {
+      "id": "18720600406",
+      "type": "math",
+      "tex": "D=(s+1)(s+2)(s+3)(s^2+2s+2)",
+      "width": 339,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1
+    },
+    {
+      "id": "105123010066",
+      "type": "math",
+      "tex": "c_1=c_0+5\\dot c_0=1+e^{-t}(9\\sin t-\\cos t)",
+      "width": 330,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1
+    },
+    {
+      "id": "124387970284",
+      "type": "math",
+      "tex": "s^3+2s^2+5s+10=(s+2)(s^2+5)",
+      "width": 317,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1
+    },
+    {
+      "id": "159579944272",
+      "type": "math",
+      "tex": "\\omega_n=\\dfrac{\\pi}{0.5\\sqrt{1-0.309^2}}\\approx6.6065\\,\\mathrm{rad/s}",
+      "width": 322,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1
+    },
+    {
+      "id": "202754112652",
+      "type": "math",
+      "tex": "\\begin{aligned}c_r(t)={}&\\frac t2-\\frac{647}{2210}+\\frac{221}{905}e^{-2t}\\\\ &+\\frac{21e^{-t}}{408010}(925\\cos t+904\\sin t)\\\\ &+\\frac{1554000}{1632080801}e^{-\\frac{221t}{20}},\\quad t\\ge0.\\end{aligned}",
+      "width": 325,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1
+    },
+    {
+      "id": "226586557319",
+      "type": "math",
+      "tex": "\\int_0^\\infty(1.5e^{-2t}-0.5e^{-6t})\\,dt=1.5/2-0.5/6=2/3",
+      "width": 409,
+      "available": 283,
+      "viewport": 390,
+      "scale": 1
+    },
+    {
+      "id": "260507283064",
+      "type": "math",
+      "tex": "s^6+4s^5-4s^4+4s^3-7s^2-8s+10=0",
+      "width": 354,
+      "available": 340,
+      "viewport": 390,
+      "scale": 1
+    },
+    {
+      "id": "265734565881",
+      "type": "math",
+      "tex": "D=s(s+4)(s+2)+20K=s^3+6s^2+8s+20K",
+      "width": 439,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1
+    },
+    {
+      "id": "305630023502",
+      "type": "math",
+      "tex": "\\frac{C}{R}=\\frac{G_{1} G_{2} G_{3} - G_{1} G_{2} G_{4} H_{1} + G_{2} G_{3} G_{4} H_{2} + G_{2} G_{4} H_{1} + G_{4}}{\\Delta}.",
+      "width": 452,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1
+    },
+    {
+      "id": "305630023502",
+      "type": "math",
+      "tex": "A=G_2[G_1(R+H_1A)-H_1A-H_2G_3A]",
+      "width": 352,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1
+    },
+    {
+      "id": "305630023502",
+      "type": "math",
+      "tex": "D=1-G_1G_2H_1+G_2H_1+G_2G_3H_2",
+      "width": 325,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1
+    },
+    {
+      "id": "309380767827",
+      "type": "math",
+      "tex": "(s^2+K\\beta s+K)Z=KR-KN-sGN",
+      "width": 350,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1
+    },
+    {
+      "id": "319633020137",
+      "type": "math",
+      "tex": "s^4+K_Ds^3+(2+K_p)s^2+K_Ds+K_p",
+      "width": 325,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1
+    },
+    {
+      "id": "321818023098",
+      "type": "math",
+      "tex": "U_1=[R_1LCs^2+(L+R_1R_2C)s+R_1+R_2]I_2",
+      "width": 394,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1
+    },
+    {
+      "id": "322505411825",
+      "type": "math",
+      "tex": "c=1-(\\frac{2}{17})e^{-5t}-(\\frac{15}{17})e^{-t}\\cos t-(\\frac{25}{17})e^{-t}\\sin t",
+      "width": 390,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1
+    },
+    {
+      "id": "371880097748",
+      "type": "math",
+      "tex": "s(s+1)(s+a)+10=s^3+s^2+10+a\\,s(s+1)=0",
+      "width": 449,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1
+    },
+    {
+      "id": "375475424531",
+      "type": "math",
+      "tex": "D(z-1)=z^3+22z^2-43z+T+20",
+      "width": 328,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1
+    },
+    {
+      "id": "401789881304",
+      "type": "math",
+      "tex": "\\begin{aligned}a_3&=R_1R_2R_3C_1C_2C_3,\\\\ a_2&=R_1R_2C_1C_2+R_1R_3C_1C_2\\\\&\\quad+R_1R_3C_1C_3+R_1R_3C_2C_3+R_2R_3C_2C_3,\\\\ a_1&=R_1C_1+R_1C_2+R_2C_2+R_3C_2+R_3C_3.\\end{aligned}",
+      "width": 380,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1
+    },
+    {
+      "id": "419738696838",
+      "type": "math",
+      "tex": "1,\\quad9,\\quad\\frac{162-K}{9},\\quad\\frac{K(81-K)}{162-K},\\quad K.",
+      "width": 328,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1
+    },
+    {
+      "id": "510177629649",
+      "type": "math",
+      "tex": "D=s^6+2s^5+8s^4+12s^3+2s^2+16s+16",
+      "width": 381,
+      "available": 340,
+      "viewport": 390,
+      "scale": 1
+    },
+    {
+      "id": "639122871282",
+      "type": "math",
+      "tex": "D=s^4+4s^3+5s^2+(2+K)s+aK",
+      "width": 326,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1
+    },
+    {
+      "id": "651944328218",
+      "type": "math",
+      "tex": "s(s+10)(s+5)+500=s^3+15s^2+50s+500",
+      "width": 410,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1
+    },
+    {
+      "id": "664634327223",
+      "type": "math",
+      "tex": "u_o=R_2(i_1+i_2)+C_2^{-1}\\int_0^t(i_1+i_2)\\,\\mathrm d\\tau",
+      "width": 322,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1
+    },
+    {
+      "id": "733654213902",
+      "type": "math",
+      "tex": "[1+G_1G_2H_1+(G_1+H_2)P]X=G_1R",
+      "width": 335,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1
+    },
+    {
+      "id": "743699337615",
+      "type": "math",
+      "tex": "c(t)=\\frac{47}{50}\\left[1-e^{-\\frac{5t}{2}}\\left(\\cos\\frac{5\\sqrt{15}t}2+\\frac1{\\sqrt{15}}\\sin\\frac{5\\sqrt{15}t}2\\right)\\right].",
+      "width": 396,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1
+    },
+    {
+      "id": "779787495502",
+      "type": "math",
+      "tex": "C=G_4[(G_2+G_3)E+G_1G_2R+N]",
+      "width": 317,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1
+    },
+    {
+      "id": "810513888733",
+      "type": "math",
+      "tex": "c=0.8[1-e^{-6t}(\\cos8t+0.75\\sin8t)]",
+      "width": 317,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1
+    },
+    {
+      "id": "810513888733",
+      "type": "math",
+      "tex": "K=\\frac{4451}{49}\\approx90.8367,K_t=\\frac{588}{22255}\\approx0.026421",
+      "width": 375,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1
+    },
+    {
+      "id": "829021614992",
+      "type": "math",
+      "tex": "s(0.5s^2+s+1)(s+1)+k(0.5s+1)=0",
+      "width": 357,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1
+    },
+    {
+      "id": "829021614992",
+      "type": "math",
+      "tex": "(s^2+2s+2)(s+1)=s^3+3s^2+4s+2",
+      "width": 350,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1
+    },
+    {
+      "id": "842782180428",
+      "type": "math",
+      "tex": "s(s^2+2s+2)+s+a=s^3+2s^2+3s+a=0",
+      "width": 404,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1
+    },
+    {
+      "id": "846784835675",
+      "type": "math",
+      "tex": "s(s-1)(s+5)+10(s+1)=s^3+4s^2+5s+10",
+      "width": 419,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1
+    },
+    {
+      "id": "858157980324",
+      "type": "math",
+      "tex": "\\frac{U_o}{U_i}=-\\frac{R_1R_2C_1C_2s^2+(R_1C_1+R_2C_1+R_2C_2)s+1}{R_0C_1s}.",
+      "width": 390,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1
+    },
+    {
+      "id": "871532827235",
+      "type": "math",
+      "tex": "\\frac{U_o}{U_i}=\\frac{1}{R_1R_2C_1C_2s^2+(R_1C_1+R_1C_2+R_2C_2)s+1}.",
+      "width": 375,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1
+    },
+    {
+      "id": "883413841263",
+      "type": "math",
+      "tex": "-[R_2+R_3+C(R_2R_4+R_3R_4+R_2R_3)s]",
+      "width": 355,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1
+    },
+    {
+      "id": "925797915262",
+      "type": "math",
+      "tex": "\\frac{X_o}{X_i}=\\frac{B_1B_2s^2+(B_1k_2+B_2k_1)s+k_1k_2}{B_1B_2s^2+(B_1k_2+B_2k_1+B_1k_1)s+k_1k_2}.",
+      "width": 347,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1
+    },
+    {
+      "id": "925797915262",
+      "type": "math",
+      "tex": "\\begin{aligned}B_1B_2\\ddot x_o&+(B_1k_2+B_2k_1+B_1k_1)\\dot x_o+k_1k_2x_o\\\\ &=B_1B_2\\ddot x_i+(B_1k_2+B_2k_1)\\dot x_i+k_1k_2x_i.\\end{aligned}",
+      "width": 394,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1
+    },
+    {
+      "id": "1007578795702",
+      "type": "math",
+      "tex": "\\frac{C}{R}=\\frac{G_{1} G_{2} G_{3} + G_{1} G_{5} + G_{3} G_{4} + G_{4} G_{5} G_{7} + G_{4} G_{5} G_{9}}{\\Delta}.",
+      "width": 403,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1
+    },
+    {
+      "id": "1007578795702",
+      "type": "math",
+      "tex": "\\frac{C}{R}=\\frac{P_{1}\\Delta_{1}+P_{2}\\Delta_{2}+P_{3}\\Delta_{3}+P_{4}\\Delta_{4}+P_{5}\\Delta_{5}}{\\Delta}.",
+      "width": 325,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1
+    },
+    {
+      "id": "1072912943680",
+      "type": "math",
+      "tex": "s(s+2)(s+3)+10=s^3+5s^2+6s+10",
+      "width": 361,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1
+    },
+    {
+      "id": "8117904810",
+      "type": "math",
+      "tex": "s^3+(1+10a)s^2+10s+10",
+      "width": 320,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "11114136013",
+      "type": "math",
+      "tex": "\\frac{\\Omega}{U_1}=\\frac{K_1C_m}{(Ls+R)(Js+f)+C_m(C_e+K_1K_3)}.",
+      "width": 411,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "11114136013",
+      "type": "math",
+      "tex": "[(Ls+R)(Js+f)+C_mC_e+K_1C_mK_3]\\Omega=K_1C_mU_1",
+      "width": 593,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "15003974441",
+      "type": "math",
+      "tex": "(s+2)(s+a)+8=s^2+2s+8+a(s+2)=0",
+      "width": 533,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "18720600406",
+      "type": "math",
+      "tex": "D=s^5+8s^4+25s^3+40s^2+34s+12",
+      "width": 442,
+      "available": 340,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "18720600406",
+      "type": "math",
+      "tex": "D=(s+1)(s+2)(s+3)(s^2+2s+2)",
+      "width": 440,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "21431053958",
+      "type": "math",
+      "tex": "t_s=-\\ln(1-\\sqrt{0.95})\\approx3.6761",
+      "width": 329,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "35085963181",
+      "type": "math",
+      "tex": "D=s^5+3s^4-3s^3-9s^2-4s+12",
+      "width": 404,
+      "available": 340,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "50167009334",
+      "type": "math",
+      "tex": "s^5+s^4+5s^3+5s^2+6s+6=0",
+      "width": 370,
+      "available": 340,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "85333985437",
+      "type": "math",
+      "tex": "K_1=1,2K_2=1,K_2K_3=1,T=0.25",
+      "width": 428,
+      "available": 340,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "85333985437",
+      "type": "math",
+      "tex": "D=0.25s^2+(1+0.5\\tau)s+0.5",
+      "width": 357,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "100665947321",
+      "type": "math",
+      "tex": "D(z-2)=z^3+z^2+z+K-14",
+      "width": 381,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "105123010066",
+      "type": "math",
+      "tex": "c_1=c_0+5\\dot c_0=1+e^{-t}(9\\sin t-\\cos t)",
+      "width": 429,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "106717729607",
+      "type": "math",
+      "tex": "a=p+4,b=4p+8,k=8p",
+      "width": 332,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "124387970284",
+      "type": "math",
+      "tex": "s^3+2s^2+5s+10=(s+2)(s^2+5)",
+      "width": 412,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "132684128144",
+      "type": "math",
+      "tex": "R_1=0.5\\Omega,R_2=1\\Omega,C_1=2\\mathrm F,C_2=1\\mathrm F",
+      "width": 442,
+      "available": 340,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "132684128144",
+      "type": "math",
+      "tex": "u_c(t)=1-(\\frac{17}{15})e^{-\\frac{t}{2}}+(\\frac{7}{30})e^{-2t}",
+      "width": 348,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "132684128144",
+      "type": "math",
+      "tex": "\\frac{U_c}{U}=\\frac{1+R_1C_1s}{R_1R_2C_1C_2s^2+(R_1C_1+R_1C_2+R_2C_2)s+1}",
+      "width": 392,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "132684128144",
+      "type": "math",
+      "tex": "(s^2+2.5s+1)U_c=\\frac{1}{s}+0.1s+0.35",
+      "width": 405,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "159579944272",
+      "type": "math",
+      "tex": "\\omega_n=\\dfrac{\\pi}{0.5\\sqrt{1-0.309^2}}\\approx6.6065\\,\\mathrm{rad/s}",
+      "width": 418,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "166083914680",
+      "type": "math",
+      "tex": "T_1=0.2,T_2=5,K_1=25,K_2=4",
+      "width": 383,
+      "available": 340,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "181041318865",
+      "type": "math",
+      "tex": "X=G_1(R-H_1X-H_3C)-H_2C",
+      "width": 393,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "202754112652",
+      "type": "math",
+      "tex": "\\begin{aligned}c_r(t)={}&\\frac t2-\\frac{647}{2210}+\\frac{221}{905}e^{-2t}\\\\ &+\\frac{21e^{-t}}{408010}(925\\cos t+904\\sin t)\\\\ &+\\frac{1554000}{1632080801}e^{-\\frac{221t}{20}},\\quad t\\ge0.\\end{aligned}",
+      "width": 422,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "226586557319",
+      "type": "math",
+      "tex": "\\int_0^\\infty(1.5e^{-2t}-0.5e^{-6t})\\,dt=1.5/2-0.5/6=2/3",
+      "width": 531,
+      "available": 283,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "260507283064",
+      "type": "math",
+      "tex": "s^6+4s^5-4s^4+4s^3-7s^2-8s+10=0",
+      "width": 461,
+      "available": 340,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "264152214560",
+      "type": "math",
+      "tex": "D=s^3+10s^2+64s+64K",
+      "width": 322,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "265734565881",
+      "type": "math",
+      "tex": "D=s(s+4)(s+2)+20K=s^3+6s^2+8s+20K",
+      "width": 571,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "277185411566",
+      "type": "math",
+      "tex": "\\frac X U=\\frac{Ba}{Rm s^2+(RD+B^2a^2)s+RK}.",
+      "width": 337,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "280168938210",
+      "type": "math",
+      "tex": "P_{1}=- G_{1} H \\left(G_{2} + G_{3}\\right),\\qquad \\Delta_{1}=1.",
+      "width": 317,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "286741585712",
+      "type": "math",
+      "tex": "K_c\\approx81.002668,T\\approx0.08652843",
+      "width": 375,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "286741585712",
+      "type": "math",
+      "tex": "q(t)=e^{-at}\\left[\\cos bt+\\frac{a-\\frac{K_cT}{A}}{b}\\sin bt\\right].",
+      "width": 325,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "305630023502",
+      "type": "math",
+      "tex": "R_1=1\\,\\Omega,R_2=2\\,\\Omega,C_1=2\\,\\mathrm F,C_2=1\\,\\mathrm F",
+      "width": 439,
+      "available": 340,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "305630023502",
+      "type": "math",
+      "tex": "\\frac{C}{R}=\\frac{G_{1} G_{2} G_{3} - G_{1} G_{2} G_{4} H_{1} + G_{2} G_{3} G_{4} H_{2} + G_{2} G_{4} H_{1} + G_{4}}{\\Delta}.",
+      "width": 587,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "305630023502",
+      "type": "math",
+      "tex": "A=G_2[G_1(R+H_1A)-H_1A-H_2G_3A]",
+      "width": 457,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "305630023502",
+      "type": "math",
+      "tex": "D=1-G_1G_2H_1+G_2H_1+G_2G_3H_2",
+      "width": 423,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "309380767827",
+      "type": "math",
+      "tex": "(s^2+K\\beta s+K)Z=KR-KN-sGN",
+      "width": 455,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "312358538005",
+      "type": "math",
+      "tex": "L_{2}=- G_{3} G_{4}^{2} G_{5} \\left(- G_{2} G_{6} + G_{2}\\right)",
+      "width": 354,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "312358538005",
+      "type": "math",
+      "tex": "X_{1}\\to X_{2}\\to X_{3}\\to C\\to X_{1}",
+      "width": 321,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "312358538005",
+      "type": "math",
+      "tex": "P_{1}=G_{1} G_{3} G_{4} \\left(- G_{2} G_{6} + G_{2}\\right),\\qquad \\Delta_{1}=1.",
+      "width": 383,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "312358538005",
+      "type": "math",
+      "tex": "\\frac CR=\\frac{G_1G_2G_3G_4(1-G_6)}{1+G_3G_4G_7+G_2G_3G_4^2G_5(1-G_6)}.",
+      "width": 389,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "319633020137",
+      "type": "math",
+      "tex": "s^4+K_Ds^3+(2+K_p)s^2+K_Ds+K_p",
+      "width": 422,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "321818023098",
+      "type": "math",
+      "tex": "\\frac{U_2}{U_1}=\\frac{R_2}{R_1LCs^2+(L+R_1R_2C)s+R_1+R_2}.",
+      "width": 409,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "321818023098",
+      "type": "math",
+      "tex": "U_1=[R_1LCs^2+(L+R_1R_2C)s+R_1+R_2]I_2",
+      "width": 513,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "322412953883",
+      "type": "math",
+      "tex": "D=s^5+2s^4+2s^3+4s^2+3s+6",
+      "width": 392,
+      "available": 340,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "322505411825",
+      "type": "math",
+      "tex": "c=1-(\\frac{2}{17})e^{-5t}-(\\frac{15}{17})e^{-t}\\cos t-(\\frac{25}{17})e^{-t}\\sin t",
+      "width": 507,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "326053557202",
+      "type": "math",
+      "tex": "D=s^3+10s^2+10K_ts+10",
+      "width": 328,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "326053557202",
+      "type": "math",
+      "tex": "D=s^3+10s^2+10K_ts+10",
+      "width": 328,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "334277758298",
+      "type": "math",
+      "tex": "s^4+2s^3+Ts^2+10s+100=0",
+      "width": 361,
+      "available": 340,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "337430053972",
+      "type": "math",
+      "tex": "C=G_2[G_1(E+G_nN)+G_3N]",
+      "width": 356,
+      "available": 340,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "337430053972",
+      "type": "math",
+      "tex": "1+K_1K_2s(T_1s+1)(T_2s+1)",
+      "width": 317,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "339128642326",
+      "type": "math",
+      "tex": "D=s^2+(2+K+T_d)s+K+T_d",
+      "width": 392,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "371880097748",
+      "type": "math",
+      "tex": "s(s+1)(s+a)+10=s^3+s^2+10+a\\,s(s+1)=0",
+      "width": 584,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "375475424531",
+      "type": "math",
+      "tex": "D(z-1)=z^3+22z^2-43z+T+20",
+      "width": 427,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "387042085044",
+      "type": "math",
+      "tex": "E=\\frac{1.4}{s+1.07}-\\frac{0.4}{s+3.73}=\\frac{s+4.794}{(s+1.07)(s+3.73)}",
+      "width": 397,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "394047164547",
+      "type": "math",
+      "tex": "[s(s+2)+K_fs+K]C=KR+N",
+      "width": 400,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "397754823494",
+      "type": "math",
+      "tex": "s^2+5s+4=(s+1)(s+4)",
+      "width": 324,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "401789881304",
+      "type": "math",
+      "tex": "\\begin{aligned}a_3&=R_1R_2R_3C_1C_2C_3,\\\\ a_2&=R_1R_2C_1C_2+R_1R_3C_1C_2\\\\&\\quad+R_1R_3C_1C_3+R_1R_3C_2C_3+R_2R_3C_2C_3,\\\\ a_1&=R_1C_1+R_1C_2+R_2C_2+R_3C_2+R_3C_3.\\end{aligned}",
+      "width": 493,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "419738696838",
+      "type": "math",
+      "tex": "1,\\quad9,\\quad\\frac{162-K}{9},\\quad\\frac{K(81-K)}{162-K},\\quad K.",
+      "width": 426,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "430541100883",
+      "type": "math",
+      "tex": "D=s^4+3s^3+2s^2+Ps+0.5P",
+      "width": 373,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "431844278853",
+      "type": "math",
+      "tex": "\\begin{aligned}c&=1-e^{-\\zeta u}A(u),\\\\A(u)&=\\cosh(vu)+\\frac\\zeta v\\sinh(vu).\\end{aligned}",
+      "width": 336,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "431979849370",
+      "type": "math",
+      "tex": "14(40+5K_1)>50K_1-20K_2",
+      "width": 343,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "487576756191",
+      "type": "math",
+      "tex": "y=G[K(r-y)+K_dd]+G_dd",
+      "width": 350,
+      "available": 340,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "499007699165",
+      "type": "math",
+      "tex": "(ms^2+fs+k)Y(s)=F(s)",
+      "width": 323,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "510177629649",
+      "type": "math",
+      "tex": "D=s^6+2s^5+8s^4+12s^3+2s^2+16s+16",
+      "width": 495,
+      "available": 340,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "529103856573",
+      "type": "math",
+      "tex": "c=1-(\\frac{35}{24})e^{-t}+(\\frac{7}{8})e^{-5t}-(\\frac{5}{12})e^{-7t}",
+      "width": 408,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "542475020921",
+      "type": "math",
+      "tex": "C=\\dfrac{k(s+3)[(s+a)E/s+N]}{s^2-1}",
+      "width": 356,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "543007329879",
+      "type": "math",
+      "tex": "\\frac{1}{1+G}=0.1s+0.02s^2+O(s^3)",
+      "width": 330,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "564236334860",
+      "type": "math",
+      "tex": "K_1>0,\\ 1<K_2<1+2\\sqrt{K_1}",
+      "width": 335,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "580777786413",
+      "type": "math",
+      "tex": "\\Phi(s)=\\dfrac{150(s+3.1)}{(s+10)(s+3)(s^2+2s+6)}",
+      "width": 412,
+      "available": 340,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "583069822772",
+      "type": "math",
+      "tex": "D=s^3+12s^2+(32+\\frac{K}{4})s+K",
+      "width": 370,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "583069822772",
+      "type": "math",
+      "tex": "D=(s+b)(s^2+2as+2a^2)",
+      "width": 325,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "599895149115",
+      "type": "math",
+      "tex": "D=s^3+(1+5K)s^2+5s+5",
+      "width": 348,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "601569706049",
+      "type": "math",
+      "tex": "D(z-1)=z^3+4z^2+z+12K-6",
+      "width": 407,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "603401880943",
+      "type": "math",
+      "tex": "T_2s^2+(1+K_2T_1)s+K_1K_2",
+      "width": 323,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "631151860658",
+      "type": "math",
+      "tex": "0.32[1-e^{-4.5t}(\\cos bt-(\\frac{20.5}{b})\\sin bt)]",
+      "width": 403,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "639122871282",
+      "type": "math",
+      "tex": "D=s^4+4s^3+5s^2+(2+K)s+aK",
+      "width": 424,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "651944328218",
+      "type": "math",
+      "tex": "s(s+10)(s+5)+500=s^3+15s^2+50s+500",
+      "width": 533,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "655020956100",
+      "type": "math",
+      "tex": "C=G_2[G_1(E+G_nN)+K_3N]",
+      "width": 358,
+      "available": 340,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "664634327223",
+      "type": "math",
+      "tex": "u_o=R_2(i_1+i_2)+C_2^{-1}\\int_0^t(i_1+i_2)\\,\\mathrm d\\tau",
+      "width": 418,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "671244741789",
+      "type": "math",
+      "tex": "U_i=[1+R_1Cs+R_1/(Ls+R_2)]U_o",
+      "width": 405,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "733654213902",
+      "type": "math",
+      "tex": "E\\to F\\to X\\to Y\\to C\\to E",
+      "width": 339,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "733654213902",
+      "type": "math",
+      "tex": "R\\to E\\to F\\to X\\to Y\\to C",
+      "width": 318,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "733654213902",
+      "type": "math",
+      "tex": "X=G_1(R-C-H_1G_2X)-H_2C",
+      "width": 392,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "733654213902",
+      "type": "math",
+      "tex": "[1+G_1G_2H_1+(G_1+H_2)P]X=G_1R",
+      "width": 436,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "743699337615",
+      "type": "math",
+      "tex": "c(t)=\\frac{47}{50}\\left[1-e^{-\\frac{5t}{2}}\\left(\\cos\\frac{5\\sqrt{15}t}2+\\frac1{\\sqrt{15}}\\sin\\frac{5\\sqrt{15}t}2\\right)\\right].",
+      "width": 515,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "743699337615",
+      "type": "math",
+      "tex": "\\Phi=\\frac{47}{(s+2)(s+3)+94}=\\frac{47}{s^2+5s+100}",
+      "width": 325,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "746409725976",
+      "type": "math",
+      "tex": "R=1\\,\\Omega,L=2\\,\\mathrm H,C=0.0125\\,\\mathrm F",
+      "width": 361,
+      "available": 340,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "756424126227",
+      "type": "math",
+      "tex": "q\\ddot\\theta-(M+m)mgl\\theta=-ml u",
+      "width": 329,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "779787495502",
+      "type": "math",
+      "tex": "\\frac CR=\\frac{[G_2+G_3+G_1G_2]G_4}D,\\quad H=-\\frac1{G_2+G_3}.",
+      "width": 324,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "779787495502",
+      "type": "math",
+      "tex": "C=G_4[(G_2+G_3)E+G_1G_2R+N]",
+      "width": 411,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "800979546039",
+      "type": "math",
+      "tex": "K_1K_2\\ge\\frac{10^6(\\ln10)^2}{\\pi^2+(\\ln10)^2}\\approx349464.274",
+      "width": 366,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "810513888733",
+      "type": "math",
+      "tex": "c=0.8[1-e^{-6t}(\\cos8t+0.75\\sin8t)]",
+      "width": 412,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "810513888733",
+      "type": "math",
+      "tex": "K=\\frac{4451}{49}\\approx90.8367,K_t=\\frac{588}{22255}\\approx0.026421",
+      "width": 487,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "810513888733",
+      "type": "math",
+      "tex": "s^2+(12+20KK_t)s+20(1+K)",
+      "width": 380,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "829021614992",
+      "type": "math",
+      "tex": "G(s)=\\dfrac{k(0.5s+1)}{s(0.5s^2+s+1)(s+1)}",
+      "width": 358,
+      "available": 340,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "829021614992",
+      "type": "math",
+      "tex": "s(0.5s^2+s+1)(s+1)+k(0.5s+1)=0",
+      "width": 465,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "829021614992",
+      "type": "math",
+      "tex": "(s^2+2s+2)(s+1)=s^3+3s^2+4s+2",
+      "width": 455,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "829021614992",
+      "type": "math",
+      "tex": "s^4+a_1s^3+a_2s^2+a_3s+a_4",
+      "width": 296,
+      "available": 283,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "842782180428",
+      "type": "math",
+      "tex": "s(s^2+2s+2)+s+a=s^3+2s^2+3s+a=0",
+      "width": 525,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "846784835675",
+      "type": "math",
+      "tex": "s(s-1)(s+5)+10(s+1)=s^3+4s^2+5s+10",
+      "width": 544,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "858157980324",
+      "type": "math",
+      "tex": "\\frac{U_o}{U_i}=-\\frac{R_1R_2C_1C_2s^2+(R_1C_1+R_2C_1+R_2C_2)s+1}{R_0C_1s}.",
+      "width": 508,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "871532827235",
+      "type": "math",
+      "tex": "\\frac{U_o}{U_i}=\\frac{1}{R_1R_2C_1C_2s^2+(R_1C_1+R_1C_2+R_2C_2)s+1}.",
+      "width": 488,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "879330766515",
+      "type": "math",
+      "tex": "\\alpha=\\dfrac{10}{7},\\ k=\\dfrac{96}{7},\\ \\zeta=\\dfrac{3}{\\sqrt{21}}\\approx0.655",
+      "width": 405,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "883413841263",
+      "type": "math",
+      "tex": "-[R_2+R_3+C(R_2R_4+R_3R_4+R_2R_3)s]",
+      "width": 462,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "893159253532",
+      "type": "math",
+      "tex": "h(t)=\\sqrt2e^{-0.4t}\\sin(t+\\frac{\\pi}{4})\\,1(t)",
+      "width": 343,
+      "available": 340,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "893159253532",
+      "type": "math",
+      "tex": "\\sqrt2\\sin(t+\\frac{\\pi}{4})=\\sin t+\\cos t",
+      "width": 321,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "894973933039",
+      "type": "math",
+      "tex": "s^3+6s^2+(10+K)s+2K=0",
+      "width": 362,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "894973933039",
+      "type": "math",
+      "tex": "\\lim_{s\\to0}sG(s)=2K/10=K/5",
+      "width": 327,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "902571855699",
+      "type": "math",
+      "tex": "\\omega_n=2,\\zeta=0.39,\\omega_d=\\sqrt{3.3916}",
+      "width": 358,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "909228675789",
+      "type": "math",
+      "tex": "D=s^5+2s^4+9s^3+10s^2+s+2",
+      "width": 392,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "916576249590",
+      "type": "math",
+      "tex": "\\frac{U_o}{U_i}=\\frac{R^2C_1C_2s^2+2RC_1s+1}{R^2C_1C_2s^2+R(2C_1+C_2)s+1}.",
+      "width": 345,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "916576249590",
+      "type": "math",
+      "tex": "V=(1+RC_1s)U_o-RC_1sU_i",
+      "width": 338,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "918643144789",
+      "type": "math",
+      "tex": "k=2\\,\\mathrm{\\frac{N}{m}},m=0.08\\,\\mathrm{kg},b=0.16\\,\\mathrm{N\\,\\frac{s}{m}}",
+      "width": 396,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "925797915262",
+      "type": "math",
+      "tex": "\\frac{X_o}{X_i}=\\frac{B_1B_2s^2+(B_1k_2+B_2k_1)s+k_1k_2}{B_1B_2s^2+(B_1k_2+B_2k_1+B_1k_1)s+k_1k_2}.",
+      "width": 451,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "925797915262",
+      "type": "math",
+      "tex": "\\begin{aligned}B_1B_2\\ddot x_o&+(B_1k_2+B_2k_1+B_1k_1)\\dot x_o+k_1k_2x_o\\\\ &=B_1B_2\\ddot x_i+(B_1k_2+B_2k_1)\\dot x_i+k_1k_2x_i.\\end{aligned}",
+      "width": 511,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "957422569642",
+      "type": "math",
+      "tex": "\\Phi(s)=\\frac{k}{s^2+(2+ak)s+k},\\qquad \\frac{E(s)}{R(s)}=1-\\Phi(s)=\\frac{s(s+2+ak)}{s^2+(2+ak)s+k}.",
+      "width": 358,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "957422569642",
+      "type": "math",
+      "tex": "2+ak=2(0.7)(5.6)=7.84",
+      "width": 319,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "977964301322",
+      "type": "math",
+      "tex": "s^3+K_2\\eta s^2+K_2k_ps+K_2k_i",
+      "width": 320,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "995149599723",
+      "type": "math",
+      "tex": "G(s)=\\dfrac{k}{(s+4)(s+2)(s^2+6s+25)}",
+      "width": 414,
+      "available": 340,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "995149599723",
+      "type": "math",
+      "tex": "s^4+12s^3+69s^2+198s+200+k",
+      "width": 392,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "995149599723",
+      "type": "math",
+      "tex": "1,12,\\dfrac{105}{2},\\dfrac{15990-24k}{105},200+k",
+      "width": 368,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "995149599723",
+      "type": "math",
+      "tex": "(s^2+16.5)(s^2+12s+52.5)",
+      "width": 322,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "1001474573925",
+      "type": "math",
+      "tex": "-PX_1+(M_2s^2+P+Q)X_2=0",
+      "width": 376,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "1007578795702",
+      "type": "math",
+      "tex": "\\frac{C}{R}=\\frac{G_{1} G_{2} G_{3} + G_{1} G_{5} + G_{3} G_{4} + G_{4} G_{5} G_{7} + G_{4} G_{5} G_{9}}{\\Delta}.",
+      "width": 524,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "1007578795702",
+      "type": "math",
+      "tex": "A\\to Y\\to X\\to C\\to Z\\to B\\to A",
+      "width": 396,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "1007578795702",
+      "type": "math",
+      "tex": "R\\to A\\to B\\to X\\to Y\\to Z\\to C",
+      "width": 375,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "1007578795702",
+      "type": "math",
+      "tex": "R\\to A\\to Y\\to Z\\to B\\to X\\to C",
+      "width": 375,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "1007578795702",
+      "type": "math",
+      "tex": "\\frac{C}{R}=\\frac{P_{1}\\Delta_{1}+P_{2}\\Delta_{2}+P_{3}\\Delta_{3}+P_{4}\\Delta_{4}+P_{5}\\Delta_{5}}{\\Delta}.",
+      "width": 422,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "1072912943680",
+      "type": "math",
+      "tex": "s(s+2)(s+3)+10=s^3+5s^2+6s+10",
+      "width": 470,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "1077841609780",
+      "type": "math",
+      "tex": "D=s^4+9s^3+31s^2+9s+20+K",
+      "width": 406,
+      "available": 340,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "1082549085059",
+      "type": "math",
+      "tex": "\\Phi=\\frac{16}{(s+5)(s+4)+80}=\\frac{16}{s^2+9s+100}",
+      "width": 325,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    },
+    {
+      "id": "1087175185088",
+      "type": "math",
+      "tex": "D=s^4+4s^3+6s^2+4s+K",
+      "width": 337,
+      "available": 314,
+      "viewport": 390,
+      "scale": 1.3
+    }
+  ],
+  "mobilePolicy": "Long formulas retain normal reading size and scroll inside their formula container; page width and image loading are enforced."
+}

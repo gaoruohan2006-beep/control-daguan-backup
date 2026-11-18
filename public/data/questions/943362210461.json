@@ -1,0 +1,8 @@
+{
+  "answer": "正确。",
+  "explanation": "两个不同初值但相同输入的状态差满足 $\\delta x(t)=e^{At}\\delta x(0)$。$A$ 渐近稳定时该差趋于零，所以初值不影响最终稳态。题干明确渐近稳定，避免把含积分器或无阻尼模态的系统也套入此结论。",
+  "originalImages": [],
+  "answerPdfPages": "120",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

@@ -1,0 +1,8 @@
+{
+  "answer": "记\n$$\\begin{aligned}a_3&=R_1R_2R_3C_1C_2C_3,\\\\\na_2&=R_1R_2C_1C_2+R_1R_3C_1C_2\\\\&\\quad+R_1R_3C_1C_3+R_1R_3C_2C_3+R_2R_3C_2C_3,\\\\\na_1&=R_1C_1+R_1C_2+R_2C_2+R_3C_2+R_3C_3.\\end{aligned}$$\n$$\\frac{U_{c2}}{U_i}=\\frac{1+R_3C_3s}{a_3s^3+a_2s^2+a_1s+1}.$$",
+  "explanation": "令流经 $R_2,C_2$ 的电流为 $I$，则 $I=C_2sU_{c2}$。节点 $c$ 电压为 $U_c=\\frac{R_3I}{1+R_3C_3s}$。因此\n$$U_a=U_{c2}+\\left[R_2+\\frac{R_3}{1+R_3C_3s}\\right]C_2sU_{c2}.$$\n输入节点满足 $U_i=U_a+R_1(C_1sU_a+I)$。将上式代入并乘以 $1+R_3C_3s$，整理得到三阶分母与一次分子。微分方程为\n$$a_3u_{c2}^{(3)}+a_2\\ddot u_{c2}+a_1\\dot u_{c2}+u_{c2}=R_3C_3\\dot u_i+u_i.$$\n不能把节点 $c$ 当地，否则会丢掉 $R_3,C_3$ 的影响。",
+  "originalImages": [],
+  "answerPdfPages": "86–88",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

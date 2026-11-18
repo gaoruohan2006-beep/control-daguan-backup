@@ -1,0 +1,8 @@
+{
+  "answer": "D。",
+  "explanation": "断开反馈后输入直接作用于积分环节，$C(s)=\\frac{R(s)}{s}=\\frac{1}{s^2}$。反变换得到 $c(t)=t1(t)$。若反馈保持闭合，则传递函数为 $\\frac{1}{s+1}$，响应不同；应按题干断开后的连接求解。",
+  "originalImages": [],
+  "answerPdfPages": "111",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

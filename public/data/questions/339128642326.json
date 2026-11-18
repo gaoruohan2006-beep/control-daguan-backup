@@ -1,0 +1,8 @@
+{
+  "answer": "令 $D=s^2+(2+K+T_d)s+K+T_d$，\n$$\\frac CR=\\frac K D,\\quad\\frac ER=\\frac{s^2+(2+T_d)s+T_d}D.$$\n$K=T_d=2$，无超调，5%调节时间约 $4.13\\,\\mathrm s$。",
+  "explanation": "由 $X=V+C=\\frac{(s+2)V}{s+1}$，与 $sX=KR-(K+T_d)V$ 联立得两传递函数。阶跃比较点误差为 $\\frac{T_d}{K+T_d}=0.5$，所以 $T_d=K$。自然频率平方为 $K+T_d=4$，故两者均为2。\n闭环为 $\\frac{2}{s^2+6s+4}$，阻尼比 $\\frac{6}{2\\cdot2}=1.5>1$，不能套欠阻尼超调或调节公式。终值为0.5，归一后的剩余误差为\n$$q(t)=\\frac{3+\\sqrt5}{2\\sqrt5}e^{-(3-\\sqrt5)t}-\\frac{3-\\sqrt5}{2\\sqrt5}e^{-(3+\\sqrt5)t}.$$\n它单调下降，解 $q(t_s)=0.05$ 得约4.13秒，超调为零。",
+  "originalImages": [],
+  "answerPdfPages": "164–166",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

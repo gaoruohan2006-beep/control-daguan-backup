@@ -1,0 +1,956 @@
+{
+  "checks": [
+    {
+      "name": "author_qd1000_time_analysis.py:7: RHP roots",
+      "actual": 2.0,
+      "expected": 2,
+      "tolerance": 0.1,
+      "passed": true
+    },
+    {
+      "name": "author_qd1000_time_analysis.py:113: RHP roots",
+      "actual": 2.0,
+      "expected": 2,
+      "tolerance": 0.1,
+      "passed": true
+    },
+    {
+      "name": "author_qd1000_time_analysis.py:170: RHP roots",
+      "actual": 0.0,
+      "expected": 0,
+      "tolerance": 0.1,
+      "passed": true
+    },
+    {
+      "name": "author_qd1000_time_analysis.py:348: RHP roots",
+      "actual": 0.0,
+      "expected": 0,
+      "tolerance": 0.1,
+      "passed": true
+    },
+    {
+      "name": "author_qd1000_time_short.py:68: RHP roots",
+      "actual": 2.0,
+      "expected": 2,
+      "tolerance": 0.1,
+      "passed": true
+    },
+    {
+      "name": "author_qd1000_time_short.py:104: RHP roots",
+      "actual": 2.0,
+      "expected": 2,
+      "tolerance": 0.1,
+      "passed": true
+    },
+    {
+      "name": "author_qd1000_time_short.py:112: RHP roots",
+      "actual": 2.0,
+      "expected": 2,
+      "tolerance": 0.1,
+      "passed": true
+    },
+    {
+      "name": "author_qd1000_time_short.py:143: RHP roots",
+      "actual": 2.0,
+      "expected": 2,
+      "tolerance": 0.1,
+      "passed": true
+    },
+    {
+      "name": "A3-5, K=13",
+      "stable": false,
+      "passed": true
+    },
+    {
+      "name": "A3-5, K=14.1",
+      "stable": true,
+      "passed": true
+    },
+    {
+      "name": "A3-5, K=14.9",
+      "stable": true,
+      "passed": true
+    },
+    {
+      "name": "A3-5, K=16",
+      "stable": false,
+      "passed": true
+    },
+    {
+      "name": "A3-12, K=0.49",
+      "stable": false,
+      "passed": true
+    },
+    {
+      "name": "A3-12, K=0.51",
+      "stable": true,
+      "passed": true
+    },
+    {
+      "name": "A3-12, K=0.83",
+      "stable": true,
+      "passed": true
+    },
+    {
+      "name": "A3-12, K=0.84",
+      "stable": false,
+      "passed": true
+    },
+    {
+      "name": "A3-fill14, K=72",
+      "stable": true,
+      "passed": true
+    },
+    {
+      "name": "A3-fill14, K=80.99",
+      "stable": true,
+      "passed": true
+    },
+    {
+      "name": "A3-fill14, K=81.01",
+      "stable": false,
+      "passed": true
+    },
+    {
+      "name": "A3-85, K=0.85",
+      "stable": false,
+      "passed": true
+    },
+    {
+      "name": "A3-85, K=0.87",
+      "stable": true,
+      "passed": true
+    },
+    {
+      "name": "A3-85, K=5.99",
+      "stable": true,
+      "passed": true
+    },
+    {
+      "name": "A3-85, K=6.01",
+      "stable": false,
+      "passed": true
+    },
+    {
+      "name": "A3-2 ODE",
+      "method": "independent symbolic residual",
+      "passed": true
+    },
+    {
+      "name": "A3-2 initial y",
+      "method": "independent symbolic residual",
+      "passed": true
+    },
+    {
+      "name": "A3-2 initial derivative",
+      "method": "independent symbolic residual",
+      "passed": true
+    },
+    {
+      "name": "A3-8 ODE",
+      "method": "independent symbolic residual",
+      "passed": true
+    },
+    {
+      "name": "A3-8 initial y",
+      "method": "independent symbolic residual",
+      "passed": true
+    },
+    {
+      "name": "A3-8 initial derivative",
+      "method": "independent symbolic residual",
+      "passed": true
+    },
+    {
+      "name": "A3-93 ODE",
+      "method": "independent symbolic residual",
+      "passed": true
+    },
+    {
+      "name": "A3-93 initial y",
+      "method": "independent symbolic residual",
+      "passed": true
+    },
+    {
+      "name": "A3-93 initial derivative",
+      "method": "independent symbolic residual",
+      "passed": true
+    },
+    {
+      "name": "A3-112 ODE",
+      "method": "independent symbolic residual",
+      "passed": true
+    },
+    {
+      "name": "A3-112 initial y",
+      "method": "independent symbolic residual",
+      "passed": true
+    },
+    {
+      "name": "A3-112 initial derivative",
+      "method": "independent symbolic residual",
+      "passed": true
+    },
+    {
+      "name": "A2-57 three-node KCL",
+      "method": "independent symbolic residual",
+      "passed": true
+    },
+    {
+      "name": "A3-68 coupled node elimination",
+      "method": "independent symbolic residual",
+      "passed": true
+    },
+    {
+      "name": "A3-52 ramp transform",
+      "method": "independent symbolic residual",
+      "passed": true
+    },
+    {
+      "name": "A3-15 comparator acceleration error",
+      "method": "independent symbolic residual",
+      "passed": true
+    },
+    {
+      "name": "Errata A3-41 actual ramp error limit",
+      "method": "independent symbolic residual",
+      "passed": true
+    },
+    {
+      "name": "Errata A3-64 parameter equation",
+      "method": "independent symbolic residual",
+      "passed": true
+    },
+    {
+      "name": "A3-42-base overshoot percent",
+      "actual": 4.321391826377274,
+      "expected": 4.3213918,
+      "tolerance": 0.001,
+      "passed": true
+    },
+    {
+      "name": "A3-42-base settling time",
+      "actual": 2.071708681748002,
+      "expected": 2.071714,
+      "tolerance": 0.0001,
+      "passed": true
+    },
+    {
+      "name": "A3-42-zero overshoot percent",
+      "actual": 261.3605403561087,
+      "expected": 261.361,
+      "tolerance": 0.001,
+      "passed": true
+    },
+    {
+      "name": "A3-42-zero settling time",
+      "actual": 5.1460073077440684,
+      "expected": 5.146,
+      "tolerance": 0.0001,
+      "passed": true
+    },
+    {
+      "name": "A3-42-pole overshoot percent",
+      "actual": 4.101816739206132,
+      "expected": 4.1018167,
+      "tolerance": 0.001,
+      "passed": true
+    },
+    {
+      "name": "A3-42-pole settling time",
+      "actual": 2.304692799134649,
+      "expected": 2.3047,
+      "tolerance": 0.0001,
+      "passed": true
+    },
+    {
+      "name": "A3-52 overshoot percent",
+      "actual": 0.2313263926416287,
+      "expected": 0.231326,
+      "tolerance": 0.001,
+      "passed": true
+    },
+    {
+      "name": "A3-52 settling time",
+      "actual": 2.3859866464374555,
+      "expected": 2.3859866,
+      "tolerance": 0.0001,
+      "passed": true
+    },
+    {
+      "name": "A3-65 overshoot percent",
+      "actual": 26.43229607963864,
+      "expected": 26.432,
+      "tolerance": 0.001,
+      "passed": true
+    },
+    {
+      "name": "A3-65 settling time",
+      "actual": 3.843747260248771,
+      "expected": 3.843747,
+      "tolerance": 0.0001,
+      "passed": true
+    },
+    {
+      "name": "A3-68 settling time",
+      "actual": 6.013189026969001,
+      "expected": 6.013189,
+      "tolerance": 0.0001,
+      "passed": true
+    },
+    {
+      "name": "A3-70 overshoot percent",
+      "actual": 104.22411090384509,
+      "expected": 104.224,
+      "tolerance": 0.001,
+      "passed": true
+    },
+    {
+      "name": "A3-70 settling time",
+      "actual": 0.6962807868252059,
+      "expected": 0.696281,
+      "tolerance": 0.0001,
+      "passed": true
+    },
+    {
+      "name": "A3-97 overshoot percent",
+      "actual": 4.101816739206132,
+      "expected": 4.1018167,
+      "tolerance": 0.001,
+      "passed": true
+    },
+    {
+      "name": "A3-97 settling time",
+      "actual": 4.420277334509092,
+      "expected": 4.4202773,
+      "tolerance": 0.0001,
+      "passed": true
+    },
+    {
+      "name": "A3-100 overshoot percent",
+      "actual": 4.044797494318719,
+      "expected": 4.0447975,
+      "tolerance": 0.001,
+      "passed": true
+    },
+    {
+      "name": "A3-100 settling time",
+      "actual": 0.6045052206248066,
+      "expected": 0.604505,
+      "tolerance": 0.0001,
+      "passed": true
+    },
+    {
+      "name": "A3-74 Kc",
+      "actual": 81.00266774961803,
+      "expected": 81.00266775,
+      "tolerance": 5e-05,
+      "passed": true
+    },
+    {
+      "name": "A3-74 T",
+      "actual": 0.08652843324435565,
+      "expected": 0.08652843324,
+      "tolerance": 5e-05,
+      "passed": true
+    },
+    {
+      "name": "A3-77 full model K",
+      "actual": 3.226313418096016,
+      "expected": 3.226313418,
+      "tolerance": 5e-05,
+      "passed": true
+    },
+    {
+      "name": "A3-77 T1 overshoot",
+      "actual": 0.0,
+      "expected": 0,
+      "tolerance": 5e-05,
+      "passed": true
+    },
+    {
+      "name": "A3-102 settling time",
+      "actual": 28.17837316819305,
+      "expected": 28.17837,
+      "tolerance": 5e-05,
+      "passed": true
+    }
+  ],
+  "fullResponses": {
+    "A3-42-base": {
+      "final": 1.0,
+      "overshoot_percent": 4.321391826377274,
+      "peak_time": 3.141592653589794,
+      "settling_time": 2.071708681748002,
+      "first_95_time": 2.071708681748002,
+      "rise_10_90": 1.5188922284522133,
+      "step_residues": [
+        {
+          "residue": [
+            1.0000000000000004,
+            0.0
+          ],
+          "pole": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "residue": [
+            -0.5000000000000002,
+            0.5000000000000002
+          ],
+          "pole": [
+            -0.9999999999999998,
+            0.9999999999999998
+          ]
+        },
+        {
+          "residue": [
+            -0.5000000000000002,
+            -0.5000000000000002
+          ],
+          "pole": [
+            -0.9999999999999998,
+            -0.9999999999999998
+          ]
+        }
+      ]
+    },
+    "A3-42-zero": {
+      "final": 1.0,
+      "overshoot_percent": 261.3605403561087,
+      "peak_time": 0.8960553845715223,
+      "settling_time": 5.1460073077440684,
+      "first_95_time": 0.10452720828260638,
+      "rise_10_90": 0.08837961693612839,
+      "step_residues": [
+        {
+          "residue": [
+            1.0000000000000004,
+            0.0
+          ],
+          "pole": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "residue": [
+            -0.5000000000000002,
+            -4.500000000000001
+          ],
+          "pole": [
+            -0.9999999999999998,
+            0.9999999999999998
+          ]
+        },
+        {
+          "residue": [
+            -0.5000000000000002,
+            4.500000000000001
+          ],
+          "pole": [
+            -0.9999999999999998,
+            -0.9999999999999998
+          ]
+        }
+      ]
+    },
+    "A3-42-pole": {
+      "final": 0.2,
+      "overshoot_percent": 4.101816739206132,
+      "peak_time": 3.386571634183263,
+      "settling_time": 2.304692799134649,
+      "first_95_time": 2.3046927991346484,
+      "rise_10_90": 1.5868752699386581,
+      "step_residues": [
+        {
+          "residue": [
+            0.20000000000000018,
+            0.0
+          ],
+          "pole": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "residue": [
+            -0.08823529411764715,
+            0.1470588235294119
+          ],
+          "pole": [
+            -0.9999999999999997,
+            0.9999999999999994
+          ]
+        },
+        {
+          "residue": [
+            -0.08823529411764715,
+            -0.1470588235294119
+          ],
+          "pole": [
+            -0.9999999999999997,
+            -0.9999999999999994
+          ]
+        },
+        {
+          "residue": [
+            -0.023529411764705882,
+            0.0
+          ],
+          "pole": [
+            -5.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    "A3-52": {
+      "final": 0.5,
+      "overshoot_percent": 0.2313263926416287,
+      "peak_time": 4.044405273084694,
+      "settling_time": 2.3859866464374555,
+      "first_95_time": 1.8801163566879182,
+      "rise_10_90": 1.3801072045893374,
+      "step_residues": [
+        {
+          "residue": [
+            0.4999999999999996,
+            0.0
+          ],
+          "pole": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "residue": [
+            -0.0005404279306882136,
+            -0.04706869929658662
+          ],
+          "pole": [
+            -0.9999999999999998,
+            -0.9999999999999983
+          ]
+        },
+        {
+          "residue": [
+            -0.0005404279306882136,
+            0.04706869929658662
+          ],
+          "pole": [
+            -0.9999999999999998,
+            0.9999999999999983
+          ]
+        },
+        {
+          "residue": [
+            -0.4883977900552479,
+            0.0
+          ],
+          "pole": [
+            -2.000000000000005,
+            0.0
+          ]
+        },
+        {
+          "residue": [
+            -0.010521354083375463,
+            0.0
+          ],
+          "pole": [
+            -11.050000000000002,
+            0.0
+          ]
+        }
+      ]
+    },
+    "A3-65": {
+      "final": 1.0,
+      "overshoot_percent": 26.43229607963864,
+      "peak_time": 1.7058763937847212,
+      "settling_time": 3.843747260248771,
+      "first_95_time": 1.0151974893806799,
+      "rise_10_90": 0.7239929559559546,
+      "step_residues": [
+        {
+          "residue": [
+            1.0,
+            0.0
+          ],
+          "pole": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "residue": [
+            -0.5,
+            0.21176895509219965
+          ],
+          "pole": [
+            -0.78,
+            1.8416297130530883
+          ]
+        },
+        {
+          "residue": [
+            -0.5,
+            -0.21176895509219965
+          ],
+          "pole": [
+            -0.78,
+            -1.8416297130530883
+          ]
+        }
+      ]
+    },
+    "A3-68": {
+      "final": 0.6666666666666666,
+      "overshoot_percent": 38.781540026031536,
+      "peak_time": 1.8944516501989583,
+      "settling_time": 6.013189026969001,
+      "first_95_time": 1.0743638001501148,
+      "rise_10_90": 0.7545329671253507,
+      "step_residues": [
+        {
+          "residue": [
+            0.6666666666666666,
+            0.0
+          ],
+          "pole": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "residue": [
+            -0.3333333333333333,
+            0.10050378152592118
+          ],
+          "pole": [
+            -0.49999999999999994,
+            1.6583123951777
+          ]
+        },
+        {
+          "residue": [
+            -0.3333333333333333,
+            -0.10050378152592118
+          ],
+          "pole": [
+            -0.49999999999999994,
+            -1.6583123951777
+          ]
+        }
+      ]
+    },
+    "A3-70": {
+      "final": 0.32,
+      "overshoot_percent": 104.22411090384509,
+      "peak_time": 0.16963236644903287,
+      "settling_time": 0.6962807868252059,
+      "first_95_time": 0.043287407005403386,
+      "rise_10_90": 0.03659174749901527,
+      "step_residues": [
+        {
+          "residue": [
+            0.3200000000000001,
+            0.0
+          ],
+          "pole": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "residue": [
+            -0.16000000000000006,
+            -0.36728948718704046
+          ],
+          "pole": [
+            -4.5,
+            8.930285549745873
+          ]
+        },
+        {
+          "residue": [
+            -0.16000000000000006,
+            0.36728948718704046
+          ],
+          "pole": [
+            -4.5,
+            -8.930285549745873
+          ]
+        }
+      ]
+    },
+    "A3-97": {
+      "final": 1.0,
+      "overshoot_percent": 4.101816739206132,
+      "peak_time": 3.386571634183263,
+      "settling_time": 4.420277334509092,
+      "first_95_time": 2.304692799134648,
+      "rise_10_90": 1.5868752699386586,
+      "step_residues": [
+        {
+          "residue": [
+            1.0000000000000009,
+            0.0
+          ],
+          "pole": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "residue": [
+            -0.4411764705882357,
+            0.7352941176470595
+          ],
+          "pole": [
+            -0.9999999999999997,
+            0.9999999999999994
+          ]
+        },
+        {
+          "residue": [
+            -0.4411764705882357,
+            -0.7352941176470595
+          ],
+          "pole": [
+            -0.9999999999999997,
+            -0.9999999999999994
+          ]
+        },
+        {
+          "residue": [
+            -0.11764705882352941,
+            0.0
+          ],
+          "pole": [
+            -5.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    "A3-100": {
+      "final": 0.5,
+      "overshoot_percent": 4.044797494318719,
+      "peak_time": 0.9164967714113297,
+      "settling_time": 0.6045052206248066,
+      "first_95_time": 0.6045052206248067,
+      "rise_10_90": 0.443138521177277,
+      "step_residues": [
+        {
+          "residue": [
+            0.5000000000000001,
+            0.0
+          ],
+          "pole": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "residue": [
+            -0.2500000000000001,
+            0.2552637351213156
+          ],
+          "pole": [
+            -3.499999999999999,
+            3.4278273002005215
+          ]
+        },
+        {
+          "residue": [
+            -0.2500000000000001,
+            -0.2552637351213156
+          ],
+          "pole": [
+            -3.499999999999999,
+            -3.4278273002005215
+          ]
+        }
+      ]
+    },
+    "A3-74": {
+      "final": 1.009974730547586,
+      "overshoot_percent": 36.78794411714419,
+      "peak_time": 0.2844888859110249,
+      "settling_time": 0.8000000000000008,
+      "first_95_time": 0.13372162879403368,
+      "rise_10_90": 0.111232290900134,
+      "step_residues": [
+        {
+          "residue": [
+            1.0099747305475857,
+            0.0
+          ],
+          "pole": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "residue": [
+            -0.5049873652737928,
+            -0.2104952613801205
+          ],
+          "pole": [
+            -3.504516964493771,
+            8.241421515442187
+          ]
+        },
+        {
+          "residue": [
+            -0.5049873652737928,
+            0.2104952613801205
+          ],
+          "pole": [
+            -3.504516964493771,
+            -8.241421515442187
+          ]
+        }
+      ]
+    },
+    "A3-77 T0": {
+      "final": 2.0,
+      "overshoot_percent": 9.500000000001751,
+      "peak_time": 1.875588247178575,
+      "settling_time": 2.886077615760478,
+      "first_95_time": 1.1817987467350939,
+      "rise_10_90": 0.9131939786417814,
+      "step_residues": [
+        {
+          "residue": [
+            2.0,
+            0.0
+          ],
+          "pole": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "residue": [
+            -1.0,
+            0.5455323266609631
+          ],
+          "pole": [
+            -1.2043855696826693,
+            1.5967014121432197
+          ]
+        },
+        {
+          "residue": [
+            -1.0,
+            -0.5455323266609631
+          ],
+          "pole": [
+            -1.2043855696826693,
+            -1.5967014121432197
+          ]
+        }
+      ]
+    },
+    "A3-77 T1": {
+      "final": 2.0,
+      "overshoot_percent": 0,
+      "peak_time": null,
+      "settling_time": 4.223724208734986,
+      "first_95_time": 3.066542064631786,
+      "rise_10_90": 1.9850982887700321,
+      "step_residues": [
+        {
+          "residue": [
+            2.0000000000000018,
+            0.0
+          ],
+          "pole": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "residue": [
+            -2.830060071010943,
+            0.0
+          ],
+          "pole": [
+            -0.9999999999999999,
+            0.0
+          ]
+        },
+        {
+          "residue": [
+            0.41503003550547046,
+            -0.573165303667752
+          ],
+          "pole": [
+            -1.204385569682668,
+            -1.59670141214322
+          ]
+        },
+        {
+          "residue": [
+            0.41503003550547046,
+            0.573165303667752
+          ],
+          "pole": [
+            -1.204385569682668,
+            1.59670141214322
+          ]
+        }
+      ]
+    },
+    "A3-102": {
+      "final": 3.0,
+      "overshoot_percent": 44.000000000000014,
+      "peak_time": 6.490000000000001,
+      "settling_time": 28.17837316819305,
+      "first_95_time": 3.6150148708127903,
+      "rise_10_90": 2.524551211265818,
+      "step_residues": [
+        {
+          "residue": [
+            3.0000000000000004,
+            0.0
+          ],
+          "pole": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "residue": [
+            -1.5000000000000002,
+            0.3919893391326799
+          ],
+          "pole": [
+            -0.1264993146486641,
+            0.48406666465174003
+          ]
+        },
+        {
+          "residue": [
+            -1.5000000000000002,
+            -0.3919893391326799
+          ],
+          "pole": [
+            -0.1264993146486641,
+            -0.48406666465174003
+          ]
+        }
+      ]
+    }
+  },
+  "pdDesign": {
+    "Kc": 81.00266774961803,
+    "T": 0.08652843324435565
+  },
+  "referenceFilterK": 3.226313418096016
+}

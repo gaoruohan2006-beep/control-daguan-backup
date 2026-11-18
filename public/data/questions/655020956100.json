@@ -1,0 +1,8 @@
+{
+  "answer": "稳态补偿只需 $G_n(0)=-\\frac{K_3}{K_1}$；最简单取常数 $-\\frac{K_3}{K_1}$。全过程理想补偿为 $G_n=-\\frac{K_3(T_1s+1)}{K_1}$。",
+  "explanation": "扰动通道为 $\\frac{C}{N}=\\frac{G_2(G_1G_n+K_3)}{1+G_1G_2}$。因 $G_2$ 在原点含积分器，零频极限为 $G_n(0)+\\frac{K_3}{K_1}$，所以常值阶跃的稳态抵消只约束补偿器的零频值。若要求所有时刻均无扰动输出，则需恒等式 $G_1G_n+K_3\\equiv0$，得到含微分的形式逆补偿器。稳态补偿与全过程完全补偿是不同要求。",
+  "originalImages": [],
+  "answerPdfPages": "171–172",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

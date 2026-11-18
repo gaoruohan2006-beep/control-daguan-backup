@@ -1,0 +1,8 @@
+{
+  "answer": "$$\\frac CR=\\frac K{s^2+(2+K_f)s+K},\\quad K=9,\\quad K_f=1.6.$$\n$\\sigma\\approx9.48\\%$，$t_s(2\\%)\\approx2.22\\,\\mathrm s$，$t_s(5\\%)\\approx1.67\\,\\mathrm s$。\n$$\\frac CN=\\frac1{s^2+3.6s+9},\\quad c_N(\\infty)=\\frac19.$$",
+  "explanation": "直接消去 $E,U$ 得 $[s(s+2)+K_fs+K]C=KR+N$。与标准二阶分母比较，$K=\\omega_n^2=9$、$2+K_f=2\\zeta\\omega_n=3.6$。超调量为 $e^{-\\frac{\\pi\\zeta}{\\sqrt{1-\\zeta^2}}}=e^{-\\frac{3\\pi}{4}}$。调节时间按 $\\frac{4}{\\zeta\\omega_n}$ 与 $\\frac{3}{\\zeta\\omega_n}$ 估算。单位阶跃扰动终值等于稳定扰动通道在零频处的值 $\\frac{1}{9}$。",
+  "originalImages": [],
+  "answerPdfPages": "142–144",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

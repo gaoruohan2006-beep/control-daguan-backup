@@ -1,0 +1,8 @@
+{
+  "answer": "正确。",
+  "explanation": "给定前馈利用已知参考改善跟踪；扰动前馈利用可测扰动补偿其影响。反馈通道仍根据输出偏差修正建模误差和未测扰动，因此二者都属于前馈与反馈组成的复合结构。",
+  "originalImages": [],
+  "answerPdfPages": "120",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

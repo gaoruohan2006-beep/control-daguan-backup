@@ -1,0 +1,8 @@
+{
+  "answer": "$$\\Phi=\\frac1{s+0.2}+\\frac3{s+2}=\\frac{4s+2.6}{s^2+2.2s+0.4}.$$",
+  "explanation": "单位脉冲的拉氏变换为1，故传递函数等于脉冲响应的拉氏变换。分别对指数项变换后相加，再乘以共同分母整理。这里已给闭环脉冲响应，不需要再套 $\\frac{G}{1+G}$。",
+  "originalImages": [],
+  "answerPdfPages": "115",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

@@ -1,0 +1,8 @@
+{
+  "answer": "错误。",
+  "explanation": "过阻尼时 $\\zeta>1$，两个极点为相异负实根，无复共轭振荡模态。其迟钝通常由较慢实极点造成。典型无零点阶跃响应单调逼近终值，不能把响应慢归因于振荡。",
+  "originalImages": [],
+  "answerPdfPages": "120",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

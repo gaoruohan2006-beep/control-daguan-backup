@@ -1,0 +1,8 @@
+{
+  "answer": "$$c(t)=\\frac{47}{50}\\left[1-e^{-\\frac{5t}{2}}\\left(\\cos\\frac{5\\sqrt{15}t}2+\\frac1{\\sqrt{15}}\\sin\\frac{5\\sqrt{15}t}2\\right)\\right].$$\n$t_p=\\frac{2\\pi}{5\\sqrt{15}}\\approx0.3245\\,\\mathrm s$，$t_s\\approx1.2\\,\\mathrm s$；输出端稳态误差 $\\frac{53}{50}=1.06$。",
+  "explanation": "由阶跃响应得 $G_1=\\frac{47}{s+2}$。局部反馈2使后一级成为 $\\frac{1}{s+3}$，外反馈仍为2，因此 $\\Phi=\\frac{47}{(s+2)(s+3)+94}=\\frac{47}{s^2+5s+100}$。其自然频率10、阻尼比0.25，单位幅值归一响应乘终值 $2\\Phi(0)=0.94$ 即得第一式。阻尼振荡频率 $\\frac{5\\sqrt{15}}{2}$，据此求峰值与工程调节时间。输出端误差为 $2-0.94=1.06$，比较点误差则为 $2-2(0.94)=0.12$，两者不可混淆。",
+  "originalImages": [],
+  "answerPdfPages": "155–157",
+  "referenceNote": "",
+  "sourceType": "practice"
+}

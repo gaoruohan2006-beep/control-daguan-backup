@@ -1,0 +1,8 @@
+{
+  "answer": "令 $A=J_Ls^2+C_Ls+K_L$，$D=(J_ms^2+K_L)A-K_L^2$。\n$$\\frac{\\Theta_m}{T_m}=\\frac A D,\\quad \\frac{\\Theta_L}{\\Theta_m}=\\frac{K_L}{A}.$$\n$$\\frac{\\Theta_L}{V_a}=\\frac{K_TK_L}{R_aD+K_TK_bsA}.$$",
+  "explanation": "分别对两根轴写力矩平衡：\n$$J_ms^2\\Theta_m=T_m-K_L(\\Theta_m-\\Theta_L).$$\n$$J_Ls^2\\Theta_L=K_L(\\Theta_m-\\Theta_L)-C_Ls\\Theta_L.$$\n由第二式得 $A\\Theta_L=K_L\\Theta_m$，代回第一式即得机械端口传递函数。\n电路满足 $V_a=R_ai_a+K_bs\\Theta_m$，故 $T_m=(\\frac{K_T}{R_a})(V_a-K_bs\\Theta_m)$。**结构图**：电压比较点先减去 $V_b$，串联 $\\frac{K_T}{R_a}$ 后得到 $T_m$，再串联 $\\frac{A}{D}$ 得到 $\\Theta_m$，再串联 $\\frac{K_L}{A}$ 得到 $\\Theta_L$；从 $\\Theta_m$ 经 $K_bs$ 反馈到电压比较点。代入消元得到最终传递函数。\n\n**等价信号流结构图。** 节点为求和点，支路标出对应环节；负号已包含在反馈增益中。 图中M、L分别表示电机与负载角位移，A、D同上。\n\n![题中各信号支路及其增益](img/reviewed/qd1000-next-graph-2-52-solution.svg)",
+  "originalImages": [],
+  "answerPdfPages": "81–82",
+  "referenceNote": "",
+  "sourceType": "practice"
+}
